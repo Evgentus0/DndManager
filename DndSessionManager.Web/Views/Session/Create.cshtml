@@ -1,0 +1,45 @@
+@{
+    ViewData["Title"] = "Create Session";
+}
+
+<div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0">Create New Session</h2>
+            </div>
+            <div class="card-body">
+                <form asp-controller="Session" asp-action="Create" method="post">
+                    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                    <div class="mb-3">
+                        <label for="sessionName" class="form-label">Session Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="sessionName" name="sessionName" required maxlength="100" placeholder="Enter session name">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="password" name="password" required minlength="4" placeholder="Enter password">
+                        <div class="form-text">Players will need this password to join</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="maxPlayers" class="form-label">Max Players</label>
+                        <input type="number" class="form-control" id="maxPlayers" name="maxPlayers" value="6" min="2" max="20">
+                        <div class="form-text">Maximum number of players (including you)</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description (Optional)</label>
+                        <textarea class="form-control" id="description" name="description" rows="3" maxlength="500" placeholder="Brief description of the session"></textarea>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">Create Session</button>
+                        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

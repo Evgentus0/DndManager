@@ -1,0 +1,86 @@
+/* Lobby Chat Styles */
+.chat-messages {
+    height: 500px;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+}
+
+.chat-message {
+    padding: 0.5rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.chat-message:last-child {
+    border-bottom: none;
+}
+
+/* User List Styles */
+.list-group-item {
+    padding: 0.75rem 1rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 991px) {
+    .chat-messages {
+        height: 400px;
+    }
+}
+
+@media (max-width: 576px) {
+    .chat-messages {
+        height: 300px;
+    }
+
+    .card-body {
+        padding: 0.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .btn-lg {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* Card Styles */
+.card {
+    border-radius: 0.5rem;
+}
+
+.card-header {
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+}
+
+/* Badge Styles */
+.badge {
+    font-size: 0.75rem;
+    padding: 0.35em 0.65em;
+}
+
+/* Input Group */
+.input-group {
+    border-radius: 0.25rem;
+}
+
+/* Scrollbar Styles */
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

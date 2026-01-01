@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Join Session";
+}
+
+<div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+        <div class="card shadow">
+            <div class="card-header bg-success text-white">
+                <h2 class="mb-0">Join Session</h2>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info mb-4">
+                    <strong>Session:</strong> @ViewBag.SessionName
+                </div>
+
+                <form asp-controller="Session" asp-action="Join" asp-route-id="@ViewBag.SessionId" method="post">
+                    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="username" name="username" required maxlength="50" placeholder="Enter your username" autofocus>
+                        <div class="form-text">Choose a unique username for this session</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Session Password <span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="password" name="password" required placeholder="Enter session password">
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-success btn-lg">Join Session</button>
+                        <a asp-controller="Session" asp-action="Browse" class="btn btn-secondary">Back to Browse</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

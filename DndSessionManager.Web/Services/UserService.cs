@@ -1,0 +1,75 @@
+using DndSessionManager.Web.Models;
+
+namespace DndSessionManager.Web.Services;
+
+public class UserService
+{
+    private readonly SessionService _sessionService;
+
+    public UserService(SessionService sessionService)
+    {
+        _sessionService = sessionService;
+    }
+
+    public User? GetUser(Guid sessionId, Guid userId)
+    {
+        var session = _sessionService.GetSession(sessionId);
+        return session?.Users.FirstOrDefault(u => u.Id == userId);
+    }
+
+    public User? GetUserByConnectionId(string connectionId)
+    {
+        var sessions = _sessionService.GetAllSessions();
+        foreach (var session in sessions)
+        {
+            var user = session.Users.FirstOrDefault(u => u.ConnectionId == connectionId);
+            if (user != null)
+                return user;
+        }
+
+        // Also check closed sessions
+        return null;
+    }
+
+    public bool UpdateReadyStatus(Guid sessionId, Guid userId, bool isReady)
+    {
+        var user = GetUser(sessionId, userId);
+        if (user == null)
+            return false;
+
+        user.IsReady = isReady;
+        return true;
+    }
+
+    public bool IsUserMaster(Guid sessionId, Guid userId)
+    {
+        var session = _sessionService.GetSession(sessionId);
+        return session?.MasterId == userId;
+    }
+
+    public IEnumerable<User> GetSessionUsers(Guid sessionId)
+    {
+        var session = _sessionService.GetSession(sessionId);
+        return session?.Users ?? Enumerable.Empty<User>();
+    }
+
+    public void UpdateConnectionId(Guid sessionId, Guid userId, string connectionId)
+    {
+        var user = GetUser(sessionId, userId);
+        if (user != null)
+        {
+            user.ConnectionId = connectionId;
+        }
+    }
+
+    public bool AreAllPlayersReady(Guid sessionId)
+    {
+        var session = _sessionService.GetSession(sessionId);
+        if (session == null || session.Users.Count == 0)
+            return false;
+
+        // All players (not master) must be ready
+        var players = session.Users.Where(u => u.Role == UserRole.Player);
+        return players.Any() && players.All(p => p.IsReady);
+    }
+}

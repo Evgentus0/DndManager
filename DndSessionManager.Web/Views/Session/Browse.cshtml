@@ -1,0 +1,87 @@
+@model IEnumerable<DndSessionManager.Web.Models.Session>
+
+@{
+    ViewData["Title"] = "Browse Sessions";
+}
+
+<div class="container">
+    <div class="row mb-4">
+        <div class="col">
+            <h1 class="display-5">Available Sessions</h1>
+            <p class="text-muted">Select a session to join</p>
+        </div>
+        <div class="col-auto">
+            <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Back to Home</a>
+        </div>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading">No active sessions</h4>
+            <p>There are currently no active sessions. Why not create one?</p>
+            <hr>
+            <a asp-controller="Session" asp-action="Create" class="btn btn-primary">Create Session</a>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var session in Model)
+            {
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">@session.Name</h5>
+
+                            @if (!string.IsNullOrEmpty(session.Description))
+                            {
+                                <p class="card-text text-muted small">@session.Description</p>
+                            }
+
+                            <div class="mb-2">
+                                <span class="badge bg-info">
+                                    <i class="bi bi-people-fill"></i> @session.Users.Count / @session.MaxPlayers Players
+                                </span>
+                                <span class="badge bg-warning text-dark">
+                                    <i class="bi bi-lock-fill"></i> Password Protected
+                                </span>
+                                @if (!session.IsOpen)
+                                {
+                                    <span class="badge bg-danger">Closed</span>
+                                }
+                            </div>
+
+                            <p class="card-text small text-muted">
+                                Created: @session.CreatedAt.ToLocalTime().ToString("g")
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            @if (session.IsOpen && session.Users.Count < session.MaxPlayers)
+                            {
+                                <a asp-controller="Session" asp-action="Join" asp-route-id="@session.Id" class="btn btn-success w-100">Join Session</a>
+                            }
+                            else if (!session.IsOpen)
+                            {
+                                <button class="btn btn-secondary w-100" disabled>Closed to New Players</button>
+                            }
+                            else
+                            {
+                                <button class="btn btn-secondary w-100" disabled>Session Full</button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        // Auto-refresh every 5 seconds
+        setTimeout(function() {
+            location.reload();
+        }, 5000);
+    </script>
+}
