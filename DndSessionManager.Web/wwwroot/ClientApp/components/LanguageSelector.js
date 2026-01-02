@@ -42,8 +42,8 @@ export default {
 		function changeLanguage(lang) {
 			locale.value = lang
 			localStorage.setItem('user-language', lang)
-			// Reload page to update all text
-			window.location.reload()
+			// Hard reload page with cache bypass to ensure fresh data in new language
+			window.location.reload(true)
 		}
 
 		return { locale, currentLanguageLabel, changeLanguage }
