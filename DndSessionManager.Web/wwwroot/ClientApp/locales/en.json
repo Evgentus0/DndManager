@@ -1,0 +1,152 @@
+{
+  "nav": {
+    "brand": "D&D Session Manager",
+    "home": "Home",
+    "browse": "Browse Sessions",
+    "language": "Language"
+  },
+  "home": {
+    "tagline": "Manage your Dungeons & Dragons sessions with ease",
+    "host": {
+      "title": "Host a Session",
+      "description": "Create a new D&D session and invite players to join",
+      "button": "Host Session"
+    },
+    "join": {
+      "title": "Join a Session",
+      "description": "Browse and join existing D&D sessions",
+      "button": "Join Session"
+    },
+    "activeSessions": "active session(s) available"
+  },
+  "create": {
+    "title": "Create New Session",
+    "fields": {
+      "sessionName": {
+        "label": "Session Name",
+        "placeholder": "Enter session name",
+        "required": true
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Enter password",
+        "help": "Players will need this password to join",
+        "required": true
+      },
+      "maxPlayers": {
+        "label": "Max Players",
+        "placeholder": "Enter a number",
+        "help": "Maximum number of players (including you)"
+      },
+      "description": {
+        "label": "Description (Optional)",
+        "placeholder": "Brief description of the session"
+      }
+    },
+    "buttons": {
+      "create": "Create Session",
+      "cancel": "Cancel"
+    },
+    "validation": {
+      "required": "Session name and password are required.",
+      "maxPlayers": "Max players must be between 2 and 20."
+    }
+  },
+  "browse": {
+    "title": "Available Sessions",
+    "subtitle": "Select a session to join",
+    "empty": {
+      "title": "No active sessions",
+      "message": "There are currently no active sessions. Why not create one?",
+      "button": "Create Session"
+    },
+    "card": {
+      "players": "Players",
+      "passwordProtected": "Password Protected",
+      "closed": "Closed",
+      "created": "Created:",
+      "joinButton": "Join Session",
+      "closedButton": "Closed to New Players",
+      "fullButton": "Session Full",
+      "noDescription": "No description provided"
+    },
+    "backButton": "Back to Home"
+  },
+  "join": {
+    "title": "Join Session",
+    "sessionLabel": "Session:",
+    "fields": {
+      "username": {
+        "label": "Username",
+        "placeholder": "Enter your username",
+        "help": "Choose a unique username for this session",
+        "required": true
+      },
+      "password": {
+        "label": "Session Password",
+        "placeholder": "Enter session password",
+        "required": true
+      }
+    },
+    "buttons": {
+      "join": "Join Session",
+      "back": "Back to Browse"
+    },
+    "errors": {
+      "required": "Username and password are required.",
+      "closed": "This session is closed to new players.",
+      "full": "This session is full.",
+      "wrongPassword": "Incorrect password.",
+      "usernameTaken": "Username is already taken in this session.",
+      "failed": "Failed to join session."
+    }
+  },
+  "lobby": {
+    "players": {
+      "title": "Players",
+      "ready": "Ready",
+      "kick": "Kick",
+      "master": "Master",
+      "player": "Player"
+    },
+    "master": {
+      "title": "Master Controls",
+      "openToggle": "Open to New Players",
+      "startButton": "Start Session",
+      "startHint": "All players must be ready",
+      "startConfirm": "Are you ready to start the session?",
+      "kickConfirm": "Are you sure you want to kick this player?"
+    },
+    "player": {
+      "title": "Player Controls",
+      "readyToggle": "I'm Ready"
+    },
+    "chat": {
+      "title": "Chat",
+      "placeholder": "Chat messages will appear here",
+      "input": "Type a message...",
+      "sendButton": "Send"
+    },
+    "status": {
+      "open": "Open to New Players",
+      "closed": "Closed to New Players"
+    },
+    "messages": {
+      "userJoined": "{username} joined the session",
+      "userLeft": "{username} left the session",
+      "userDisconnected": "{username} disconnected",
+      "kicked": "You have been kicked from the session",
+      "sessionStarting": "Session is starting! Good luck adventurers!",
+      "sessionStarted": "The session has started! The Game Master will now guide the adventure.",
+      "connectionLost": "Connection lost. Reconnecting...",
+      "reconnected": "Reconnected successfully",
+      "connectionClosed": "Connection closed. Please refresh the page."
+    },
+    "buttons": {
+      "leave": "Leave Session"
+    }
+  },
+  "footer": {
+    "copyright": "D&D Session Manager"
+  }
+}

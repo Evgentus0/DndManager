@@ -7,8 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\ClientApp\components\LanguageSelector.js" />
+    <None Include="wwwroot\ClientApp\i18n.js" />
+    <None Include="wwwroot\ClientApp\main.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\ClientApp\locales\en.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\ClientApp\locales\ru.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

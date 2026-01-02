@@ -4,84 +4,100 @@
     ViewData["Title"] = "Browse Sessions";
 }
 
-<div class="container">
+<div id="browse-app" class="container">
     <div class="row mb-4">
         <div class="col">
-            <h1 class="display-5">Available Sessions</h1>
-            <p class="text-muted">Select a session to join</p>
+            <h1 class="display-5">{{ $t('browse.title') }}</h1>
+            <p class="text-muted">{{ $t('browse.subtitle') }}</p>
         </div>
         <div class="col-auto">
-            <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Back to Home</a>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">{{ $t('browse.backButton') }}</a>
         </div>
     </div>
 
-    @if (!Model.Any())
-    {
-        <div class="alert alert-info" role="alert">
-            <h4 class="alert-heading">No active sessions</h4>
-            <p>There are currently no active sessions. Why not create one?</p>
-            <hr>
-            <a asp-controller="Session" asp-action="Create" class="btn btn-primary">Create Session</a>
-        </div>
-    }
-    else
-    {
-        <div class="row">
-            @foreach (var session in Model)
-            {
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">@session.Name</h5>
+    <div v-if="sessions.length === 0" class="alert alert-info" role="alert">
+        <h4 class="alert-heading">{{ $t('browse.empty.title') }}</h4>
+        <p>{{ $t('browse.empty.message') }}</p>
+        <hr>
+        <a asp-controller="Session" asp-action="Create" class="btn btn-primary">{{ $t('browse.empty.button') }}</a>
+    </div>
 
-                            @if (!string.IsNullOrEmpty(session.Description))
-                            {
-                                <p class="card-text text-muted small">@session.Description</p>
-                            }
+    <div v-else class="row">
+        <div v-for="session in sessions" :key="session.id" class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ session.name }}</h5>
+                    <p v-if="session.description" class="card-text text-muted small">{{ session.description }}</p>
+                    <p v-else class="card-text text-muted small fst-italic">{{ $t('browse.card.noDescription') }}</p>
 
-                            <div class="mb-2">
-                                <span class="badge bg-info">
-                                    <i class="bi bi-people-fill"></i> @session.Users.Count / @session.MaxPlayers Players
-                                </span>
-                                <span class="badge bg-warning text-dark">
-                                    <i class="bi bi-lock-fill"></i> Password Protected
-                                </span>
-                                @if (!session.IsOpen)
-                                {
-                                    <span class="badge bg-danger">Closed</span>
-                                }
-                            </div>
-
-                            <p class="card-text small text-muted">
-                                Created: @session.CreatedAt.ToLocalTime().ToString("g")
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            @if (session.IsOpen && session.Users.Count < session.MaxPlayers)
-                            {
-                                <a asp-controller="Session" asp-action="Join" asp-route-id="@session.Id" class="btn btn-success w-100">Join Session</a>
-                            }
-                            else if (!session.IsOpen)
-                            {
-                                <button class="btn btn-secondary w-100" disabled>Closed to New Players</button>
-                            }
-                            else
-                            {
-                                <button class="btn btn-secondary w-100" disabled>Session Full</button>
-                            }
-                        </div>
+                    <div class="mb-2">
+                        <span class="badge bg-info">
+                            {{ session.users.length }} / {{ session.maxPlayers }} {{ $t('browse.card.players') }}
+                        </span>
+                        <span v-if="session.passwordHash" class="badge bg-warning text-dark">
+                            {{ $t('browse.card.passwordProtected') }}
+                        </span>
+                        <span v-if="!session.isOpen" class="badge bg-danger">
+                            {{ $t('browse.card.closed') }}
+                        </span>
                     </div>
+
+                    <p class="card-text small text-muted">
+                        {{ $t('browse.card.created') }} {{ formatDate(session.createdAt) }}
+                    </p>
                 </div>
-            }
+                <div class="card-footer">
+                    <a v-if="session.isOpen && session.users.length < session.maxPlayers"
+                       :href="`/Session/Join/${session.id}`"
+                       class="btn btn-success w-100">
+                        {{ $t('browse.card.joinButton') }}
+                    </a>
+                    <button v-else-if="!session.isOpen"
+                            class="btn btn-secondary w-100"
+                            disabled>
+                        {{ $t('browse.card.closedButton') }}
+                    </button>
+                    <button v-else
+                            class="btn btn-secondary w-100"
+                            disabled>
+                        {{ $t('browse.card.fullButton') }}
+                    </button>
+                </div>
+            </div>
         </div>
-    }
+    </div>
 </div>
 
 @section Scripts {
-    <script>
-        // Auto-refresh every 5 seconds
-        setTimeout(function() {
-            location.reload();
-        }, 5000);
-    </script>
+	<script type="module">
+		import { createApp } from 'vue'
+		import { useI18n } from 'vue-i18n'
+		import { i18n } from '/ClientApp/i18n.js'
+
+		const app = createApp({
+			setup() {
+				const { t, locale } = useI18n()
+
+				function formatDate(dateString) {
+					const date = new Date(dateString)
+					return date.toLocaleString(locale.value)
+				}
+
+				return { formatDate }
+			},
+			data() {
+				return {
+					sessions: @Html.Raw(Json.Serialize(Model))
+				}
+			}
+		})
+
+		app.use(i18n)
+		app.mount('#browse-app')
+
+		// Auto-refresh every 5 seconds
+		setTimeout(function() {
+			location.reload();
+		}, 5000);
+	</script>
 }

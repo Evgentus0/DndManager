@@ -2,17 +2,17 @@
     ViewData["Title"] = "Home";
 }
 
-<div class="text-center mt-5">
-    <h1 class="display-3 mb-4">D&D Session Manager</h1>
-    <p class="lead mb-5">Manage your Dungeons & Dragons sessions with ease</p>
+<div id="home-app" class="text-center mt-5">
+    <h1 class="display-3 mb-4">{{ $t('nav.brand') }}</h1>
+    <p class="lead mb-5">{{ $t('home.tagline') }}</p>
 
     <div class="row justify-content-center">
         <div class="col-12 col-md-5 mb-4 mb-md-0">
             <div class="card shadow-lg h-100">
                 <div class="card-body d-flex flex-column justify-content-center p-5">
-                    <h2 class="card-title mb-4">Host a Session</h2>
-                    <p class="card-text mb-4">Create a new D&D session and invite players to join</p>
-                    <a asp-controller="Session" asp-action="Create" class="btn btn-primary btn-lg">Host Session</a>
+                    <h2 class="card-title mb-4">{{ $t('home.host.title') }}</h2>
+                    <p class="card-text mb-4">{{ $t('home.host.description') }}</p>
+                    <a asp-controller="Session" asp-action="Create" class="btn btn-primary btn-lg">{{ $t('home.host.button') }}</a>
                 </div>
             </div>
         </div>
@@ -20,9 +20,9 @@
         <div class="col-12 col-md-5">
             <div class="card shadow-lg h-100">
                 <div class="card-body d-flex flex-column justify-content-center p-5">
-                    <h2 class="card-title mb-4">Join a Session</h2>
-                    <p class="card-text mb-4">Browse and join existing D&D sessions</p>
-                    <a asp-controller="Session" asp-action="Browse" class="btn btn-success btn-lg">Join Session</a>
+                    <h2 class="card-title mb-4">{{ $t('home.join.title') }}</h2>
+                    <p class="card-text mb-4">{{ $t('home.join.description') }}</p>
+                    <a asp-controller="Session" asp-action="Browse" class="btn btn-success btn-lg">{{ $t('home.join.button') }}</a>
                 </div>
             </div>
         </div>
@@ -30,7 +30,18 @@
 
     <div class="mt-5">
         <p class="text-muted">
-            <strong>@ViewBag.ActiveSessionCount</strong> active session(s) available
+            <strong>@ViewBag.ActiveSessionCount</strong> {{ $t('home.activeSessions') }}
         </p>
     </div>
 </div>
+
+@section Scripts {
+	<script type="module">
+		import { createApp } from 'vue'
+		import { i18n } from './ClientApp/i18n.js'
+
+		const app = createApp({})
+		app.use(i18n)
+		app.mount('#home-app')
+	</script>
+}

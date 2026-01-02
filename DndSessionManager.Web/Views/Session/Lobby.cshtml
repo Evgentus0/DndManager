@@ -5,16 +5,18 @@
     var isMaster = ViewBag.IsMaster;
 }
 
-<div class="container-fluid">
+<div id="lobby-app" class="container-fluid">
     <div class="row mb-3">
         <div class="col">
-            <h2>@session.Name</h2>
-            <p class="text-muted mb-0">Session ID: @session.Id</p>
-            <span class="badge bg-info" id="sessionStatus">@(session.IsOpen ? "Open to New Players" : "Closed to New Players")</span>
+            <h2>{{ sessionName }}</h2>
+            <p class="text-muted mb-0">Session ID: {{ sessionId }}</p>
+            <span class="badge" :class="sessionOpen ? 'bg-info' : 'bg-secondary'">
+                {{ sessionOpen ? $t('lobby.status.open') : $t('lobby.status.closed') }}
+            </span>
         </div>
         <div class="col-auto">
             <form asp-controller="Session" asp-action="Leave" asp-route-id="@session.Id" method="post" class="d-inline">
-                <button type="submit" class="btn btn-danger" id="leaveBtn">Leave Session</button>
+                <button type="submit" class="btn btn-danger">{{ $t('lobby.buttons.leave') }}</button>
             </form>
         </div>
     </div>
@@ -24,72 +26,107 @@
         <div class="col-12 col-lg-4 mb-3">
             <div class="card shadow-sm">
                 <div class="card-header bg-dark text-white">
-                    <h5 class="mb-0">Players (@session.Users.Count/@session.MaxPlayers)</h5>
+                    <h5 class="mb-0">{{ $t('lobby.players.title') }} ({{ users.length }}/{{ maxPlayers }})</h5>
                 </div>
                 <div class="card-body p-0">
-                    <div class="list-group list-group-flush" id="userList">
-                        <!-- Users will be populated here by JavaScript -->
+                    <div class="list-group list-group-flush">
+                        <div v-for="user in users" :key="user.id"
+                             class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong>{{ user.username }}</strong>
+                                <span v-if="user.role === 'Master'" class="badge bg-danger ms-2">
+                                    {{ $t('lobby.players.master') }}
+                                </span>
+                                <span v-else class="badge bg-primary ms-2">
+                                    {{ $t('lobby.players.player') }}
+                                </span>
+                                <span v-if="user.isReady" class="badge bg-success ms-2">
+                                    {{ $t('lobby.players.ready') }}
+                                </span>
+                            </div>
+                            <button v-if="canKick(user)"
+                                    @@click="kickUser(user.id)"
+                                    class="btn btn-sm btn-danger">
+                                {{ $t('lobby.players.kick') }}
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Master Controls -->
-            @if (isMaster)
-            {
-                <div class="card shadow-sm mt-3">
-                    <div class="card-header bg-warning text-dark">
-                        <h5 class="mb-0">Master Controls</h5>
+            <div v-if="isMaster" class="card shadow-sm mt-3">
+                <div class="card-header bg-warning text-dark">
+                    <h5 class="mb-0">{{ $t('lobby.master.title') }}</h5>
+                </div>
+                <div class="card-body">
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" id="toggleOpen"
+                               v-model="sessionOpen" @@change="toggleSessionOpen">
+                        <label class="form-check-label" for="toggleOpen">
+                            {{ $t('lobby.master.openToggle') }}
+                        </label>
                     </div>
-                    <div class="card-body">
-                        <div class="form-check form-switch mb-3">
-                            <input class="form-check-input" type="checkbox" id="toggleOpen" @(session.IsOpen ? "checked" : "")>
-                            <label class="form-check-label" for="toggleOpen">
-                                Open to New Players
-                            </label>
-                        </div>
-                        <div class="d-grid">
-                            <button type="button" class="btn btn-success btn-lg" id="startSessionBtn" disabled>
-                                Start Session
-                            </button>
-                            <small class="text-muted mt-2 text-center" id="startHint">All players must be ready</small>
-                        </div>
+                    <div class="d-grid">
+                        <button type="button" class="btn btn-success btn-lg"
+                                :disabled="!allPlayersReady"
+                                @@click="confirmStartSession">
+                            {{ $t('lobby.master.startButton') }}
+                        </button>
+                        <small v-if="!allPlayersReady" class="text-muted mt-2 text-center">
+                            {{ $t('lobby.master.startHint') }}
+                        </small>
                     </div>
                 </div>
-            }
+            </div>
 
             <!-- Player Ready Status -->
-            @if (!isMaster)
-            {
-                <div class="card shadow-sm mt-3">
-                    <div class="card-body">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="readyToggle" @(currentUser.IsReady ? "checked" : "")>
-                            <label class="form-check-label" for="readyToggle">
-                                <strong>I'm Ready</strong>
-                            </label>
-                        </div>
+            <div v-if="!isMaster" class="card shadow-sm mt-3">
+                <div class="card-body">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="readyToggle"
+                               v-model="playerReady" @@change="toggleReady">
+                        <label class="form-check-label" for="readyToggle">
+                            <strong>{{ $t('lobby.player.readyToggle') }}</strong>
+                        </label>
                     </div>
                 </div>
-            }
+            </div>
         </div>
 
         <!-- Chat Panel -->
         <div class="col-12 col-lg-8">
             <div class="card shadow-sm">
                 <div class="card-header bg-dark text-white">
-                    <h5 class="mb-0">Chat</h5>
+                    <h5 class="mb-0">{{ $t('lobby.chat.title') }}</h5>
                 </div>
                 <div class="card-body p-0">
-                    <div id="chatMessages" class="chat-messages p-3">
-                        <div class="text-muted text-center">
-                            <small>Chat messages will appear here</small>
+                    <div ref="chatMessages" class="chat-messages p-3">
+                        <div v-if="chatHistory.length === 0" class="text-muted text-center">
+                            <small>{{ $t('lobby.chat.placeholder') }}</small>
+                        </div>
+                        <div v-for="(message, index) in chatHistory" :key="index" class="chat-message mb-2">
+                            <div v-if="message.isSystem" class="text-muted fst-italic">
+                                <small>{{ message.text }}</small>
+                            </div>
+                            <div v-else>
+                                <strong>{{ message.username }}:</strong>
+                                <span class="ms-2">{{ message.text }}</span>
+                                <small class="text-muted ms-2">{{ formatTime(message.timestamp) }}</small>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="card-footer">
                     <div class="input-group">
-                        <input type="text" class="form-control" id="chatInput" placeholder="Type a message..." maxlength="500">
-                        <button class="btn btn-primary" type="button" id="sendBtn">Send</button>
+                        <input type="text" class="form-control" v-model="chatInput"
+                               :placeholder="$t('lobby.chat.input')" maxlength="500"
+                               @@keyup.enter="sendMessage">
+                        <button class="btn btn-primary" type="button"
+                                :disabled="!chatInput.trim()"
+                                @@click="sendMessage">
+                            {{ $t('lobby.chat.sendButton') }}
+                        </button>
                     </div>
                 </div>
             </div>
@@ -97,11 +134,235 @@
     </div>
 </div>
 
-<!-- Hidden data for JavaScript -->
-<input type="hidden" id="sessionId" value="@session.Id" />
-<input type="hidden" id="userId" value="@currentUser.Id" />
-<input type="hidden" id="isMaster" value="@isMaster.ToString().ToLower()" />
-
 @section Scripts {
-    <script src="~/js/lobby.js"></script>
+	<script type="module">
+		import { createApp, ref, computed, nextTick } from 'vue'
+		import { useI18n } from 'vue-i18n'
+		import { i18n } from '/ClientApp/i18n.js'
+
+		const app = createApp({
+			setup() {
+				const { t } = useI18n()
+
+				// Session data
+				const sessionId = '@session.Id'
+				const userId = '@currentUser.Id'
+				const sessionName = '@session.Name'
+				const isMaster = @Json.Serialize(isMaster)
+				const maxPlayers = @session.MaxPlayers
+
+				// Reactive state
+				const users = ref(@Html.Raw(Json.Serialize(session.Users)))
+				const chatHistory = ref([])
+				const chatInput = ref('')
+				const sessionOpen = ref(@Json.Serialize(session.IsOpen))
+				const playerReady = ref(@Json.Serialize(currentUser.IsReady))
+				const allPlayersReady = ref(false)
+				const chatMessages = ref(null)
+				let connection = null
+
+				// Computed
+				const canKick = computed(() => {
+					return (user) => isMaster && user.role !== 'Master' && user.id !== userId
+				})
+
+				// Methods
+				function formatTime(timestamp) {
+					const date = new Date(timestamp)
+					return date.toLocaleTimeString()
+				}
+
+				function addSystemMessage(message) {
+					chatHistory.value.push({
+						text: message,
+						timestamp: new Date().toISOString(),
+						isSystem: true
+					})
+					scrollToBottom()
+				}
+
+				function addChatMessage(username, message, timestamp) {
+					chatHistory.value.push({
+						username,
+						text: message,
+						timestamp,
+						isSystem: false
+					})
+					scrollToBottom()
+				}
+
+				async function scrollToBottom() {
+					await nextTick()
+					if (chatMessages.value) {
+						chatMessages.value.scrollTop = chatMessages.value.scrollHeight
+					}
+				}
+
+				async function sendMessage() {
+					if (chatInput.value.trim()) {
+						try {
+							await connection.invoke('SendMessage', sessionId, userId, chatInput.value)
+							chatInput.value = ''
+						} catch (err) {
+							console.error('Error sending message:', err)
+						}
+					}
+				}
+
+				async function toggleReady() {
+					try {
+						await connection.invoke('ToggleReady', sessionId, userId)
+					} catch (err) {
+						console.error('Error toggling ready:', err)
+					}
+				}
+
+				async function toggleSessionOpen() {
+					try {
+						await connection.invoke('ToggleSessionOpen', sessionId, userId)
+					} catch (err) {
+						console.error('Error toggling session open:', err)
+					}
+				}
+
+				async function kickUser(kickedUserId) {
+					if (confirm(t('lobby.master.kickConfirm'))) {
+						try {
+							await connection.invoke('KickUser', sessionId, userId, kickedUserId)
+						} catch (err) {
+							console.error('Error kicking user:', err)
+						}
+					}
+				}
+
+				async function confirmStartSession() {
+					if (confirm(t('lobby.master.startConfirm'))) {
+						try {
+							await connection.invoke('StartSession', sessionId, userId)
+						} catch (err) {
+							console.error('Error starting session:', err)
+						}
+					}
+				}
+
+				async function initializeSignalR() {
+					connection = new signalR.HubConnectionBuilder()
+						.withUrl('/lobbyHub')
+						.withAutomaticReconnect()
+						.build()
+
+					// Event handlers
+					connection.on('InitialUserList', (usersList) => {
+						users.value = usersList
+					})
+
+					connection.on('UserJoined', (user) => {
+						const existingIndex = users.value.findIndex(u => u.id === user.id)
+						if (existingIndex === -1) {
+							users.value.push(user)
+							addSystemMessage(t('lobby.messages.userJoined', { username: user.username }))
+						}
+					})
+
+					connection.on('UserLeft', (data) => {
+						users.value = users.value.filter(u => u.id !== data.id)
+						addSystemMessage(t('lobby.messages.userLeft', { username: data.username }))
+					})
+
+					connection.on('UserDisconnected', (data) => {
+						addSystemMessage(t('lobby.messages.userDisconnected', { username: data.username }))
+					})
+
+					connection.on('UserReadyChanged', (data) => {
+						const user = users.value.find(u => u.id === data.id)
+						if (user) {
+							user.isReady = data.isReady
+						}
+					})
+
+					connection.on('AllPlayersReadyStatus', (ready) => {
+						allPlayersReady.value = ready
+					})
+
+					connection.on('ReceiveMessage', (data) => {
+						addChatMessage(data.username, data.message, data.timestamp)
+					})
+
+					connection.on('ChatHistory', (messages) => {
+						chatHistory.value = messages.map(msg => ({
+							username: msg.username,
+							text: msg.message,
+							timestamp: msg.timestamp,
+							isSystem: false
+						}))
+						scrollToBottom()
+					})
+
+					connection.on('UserKicked', () => {
+						alert(t('lobby.messages.kicked'))
+						window.location.href = '/'
+					})
+
+					connection.on('SessionStarted', () => {
+						addSystemMessage(t('lobby.messages.sessionStarting'))
+						setTimeout(() => {
+							alert(t('lobby.messages.sessionStarted'))
+						}, 500)
+					})
+
+					connection.on('SessionOpenChanged', (isOpen) => {
+						sessionOpen.value = isOpen
+					})
+
+					connection.onreconnecting(() => {
+						addSystemMessage(t('lobby.messages.connectionLost'))
+					})
+
+					connection.onreconnected(() => {
+						addSystemMessage(t('lobby.messages.reconnected'))
+						connection.invoke('JoinLobby', sessionId, userId)
+					})
+
+					connection.onclose(() => {
+						addSystemMessage(t('lobby.messages.connectionClosed'))
+					})
+
+					try {
+						await connection.start()
+						await connection.invoke('JoinLobby', sessionId, userId)
+					} catch (err) {
+						console.error('SignalR connection error:', err)
+					}
+				}
+
+				// Initialize on mount
+				initializeSignalR()
+
+				return {
+					sessionId,
+					userId,
+					sessionName,
+					isMaster,
+					maxPlayers,
+					users,
+					chatHistory,
+					chatInput,
+					sessionOpen,
+					playerReady,
+					allPlayersReady,
+					chatMessages,
+					canKick,
+					formatTime,
+					sendMessage,
+					toggleReady,
+					toggleSessionOpen,
+					kickUser,
+					confirmStartSession
+				}
+			}
+		})
+
+		app.use(i18n)
+		app.mount('#lobby-app')
+	</script>
 }

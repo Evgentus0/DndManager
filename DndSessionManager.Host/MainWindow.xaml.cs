@@ -80,7 +80,7 @@ public partial class MainWindow : Window
                 options.ListenAnyIP(port);
             });
 
-            // Add services (similar to Web project's Program.cs)
+            // Add services (similar to Web project's Program.cs) 
             AddMessage("Adding services...");
 
             // Configure MVC to use the correct application part for controllers
