@@ -148,5 +148,33 @@
   },
   "footer": {
     "copyright": "Менеджер D&D Сессий"
+  },
+  "handbook": {
+    "title": "Справочник D&D 5e",
+    "tabs": {
+      "spells": "Заклинания",
+      "monsters": "Монстры",
+      "classes": "Классы",
+      "subclasses": "Подклассы",
+      "equipment": "Снаряжение",
+      "magicItems": "Магические предметы",
+      "features": "Умения",
+      "races": "Расы",
+      "traits": "Черты",
+      "languages": "Языки",
+      "conditions": "Состояния",
+      "skills": "Навыки",
+      "abilityScores": "Характеристики",
+      "damageTypes": "Типы урона",
+      "magicSchools": "Школы магии"
+    },
+    "search": {
+      "placeholder": "Поиск...",
+      "noResults": "Результаты не найдены"
+    },
+    "loading": "Загрузка...",
+    "error": "Не удалось загрузить данные",
+    "backToList": "Назад к списку",
+    "level": "Уровень"
   }
 }

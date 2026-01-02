@@ -17,10 +17,10 @@ namespace DndSessionManager.Web.Models.GameObjects
 		public List<string>? Desc { get; set; }
 
 		[JsonPropertyName("skills")]
-		public List<Skill>? Skills { get; set; }
+		public List<SkillReference>? Skills { get; set; }
 	}
 
-	public class Skill
+	public class SkillReference
 	{
 		[JsonPropertyName("index")]
 		public string Index { get; set; } = string.Empty;

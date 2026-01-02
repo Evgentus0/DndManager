@@ -1,9 +1,8 @@
-﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace DndSessionManager.Web.Models.GameObjects
 {
-	public class Subclass
+	public class ApiReference
 	{
 		[JsonPropertyName("index")]
 		public string Index { get; set; } = string.Empty;
@@ -13,8 +12,5 @@ namespace DndSessionManager.Web.Models.GameObjects
 
 		[JsonPropertyName("url")]
 		public string Url { get; set; } = string.Empty;
-
-		[JsonExtensionData]
-		public Dictionary<string, JsonElement>? AdditionalData { get; set; }
 	}
 }

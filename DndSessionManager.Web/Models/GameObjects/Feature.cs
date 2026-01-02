@@ -1,9 +1,9 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace DndSessionManager.Web.Models.GameObjects
 {
-	public class Subclass
+	public class Feature
 	{
 		[JsonPropertyName("index")]
 		public string Index { get; set; } = string.Empty;

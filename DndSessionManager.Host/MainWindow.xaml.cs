@@ -83,55 +83,17 @@ public partial class MainWindow : Window
             // Add services (similar to Web project's Program.cs) 
             AddMessage("Adding services...");
 
-            // Configure MVC to use the correct application part for controllers
-            builder.Services.AddControllersWithViews()
-                .AddApplicationPart(typeof(DndSessionManager.Web.Controllers.HomeController).Assembly);
+            Web.WebAppStartup.InitializeWebApp(builder);
 
-            builder.Services.AddSignalR();
-            builder.Services.AddDistributedMemoryCache();
-            builder.Services.AddSession(options =>
-            {
-                options.IdleTimeout = TimeSpan.FromHours(2);
-                options.Cookie.HttpOnly = true;
-                options.Cookie.IsEssential = true;
-            });
-
-            // Register application services
-            AddMessage("Registering application services...");
-            builder.Services.AddSingleton<SessionService>();
-            builder.Services.AddSingleton<UserService>();
-
-            // Enable detailed errors for debugging
-            builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
-
-            AddMessage("Building web application...");
+			AddMessage("Building web application...");
             _webApp = builder.Build();
 
             // Configure middleware
             AddMessage("Configuring middleware...");
+			Web.WebAppStartup.ConfigureWebApp(_webApp);
 
-            // Enable developer exception page for better error messages
-            _webApp.UseDeveloperExceptionPage();
-
-            _webApp.UseStaticFiles();
-            _webApp.UseRouting();
-            _webApp.UseAuthorization();
-            _webApp.UseSession();
-
-            AddMessage("Mapping routes...");
-            _webApp.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
-
-            // Map SignalR hub
-            AddMessage("Mapping SignalR hub...");
-            _webApp.MapHub<LobbyHub>("/lobbyHub");
-
-            // Add health check endpoint
-            _webApp.MapGet("/health", () => new { status = "healthy", timestamp = DateTime.UtcNow });
-
-            // Start the server
-            AddMessage($"Starting server on port {port}...");
+			// Start the server
+			AddMessage($"Starting server on port {port}...");
             _cts = new CancellationTokenSource();
             _runTask = _webApp.RunAsync(_cts.Token);
 

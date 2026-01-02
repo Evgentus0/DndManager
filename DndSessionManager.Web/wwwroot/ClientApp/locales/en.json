@@ -148,5 +148,30 @@
   },
   "footer": {
     "copyright": "D&D Session Manager"
+  },
+  "handbook": {
+    "title": "D&D 5e Handbook",
+    "tabs": {
+      "spells": "Spells",
+      "monsters": "Monsters",
+      "classes": "Classes",
+      "subclasses": "Subclasses",
+      "equipment": "Equipment",
+      "magicItems": "Magic Items",
+      "features": "Features",
+      "races": "Races",
+      "traits": "Traits",
+      "languages": "Languages",
+      "conditions": "Conditions",
+      "skills": "Skills"
+    },
+    "search": {
+      "placeholder": "Search...",
+      "noResults": "No results found"
+    },
+    "loading": "Loading...",
+    "error": "Failed to load data",
+    "backToList": "Back to List",
+    "level": "Level"
   }
 }

@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Handbook";
+}
+
+<div id="handbook-app"></div>
+
+@section Scripts {
+<script type="module">
+	import { createApp } from 'vue'
+	import { i18n } from '/ClientApp/i18n.js'
+	import HandbookContainer from '/ClientApp/components/HandbookContainer.js'
+
+	const app = createApp(HandbookContainer)
+	app.use(i18n)
+	app.mount('#handbook-app')
+</script>
+}

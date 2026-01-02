@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace DndSessionManager.Web.Models.GameObjects
 {
@@ -10,6 +11,13 @@ namespace DndSessionManager.Web.Models.GameObjects
 		[JsonPropertyName("name")]
 		public string Name { get; set; } = string.Empty;
 
-		// add other fields as nullable later
+		[JsonPropertyName("url")]
+		public string Url { get; set; } = string.Empty;
+
+		[JsonPropertyName("hit_die")]
+		public int? HitDie { get; set; }
+
+		[JsonExtensionData]
+		public Dictionary<string, JsonElement>? AdditionalData { get; set; }
 	}
 }
