@@ -1,0 +1,1551 @@
+[
+  {
+    "index": "berserker",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    },
+    "name": "Берсерк",
+    "subclass_flavor": "Первобытный путь",
+    "desc": [
+      "Для некоторых варваров ярость — это средство достижения цели, а цель — насилие. Путь Берсерка — это путь безудержной ярости, залитый кровью. Когда вы входите в ярость берсерка, вы упиваетесь хаосом битвы, не заботясь о собственном здоровье или благополучии."
+    ],
+    "subclass_levels": "/api/2014/subclasses/berserker/levels"
+  },
+  {
+    "index": "lore",
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    },
+    "name": "Знания",
+    "subclass_flavor": "Бардовская коллегия",
+    "desc": [
+      "Барды Коллегии Знаний знают кое-что обо всем на свете, собирая крупицы знаний из самых разных источников — от ученых фолиантов до крестьянских баек. Поют ли они народные баллады в тавернах или исполняют сложные композиции в королевских дворцах, эти барды используют свои таланты, чтобы заворожить аудиторию. Когда аплодисменты стихают, слушатели могут обнаружить, что ставят под сомнение всё, что считали истиной: от веры в местное жречество до преданности королю. Преданность этих бардов заключается в стремлении к красоте и истине, а не в верности монарху или следовании догмам божества. Дворянин, держащий такого барда в качестве герольда или советника, знает, что бард скорее будет честным, чем дипломатичным. Члены коллегии собираются в библиотеках, а иногда и в настоящих колледжах с учебными классами и общежитиями, чтобы делиться знаниями друг с другом. Они также встречаются на фестивалях или государственных приемах, где могут разоблачать коррупцию, распутывать ложь и высмеивать самодовольных власть имущих."
+    ],
+    "subclass_levels": "/api/2014/subclasses/lore/levels"
+  },
+  {
+    "index": "life",
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    },
+    "name": "Жизнь",
+    "subclass_flavor": "Божественный домен",
+    "desc": [
+      "Домен Жизни фокусируется на живительной положительной энергии — одной из фундаментальных сил вселенной, поддерживающей жизнь. Божества жизни поощряют жизненную силу и здоровье, исцеляя больных и раненых, заботясь о нуждающихся и изгоняя силы смерти и нежити. Почти любое незлое божество может иметь влияние в этом домене, особенно сельскохозяйственные божества, боги солнца, боги исцеления или выносливости, а также боги дома и общины."
+    ],
+    "spells": [
+      {
+        "prerequisites": [
+          {
+            "index": "cleric-1",
+            "type": "level",
+            "name": "Жрец 1"
+          }
+        ],
+        "spell": {
+          "index": "bless",
+          "name": "Благословение"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "cleric-1",
+            "type": "level",
+            "name": "Жрец 1"
+          }
+        ],
+        "spell": {
+          "index": "cure-wounds",
+          "name": "Лечение ран"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "cleric-3",
+            "type": "level",
+            "name": "Жрец 3"
+          }
+        ],
+        "spell": {
+          "index": "lesser-restoration",
+          "name": "Низшее восстановление"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "cleric-3",
+            "type": "level",
+            "name": "Жрец 3"
+          }
+        ],
+        "spell": {
+          "index": "spiritual-weapon",
+          "name": "Духовное оружие"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "cleric-5",
+            "type": "level",
+            "name": "Жрец 5"
+          }
+        ],
+        "spell": {
+          "index": "beacon-of-hope",
+          "name": "Маяк надежды"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "cleric-5",
+            "type": "level",
+            "name": "Жрец 5"
+          }
+        ],
+        "spell": {
+          "index": "revivify",
+          "name": "Оживление"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "cleric-7",
+            "type": "level",
+            "name": "Жрец 7"
+          }
+        ],
+        "spell": {
+          "index": "death-ward",
+          "name": "Оберег от смерти"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "cleric-9",
+            "type": "level",
+            "name": "Жрец 9"
+          }
+        ],
+        "spell": {
+          "index": "mass-cure-wounds",
+          "name": "Массовое лечение ран"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "cleric-9",
+            "type": "level",
+            "name": "Жрец 9"
+          }
+        ],
+        "spell": {
+          "index": "raise-dead",
+          "name": "Воскрешение"
+        }
+      }
+    ],
+    "subclass_levels": "/api/2014/subclasses/life/levels"
+  },
+  {
+    "index": "land",
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    },
+    "name": "Земля",
+    "subclass_flavor": "Друидский круг",
+    "desc": [
+      "Круг Земли состоит из мистиков и мудрецов, хранящих древние знания и обряды через устную традицию. Эти друиды встречаются в священных кругах из деревьев или стоячих камней, чтобы шептать первобытные тайны на Друидическом языке. Мудрейшие члены круга выступают в роли главных жрецов общин, придерживающихся Старой Веры, и служат советниками правителей этих народов. Будучи членом этого круга, ваша магия зависит от того типа местности, где вы были инициированы в таинственные обряды круга."
+    ],
+    "spells": [
+      {
+        "prerequisites": [
+          {
+            "index": "druid-3",
+            "type": "level",
+            "name": "Друид 3"
+          },
+          {
+            "index": "circle-of-the-land-arctic",
+            "type": "feature",
+            "name": "Круг Земли: Арктика"
+          }
+        ],
+        "spell": {
+          "index": "hold-person",
+          "name": "Удержание личности"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-3",
+            "type": "level",
+            "name": "Друид 3"
+          },
+          {
+            "index": "circle-of-the-land-arctic",
+            "type": "feature",
+            "name": "Круг Земли: Арктика"
+          }
+        ],
+        "spell": {
+          "index": "spike-growth",
+          "name": "Разрастание шипов"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-5",
+            "type": "level",
+            "name": "Друид 5"
+          },
+          {
+            "index": "circle-of-the-land-arctic",
+            "type": "feature",
+            "name": "Круг Земли: Арктика"
+          }
+        ],
+        "spell": {
+          "index": "sleet-storm",
+          "name": "Ледяной шторм"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-5",
+            "type": "level",
+            "name": "Друид 5"
+          },
+          {
+            "index": "circle-of-the-land-arctic",
+            "type": "feature",
+            "name": "Круг Земли: Арктика"
+          }
+        ],
+        "spell": {
+          "index": "slow",
+          "name": "Замедление"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-7",
+            "type": "level",
+            "name": "Друид 7"
+          },
+          {
+            "index": "circle-of-the-land-arctic",
+            "type": "feature",
+            "name": "Круг Земли: Арктика"
+          }
+        ],
+        "spell": {
+          "index": "freedom-of-movement",
+          "name": "Свобода движений"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-7",
+            "type": "level",
+            "name": "Друид 7"
+          },
+          {
+            "index": "circle-of-the-land-arctic",
+            "type": "feature",
+            "name": "Круг Земли: Арктика"
+          }
+        ],
+        "spell": {
+          "index": "ice-storm",
+          "name": "Ледяной шторм"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-9",
+            "type": "level",
+            "name": "Друид 9"
+          },
+          {
+            "index": "circle-of-the-land-arctic",
+            "type": "feature",
+            "name": "Круг Земли: Арктика"
+          }
+        ],
+        "spell": {
+          "index": "commune-with-nature",
+          "name": "Общение с природой"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-9",
+            "type": "level",
+            "name": "Друид 9"
+          },
+          {
+            "index": "circle-of-the-land-arctic",
+            "type": "feature",
+            "name": "Круг Земли: Арктика"
+          }
+        ],
+        "spell": {
+          "index": "cone-of-cold",
+          "name": "Конус холода"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-3",
+            "type": "level",
+            "name": "Друид 3"
+          },
+          {
+            "index": "circle-of-the-land-coast",
+            "type": "feature",
+            "name": "Круг Земли: Побережье"
+          }
+        ],
+        "spell": {
+          "index": "mirror-image",
+          "name": "Зеркальный образ"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-3",
+            "type": "level",
+            "name": "Друид 3"
+          },
+          {
+            "index": "circle-of-the-land-coast",
+            "type": "feature",
+            "name": "Круг Земли: Побережье"
+          }
+        ],
+        "spell": {
+          "index": "misty-step",
+          "name": "Туманный шаг"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-5",
+            "type": "level",
+            "name": "Друид 5"
+          },
+          {
+            "index": "circle-of-the-land-coast",
+            "type": "feature",
+            "name": "Круг Земли: Побережье"
+          }
+        ],
+        "spell": {
+          "index": "water-breathing",
+          "name": "Водное дыхание"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-5",
+            "type": "level",
+            "name": "Друид 5"
+          },
+          {
+            "index": "circle-of-the-land-coast",
+            "type": "feature",
+            "name": "Круг Земли: Побережье"
+          }
+        ],
+        "spell": {
+          "index": "water-walk",
+          "name": "Хождение по воде"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-7",
+            "type": "level",
+            "name": "Друид 7"
+          },
+          {
+            "index": "circle-of-the-land-coast",
+            "type": "feature",
+            "name": "Круг Земли: Побережье"
+          }
+        ],
+        "spell": {
+          "index": "control-water",
+          "name": "Управление водой"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-7",
+            "type": "level",
+            "name": "Друид 7"
+          },
+          {
+            "index": "circle-of-the-land-coast",
+            "type": "feature",
+            "name": "Круг Земли: Побережье"
+          }
+        ],
+        "spell": {
+          "index": "freedom-of-movement",
+          "name": "Свобода движений"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-9",
+            "type": "level",
+            "name": "Друид 9"
+          },
+          {
+            "index": "circle-of-the-land-coast",
+            "type": "feature",
+            "name": "Круг Земли: Побережье"
+          }
+        ],
+        "spell": {
+          "index": "conjure-elemental",
+          "name": "Призыв элементаля"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-9",
+            "type": "level",
+            "name": "Друид 9"
+          },
+          {
+            "index": "circle-of-the-land-coast",
+            "type": "feature",
+            "name": "Круг Земли: Побережье"
+          }
+        ],
+        "spell": {
+          "index": "scrying",
+          "name": "Прорицание"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-3",
+            "type": "level",
+            "name": "Друид 3"
+          },
+          {
+            "index": "circle-of-the-land-desert",
+            "type": "feature",
+            "name": "Круг Земли: Пустыня"
+          }
+        ],
+        "spell": {
+          "index": "blur",
+          "name": "Расплывчатость"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-3",
+            "type": "level",
+            "name": "Друид 3"
+          },
+          {
+            "index": "circle-of-the-land-desert",
+            "type": "feature",
+            "name": "Круг Земли: Пустыня"
+          }
+        ],
+        "spell": {
+          "index": "silence",
+          "name": "Тишина"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-5",
+            "type": "level",
+            "name": "Друид 5"
+          },
+          {
+            "index": "circle-of-the-land-desert",
+            "type": "feature",
+            "name": "Круг Земли: Пустыня"
+          }
+        ],
+        "spell": {
+          "index": "create-food-and-water",
+          "name": "Создание пищи и воды"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-5",
+            "type": "level",
+            "name": "Друид 5"
+          },
+          {
+            "index": "circle-of-the-land-desert",
+            "type": "feature",
+            "name": "Круг Земли: Пустыня"
+          }
+        ],
+        "spell": {
+          "index": "protection-from-energy",
+          "name": "Защита от энергии"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-7",
+            "type": "level",
+            "name": "Друид 7"
+          },
+          {
+            "index": "circle-of-the-land-desert",
+            "type": "feature",
+            "name": "Круг Земли: Пустыня"
+          }
+        ],
+        "spell": {
+          "index": "blight",
+          "name": "Увядание"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-7",
+            "type": "level",
+            "name": "Друид 7"
+          },
+          {
+            "index": "circle-of-the-land-desert",
+            "type": "feature",
+            "name": "Круг Земли: Пустыня"
+          }
+        ],
+        "spell": {
+          "index": "hallucinatory-terrain",
+          "name": "Галлюцинаторный ландшафт"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-9",
+            "type": "level",
+            "name": "Друид 9"
+          },
+          {
+            "index": "circle-of-the-land-desert",
+            "type": "feature",
+            "name": "Круг Земли: Пустыня"
+          }
+        ],
+        "spell": {
+          "index": "insect-plague",
+          "name": "Нашествие насекомых"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-9",
+            "type": "level",
+            "name": "Друид 9"
+          },
+          {
+            "index": "circle-of-the-land-desert",
+            "type": "feature",
+            "name": "Круг Земли: Пустыня"
+          }
+        ],
+        "spell": {
+          "index": "wall-of-stone",
+          "name": "Каменная стена"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-3",
+            "type": "level",
+            "name": "Друид 3"
+          },
+          {
+            "index": "circle-of-the-land-forest",
+            "type": "feature",
+            "name": "Круг Земли: Лес"
+          }
+        ],
+        "spell": {
+          "index": "barkskin",
+          "name": "Кора-кожа"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-3",
+            "type": "level",
+            "name": "Друид 3"
+          },
+          {
+            "index": "circle-of-the-land-forest",
+            "type": "feature",
+            "name": "Круг Земли: Лес"
+          }
+        ],
+        "spell": {
+          "index": "spider-climb",
+          "name": "Паук"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-5",
+            "type": "level",
+            "name": "Друид 5"
+          },
+          {
+            "index": "circle-of-the-land-forest",
+            "type": "feature",
+            "name": "Круг Земли: Лес"
+          }
+        ],
+        "spell": {
+          "index": "call-lightning",
+          "name": "Призыв молнии"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-5",
+            "type": "level",
+            "name": "Друид 5"
+          },
+          {
+            "index": "circle-of-the-land-forest",
+            "type": "feature",
+            "name": "Круг Земли: Лес"
+          }
+        ],
+        "spell": {
+          "index": "plant-growth",
+          "name": "Рост растений"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-7",
+            "type": "level",
+            "name": "Друид 7"
+          },
+          {
+            "index": "circle-of-the-land-forest",
+            "type": "feature",
+            "name": "Круг Земли: Лес"
+          }
+        ],
+        "spell": {
+          "index": "divination",
+          "name": "Прорицание"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-7",
+            "type": "level",
+            "name": "Друид 7"
+          },
+          {
+            "index": "circle-of-the-land-forest",
+            "type": "feature",
+            "name": "Круг Земли: Лес"
+          }
+        ],
+        "spell": {
+          "index": "freedom-of-movement",
+          "name": "Свобода движений"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-9",
+            "type": "level",
+            "name": "Друид 9"
+          },
+          {
+            "index": "circle-of-the-land-forest",
+            "type": "feature",
+            "name": "Круг Земли: Лес"
+          }
+        ],
+        "spell": {
+          "index": "commune-with-nature",
+          "name": "Общение с природой"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-9",
+            "type": "level",
+            "name": "Друид 9"
+          },
+          {
+            "index": "circle-of-the-land-forest",
+            "type": "feature",
+            "name": "Круг Земли: Лес"
+          }
+        ],
+        "spell": {
+          "index": "tree-stride",
+          "name": "Шаг сквозь деревья"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-3",
+            "type": "level",
+            "name": "Друид 3"
+          },
+          {
+            "index": "circle-of-the-land-grassland",
+            "type": "feature",
+            "name": "Круг Земли: Равнины"
+          }
+        ],
+        "spell": {
+          "index": "invisibility",
+          "name": "Невидимость"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-3",
+            "type": "level",
+            "name": "Друид 3"
+          },
+          {
+            "index": "circle-of-the-land-grassland",
+            "type": "feature",
+            "name": "Круг Земли: Равнины"
+          }
+        ],
+        "spell": {
+          "index": "pass-without-trace",
+          "name": "Безмолвный шаг"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-5",
+            "type": "level",
+            "name": "Друид 5"
+          },
+          {
+            "index": "circle-of-the-land-grassland",
+            "type": "feature",
+            "name": "Круг Земли: Равнины"
+          }
+        ],
+        "spell": {
+          "index": "daylight",
+          "name": "Дневной свет"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-5",
+            "type": "level",
+            "name": "Друид 5"
+          },
+          {
+            "index": "circle-of-the-land-grassland",
+            "type": "feature",
+            "name": "Круг Земли: Равнины"
+          }
+        ],
+        "spell": {
+          "index": "haste",
+          "name": "Ускорение"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-7",
+            "type": "level",
+            "name": "Друид 7"
+          },
+          {
+            "index": "circle-of-the-land-grassland",
+            "type": "feature",
+            "name": "Круг Земли: Равнины"
+          }
+        ],
+        "spell": {
+          "index": "divination",
+          "name": "Прорицание"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-7",
+            "type": "level",
+            "name": "Друид 7"
+          },
+          {
+            "index": "circle-of-the-land-grassland",
+            "type": "feature",
+            "name": "Круг Земли: Равнины"
+          }
+        ],
+        "spell": {
+          "index": "freedom-of-movement",
+          "name": "Свобода движений"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-9",
+            "type": "level",
+            "name": "Друид 9"
+          },
+          {
+            "index": "circle-of-the-land-grassland",
+            "type": "feature",
+            "name": "Круг Земли: Равнины"
+          }
+        ],
+        "spell": {
+          "index": "dream",
+          "name": "Сон"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-9",
+            "type": "level",
+            "name": "Друид 9"
+          },
+          {
+            "index": "circle-of-the-land-grassland",
+            "type": "feature",
+            "name": "Круг Земли: Равнины"
+          }
+        ],
+        "spell": {
+          "index": "insect-plague",
+          "name": "Нашествие насекомых"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-3",
+            "type": "level",
+            "name": "Друид 3"
+          },
+          {
+            "index": "circle-of-the-land-mountain",
+            "type": "feature",
+            "name": "Круг Земли: Горы"
+          }
+        ],
+        "spell": {
+          "index": "spider-climb",
+          "name": "Паук"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-3",
+            "type": "level",
+            "name": "Друид 3"
+          },
+          {
+            "index": "circle-of-the-land-mountain",
+            "type": "feature",
+            "name": "Круг Земли: Горы"
+          }
+        ],
+        "spell": {
+          "index": "spike-growth",
+          "name": "Разрастание шипов"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-5",
+            "type": "level",
+            "name": "Друид 5"
+          },
+          {
+            "index": "circle-of-the-land-mountain",
+            "type": "feature",
+            "name": "Круг Земли: Горы"
+          }
+        ],
+        "spell": {
+          "index": "lightning-bolt",
+          "name": "Удар молнии"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-5",
+            "type": "level",
+            "name": "Друид 5"
+          },
+          {
+            "index": "circle-of-the-land-mountain",
+            "type": "feature",
+            "name": "Круг Земли: Горы"
+          }
+        ],
+        "spell": {
+          "index": "meld-into-stone",
+          "name": "Слияние с камнем"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-7",
+            "type": "level",
+            "name": "Друид 7"
+          },
+          {
+            "index": "circle-of-the-land-mountain",
+            "type": "feature",
+            "name": "Круг Земли: Горы"
+          }
+        ],
+        "spell": {
+          "index": "stone-shape",
+          "name": "Формовка камня"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-7",
+            "type": "level",
+            "name": "Друид 7"
+          },
+          {
+            "index": "circle-of-the-land-mountain",
+            "type": "feature",
+            "name": "Круг Земли: Горы"
+          }
+        ],
+        "spell": {
+          "index": "stoneskin",
+          "name": "Каменная кожа"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-9",
+            "type": "level",
+            "name": "Друид 9"
+          },
+          {
+            "index": "circle-of-the-land-mountain",
+            "type": "feature",
+            "name": "Круг Земли: Горы"
+          }
+        ],
+        "spell": {
+          "index": "passwall",
+          "name": "Проход сквозь стены"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-9",
+            "type": "level",
+            "name": "Друид 9"
+          },
+          {
+            "index": "circle-of-the-land-mountain",
+            "type": "feature",
+            "name": "Круг Земли: Горы"
+          }
+        ],
+        "spell": {
+          "index": "wall-of-stone",
+          "name": "Каменная стена"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-3",
+            "type": "level",
+            "name": "Друид 3"
+          },
+          {
+            "index": "circle-of-the-land-swamp",
+            "type": "feature",
+            "name": "Круг Земли: Болото"
+          }
+        ],
+        "spell": {
+          "index": "acid-arrow",
+          "name": "Кислотная стрела"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-3",
+            "type": "level",
+            "name": "Друид 3"
+          },
+          {
+            "index": "circle-of-the-land-swamp",
+            "type": "feature",
+            "name": "Круг Земли: Болото"
+          }
+        ],
+        "spell": {
+          "index": "darkness",
+          "name": "Тьма"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-5",
+            "type": "level",
+            "name": "Друид 5"
+          },
+          {
+            "index": "circle-of-the-land-swamp",
+            "type": "feature",
+            "name": "Круг Земли: Болото"
+          }
+        ],
+        "spell": {
+          "index": "water-walk",
+          "name": "Хождение по воде"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-5",
+            "type": "level",
+            "name": "Друид 5"
+          },
+          {
+            "index": "circle-of-the-land-swamp",
+            "type": "feature",
+            "name": "Круг Земли: Болото"
+          }
+        ],
+        "spell": {
+          "index": "stinking-cloud",
+          "name": "Зловонное облако"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-7",
+            "type": "level",
+            "name": "Друид 7"
+          },
+          {
+            "index": "circle-of-the-land-swamp",
+            "type": "feature",
+            "name": "Круг Земли: Болото"
+          }
+        ],
+        "spell": {
+          "index": "freedom-of-movement",
+          "name": "Свобода движений"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-7",
+            "type": "level",
+            "name": "Друид 7"
+          },
+          {
+            "index": "circle-of-the-land-swamp",
+            "type": "feature",
+            "name": "Круг Земли: Болото"
+          }
+        ],
+        "spell": {
+          "index": "locate-creature",
+          "name": "Поиск существа"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-9",
+            "type": "level",
+            "name": "Друид 9"
+          },
+          {
+            "index": "circle-of-the-land-swamp",
+            "type": "feature",
+            "name": "Круг Земли: Болото"
+          }
+        ],
+        "spell": {
+          "index": "insect-plague",
+          "name": "Нашествие насекомых"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "druid-9",
+            "type": "level",
+            "name": "Друид 9"
+          },
+          {
+            "index": "circle-of-the-land-swamp",
+            "type": "feature",
+            "name": "Круг Земли: Болото"
+          }
+        ],
+        "spell": {
+          "index": "scrying",
+          "name": "Прорицание"
+        }
+      }
+    ],
+    "subclass_levels": "/api/2014/subclasses/land/levels"
+  },
+  {
+    "index": "champion",
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    },
+    "name": "Чемпион",
+    "subclass_flavor": "Воинский архетип",
+    "desc": [
+      "Архетипичный Чемпион фокусируется на развитии грубой физической силы, отточенной до смертоносного совершенства. Те, кто следует этому архетипу, сочетают суровые тренировки с физическим превосходством, чтобы наносить сокрушительные удары."
+    ],
+    "subclass_levels": "/api/2014/subclasses/champion/levels"
+  },
+  {
+    "index": "open-hand",
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    },
+    "name": "Открытая ладонь",
+    "subclass_flavor": "Монастырская традиция",
+    "desc": [
+      "Монахи Пути Открытой Ладони — непревзойденные мастера рукопашного боя, как с оружием, так и без него. Они обучаются техникам, позволяющим толкать и опрокидывать противников, манипулировать ки для исцеления своего тела и практиковать продвинутую медитацию, способную защитить их от вреда."
+    ],
+    "subclass_levels": "/api/2014/subclasses/open-hand/levels"
+  },
+  {
+    "index": "devotion",
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    },
+    "name": "Преданность",
+    "subclass_flavor": "Священная клятва",
+    "desc": [
+      "Клятва Преданности обязывает паладина следовать самым возвышенным идеалам справедливости, добродетели и порядка. Этих паладинов, которых иногда называют кавалерами, белыми рыцарями или святыми воителями, представляют как идеального рыцаря в сияющих доспехах, действующего с честью во имя справедливости и общего блага. Они придерживаются строжайших стандартов поведения, и некоторые из них, к лучшему или к худшему, требуют того же от остального мира. Многие из тех, кто приносит эту клятву, преданы богам закона и добра, используя заветы своих богов как меру своей преданности. Они почитают ангелов — совершенных слуг добра — как свои идеалы и помещают изображения ангельских крыльев на свои шлемы или гербы."
+    ],
+    "spells": [
+      {
+        "prerequisites": [
+          {
+            "index": "paladin-3",
+            "type": "level",
+            "name": "Паладин 3"
+          }
+        ],
+        "spell": {
+          "index": "protection-from-evil-and-good",
+          "name": "Защита от добра и зла"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "paladin-3",
+            "type": "level",
+            "name": "Паладин 3"
+          }
+        ],
+        "spell": {
+          "index": "sanctuary",
+          "name": "Убежище"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "paladin-5",
+            "type": "level",
+            "name": "Паладин 5"
+          }
+        ],
+        "spell": {
+          "index": "lesser-restoration",
+          "name": "Низшее восстановление"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "paladin-5",
+            "type": "level",
+            "name": "Паладин 5"
+          }
+        ],
+        "spell": {
+          "index": "zone-of-truth",
+          "name": "Зона истины"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "paladin-9",
+            "type": "level",
+            "name": "Паладин 9"
+          }
+        ],
+        "spell": {
+          "index": "beacon-of-hope",
+          "name": "Маяк надежды"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "paladin-9",
+            "type": "level",
+            "name": "Паладин 9"
+          }
+        ],
+        "spell": {
+          "index": "dispel-magic",
+          "name": "Рассеивание магии"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "paladin-13",
+            "type": "level",
+            "name": "Паладин 13"
+          }
+        ],
+        "spell": {
+          "index": "freedom-of-movement",
+          "name": "Свобода движений"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "paladin-13",
+            "type": "level",
+            "name": "Паладин 13"
+          }
+        ],
+        "spell": {
+          "index": "guardian-of-faith",
+          "name": "Страж веры"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "paladin-17",
+            "type": "level",
+            "name": "Паладин 17"
+          }
+        ],
+        "spell": {
+          "index": "commune",
+          "name": "Общение"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "paladin-17",
+            "type": "level",
+            "name": "Паладин 17"
+          }
+        ],
+        "spell": {
+          "index": "flame-strike",
+          "name": "Огненный удар"
+        }
+      }
+    ],
+    "subclass_levels": "/api/2014/subclasses/devotion/levels"
+  },
+  {
+    "index": "hunter",
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    },
+    "name": "Охотник",
+    "subclass_flavor": "Архетип следопыта",
+    "desc": [
+      "Следовать архетипу Охотника — значит принять свою роль оплота между цивилизацией и ужасами дикой природы. Ступая по пути Охотника, вы обучаетесь специализированным техникам борьбы с угрозами, с которыми вы сталкиваетесь: от свирепых огров и орд орков до гигантских великанов и ужасающих драконов."
+    ],
+    "subclass_levels": "/api/2014/subclasses/hunter/levels"
+  },
+  {
+    "index": "thief",
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    },
+    "name": "Вор",
+    "subclass_flavor": "Плутовской архетип",
+    "desc": [
+      "Вы оттачиваете свои навыки в воровском искусстве. Взломщики, бандиты, карманники и другие преступники обычно следуют этому архетипу, но также его выбирают и плуты, предпочитающие считать себя профессиональными искателями сокровищ, исследователями, спелеологами и детективами. В дополнение к улучшению вашей ловкости и скрытности, вы обучаетесь навыкам, полезным для исследования древних руин, чтения незнакомых языков и использования магических предметов, которые вы обычно не могли бы применить."
+    ],
+    "subclass_levels": "/api/2014/subclasses/thief/levels"
+  },
+  {
+    "index": "draconic",
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    },
+    "name": "Драконья кровь",
+    "subclass_flavor": "Происхождение чародейства",
+    "desc": [
+      "Ваша врожденная магия проистекает из драконьей магии, смешавшейся с вашей кровью или кровью ваших предков. Чаще всего чародеи с таким происхождением ведут свою родословную от могущественного мага древности, заключившего сделку с драконом или даже имевшего родителя-дракона. Некоторые из этих линий крови хорошо известны в мире, но большинство остаются тайными. Любой чародей может стать первым в новой родословной в результате пакта или иных исключительных обстоятельств."
+    ],
+    "subclass_levels": "/api/2014/subclasses/draconic/levels"
+  },
+  {
+    "index": "fiend",
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    },
+    "name": "Бестия",
+    "subclass_flavor": "Покровитель из иного мира",
+    "desc": [
+      "Вы заключили контракт с бестией из низших планов существования — существом, чьи цели несут зло, даже если вы сами пытаетесь противостоять им. Такие сущности жаждут развращения или уничтожения всего сущего, включая в конечном итоге и вас. К бестиям, достаточно могущественным для заключения пакта, относятся лорды демонов, такие как Демогоргон, Оркус, Фраз-Урб-лу и Бафомет; архидьяволы, такие как Асмодей, Диспатер, Мефистофель и Белиал; особо могучие ледяные дьяволы и балоры; а также ультролоты и другие лорды юголотов."
+    ],
+    "spells": [
+      {
+        "prerequisites": [
+          {
+            "index": "warlock-1",
+            "type": "level",
+            "name": "Колдун 1"
+          }
+        ],
+        "spell": {
+          "index": "burning-hands",
+          "name": "Горящие руки"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "warlock-1",
+            "type": "level",
+            "name": "Колдун 1"
+          }
+        ],
+        "spell": {
+          "index": "command",
+          "name": "Приказ"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "warlock-3",
+            "type": "level",
+            "name": "Колдун 3"
+          }
+        ],
+        "spell": {
+          "index": "blindness-deafness",
+          "name": "Слепота/Глухота"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "warlock-3",
+            "type": "level",
+            "name": "Колдун 3"
+          }
+        ],
+        "spell": {
+          "index": "scorching-ray",
+          "name": "Палящий луч"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "warlock-5",
+            "type": "level",
+            "name": "Колдун 5"
+          }
+        ],
+        "spell": {
+          "index": "fireball",
+          "name": "Огненный шар"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "warlock-5",
+            "type": "level",
+            "name": "Колдун 5"
+          }
+        ],
+        "spell": {
+          "index": "stinking-cloud",
+          "name": "Зловонное облако"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "warlock-7",
+            "type": "level",
+            "name": "Колдун 7"
+          }
+        ],
+        "spell": {
+          "index": "fire-shield",
+          "name": "Огненный щит"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "warlock-7",
+            "type": "level",
+            "name": "Колдун 7"
+          }
+        ],
+        "spell": {
+          "index": "wall-of-fire",
+          "name": "Огненная стена"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "warlock-9",
+            "type": "level",
+            "name": "Колдун 9"
+          }
+        ],
+        "spell": {
+          "index": "flame-strike",
+          "name": "Огненный удар"
+        }
+      },
+      {
+        "prerequisites": [
+          {
+            "index": "warlock-9",
+            "type": "level",
+            "name": "Колдун 9"
+          }
+        ],
+        "spell": {
+          "index": "hallow",
+          "name": "Освящение"
+        }
+      }
+    ],
+    "subclass_levels": "/api/2014/subclasses/fiend/levels"
+  },
+  {
+    "index": "evocation",
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    },
+    "name": "Воплощение",
+    "subclass_flavor": "Магическая традиция",
+    "desc": [
+      "Вы сосредотачиваете свое обучение на магии, которая создает мощные стихийные эффекты, такие как лютый холод, обжигающее пламя, грохочущий гром, треск молнии и едкая кислота. Некоторые эвокаторы находят работу в армии, служа артиллерией для уничтожения вражеских войск издалека. Другие используют свои зрелищные способности для защиты слабых, а кто-то ищет собственной выгоды как бандит, искатель приключений или честолюбивый тиран."
+    ],
+    "subclass_levels": "/api/2014/subclasses/evocation/levels"
+  }
+]

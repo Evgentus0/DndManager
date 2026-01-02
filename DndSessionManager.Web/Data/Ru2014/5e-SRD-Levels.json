@@ -1,0 +1,8273 @@
+[
+  {
+    "level": 1,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "rage",
+        "name": "Ярость"
+      },
+      {
+        "index": "barbarian-unarmored-defense",
+        "name": "Защита без доспехов"
+      }
+    ],
+    "class_specific": {
+      "rage_count": 2,
+      "rage_damage_bonus": 2,
+      "brutal_critical_dice": 0
+    },
+    "index": "barbarian-1",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    }
+  },
+  {
+    "level": 2,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "reckless-attack",
+        "name": "Безрассудная атака"
+      },
+      {
+        "index": "danger-sense",
+        "name": "Чувство опасности"
+      }
+    ],
+    "class_specific": {
+      "rage_count": 2,
+      "rage_damage_bonus": 2,
+      "brutal_critical_dice": 0
+    },
+    "index": "barbarian-2",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    }
+  },
+  {
+    "level": 3,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "primal-path",
+        "name": "Первобытный путь"
+      }
+    ],
+    "class_specific": {
+      "rage_count": 3,
+      "rage_damage_bonus": 2,
+      "brutal_critical_dice": 0
+    },
+    "index": "barbarian-3",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    }
+  },
+  {
+    "level": 4,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "barbarian-ability-score-improvement-1",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "rage_count": 3,
+      "rage_damage_bonus": 2,
+      "brutal_critical_dice": 0
+    },
+    "index": "barbarian-4",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    }
+  },
+  {
+    "level": 5,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "barbarian-extra-attack",
+        "name": "Дополнительная атака"
+      },
+      {
+        "index": "fast-movement",
+        "name": "Быстрое передвижение"
+      }
+    ],
+    "class_specific": {
+      "rage_count": 3,
+      "rage_damage_bonus": 2,
+      "brutal_critical_dice": 0
+    },
+    "index": "barbarian-5",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    }
+  },
+  {
+    "level": 6,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "primal-path-improvement-1",
+        "name": "Умение пути"
+      }
+    ],
+    "class_specific": {
+      "rage_count": 4,
+      "rage_damage_bonus": 2,
+      "brutal_critical_dice": 0
+    },
+    "index": "barbarian-6",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    }
+  },
+  {
+    "level": 7,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "feral-instinct",
+        "name": "Дикий инстинкт"
+      }
+    ],
+    "class_specific": {
+      "rage_count": 4,
+      "rage_damage_bonus": 2,
+      "brutal_critical_dice": 0
+    },
+    "index": "barbarian-7",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    }
+  },
+  {
+    "level": 8,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "barbarian-ability-score-improvement-2",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "rage_count": 4,
+      "rage_damage_bonus": 2,
+      "brutal_critical_dice": 0
+    },
+    "index": "barbarian-8",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    }
+  },
+  {
+    "level": 9,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "brutal-critical-1-die",
+        "name": "Дикий критический удар (1 кость)"
+      }
+    ],
+    "class_specific": {
+      "rage_count": 4,
+      "rage_damage_bonus": 3,
+      "brutal_critical_dice": 1
+    },
+    "index": "barbarian-9",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    }
+  },
+  {
+    "level": 10,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "primal-path-improvement-2",
+        "name": "Умение пути"
+      }
+    ],
+    "class_specific": {
+      "rage_count": 4,
+      "rage_damage_bonus": 3,
+      "brutal_critical_dice": 1
+    },
+    "index": "barbarian-10",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    }
+  },
+  {
+    "level": 11,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "relentless-rage",
+        "name": "Неумолимая ярость"
+      }
+    ],
+    "class_specific": {
+      "rage_count": 4,
+      "rage_damage_bonus": 3,
+      "brutal_critical_dice": 1
+    },
+    "index": "barbarian-11",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    }
+  },
+  {
+    "level": 12,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "barbarian-ability-score-improvement-3",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "rage_count": 5,
+      "rage_damage_bonus": 3,
+      "brutal_critical_dice": 1
+    },
+    "index": "barbarian-12",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    }
+  },
+  {
+    "level": 13,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "brutal-critical-2-dice",
+        "name": "Дикий критический удар (2 кости)"
+      }
+    ],
+    "class_specific": {
+      "rage_count": 5,
+      "rage_damage_bonus": 3,
+      "brutal_critical_dice": 2
+    },
+    "index": "barbarian-13",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    }
+  },
+  {
+    "level": 14,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "primal-path-improvement-3",
+        "name": "Умение пути"
+      }
+    ],
+    "class_specific": {
+      "rage_count": 5,
+      "rage_damage_bonus": 3,
+      "brutal_critical_dice": 2
+    },
+    "index": "barbarian-14",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    }
+  },
+  {
+    "level": 15,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "persistent-rage",
+        "name": "Непрекращающаяся ярость"
+      }
+    ],
+    "class_specific": {
+      "rage_count": 5,
+      "rage_damage_bonus": 3,
+      "brutal_critical_dice": 2
+    },
+    "index": "barbarian-15",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    }
+  },
+  {
+    "level": 16,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "barbarian-ability-score-improvement-4",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "rage_count": 5,
+      "rage_damage_bonus": 4,
+      "brutal_critical_dice": 2
+    },
+    "index": "barbarian-16",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    }
+  },
+  {
+    "level": 17,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "brutal-critical-3-dice",
+        "name": "Дикий критический удар (3 кости)"
+      }
+    ],
+    "class_specific": {
+      "rage_count": 6,
+      "rage_damage_bonus": 4,
+      "brutal_critical_dice": 3
+    },
+    "index": "barbarian-17",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    }
+  },
+  {
+    "level": 18,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "indomitable-might",
+        "name": "Неукротимая мощь"
+      }
+    ],
+    "class_specific": {
+      "rage_count": 6,
+      "rage_damage_bonus": 4,
+      "brutal_critical_dice": 3
+    },
+    "index": "barbarian-18",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    }
+  },
+  {
+    "level": 19,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "barbarian-ability-score-improvement-5",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "rage_count": 6,
+      "rage_damage_bonus": 4,
+      "brutal_critical_dice": 3
+    },
+    "index": "barbarian-19",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    }
+  },
+  {
+    "level": 20,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "primal-champion",
+        "name": "Первобытный чемпион"
+      }
+    ],
+    "class_specific": {
+      "rage_count": 9999,
+      "rage_damage_bonus": 4,
+      "brutal_critical_dice": 3
+    },
+    "index": "barbarian-20",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    }
+  },
+  {
+    "level": 1,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "spellcasting-bard",
+        "name": "Использование заклинаний: Бард"
+      },
+      {
+        "index": "bardic-inspiration-d6",
+        "name": "Вдохновение барда (d6)"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 2,
+      "spells_known": 4,
+      "spell_slots_level_1": 2,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "bardic_inspiration_die": 6,
+      "song_of_rest_die": 0,
+      "magical_secrets_max_5": 0,
+      "magical_secrets_max_7": 0,
+      "magical_secrets_max_9": 0
+    },
+    "index": "bard-1",
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    }
+  },
+  {
+    "level": 2,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "jack-of-all-trades",
+        "name": "Мастер на все руки"
+      },
+      {
+        "index": "song-of-rest-d6",
+        "name": "Песнь отдыха (d6)"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 2,
+      "spells_known": 5,
+      "spell_slots_level_1": 3,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "bardic_inspiration_die": 6,
+      "song_of_rest_die": 6,
+      "magical_secrets_max_5": 0,
+      "magical_secrets_max_7": 0,
+      "magical_secrets_max_9": 0
+    },
+    "index": "bard-2",
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    }
+  },
+  {
+    "level": 3,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "bard-expertise-1",
+        "name": "Познания"
+      },
+      {
+        "index": "bard-college",
+        "name": "Коллегия бардов"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 2,
+      "spells_known": 6,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 2,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "bardic_inspiration_die": 6,
+      "song_of_rest_die": 6,
+      "magical_secrets_max_5": 0,
+      "magical_secrets_max_7": 0,
+      "magical_secrets_max_9": 0
+    },
+    "index": "bard-3",
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    }
+  },
+  {
+    "level": 4,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "bard-ability-score-improvement-1",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spells_known": 7,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "bardic_inspiration_die": 6,
+      "song_of_rest_die": 6,
+      "magical_secrets_max_5": 0,
+      "magical_secrets_max_7": 0,
+      "magical_secrets_max_9": 0
+    },
+    "index": "bard-4",
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    }
+  },
+  {
+    "level": 5,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "bardic-inspiration-d8",
+        "name": "Вдохновение барда (d8)"
+      },
+      {
+        "index": "font-of-inspiration",
+        "name": "Источник вдохновения"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spells_known": 8,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 2,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "bardic_inspiration_die": 8,
+      "song_of_rest_die": 6,
+      "magical_secrets_max_5": 0,
+      "magical_secrets_max_7": 0,
+      "magical_secrets_max_9": 0
+    },
+    "index": "bard-5",
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    }
+  },
+  {
+    "level": 6,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "countercharm",
+        "name": "Контрочарование"
+      },
+      {
+        "index": "bard-college-improvement-1",
+        "name": "Умение коллегии бардов"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spells_known": 9,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "bardic_inspiration_die": 8,
+      "song_of_rest_die": 6,
+      "magical_secrets_max_5": 0,
+      "magical_secrets_max_7": 0,
+      "magical_secrets_max_9": 0
+    },
+    "index": "bard-6",
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    }
+  },
+  {
+    "level": 7,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spells_known": 10,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 1,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "bardic_inspiration_die": 8,
+      "song_of_rest_die": 6,
+      "magical_secrets_max_5": 0,
+      "magical_secrets_max_7": 0,
+      "magical_secrets_max_9": 0
+    },
+    "index": "bard-7",
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    }
+  },
+  {
+    "level": 8,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "bard-ability-score-improvement-2",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spells_known": 11,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 2,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "bardic_inspiration_die": 8,
+      "song_of_rest_die": 6,
+      "magical_secrets_max_5": 0,
+      "magical_secrets_max_7": 0,
+      "magical_secrets_max_9": 0
+    },
+    "index": "bard-8",
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    }
+  },
+  {
+    "level": 9,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "song-of-rest-d8",
+        "name": "Песнь отдыха (d8)"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spells_known": 12,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 1,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "bardic_inspiration_die": 8,
+      "song_of_rest_die": 8,
+      "magical_secrets_max_5": 0,
+      "magical_secrets_max_7": 0,
+      "magical_secrets_max_9": 0
+    },
+    "index": "bard-9",
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    }
+  },
+  {
+    "level": 10,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "bard-expertise-2",
+        "name": "Познания"
+      },
+      {
+        "index": "bardic-inspiration-d10",
+        "name": "Вдохновение барда (d10)"
+      },
+      {
+        "index": "magical-secrets-1",
+        "name": "Магические секреты"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 14,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "bardic_inspiration_die": 10,
+      "song_of_rest_die": 8,
+      "magical_secrets_max_5": 2,
+      "magical_secrets_max_7": 0,
+      "magical_secrets_max_9": 0
+    },
+    "index": "bard-10",
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    }
+  },
+  {
+    "level": 11,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 15,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "bardic_inspiration_die": 10,
+      "song_of_rest_die": 8,
+      "magical_secrets_max_5": 2,
+      "magical_secrets_max_7": 0,
+      "magical_secrets_max_9": 0
+    },
+    "index": "bard-11",
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    }
+  },
+  {
+    "level": 12,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "bard-ability-score-improvement-3",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 15,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "bardic_inspiration_die": 10,
+      "song_of_rest_die": 8,
+      "magical_secrets_max_5": 2,
+      "magical_secrets_max_7": 0,
+      "magical_secrets_max_9": 0
+    },
+    "index": "bard-12",
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    }
+  },
+  {
+    "level": 13,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "song-of-rest-d10",
+        "name": "Песнь отдыха (d10)"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 16,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "bardic_inspiration_die": 10,
+      "song_of_rest_die": 10,
+      "magical_secrets_max_5": 2,
+      "magical_secrets_max_7": 0,
+      "magical_secrets_max_9": 0
+    },
+    "index": "bard-13",
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    }
+  },
+  {
+    "level": 14,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "magical-secrets-2",
+        "name": "Магические секреты"
+      },
+      {
+        "index": "bard-college-improvement-2",
+        "name": "Умение коллегии бардов"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 18,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "bardic_inspiration_die": 10,
+      "song_of_rest_die": 10,
+      "magical_secrets_max_5": 2,
+      "magical_secrets_max_7": 2,
+      "magical_secrets_max_9": 0
+    },
+    "index": "bard-14",
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    }
+  },
+  {
+    "level": 15,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "bardic-inspiration-d12",
+        "name": "Вдохновение барда (d12)"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 19,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "bardic_inspiration_die": 12,
+      "song_of_rest_die": 10,
+      "magical_secrets_max_5": 2,
+      "magical_secrets_max_7": 2,
+      "magical_secrets_max_9": 0
+    },
+    "index": "bard-15",
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    }
+  },
+  {
+    "level": 16,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "bard-ability-score-improvement-4",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 19,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "bardic_inspiration_die": 12,
+      "song_of_rest_die": 10,
+      "magical_secrets_max_5": 2,
+      "magical_secrets_max_7": 2,
+      "magical_secrets_max_9": 0
+    },
+    "index": "bard-16",
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    }
+  },
+  {
+    "level": 17,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "song-of-rest-d12",
+        "name": "Песнь отдыха (d12)"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 20,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 1
+    },
+    "class_specific": {
+      "bardic_inspiration_die": 12,
+      "song_of_rest_die": 12,
+      "magical_secrets_max_5": 2,
+      "magical_secrets_max_7": 2,
+      "magical_secrets_max_9": 0
+    },
+    "index": "bard-17",
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    }
+  },
+  {
+    "level": 18,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "magical-secrets-3",
+        "name": "Магические секреты"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 22,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 3,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 1
+    },
+    "class_specific": {
+      "bardic_inspiration_die": 12,
+      "song_of_rest_die": 12,
+      "magical_secrets_max_5": 2,
+      "magical_secrets_max_7": 2,
+      "magical_secrets_max_9": 2
+    },
+    "index": "bard-18",
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    }
+  },
+  {
+    "level": 19,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "bard-ability-score-improvement-5",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 22,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 3,
+      "spell_slots_level_6": 2,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 1
+    },
+    "class_specific": {
+      "bardic_inspiration_die": 12,
+      "song_of_rest_die": 12,
+      "magical_secrets_max_5": 2,
+      "magical_secrets_max_7": 2,
+      "magical_secrets_max_9": 2
+    },
+    "index": "bard-19",
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    }
+  },
+  {
+    "level": 20,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "superior-inspiration",
+        "name": "Высшее вдохновение"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 22,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 3,
+      "spell_slots_level_6": 2,
+      "spell_slots_level_7": 2,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 1
+    },
+    "class_specific": {
+      "bardic_inspiration_die": 12,
+      "song_of_rest_die": 12,
+      "magical_secrets_max_5": 2,
+      "magical_secrets_max_7": 2,
+      "magical_secrets_max_9": 2
+    },
+    "index": "bard-20",
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    }
+  },
+  {
+    "level": 1,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "spellcasting-cleric",
+        "name": "Использование заклинаний: Жрец"
+      },
+      {
+        "index": "divine-domain",
+        "name": "Божественный домен"
+      },
+      {
+        "index": "domain-spells-1",
+        "name": "Заклинания домена"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spell_slots_level_1": 2,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "channel_divinity_charges": 0,
+      "destroy_undead_cr": 0
+    },
+    "index": "cleric-1",
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    }
+  },
+  {
+    "level": 2,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "channel-divinity-1-rest",
+        "name": "Божественный канал (1/отдых)"
+      },
+      {
+        "index": "channel-divinity-turn-undead",
+        "name": "Божественный канал: Изгнание нежити"
+      },
+      {
+        "index": "divine-domain-improvement-1",
+        "name": "Умение божественного домена"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spell_slots_level_1": 3,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "channel_divinity_charges": 1,
+      "destroy_undead_cr": 0
+    },
+    "index": "cleric-2",
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    }
+  },
+  {
+    "level": 3,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "domain-spells-2",
+        "name": "Заклинания домена"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 2,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "channel_divinity_charges": 1,
+      "destroy_undead_cr": 0
+    },
+    "index": "cleric-3",
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    }
+  },
+  {
+    "level": 4,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "cleric-ability-score-improvement-1",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "channel_divinity_charges": 1,
+      "destroy_undead_cr": 0
+    },
+    "index": "cleric-4",
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    }
+  },
+  {
+    "level": 5,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "domain-spells-3",
+        "name": "Заклинания домена"
+      },
+      {
+        "index": "destroy-undead-cr-1-2-or-below",
+        "name": "Уничтожение нежити (Опасность 1/2 или ниже)"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 2,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "channel_divinity_charges": 1,
+      "destroy_undead_cr": 0.5
+    },
+    "index": "cleric-5",
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    }
+  },
+  {
+    "level": 6,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "channel-divinity-2-rest",
+        "name": "Божественный канал (2/отдых)"
+      },
+      {
+        "index": "divine-domain-improvement-2",
+        "name": "Умение божественного домена"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "channel_divinity_charges": 2,
+      "destroy_undead_cr": 0.5
+    },
+    "index": "cleric-6",
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    }
+  },
+  {
+    "level": 7,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "domain-spells-4",
+        "name": "Заклинания домена"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 1,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "channel_divinity_charges": 2,
+      "destroy_undead_cr": 0.5
+    },
+    "index": "cleric-7",
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    }
+  },
+  {
+    "level": 8,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "cleric-ability-score-improvement-2",
+        "name": "Увеличение характеристик"
+      },
+      {
+        "index": "destroy-undead-cr-1-or-below",
+        "name": "Уничтожение нежити (Опасность 1 или ниже)"
+      },
+      {
+        "index": "divine-domain-improvement-3",
+        "name": "Умение божественного домена"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 2,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "channel_divinity_charges": 2,
+      "destroy_undead_cr": 1
+    },
+    "index": "cleric-8",
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    }
+  },
+  {
+    "level": 9,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "domain-spells-5",
+        "name": "Заклинания домена"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 1,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "channel_divinity_charges": 2,
+      "destroy_undead_cr": 1
+    },
+    "index": "cleric-9",
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    }
+  },
+  {
+    "level": 10,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "divine-intervention",
+        "name": "Божественное вмешательство"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "channel_divinity_charges": 2,
+      "destroy_undead_cr": 1
+    },
+    "index": "cleric-10",
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    }
+  },
+  {
+    "level": 11,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "destroy-undead-cr-2-or-below",
+        "name": "Уничтожение нежити (Опасность 2 или ниже)"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "channel_divinity_charges": 2,
+      "destroy_undead_cr": 2
+    },
+    "index": "cleric-11",
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    }
+  },
+  {
+    "level": 12,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "cleric-ability-score-improvement-3",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "channel_divinity_charges": 2,
+      "destroy_undead_cr": 2
+    },
+    "index": "cleric-12",
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    }
+  },
+  {
+    "level": 13,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "channel_divinity_charges": 2,
+      "destroy_undead_cr": 2
+    },
+    "index": "cleric-13",
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    }
+  },
+  {
+    "level": 14,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "destroy-undead-cr-3-or-below",
+        "name": "Уничтожение нежити (Опасность 3 или ниже)"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "channel_divinity_charges": 2,
+      "destroy_undead_cr": 3
+    },
+    "index": "cleric-14",
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    }
+  },
+  {
+    "level": 15,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "channel_divinity_charges": 2,
+      "destroy_undead_cr": 3
+    },
+    "index": "cleric-15",
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    }
+  },
+  {
+    "level": 16,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "cleric-ability-score-improvement-4",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "channel_divinity_charges": 2,
+      "destroy_undead_cr": 3
+    },
+    "index": "cleric-16",
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    }
+  },
+  {
+    "level": 17,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "destroy-undead-cr-4-or-below",
+        "name": "Уничтожение нежити (Опасность 4 или ниже)"
+      },
+      {
+        "index": "divine-domain-improvement-4",
+        "name": "Умение божественного домена"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 1
+    },
+    "class_specific": {
+      "channel_divinity_charges": 2,
+      "destroy_undead_cr": 4
+    },
+    "index": "cleric-17",
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    }
+  },
+  {
+    "level": 18,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "channel-divinity-3-rest",
+        "name": "Божественный канал (3/отдых)"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 3,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 1
+    },
+    "class_specific": {
+      "channel_divinity_charges": 3,
+      "destroy_undead_cr": 4
+    },
+    "index": "cleric-18",
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    }
+  },
+  {
+    "level": 19,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "cleric-ability-score-improvement-5",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 3,
+      "spell_slots_level_6": 2,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 1
+    },
+    "class_specific": {
+      "channel_divinity_charges": 3,
+      "destroy_undead_cr": 4
+    },
+    "index": "cleric-19",
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    }
+  },
+  {
+    "level": 20,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "divine-intervention-improvement",
+        "name": "Улучшенное божественное вмешательство"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 3,
+      "spell_slots_level_6": 2,
+      "spell_slots_level_7": 2,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 1
+    },
+    "class_specific": {
+      "channel_divinity_charges": 3,
+      "destroy_undead_cr": 4
+    },
+    "index": "cleric-20",
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    }
+  },
+  {
+    "level": 1,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "spellcasting-druid",
+        "name": "Использование заклинаний: Друид"
+      },
+      {
+        "index": "druidic",
+        "name": "Друидический язык"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 2,
+      "spell_slots_level_1": 2,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "wild_shape_max_cr": 0,
+      "wild_shape_swim": false,
+      "wild_shape_fly": false
+    },
+    "index": "druid-1",
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    }
+  },
+  {
+    "level": 2,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "wild-shape-cr-1-4-or-below-no-flying-or-swim-speed",
+        "name": "Дикий облик (Опасность 1/4 или ниже, без полета и плавания)"
+      },
+      {
+        "index": "druid-circle",
+        "name": "Друидический круг"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 2,
+      "spell_slots_level_1": 3,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "wild_shape_max_cr": 0.25,
+      "wild_shape_swim": false,
+      "wild_shape_fly": false
+    },
+    "index": "druid-2",
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    }
+  },
+  {
+    "level": 3,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 2,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 2,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "wild_shape_max_cr": 0.25,
+      "wild_shape_swim": false,
+      "wild_shape_fly": false
+    },
+    "index": "druid-3",
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    }
+  },
+  {
+    "level": 4,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "wild-shape-cr-1-2-or-below-no-flying-speed",
+        "name": "Дикий облик (Опасность 1/2 или ниже, без полета)"
+      },
+      {
+        "index": "druid-ability-score-improvement-1",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "wild_shape_max_cr": 0.5,
+      "wild_shape_swim": true,
+      "wild_shape_fly": false
+    },
+    "index": "druid-4",
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    }
+  },
+  {
+    "level": 5,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 2,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "wild_shape_max_cr": 0.5,
+      "wild_shape_swim": true,
+      "wild_shape_fly": false
+    },
+    "index": "druid-5",
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    }
+  },
+  {
+    "level": 6,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "druid-circle-improvement-1",
+        "name": "Умение друидического круга"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "wild_shape_max_cr": 0.5,
+      "wild_shape_swim": true,
+      "wild_shape_fly": false
+    },
+    "index": "druid-6",
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    }
+  },
+  {
+    "level": 7,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 1,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "wild_shape_max_cr": 1,
+      "wild_shape_swim": true,
+      "wild_shape_fly": false
+    },
+    "index": "druid-7",
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    }
+  },
+  {
+    "level": 8,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "wild-shape-cr-1-or-below",
+        "name": "Дикий облик (Опасность 1 или ниже)"
+      },
+      {
+        "index": "druid-ability-score-improvement-2",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 2,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "wild_shape_max_cr": 1,
+      "wild_shape_swim": true,
+      "wild_shape_fly": true
+    },
+    "index": "druid-8",
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    }
+  },
+  {
+    "level": 9,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 1,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "wild_shape_max_cr": 1,
+      "wild_shape_swim": true,
+      "wild_shape_fly": true
+    },
+    "index": "druid-9",
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    }
+  },
+  {
+    "level": 10,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "druid-circle-improvement-2",
+        "name": "Умение друидического круга"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "wild_shape_max_cr": 1,
+      "wild_shape_swim": true,
+      "wild_shape_fly": true
+    },
+    "index": "druid-10",
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    }
+  },
+  {
+    "level": 11,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "wild_shape_max_cr": 1,
+      "wild_shape_swim": true,
+      "wild_shape_fly": true
+    },
+    "index": "druid-11",
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    }
+  },
+  {
+    "level": 12,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "druid-ability-score-improvement-3",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "wild_shape_max_cr": 1,
+      "wild_shape_swim": true,
+      "wild_shape_fly": true
+    },
+    "index": "druid-12",
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    }
+  },
+  {
+    "level": 13,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "wild_shape_max_cr": 1,
+      "wild_shape_swim": true,
+      "wild_shape_fly": true
+    },
+    "index": "druid-13",
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    }
+  },
+  {
+    "level": 14,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "druid-circle-improvement-3",
+        "name": "Умение друидического круга"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "wild_shape_max_cr": 1,
+      "wild_shape_swim": true,
+      "wild_shape_fly": true
+    },
+    "index": "druid-14",
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    }
+  },
+  {
+    "level": 15,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "wild_shape_max_cr": 1,
+      "wild_shape_swim": true,
+      "wild_shape_fly": true
+    },
+    "index": "druid-15",
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    }
+  },
+  {
+    "level": 16,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "druid-ability-score-improvement-4",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "wild_shape_max_cr": 1,
+      "wild_shape_swim": true,
+      "wild_shape_fly": true
+    },
+    "index": "druid-16",
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    }
+  },
+  {
+    "level": 17,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 1
+    },
+    "class_specific": {
+      "wild_shape_max_cr": 1,
+      "wild_shape_swim": true,
+      "wild_shape_fly": true
+    },
+    "index": "druid-17",
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    }
+  },
+  {
+    "level": 18,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "druid-timeless-body",
+        "name": "Безвозрастное тело"
+      },
+      {
+        "index": "beast-spells",
+        "name": "Заклинания зверя"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 3,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 1
+    },
+    "class_specific": {
+      "wild_shape_max_cr": 1,
+      "wild_shape_swim": true,
+      "wild_shape_fly": true
+    },
+    "index": "druid-18",
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    }
+  },
+  {
+    "level": 19,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "druid-ability-score-improvement-5",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 3,
+      "spell_slots_level_6": 2,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 1
+    },
+    "class_specific": {
+      "wild_shape_max_cr": 1,
+      "wild_shape_swim": true,
+      "wild_shape_fly": true
+    },
+    "index": "druid-19",
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    }
+  },
+  {
+    "level": 20,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "archdruid",
+        "name": "Архидруид"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 3,
+      "spell_slots_level_6": 2,
+      "spell_slots_level_7": 2,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 1
+    },
+    "class_specific": {
+      "wild_shape_max_cr": 1,
+      "wild_shape_swim": true,
+      "wild_shape_fly": true
+    },
+    "index": "druid-20",
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    }
+  },
+  {
+    "level": 1,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "fighter-fighting-style",
+        "name": "Боевой стиль"
+      },
+      {
+        "index": "second-wind",
+        "name": "Второе дыхание"
+      }
+    ],
+    "class_specific": {
+      "action_surges": 0,
+      "indomitable_uses": 0,
+      "extra_attacks": 0
+    },
+    "index": "fighter-1",
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    }
+  },
+  {
+    "level": 2,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "action-surge-1-use",
+        "name": "Всплеск действий (1 использование)"
+      }
+    ],
+    "class_specific": {
+      "action_surges": 1,
+      "indomitable_uses": 0,
+      "extra_attacks": 0
+    },
+    "index": "fighter-2",
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    }
+  },
+  {
+    "level": 3,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "martial-archetype",
+        "name": "Воинский архетип"
+      }
+    ],
+    "class_specific": {
+      "action_surges": 1,
+      "indomitable_uses": 0,
+      "extra_attacks": 0
+    },
+    "index": "fighter-3",
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    }
+  },
+  {
+    "level": 4,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "fighter-ability-score-improvement-1",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "action_surges": 1,
+      "indomitable_uses": 0,
+      "extra_attacks": 0
+    },
+    "index": "fighter-4",
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    }
+  },
+  {
+    "level": 5,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "extra-attack-1",
+        "name": "Дополнительная атака"
+      }
+    ],
+    "class_specific": {
+      "action_surges": 1,
+      "indomitable_uses": 0,
+      "extra_attacks": 1
+    },
+    "index": "fighter-5",
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    }
+  },
+  {
+    "level": 6,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "fighter-ability-score-improvement-2",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "action_surges": 1,
+      "indomitable_uses": 0,
+      "extra_attacks": 1
+    },
+    "index": "fighter-6",
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    }
+  },
+  {
+    "level": 7,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "martial-archetype-improvement-1",
+        "name": "Умение воинского архетипа"
+      }
+    ],
+    "class_specific": {
+      "action_surges": 1,
+      "indomitable_uses": 0,
+      "extra_attacks": 1
+    },
+    "index": "fighter-7",
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    }
+  },
+  {
+    "level": 8,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "fighter-ability-score-improvement-3",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "action_surges": 1,
+      "indomitable_uses": 0,
+      "extra_attacks": 1
+    },
+    "index": "fighter-8",
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    }
+  },
+  {
+    "level": 9,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "indomitable-1-use",
+        "name": "Неукротимость (1 использование)"
+      }
+    ],
+    "class_specific": {
+      "action_surges": 1,
+      "indomitable_uses": 1,
+      "extra_attacks": 1
+    },
+    "index": "fighter-9",
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    }
+  },
+  {
+    "level": 10,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "martial-archetype-improvement-2",
+        "name": "Умение воинского архетипа"
+      }
+    ],
+    "class_specific": {
+      "action_surges": 1,
+      "indomitable_uses": 1,
+      "extra_attacks": 1
+    },
+    "index": "fighter-10",
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    }
+  },
+  {
+    "level": 11,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "extra-attack-2",
+        "name": "Дополнительная атака (2)"
+      }
+    ],
+    "class_specific": {
+      "action_surges": 1,
+      "indomitable_uses": 1,
+      "extra_attacks": 2
+    },
+    "index": "fighter-11",
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    }
+  },
+  {
+    "level": 12,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "fighter-ability-score-improvement-4",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "action_surges": 1,
+      "indomitable_uses": 1,
+      "extra_attacks": 2
+    },
+    "index": "fighter-12",
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    }
+  },
+  {
+    "level": 13,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "indomitable-2-uses",
+        "name": "Неукротимость (2 использования)"
+      }
+    ],
+    "class_specific": {
+      "action_surges": 1,
+      "indomitable_uses": 2,
+      "extra_attacks": 2
+    },
+    "index": "fighter-13",
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    }
+  },
+  {
+    "level": 14,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "fighter-ability-score-improvement-5",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "action_surges": 1,
+      "indomitable_uses": 2,
+      "extra_attacks": 2
+    },
+    "index": "fighter-14",
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    }
+  },
+  {
+    "level": 15,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "martial-archetype-improvement-3",
+        "name": "Умение воинского архетипа"
+      }
+    ],
+    "class_specific": {
+      "action_surges": 1,
+      "indomitable_uses": 2,
+      "extra_attacks": 2
+    },
+    "index": "fighter-15",
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    }
+  },
+  {
+    "level": 16,
+    "ability_score_bonuses": 6,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "fighter-ability-score-improvement-6",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "action_surges": 1,
+      "indomitable_uses": 2,
+      "extra_attacks": 2
+    },
+    "index": "fighter-16",
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    }
+  },
+  {
+    "level": 17,
+    "ability_score_bonuses": 6,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "action-surge-2-uses",
+        "name": "Всплеск действий (2 использования)"
+      },
+      {
+        "index": "indomitable-3-uses",
+        "name": "Неукротимость (3 использования)"
+      }
+    ],
+    "class_specific": {
+      "action_surges": 2,
+      "indomitable_uses": 3,
+      "extra_attacks": 2
+    },
+    "index": "fighter-17",
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    }
+  },
+  {
+    "level": 18,
+    "ability_score_bonuses": 6,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "martial-archetype-improvement-4",
+        "name": "Умение воинского архетипа"
+      }
+    ],
+    "class_specific": {
+      "action_surges": 2,
+      "indomitable_uses": 3,
+      "extra_attacks": 2
+    },
+    "index": "fighter-18",
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    }
+  },
+  {
+    "level": 19,
+    "ability_score_bonuses": 7,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "fighter-ability-score-improvement-7",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "action_surges": 2,
+      "indomitable_uses": 3,
+      "extra_attacks": 2
+    },
+    "index": "fighter-19",
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    }
+  },
+  {
+    "level": 20,
+    "ability_score_bonuses": 7,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "extra-attack-3",
+        "name": "Дополнительная атака (3)"
+      }
+    ],
+    "class_specific": {
+      "action_surges": 2,
+      "indomitable_uses": 3,
+      "extra_attacks": 3
+    },
+    "index": "fighter-20",
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    }
+  },
+  {
+    "level": 1,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "monk-unarmored-defense",
+        "name": "Защита без доспехов"
+      },
+      {
+        "index": "martial-arts",
+        "name": "Боевые искусства"
+      }
+    ],
+    "class_specific": {
+      "martial_arts": {
+        "dice_count": 1,
+        "dice_value": 4
+      },
+      "ki_points": 0,
+      "unarmored_movement": 0
+    },
+    "index": "monk-1",
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    }
+  },
+  {
+    "level": 2,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "ki",
+        "name": "Ци"
+      },
+      {
+        "index": "flurry-of-blows",
+        "name": "Шквал ударов"
+      },
+      {
+        "index": "patient-defense",
+        "name": "Терпеливая оборона"
+      },
+      {
+        "index": "step-of-the-wind",
+        "name": "Шаг ветра"
+      },
+      {
+        "index": "unarmored-movement-1",
+        "name": "Движение без доспехов"
+      }
+    ],
+    "class_specific": {
+      "martial_arts": {
+        "dice_count": 1,
+        "dice_value": 4
+      },
+      "ki_points": 2,
+      "unarmored_movement": 10
+    },
+    "index": "monk-2",
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    }
+  },
+  {
+    "level": 3,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "monastic-tradition",
+        "name": "Монашеская традиция"
+      },
+      {
+        "index": "deflect-missiles",
+        "name": "Отражение снарядов"
+      }
+    ],
+    "class_specific": {
+      "martial_arts": {
+        "dice_count": 1,
+        "dice_value": 4
+      },
+      "ki_points": 3,
+      "unarmored_movement": 10
+    },
+    "index": "monk-3",
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    }
+  },
+  {
+    "level": 4,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "monk-ability-score-improvement-1",
+        "name": "Увеличение характеристик"
+      },
+      {
+        "index": "slow-fall",
+        "name": "Медленное падение"
+      }
+    ],
+    "class_specific": {
+      "martial_arts": {
+        "dice_count": 1,
+        "dice_value": 4
+      },
+      "ki_points": 4,
+      "unarmored_movement": 10
+    },
+    "index": "monk-4",
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    }
+  },
+  {
+    "level": 5,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "monk-extra-attack",
+        "name": "Дополнительная атака"
+      },
+      {
+        "index": "stunning-strike",
+        "name": "Ошеломляющий удар"
+      }
+    ],
+    "class_specific": {
+      "martial_arts": {
+        "dice_count": 1,
+        "dice_value": 6
+      },
+      "ki_points": 5,
+      "unarmored_movement": 10
+    },
+    "index": "monk-5",
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    }
+  },
+  {
+    "level": 6,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "ki-empowered-strikes",
+        "name": "Удары, заряженные Ци"
+      },
+      {
+        "index": "monastic-tradition-improvement-1",
+        "name": "Умение монашеской традиции"
+      }
+    ],
+    "class_specific": {
+      "martial_arts": {
+        "dice_count": 1,
+        "dice_value": 6
+      },
+      "ki_points": 6,
+      "unarmored_movement": 15
+    },
+    "index": "monk-6",
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    }
+  },
+  {
+    "level": 7,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "monk-evasion",
+        "name": "Уклонение"
+      },
+      {
+        "index": "stillness-of-mind",
+        "name": "Спокойствие разума"
+      }
+    ],
+    "class_specific": {
+      "martial_arts": {
+        "dice_count": 1,
+        "dice_value": 6
+      },
+      "ki_points": 7,
+      "unarmored_movement": 15
+    },
+    "index": "monk-7",
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    }
+  },
+  {
+    "level": 8,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "monk-ability-score-improvement-2",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "martial_arts": {
+        "dice_count": 1,
+        "dice_value": 6
+      },
+      "ki_points": 8,
+      "unarmored_movement": 15
+    },
+    "index": "monk-8",
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    }
+  },
+  {
+    "level": 9,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "unarmored-movement-2",
+        "name": "Движение без доспехов"
+      }
+    ],
+    "class_specific": {
+      "martial_arts": {
+        "dice_count": 1,
+        "dice_value": 6
+      },
+      "ki_points": 9,
+      "unarmored_movement": 15
+    },
+    "index": "monk-9",
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    }
+  },
+  {
+    "level": 10,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "purity-of-body",
+        "name": "Чистота тела"
+      }
+    ],
+    "class_specific": {
+      "martial_arts": {
+        "dice_count": 1,
+        "dice_value": 6
+      },
+      "ki_points": 10,
+      "unarmored_movement": 20
+    },
+    "index": "monk-10",
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    }
+  },
+  {
+    "level": 11,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "monastic-tradition-improvement-2",
+        "name": "Умение монашеской традиции"
+      }
+    ],
+    "class_specific": {
+      "martial_arts": {
+        "dice_count": 1,
+        "dice_value": 8
+      },
+      "ki_points": 11,
+      "unarmored_movement": 20
+    },
+    "index": "monk-11",
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    }
+  },
+  {
+    "level": 12,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "monk-ability-score-improvement-3",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "martial_arts": {
+        "dice_count": 1,
+        "dice_value": 8
+      },
+      "ki_points": 12,
+      "unarmored_movement": 20
+    },
+    "index": "monk-12",
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    }
+  },
+  {
+    "level": 13,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "tongue-of-the-sun-and-moon",
+        "name": "Язык солнца и луны"
+      }
+    ],
+    "class_specific": {
+      "martial_arts": {
+        "dice_count": 1,
+        "dice_value": 8
+      },
+      "ki_points": 13,
+      "unarmored_movement": 20
+    },
+    "index": "monk-13",
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    }
+  },
+  {
+    "level": 14,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "diamond-soul",
+        "name": "Алмазная душа"
+      }
+    ],
+    "class_specific": {
+      "martial_arts": {
+        "dice_count": 1,
+        "dice_value": 8
+      },
+      "ki_points": 14,
+      "unarmored_movement": 25
+    },
+    "index": "monk-14",
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    }
+  },
+  {
+    "level": 15,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "monk-timeless-body",
+        "name": "Безвозрастное тело"
+      }
+    ],
+    "class_specific": {
+      "martial_arts": {
+        "dice_count": 1,
+        "dice_value": 8
+      },
+      "ki_points": 15,
+      "unarmored_movement": 25
+    },
+    "index": "monk-15",
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    }
+  },
+  {
+    "level": 16,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "monk-ability-score-improvement-4",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "martial_arts": {
+        "dice_count": 1,
+        "dice_value": 8
+      },
+      "ki_points": 16,
+      "unarmored_movement": 25
+    },
+    "index": "monk-16",
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    }
+  },
+  {
+    "level": 17,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "monastic-tradition-improvement-3",
+        "name": "Умение монашеской традиции"
+      }
+    ],
+    "class_specific": {
+      "martial_arts": {
+        "dice_count": 1,
+        "dice_value": 10
+      },
+      "ki_points": 17,
+      "unarmored_movement": 25
+    },
+    "index": "monk-17",
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    }
+  },
+  {
+    "level": 18,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "empty-body",
+        "name": "Пустое тело"
+      }
+    ],
+    "class_specific": {
+      "martial_arts": {
+        "dice_count": 1,
+        "dice_value": 10
+      },
+      "ki_points": 18,
+      "unarmored_movement": 30
+    },
+    "index": "monk-18",
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    }
+  },
+  {
+    "level": 19,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "monk-ability-score-improvement-5",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "martial_arts": {
+        "dice_count": 1,
+        "dice_value": 10
+      },
+      "ki_points": 19,
+      "unarmored_movement": 30
+    },
+    "index": "monk-19",
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    }
+  },
+  {
+    "level": 20,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "perfect-self",
+        "name": "Совершенство"
+      }
+    ],
+    "class_specific": {
+      "martial_arts": {
+        "dice_count": 1,
+        "dice_value": 10
+      },
+      "ki_points": 20,
+      "unarmored_movement": 30
+    },
+    "index": "monk-20",
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    }
+  },
+  {
+    "level": 1,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "divine-sense",
+        "name": "Божественное чувство"
+      },
+      {
+        "index": "lay-on-hands",
+        "name": "Наложение рук"
+      }
+    ],
+    "spellcasting": {
+      "spell_slots_level_1": 0,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "aura_range": 0
+    },
+    "index": "paladin-1",
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    }
+  },
+  {
+    "level": 2,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "paladin-fighting-style",
+        "name": "Боевой стиль"
+      },
+      {
+        "index": "spellcasting-paladin",
+        "name": "Использование заклинаний: Паладин"
+      },
+      {
+        "index": "divine-smite",
+        "name": "Божественная кара"
+      }
+    ],
+    "spellcasting": {
+      "spell_slots_level_1": 2,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "aura_range": 0
+    },
+    "index": "paladin-2",
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    }
+  },
+  {
+    "level": 3,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "divine-health",
+        "name": "Божественное здоровье"
+      },
+      {
+        "index": "sacred-oath",
+        "name": "Священная клятва"
+      },
+      {
+        "index": "oath-spells",
+        "name": "Заклинания клятвы"
+      },
+      {
+        "index": "channel-divinity",
+        "name": "Божественный канал"
+      }
+    ],
+    "spellcasting": {
+      "spell_slots_level_1": 3,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "aura_range": 0
+    },
+    "index": "paladin-3",
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    }
+  },
+  {
+    "level": 4,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "paladin-ability-score-improvement-1",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "spell_slots_level_1": 3,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "aura_range": 0
+    },
+    "index": "paladin-4",
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    }
+  },
+  {
+    "level": 5,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "paladin-extra-attack",
+        "name": "Дополнительная атака"
+      }
+    ],
+    "spellcasting": {
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 2,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "aura_range": 0
+    },
+    "index": "paladin-5",
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    }
+  },
+  {
+    "level": 6,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "aura-of-protection",
+        "name": "Аура защиты"
+      }
+    ],
+    "spellcasting": {
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 2,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "aura_range": 10
+    },
+    "index": "paladin-6",
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    }
+  },
+  {
+    "level": 7,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "sacred-oath-improvement-1",
+        "name": "Умение священной клятвы"
+      }
+    ],
+    "spellcasting": {
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "aura_range": 10
+    },
+    "index": "paladin-7",
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    }
+  },
+  {
+    "level": 8,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "paladin-ability-score-improvement-2",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "aura_range": 10
+    },
+    "index": "paladin-8",
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    }
+  },
+  {
+    "level": 9,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [],
+    "spellcasting": {
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 2,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "aura_range": 10
+    },
+    "index": "paladin-9",
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    }
+  },
+  {
+    "level": 10,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "aura-of-courage",
+        "name": "Аура храбрости"
+      }
+    ],
+    "spellcasting": {
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 2,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "aura_range": 10
+    },
+    "index": "paladin-10",
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    }
+  },
+  {
+    "level": 11,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "improved-divine-smite",
+        "name": "Улучшенная божественная кара"
+      }
+    ],
+    "spellcasting": {
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "aura_range": 10
+    },
+    "index": "paladin-11",
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    }
+  },
+  {
+    "level": 12,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "paladin-ability-score-improvement-3",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "aura_range": 10
+    },
+    "index": "paladin-12",
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    }
+  },
+  {
+    "level": 13,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [],
+    "spellcasting": {
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 1,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "aura_range": 10
+    },
+    "index": "paladin-13",
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    }
+  },
+  {
+    "level": 14,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "cleansing-touch",
+        "name": "Очищающее касание"
+      }
+    ],
+    "spellcasting": {
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 1,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "aura_range": 10
+    },
+    "index": "paladin-14",
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    }
+  },
+  {
+    "level": 15,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "sacred-oath-improvement-2",
+        "name": "Умение священной клятвы"
+      }
+    ],
+    "spellcasting": {
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 2,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "aura_range": 10
+    },
+    "index": "paladin-15",
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    }
+  },
+  {
+    "level": 16,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "paladin-ability-score-improvement-4",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 2,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "aura_range": 10
+    },
+    "index": "paladin-16",
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    }
+  },
+  {
+    "level": 17,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [],
+    "spellcasting": {
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 1
+    },
+    "class_specific": {
+      "aura_range": 10
+    },
+    "index": "paladin-17",
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    }
+  },
+  {
+    "level": 18,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "aura-improvements",
+        "name": "Улучшение аур"
+      }
+    ],
+    "spellcasting": {
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 1
+    },
+    "class_specific": {
+      "aura_range": 30
+    },
+    "index": "paladin-18",
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    }
+  },
+  {
+    "level": 19,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "paladin-ability-score-improvement-5",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2
+    },
+    "class_specific": {
+      "aura_range": 30
+    },
+    "index": "paladin-19",
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    }
+  },
+  {
+    "level": 20,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "sacred-oath-improvement-3",
+        "name": "Умение священной клятвы"
+      }
+    ],
+    "spellcasting": {
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2
+    },
+    "class_specific": {
+      "aura_range": 30
+    },
+    "index": "paladin-20",
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    }
+  },
+  {
+    "level": 1,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "favored-enemy-1-type",
+        "name": "Избранный враг (1 тип)"
+      },
+      {
+        "index": "natural-explorer-1-terrain-type",
+        "name": "Исследователь природы (1 тип местности)"
+      }
+    ],
+    "spellcasting": {
+      "spells_known": 0,
+      "spell_slots_level_1": 0,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "favored_enemies": 1,
+      "favored_terrain": 1
+    },
+    "index": "ranger-1",
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    }
+  },
+  {
+    "level": 2,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "ranger-fighting-style",
+        "name": "Боевой стиль"
+      },
+      {
+        "index": "spellcasting-ranger",
+        "name": "Использование заклинаний: Следопыт"
+      }
+    ],
+    "spellcasting": {
+      "spells_known": 2,
+      "spell_slots_level_1": 2,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "favored_enemies": 1,
+      "favored_terrain": 1
+    },
+    "index": "ranger-2",
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    }
+  },
+  {
+    "level": 3,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "ranger-archetype",
+        "name": "Архетип следопыта"
+      },
+      {
+        "index": "primeval-awareness",
+        "name": "Первобытная осведомленность"
+      }
+    ],
+    "spellcasting": {
+      "spells_known": 3,
+      "spell_slots_level_1": 3,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "favored_enemies": 1,
+      "favored_terrain": 1
+    },
+    "index": "ranger-3",
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    }
+  },
+  {
+    "level": 4,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "ranger-ability-score-improvement-1",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "spells_known": 3,
+      "spell_slots_level_1": 3,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "favored_enemies": 1,
+      "favored_terrain": 1
+    },
+    "index": "ranger-4",
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    }
+  },
+  {
+    "level": 5,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "ranger-extra-attack",
+        "name": "Дополнительная атака"
+      }
+    ],
+    "spellcasting": {
+      "spells_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 2,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "favored_enemies": 1,
+      "favored_terrain": 1
+    },
+    "index": "ranger-5",
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    }
+  },
+  {
+    "level": 6,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "favored-enemy-2-types",
+        "name": "Избранный враг (2 типа)"
+      },
+      {
+        "index": "natural-explorer-2-terrain-types",
+        "name": "Исследователь природы (2 типа местности)"
+      }
+    ],
+    "spellcasting": {
+      "spells_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 2,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "favored_enemies": 2,
+      "favored_terrain": 2
+    },
+    "index": "ranger-6",
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    }
+  },
+  {
+    "level": 7,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "ranger-archetype-improvement-1",
+        "name": "Умение архетипа следопыта"
+      }
+    ],
+    "spellcasting": {
+      "spells_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "favored_enemies": 2,
+      "favored_terrain": 2
+    },
+    "index": "ranger-7",
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    }
+  },
+  {
+    "level": 8,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "ranger-ability-score-improvement-2",
+        "name": "Увеличение характеристик"
+      },
+      {
+        "index": "ranger-lands-stride",
+        "name": "Поступь суши"
+      }
+    ],
+    "spellcasting": {
+      "spells_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "favored_enemies": 2,
+      "favored_terrain": 2
+    },
+    "index": "ranger-8",
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    }
+  },
+  {
+    "level": 9,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [],
+    "spellcasting": {
+      "spells_known": 6,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 2,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "favored_enemies": 2,
+      "favored_terrain": 2
+    },
+    "index": "ranger-9",
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    }
+  },
+  {
+    "level": 10,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "natural-explorer-3-terrain-types",
+        "name": "Исследователь природы (3 типа местности)"
+      },
+      {
+        "index": "hide-in-plain-sight",
+        "name": "Маскировка на виду"
+      }
+    ],
+    "spellcasting": {
+      "spells_known": 6,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 2,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "favored_enemies": 2,
+      "favored_terrain": 3
+    },
+    "index": "ranger-10",
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    }
+  },
+  {
+    "level": 11,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "ranger-archetype-improvement-2",
+        "name": "Умение архетипа следопыта"
+      }
+    ],
+    "spellcasting": {
+      "spells_known": 7,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "favored_enemies": 2,
+      "favored_terrain": 3
+    },
+    "index": "ranger-11",
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    }
+  },
+  {
+    "level": 12,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "ranger-ability-score-improvement-3",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "spells_known": 7,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "favored_enemies": 2,
+      "favored_terrain": 3
+    },
+    "index": "ranger-12",
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    }
+  },
+  {
+    "level": 13,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [],
+    "spellcasting": {
+      "spells_known": 8,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 1,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "favored_enemies": 2,
+      "favored_terrain": 3
+    },
+    "index": "ranger-13",
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    }
+  },
+  {
+    "level": 14,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "favored-enemy-3-enemies",
+        "name": "Избранный враг (3 типа)"
+      },
+      {
+        "index": "vanish",
+        "name": "Исчезновение"
+      }
+    ],
+    "spellcasting": {
+      "spells_known": 8,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 1,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "favored_enemies": 3,
+      "favored_terrain": 3
+    },
+    "index": "ranger-14",
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    }
+  },
+  {
+    "level": 15,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "ranger-archetype-improvement-3",
+        "name": "Умение архетипа следопыта"
+      }
+    ],
+    "spellcasting": {
+      "spells_known": 9,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 2,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "favored_enemies": 3,
+      "favored_terrain": 3
+    },
+    "index": "ranger-15",
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    }
+  },
+  {
+    "level": 16,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "ranger-ability-score-improvement-4",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "spells_known": 9,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 2,
+      "spell_slots_level_5": 0
+    },
+    "class_specific": {
+      "favored_enemies": 3,
+      "favored_terrain": 3
+    },
+    "index": "ranger-16",
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    }
+  },
+  {
+    "level": 17,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [],
+    "spellcasting": {
+      "spells_known": 10,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 1
+    },
+    "class_specific": {
+      "favored_enemies": 3,
+      "favored_terrain": 3
+    },
+    "index": "ranger-17",
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    }
+  },
+  {
+    "level": 18,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "feral-senses",
+        "name": "Дикие чувства"
+      }
+    ],
+    "spellcasting": {
+      "spells_known": 10,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 1
+    },
+    "class_specific": {
+      "favored_enemies": 3,
+      "favored_terrain": 3
+    },
+    "index": "ranger-18",
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    }
+  },
+  {
+    "level": 19,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "ranger-ability-score-improvement-5",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "spells_known": 11,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2
+    },
+    "class_specific": {
+      "favored_enemies": 3,
+      "favored_terrain": 3
+    },
+    "index": "ranger-19",
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    }
+  },
+  {
+    "level": 20,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "foe-slayer",
+        "name": "Убийца врагов"
+      }
+    ],
+    "spellcasting": {
+      "spells_known": 11,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2
+    },
+    "class_specific": {
+      "favored_enemies": 3,
+      "favored_terrain": 3
+    },
+    "index": "ranger-20",
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    }
+  },
+  {
+    "level": 1,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "rogue-expertise-1",
+        "name": "Познания"
+      },
+      {
+        "index": "sneak-attack",
+        "name": "Скрытая атака"
+      },
+      {
+        "index": "thieves-cant",
+        "name": "Воровской жаргон"
+      }
+    ],
+    "class_specific": {
+      "sneak_attack": {
+        "dice_count": 1,
+        "dice_value": 6
+      }
+    },
+    "index": "rogue-1",
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    }
+  },
+  {
+    "level": 2,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "cunning-action",
+        "name": "Хитрое действие"
+      }
+    ],
+    "class_specific": {
+      "sneak_attack": {
+        "dice_count": 1,
+        "dice_value": 6
+      }
+    },
+    "index": "rogue-2",
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    }
+  },
+  {
+    "level": 3,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "roguish-archetype",
+        "name": "Архетип плута"
+      }
+    ],
+    "class_specific": {
+      "sneak_attack": {
+        "dice_count": 2,
+        "dice_value": 6
+      }
+    },
+    "index": "rogue-3",
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    }
+  },
+  {
+    "level": 4,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "rogue-ability-score-improvement-1",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "sneak_attack": {
+        "dice_count": 2,
+        "dice_value": 6
+      }
+    },
+    "index": "rogue-4",
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    }
+  },
+  {
+    "level": 5,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "uncanny-dodge",
+        "name": "Необычайное уклонение"
+      }
+    ],
+    "class_specific": {
+      "sneak_attack": {
+        "dice_count": 3,
+        "dice_value": 6
+      }
+    },
+    "index": "rogue-5",
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    }
+  },
+  {
+    "level": 6,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "rogue-expertise-2",
+        "name": "Познания"
+      }
+    ],
+    "class_specific": {
+      "sneak_attack": {
+        "dice_count": 3,
+        "dice_value": 6
+      }
+    },
+    "index": "rogue-6",
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    }
+  },
+  {
+    "level": 7,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "rogue-evasion",
+        "name": "Уклонение"
+      }
+    ],
+    "class_specific": {
+      "sneak_attack": {
+        "dice_count": 4,
+        "dice_value": 6
+      }
+    },
+    "index": "rogue-7",
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    }
+  },
+  {
+    "level": 8,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "rogue-ability-score-improvement-2",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "sneak_attack": {
+        "dice_count": 4,
+        "dice_value": 6
+      }
+    },
+    "index": "rogue-8",
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    }
+  },
+  {
+    "level": 9,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "roguish-archetype-improvement-1",
+        "name": "Умение архетипа плута"
+      }
+    ],
+    "class_specific": {
+      "sneak_attack": {
+        "dice_count": 5,
+        "dice_value": 6
+      }
+    },
+    "index": "rogue-9",
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    }
+  },
+  {
+    "level": 10,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "rogue-ability-score-improvement-3",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "sneak_attack": {
+        "dice_count": 5,
+        "dice_value": 6
+      }
+    },
+    "index": "rogue-10",
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    }
+  },
+  {
+    "level": 11,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "reliable-talent",
+        "name": "Надежный талант"
+      }
+    ],
+    "class_specific": {
+      "sneak_attack": {
+        "dice_count": 6,
+        "dice_value": 6
+      }
+    },
+    "index": "rogue-11",
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    }
+  },
+  {
+    "level": 12,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "rogue-ability-score-improvement-4",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "sneak_attack": {
+        "dice_count": 6,
+        "dice_value": 6
+      }
+    },
+    "index": "rogue-12",
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    }
+  },
+  {
+    "level": 13,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "roguish-archetype-improvement-2",
+        "name": "Умение архетипа плута"
+      }
+    ],
+    "class_specific": {
+      "sneak_attack": {
+        "dice_count": 7,
+        "dice_value": 6
+      }
+    },
+    "index": "rogue-13",
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    }
+  },
+  {
+    "level": 14,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "blindsense",
+        "name": "Слепое чутье"
+      }
+    ],
+    "class_specific": {
+      "sneak_attack": {
+        "dice_count": 7,
+        "dice_value": 6
+      }
+    },
+    "index": "rogue-14",
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    }
+  },
+  {
+    "level": 15,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "slippery-mind",
+        "name": "Скользкий разум"
+      }
+    ],
+    "class_specific": {
+      "sneak_attack": {
+        "dice_count": 8,
+        "dice_value": 6
+      }
+    },
+    "index": "rogue-15",
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    }
+  },
+  {
+    "level": 16,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "rogue-ability-score-improvement-5",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "sneak_attack": {
+        "dice_count": 8,
+        "dice_value": 6
+      }
+    },
+    "index": "rogue-16",
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    }
+  },
+  {
+    "level": 17,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "roguish-archetype-improvement-3",
+        "name": "Умение архетипа плута"
+      }
+    ],
+    "class_specific": {
+      "sneak_attack": {
+        "dice_count": 9,
+        "dice_value": 6
+      }
+    },
+    "index": "rogue-17",
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    }
+  },
+  {
+    "level": 18,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "elusive",
+        "name": "Неуловимость"
+      }
+    ],
+    "class_specific": {
+      "sneak_attack": {
+        "dice_count": 9,
+        "dice_value": 6
+      }
+    },
+    "index": "rogue-18",
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    }
+  },
+  {
+    "level": 19,
+    "ability_score_bonuses": 6,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "rogue-ability-score-improvement-6",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "class_specific": {
+      "sneak_attack": {
+        "dice_count": 10,
+        "dice_value": 6
+      }
+    },
+    "index": "rogue-19",
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    }
+  },
+  {
+    "level": 20,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "stroke-of-luck",
+        "name": "Удача"
+      }
+    ],
+    "class_specific": {
+      "sneak_attack": {
+        "dice_count": 10,
+        "dice_value": 6
+      }
+    },
+    "index": "rogue-20",
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    }
+  },
+  {
+    "level": 1,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "spellcasting-sorcerer",
+        "name": "Использование заклинаний: Чародей"
+      },
+      {
+        "index": "sorcerous-origin",
+        "name": "Происхождение чародея"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 2,
+      "spell_slots_level_1": 2,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "sorcery_points": 0,
+      "metamagic_known": 0,
+      "creating_spell_slots": []
+    },
+    "index": "sorcerer-1",
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    }
+  },
+  {
+    "level": 2,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "font-of-magic",
+        "name": "Источник магии"
+      },
+      {
+        "index": "flexible-casting-creating-spell-slots",
+        "name": "Гибкое колдовство: Создание ячеек заклинаний"
+      },
+      {
+        "index": "flexible-casting-converting-spell-slot",
+        "name": "Гибкое колдовство: Преобразование ячейки заклинания"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 3,
+      "spell_slots_level_1": 3,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "sorcery_points": 2,
+      "metamagic_known": 0,
+      "creating_spell_slots": [
+        {
+          "spell_slot_level": 1,
+          "sorcery_point_cost": 2
+        },
+        {
+          "spell_slot_level": 2,
+          "sorcery_point_cost": 3
+        },
+        {
+          "spell_slot_level": 3,
+          "sorcery_point_cost": 5
+        },
+        {
+          "spell_slot_level": 4,
+          "sorcery_point_cost": 6
+        },
+        {
+          "spell_slot_level": 5,
+          "sorcery_point_cost": 7
+        }
+      ]
+    },
+    "index": "sorcerer-2",
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    }
+  },
+  {
+    "level": 3,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "metamagic-1",
+        "name": "Метамагия"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 2,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "sorcery_points": 3,
+      "metamagic_known": 2,
+      "creating_spell_slots": [
+        {
+          "spell_slot_level": 1,
+          "sorcery_point_cost": 2
+        },
+        {
+          "spell_slot_level": 2,
+          "sorcery_point_cost": 3
+        },
+        {
+          "spell_slot_level": 3,
+          "sorcery_point_cost": 5
+        },
+        {
+          "spell_slot_level": 4,
+          "sorcery_point_cost": 6
+        },
+        {
+          "spell_slot_level": 5,
+          "sorcery_point_cost": 7
+        }
+      ]
+    },
+    "index": "sorcerer-3",
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    }
+  },
+  {
+    "level": 4,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "sorcerer-ability-score-improvement-1",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spells_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "sorcery_points": 4,
+      "metamagic_known": 2,
+      "creating_spell_slots": [
+        {
+          "spell_slot_level": 1,
+          "sorcery_point_cost": 2
+        },
+        {
+          "spell_slot_level": 2,
+          "sorcery_point_cost": 3
+        },
+        {
+          "spell_slot_level": 3,
+          "sorcery_point_cost": 5
+        },
+        {
+          "spell_slot_level": 4,
+          "sorcery_point_cost": 6
+        },
+        {
+          "spell_slot_level": 5,
+          "sorcery_point_cost": 7
+        }
+      ]
+    },
+    "index": "sorcerer-4",
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    }
+  },
+  {
+    "level": 5,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spells_known": 6,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 2,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "sorcery_points": 5,
+      "metamagic_known": 2,
+      "creating_spell_slots": [
+        {
+          "spell_slot_level": 1,
+          "sorcery_point_cost": 2
+        },
+        {
+          "spell_slot_level": 2,
+          "sorcery_point_cost": 3
+        },
+        {
+          "spell_slot_level": 3,
+          "sorcery_point_cost": 5
+        },
+        {
+          "spell_slot_level": 4,
+          "sorcery_point_cost": 6
+        },
+        {
+          "spell_slot_level": 5,
+          "sorcery_point_cost": 7
+        }
+      ]
+    },
+    "index": "sorcerer-5",
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    }
+  },
+  {
+    "level": 6,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "sorcerous-origin-improvement-1",
+        "name": "Умение происхождения чародея"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spells_known": 7,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "sorcery_points": 6,
+      "metamagic_known": 2,
+      "creating_spell_slots": [
+        {
+          "spell_slot_level": 1,
+          "sorcery_point_cost": 2
+        },
+        {
+          "spell_slot_level": 2,
+          "sorcery_point_cost": 3
+        },
+        {
+          "spell_slot_level": 3,
+          "sorcery_point_cost": 5
+        },
+        {
+          "spell_slot_level": 4,
+          "sorcery_point_cost": 6
+        },
+        {
+          "spell_slot_level": 5,
+          "sorcery_point_cost": 7
+        }
+      ]
+    },
+    "index": "sorcerer-6",
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    }
+  },
+  {
+    "level": 7,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spells_known": 8,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 1,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "sorcery_points": 7,
+      "metamagic_known": 2,
+      "creating_spell_slots": [
+        {
+          "spell_slot_level": 1,
+          "sorcery_point_cost": 2
+        },
+        {
+          "spell_slot_level": 2,
+          "sorcery_point_cost": 3
+        },
+        {
+          "spell_slot_level": 3,
+          "sorcery_point_cost": 5
+        },
+        {
+          "spell_slot_level": 4,
+          "sorcery_point_cost": 6
+        },
+        {
+          "spell_slot_level": 5,
+          "sorcery_point_cost": 7
+        }
+      ]
+    },
+    "index": "sorcerer-7",
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    }
+  },
+  {
+    "level": 8,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "sorcerer-ability-score-improvement-2",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spells_known": 9,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 2,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "sorcery_points": 8,
+      "metamagic_known": 2,
+      "creating_spell_slots": [
+        {
+          "spell_slot_level": 1,
+          "sorcery_point_cost": 2
+        },
+        {
+          "spell_slot_level": 2,
+          "sorcery_point_cost": 3
+        },
+        {
+          "spell_slot_level": 3,
+          "sorcery_point_cost": 5
+        },
+        {
+          "spell_slot_level": 4,
+          "sorcery_point_cost": 6
+        },
+        {
+          "spell_slot_level": 5,
+          "sorcery_point_cost": 7
+        }
+      ]
+    },
+    "index": "sorcerer-8",
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    }
+  },
+  {
+    "level": 9,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spells_known": 10,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 1,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "sorcery_points": 9,
+      "metamagic_known": 2,
+      "creating_spell_slots": [
+        {
+          "spell_slot_level": 1,
+          "sorcery_point_cost": 2
+        },
+        {
+          "spell_slot_level": 2,
+          "sorcery_point_cost": 3
+        },
+        {
+          "spell_slot_level": 3,
+          "sorcery_point_cost": 5
+        },
+        {
+          "spell_slot_level": 4,
+          "sorcery_point_cost": 6
+        },
+        {
+          "spell_slot_level": 5,
+          "sorcery_point_cost": 7
+        }
+      ]
+    },
+    "index": "sorcerer-9",
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    }
+  },
+  {
+    "level": 10,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "metamagic-2",
+        "name": "Метамагия"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 6,
+      "spells_known": 11,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "sorcery_points": 10,
+      "metamagic_known": 3,
+      "creating_spell_slots": [
+        {
+          "spell_slot_level": 1,
+          "sorcery_point_cost": 2
+        },
+        {
+          "spell_slot_level": 2,
+          "sorcery_point_cost": 3
+        },
+        {
+          "spell_slot_level": 3,
+          "sorcery_point_cost": 5
+        },
+        {
+          "spell_slot_level": 4,
+          "sorcery_point_cost": 6
+        },
+        {
+          "spell_slot_level": 5,
+          "sorcery_point_cost": 7
+        }
+      ]
+    },
+    "index": "sorcerer-10",
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    }
+  },
+  {
+    "level": 11,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 6,
+      "spells_known": 12,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "sorcery_points": 11,
+      "metamagic_known": 3,
+      "creating_spell_slots": [
+        {
+          "spell_slot_level": 1,
+          "sorcery_point_cost": 2
+        },
+        {
+          "spell_slot_level": 2,
+          "sorcery_point_cost": 3
+        },
+        {
+          "spell_slot_level": 3,
+          "sorcery_point_cost": 5
+        },
+        {
+          "spell_slot_level": 4,
+          "sorcery_point_cost": 6
+        },
+        {
+          "spell_slot_level": 5,
+          "sorcery_point_cost": 7
+        }
+      ]
+    },
+    "index": "sorcerer-11",
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    }
+  },
+  {
+    "level": 12,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "sorcerer-ability-score-improvement-3",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 6,
+      "spells_known": 12,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "sorcery_points": 12,
+      "metamagic_known": 3,
+      "creating_spell_slots": [
+        {
+          "spell_slot_level": 1,
+          "sorcery_point_cost": 2
+        },
+        {
+          "spell_slot_level": 2,
+          "sorcery_point_cost": 3
+        },
+        {
+          "spell_slot_level": 3,
+          "sorcery_point_cost": 5
+        },
+        {
+          "spell_slot_level": 4,
+          "sorcery_point_cost": 6
+        },
+        {
+          "spell_slot_level": 5,
+          "sorcery_point_cost": 7
+        }
+      ]
+    },
+    "index": "sorcerer-12",
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    }
+  },
+  {
+    "level": 13,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 6,
+      "spells_known": 13,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "sorcery_points": 13,
+      "metamagic_known": 3,
+      "creating_spell_slots": [
+        {
+          "spell_slot_level": 1,
+          "sorcery_point_cost": 2
+        },
+        {
+          "spell_slot_level": 2,
+          "sorcery_point_cost": 3
+        },
+        {
+          "spell_slot_level": 3,
+          "sorcery_point_cost": 5
+        },
+        {
+          "spell_slot_level": 4,
+          "sorcery_point_cost": 6
+        },
+        {
+          "spell_slot_level": 5,
+          "sorcery_point_cost": 7
+        }
+      ]
+    },
+    "index": "sorcerer-13",
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    }
+  },
+  {
+    "level": 14,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "sorcerous-origin-improvement-2",
+        "name": "Умение происхождения чародея"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 6,
+      "spells_known": 13,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "sorcery_points": 14,
+      "metamagic_known": 3,
+      "creating_spell_slots": [
+        {
+          "spell_slot_level": 1,
+          "sorcery_point_cost": 2
+        },
+        {
+          "spell_slot_level": 2,
+          "sorcery_point_cost": 3
+        },
+        {
+          "spell_slot_level": 3,
+          "sorcery_point_cost": 5
+        },
+        {
+          "spell_slot_level": 4,
+          "sorcery_point_cost": 6
+        },
+        {
+          "spell_slot_level": 5,
+          "sorcery_point_cost": 7
+        }
+      ]
+    },
+    "index": "sorcerer-14",
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    }
+  },
+  {
+    "level": 15,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 6,
+      "spells_known": 14,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "sorcery_points": 15,
+      "metamagic_known": 3,
+      "creating_spell_slots": [
+        {
+          "spell_slot_level": 1,
+          "sorcery_point_cost": 2
+        },
+        {
+          "spell_slot_level": 2,
+          "sorcery_point_cost": 3
+        },
+        {
+          "spell_slot_level": 3,
+          "sorcery_point_cost": 5
+        },
+        {
+          "spell_slot_level": 4,
+          "sorcery_point_cost": 6
+        },
+        {
+          "spell_slot_level": 5,
+          "sorcery_point_cost": 7
+        }
+      ]
+    },
+    "index": "sorcerer-15",
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    }
+  },
+  {
+    "level": 16,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "sorcerer-ability-score-improvement-4",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 6,
+      "spells_known": 14,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "sorcery_points": 16,
+      "metamagic_known": 4,
+      "creating_spell_slots": [
+        {
+          "spell_slot_level": 1,
+          "sorcery_point_cost": 2
+        },
+        {
+          "spell_slot_level": 2,
+          "sorcery_point_cost": 3
+        },
+        {
+          "spell_slot_level": 3,
+          "sorcery_point_cost": 5
+        },
+        {
+          "spell_slot_level": 4,
+          "sorcery_point_cost": 6
+        },
+        {
+          "spell_slot_level": 5,
+          "sorcery_point_cost": 7
+        }
+      ]
+    },
+    "index": "sorcerer-16",
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    }
+  },
+  {
+    "level": 17,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "metamagic-3",
+        "name": "Метамагия"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 6,
+      "spells_known": 15,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 1
+    },
+    "class_specific": {
+      "sorcery_points": 17,
+      "metamagic_known": 4,
+      "creating_spell_slots": [
+        {
+          "spell_slot_level": 1,
+          "sorcery_point_cost": 2
+        },
+        {
+          "spell_slot_level": 2,
+          "sorcery_point_cost": 3
+        },
+        {
+          "spell_slot_level": 3,
+          "sorcery_point_cost": 5
+        },
+        {
+          "spell_slot_level": 4,
+          "sorcery_point_cost": 6
+        },
+        {
+          "spell_slot_level": 5,
+          "sorcery_point_cost": 7
+        }
+      ]
+    },
+    "index": "sorcerer-17",
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    }
+  },
+  {
+    "level": 18,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "sorcerous-origin-improvement-3",
+        "name": "Умение происхождения чародея"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 6,
+      "spells_known": 15,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 3,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 1
+    },
+    "class_specific": {
+      "sorcery_points": 18,
+      "metamagic_known": 4,
+      "creating_spell_slots": [
+        {
+          "spell_slot_level": 1,
+          "sorcery_point_cost": 2
+        },
+        {
+          "spell_slot_level": 2,
+          "sorcery_point_cost": 3
+        },
+        {
+          "spell_slot_level": 3,
+          "sorcery_point_cost": 5
+        },
+        {
+          "spell_slot_level": 4,
+          "sorcery_point_cost": 6
+        },
+        {
+          "spell_slot_level": 5,
+          "sorcery_point_cost": 7
+        }
+      ]
+    },
+    "index": "sorcerer-18",
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    }
+  },
+  {
+    "level": 19,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "sorcerer-ability-score-improvement-5",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 6,
+      "spells_known": 15,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 3,
+      "spell_slots_level_6": 2,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 1
+    },
+    "class_specific": {
+      "sorcery_points": 19,
+      "metamagic_known": 4,
+      "creating_spell_slots": [
+        {
+          "spell_slot_level": 1,
+          "sorcery_point_cost": 2
+        },
+        {
+          "spell_slot_level": 2,
+          "sorcery_point_cost": 3
+        },
+        {
+          "spell_slot_level": 3,
+          "sorcery_point_cost": 5
+        },
+        {
+          "spell_slot_level": 4,
+          "sorcery_point_cost": 6
+        },
+        {
+          "spell_slot_level": 5,
+          "sorcery_point_cost": 7
+        }
+      ]
+    },
+    "index": "sorcerer-19",
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    }
+  },
+  {
+    "level": 20,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "sorcerous-restoration",
+        "name": "Восстановление чар"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 6,
+      "spells_known": 15,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 3,
+      "spell_slots_level_6": 2,
+      "spell_slots_level_7": 2,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 1
+    },
+    "class_specific": {
+      "sorcery_points": 20,
+      "metamagic_known": 4,
+      "creating_spell_slots": [
+        {
+          "spell_slot_level": 1,
+          "sorcery_point_cost": 2
+        },
+        {
+          "spell_slot_level": 2,
+          "sorcery_point_cost": 3
+        },
+        {
+          "spell_slot_level": 3,
+          "sorcery_point_cost": 5
+        },
+        {
+          "spell_slot_level": 4,
+          "sorcery_point_cost": 6
+        },
+        {
+          "spell_slot_level": 5,
+          "sorcery_point_cost": 7
+        }
+      ]
+    },
+    "index": "sorcerer-20",
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    }
+  },
+  {
+    "level": 1,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "otherworldly-patron",
+        "name": "Покровитель"
+      },
+      {
+        "index": "pact-magic",
+        "name": "Магия договора"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 2,
+      "spells_known": 2,
+      "spell_slots_level_1": 1,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "invocations_known": 0,
+      "mystic_arcanum_level_6": 0,
+      "mystic_arcanum_level_7": 0,
+      "mystic_arcanum_level_8": 0,
+      "mystic_arcanum_level_9": 0
+    },
+    "index": "warlock-1",
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    }
+  },
+  {
+    "level": 2,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "eldritch-invocations",
+        "name": "Таинственные воззвания"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 2,
+      "spells_known": 3,
+      "spell_slots_level_1": 2,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "invocations_known": 2,
+      "mystic_arcanum_level_6": 0,
+      "mystic_arcanum_level_7": 0,
+      "mystic_arcanum_level_8": 0,
+      "mystic_arcanum_level_9": 0
+    },
+    "index": "warlock-2",
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    }
+  },
+  {
+    "level": 3,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "pact-boon",
+        "name": "Дар договора"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 2,
+      "spells_known": 4,
+      "spell_slots_level_1": 0,
+      "spell_slots_level_2": 2,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "invocations_known": 2,
+      "mystic_arcanum_level_6": 0,
+      "mystic_arcanum_level_7": 0,
+      "mystic_arcanum_level_8": 0,
+      "mystic_arcanum_level_9": 0
+    },
+    "index": "warlock-3",
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    }
+  },
+  {
+    "level": 4,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "warlock-ability-score-improvement-1",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spells_known": 5,
+      "spell_slots_level_1": 0,
+      "spell_slots_level_2": 2,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "invocations_known": 3,
+      "mystic_arcanum_level_6": 0,
+      "mystic_arcanum_level_7": 0,
+      "mystic_arcanum_level_8": 0,
+      "mystic_arcanum_level_9": 0
+    },
+    "index": "warlock-4",
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    }
+  },
+  {
+    "level": 5,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spells_known": 6,
+      "spell_slots_level_1": 0,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 2,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "invocations_known": 3,
+      "mystic_arcanum_level_6": 0,
+      "mystic_arcanum_level_7": 0,
+      "mystic_arcanum_level_8": 0,
+      "mystic_arcanum_level_9": 0
+    },
+    "index": "warlock-5",
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    }
+  },
+  {
+    "level": 6,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "otherworldly-patron-improvement-1",
+        "name": "Умение покровителя"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spells_known": 7,
+      "spell_slots_level_1": 0,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 2,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "invocations_known": 4,
+      "mystic_arcanum_level_6": 0,
+      "mystic_arcanum_level_7": 0,
+      "mystic_arcanum_level_8": 0,
+      "mystic_arcanum_level_9": 0
+    },
+    "index": "warlock-6",
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    }
+  },
+  {
+    "level": 7,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spells_known": 8,
+      "spell_slots_level_1": 0,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 2,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "invocations_known": 4,
+      "mystic_arcanum_level_6": 0,
+      "mystic_arcanum_level_7": 0,
+      "mystic_arcanum_level_8": 0,
+      "mystic_arcanum_level_9": 0
+    },
+    "index": "warlock-7",
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    }
+  },
+  {
+    "level": 8,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "warlock-ability-score-improvement-2",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spells_known": 9,
+      "spell_slots_level_1": 0,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 2,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "invocations_known": 4,
+      "mystic_arcanum_level_6": 0,
+      "mystic_arcanum_level_7": 0,
+      "mystic_arcanum_level_8": 0,
+      "mystic_arcanum_level_9": 0
+    },
+    "index": "warlock-8",
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    }
+  },
+  {
+    "level": 9,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spells_known": 10,
+      "spell_slots_level_1": 0,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "invocations_known": 5,
+      "mystic_arcanum_level_6": 0,
+      "mystic_arcanum_level_7": 0,
+      "mystic_arcanum_level_8": 0,
+      "mystic_arcanum_level_9": 0
+    },
+    "index": "warlock-9",
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    }
+  },
+  {
+    "level": 10,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "otherworldly-patron-improvement-2",
+        "name": "Умение покровителя"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 10,
+      "spell_slots_level_1": 0,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "invocations_known": 5,
+      "mystic_arcanum_level_6": 0,
+      "mystic_arcanum_level_7": 0,
+      "mystic_arcanum_level_8": 0,
+      "mystic_arcanum_level_9": 0
+    },
+    "index": "warlock-10",
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    }
+  },
+  {
+    "level": 11,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "mystic-arcanum-6th-level",
+        "name": "Таинственный аркан (6-й уровень)"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 11,
+      "spell_slots_level_1": 0,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 3,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "invocations_known": 5,
+      "mystic_arcanum_level_6": 1,
+      "mystic_arcanum_level_7": 0,
+      "mystic_arcanum_level_8": 0,
+      "mystic_arcanum_level_9": 0
+    },
+    "index": "warlock-11",
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    }
+  },
+  {
+    "level": 12,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "warlock-ability-score-improvement-3",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 11,
+      "spell_slots_level_1": 0,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 3,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "invocations_known": 6,
+      "mystic_arcanum_level_6": 1,
+      "mystic_arcanum_level_7": 0,
+      "mystic_arcanum_level_8": 0,
+      "mystic_arcanum_level_9": 0
+    },
+    "index": "warlock-12",
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    }
+  },
+  {
+    "level": 13,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "mystic-arcanum-7th-level",
+        "name": "Таинственный аркан (7-й уровень)"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 12,
+      "spell_slots_level_1": 0,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 3,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "invocations_known": 6,
+      "mystic_arcanum_level_6": 1,
+      "mystic_arcanum_level_7": 1,
+      "mystic_arcanum_level_8": 0,
+      "mystic_arcanum_level_9": 0
+    },
+    "index": "warlock-13",
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    }
+  },
+  {
+    "level": 14,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "otherworldly-patron-improvement-3",
+        "name": "Умение покровителя"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 12,
+      "spell_slots_level_1": 0,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 3,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "invocations_known": 6,
+      "mystic_arcanum_level_6": 1,
+      "mystic_arcanum_level_7": 1,
+      "mystic_arcanum_level_8": 0,
+      "mystic_arcanum_level_9": 0
+    },
+    "index": "warlock-14",
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    }
+  },
+  {
+    "level": 15,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "mystic-arcanum-8th-level",
+        "name": "Таинственный аркан (8-й уровень)"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 13,
+      "spell_slots_level_1": 0,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 3,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "invocations_known": 7,
+      "mystic_arcanum_level_6": 1,
+      "mystic_arcanum_level_7": 1,
+      "mystic_arcanum_level_8": 1,
+      "mystic_arcanum_level_9": 0
+    },
+    "index": "warlock-15",
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    }
+  },
+  {
+    "level": 16,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "warlock-ability-score-improvement-4",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 13,
+      "spell_slots_level_1": 0,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 3,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "invocations_known": 7,
+      "mystic_arcanum_level_6": 1,
+      "mystic_arcanum_level_7": 1,
+      "mystic_arcanum_level_8": 1,
+      "mystic_arcanum_level_9": 0
+    },
+    "index": "warlock-16",
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    }
+  },
+  {
+    "level": 17,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "mystic-arcanum-9th-level",
+        "name": "Таинственный аркан (9-й уровень)"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 14,
+      "spell_slots_level_1": 0,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 4,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "invocations_known": 7,
+      "mystic_arcanum_level_6": 1,
+      "mystic_arcanum_level_7": 1,
+      "mystic_arcanum_level_8": 1,
+      "mystic_arcanum_level_9": 1
+    },
+    "index": "warlock-17",
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    }
+  },
+  {
+    "level": 18,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 14,
+      "spell_slots_level_1": 0,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 4,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "invocations_known": 8,
+      "mystic_arcanum_level_6": 1,
+      "mystic_arcanum_level_7": 1,
+      "mystic_arcanum_level_8": 1,
+      "mystic_arcanum_level_9": 1
+    },
+    "index": "warlock-18",
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    }
+  },
+  {
+    "level": 19,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "warlock-ability-score-improvement-5",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 15,
+      "spell_slots_level_1": 0,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 4,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "invocations_known": 8,
+      "mystic_arcanum_level_6": 1,
+      "mystic_arcanum_level_7": 1,
+      "mystic_arcanum_level_8": 1,
+      "mystic_arcanum_level_9": 1
+    },
+    "index": "warlock-19",
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    }
+  },
+  {
+    "level": 20,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "eldritch-master",
+        "name": "Мастер тайной магии"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spells_known": 15,
+      "spell_slots_level_1": 0,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 4,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "invocations_known": 8,
+      "mystic_arcanum_level_6": 1,
+      "mystic_arcanum_level_7": 1,
+      "mystic_arcanum_level_8": 1,
+      "mystic_arcanum_level_9": 1
+    },
+    "index": "warlock-20",
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    }
+  },
+  {
+    "level": 1,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "spellcasting-wizard",
+        "name": "Использование заклинаний: Волшебник"
+      },
+      {
+        "index": "arcane-recovery",
+        "name": "Магическое восстановление"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spell_slots_level_1": 2,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "arcane_recovery_levels": 1
+    },
+    "index": "wizard-1",
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    }
+  },
+  {
+    "level": 2,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "arcane-tradition",
+        "name": "Магическая традиция"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spell_slots_level_1": 3,
+      "spell_slots_level_2": 0,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "arcane_recovery_levels": 1
+    },
+    "index": "wizard-2",
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    }
+  },
+  {
+    "level": 3,
+    "ability_score_bonuses": 0,
+    "prof_bonus": 2,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 3,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 2,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "arcane_recovery_levels": 2
+    },
+    "index": "wizard-3",
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    }
+  },
+  {
+    "level": 4,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 2,
+    "features": [
+      {
+        "index": "wizard-ability-score-improvement-1",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 0,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "arcane_recovery_levels": 2
+    },
+    "index": "wizard-4",
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    }
+  },
+  {
+    "level": 5,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 2,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "arcane_recovery_levels": 3
+    },
+    "index": "wizard-5",
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    }
+  },
+  {
+    "level": 6,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "arcane-tradition-improvement-1",
+        "name": "Умение магической традиции"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 0,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "arcane_recovery_levels": 3
+    },
+    "index": "wizard-6",
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    }
+  },
+  {
+    "level": 7,
+    "ability_score_bonuses": 1,
+    "prof_bonus": 3,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 1,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "arcane_recovery_levels": 4
+    },
+    "index": "wizard-7",
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    }
+  },
+  {
+    "level": 8,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 3,
+    "features": [
+      {
+        "index": "wizard-ability-score-improvement-2",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 2,
+      "spell_slots_level_5": 0,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "arcane_recovery_levels": 4
+    },
+    "index": "wizard-8",
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    }
+  },
+  {
+    "level": 9,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 4,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 1,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "arcane_recovery_levels": 5
+    },
+    "index": "wizard-9",
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    }
+  },
+  {
+    "level": 10,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "arcane-tradition-improvement-2",
+        "name": "Умение магической традиции"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 0,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "arcane_recovery_levels": 5
+    },
+    "index": "wizard-10",
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    }
+  },
+  {
+    "level": 11,
+    "ability_score_bonuses": 2,
+    "prof_bonus": 4,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "arcane_recovery_levels": 6
+    },
+    "index": "wizard-11",
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    }
+  },
+  {
+    "level": 12,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 4,
+    "features": [
+      {
+        "index": "wizard-ability-score-improvement-3",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 0,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "arcane_recovery_levels": 6
+    },
+    "index": "wizard-12",
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    }
+  },
+  {
+    "level": 13,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "arcane_recovery_levels": 7
+    },
+    "index": "wizard-13",
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    }
+  },
+  {
+    "level": 14,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "arcane-tradition-improvement-3",
+        "name": "Умение магической традиции"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 0,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "arcane_recovery_levels": 7
+    },
+    "index": "wizard-14",
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    }
+  },
+  {
+    "level": 15,
+    "ability_score_bonuses": 3,
+    "prof_bonus": 5,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "arcane_recovery_levels": 8
+    },
+    "index": "wizard-15",
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    }
+  },
+  {
+    "level": 16,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 5,
+    "features": [
+      {
+        "index": "wizard-ability-score-improvement-4",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 0
+    },
+    "class_specific": {
+      "arcane_recovery_levels": 8
+    },
+    "index": "wizard-16",
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    }
+  },
+  {
+    "level": 17,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 2,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 1
+    },
+    "class_specific": {
+      "arcane_recovery_levels": 9
+    },
+    "index": "wizard-17",
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    }
+  },
+  {
+    "level": 18,
+    "ability_score_bonuses": 4,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "spell-mastery",
+        "name": "Мастерство заклинаний"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 3,
+      "spell_slots_level_6": 1,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 1
+    },
+    "class_specific": {
+      "arcane_recovery_levels": 9
+    },
+    "index": "wizard-18",
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    }
+  },
+  {
+    "level": 19,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "wizard-ability-score-improvement-5",
+        "name": "Увеличение характеристик"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 3,
+      "spell_slots_level_6": 2,
+      "spell_slots_level_7": 1,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 1
+    },
+    "class_specific": {
+      "arcane_recovery_levels": 10
+    },
+    "index": "wizard-19",
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    }
+  },
+  {
+    "level": 20,
+    "ability_score_bonuses": 5,
+    "prof_bonus": 6,
+    "features": [
+      {
+        "index": "signature-spell",
+        "name": "Фирменное заклинание"
+      }
+    ],
+    "spellcasting": {
+      "cantrips_known": 5,
+      "spell_slots_level_1": 4,
+      "spell_slots_level_2": 3,
+      "spell_slots_level_3": 3,
+      "spell_slots_level_4": 3,
+      "spell_slots_level_5": 3,
+      "spell_slots_level_6": 2,
+      "spell_slots_level_7": 2,
+      "spell_slots_level_8": 1,
+      "spell_slots_level_9": 1
+    },
+    "class_specific": {
+      "arcane_recovery_levels": 10
+    },
+    "index": "wizard-20",
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    }
+  },
+  {
+    "level": 3,
+    "features": [
+      {
+        "index": "frenzy",
+        "name": "Бешенство"
+      }
+    ],
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    },
+    "subclass": {
+      "index": "berserker",
+      "name": "Берсерк"
+    },
+    "index": "berserker-3"
+  },
+  {
+    "level": 6,
+    "features": [
+      {
+        "index": "mindless-rage",
+        "name": "Бездумная ярость"
+      }
+    ],
+    "index": "berserker-6",
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    },
+    "subclass": {
+      "index": "berserker",
+      "name": "Берсерк"
+    }
+  },
+  {
+    "level": 10,
+    "features": [
+      {
+        "index": "intimidating-presence",
+        "name": "Устрашающее присутствие"
+      }
+    ],
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    },
+    "subclass": {
+      "index": "berserker",
+      "name": "Берсерк"
+    },
+    "index": "berserker-10"
+  },
+  {
+    "level": 14,
+    "features": [
+      {
+        "index": "retaliation",
+        "name": "Возмездие"
+      }
+    ],
+    "class": {
+      "index": "barbarian",
+      "name": "Варвар"
+    },
+    "subclass": {
+      "index": "berserker",
+      "name": "Берсерк"
+    },
+    "index": "berserker-14"
+  },
+  {
+    "level": 3,
+    "features": [
+      {
+        "index": "bonus-proficiencies",
+        "name": "Дополнительные владения"
+      },
+      {
+        "index": "cutting-words",
+        "name": "Острые слова"
+      }
+    ],
+    "subclass_specific": {
+      "additional_magical_secrets_max_lvl": 0
+    },
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    },
+    "subclass": {
+      "index": "lore",
+      "name": "Коллегия Знаний"
+    },
+    "index": "lore-3"
+  },
+  {
+    "level": 6,
+    "features": [
+      {
+        "index": "additional-magical-secrets",
+        "name": "Дополнительные магические секреты"
+      }
+    ],
+    "subclass_specific": {
+      "additional_magical_secrets_max_lvl": 3
+    },
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    },
+    "subclass": {
+      "index": "lore",
+      "name": "Коллегия Знаний"
+    },
+    "index": "lore-6"
+  },
+  {
+    "level": 14,
+    "features": [
+      {
+        "index": "peerless-skill",
+        "name": "Несравненное умение"
+      }
+    ],
+    "subclass_specific": {
+      "additional_magical_secrets_max_lvl": 3
+    },
+    "class": {
+      "index": "bard",
+      "name": "Бард"
+    },
+    "subclass": {
+      "index": "lore",
+      "name": "Коллегия Знаний"
+    },
+    "index": "lore-14"
+  },
+  {
+    "level": 1,
+    "features": [
+      {
+        "index": "bonus-proficiency",
+        "name": "Дополнительное владение"
+      },
+      {
+        "index": "disciple-of-life",
+        "name": "Послушник жизни"
+      }
+    ],
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    },
+    "subclass": {
+      "index": "life",
+      "name": "Жизнь"
+    },
+    "index": "life-1"
+  },
+  {
+    "level": 2,
+    "features": [
+      {
+        "index": "channel-divinity-preserve-life",
+        "name": "Божественный канал: Сохранение жизни"
+      }
+    ],
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    },
+    "subclass": {
+      "index": "life",
+      "name": "Жизнь"
+    },
+    "index": "life-2"
+  },
+  {
+    "level": 6,
+    "features": [
+      {
+        "index": "blessed-healer",
+        "name": "Благословенный целитель"
+      }
+    ],
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    },
+    "subclass": {
+      "index": "life",
+      "name": "Жизнь"
+    },
+    "index": "life-6"
+  },
+  {
+    "level": 8,
+    "features": [
+      {
+        "index": "divine-strike",
+        "name": "Божественный удар"
+      }
+    ],
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    },
+    "subclass": {
+      "index": "life",
+      "name": "Жизнь"
+    },
+    "index": "life-8"
+  },
+  {
+    "level": 17,
+    "features": [
+      {
+        "index": "supreme-healing",
+        "name": "Высшее исцеление"
+      }
+    ],
+    "class": {
+      "index": "cleric",
+      "name": "Жрец"
+    },
+    "subclass": {
+      "index": "life",
+      "name": "Жизнь"
+    },
+    "index": "life-17"
+  },
+  {
+    "level": 2,
+    "features": [
+      {
+        "index": "bonus-cantrip",
+        "name": "Дополнительный заговор"
+      },
+      {
+        "index": "natural-recovery",
+        "name": "Естественное восстановление"
+      }
+    ],
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    },
+    "subclass": {
+      "index": "land",
+      "name": "Земля"
+    },
+    "index": "land-2"
+  },
+  {
+    "level": 6,
+    "features": [
+      {
+        "index": "druid-lands-stride",
+        "name": "Поступь суши"
+      }
+    ],
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    },
+    "subclass": {
+      "index": "land",
+      "name": "Земля"
+    },
+    "index": "land-6"
+  },
+  {
+    "level": 10,
+    "features": [
+      {
+        "index": "natures-ward",
+        "name": "Оберег природы"
+      }
+    ],
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    },
+    "subclass": {
+      "index": "land",
+      "name": "Земля"
+    },
+    "index": "land-10"
+  },
+  {
+    "level": 14,
+    "features": [
+      {
+        "index": "natures-sanctuary",
+        "name": "Прибежище природы"
+      }
+    ],
+    "class": {
+      "index": "druid",
+      "name": "Друид"
+    },
+    "subclass": {
+      "index": "land",
+      "name": "Земля"
+    },
+    "index": "land-14"
+  },
+  {
+    "level": 3,
+    "features": [
+      {
+        "index": "improved-critical",
+        "name": "Улучшенный критический удар"
+      }
+    ],
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    },
+    "subclass": {
+      "index": "champion",
+      "name": "Чемпион"
+    },
+    "index": "champion-3"
+  },
+  {
+    "level": 7,
+    "features": [
+      {
+        "index": "remarkable-athlete",
+        "name": "Необычайный атлет"
+      }
+    ],
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    },
+    "subclass": {
+      "index": "champion",
+      "name": "Чемпион"
+    },
+    "index": "champion-7"
+  },
+  {
+    "level": 10,
+    "features": [
+      {
+        "index": "additional-fighting-style",
+        "name": "Дополнительный боевой стиль"
+      }
+    ],
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    },
+    "subclass": {
+      "index": "champion",
+      "name": "Чемпион"
+    },
+    "index": "champion-10"
+  },
+  {
+    "level": 15,
+    "features": [
+      {
+        "index": "superior-critical",
+        "name": "Превосходный критический удар"
+      }
+    ],
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    },
+    "subclass": {
+      "index": "champion",
+      "name": "Чемпион"
+    },
+    "index": "champion-15"
+  },
+  {
+    "level": 18,
+    "features": [
+      {
+        "index": "survivor",
+        "name": "Уцелевший"
+      }
+    ],
+    "class": {
+      "index": "fighter",
+      "name": "Воин"
+    },
+    "subclass": {
+      "index": "champion",
+      "name": "Чемпион"
+    },
+    "index": "champion-18"
+  },
+  {
+    "level": 3,
+    "features": [
+      {
+        "index": "open-hand-technique",
+        "name": "Техника открытой ладони"
+      }
+    ],
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    },
+    "subclass": {
+      "index": "open-hand",
+      "name": "Открытая Ладонь"
+    },
+    "index": "open-hand-3"
+  },
+  {
+    "level": 6,
+    "features": [
+      {
+        "index": "wholeness-of-body",
+        "name": "Целостность тела"
+      }
+    ],
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    },
+    "subclass": {
+      "index": "open-hand",
+      "name": "Открытая Ладонь"
+    },
+    "index": "open-hand-6"
+  },
+  {
+    "level": 11,
+    "features": [
+      {
+        "index": "tranquility",
+        "name": "Спокойствие"
+      }
+    ],
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    },
+    "subclass": {
+      "index": "open-hand",
+      "name": "Открытая Ладонь"
+    },
+    "index": "open-hand-11"
+  },
+  {
+    "level": 17,
+    "features": [
+      {
+        "index": "quivering-palm",
+        "name": "Дрожащая ладонь"
+      }
+    ],
+    "class": {
+      "index": "monk",
+      "name": "Монах"
+    },
+    "subclass": {
+      "index": "open-hand",
+      "name": "Открытая Ладонь"
+    },
+    "index": "open-hand-17"
+  },
+  {
+    "level": 3,
+    "features": [
+      {
+        "index": "channel-divinity-sacred-weapon",
+        "name": "Божественный канал: Священное оружие"
+      },
+      {
+        "index": "channel-divinity-turn-the-unholy",
+        "name": "Божественный канал: Изгнание нечисти"
+      }
+    ],
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    },
+    "subclass": {
+      "index": "devotion",
+      "name": "Преданность"
+    },
+    "index": "devotion-3"
+  },
+  {
+    "level": 7,
+    "features": [
+      {
+        "index": "aura-of-devotion",
+        "name": "Аура преданности"
+      }
+    ],
+    "subclass_specific": {
+      "aura_range": 10
+    },
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    },
+    "subclass": {
+      "index": "devotion",
+      "name": "Преданность"
+    },
+    "index": "devotion-7"
+  },
+  {
+    "level": 15,
+    "features": [
+      {
+        "index": "purity-of-spirit",
+        "name": "Чистота духа"
+      }
+    ],
+    "subclass_specific": {
+      "aura_range": 10
+    },
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    },
+    "subclass": {
+      "index": "devotion",
+      "name": "Преданность"
+    },
+    "index": "devotion-15"
+  },
+  {
+    "level": 18,
+    "features": [],
+    "subclass_specific": {
+      "aura_range": 30
+    },
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    },
+    "subclass": {
+      "index": "devotion",
+      "name": "Преданность"
+    },
+    "index": "devotion-18"
+  },
+  {
+    "level": 20,
+    "features": [
+      {
+        "index": "holy-nimbus",
+        "name": "Святой нимб"
+      }
+    ],
+    "subclass_specific": {
+      "aura_range": 30
+    },
+    "class": {
+      "index": "paladin",
+      "name": "Паладин"
+    },
+    "subclass": {
+      "index": "devotion",
+      "name": "Преданность"
+    },
+    "index": "devotion-20"
+  },
+  {
+    "level": 3,
+    "features": [
+      {
+        "index": "hunters-prey",
+        "name": "Добыча охотника"
+      }
+    ],
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    },
+    "subclass": {
+      "index": "hunter",
+      "name": "Охотник"
+    },
+    "index": "hunter-3"
+  },
+  {
+    "level": 7,
+    "features": [
+      {
+        "index": "defensive-tactics",
+        "name": "Защитная тактика"
+      }
+    ],
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    },
+    "subclass": {
+      "index": "hunter",
+      "name": "Охотник"
+    },
+    "index": "hunter-7"
+  },
+  {
+    "level": 11,
+    "features": [
+      {
+        "index": "multiattack",
+        "name": "Многократная атака"
+      }
+    ],
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    },
+    "subclass": {
+      "index": "hunter",
+      "name": "Охотник"
+    },
+    "index": "hunter-11"
+  },
+  {
+    "level": 15,
+    "features": [
+      {
+        "index": "superior-hunters-defense",
+        "name": "Превосходная защита охотника"
+      }
+    ],
+    "class": {
+      "index": "ranger",
+      "name": "Следопыт"
+    },
+    "subclass": {
+      "index": "hunter",
+      "name": "Охотник"
+    },
+    "index": "hunter-15"
+  },
+  {
+    "level": 3,
+    "features": [
+      {
+        "index": "fast-hands",
+        "name": "Ловкие руки"
+      },
+      {
+        "index": "second-story-work",
+        "name": "Работа на втором этаже"
+      }
+    ],
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    },
+    "subclass": {
+      "index": "thief",
+      "name": "Вор"
+    },
+    "index": "thief-3"
+  },
+  {
+    "level": 9,
+    "features": [
+      {
+        "index": "supreme-sneak",
+        "name": "Высшая скрытность"
+      }
+    ],
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    },
+    "subclass": {
+      "index": "thief",
+      "name": "Вор"
+    },
+    "index": "thief-9"
+  },
+  {
+    "level": 13,
+    "features": [
+      {
+        "index": "use-magic-device",
+        "name": "Использование магических устройств"
+      }
+    ],
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    },
+    "subclass": {
+      "index": "thief",
+      "name": "Вор"
+    },
+    "index": "thief-13"
+  },
+  {
+    "level": 17,
+    "features": [
+      {
+        "index": "thiefs-reflexes",
+        "name": "Воровские рефлексы"
+      }
+    ],
+    "class": {
+      "index": "rogue",
+      "name": "Плут"
+    },
+    "subclass": {
+      "index": "thief",
+      "name": "Вор"
+    },
+    "index": "thief-17"
+  },
+  {
+    "level": 1,
+    "features": [
+      {
+        "index": "dragon-ancestor",
+        "name": "Драконий предок"
+      },
+      {
+        "index": "draconic-resilience",
+        "name": "Драконья устойчивость"
+      }
+    ],
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    },
+    "subclass": {
+      "index": "draconic",
+      "name": "Драконья кровь"
+    },
+    "index": "draconic-1"
+  },
+  {
+    "level": 6,
+    "features": [
+      {
+        "index": "elemental-affinity",
+        "name": "Родство со стихией"
+      }
+    ],
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    },
+    "subclass": {
+      "index": "draconic",
+      "name": "Драконья кровь"
+    },
+    "index": "draconic-6"
+  },
+  {
+    "level": 14,
+    "features": [
+      {
+        "index": "dragon-wings",
+        "name": "Драконьи крылья"
+      }
+    ],
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    },
+    "subclass": {
+      "index": "draconic",
+      "name": "Драконья кровь"
+    },
+    "index": "draconic-14"
+  },
+  {
+    "level": 18,
+    "features": [
+      {
+        "index": "draconic-presence",
+        "name": "Драконье величие"
+      }
+    ],
+    "class": {
+      "index": "sorcerer",
+      "name": "Чародей"
+    },
+    "subclass": {
+      "index": "draconic",
+      "name": "Драконья кровь"
+    },
+    "index": "draconic-18"
+  },
+  {
+    "level": 1,
+    "features": [
+      {
+        "index": "dark-ones-blessing",
+        "name": "Благословение Темного"
+      }
+    ],
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    },
+    "subclass": {
+      "index": "fiend",
+      "name": "Бестия"
+    },
+    "index": "fiend-1"
+  },
+  {
+    "level": 6,
+    "features": [
+      {
+        "index": "dark-ones-own-luck",
+        "name": "Удача Темного"
+      }
+    ],
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    },
+    "subclass": {
+      "index": "fiend",
+      "name": "Бестия"
+    },
+    "index": "fiend-6"
+  },
+  {
+    "level": 10,
+    "features": [
+      {
+        "index": "fiendish-resilience",
+        "name": "Бестиальная устойчивость"
+      }
+    ],
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    },
+    "subclass": {
+      "index": "fiend",
+      "name": "Бестия"
+    },
+    "index": "fiend-10"
+  },
+  {
+    "level": 14,
+    "features": [
+      {
+        "index": "hurl-through-hell",
+        "name": "Бросок сквозь ад"
+      }
+    ],
+    "class": {
+      "index": "warlock",
+      "name": "Колдун"
+    },
+    "subclass": {
+      "index": "fiend",
+      "name": "Бестия"
+    },
+    "index": "fiend-14"
+  },
+  {
+    "level": 2,
+    "features": [
+      {
+        "index": "evocation-savant",
+        "name": "Ученый-эвокатор"
+      },
+      {
+        "index": "sculpt-spells",
+        "name": "Скульптор заклинаний"
+      }
+    ],
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    },
+    "subclass": {
+      "index": "evocation",
+      "name": "Воплощение"
+    },
+    "index": "evocation-2"
+  },
+  {
+    "level": 6,
+    "features": [
+      {
+        "index": "potent-cantrip",
+        "name": "Мощный заговор"
+      }
+    ],
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    },
+    "subclass": {
+      "index": "evocation",
+      "name": "Воплощение"
+    },
+    "index": "evocation-6"
+  },
+  {
+    "level": 10,
+    "features": [
+      {
+        "index": "empowered-evocation",
+        "name": "Усиленное воплощение"
+      }
+    ],
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    },
+    "subclass": {
+      "index": "evocation",
+      "name": "Воплощение"
+    },
+    "index": "evocation-10"
+  },
+  {
+    "level": 14,
+    "features": [
+      {
+        "index": "overchannel",
+        "name": "Перегрузка"
+      }
+    ],
+    "class": {
+      "index": "wizard",
+      "name": "Волшебник"
+    },
+    "subclass": {
+      "index": "evocation",
+      "name": "Воплощение"
+    },
+    "index": "evocation-14"
+  }
+]

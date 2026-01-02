@@ -1,0 +1,5529 @@
+[
+  {
+    "index": "club",
+    "name": "Дубинка",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Простое",
+    "weapon_range": "Ближний бой",
+    "category_range": "Простое рукопашное",
+    "cost": {
+      "quantity": 1,
+      "unit": "сп"
+    },
+    "damage": {
+      "damage_dice": "1d4",
+      "damage_type": {
+        "index": "bludgeoning",
+        "name": "Дробящий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 2,
+    "properties": [
+      {
+        "index": "light",
+        "name": "Легкое"
+      },
+      {
+        "index": "monk",
+        "name": "Монашеское"
+      }
+    ]
+  },
+  {
+    "index": "dagger",
+    "name": "Кинжал",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Простое",
+    "weapon_range": "Ближний бой",
+    "category_range": "Простое рукопашное",
+    "cost": {
+      "quantity": 2,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d4",
+      "damage_type": {
+        "index": "piercing",
+        "name": "Колющий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 1,
+    "properties": [
+      {
+        "index": "finesse",
+        "name": "Фехтовальное"
+      },
+      {
+        "index": "light",
+        "name": "Легкое"
+      },
+      {
+        "index": "thrown",
+        "name": "Метательное"
+      },
+      {
+        "index": "monk",
+        "name": "Монашеское"
+      }
+    ],
+    "throw_range": {
+      "normal": 20,
+      "long": 60
+    }
+  },
+  {
+    "index": "greatclub",
+    "name": "Палица",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Простое",
+    "weapon_range": "Ближний бой",
+    "category_range": "Простое рукопашное",
+    "cost": {
+      "quantity": 2,
+      "unit": "сп"
+    },
+    "damage": {
+      "damage_dice": "1d8",
+      "damage_type": {
+        "index": "bludgeoning",
+        "name": "Дробящий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 10,
+    "properties": [
+      {
+        "index": "two-handed",
+        "name": "Двуручное"
+      }
+    ]
+  },
+  {
+    "index": "handaxe",
+    "name": "Ручной топор",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Простое",
+    "weapon_range": "Ближний бой",
+    "category_range": "Простое рукопашное",
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d6",
+      "damage_type": {
+        "index": "slashing",
+        "name": "Рубящий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 2,
+    "properties": [
+      {
+        "index": "light",
+        "name": "Легкое"
+      },
+      {
+        "index": "thrown",
+        "name": "Метательное"
+      },
+      {
+        "index": "monk",
+        "name": "Монашеское"
+      }
+    ],
+    "throw_range": {
+      "normal": 20,
+      "long": 60
+    }
+  },
+  {
+    "index": "javelin",
+    "name": "Метательное копье",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Простое",
+    "weapon_range": "Ближний бой",
+    "category_range": "Простое рукопашное",
+    "cost": {
+      "quantity": 5,
+      "unit": "сп"
+    },
+    "damage": {
+      "damage_dice": "1d6",
+      "damage_type": {
+        "index": "piercing",
+        "name": "Колющий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 2,
+    "properties": [
+      {
+        "index": "thrown",
+        "name": "Метательное"
+      },
+      {
+        "index": "monk",
+        "name": "Монашеское"
+      }
+    ],
+    "throw_range": {
+      "normal": 30,
+      "long": 120
+    }
+  },
+  {
+    "index": "light-hammer",
+    "name": "Легкий молот",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Простое",
+    "weapon_range": "Ближний бой",
+    "category_range": "Простое рукопашное",
+    "cost": {
+      "quantity": 2,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d4",
+      "damage_type": {
+        "index": "bludgeoning",
+        "name": "Дробящий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 2,
+    "properties": [
+      {
+        "index": "light",
+        "name": "Легкое"
+      },
+      {
+        "index": "thrown",
+        "name": "Метательное"
+      },
+      {
+        "index": "monk",
+        "name": "Монашеское"
+      }
+    ],
+    "throw_range": {
+      "normal": 20,
+      "long": 60
+    }
+  },
+  {
+    "index": "mace",
+    "name": "Булава",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Простое",
+    "weapon_range": "Ближний бой",
+    "category_range": "Простое рукопашное",
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d6",
+      "damage_type": {
+        "index": "bludgeoning",
+        "name": "Дробящий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 4,
+    "properties": [
+      {
+        "index": "monk",
+        "name": "Монашеское"
+      }
+    ]
+  },
+  {
+    "index": "quarterstaff",
+    "name": "Боевой посох",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Простое",
+    "weapon_range": "Ближний бой",
+    "category_range": "Простое рукопашное",
+    "cost": {
+      "quantity": 2,
+      "unit": "сп"
+    },
+    "damage": {
+      "damage_dice": "1d6",
+      "damage_type": {
+        "index": "bludgeoning",
+        "name": "Дробящий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 4,
+    "properties": [
+      {
+        "index": "versatile",
+        "name": "Универсальное"
+      },
+      {
+        "index": "monk",
+        "name": "Монашеское"
+      }
+    ],
+    "two_handed_damage": {
+      "damage_dice": "1d8",
+      "damage_type": {
+        "index": "bludgeoning",
+        "name": "Дробящий"
+      }
+    }
+  },
+  {
+    "index": "sickle",
+    "name": "Серп",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Простое",
+    "weapon_range": "Ближний бой",
+    "category_range": "Простое рукопашное",
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d4",
+      "damage_type": {
+        "index": "slashing",
+        "name": "Рубящий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 2,
+    "properties": [
+      {
+        "index": "light",
+        "name": "Легкое"
+      },
+      {
+        "index": "monk",
+        "name": "Монашеское"
+      }
+    ]
+  },
+  {
+    "index": "spear",
+    "name": "Копье",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Простое",
+    "weapon_range": "Ближний бой",
+    "category_range": "Простое рукопашное",
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d6",
+      "damage_type": {
+        "index": "piercing",
+        "name": "Колющий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 3,
+    "properties": [
+      {
+        "index": "thrown",
+        "name": "Метательное"
+      },
+      {
+        "index": "versatile",
+        "name": "Универсальное"
+      },
+      {
+        "index": "monk",
+        "name": "Монашеское"
+      }
+    ],
+    "throw_range": {
+      "normal": 20,
+      "long": 60
+    },
+    "two_handed_damage": {
+      "damage_dice": "1d8",
+      "damage_type": {
+        "index": "piercing",
+        "name": "Колющий"
+      }
+    }
+  },
+  {
+    "index": "crossbow-light",
+    "name": "Арбалет, легкий",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Простое",
+    "weapon_range": "Дальнобойное",
+    "category_range": "Простое дальнобойное",
+    "cost": {
+      "quantity": 25,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d8",
+      "damage_type": {
+        "index": "piercing",
+        "name": "Колющий"
+      }
+    },
+    "range": {
+      "normal": 80,
+      "long": 320
+    },
+    "weight": 5,
+    "properties": [
+      {
+        "index": "ammunition",
+        "name": "Боеприпасы"
+      },
+      {
+        "index": "loading",
+        "name": "Перезарядка"
+      },
+      {
+        "index": "two-handed",
+        "name": "Двуручное"
+      }
+    ]
+  },
+  {
+    "index": "dart",
+    "name": "Дротик",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Простое",
+    "weapon_range": "Дальнобойное",
+    "category_range": "Простое дальнобойное",
+    "cost": {
+      "quantity": 5,
+      "unit": "мм"
+    },
+    "damage": {
+      "damage_dice": "1d4",
+      "damage_type": {
+        "index": "piercing",
+        "name": "Колющий"
+      }
+    },
+    "range": {
+      "normal": 20,
+      "long": 60
+    },
+    "weight": 0.25,
+    "properties": [
+      {
+        "index": "finesse",
+        "name": "Фехтовальное"
+      },
+      {
+        "index": "thrown",
+        "name": "Метательное"
+      }
+    ],
+    "throw_range": {
+      "normal": 20,
+      "long": 60
+    }
+  },
+  {
+    "index": "shortbow",
+    "name": "Короткий лук",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Простое",
+    "weapon_range": "Дальнобойное",
+    "category_range": "Простое дальнобойное",
+    "cost": {
+      "quantity": 25,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d6",
+      "damage_type": {
+        "index": "piercing",
+        "name": "Колющий"
+      }
+    },
+    "range": {
+      "normal": 80,
+      "long": 320
+    },
+    "weight": 2,
+    "properties": [
+      {
+        "index": "ammunition",
+        "name": "Боеприпасы"
+      },
+      {
+        "index": "two-handed",
+        "name": "Двуручное"
+      }
+    ]
+  },
+  {
+    "index": "sling",
+    "name": "Праща",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Простое",
+    "weapon_range": "Дальнобойное",
+    "category_range": "Простое дальнобойное",
+    "cost": {
+      "quantity": 1,
+      "unit": "сп"
+    },
+    "damage": {
+      "damage_dice": "1d4",
+      "damage_type": {
+        "index": "bludgeoning",
+        "name": "Дробящий"
+      }
+    },
+    "range": {
+      "normal": 30,
+      "long": 120
+    },
+    "weight": 0,
+    "properties": [
+      {
+        "index": "ammunition",
+        "name": "Боеприпасы"
+      }
+    ]
+  },
+  {
+    "index": "battleaxe",
+    "name": "Боевой топор",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Ближний бой",
+    "category_range": "Воинское рукопашное",
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d8",
+      "damage_type": {
+        "index": "slashing",
+        "name": "Рубящий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 4,
+    "properties": [
+      {
+        "index": "versatile",
+        "name": "Универсальное"
+      }
+    ],
+    "two_handed_damage": {
+      "damage_dice": "1d10",
+      "damage_type": {
+        "index": "slashing",
+        "name": "Рубящий"
+      }
+    }
+  },
+  {
+    "index": "flail",
+    "name": "Цеп",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Ближний бой",
+    "category_range": "Воинское рукопашное",
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d8",
+      "damage_type": {
+        "index": "bludgeoning",
+        "name": "Дробящий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 2,
+    "properties": []
+  },
+  {
+    "index": "glaive",
+    "name": "Глефа",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Ближний бой",
+    "category_range": "Воинское рукопашное",
+    "cost": {
+      "quantity": 20,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d10",
+      "damage_type": {
+        "index": "slashing",
+        "name": "Рубящий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 6,
+    "properties": [
+      {
+        "index": "heavy",
+        "name": "Тяжелое"
+      },
+      {
+        "index": "reach",
+        "name": "Досягаемость"
+      },
+      {
+        "index": "two-handed",
+        "name": "Двуручное"
+      }
+    ]
+  },
+  {
+    "index": "greataxe",
+    "name": "Двуручный топор",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Ближний бой",
+    "category_range": "Воинское рукопашное",
+    "cost": {
+      "quantity": 30,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d12",
+      "damage_type": {
+        "index": "slashing",
+        "name": "Рубящий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 7,
+    "properties": [
+      {
+        "index": "heavy",
+        "name": "Тяжелое"
+      },
+      {
+        "index": "two-handed",
+        "name": "Двуручное"
+      }
+    ]
+  },
+  {
+    "index": "greatsword",
+    "name": "Двуручный меч",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Ближний бой",
+    "category_range": "Воинское рукопашное",
+    "cost": {
+      "quantity": 50,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "2d6",
+      "damage_type": {
+        "index": "slashing",
+        "name": "Рубящий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 6,
+    "properties": [
+      {
+        "index": "heavy",
+        "name": "Тяжелое"
+      },
+      {
+        "index": "two-handed",
+        "name": "Двуручное"
+      }
+    ]
+  },
+  {
+    "index": "halberd",
+    "name": "Алебарда",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Ближний бой",
+    "category_range": "Воинское рукопашное",
+    "cost": {
+      "quantity": 20,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d10",
+      "damage_type": {
+        "index": "slashing",
+        "name": "Рубящий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 6,
+    "properties": [
+      {
+        "index": "heavy",
+        "name": "Тяжелое"
+      },
+      {
+        "index": "reach",
+        "name": "Досягаемость"
+      },
+      {
+        "index": "two-handed",
+        "name": "Двуручное"
+      }
+    ]
+  },
+  {
+    "index": "lance",
+    "name": "Длинное копье (пика)",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Ближний бой",
+    "category_range": "Воинское рукопашное",
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d12",
+      "damage_type": {
+        "index": "piercing",
+        "name": "Колющий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 6,
+    "properties": [
+      {
+        "index": "reach",
+        "name": "Досягаемость"
+      },
+      {
+        "index": "special",
+        "name": "Особое"
+      }
+    ],
+    "special": [
+      "Вы совершаете проверки атаки этим копьем с помехой, если атакуете существо в пределах 5 футов от вас. Кроме того, длинное копье требует двух рук для использования, если вы не находитесь верхом."
+    ]
+  },
+  {
+    "index": "longsword",
+    "name": "Длинный меч",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Ближний бой",
+    "category_range": "Воинское рукопашное",
+    "cost": {
+      "quantity": 15,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d8",
+      "damage_type": {
+        "index": "slashing",
+        "name": "Рубящий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 3,
+    "properties": [
+      {
+        "index": "versatile",
+        "name": "Универсальное"
+      }
+    ],
+    "two_handed_damage": {
+      "damage_dice": "1d10",
+      "damage_type": {
+        "index": "slashing",
+        "name": "Рубящий"
+      }
+    }
+  },
+  {
+    "index": "maul",
+    "name": "Молот",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Ближний бой",
+    "category_range": "Воинское рукопашное",
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "2d6",
+      "damage_type": {
+        "index": "bludgeoning",
+        "name": "Дробящий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 10,
+    "properties": [
+      {
+        "index": "heavy",
+        "name": "Тяжелое"
+      },
+      {
+        "index": "two-handed",
+        "name": "Двуручное"
+      }
+    ]
+  },
+  {
+    "index": "morningstar",
+    "name": "Моргенштерн",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Ближний бой",
+    "category_range": "Воинское рукопашное",
+    "cost": {
+      "quantity": 15,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d8",
+      "damage_type": {
+        "index": "piercing",
+        "name": "Колющий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 4,
+    "properties": []
+  },
+  {
+    "index": "pike",
+    "name": "Пика",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Ближний бой",
+    "category_range": "Воинское рукопашное",
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d10",
+      "damage_type": {
+        "index": "piercing",
+        "name": "Колющий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 18,
+    "properties": [
+      {
+        "index": "heavy",
+        "name": "Тяжелое"
+      },
+      {
+        "index": "reach",
+        "name": "Досягаемость"
+      },
+      {
+        "index": "two-handed",
+        "name": "Двуручное"
+      }
+    ]
+  },
+  {
+    "index": "rapier",
+    "name": "Рапира",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Ближний бой",
+    "category_range": "Воинское рукопашное",
+    "cost": {
+      "quantity": 25,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d8",
+      "damage_type": {
+        "index": "piercing",
+        "name": "Колющий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 2,
+    "properties": [
+      {
+        "index": "finesse",
+        "name": "Фехтовальное"
+      }
+    ]
+  },
+  {
+    "index": "scimitar",
+    "name": "Скимитар",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Ближний бой",
+    "category_range": "Воинское рукопашное",
+    "cost": {
+      "quantity": 25,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d6",
+      "damage_type": {
+        "index": "slashing",
+        "name": "Рубящий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 3,
+    "properties": [
+      {
+        "index": "finesse",
+        "name": "Фехтовальное"
+      },
+      {
+        "index": "light",
+        "name": "Легкое"
+      }
+    ]
+  },
+  {
+    "index": "shortsword",
+    "name": "Короткий меч",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Ближний бой",
+    "category_range": "Воинское рукопашное",
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d6",
+      "damage_type": {
+        "index": "piercing",
+        "name": "Колющий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 2,
+    "properties": [
+      {
+        "index": "finesse",
+        "name": "Фехтовальное"
+      },
+      {
+        "index": "light",
+        "name": "Легкое"
+      },
+      {
+        "index": "monk",
+        "name": "Монашеское"
+      }
+    ]
+  },
+  {
+    "index": "trident",
+    "name": "Трезубец",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Ближний бой",
+    "category_range": "Воинское рукопашное",
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d6",
+      "damage_type": {
+        "index": "piercing",
+        "name": "Колющий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 4,
+    "properties": [
+      {
+        "index": "thrown",
+        "name": "Метательное"
+      },
+      {
+        "index": "versatile",
+        "name": "Универсальное"
+      }
+    ],
+    "throw_range": {
+      "normal": 20,
+      "long": 60
+    },
+    "two_handed_damage": {
+      "damage_dice": "1d8",
+      "damage_type": {
+        "index": "piercing",
+        "name": "Колющий"
+      }
+    }
+  },
+  {
+    "index": "war-pick",
+    "name": "Боевой молот (клевец)",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Ближний бой",
+    "category_range": "Воинское рукопашное",
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d8",
+      "damage_type": {
+        "index": "piercing",
+        "name": "Колющий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 2,
+    "properties": []
+  },
+  {
+    "index": "warhammer",
+    "name": "Боевой молот",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Ближний бой",
+    "category_range": "Воинское рукопашное",
+    "cost": {
+      "quantity": 15,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d8",
+      "damage_type": {
+        "index": "bludgeoning",
+        "name": "Дробящий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 2,
+    "properties": [
+      {
+        "index": "versatile",
+        "name": "Универсальное"
+      }
+    ],
+    "two_handed_damage": {
+      "damage_dice": "1d10",
+      "damage_type": {
+        "index": "bludgeoning",
+        "name": "Дробящий"
+      }
+    }
+  },
+  {
+    "index": "whip",
+    "name": "Кнут",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Ближний бой",
+    "category_range": "Воинское рукопашное",
+    "cost": {
+      "quantity": 2,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d4",
+      "damage_type": {
+        "index": "slashing",
+        "name": "Рубящий"
+      }
+    },
+    "range": {
+      "normal": 5
+    },
+    "weight": 3,
+    "properties": [
+      {
+        "index": "finesse",
+        "name": "Фехтовальное"
+      },
+      {
+        "index": "reach",
+        "name": "Досягаемость"
+      }
+    ]
+  },
+  {
+    "index": "blowgun",
+    "name": "Духовая трубка",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Дальнобойное",
+    "category_range": "Воинское дальнобойное",
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1",
+      "damage_type": {
+        "index": "piercing",
+        "name": "Колющий"
+      }
+    },
+    "range": {
+      "normal": 25,
+      "long": 100
+    },
+    "weight": 1,
+    "properties": [
+      {
+        "index": "ammunition",
+        "name": "Боеприпасы"
+      },
+      {
+        "index": "loading",
+        "name": "Перезарядка"
+      }
+    ]
+  },
+  {
+    "index": "crossbow-hand",
+    "name": "Арбалет, ручной",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Дальнобойное",
+    "category_range": "Воинское дальнобойное",
+    "cost": {
+      "quantity": 75,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d6",
+      "damage_type": {
+        "index": "piercing",
+        "name": "Колющий"
+      }
+    },
+    "range": {
+      "normal": 30,
+      "long": 120
+    },
+    "weight": 3,
+    "properties": [
+      {
+        "index": "ammunition",
+        "name": "Боеприпасы"
+      },
+      {
+        "index": "light",
+        "name": "Легкое"
+      },
+      {
+        "index": "loading",
+        "name": "Перезарядка"
+      }
+    ]
+  },
+  {
+    "index": "crossbow-heavy",
+    "name": "Арбалет, тяжелый",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Дальнобойное",
+    "category_range": "Воинское дальнобойное",
+    "cost": {
+      "quantity": 50,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d10",
+      "damage_type": {
+        "index": "piercing",
+        "name": "Колющий"
+      }
+    },
+    "range": {
+      "normal": 100,
+      "long": 400
+    },
+    "weight": 18,
+    "properties": [
+      {
+        "index": "ammunition",
+        "name": "Боеприпасы"
+      },
+      {
+        "index": "heavy",
+        "name": "Тяжелое"
+      },
+      {
+        "index": "loading",
+        "name": "Перезарядка"
+      },
+      {
+        "index": "two-handed",
+        "name": "Двуручное"
+      }
+    ],
+    "image": "/api/images/equipment/crossbow-heavy.png"
+  },
+  {
+    "index": "longbow",
+    "name": "Длинный лук",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Дальнобойное",
+    "category_range": "Воинское дальнобойное",
+    "cost": {
+      "quantity": 50,
+      "unit": "зм"
+    },
+    "damage": {
+      "damage_dice": "1d8",
+      "damage_type": {
+        "index": "piercing",
+        "name": "Колющий"
+      }
+    },
+    "range": {
+      "normal": 150,
+      "long": 600
+    },
+    "weight": 2,
+    "properties": [
+      {
+        "index": "ammunition",
+        "name": "Боеприпасы"
+      },
+      {
+        "index": "heavy",
+        "name": "Тяжелое"
+      },
+      {
+        "index": "two-handed",
+        "name": "Двуручное"
+      }
+    ]
+  },
+  {
+    "index": "net",
+    "name": "Сеть",
+    "equipment_category": {
+      "index": "weapon",
+      "name": "Оружие"
+    },
+    "weapon_category": "Воинское",
+    "weapon_range": "Дальнобойное",
+    "category_range": "Воинское дальнобойное",
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "range": {
+      "normal": 5,
+      "long": 15
+    },
+    "weight": 3,
+    "properties": [
+      {
+        "index": "thrown",
+        "name": "Метательное"
+      },
+      {
+        "index": "special",
+        "name": "Особое"
+      }
+    ],
+    "special": [
+      "Существо размера Большой или меньше, по которому попала сеть, становится опутанным, пока не высвободится. Сеть не действует на бесформенных существ или существ размера Огромный или больше. Существо может использовать свое действие, чтобы совершить проверку Силы со Сл 10, высвобождая себя или другое существо в пределах своей досягаемости при успехе. Нанесение сети 5 единиц рубящего урона (КД 10) также освобождает существо, не повреждая его, прекращая эффект и уничтожая сеть. Когда вы используете действие, бонусное действие или реакцию для атаки сетью, вы можете совершить только одну атаку, независимо от количества атак, которое вы обычно можете совершить."
+    ],
+    "throw_range": {
+      "normal": 5,
+      "long": 15
+    }
+  },
+  {
+    "index": "padded-armor",
+    "name": "Стеганый доспех",
+    "equipment_category": {
+      "index": "armor",
+      "name": "Доспехи"
+    },
+    "armor_category": "Легкие",
+    "armor_class": {
+      "base": 11,
+      "dex_bonus": true
+    },
+    "str_minimum": 0,
+    "stealth_disadvantage": true,
+    "weight": 8,
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    }
+  },
+  {
+    "index": "leather-armor",
+    "name": "Кожаный доспех",
+    "equipment_category": {
+      "index": "armor",
+      "name": "Доспехи"
+    },
+    "armor_category": "Легкие",
+    "armor_class": {
+      "base": 11,
+      "dex_bonus": true
+    },
+    "str_minimum": 0,
+    "stealth_disadvantage": false,
+    "weight": 10,
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    }
+  },
+  {
+    "index": "studded-leather-armor",
+    "name": "Проклепанный кожаный доспех",
+    "equipment_category": {
+      "index": "armor",
+      "name": "Доспехи"
+    },
+    "armor_category": "Легкие",
+    "armor_class": {
+      "base": 12,
+      "dex_bonus": true
+    },
+    "str_minimum": 0,
+    "stealth_disadvantage": false,
+    "weight": 13,
+    "cost": {
+      "quantity": 45,
+      "unit": "зм"
+    }
+  },
+  {
+    "index": "hide-armor",
+    "name": "Шкурный доспех",
+    "equipment_category": {
+      "index": "armor",
+      "name": "Доспехи"
+    },
+    "armor_category": "Средние",
+    "armor_class": {
+      "base": 12,
+      "dex_bonus": true,
+      "max_bonus": 2
+    },
+    "str_minimum": 0,
+    "stealth_disadvantage": false,
+    "weight": 12,
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    }
+  },
+  {
+    "index": "chain-shirt",
+    "name": "Кольчужная рубаха",
+    "equipment_category": {
+      "index": "armor",
+      "name": "Доспехи"
+    },
+    "armor_category": "Средние",
+    "armor_class": {
+      "base": 13,
+      "dex_bonus": true,
+      "max_bonus": 2
+    },
+    "str_minimum": 0,
+    "stealth_disadvantage": false,
+    "weight": 20,
+    "cost": {
+      "quantity": 50,
+      "unit": "зм"
+    }
+  },
+  {
+    "index": "scale-mail",
+    "name": "Чешуйчатый доспех",
+    "equipment_category": {
+      "index": "armor",
+      "name": "Доспехи"
+    },
+    "armor_category": "Средние",
+    "armor_class": {
+      "base": 14,
+      "dex_bonus": true,
+      "max_bonus": 2
+    },
+    "str_minimum": 0,
+    "stealth_disadvantage": true,
+    "weight": 45,
+    "cost": {
+      "quantity": 50,
+      "unit": "зм"
+    }
+  },
+  {
+    "index": "breastplate",
+    "name": "Кираса",
+    "equipment_category": {
+      "index": "armor",
+      "name": "Доспехи"
+    },
+    "armor_category": "Средние",
+    "armor_class": {
+      "base": 14,
+      "dex_bonus": true,
+      "max_bonus": 2
+    },
+    "str_minimum": 0,
+    "stealth_disadvantage": false,
+    "weight": 20,
+    "cost": {
+      "quantity": 400,
+      "unit": "зм"
+    }
+  },
+  {
+    "index": "half-plate-armor",
+    "name": "Полупанцирь",
+    "equipment_category": {
+      "index": "armor",
+      "name": "Доспехи"
+    },
+    "armor_category": "Средние",
+    "armor_class": {
+      "base": 15,
+      "dex_bonus": true,
+      "max_bonus": 2
+    },
+    "str_minimum": 0,
+    "stealth_disadvantage": true,
+    "weight": 40,
+    "cost": {
+      "quantity": 750,
+      "unit": "зм"
+    }
+  },
+  {
+    "index": "ring-mail",
+    "name": "Кольчатый доспех",
+    "equipment_category": {
+      "index": "armor",
+      "name": "Доспехи"
+    },
+    "armor_category": "Тяжелые",
+    "armor_class": {
+      "base": 14,
+      "dex_bonus": false
+    },
+    "str_minimum": 0,
+    "stealth_disadvantage": true,
+    "weight": 40,
+    "cost": {
+      "quantity": 30,
+      "unit": "зм"
+    }
+  },
+  {
+    "index": "chain-mail",
+    "name": "Кольчуга",
+    "equipment_category": {
+      "index": "armor",
+      "name": "Доспехи"
+    },
+    "armor_category": "Тяжелые",
+    "armor_class": {
+      "base": 16,
+      "dex_bonus": false
+    },
+    "str_minimum": 13,
+    "stealth_disadvantage": true,
+    "weight": 55,
+    "cost": {
+      "quantity": 75,
+      "unit": "зм"
+    }
+  },
+  {
+    "index": "splint-armor",
+    "name": "Наборный доспех",
+    "equipment_category": {
+      "index": "armor",
+      "name": "Доспехи"
+    },
+    "armor_category": "Тяжелые",
+    "armor_class": {
+      "base": 17,
+      "dex_bonus": false
+    },
+    "str_minimum": 15,
+    "stealth_disadvantage": true,
+    "weight": 60,
+    "cost": {
+      "quantity": 200,
+      "unit": "зм"
+    }
+  },
+  {
+    "index": "plate-armor",
+    "name": "Латный доспех",
+    "equipment_category": {
+      "index": "armor",
+      "name": "Доспехи"
+    },
+    "armor_category": "Тяжелые",
+    "armor_class": {
+      "base": 18,
+      "dex_bonus": false
+    },
+    "str_minimum": 15,
+    "stealth_disadvantage": true,
+    "weight": 65,
+    "cost": {
+      "quantity": 1500,
+      "unit": "зм"
+    }
+  },
+  {
+    "index": "shield",
+    "name": "Щит",
+    "equipment_category": {
+      "index": "armor",
+      "name": "Доспехи"
+    },
+    "armor_category": "Щит",
+    "armor_class": {
+      "base": 2,
+      "dex_bonus": false
+    },
+    "str_minimum": 0,
+    "stealth_disadvantage": false,
+    "weight": 6,
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    }
+  },
+  {
+    "index": "abacus",
+    "name": "Счеты",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 2,
+      "unit": "зм"
+    },
+    "weight": 2
+  },
+  {
+    "index": "acid-vial",
+    "name": "Кислота (флакон)",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 25,
+      "unit": "зм"
+    },
+    "weight": 1,
+    "desc": [
+      "Действием вы можете выплеснуть содержимое этого флакона на существо, находящееся в пределах 5 футов от вас, или метнуть флакон на расстояние до 20 футов, разбивая его при ударе. В любом случае совершите дальнобойную атаку против существа или объекта, считая кислоту импровизированным оружием.",
+      "При попадании цель получает 2d6 урона кислотой."
+    ]
+  },
+  {
+    "index": "alchemists-fire-flask",
+    "name": "Алхимический огонь (флакон)",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 50,
+      "unit": "зм"
+    },
+    "desc": [
+      "Эта липкая, клейкая жидкость воспламеняется при контакте с воздухом.",
+      "Действием вы можете метнуть этот флакон на расстояние до 20 футов, разбивая его при ударе. Совершите дальнобойную атаку против существа или объекта, считая алхимический огонь импровизированным оружием.",
+      "При попадании цель получает 1d4 урона огнем в начале каждого своего хода. Существо может прекратить этот урон, потратив действие на проверку Ловкости со Сл 10, чтобы потушить пламя."
+    ],
+    "weight": 1
+  },
+  {
+    "index": "alms-box",
+    "name": "Ящик для пожертвований",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 0,
+      "unit": "мм"
+    },
+    "weight": 0,
+    "desc": [
+      "Небольшой ящик для милостыни, обычно входящий в набор священника."
+    ]
+  },
+  {
+    "index": "arrow",
+    "name": "Стрела",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "ammunition",
+      "name": "Боеприпасы"
+    },
+    "quantity": 20,
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "weight": 1
+  },
+  {
+    "index": "block-of-incense",
+    "name": "Благовония (блок)",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 0,
+      "unit": "мм"
+    },
+    "weight": 0,
+    "desc": [
+      "Блок благовоний, обычно входящий в набор священника."
+    ]
+  },
+  {
+    "index": "blowgun-needle",
+    "name": "Игла для духовой трубки",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "ammunition",
+      "name": "Боеприпасы"
+    },
+    "quantity": 50,
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "weight": 1
+  },
+  {
+    "index": "censer",
+    "name": "Кадило",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 0,
+      "unit": "мм"
+    },
+    "weight": 0,
+    "desc": [
+      "Кадило, обычно входящее в набор священника."
+    ]
+  },
+  {
+    "index": "crossbow-bolt",
+    "name": "Болт для арбалета",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "ammunition",
+      "name": "Боеприпасы"
+    },
+    "quantity": 20,
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "weight": 1.5
+  },
+  {
+    "index": "sling-bullet",
+    "name": "Снаряд для пращи",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "ammunition",
+      "name": "Боеприпасы"
+    },
+    "quantity": 20,
+    "cost": {
+      "quantity": 4,
+      "unit": "мм"
+    },
+    "weight": 1.5
+  },
+  {
+    "index": "amulet",
+    "name": "Амулет",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "holy-symbols",
+      "name": "Святые символы"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "weight": 1,
+    "desc": [
+      "Святой символ — это представление бога или пантеона. Это может быть амулет с изображением символа божества, тот же символ, аккуратно выгравированный или инкрустированный как эмблема на щите, или крошечная коробочка с фрагментом священной реликвии.",
+      "Приложение B перечисляет символы, обычно ассоциируемые со многими богами в мультивселенной. Жрец или паладин может использовать святой символ в качестве фокусировки заклинаний. Чтобы использовать символ таким образом, заклинатель должен держать его в руке, носить на виду или нести на щите."
+    ]
+  },
+  {
+    "index": "antitoxin-vial",
+    "name": "Противоядие (флакон)",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 50,
+      "unit": "зм"
+    },
+    "weight": 0,
+    "desc": [
+      "Существо, выпившее этот флакон, получает преимущество на спасброски против яда на 1 час. Оно не дает преимуществ нежити или конструктам."
+    ]
+  },
+  {
+    "index": "crystal",
+    "name": "Кристалл",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "arcane-foci",
+      "name": "Магические фокусировки"
+    },
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    },
+    "weight": 1,
+    "desc": [
+      "Магическая фокусировка — это особый предмет: сфера, кристалл, жезл, специально сконструированный посох, деревянная палочка или аналогичный предмет, предназначенный для направления силы магических заклинаний. Чародей, колдун или волшебник могут использовать такой предмет в качестве фокусировки заклинаний."
+    ]
+  },
+  {
+    "index": "orb",
+    "name": "Сфера",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "arcane-foci",
+      "name": "Магические фокусировки"
+    },
+    "cost": {
+      "quantity": 20,
+      "unit": "зм"
+    },
+    "weight": 3,
+    "desc": [
+      "Магическая фокусировка — это особый предмет: сфера, кристалл, жезл, специально сконструированный посох, деревянная палочка или аналогичный предмет, предназначенный для направления силы магических заклинаний. Чародей, колдун или волшебник могут использовать такой предмет в качестве фокусировки заклинаний."
+    ]
+  },
+  {
+    "index": "rod",
+    "name": "Жезл",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "arcane-foci",
+      "name": "Магические фокусировки"
+    },
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    },
+    "weight": 2,
+    "desc": [
+      "Магическая фокусировка — это особый предмет: сфера, кристалл, жезл, специально сконструированный посох, деревянная палочка или аналогичный предмет, предназначенный для направления силы магических заклинаний. Чародей, колдун или волшебник могут использовать такой предмет в качестве фокусировки заклинаний."
+    ]
+  },
+  {
+    "index": "staff",
+    "name": "Посох",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "arcane-foci",
+      "name": "Магические фокусировки"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "weight": 4,
+    "desc": [
+      "Магическая фокусировка — это особый предмет: сфера, кристалл, жезл, специально сконструированный посох, деревянная палочка или аналогичный предмет, предназначенный для направления силы магических заклинаний. Чародей, колдун или волшебник могут использовать такой предмет в качестве фокусировки заклинаний."
+    ]
+  },
+  {
+    "index": "wand",
+    "name": "Волшебная палочка",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "arcane-foci",
+      "name": "Магические фокусировки"
+    },
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    },
+    "weight": 1,
+    "desc": [
+      "Магическая фокусировка — это особый предмет: сфера, кристалл, жезл, специально сконструированный посох, деревянная палочка или аналогичный предмет, предназначенный для направления силы магических заклинаний. Чародей, колдун или волшебник могут использовать такой предмет в качестве фокусировки заклинаний."
+    ]
+  },
+  {
+    "index": "backpack",
+    "name": "Рюкзак",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 2,
+      "unit": "зм"
+    },
+    "weight": 5
+  },
+  {
+    "index": "ball-bearings-bag-of-1000",
+    "name": "Шарики (мешочек с 1000 шт.)",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "weight": 2,
+    "desc": [
+      "Действием вы можете рассыпать эти крошечные металлические шарики из мешочка, чтобы покрыть ровную квадратную область со стороной 10 футов.",
+      "Существо, перемещающееся по покрытой области, должно преуспеть в спасброске Ловкости со Сл 10, иначе оно упадет плашмя.",
+      "Существу, перемещающемуся по области с половинной скоростью, не нужно совершать спасбросок."
+    ],
+    "image": "/api/images/equipment/ball-bearings-bag-of-1000.png"
+  },
+  {
+    "index": "barrel",
+    "name": "Бочка",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 2,
+      "unit": "зм"
+    },
+    "weight": 70
+  },
+  {
+    "index": "basket",
+    "name": "Корзина",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 4,
+      "unit": "сп"
+    },
+    "weight": 2
+  },
+  {
+    "index": "bedroll",
+    "name": "Спальник",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "weight": 7
+  },
+  {
+    "index": "bell",
+    "name": "Колокольчик",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "weight": 0
+  },
+  {
+    "index": "blanket",
+    "name": "Одеяло",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "сп"
+    },
+    "weight": 3
+  },
+  {
+    "index": "block-and-tackle",
+    "name": "Блок и таль",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "weight": 5,
+    "desc": [
+      "Набор шкивов с продетым через них тросом и крюком для крепления к объектам. Блок и таль позволяют поднимать до четырех раз больше веса, чем вы обычно можете поднять."
+    ]
+  },
+  {
+    "index": "book",
+    "name": "Книга",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 25,
+      "unit": "зм"
+    },
+    "weight": 5,
+    "desc": [
+      "Книга может содержать стихи, исторические отчеты, информацию, относящуюся к определенной области знаний, диаграммы и заметки о гномских приспособлениях или что-либо еще, что может быть представлено в виде текста или рисунков. Книга заклинаний — это книга заклинаний (описанная позже в этом разделе)."
+    ]
+  },
+  {
+    "index": "bottle-glass",
+    "name": "Бутыль, стеклянная",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 2,
+      "unit": "зм"
+    },
+    "weight": 2
+  },
+  {
+    "index": "bucket",
+    "name": "Ведро",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "мм"
+    },
+    "weight": 2
+  },
+  {
+    "index": "caltrops",
+    "name": "Шипы",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "мм"
+    },
+    "weight": 2,
+    "desc": [
+      "Действием вы можете рассыпать мешочек с шипами, чтобы покрыть квадратную область со стороной 5 футов.",
+      "Любое существо, входящее в эту область, должно преуспеть в спасброске Ловкости со Сл 15, иначе оно прекратит движение в этом ходу и получит 1 единицу колющего урона.",
+      "Получение этого урона снижает скорость ходьбы существа на 10 футов, пока существо не восстановит хотя бы 1 хит.",
+      "Существу, перемещающемуся по области с половинной скоростью, не нужно совершать спасбросок."
+    ]
+  },
+  {
+    "index": "candle",
+    "name": "Свеча",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "мм"
+    },
+    "weight": 0,
+    "desc": [
+      "В течение 1 часа свеча излучает яркий свет в радиусе 5 футов и тусклый свет еще на 5 футов."
+    ]
+  },
+  {
+    "index": "case-crossbow-bolt",
+    "name": "Футляр для арбалетных болтов",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "weight": 1,
+    "desc": [
+      "Этот деревянный футляр вмещает до двадцати арбалетных болтов."
+    ]
+  },
+  {
+    "index": "case-map-or-scroll",
+    "name": "Тубус для карт или свитков",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "weight": 1,
+    "desc": [
+      "Этот цилиндрический кожаный тубус вмещает до десяти свернутых листов бумаги или пять свернутых листов пергамента."
+    ]
+  },
+  {
+    "index": "chain-10-feet",
+    "name": "Цепь (10 футов)",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "weight": 10,
+    "desc": [
+      "У цепи 10 хитов. Ее можно разорвать при успешной проверке Силы со Сл 20."
+    ]
+  },
+  {
+    "index": "chalk-1-piece",
+    "name": "Мел (1 кусок)",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "мм"
+    },
+    "weight": 0
+  },
+  {
+    "index": "chest",
+    "name": "Сундук",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "weight": 25
+  },
+  {
+    "index": "clothes-common",
+    "name": "Одежда, обычная",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "сп"
+    },
+    "weight": 3
+  },
+  {
+    "index": "clothes-costume",
+    "name": "Одежда, костюм",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "weight": 4
+  },
+  {
+    "index": "clothes-fine",
+    "name": "Одежда, дорогая",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 15,
+      "unit": "зм"
+    },
+    "weight": 6
+  },
+  {
+    "index": "clothes-travelers",
+    "name": "Одежда, дорожная",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 2,
+      "unit": "зм"
+    },
+    "weight": 4
+  },
+  {
+    "index": "component-pouch",
+    "name": "Мешочек с компонентами",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 25,
+      "unit": "зм"
+    },
+    "weight": 2,
+    "desc": [
+      "Мешочек для компонентов — это небольшой водонепроницаемый кожаный поясной мешочек с отделениями для хранения всех материальных компонентов и других специальных предметов, необходимых для сотворения ваших заклинаний, за исключением тех компонентов, которые имеют указанную стоимость (как указано в описании заклинания)."
+    ]
+  },
+  {
+    "index": "crowbar",
+    "name": "Лом",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 2,
+      "unit": "зм"
+    },
+    "weight": 5,
+    "desc": [
+      "Использование лома дает преимущество при проверках Силы, где может быть применено действие лома как рычага."
+    ]
+  },
+  {
+    "index": "sprig-of-mistletoe",
+    "name": "Веточка омелы",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "druidic-foci",
+      "name": "Друидические фокусировки"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "weight": 0,
+    "desc": [
+      "Друидической фокусировкой может быть веточка омелы или падуба, палочка или скипетр из тиса или другого особого дерева, посох, вырезанный целиком из живого дерева, или тотемный объект, включающий перья, мех, кости и зубы священных животных. Друид может использовать такой предмет в качестве фокусировки заклинаний."
+    ]
+  },
+  {
+    "index": "totem",
+    "name": "Тотем",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "druidic-foci",
+      "name": "Друидические фокусировки"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "weight": 0,
+    "desc": [
+      "Друидической фокусировкой может быть веточка омелы или падуба, палочка или скипетр из тиса или другого особого дерева, посох, вырезанный целиком из живого дерева, или тотемный объект, включающий перья, мех, кости и зубы священных животных. Друид может использовать такой предмет в качестве фокусировки заклинаний."
+    ]
+  },
+  {
+    "index": "wooden-staff",
+    "name": "Деревянный посох",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "druidic-foci",
+      "name": "Друидические фокусировки"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "weight": 4,
+    "desc": [
+      "Друидической фокусировкой может быть веточка омелы или падуба, палочка или скипетр из тиса или другого особого дерева, посох, вырезанный целиком из живого дерева, или тотемный объект, включающий перья, мех, кости и зубы священных животных. Друид может использовать такой предмет в качестве фокусировки заклинаний."
+    ]
+  },
+  {
+    "index": "yew-wand",
+    "name": "Тисовая палочка",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "druidic-foci",
+      "name": "Друидические фокусировки"
+    },
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    },
+    "weight": 1,
+    "desc": [
+      "Друидической фокусировкой может быть веточка омелы или падуба, палочка или скипетр из тиса или другого особого дерева, посох, вырезанный целиком из живого дерева, или тотемный объект, включающий перья, мех, кости и зубы священных животных. Друид может использовать такой предмет в качестве фокусировки заклинаний."
+    ]
+  },
+  {
+    "index": "emblem",
+    "name": "Эмблема",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "holy-symbols",
+      "name": "Святые символы"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "weight": 0,
+    "desc": [
+      "Святой символ — это представление бога или пантеона. Это может быть амулет с изображением символа божества, тот же символ, аккуратно выгравированный или инкрустированный как эмблема на щите, или крошечная коробочка с фрагментом священной реликвии.",
+      "Приложение B перечисляет символы, обычно ассоциируемые со многими богами в мультивселенной. Жрец или паладин может использовать святой символ в качестве фокусировки заклинаний. Чтобы использовать символ таким образом, заклинатель должен держать его в руке, носить на виду или нести на щите."
+    ]
+  },
+  {
+    "index": "fishing-tackle",
+    "name": "Рыболовные снасти",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "weight": 4,
+    "desc": [
+      "Этот набор включает в себя деревянное удилище, шелковую леску, пробковые поплавки, стальные крючки, свинцовые грузила, бархатные приманки и узкую сеть."
+    ]
+  },
+  {
+    "index": "flask-or-tankard",
+    "name": "Фляга или кружка",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 2,
+      "unit": "мм"
+    },
+    "weight": 1
+  },
+  {
+    "index": "grappling-hook",
+    "name": "Абордажная кошка",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 2,
+      "unit": "зм"
+    },
+    "weight": 4
+  },
+  {
+    "index": "hammer",
+    "name": "Молоток",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "weight": 3
+  },
+  {
+    "index": "hammer-sledge",
+    "name": "Кувалда",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 2,
+      "unit": "зм"
+    },
+    "weight": 10
+  },
+  {
+    "index": "holy-water-flask",
+    "name": "Святая вода (флакон)",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 25,
+      "unit": "зм"
+    },
+    "weight": 1,
+    "desc": [
+      "Действием вы можете выплеснуть содержимое этого флакона на существо, находящееся в пределах 5 футов от вас, или метнуть его на расстояние до 20 футов, разбивая его при ударе. В любом случае совершите дальнобойную атаку по целевому существу, считая святую воду импровизированным оружием.",
+      "Если цель — исчадие или нежить, она получает 2d6 лучистого урона.",
+      "Жрец или паладин может создать святую воду, совершив специальный ритуал.",
+      "Выполнение ритуала занимает 1 час, требует использования измельченного серебра стоимостью 25 зм и затрат ячейки заклинания 1-го уровня."
+    ]
+  },
+  {
+    "index": "hourglass",
+    "name": "Песочные часы",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 25,
+      "unit": "зм"
+    },
+    "weight": 1
+  },
+  {
+    "index": "hunting-trap",
+    "name": "Охотничий капкан",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "desc": [
+      "Когда вы используете действие, чтобы установить его, эта ловушка образует стальное кольцо с зубцами, которое захлопывается, когда существо наступает на нажимную пластину в центре. Ловушка крепится тяжелой цепью к неподвижному объекту, такому как дерево или вбитый в землю колышек.",
+      "Существо, наступившее на пластину, должно преуспеть в спасброске Ловкости со Сл 13, иначе оно получит 1d4 колющего урона и прекратит движение. После этого, пока существо не освободится из ловушки, его движение ограничено длиной цепи (обычно 3 фута длиной).",
+      "Существо может использовать свое действие, чтобы совершить проверку Силы со Сл 13, высвобождая себя или другое существо в пределах своей досягаемости при успехе. Каждая неудачная проверка наносит захваченному существу 1 единицу колющего урона."
+    ],
+    "weight": 25
+  },
+  {
+    "index": "ink-1-ounce-bottle",
+    "name": "Чернила (флакон на 1 унцию)",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    },
+    "weight": 0
+  },
+  {
+    "index": "ink-pen",
+    "name": "Писчее перо",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 2,
+      "unit": "мм"
+    },
+    "weight": 0
+  },
+  {
+    "index": "jug-or-pitcher",
+    "name": "Кувшин или графин",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 2,
+      "unit": "мм"
+    },
+    "weight": 4
+  },
+  {
+    "index": "climbers-kit",
+    "name": "Набор альпиниста",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "kits",
+      "name": "Наборы"
+    },
+    "cost": {
+      "quantity": 25,
+      "unit": "зм"
+    },
+    "weight": 12,
+    "desc": [
+      "Набор альпиниста включает в себя специальные крючья, наконечники для обуви, перчатки и обвязку. Вы можете использовать набор альпиниста в качестве действия, чтобы закрепиться; когда вы это сделаете, вы не сможете упасть более чем на 25 футов от точки закрепления и не сможете подняться более чем на 25 футов от этой точки, не отстегнув крепление."
+    ]
+  },
+  {
+    "index": "disguise-kit",
+    "name": "Набор для грима",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "kits",
+      "name": "Наборы"
+    },
+    "cost": {
+      "quantity": 25,
+      "unit": "зм"
+    },
+    "weight": 3,
+    "desc": [
+      "Этот мешочек с косметикой, краской для волос и небольшим реквизитом позволяет создавать маскировку, меняющую вашу физическую внешность. Владение этим набором позволяет вам добавлять бонус мастерства к любым проверкам характеристик, которые вы совершаете для создания визуальной маскировки."
+    ]
+  },
+  {
+    "index": "forgery-kit",
+    "name": "Набор для подделки",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "kits",
+      "name": "Наборы"
+    },
+    "cost": {
+      "quantity": 15,
+      "unit": "зм"
+    },
+    "weight": 5,
+    "desc": [
+      "Эта небольшая коробка содержит различные виды бумаги и пергамента, перья и чернила, печати и сургуч, золотую и серебряную фольгу и другие принадлежности, необходимые для создания убедительных подделок физических документов. Владение этим набором позволяет вам добавлять бонус мастерства к любым проверкам характеристик, которые вы совершаете для создания физической подделки документа."
+    ]
+  },
+  {
+    "index": "herbalism-kit",
+    "name": "Набор травника",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "kits",
+      "name": "Наборы"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "weight": 3,
+    "desc": [
+      "Этот набор содержит различные инструменты, такие как ножницы, ступка и пестик, а также мешочки и флаконы, используемые травниками для создания средств и зелий. Владение этим набором позволяет вам добавлять бонус мастерства к любым проверкам характеристик, которые вы совершаете для идентификации или применения трав. Также владение этим набором необходимо для создания противоядия и зелий лечения."
+    ]
+  },
+  {
+    "index": "healers-kit",
+    "name": "Набор целителя",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "kits",
+      "name": "Наборы"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "weight": 3,
+    "desc": [
+      "Этот набор представляет собой кожаный мешочек с бинтами, мазями и шинами. Набор рассчитан на десять использований. Действием вы можете потратить одно использование набора, чтобы стабилизировать существо с 0 хитами без необходимости совершать проверку Мудрости (Медицина)."
+    ]
+  },
+  {
+    "index": "mess-kit",
+    "name": "Столовый набор",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "kits",
+      "name": "Наборы"
+    },
+    "cost": {
+      "quantity": 2,
+      "unit": "сп"
+    },
+    "weight": 1,
+    "desc": [
+      "Эта жестяная коробка содержит чашку и простые столовые приборы. Коробка закрывается, и одну сторону можно использовать как сковороду, а другую — как тарелку или неглубокую миску."
+    ]
+  },
+  {
+    "index": "poisoners-kit",
+    "name": "Набор отравителя",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "kits",
+      "name": "Наборы"
+    },
+    "cost": {
+      "quantity": 50,
+      "unit": "зм"
+    },
+    "weight": 2,
+    "desc": [
+      "Набор отравителя включает флаконы, химикаты и другое оборудование, необходимое для создания ядов. Владение этим набором позволяет вам добавлять бонус мастерства к любым проверкам характеристик, которые вы совершаете для изготовления или использования ядов."
+    ]
+  },
+  {
+    "index": "ladder-10-foot",
+    "name": "Лестница (10 футов)",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "сп"
+    },
+    "weight": 25
+  },
+  {
+    "index": "lamp",
+    "name": "Лампа",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "сп"
+    },
+    "weight": 1,
+    "desc": [
+      "Лампа излучает яркий свет в радиусе 15 футов и тусклый свет еще на 30 футов. После зажигания она горит в течение 6 часов на одном флаконе (1 пинта) масла."
+    ]
+  },
+  {
+    "index": "lantern-bullseye",
+    "name": "Фонарь, направленный",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    },
+    "weight": 2,
+    "desc": [
+      "Направленный фонарь излучает яркий свет конусом на 60 футов и тусклый свет еще на 60 футов. После зажигания он горит в течение 6 часов на одном флаконе (1 пинта) масла."
+    ]
+  },
+  {
+    "index": "lantern-hooded",
+    "name": "Фонарь, закрытый",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "weight": 2,
+    "desc": [
+      "Закрытый фонарь излучает яркий свет в радиусе 30 футов и тусклый свет еще на 30 футов. После зажигания он горит в течение 6 часов на одном флаконе (1 пинта) масла. Действием вы можете опустить заслонку, уменьшая свет до тусклого света в радиусе 5 футов."
+    ]
+  },
+  {
+    "index": "little-bag-of-sand",
+    "name": "Мешочек с песком",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 0,
+      "unit": "мм"
+    },
+    "weight": 0,
+    "desc": [
+      "Маленький мешочек с песком, обычно входящий в набор ученого."
+    ]
+  },
+  {
+    "index": "lock",
+    "name": "Замок",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    },
+    "weight": 1,
+    "desc": [
+      "К замку прилагается ключ. Без ключа существо, владеющее инструментами вора, может взломать этот замок при успешной проверке Ловкости со Сл 15. Ваш Мастер может решить, что доступны более качественные замки по более высокой цене."
+    ]
+  },
+  {
+    "index": "magnifying-glass",
+    "name": "Увеличительное стекло",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 100,
+      "unit": "зм"
+    },
+    "weight": 0,
+    "desc": [
+      "Эта линза позволяет рассмотреть поближе мелкие предметы. Она также полезна в качестве замены кремня и кресала при разжигании костра. Разжигание огня с помощью увеличительного стекла требует яркого солнечного света для фокусировки, трута и около 5 минут времени.",
+      "Увеличительное стекло дает преимущество при любых проверках характеристик, совершаемых для оценки или осмотра предмета, который является маленьким или имеет высокую детализацию."
+    ]
+  },
+  {
+    "index": "manacles",
+    "name": "Кандалы",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 2,
+      "unit": "зм"
+    },
+    "weight": 6,
+    "desc": [
+      "Эти металлические путы могут связать Маленькое или Среднее существо. Побег из кандалов требует успешной проверки Ловкости со Сл 20. Чтобы сломать их, требуется успешная проверка Силы со Сл 20.",
+      "К каждому набору кандалов прилагается один ключ. Без ключа существо, владеющее инструментами вора, может взломать замок кандалов при успешной проверке Ловкости со Сл 15. У кандалов 15 хитов."
+    ]
+  },
+  {
+    "index": "mirror-steel",
+    "name": "Зеркало, стальное",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "weight": 0.5
+  },
+  {
+    "index": "oil-flask",
+    "name": "Масло (флакон)",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "сп"
+    },
+    "weight": 1,
+    "desc": [
+      "Масло обычно поставляется в глиняном флаконе вместимостью 1 пинта.",
+      "Действием вы можете выплеснуть масло из этого флакона на существо, находящееся в пределах 5 футов от вас, или метнуть его на расстояние до 20 футов, разбивая его при ударе. Совершите дальнобойную атаку против целевого существа или объекта, считая масло импровизированным оружием.",
+      "При попадании цель покрывается маслом. Если цель получает какой-либо урон огнем до того, как масло высохнет (через 1 минуту), цель получает дополнительные 5 единиц урона огнем от горящего масла.",
+      "Вы также можете вылить флакон масла на землю, чтобы покрыть область в 5 квадратных футов, при условии, что поверхность ровная.",
+      "При поджоге масло горит в течение 2 раундов и наносит 5 единиц урона огнем любому существу, которое входит в область или заканчивает свой ход в ней. Существо может получить этот урон только один раз за ход."
+    ]
+  },
+  {
+    "index": "paper-one-sheet",
+    "name": "Бумага (один лист)",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 2,
+      "unit": "сп"
+    },
+    "weight": 0
+  },
+  {
+    "index": "parchment-one-sheet",
+    "name": "Пергамент (один лист)",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "сп"
+    },
+    "weight": 0
+  },
+  {
+    "index": "perfume-vial",
+    "name": "Духи (флакон)",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "weight": 0
+  },
+  {
+    "index": "pick-miners",
+    "name": "Кирка, шахтерская",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 2,
+      "unit": "зм"
+    },
+    "weight": 10
+  },
+  {
+    "index": "piton",
+    "name": "Крюк (скальный)",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "мм"
+    },
+    "weight": 0.25
+  },
+  {
+    "index": "poison-basic-vial",
+    "name": "Яд, базовый (флакон)",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 100,
+      "unit": "зм"
+    },
+    "weight": 0,
+    "desc": [
+      "Вы можете использовать яд из этого флакона, чтобы покрыть одно рубящее или колющее оружие или до трех единиц боеприпасов. Нанесение яда требует действия. Существо, по которому попало отравленное оружие или боеприпас, должно совершить спасбросок Телосложения со Сл 10 или получить 1d4 урона ядом. После нанесения яд сохраняет свои свойства в течение 1 минуты, после чего высыхает."
+    ]
+  },
+  {
+    "index": "pole-10-foot",
+    "name": "Шест (10 футов)",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "мм"
+    },
+    "weight": 7
+  },
+  {
+    "index": "pot-iron",
+    "name": "Котелок, железный",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 2,
+      "unit": "зм"
+    },
+    "weight": 10
+  },
+  {
+    "index": "pouch",
+    "name": "Кошель",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "сп"
+    },
+    "weight": 1,
+    "desc": [
+      "Тканевый или кожаный кошель может вместить до 20 снарядов для пращи или 50 игл для духовой трубки, среди прочего. Секционный мешочек для хранения компонентов заклинаний называется мешочком с компонентами (описан ранее в этом разделе)."
+    ]
+  },
+  {
+    "index": "quiver",
+    "name": "Колчан",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "weight": 1,
+    "desc": [
+      "Колчан может вмещать до 20 стрел."
+    ]
+  },
+  {
+    "index": "ram-portable",
+    "name": "Таран, переносной",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 4,
+      "unit": "зм"
+    },
+    "weight": 35,
+    "desc": [
+      "Вы можете использовать переносной таран, чтобы выбивать двери. При этом вы получаете бонус +4 к проверке Силы. Другой персонаж может помочь вам использовать таран, давая вам преимущество при этой проверке."
+    ]
+  },
+  {
+    "index": "rations-1-day",
+    "name": "Рационы (1 день)",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "сп"
+    },
+    "weight": 2,
+    "desc": [
+      "Рационы состоят из сухих продуктов, подходящих для длительного путешествия, включая вяленое мясо, сухофрукты, галеты и орехи."
+    ]
+  },
+  {
+    "index": "reliquary",
+    "name": "Реликварий",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "holy-symbols",
+      "name": "Святые символы"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "weight": 2,
+    "desc": [
+      "Святой символ — это представление бога или пантеона. Это может быть амулет с изображением символа божества, тот же символ, аккуратно выгравированный или инкрустированный как эмблема на щите, или крошечная коробочка с фрагментом священной реликвии.",
+      "Приложение B перечисляет символы, обычно ассоциируемые со многими богами в мультивселенной. Жрец или паладин может использовать святой символ в качестве фокусировки заклинаний. Чтобы использовать символ таким образом, заклинатель должен держать его в руке, носить на виду или нести на щите."
+    ]
+  },
+  {
+    "index": "robes",
+    "name": "Роба",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "weight": 4
+  },
+  {
+    "index": "rope-hempen-50-feet",
+    "name": "Веревка, пеньковая (50 футов)",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "weight": 10,
+    "desc": [
+      "Веревка, сделанная из пеньки или шелка, имеет 2 хита и может быть разорвана при успешной проверке Силы со Сл 17."
+    ]
+  },
+  {
+    "index": "rope-silk-50-feet",
+    "name": "Веревка, шелковая (50 футов)",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    },
+    "weight": 5,
+    "desc": [
+      "Веревка, сделанная из пеньки или шелка, имеет 2 хита и может быть разорвана при успешной проверке Силы со Сл 17."
+    ]
+  },
+  {
+    "index": "sack",
+    "name": "Мешок",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "мм"
+    },
+    "weight": 0.5
+  },
+  {
+    "index": "scale-merchants",
+    "name": "Весы, купеческие",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "weight": 3,
+    "desc": [
+      "Весы включают в себя небольшие коромысла, чаши и соответствующий набор гирь весом до 2 фунтов. С их помощью вы можете измерить точный вес небольших предметов, таких как необработанные драгоценные металлы или торговые товары, чтобы помочь определить их стоимость."
+    ]
+  },
+  {
+    "index": "sealing-wax",
+    "name": "Сургуч",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "сп"
+    },
+    "weight": 0
+  },
+  {
+    "index": "shovel",
+    "name": "Лопата",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 2,
+      "unit": "зм"
+    },
+    "weight": 5
+  },
+  {
+    "index": "signal-whistle",
+    "name": "Сигнальный свисток",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "мм"
+    },
+    "weight": 0
+  },
+  {
+    "index": "signet-ring",
+    "name": "Перстень-печатка",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "weight": 0
+  },
+  {
+    "index": "small-knife",
+    "name": "Перочинный нож",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 0,
+      "unit": "мм"
+    },
+    "weight": 0,
+    "desc": [
+      "Маленький нож, обычно входящий в набор ученого."
+    ]
+  },
+  {
+    "index": "soap",
+    "name": "Мыло",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 2,
+      "unit": "мм"
+    },
+    "weight": 0
+  },
+  {
+    "index": "spellbook",
+    "name": "Книга заклинаний",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 50,
+      "unit": "зм"
+    },
+    "weight": 3,
+    "desc": [
+      "Необходимая для волшебников книга заклинаний представляет собой кожаный том со 100 чистыми страницами из веленя, подходящими для записи заклинаний."
+    ]
+  },
+  {
+    "index": "spike-iron",
+    "name": "Костыль, железный",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "сп"
+    },
+    "weight": 5
+  },
+  {
+    "index": "spyglass",
+    "name": "Подзорная труба",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1000,
+      "unit": "зм"
+    },
+    "weight": 1,
+    "desc": [
+      "Объекты, рассматриваемые через подзорную трубу, увеличиваются в два раза."
+    ]
+  },
+  {
+    "index": "string-10-feet",
+    "name": "Бечевка (10 футов)",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 0,
+      "unit": "мм"
+    },
+    "weight": 0,
+    "desc": [
+      "10-футовый отрезок бечевки, обычно входящий в набор взломщика."
+    ]
+  },
+  {
+    "index": "tent-two-person",
+    "name": "Палатка, двухместная",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 2,
+      "unit": "зм"
+    },
+    "weight": 20,
+    "desc": [
+      "Простое и портативное укрытие из холста, в палатке могут спать двое."
+    ]
+  },
+  {
+    "index": "tinderbox",
+    "name": "Трутница",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 5,
+      "unit": "сп"
+    },
+    "weight": 1,
+    "desc": [
+      "Этот небольшой контейнер содержит кремень, кресало и трут (обычно сухую ткань, пропитанную легким маслом), используемые для разжигания огня. Использование его для зажигания факела — или чего-либо еще с обильным открытым топливом — занимает действие.",
+      "Разжигание любого другого огня занимает 1 минуту."
+    ]
+  },
+  {
+    "index": "torch",
+    "name": "Факел",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "мм"
+    },
+    "weight": 1,
+    "desc": [
+      "Факел горит в течение 1 часа, обеспечивая яркий свет в радиусе 20 футов и тусклый свет еще на 20 футов. Если вы совершаете атаку ближнего боя горящим факелом и попадаете, он наносит 1 единицу урона огнем."
+    ]
+  },
+  {
+    "index": "vestments",
+    "name": "Облачение",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 0,
+      "unit": "мм"
+    },
+    "weight": 0,
+    "desc": [
+      "Религиозная одежда, обычно входящая в набор священника."
+    ]
+  },
+  {
+    "index": "vial",
+    "name": "Флакон",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "weight": 0
+  },
+  {
+    "index": "waterskin",
+    "name": "Бурдюк",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 2,
+      "unit": "сп"
+    },
+    "weight": 5
+  },
+  {
+    "index": "whetstone",
+    "name": "Точильный камень",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "standard-gear",
+      "name": "Стандартное снаряжение"
+    },
+    "cost": {
+      "quantity": 1,
+      "unit": "мм"
+    },
+    "weight": 1
+  },
+  {
+    "index": "burglars-pack",
+    "name": "Набор взломщика",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "equipment-packs",
+      "name": "Наборы снаряжения"
+    },
+    "cost": {
+      "quantity": 16,
+      "unit": "зм"
+    },
+    "contents": [
+      {
+        "item": {
+          "index": "backpack",
+          "name": "Рюкзак"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "ball-bearings-bag-of-1000",
+          "name": "Шарики (мешочек с 1000 шт.)"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "string-10-feet",
+          "name": "Бечевка (10 футов)"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "bell",
+          "name": "Колокольчик"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "candle",
+          "name": "Свеча"
+        },
+        "quantity": 5
+      },
+      {
+        "item": {
+          "index": "crowbar",
+          "name": "Лом"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "hammer",
+          "name": "Молоток"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "piton",
+          "name": "Крюк (скальный)"
+        },
+        "quantity": 10
+      },
+      {
+        "item": {
+          "index": "lantern-hooded",
+          "name": "Фонарь, закрытый"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "oil-flask",
+          "name": "Масло (флакон)"
+        },
+        "quantity": 2
+      },
+      {
+        "item": {
+          "index": "rations-1-day",
+          "name": "Рационы (1 день)"
+        },
+        "quantity": 5
+      },
+      {
+        "item": {
+          "index": "tinderbox",
+          "name": "Трутница"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "waterskin",
+          "name": "Бурдюк"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "rope-hempen-50-feet",
+          "name": "Веревка, пеньковая (50 футов)"
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "index": "diplomats-pack",
+    "name": "Набор дипломата",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "equipment-packs",
+      "name": "Наборы снаряжения"
+    },
+    "cost": {
+      "quantity": 39,
+      "unit": "зм"
+    },
+    "contents": [
+      {
+        "item": {
+          "index": "chest",
+          "name": "Сундук"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "case-map-or-scroll",
+          "name": "Тубус для карт или свитков"
+        },
+        "quantity": 2
+      },
+      {
+        "item": {
+          "index": "clothes-fine",
+          "name": "Одежда, дорогая"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "ink-1-ounce-bottle",
+          "name": "Чернила (флакон на 1 унцию)"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "ink-pen",
+          "name": "Писчее перо"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "lamp",
+          "name": "Лампа"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "oil-flask",
+          "name": "Масло (флакон)"
+        },
+        "quantity": 2
+      },
+      {
+        "item": {
+          "index": "paper-one-sheet",
+          "name": "Бумага (один лист)"
+        },
+        "quantity": 5
+      },
+      {
+        "item": {
+          "index": "perfume-vial",
+          "name": "Духи (флакон)"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "sealing-wax",
+          "name": "Сургуч"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "soap",
+          "name": "Мыло"
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "index": "dungeoneers-pack",
+    "name": "Набор взломщика подземелий",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "equipment-packs",
+      "name": "Наборы снаряжения"
+    },
+    "cost": {
+      "quantity": 12,
+      "unit": "зм"
+    },
+    "contents": [
+      {
+        "item": {
+          "index": "backpack",
+          "name": "Рюкзак"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "crowbar",
+          "name": "Лом"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "hammer",
+          "name": "Молоток"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "piton",
+          "name": "Крюк (скальный)"
+        },
+        "quantity": 10
+      },
+      {
+        "item": {
+          "index": "torch",
+          "name": "Факел"
+        },
+        "quantity": 10
+      },
+      {
+        "item": {
+          "index": "tinderbox",
+          "name": "Трутница"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "rations-1-day",
+          "name": "Рационы (1 день)"
+        },
+        "quantity": 10
+      },
+      {
+        "item": {
+          "index": "waterskin",
+          "name": "Бурдюк"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "rope-hempen-50-feet",
+          "name": "Веревка, пеньковая (50 футов)"
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "index": "entertainers-pack",
+    "name": "Набор артиста",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "equipment-packs",
+      "name": "Наборы снаряжения"
+    },
+    "cost": {
+      "quantity": 40,
+      "unit": "зм"
+    },
+    "contents": [
+      {
+        "item": {
+          "index": "backpack",
+          "name": "Рюкзак"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "bedroll",
+          "name": "Спальник"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "clothes-costume",
+          "name": "Одежда, костюм"
+        },
+        "quantity": 2
+      },
+      {
+        "item": {
+          "index": "candle",
+          "name": "Свеча"
+        },
+        "quantity": 5
+      },
+      {
+        "item": {
+          "index": "rations-1-day",
+          "name": "Рационы (1 день)"
+        },
+        "quantity": 5
+      },
+      {
+        "item": {
+          "index": "waterskin",
+          "name": "Бурдюк"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "disguise-kit",
+          "name": "Набор для грима"
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "index": "explorers-pack",
+    "name": "Набор путешественника",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "equipment-packs",
+      "name": "Наборы снаряжения"
+    },
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    },
+    "contents": [
+      {
+        "item": {
+          "index": "backpack",
+          "name": "Рюкзак"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "bedroll",
+          "name": "Спальник"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "mess-kit",
+          "name": "Столовый набор"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "tinderbox",
+          "name": "Трутница"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "torch",
+          "name": "Факел"
+        },
+        "quantity": 10
+      },
+      {
+        "item": {
+          "index": "rations-1-day",
+          "name": "Рационы (1 день)"
+        },
+        "quantity": 10
+      },
+      {
+        "item": {
+          "index": "waterskin",
+          "name": "Бурдюк"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "rope-hempen-50-feet",
+          "name": "Веревка, пеньковая (50 футов)"
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "index": "priests-pack",
+    "name": "Набор священника",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "equipment-packs",
+      "name": "Наборы снаряжения"
+    },
+    "cost": {
+      "quantity": 19,
+      "unit": "зм"
+    },
+    "contents": [
+      {
+        "item": {
+          "index": "backpack",
+          "name": "Рюкзак"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "blanket",
+          "name": "Одеяло"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "candle",
+          "name": "Свеча"
+        },
+        "quantity": 10
+      },
+      {
+        "item": {
+          "index": "tinderbox",
+          "name": "Трутница"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "rations-1-day",
+          "name": "Рационы (1 день)"
+        },
+        "quantity": 2
+      },
+      {
+        "item": {
+          "index": "waterskin",
+          "name": "Бурдюк"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "alms-box",
+          "name": "Ящик для пожертвований"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "block-of-incense",
+          "name": "Благовония (блок)"
+        },
+        "quantity": 2
+      },
+      {
+        "item": {
+          "index": "censer",
+          "name": "Кадило"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "vestments",
+          "name": "Облачение"
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "index": "scholars-pack",
+    "name": "Набор ученого",
+    "equipment_category": {
+      "index": "adventuring-gear",
+      "name": "Снаряжение для приключений"
+    },
+    "gear_category": {
+      "index": "equipment-packs",
+      "name": "Наборы снаряжения"
+    },
+    "cost": {
+      "quantity": 40,
+      "unit": "зм"
+    },
+    "contents": [
+      {
+        "item": {
+          "index": "backpack",
+          "name": "Рюкзак"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "book",
+          "name": "Книга"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "ink-1-ounce-bottle",
+          "name": "Чернила (флакон на 1 унцию)"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "ink-pen",
+          "name": "Писчее перо"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "parchment-one-sheet",
+          "name": "Пергамент (один лист)"
+        },
+        "quantity": 10
+      },
+      {
+        "item": {
+          "index": "little-bag-of-sand",
+          "name": "Мешочек с песком"
+        },
+        "quantity": 1
+      },
+      {
+        "item": {
+          "index": "small-knife",
+          "name": "Перочинный нож"
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "index": "alchemists-supplies",
+    "name": "Алхимические принадлежности",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Инструменты ремесленников",
+    "cost": {
+      "quantity": 50,
+      "unit": "зм"
+    },
+    "weight": 8,
+    "desc": [
+      "Эти специальные инструменты включают в себя предметы, необходимые для занятий ремеслом или торговлей. В таблице приведены примеры наиболее распространенных видов инструментов, каждый из которых предоставляет предметы, относящиеся к одному ремеслу. Владение набором инструментов ремесленника позволяет вам добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете, используя эти инструменты в своем ремесле. Каждый вид инструментов ремесленника требует отдельного владения."
+    ]
+  },
+  {
+    "index": "brewers-supplies",
+    "name": "Принадлежности пивовара",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Инструменты ремесленников",
+    "cost": {
+      "quantity": 20,
+      "unit": "зм"
+    },
+    "weight": 9,
+    "desc": [
+      "Эти специальные инструменты включают в себя предметы, необходимые для занятий ремеслом или торговлей. В таблице приведены примеры наиболее распространенных видов инструментов, каждый из которых предоставляет предметы, относящиеся к одному ремеслу. Владение набором инструментов ремесленника позволяет вам добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете, используя эти инструменты в своем ремесле. Каждый вид инструментов ремесленника требует отдельного владения."
+    ]
+  },
+  {
+    "index": "calligraphers-supplies",
+    "name": "Принадлежности каллиграфа",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Инструменты ремесленников",
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    },
+    "weight": 5,
+    "desc": [
+      "Эти специальные инструменты включают в себя предметы, необходимые для занятий ремеслом или торговлей. В таблице приведены примеры наиболее распространенных видов инструментов, каждый из которых предоставляет предметы, относящиеся к одному ремеслу. Владение набором инструментов ремесленника позволяет вам добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете, используя эти инструменты в своем ремесле. Каждый вид инструментов ремесленника требует отдельного владения."
+    ]
+  },
+  {
+    "index": "carpenters-tools",
+    "name": "Инструменты плотника",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Инструменты ремесленников",
+    "cost": {
+      "quantity": 8,
+      "unit": "зм"
+    },
+    "weight": 6,
+    "desc": [
+      "Эти специальные инструменты включают в себя предметы, необходимые для занятий ремеслом или торговлей. В таблице приведены примеры наиболее распространенных видов инструментов, каждый из которых предоставляет предметы, относящиеся к одному ремеслу. Владение набором инструментов ремесленника позволяет вам добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете, используя эти инструменты в своем ремесле. Каждый вид инструментов ремесленника требует отдельного владения."
+    ]
+  },
+  {
+    "index": "cartographers-tools",
+    "name": "Инструменты картографа",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Инструменты ремесленников",
+    "cost": {
+      "quantity": 15,
+      "unit": "зм"
+    },
+    "weight": 6,
+    "desc": [
+      "Эти специальные инструменты включают в себя предметы, необходимые для занятий ремеслом или торговлей. В таблице приведены примеры наиболее распространенных видов инструментов, каждый из которых предоставляет предметы, относящиеся к одному ремеслу. Владение набором инструментов ремесленника позволяет вам добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете, используя эти инструменты в своем ремесле. Каждый вид инструментов ремесленника требует отдельного владения."
+    ]
+  },
+  {
+    "index": "cobblers-tools",
+    "name": "Инструменты сапожника",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Инструменты ремесленников",
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "weight": 5,
+    "desc": [
+      "Эти специальные инструменты включают в себя предметы, необходимые для занятий ремеслом или торговлей. В таблице приведены примеры наиболее распространенных видов инструментов, каждый из которых предоставляет предметы, относящиеся к одному ремеслу. Владение набором инструментов ремесленника позволяет вам добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете, используя эти инструменты в своем ремесле. Каждый вид инструментов ремесленника требует отдельного владения."
+    ]
+  },
+  {
+    "index": "cooks-utensils",
+    "name": "Кухонная утварь",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Инструменты ремесленников",
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "weight": 8,
+    "desc": [
+      "Эти специальные инструменты включают в себя предметы, необходимые для занятий ремеслом или торговлей. В таблице приведены примеры наиболее распространенных видов инструментов, каждый из которых предоставляет предметы, относящиеся к одному ремеслу. Владение набором инструментов ремесленника позволяет вам добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете, используя эти инструменты в своем ремесле. Каждый вид инструментов ремесленника требует отдельного владения."
+    ]
+  },
+  {
+    "index": "glassblowers-tools",
+    "name": "Инструменты стеклодува",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Инструменты ремесленников",
+    "cost": {
+      "quantity": 30,
+      "unit": "зм"
+    },
+    "weight": 5,
+    "desc": [
+      "Эти специальные инструменты включают в себя предметы, необходимые для занятий ремеслом или торговлей. В таблице приведены примеры наиболее распространенных видов инструментов, каждый из которых предоставляет предметы, относящиеся к одному ремеслу. Владение набором инструментов ремесленника позволяет вам добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете, используя эти инструменты в своем ремесле. Каждый вид инструментов ремесленника требует отдельного владения."
+    ]
+  },
+  {
+    "index": "jewelers-tools",
+    "name": "Инструменты ювелира",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Инструменты ремесленников",
+    "cost": {
+      "quantity": 25,
+      "unit": "зм"
+    },
+    "weight": 2,
+    "desc": [
+      "Эти специальные инструменты включают в себя предметы, необходимые для занятий ремеслом или торговлей. В таблице приведены примеры наиболее распространенных видов инструментов, каждый из которых предоставляет предметы, относящиеся к одному ремеслу. Владение набором инструментов ремесленника позволяет вам добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете, используя эти инструменты в своем ремесле. Каждый вид инструментов ремесленника требует отдельного владения."
+    ]
+  },
+  {
+    "index": "leatherworkers-tools",
+    "name": "Инструменты кожевника",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Инструменты ремесленников",
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "weight": 5,
+    "desc": [
+      "Эти специальные инструменты включают в себя предметы, необходимые для занятий ремеслом или торговлей. В таблице приведены примеры наиболее распространенных видов инструментов, каждый из которых предоставляет предметы, относящиеся к одному ремеслу. Владение набором инструментов ремесленника позволяет вам добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете, используя эти инструменты в своем ремесле. Каждый вид инструментов ремесленника требует отдельного владения."
+    ]
+  },
+  {
+    "index": "masons-tools",
+    "name": "Инструменты каменщика",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Инструменты ремесленников",
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    },
+    "weight": 8,
+    "desc": [
+      "Эти специальные инструменты включают в себя предметы, необходимые для занятий ремеслом или торговлей. В таблице приведены примеры наиболее распространенных видов инструментов, каждый из которых предоставляет предметы, относящиеся к одному ремеслу. Владение набором инструментов ремесленника позволяет вам добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете, используя эти инструменты в своем ремесле. Каждый вид инструментов ремесленника требует отдельного владения."
+    ]
+  },
+  {
+    "index": "painters-supplies",
+    "name": "Принадлежности художника",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Инструменты ремесленников",
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    },
+    "weight": 5,
+    "desc": [
+      "Эти специальные инструменты включают в себя предметы, необходимые для занятий ремеслом или торговлей. В таблице приведены примеры наиболее распространенных видов инструментов, каждый из которых предоставляет предметы, относящиеся к одному ремеслу. Владение набором инструментов ремесленника позволяет вам добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете, используя эти инструменты в своем ремесле. Каждый вид инструментов ремесленника требует отдельного владения."
+    ]
+  },
+  {
+    "index": "potters-tools",
+    "name": "Инструменты гончара",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Инструменты ремесленников",
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    },
+    "weight": 3,
+    "desc": [
+      "Эти специальные инструменты включают в себя предметы, необходимые для занятий ремеслом или торговлей. В таблице приведены примеры наиболее распространенных видов инструментов, каждый из которых предоставляет предметы, относящиеся к одному ремеслу. Владение набором инструментов ремесленника позволяет вам добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете, используя эти инструменты в своем ремесле. Каждый вид инструментов ремесленника требует отдельного владения."
+    ]
+  },
+  {
+    "index": "smiths-tools",
+    "name": "Инструменты кузнеца",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Инструменты ремесленников",
+    "cost": {
+      "quantity": 20,
+      "unit": "зм"
+    },
+    "weight": 8,
+    "desc": [
+      "Эти специальные инструменты включают в себя предметы, необходимые для занятий ремеслом или торговлей. В таблице приведены примеры наиболее распространенных видов инструментов, каждый из которых предоставляет предметы, относящиеся к одному ремеслу. Владение набором инструментов ремесленника позволяет вам добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете, используя эти инструменты в своем ремесле. Каждый вид инструментов ремесленника требует отдельного владения."
+    ]
+  },
+  {
+    "index": "tinkers-tools",
+    "name": "Инструменты лудильщика",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Инструменты ремесленников",
+    "cost": {
+      "quantity": 50,
+      "unit": "зм"
+    },
+    "weight": 10,
+    "desc": [
+      "Эти специальные инструменты включают в себя предметы, необходимые для занятий ремеслом или торговлей. В таблице приведены примеры наиболее распространенных видов инструментов, каждый из которых предоставляет предметы, относящиеся к одному ремеслу. Владение набором инструментов ремесленника позволяет вам добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете, используя эти инструменты в своем ремесле. Каждый вид инструментов ремесленника требует отдельного владения."
+    ]
+  },
+  {
+    "index": "weavers-tools",
+    "name": "Инструменты ткача",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Инструменты ремесленников",
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "weight": 5,
+    "desc": [
+      "Эти специальные инструменты включают в себя предметы, необходимые для занятий ремеслом или торговлей. В таблице приведены примеры наиболее распространенных видов инструментов, каждый из которых предоставляет предметы, относящиеся к одному ремеслу. Владение набором инструментов ремесленника позволяет вам добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете, используя эти инструменты в своем ремесле. Каждый вид инструментов ремесленника требует отдельного владения."
+    ]
+  },
+  {
+    "index": "woodcarvers-tools",
+    "name": "Инструменты резчика по дереву",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Инструменты ремесленников",
+    "cost": {
+      "quantity": 1,
+      "unit": "зм"
+    },
+    "weight": 5,
+    "desc": [
+      "Эти специальные инструменты включают в себя предметы, необходимые для занятий ремеслом или торговлей. В таблице приведены примеры наиболее распространенных видов инструментов, каждый из которых предоставляет предметы, относящиеся к одному ремеслу. Владение набором инструментов ремесленника позволяет вам добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете, используя эти инструменты в своем ремесле. Каждый вид инструментов ремесленника требует отдельного владения."
+    ]
+  },
+  {
+    "index": "dice-set",
+    "name": "Набор игральных костей",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Игровые наборы",
+    "cost": {
+      "quantity": 1,
+      "unit": "сп"
+    },
+    "weight": 0,
+    "desc": [
+      "Этот предмет охватывает широкий спектр игровых принадлежностей, включая кости и колоды карт (для таких игр, как «Три Дракона»). Несколько распространенных примеров приведены в таблице «Инструменты», но существуют и другие виды игровых наборов. Если вы владеете игровым набором, вы можете добавлять свой бонус мастерства к проверкам характеристик, совершаемым для игры с этим набором. Каждый вид игрового набора требует отдельного владения."
+    ]
+  },
+  {
+    "index": "playing-card-set",
+    "name": "Колода игральных карт",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Игровые наборы",
+    "cost": {
+      "quantity": 5,
+      "unit": "сп"
+    },
+    "weight": 0,
+    "desc": [
+      "Этот предмет охватывает широкий спектр игровых принадлежностей, включая кости и колоды карт (для таких игр, как «Три Дракона»). Несколько распространенных примеров приведены в таблице «Инструменты», но существуют и другие виды игровых наборов. Если вы владеете игровым набором, вы можете добавлять свой бонус мастерства к проверкам характеристик, совершаемым для игры с этим набором. Каждый вид игрового набора требует отдельного владения."
+    ],
+    "image": "/api/images/equipment/playing-card-set.png"
+  },
+  {
+    "index": "bagpipes",
+    "name": "Волынка",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Музыкальные инструменты",
+    "cost": {
+      "quantity": 30,
+      "unit": "зм"
+    },
+    "weight": 6,
+    "desc": [
+      "В таблице в качестве примеров приведены несколько наиболее распространенных видов музыкальных инструментов. Если у вас есть владение данным музыкальным инструментом, вы можете добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете для игры на этом инструменте. Бард может использовать музыкальный инструмент в качестве фокусировки заклинаний. Каждый вид музыкального инструмента требует отдельного владения."
+    ]
+  },
+  {
+    "index": "drum",
+    "name": "Барабан",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Музыкальные инструменты",
+    "cost": {
+      "quantity": 6,
+      "unit": "зм"
+    },
+    "weight": 3,
+    "desc": [
+      "В таблице в качестве примеров приведены несколько наиболее распространенных видов музыкальных инструментов. Если у вас есть владение данным музыкальным инструментом, вы можете добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете для игры на этом инструменте. Бард может использовать музыкальный инструмент в качестве фокусировки заклинаний. Каждый вид музыкального инструмента требует отдельного владения."
+    ]
+  },
+  {
+    "index": "dulcimer",
+    "name": "Цимбалы",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Музыкальные инструменты",
+    "cost": {
+      "quantity": 25,
+      "unit": "зм"
+    },
+    "weight": 10,
+    "desc": [
+      "В таблице в качестве примеров приведены несколько наиболее распространенных видов музыкальных инструментов. Если у вас есть владение данным музыкальным инструментом, вы можете добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете для игры на этом инструменте. Бард может использовать музыкальный инструмент в качестве фокусировки заклинаний. Каждый вид музыкального инструмента требует отдельного владения."
+    ],
+    "image": "/api/images/equipment/dulcimer.png"
+  },
+  {
+    "index": "flute",
+    "name": "Флейта",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Музыкальные инструменты",
+    "cost": {
+      "quantity": 2,
+      "unit": "зм"
+    },
+    "weight": 1,
+    "desc": [
+      "В таблице в качестве примеров приведены несколько наиболее распространенных видов музыкальных инструментов. Если у вас есть владение данным музыкальным инструментом, вы можете добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете для игры на этом инструменте. Бард может использовать музыкальный инструмент в качестве фокусировки заклинаний. Каждый вид музыкального инструмента требует отдельного владения."
+    ]
+  },
+  {
+    "index": "lute",
+    "name": "Лютня",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Музыкальные инструменты",
+    "cost": {
+      "quantity": 35,
+      "unit": "зм"
+    },
+    "weight": 2,
+    "desc": [
+      "В таблице в качестве примеров приведены несколько наиболее распространенных видов музыкальных инструментов. Если у вас есть владение данным музыкальным инструментом, вы можете добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете для игры на этом инструменте. Бард может использовать музыкальный инструмент в качестве фокусировки заклинаний. Каждый вид музыкального инструмента требует отдельного владения."
+    ]
+  },
+  {
+    "index": "lyre",
+    "name": "Лира",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Музыкальные инструменты",
+    "cost": {
+      "quantity": 30,
+      "unit": "зм"
+    },
+    "weight": 2,
+    "desc": [
+      "В таблице в качестве примеров приведены несколько наиболее распространенных видов музыкальных инструментов. Если у вас есть владение данным музыкальным инструментом, вы можете добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете для игры на этом инструменте. Бард может использовать музыкальный инструмент в качестве фокусировки заклинаний. Каждый вид музыкального инструмента требует отдельного владения."
+    ]
+  },
+  {
+    "index": "horn",
+    "name": "Рожок",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Музыкальные инструменты",
+    "cost": {
+      "quantity": 3,
+      "unit": "зм"
+    },
+    "weight": 2,
+    "desc": [
+      "В таблице в качестве примеров приведены несколько наиболее распространенных видов музыкальных инструментов. Если у вас есть владение данным музыкальным инструментом, вы можете добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете для игры на этом инструменте. Бард может использовать музыкальный инструмент в качестве фокусировки заклинаний. Каждый вид музыкального инструмента требует отдельного владения."
+    ]
+  },
+  {
+    "index": "pan-flute",
+    "name": "Флейта Пана",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Музыкальные инструменты",
+    "cost": {
+      "quantity": 12,
+      "unit": "зм"
+    },
+    "weight": 2,
+    "desc": [
+      "В таблице в качестве примеров приведены несколько наиболее распространенных видов музыкальных инструментов. Если у вас есть владение данным музыкальным инструментом, вы можете добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете для игры на этом инструменте. Бард может использовать музыкальный инструмент в качестве фокусировки заклинаний. Каждый вид музыкального инструмента требует отдельного владения."
+    ]
+  },
+  {
+    "index": "shawm",
+    "name": "Шалмей",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Музыкальные инструменты",
+    "cost": {
+      "quantity": 2,
+      "unit": "зм"
+    },
+    "weight": 1,
+    "desc": [
+      "В таблице в качестве примеров приведены несколько наиболее распространенных видов музыкальных инструментов. Если у вас есть владение данным музыкальным инструментом, вы можете добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете для игры на этом инструменте. Бард может использовать музыкальный инструмент в качестве фокусировки заклинаний. Каждый вид музыкального инструмента требует отдельного владения."
+    ]
+  },
+  {
+    "index": "viol",
+    "name": "Виола",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Музыкальные инструменты",
+    "cost": {
+      "quantity": 30,
+      "unit": "зм"
+    },
+    "weight": 1,
+    "desc": [
+      "В таблице в качестве примеров приведены несколько наиболее распространенных видов музыкальных инструментов. Если у вас есть владение данным музыкальным инструментом, вы можете добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете для игры на этом инструменте. Бард может использовать музыкальный инструмент в качестве фокусировки заклинаний. Каждый вид музыкального инструмента требует отдельного владения."
+    ]
+  },
+  {
+    "index": "navigators-tools",
+    "name": "Инструменты навигатора",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Прочие инструменты",
+    "cost": {
+      "quantity": 25,
+      "unit": "зм"
+    },
+    "weight": 2,
+    "desc": [
+      "Этот набор инструментов используется для навигации в море. Владение инструментами навигатора позволяет вам прокладывать курс корабля и следовать навигационным картам. Кроме того, эти инструменты позволяют вам добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете, чтобы избежать потери курса в море."
+    ]
+  },
+  {
+    "index": "thieves-tools",
+    "name": "Инструменты вора",
+    "equipment_category": {
+      "index": "tools",
+      "name": "Инструменты"
+    },
+    "tool_category": "Прочие инструменты",
+    "cost": {
+      "quantity": 25,
+      "unit": "зм"
+    },
+    "weight": 1,
+    "desc": [
+      "Этот набор инструментов включает в себя небольшой напильник, набор отмычек, небольшое зеркало на металлической ручке, набор ножниц с узкими лезвиями и пару плоскогубцев. Владение этими инструментами позволяет вам добавлять свой бонус мастерства к любым проверкам характеристик, которые вы совершаете для обезвреживания ловушек или взлома замков."
+    ]
+  },
+  {
+    "index": "camel",
+    "name": "Верблюд",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Скакуны и другие животные",
+    "cost": {
+      "quantity": 50,
+      "unit": "зм"
+    },
+    "speed": {
+      "quantity": 50,
+      "unit": "фут/раунд"
+    },
+    "capacity": "480 фунтов"
+  },
+  {
+    "index": "donkey",
+    "name": "Осел",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Скакуны и другие животные",
+    "cost": {
+      "quantity": 8,
+      "unit": "зм"
+    },
+    "speed": {
+      "quantity": 40,
+      "unit": "фут/раунд"
+    },
+    "capacity": "420 фунтов"
+  },
+  {
+    "index": "mule",
+    "name": "Мул",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Скакуны и другие животные",
+    "cost": {
+      "quantity": 8,
+      "unit": "зм"
+    },
+    "speed": {
+      "quantity": 40,
+      "unit": "фут/раунд"
+    },
+    "capacity": "420 фунтов"
+  },
+  {
+    "index": "elephant",
+    "name": "Слон",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Скакуны и другие животные",
+    "cost": {
+      "quantity": 200,
+      "unit": "зм"
+    },
+    "speed": {
+      "quantity": 40,
+      "unit": "фут/раунд"
+    },
+    "capacity": "1320 фунтов"
+  },
+  {
+    "index": "horse-draft",
+    "name": "Лошадь, ломовая",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Скакуны и другие животные",
+    "cost": {
+      "quantity": 50,
+      "unit": "зм"
+    },
+    "speed": {
+      "quantity": 40,
+      "unit": "фут/раунд"
+    },
+    "capacity": "540 фунтов"
+  },
+  {
+    "index": "horse-riding",
+    "name": "Лошадь, ездовая",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Скакуны и другие животные",
+    "cost": {
+      "quantity": 75,
+      "unit": "зм"
+    },
+    "speed": {
+      "quantity": 60,
+      "unit": "фут/раунд"
+    },
+    "capacity": "480 фунтов"
+  },
+  {
+    "index": "mastiff",
+    "name": "Мастиф",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Скакуны и другие животные",
+    "cost": {
+      "quantity": 25,
+      "unit": "зм"
+    },
+    "speed": {
+      "quantity": 40,
+      "unit": "фут/раунд"
+    },
+    "capacity": "195 фунтов"
+  },
+  {
+    "index": "pony",
+    "name": "Пони",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Скакуны и другие животные",
+    "cost": {
+      "quantity": 30,
+      "unit": "зм"
+    },
+    "speed": {
+      "quantity": 40,
+      "unit": "фут/раунд"
+    },
+    "capacity": "225 фунтов"
+  },
+  {
+    "index": "warhorse",
+    "name": "Боевой конь",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Скакуны и другие животные",
+    "cost": {
+      "quantity": 400,
+      "unit": "зм"
+    },
+    "speed": {
+      "quantity": 60,
+      "unit": "фут/раунд"
+    },
+    "capacity": "540 фунтов"
+  },
+  {
+    "index": "barding-padded",
+    "name": "Бард: Стеганый",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 20,
+      "unit": "зм"
+    },
+    "weight": 16,
+    "desc": [
+      "Бард — это доспех, предназначенный для защиты головы, шеи, груди и тела животного. Любой тип доспехов, указанный в таблице «Доспехи», может быть приобретен как бард. Стоимость в четыре раза выше эквивалентного доспеха для гуманоидов, а вес — в два раза выше."
+    ]
+  },
+  {
+    "index": "barding-leather",
+    "name": "Бард: Кожаный",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 40,
+      "unit": "зм"
+    },
+    "weight": 20,
+    "desc": [
+      "Бард — это доспех, предназначенный для защиты головы, шеи, груди и тела животного. Любой тип доспехов, указанный в таблице «Доспехи», может быть приобретен как бард. Стоимость в четыре раза выше эквивалентного доспеха для гуманоидов, а вес — в два раза выше."
+    ]
+  },
+  {
+    "index": "barding-studded-leather",
+    "name": "Бард: Проклепанный кожаный",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 180,
+      "unit": "зм"
+    },
+    "weight": 26,
+    "desc": [
+      "Бард — это доспех, предназначенный для защиты головы, шеи, груди и тела животного. Любой тип доспехов, указанный в таблице «Доспехи», может быть приобретен как бард. Стоимость в четыре раза выше эквивалентного доспеха для гуманоидов, а вес — в два раза выше."
+    ]
+  },
+  {
+    "index": "barding-hide",
+    "name": "Бард: Шкурный",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 40,
+      "unit": "зм"
+    },
+    "weight": 24,
+    "desc": [
+      "Бард — это доспех, предназначенный для защиты головы, шеи, груди и тела животного. Любой тип доспехов, указанный в таблице «Доспехи», может быть приобретен как бард. Стоимость в четыре раза выше эквивалентного доспеха для гуманоидов, а вес — в два раза выше."
+    ]
+  },
+  {
+    "index": "barding-chain-shirt",
+    "name": "Бард: Кольчужная рубаха",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 200,
+      "unit": "зм"
+    },
+    "weight": 40,
+    "desc": [
+      "Бард — это доспех, предназначенный для защиты головы, шеи, груди и тела животного. Любой тип доспехов, указанный в таблице «Доспехи», может быть приобретен как бард. Стоимость в четыре раза выше эквивалентного доспеха для гуманоидов, а вес — в два раза выше."
+    ]
+  },
+  {
+    "index": "barding-scale-mail",
+    "name": "Бард: Чешуйчатый доспех",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 200,
+      "unit": "зм"
+    },
+    "weight": 90,
+    "desc": [
+      "Бард — это доспех, предназначенный для защиты головы, шеи, груди и тела животного. Любой тип доспехов, указанный в таблице «Доспехи», может быть приобретен как бард. Стоимость в четыре раза выше эквивалентного доспеха для гуманоидов, а вес — в два раза выше."
+    ]
+  },
+  {
+    "index": "barding-breastplate",
+    "name": "Бард: Кираса",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 1600,
+      "unit": "зм"
+    },
+    "weight": 40,
+    "desc": [
+      "Бард — это доспех, предназначенный для защиты головы, шеи, груди и тела животного. Любой тип доспехов, указанный в таблице «Доспехи», может быть приобретен как бард. Стоимость в четыре раза выше эквивалентного доспеха для гуманоидов, а вес — в два раза выше."
+    ]
+  },
+  {
+    "index": "barding-half-plate",
+    "name": "Бард: Полупанцирь",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 3000,
+      "unit": "зм"
+    },
+    "weight": 80,
+    "desc": [
+      "Бард — это доспех, предназначенный для защиты головы, шеи, груди и тела животного. Любой тип доспехов, указанный в таблице «Доспехи», может быть приобретен как бард. Стоимость в четыре раза выше эквивалентного доспеха для гуманоидов, а вес — в два раза выше."
+    ]
+  },
+  {
+    "index": "barding-ring-mail",
+    "name": "Бард: Кольчатый доспех",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 12,
+      "unit": "зм"
+    },
+    "weight": 80,
+    "desc": [
+      "Бард — это доспех, предназначенный для защиты головы, шеи, груди и тела животного. Любой тип доспехов, указанный в таблице «Доспехи», может быть приобретен как бард. Стоимость в четыре раза выше эквивалентного доспеха для гуманоидов, а вес — в два раза выше."
+    ]
+  },
+  {
+    "index": "barding-chain-mail",
+    "name": "Бард: Кольчуга",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 300,
+      "unit": "зм"
+    },
+    "weight": 110,
+    "desc": [
+      "Бард — это доспех, предназначенный для защиты головы, шеи, груди и тела животного. Любой тип доспехов, указанный в таблице «Доспехи», может быть приобретен как бард. Стоимость в четыре раза выше эквивалентного доспеха для гуманоидов, а вес — в два раза выше."
+    ]
+  },
+  {
+    "index": "barding-splint",
+    "name": "Бард: Наборный доспех",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 800,
+      "unit": "зм"
+    },
+    "weight": 120,
+    "desc": [
+      "Бард — это доспех, предназначенный для защиты головы, шеи, груди и тела животного. Любой тип доспехов, указанный в таблице «Доспехи», может быть приобретен как бард. Стоимость в четыре раза выше эквивалентного доспеха для гуманоидов, а вес — в два раза выше."
+    ]
+  },
+  {
+    "index": "barding-plate",
+    "name": "Бард: Латный доспех",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 6000,
+      "unit": "зм"
+    },
+    "weight": 130,
+    "desc": [
+      "Бард — это доспех, предназначенный для защиты головы, шеи, груди и тела животного. Любой тип доспехов, указанный в таблице «Доспехи», может быть приобретен как бард. Стоимость в четыре раза выше эквивалентного доспеха для гуманоидов, а вес — в два раза выше."
+    ]
+  },
+  {
+    "index": "bit-and-bridle",
+    "name": "Удила и уздечка",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 2,
+      "unit": "зм"
+    },
+    "weight": 1
+  },
+  {
+    "index": "carriage",
+    "name": "Карета",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 100,
+      "unit": "зм"
+    },
+    "weight": 600
+  },
+  {
+    "index": "cart",
+    "name": "Телега",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 15,
+      "unit": "зм"
+    },
+    "weight": 200
+  },
+  {
+    "index": "chariot",
+    "name": "Колесница",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 250,
+      "unit": "зм"
+    },
+    "weight": 100
+  },
+  {
+    "index": "animal-feed-1-day",
+    "name": "Корм для животных (1 день)",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 5,
+      "unit": "мм"
+    },
+    "weight": 10
+  },
+  {
+    "index": "saddle-exotic",
+    "name": "Седло, экзотическое",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 60,
+      "unit": "зм"
+    },
+    "weight": 50,
+    "desc": [
+      "Экзотическое седло требуется для езды на любом водном или летающем скакуне."
+    ]
+  },
+  {
+    "index": "saddle-military",
+    "name": "Седло, военное",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 20,
+      "unit": "зм"
+    },
+    "weight": 30,
+    "desc": [
+      "Военное седло поддерживает всадника, помогая удерживаться на активном скакуне в бою. Оно дает вам преимущество при любых проверках, которые вы совершаете, чтобы остаться в седле."
+    ]
+  },
+  {
+    "index": "saddle-pack",
+    "name": "Седло, вьючное",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 5,
+      "unit": "зм"
+    },
+    "weight": 15
+  },
+  {
+    "index": "saddle-riding",
+    "name": "Седло, ездовое",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 10,
+      "unit": "зм"
+    },
+    "weight": 25
+  },
+  {
+    "index": "saddlebags",
+    "name": "Переметные сумы",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 4,
+      "unit": "зм"
+    },
+    "weight": 8
+  },
+  {
+    "index": "sled",
+    "name": "Сани",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 20,
+      "unit": "зм"
+    },
+    "weight": 300
+  },
+  {
+    "index": "stabling-1-day",
+    "name": "Стойло (1 день)",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 5,
+      "unit": "сп"
+    },
+    "weight": 0
+  },
+  {
+    "index": "wagon",
+    "name": "Фургон",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Сбруя, упряжь и повозки",
+    "cost": {
+      "quantity": 35,
+      "unit": "зм"
+    },
+    "weight": 400
+  },
+  {
+    "index": "galley",
+    "name": "Галера",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Водный транспорт",
+    "cost": {
+      "quantity": 30000,
+      "unit": "зм"
+    },
+    "speed": {
+      "quantity": 4,
+      "unit": "миль/ч"
+    }
+  },
+  {
+    "index": "keelboat",
+    "name": "Килевая лодка",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Водный транспорт",
+    "cost": {
+      "quantity": 3000,
+      "unit": "зм"
+    },
+    "speed": {
+      "quantity": 1,
+      "unit": "миль/ч"
+    },
+    "desc": [
+      "Килевые лодки и весельные лодки используются на озерах и реках. При движении вниз по течению добавьте скорость течения (обычно 3 мили в час) к скорости судна. Эти суда не могут идти на веслах против значительного течения, но их могут тянуть вверх по течению тягловые животные по берегам. Весельная лодка весит 100 фунтов на случай, если искатели приключений понесут ее по суше."
+    ]
+  },
+  {
+    "index": "longship",
+    "name": "Драккар (лонгшип)",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Водный транспорт",
+    "cost": {
+      "quantity": 10000,
+      "unit": "зм"
+    },
+    "speed": {
+      "quantity": 3,
+      "unit": "миль/ч"
+    }
+  },
+  {
+    "index": "rowboat",
+    "name": "Весельная лодка",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Водный транспорт",
+    "cost": {
+      "quantity": 50,
+      "unit": "зм"
+    },
+    "speed": {
+      "quantity": 1.5,
+      "unit": "миль/ч"
+    },
+    "desc": [
+      "Килевые лодки и весельные лодки используются на озерах и реках. При движении вниз по течению добавьте скорость течения (обычно 3 мили в час) к скорости судна. Эти суда не могут идти на веслах против значительного течения, но их могут тянуть вверх по течению тягловые животные по берегам. Весельная лодка весит 100 фунтов на случай, если искатели приключений понесут ее по суше."
+    ]
+  },
+  {
+    "index": "sailing-ship",
+    "name": "Парусный корабль",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Водный транспорт",
+    "cost": {
+      "quantity": 10000,
+      "unit": "зм"
+    },
+    "speed": {
+      "quantity": 2,
+      "unit": "миль/ч"
+    }
+  },
+  {
+    "index": "warship",
+    "name": "Военный корабль",
+    "equipment_category": {
+      "index": "mounts-and-vehicles",
+      "name": "Скакуны и транспорт"
+    },
+    "vehicle_category": "Водный транспорт",
+    "cost": {
+      "quantity": 25000,
+      "unit": "зм"
+    },
+    "speed": {
+      "quantity": 2.5,
+      "unit": "миль/ч"
+    }
+  }
+]

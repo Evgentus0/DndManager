@@ -1,0 +1,1711 @@
+[
+  {
+    "index": "light-armor",
+    "type": "Armor",
+    "name": "Легкий доспех",
+    "classes": [
+      {
+        "index": "barbarian",
+        "name": "Варвар"
+      },
+      {
+        "index": "bard",
+        "name": "Бард"
+      },
+      {
+        "index": "cleric",
+        "name": "Жрец"
+      },
+      {
+        "index": "druid",
+        "name": "Друид"
+      },
+      {
+        "index": "ranger",
+        "name": "Следопыт"
+      },
+      {
+        "index": "rogue",
+        "name": "Плут"
+      },
+      {
+        "index": "warlock",
+        "name": "Колдун"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "light-armor",
+      "name": "Легкий доспех"
+    }
+  },
+  {
+    "index": "medium-armor",
+    "type": "Armor",
+    "name": "Средний доспех",
+    "classes": [
+      {
+        "index": "barbarian",
+        "name": "Варвар"
+      },
+      {
+        "index": "cleric",
+        "name": "Жрец"
+      },
+      {
+        "index": "druid",
+        "name": "Друид"
+      },
+      {
+        "index": "ranger",
+        "name": "Следопыт"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "medium-armor",
+      "name": "Средний доспех"
+    }
+  },
+  {
+    "index": "heavy-armor",
+    "type": "Armor",
+    "name": "Тяжелый доспех",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "heavy-armor",
+      "name": "Тяжелый доспех"
+    }
+  },
+  {
+    "index": "all-armor",
+    "type": "Armor",
+    "name": "Все доспехи",
+    "classes": [
+      {
+        "index": "fighter",
+        "name": "Воин"
+      },
+      {
+        "index": "paladin",
+        "name": "Паладин"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "armor",
+      "name": "Доспехи"
+    }
+  },
+  {
+    "index": "padded-armor",
+    "type": "Armor",
+    "name": "Стеганый доспех",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "padded-armor",
+      "name": "Стеганый доспех"
+    }
+  },
+  {
+    "index": "leather-armor",
+    "type": "Armor",
+    "name": "Кожаный доспех",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "leather-armor",
+      "name": "Кожаный доспех"
+    }
+  },
+  {
+    "index": "studded-leather-armor",
+    "type": "Armor",
+    "name": "Проклепанный кожаный доспех",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "studded-leather-armor",
+      "name": "Проклепанный кожаный доспех"
+    }
+  },
+  {
+    "index": "hide-armor",
+    "type": "Armor",
+    "name": "Шкурный доспех",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "hide-armor",
+      "name": "Шкурный доспех"
+    }
+  },
+  {
+    "index": "chain-shirt",
+    "type": "Armor",
+    "name": "Кольчужная рубаха",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "chain-shirt",
+      "name": "Кольчужная рубаха"
+    }
+  },
+  {
+    "index": "scale-mail",
+    "type": "Armor",
+    "name": "Чешуйчатый доспех",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "scale-mail",
+      "name": "Чешуйчатый доспех"
+    }
+  },
+  {
+    "index": "breastplate",
+    "type": "Armor",
+    "name": "Кираса",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "breastplate",
+      "name": "Кираса"
+    }
+  },
+  {
+    "index": "half-plate-armor",
+    "type": "Armor",
+    "name": "Полулаты",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "half-plate-armor",
+      "name": "Полулаты"
+    }
+  },
+  {
+    "index": "ring-mail",
+    "type": "Armor",
+    "name": "Кольчатый доспех",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "ring-mail",
+      "name": "Кольчатый доспех"
+    }
+  },
+  {
+    "index": "chain-mail",
+    "type": "Armor",
+    "name": "Кольчуга",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "chain-mail",
+      "name": "Кольчуга"
+    }
+  },
+  {
+    "index": "splint-armor",
+    "type": "Armor",
+    "name": "Наборный доспех",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "splint-armor",
+      "name": "Наборный доспех"
+    }
+  },
+  {
+    "index": "plate-armor",
+    "type": "Armor",
+    "name": "Латы",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "plate-armor",
+      "name": "Латы"
+    }
+  },
+  {
+    "index": "shields",
+    "type": "Armor",
+    "name": "Щиты",
+    "classes": [
+      {
+        "index": "barbarian",
+        "name": "Варвар"
+      },
+      {
+        "index": "cleric",
+        "name": "Жрец"
+      },
+      {
+        "index": "druid",
+        "name": "Друид"
+      },
+      {
+        "index": "fighter",
+        "name": "Воин"
+      },
+      {
+        "index": "paladin",
+        "name": "Паладин"
+      },
+      {
+        "index": "ranger",
+        "name": "Следопыт"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "shield",
+      "name": "Щит"
+    }
+  },
+  {
+    "index": "simple-weapons",
+    "type": "Weapons",
+    "name": "Простое оружие",
+    "classes": [
+      {
+        "index": "barbarian",
+        "name": "Варвар"
+      },
+      {
+        "index": "bard",
+        "name": "Бард"
+      },
+      {
+        "index": "cleric",
+        "name": "Жрец"
+      },
+      {
+        "index": "fighter",
+        "name": "Воин"
+      },
+      {
+        "index": "monk",
+        "name": "Монах"
+      },
+      {
+        "index": "paladin",
+        "name": "Паладин"
+      },
+      {
+        "index": "ranger",
+        "name": "Следопыт"
+      },
+      {
+        "index": "rogue",
+        "name": "Плут"
+      },
+      {
+        "index": "warlock",
+        "name": "Колдун"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "simple-weapons",
+      "name": "Простое оружие"
+    }
+  },
+  {
+    "index": "martial-weapons",
+    "type": "Weapons",
+    "name": "Воинское оружие",
+    "classes": [
+      {
+        "index": "barbarian",
+        "name": "Варвар"
+      },
+      {
+        "index": "fighter",
+        "name": "Воин"
+      },
+      {
+        "index": "paladin",
+        "name": "Паладин"
+      },
+      {
+        "index": "ranger",
+        "name": "Следопыт"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "martial-weapons",
+      "name": "Воинское оружие"
+    }
+  },
+  {
+    "index": "clubs",
+    "type": "Weapons",
+    "name": "Дубинки",
+    "classes": [
+      {
+        "index": "druid",
+        "name": "Друид"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "club",
+      "name": "Дубинка"
+    }
+  },
+  {
+    "index": "daggers",
+    "type": "Weapons",
+    "name": "Кинжалы",
+    "classes": [
+      {
+        "index": "druid",
+        "name": "Друид"
+      },
+      {
+        "index": "sorcerer",
+        "name": "Чародей"
+      },
+      {
+        "index": "wizard",
+        "name": "Волшебник"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "dagger",
+      "name": "Кинжал"
+    }
+  },
+  {
+    "index": "greatclubs",
+    "type": "Weapons",
+    "name": "Палицы",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "greatclub",
+      "name": "Палица"
+    }
+  },
+  {
+    "index": "handaxes",
+    "type": "Weapons",
+    "name": "Ручные топоры",
+    "classes": [],
+    "races": [
+      {
+        "index": "dwarf",
+        "name": "Дварф"
+      }
+    ],
+    "reference": {
+      "index": "handaxe",
+      "name": "Ручной топор"
+    }
+  },
+  {
+    "index": "javelins",
+    "type": "Weapons",
+    "name": "Метательные копья",
+    "classes": [
+      {
+        "index": "druid",
+        "name": "Друид"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "javelin",
+      "name": "Метательное копье"
+    }
+  },
+  {
+    "index": "light-hammers",
+    "type": "Weapons",
+    "name": "Легкие молоты",
+    "classes": [],
+    "races": [
+      {
+        "index": "dwarf",
+        "name": "Дварф"
+      }
+    ],
+    "reference": {
+      "index": "light-hammer",
+      "name": "Легкий молот"
+    }
+  },
+  {
+    "index": "maces",
+    "type": "Weapons",
+    "name": "Булавы",
+    "classes": [
+      {
+        "index": "druid",
+        "name": "Друид"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "mace",
+      "name": "Булава"
+    }
+  },
+  {
+    "index": "quarterstaffs",
+    "type": "Weapons",
+    "name": "Боевые посохи",
+    "classes": [
+      {
+        "index": "druid",
+        "name": "Друид"
+      },
+      {
+        "index": "sorcerer",
+        "name": "Чародей"
+      },
+      {
+        "index": "wizard",
+        "name": "Волшебник"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "quarterstaff",
+      "name": "Боевой посох"
+    }
+  },
+  {
+    "index": "sickles",
+    "type": "Weapons",
+    "name": "Серпы",
+    "classes": [
+      {
+        "index": "druid",
+        "name": "Друид"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "sickle",
+      "name": "Серп"
+    }
+  },
+  {
+    "index": "spears",
+    "type": "Weapons",
+    "name": "Копья",
+    "classes": [
+      {
+        "index": "druid",
+        "name": "Друид"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "spear",
+      "name": "Копье"
+    }
+  },
+  {
+    "index": "crossbows-light",
+    "type": "Weapons",
+    "name": "Арбалеты, легкие",
+    "classes": [
+      {
+        "index": "sorcerer",
+        "name": "Чародей"
+      },
+      {
+        "index": "wizard",
+        "name": "Волшебник"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "crossbow-light",
+      "name": "Арбалет, легкий"
+    }
+  },
+  {
+    "index": "darts",
+    "type": "Weapons",
+    "name": "Дротики",
+    "classes": [
+      {
+        "index": "druid",
+        "name": "Друид"
+      },
+      {
+        "index": "sorcerer",
+        "name": "Чародей"
+      },
+      {
+        "index": "wizard",
+        "name": "Волшебник"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "dart",
+      "name": "Дротик"
+    }
+  },
+  {
+    "index": "shortbows",
+    "type": "Weapons",
+    "name": "Короткие луки",
+    "classes": [],
+    "races": [
+      {
+        "index": "high-elf",
+        "name": "Высший эльф"
+      }
+    ],
+    "reference": {
+      "index": "shortbow",
+      "name": "Короткий лук"
+    }
+  },
+  {
+    "index": "slings",
+    "type": "Weapons",
+    "name": "Пращи",
+    "classes": [
+      {
+        "index": "druid",
+        "name": "Друид"
+      },
+      {
+        "index": "sorcerer",
+        "name": "Чародей"
+      },
+      {
+        "index": "wizard",
+        "name": "Волшебник"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "sling",
+      "name": "Праща"
+    }
+  },
+  {
+    "index": "battleaxes",
+    "type": "Weapons",
+    "name": "Боевые топоры",
+    "classes": [],
+    "races": [
+      {
+        "index": "dwarf",
+        "name": "Дварф"
+      }
+    ],
+    "reference": {
+      "index": "battleaxe",
+      "name": "Боевой топор"
+    }
+  },
+  {
+    "index": "flails",
+    "type": "Weapons",
+    "name": "Цепы",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "flail",
+      "name": "Цеп"
+    }
+  },
+  {
+    "index": "glaives",
+    "type": "Weapons",
+    "name": "Глефы",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "glaive",
+      "name": "Глефа"
+    }
+  },
+  {
+    "index": "greataxes",
+    "type": "Weapons",
+    "name": "Двуручные топоры",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "greataxe",
+      "name": "Двуручный топор"
+    }
+  },
+  {
+    "index": "greatswords",
+    "type": "Weapons",
+    "name": "Двуручные мечи",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "greatsword",
+      "name": "Двуручный меч"
+    }
+  },
+  {
+    "index": "halberds",
+    "type": "Weapons",
+    "name": "Алебарды",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "halberd",
+      "name": "Алебарда"
+    }
+  },
+  {
+    "index": "lances",
+    "type": "Weapons",
+    "name": "Пики (Lances)",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "lance",
+      "name": "Пика (Lance)"
+    }
+  },
+  {
+    "index": "longswords",
+    "type": "Weapons",
+    "name": "Длинные мечи",
+    "classes": [
+      {
+        "index": "bard",
+        "name": "Бард"
+      },
+      {
+        "index": "rogue",
+        "name": "Плут"
+      }
+    ],
+    "races": [
+      {
+        "index": "high-elf",
+        "name": "Высший эльф"
+      }
+    ],
+    "reference": {
+      "index": "longsword",
+      "name": "Длинный меч"
+    }
+  },
+  {
+    "index": "mauls",
+    "type": "Weapons",
+    "name": "Молоты",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "maul",
+      "name": "Молот"
+    }
+  },
+  {
+    "index": "morningstars",
+    "type": "Weapons",
+    "name": "Моргенштерны",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "morningstar",
+      "name": "Моргенштерн"
+    }
+  },
+  {
+    "index": "pikes",
+    "type": "Weapons",
+    "name": "Пики (Pikes)",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "pike",
+      "name": "Пика (Pike)"
+    }
+  },
+  {
+    "index": "rapiers",
+    "type": "Weapons",
+    "name": "Рапиры",
+    "classes": [
+      {
+        "index": "bard",
+        "name": "Бард"
+      },
+      {
+        "index": "rogue",
+        "name": "Плут"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "rapier",
+      "name": "Рапира"
+    }
+  },
+  {
+    "index": "scimitars",
+    "type": "Weapons",
+    "name": "Скимитары",
+    "classes": [
+      {
+        "index": "druid",
+        "name": "Друид"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "scimitar",
+      "name": "Скимитар"
+    }
+  },
+  {
+    "index": "shortswords",
+    "type": "Weapons",
+    "name": "Короткие мечи",
+    "classes": [
+      {
+        "index": "bard",
+        "name": "Бард"
+      },
+      {
+        "index": "monk",
+        "name": "Монах"
+      },
+      {
+        "index": "rogue",
+        "name": "Плут"
+      }
+    ],
+    "races": [
+      {
+        "index": "high-elf",
+        "name": "Высший эльф"
+      }
+    ],
+    "reference": {
+      "index": "shortsword",
+      "name": "Короткий меч"
+    }
+  },
+  {
+    "index": "tridents",
+    "type": "Weapons",
+    "name": "Трезубцы",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "trident",
+      "name": "Трезубец"
+    }
+  },
+  {
+    "index": "war-picks",
+    "type": "Weapons",
+    "name": "Боевые кирки",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "war-pick",
+      "name": "Боевая кирка"
+    }
+  },
+  {
+    "index": "warhammers",
+    "type": "Weapons",
+    "name": "Боевые молоты",
+    "classes": [],
+    "races": [
+      {
+        "index": "dwarf",
+        "name": "Дварф"
+      }
+    ],
+    "reference": {
+      "index": "warhammer",
+      "name": "Боевой молот"
+    }
+  },
+  {
+    "index": "whips",
+    "type": "Weapons",
+    "name": "Кнуты",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "whip",
+      "name": "Кнут"
+    }
+  },
+  {
+    "index": "blowguns",
+    "type": "Weapons",
+    "name": "Духовые трубки",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "blowgun",
+      "name": "Духовая трубка"
+    }
+  },
+  {
+    "index": "hand-crossbows",
+    "type": "Weapons",
+    "name": "Ручные арбалеты",
+    "classes": [
+      {
+        "index": "bard",
+        "name": "Бард"
+      },
+      {
+        "index": "rogue",
+        "name": "Плут"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "crossbow-hand",
+      "name": "Арбалет, ручной"
+    }
+  },
+  {
+    "index": "crossbows-heavy",
+    "type": "Weapons",
+    "name": "Тяжелые арбалеты",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "crossbow-heavy",
+      "name": "Арбалет, тяжелый"
+    }
+  },
+  {
+    "index": "longbows",
+    "type": "Weapons",
+    "name": "Длинные луки",
+    "classes": [],
+    "races": [
+      {
+        "index": "high-elf",
+        "name": "Высший эльф"
+      }
+    ],
+    "reference": {
+      "index": "longbow",
+      "name": "Длинный лук"
+    }
+  },
+  {
+    "index": "nets",
+    "type": "Weapons",
+    "name": "Сети",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "net",
+      "name": "Сеть"
+    }
+  },
+  {
+    "index": "alchemists-supplies",
+    "type": "Artisan's Tools",
+    "name": "Инструменты алхимика",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "alchemists-supplies",
+      "name": "Инструменты алхимика"
+    }
+  },
+  {
+    "index": "brewers-supplies",
+    "type": "Artisan's Tools",
+    "name": "Инструменты пивовара",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "brewers-supplies",
+      "name": "Инструменты пивовара"
+    }
+  },
+  {
+    "index": "calligraphers-supplies",
+    "type": "Artisan's Tools",
+    "name": "Инструменты каллиграфа",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "calligraphers-supplies",
+      "name": "Инструменты каллиграфа"
+    }
+  },
+  {
+    "index": "carpenters-tools",
+    "type": "Artisan's Tools",
+    "name": "Инструменты плотника",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "carpenters-tools",
+      "name": "Инструменты плотника"
+    }
+  },
+  {
+    "index": "cartographers-tools",
+    "type": "Artisan's Tools",
+    "name": "Инструменты картографа",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "cartographers-tools",
+      "name": "Инструменты картографа"
+    }
+  },
+  {
+    "index": "cobblers-tools",
+    "type": "Artisan's Tools",
+    "name": "Инструменты сапожника",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "cobblers-tools",
+      "name": "Инструменты сапожника"
+    }
+  },
+  {
+    "index": "cooks-utensils",
+    "type": "Artisan's Tools",
+    "name": "Кухонная утварь",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "cooks-utensils",
+      "name": "Кухонная утварь"
+    }
+  },
+  {
+    "index": "glassblowers-tools",
+    "type": "Artisan's Tools",
+    "name": "Инструменты стеклодува",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "glassblowers-tools",
+      "name": "Инструменты стеклодува"
+    }
+  },
+  {
+    "index": "jewelers-tools",
+    "type": "Artisan's Tools",
+    "name": "Инструменты ювелира",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "jewelers-tools",
+      "name": "Инструменты ювелира"
+    }
+  },
+  {
+    "index": "leatherworkers-tools",
+    "type": "Artisan's Tools",
+    "name": "Инструменты кожевника",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "leatherworkers-tools",
+      "name": "Инструменты кожевника"
+    }
+  },
+  {
+    "index": "masons-tools",
+    "type": "Artisan's Tools",
+    "name": "Инструменты каменщика",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "masons-tools",
+      "name": "Инструменты каменщика"
+    }
+  },
+  {
+    "index": "painters-supplies",
+    "type": "Artisan's Tools",
+    "name": "Инструменты художника",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "painters-supplies",
+      "name": "Инструменты художника"
+    }
+  },
+  {
+    "index": "potters-tools",
+    "type": "Artisan's Tools",
+    "name": "Инструменты гончара",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "potters-tools",
+      "name": "Инструменты гончара"
+    }
+  },
+  {
+    "index": "smiths-tools",
+    "type": "Artisan's Tools",
+    "name": "Инструменты кузнеца",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "smiths-tools",
+      "name": "Инструменты кузнеца"
+    }
+  },
+  {
+    "index": "tinkers-tools",
+    "type": "Artisan's Tools",
+    "name": "Инструменты жестянщика",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "tinkers-tools",
+      "name": "Инструменты жестянщика"
+    }
+  },
+  {
+    "index": "weavers-tools",
+    "type": "Artisan's Tools",
+    "name": "Инструменты ткача",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "weavers-tools",
+      "name": "Инструменты ткача"
+    }
+  },
+  {
+    "index": "woodcarvers-tools",
+    "type": "Artisan's Tools",
+    "name": "Инструменты резчика по дереву",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "woodcarvers-tools",
+      "name": "Инструменты резчика по дереву"
+    }
+  },
+  {
+    "index": "disguise-kit",
+    "type": "Artisan's Tools",
+    "name": "Набор для грима",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "disguise-kit",
+      "name": "Набор для грима"
+    }
+  },
+  {
+    "index": "forgery-kit",
+    "type": "Artisan's Tools",
+    "name": "Набор для фальсификации",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "forgery-kit",
+      "name": "Набор для фальсификации"
+    }
+  },
+  {
+    "index": "dice-set",
+    "type": "Gaming Sets",
+    "name": "Набор игральных костей",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "dice-set",
+      "name": "Набор игральных костей"
+    }
+  },
+  {
+    "index": "playing-card-set",
+    "type": "Gaming Sets",
+    "name": "Колода карт",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "playing-card-set",
+      "name": "Колода карт"
+    }
+  },
+  {
+    "index": "bagpipes",
+    "type": "Musical Instruments",
+    "name": "Волынка",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "bagpipes",
+      "name": "Волынка"
+    }
+  },
+  {
+    "index": "drum",
+    "type": "Musical Instruments",
+    "name": "Барабан",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "drum",
+      "name": "Барабан"
+    }
+  },
+  {
+    "index": "dulcimer",
+    "type": "Musical Instruments",
+    "name": "Цимбалы",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "dulcimer",
+      "name": "Цимбалы"
+    }
+  },
+  {
+    "index": "flute",
+    "type": "Musical Instruments",
+    "name": "Флейта",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "flute",
+      "name": "Флейта"
+    }
+  },
+  {
+    "index": "lute",
+    "type": "Musical Instruments",
+    "name": "Лютня",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "lute",
+      "name": "Лютня"
+    }
+  },
+  {
+    "index": "lyre",
+    "type": "Musical Instruments",
+    "name": "Лира",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "lyre",
+      "name": "Лира"
+    }
+  },
+  {
+    "index": "horn",
+    "type": "Musical Instruments",
+    "name": "Рожок",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "horn",
+      "name": "Рожок"
+    }
+  },
+  {
+    "index": "pan-flute",
+    "type": "Musical Instruments",
+    "name": "Свирель",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "pan-flute",
+      "name": "Свирель"
+    }
+  },
+  {
+    "index": "shawm",
+    "type": "Musical Instruments",
+    "name": "Шалмей",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "shawm",
+      "name": "Шалмей"
+    }
+  },
+  {
+    "index": "viol",
+    "type": "Musical Instruments",
+    "name": "Виола",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "viol",
+      "name": "Виола"
+    }
+  },
+  {
+    "index": "herbalism-kit",
+    "type": "Other",
+    "name": "Набор травника",
+    "classes": [
+      {
+        "index": "druid",
+        "name": "Друид"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "herbalism-kit",
+      "name": "Набор травника"
+    }
+  },
+  {
+    "index": "navigators-tools",
+    "type": "Other",
+    "name": "Инструменты навигатора",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "navigators-tools",
+      "name": "Инструменты навигатора"
+    }
+  },
+  {
+    "index": "poisoners-kit",
+    "type": "Other",
+    "name": "Набор отравителя",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "poisoners-kit",
+      "name": "Набор отравителя"
+    }
+  },
+  {
+    "index": "thieves-tools",
+    "type": "Other",
+    "name": "Воровские инструменты",
+    "classes": [
+      {
+        "index": "rogue",
+        "name": "Плут"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "thieves-tools",
+      "name": "Воровские инструменты"
+    }
+  },
+  {
+    "index": "land-vehicles",
+    "type": "Vehicles",
+    "name": "Наземный транспорт",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "land-vehicles",
+      "name": "Наземный транспорт"
+    }
+  },
+  {
+    "index": "water-vehicles",
+    "type": "Vehicles",
+    "name": "Водный транспорт",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "waterborne-vehicles",
+      "name": "Водный транспорт"
+    }
+  },
+  {
+    "index": "saving-throw-str",
+    "type": "Saving Throws",
+    "name": "Спасбросок: СИЛ",
+    "classes": [
+      {
+        "index": "barbarian",
+        "name": "Варвар"
+      },
+      {
+        "index": "fighter",
+        "name": "Воин"
+      },
+      {
+        "index": "monk",
+        "name": "Монах"
+      },
+      {
+        "index": "ranger",
+        "name": "Следопыт"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "str",
+      "name": "СИЛ"
+    }
+  },
+  {
+    "index": "saving-throw-dex",
+    "type": "Saving Throws",
+    "name": "Спасбросок: ЛОВ",
+    "classes": [
+      {
+        "index": "bard",
+        "name": "Бард"
+      },
+      {
+        "index": "monk",
+        "name": "Монах"
+      },
+      {
+        "index": "ranger",
+        "name": "Следопыт"
+      },
+      {
+        "index": "rogue",
+        "name": "Плут"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "dex",
+      "name": "ЛОВ"
+    }
+  },
+  {
+    "index": "saving-throw-con",
+    "type": "Saving Throws",
+    "name": "Спасбросок: ТЕЛ",
+    "classes": [
+      {
+        "index": "barbarian",
+        "name": "Варвар"
+      },
+      {
+        "index": "fighter",
+        "name": "Воин"
+      },
+      {
+        "index": "sorcerer",
+        "name": "Чародей"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "con",
+      "name": "ТЕЛ"
+    }
+  },
+  {
+    "index": "saving-throw-int",
+    "type": "Saving Throws",
+    "name": "Спасбросок: ИНТ",
+    "classes": [
+      {
+        "index": "druid",
+        "name": "Друид"
+      },
+      {
+        "index": "rogue",
+        "name": "Плут"
+      },
+      {
+        "index": "wizard",
+        "name": "Волшебник"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "int",
+      "name": "ИНТ"
+    }
+  },
+  {
+    "index": "saving-throw-wis",
+    "type": "Saving Throws",
+    "name": "Спасбросок: МДР",
+    "classes": [
+      {
+        "index": "cleric",
+        "name": "Жрец"
+      },
+      {
+        "index": "druid",
+        "name": "Друид"
+      },
+      {
+        "index": "paladin",
+        "name": "Паладин"
+      },
+      {
+        "index": "warlock",
+        "name": "Колдун"
+      },
+      {
+        "index": "wizard",
+        "name": "Волшебник"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "wis",
+      "name": "МДР"
+    }
+  },
+  {
+    "index": "saving-throw-cha",
+    "type": "Saving Throws",
+    "name": "Спасбросок: ХАР",
+    "classes": [
+      {
+        "index": "bard",
+        "name": "Бард"
+      },
+      {
+        "index": "cleric",
+        "name": "Жрец"
+      },
+      {
+        "index": "paladin",
+        "name": "Паладин"
+      },
+      {
+        "index": "sorcerer",
+        "name": "Чародей"
+      },
+      {
+        "index": "warlock",
+        "name": "Колдун"
+      }
+    ],
+    "races": [],
+    "reference": {
+      "index": "cha",
+      "name": "ХАР"
+    }
+  },
+  {
+    "index": "skill-acrobatics",
+    "type": "Skills",
+    "name": "Навык: Акробатика",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "acrobatics",
+      "name": "Акробатика"
+    }
+  },
+  {
+    "index": "skill-animal-handling",
+    "type": "Skills",
+    "name": "Навык: Уход за животными",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "animal-handling",
+      "name": "Уход за животными"
+    }
+  },
+  {
+    "index": "skill-arcana",
+    "type": "Skills",
+    "name": "Навык: Магия",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "arcana",
+      "name": "Магия"
+    }
+  },
+  {
+    "index": "skill-athletics",
+    "type": "Skills",
+    "name": "Навык: Атлетика",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "athletics",
+      "name": "Атлетика"
+    }
+  },
+  {
+    "index": "skill-deception",
+    "type": "Skills",
+    "name": "Навык: Обман",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "deception",
+      "name": "Обман"
+    }
+  },
+  {
+    "index": "skill-history",
+    "type": "Skills",
+    "name": "Навык: История",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "history",
+      "name": "История"
+    }
+  },
+  {
+    "index": "skill-insight",
+    "type": "Skills",
+    "name": "Навык: Проницательность",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "insight",
+      "name": "Проницательность"
+    }
+  },
+  {
+    "index": "skill-intimidation",
+    "type": "Skills",
+    "name": "Навык: Запугивание",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "intimidation",
+      "name": "Запугивание"
+    }
+  },
+  {
+    "index": "skill-investigation",
+    "type": "Skills",
+    "name": "Навык: Анализ",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "investigation",
+      "name": "Анализ"
+    }
+  },
+  {
+    "index": "skill-medicine",
+    "type": "Skills",
+    "name": "Навык: Медицина",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "medicine",
+      "name": "Медицина"
+    }
+  },
+  {
+    "index": "skill-nature",
+    "type": "Skills",
+    "name": "Навык: Природа",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "nature",
+      "name": "Природа"
+    }
+  },
+  {
+    "index": "skill-perception",
+    "type": "Skills",
+    "name": "Навык: Внимательность",
+    "classes": [],
+    "races": [
+      {
+        "index": "elf",
+        "name": "Эльф"
+      }
+    ],
+    "reference": {
+      "index": "perception",
+      "name": "Внимательность"
+    }
+  },
+  {
+    "index": "skill-performance",
+    "type": "Skills",
+    "name": "Навык: Выступление",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "performance",
+      "name": "Выступление"
+    }
+  },
+  {
+    "index": "skill-persuasion",
+    "type": "Skills",
+    "name": "Навык: Убеждение",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "persuasion",
+      "name": "Убеждение"
+    }
+  },
+  {
+    "index": "skill-religion",
+    "type": "Skills",
+    "name": "Навык: Религия",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "religion",
+      "name": "Религия"
+    }
+  },
+  {
+    "index": "skill-sleight-of-hand",
+    "type": "Skills",
+    "name": "Навык: Ловкость рук",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "sleight-of-hand",
+      "name": "Ловкость рук"
+    }
+  },
+  {
+    "index": "skill-stealth",
+    "type": "Skills",
+    "name": "Навык: Скрытность",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "stealth",
+      "name": "Скрытность"
+    }
+  },
+  {
+    "index": "skill-survival",
+    "type": "Skills",
+    "name": "Навык: Выживание",
+    "classes": [],
+    "races": [],
+    "reference": {
+      "index": "survival",
+      "name": "Выживание"
+    }
+  }
+]

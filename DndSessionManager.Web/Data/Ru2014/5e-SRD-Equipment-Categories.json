@@ -1,0 +1,3896 @@
+[
+	{
+	  "index": "weapon",
+	  "name": "Оружие",
+	  "equipment": [
+		{
+		  "index": "club",
+		  "name": "Дубинка"
+		},
+		{
+		  "index": "dagger",
+		  "name": "Кинжал"
+		},
+		{
+		  "index": "greatclub",
+		  "name": "Палица"
+		},
+		{
+		  "index": "handaxe",
+		  "name": "Ручной топор"
+		},
+		{
+		  "index": "javelin",
+		  "name": "Метательное копье"
+		},
+		{
+		  "index": "light-hammer",
+		  "name": "Легкий молот"
+		},
+		{
+		  "index": "mace",
+		  "name": "Булава"
+		},
+		{
+		  "index": "quarterstaff",
+		  "name": "Боевой посох"
+		},
+		{
+		  "index": "sickle",
+		  "name": "Серп"
+		},
+		{
+		  "index": "spear",
+		  "name": "Копье"
+		},
+		{
+		  "index": "crossbow-light",
+		  "name": "Арбалет, легкий"
+		},
+		{
+		  "index": "dart",
+		  "name": "Дротик"
+		},
+		{
+		  "index": "shortbow",
+		  "name": "Короткий лук"
+		},
+		{
+		  "index": "sling",
+		  "name": "Праща"
+		},
+		{
+		  "index": "battleaxe",
+		  "name": "Боевой топор"
+		},
+		{
+		  "index": "flail",
+		  "name": "Цеп"
+		},
+		{
+		  "index": "glaive",
+		  "name": "Глефа"
+		},
+		{
+		  "index": "greataxe",
+		  "name": "Двуручный топор"
+		},
+		{
+		  "index": "greatsword",
+		  "name": "Двуручный меч"
+		},
+		{
+		  "index": "halberd",
+		  "name": "Алебарда"
+		},
+		{
+		  "index": "lance",
+		  "name": "Пика (Lance)"
+		},
+		{
+		  "index": "longsword",
+		  "name": "Длинный меч"
+		},
+		{
+		  "index": "maul",
+		  "name": "Молот"
+		},
+		{
+		  "index": "morningstar",
+		  "name": "Моргенштерн"
+		},
+		{
+		  "index": "pike",
+		  "name": "Пика (Pike)"
+		},
+		{
+		  "index": "rapier",
+		  "name": "Рапира"
+		},
+		{
+		  "index": "scimitar",
+		  "name": "Скимитар"
+		},
+		{
+		  "index": "shortsword",
+		  "name": "Короткий меч"
+		},
+		{
+		  "index": "trident",
+		  "name": "Трезубец"
+		},
+		{
+		  "index": "war-pick",
+		  "name": "Боевая кирка"
+		},
+		{
+		  "index": "warhammer",
+		  "name": "Боевой молот"
+		},
+		{
+		  "index": "whip",
+		  "name": "Кнут"
+		},
+		{
+		  "index": "blowgun",
+		  "name": "Духовая трубка"
+		},
+		{
+		  "index": "crossbow-hand",
+		  "name": "Арбалет, ручной"
+		},
+		{
+		  "index": "crossbow-heavy",
+		  "name": "Арбалет, тяжелый"
+		},
+		{
+		  "index": "longbow",
+		  "name": "Длинный лук"
+		},
+		{
+		  "index": "net",
+		  "name": "Сеть"
+		},
+		{
+		  "index": "berserker-axe",
+		  "name": "Топор берсерка"
+		},
+		{
+		  "index": "dagger-of-venom",
+		  "name": "Кинжал яда"
+		},
+		{
+		  "index": "dancing-sword",
+		  "name": "Танцующий меч"
+		},
+		{
+		  "index": "defender",
+		  "name": "Защитник"
+		},
+		{
+		  "index": "dragon-slayer",
+		  "name": "Убийца драконов"
+		},
+		{
+		  "index": "dwarven-thrower",
+		  "name": "Дварфский метатель"
+		},
+		{
+		  "index": "flame-tongue",
+		  "name": "Язык пламени"
+		},
+		{
+		  "index": "frost-brand",
+		  "name": "Ледяное клеймо"
+		},
+		{
+		  "index": "giant-slayer",
+		  "name": "Убийца великанов"
+		},
+		{
+		  "index": "hammer-of-thunderbolts",
+		  "name": "Молот громовержца"
+		},
+		{
+		  "index": "holy-avenger",
+		  "name": "Святой мститель"
+		},
+		{
+		  "index": "javelin-of-lightning",
+		  "name": "Метательное копье молнии"
+		},
+		{
+		  "index": "luck-blade",
+		  "name": "Клинок удачи"
+		},
+		{
+		  "index": "mace-of-disruption",
+		  "name": "Булава разрушения"
+		},
+		{
+		  "index": "mace-of-smiting",
+		  "name": "Булава кары"
+		},
+		{
+		  "index": "mace-of-terror",
+		  "name": "Булава ужаса"
+		},
+		{
+		  "index": "nine-lives-stealer",
+		  "name": "Похититель девяти жизней"
+		},
+		{
+		  "index": "oathbow",
+		  "name": "Лук клятвы"
+		},
+		{
+		  "index": "scimitar-of-speed",
+		  "name": "Скимитар скорости"
+		},
+		{
+		  "index": "sun-blade",
+		  "name": "Солнечный клинок"
+		},
+		{
+		  "index": "sword-of-life-stealing",
+		  "name": "Меч похищения жизни"
+		},
+		{
+		  "index": "sword-of-sharpness",
+		  "name": "Меч остроты"
+		},
+		{
+		  "index": "sword-of-wounding",
+		  "name": "Меч ранения"
+		},
+		{
+		  "index": "trident-of-fish-command",
+		  "name": "Трезубец повеления рыбами"
+		},
+		{
+		  "index": "vicious-weapon",
+		  "name": "Злобное оружие"
+		},
+		{
+		  "index": "vorpal-sword",
+		  "name": "Ворпальный меч"
+		},
+		{
+		  "index": "weapon",
+		  "name": "Оружие, +1, +2 или +3"
+		},
+		{
+		  "index": "weapon-1",
+		  "name": "Оружие, +1"
+		},
+		{
+		  "index": "weapon-2",
+		  "name": "Оружие, +2"
+		},
+		{
+		  "index": "weapon-3",
+		  "name": "Оружие, +3"
+		}
+	  ]
+	},
+	{
+	  "index": "armor",
+	  "name": "Доспехи",
+	  "equipment": [
+		{
+		  "index": "padded-armor",
+		  "name": "Стеганый доспех"
+		},
+		{
+		  "index": "leather-armor",
+		  "name": "Кожаный доспех"
+		},
+		{
+		  "index": "studded-leather-armor",
+		  "name": "Проклепанный кожаный доспех"
+		},
+		{
+		  "index": "hide-armor",
+		  "name": "Шкурный доспех"
+		},
+		{
+		  "index": "chain-shirt",
+		  "name": "Кольчужная рубаха"
+		},
+		{
+		  "index": "scale-mail",
+		  "name": "Чешуйчатый доспех"
+		},
+		{
+		  "index": "breastplate",
+		  "name": "Кираса"
+		},
+		{
+		  "index": "half-plate-armor",
+		  "name": "Полулаты"
+		},
+		{
+		  "index": "ring-mail",
+		  "name": "Кольчатый доспех"
+		},
+		{
+		  "index": "chain-mail",
+		  "name": "Кольчуга"
+		},
+		{
+		  "index": "splint-armor",
+		  "name": "Наборный доспех"
+		},
+		{
+		  "index": "plate-armor",
+		  "name": "Латы"
+		},
+		{
+		  "index": "shield",
+		  "name": "Щит"
+		},
+		{
+		  "index": "adamantine-armor",
+		  "name": "Адамантиновый доспех"
+		},
+		{
+		  "index": "animated-shield",
+		  "name": "Живой щит"
+		},
+		{
+		  "index": "armor",
+		  "name": "Доспех, +1, +2 или +3"
+		},
+		{
+		  "index": "armor-of-invulnerability",
+		  "name": "Доспех неуязвимости"
+		},
+		{
+		  "index": "armor-of-resistance",
+		  "name": "Доспех сопротивления"
+		},
+		{
+		  "index": "armor-of-vulnerability",
+		  "name": "Доспех уязвимости"
+		},
+		{
+		  "index": "arrow-catching-shield",
+		  "name": "Щит ловли стрел"
+		},
+		{
+		  "index": "demon-armor",
+		  "name": "Демонический доспех"
+		},
+		{
+		  "index": "dragon-scale-mail",
+		  "name": "Доспех из драконьей чешуи"
+		},
+		{
+		  "index": "dwarven-plate",
+		  "name": "Дварфские латы"
+		},
+		{
+		  "index": "elven-chain",
+		  "name": "Эльфийская кольчуга"
+		},
+		{
+		  "index": "glamoured-studded-leather-armor",
+		  "name": "Иллюзорный проклепанный кожаный доспех"
+		},
+		{
+		  "index": "mithral-armor",
+		  "name": "Мифриловый доспех"
+		},
+		{
+		  "index": "plate-armor-of-etherealness",
+		  "name": "Латы эфирности"
+		},
+		{
+		  "index": "shield-of-missile-attraction",
+		  "name": "Щит притяжения снарядов"
+		},
+		{
+		  "index": "spellguard-shield",
+		  "name": "Щит защиты от заклинаний"
+		},
+		{
+		  "index": "armor-1",
+		  "name": "Доспех, +1"
+		},
+		{
+		  "index": "armor-2",
+		  "name": "Доспех, +2"
+		},
+		{
+		  "index": "armor-3",
+		  "name": "Доспех, +3"
+		},
+		{
+		  "index": "dragon-scale-mail-black",
+		  "name": "Доспех из чешуи черного дракона"
+		},
+		{
+		  "index": "dragon-scale-mail-blue",
+		  "name": "Доспех из чешуи синего дракона"
+		},
+		{
+		  "index": "dragon-scale-mail-brass",
+		  "name": "Доспех из чешуи латунного дракона"
+		},
+		{
+		  "index": "dragon-scale-mail-bronze",
+		  "name": "Доспех из чешуи бронзового дракона"
+		},
+		{
+		  "index": "dragon-scale-mail-copper",
+		  "name": "Доспех из чешуи медного дракона"
+		},
+		{
+		  "index": "dragon-scale-mail-gold",
+		  "name": "Доспех из чешуи золотого дракона"
+		},
+		{
+		  "index": "dragon-scale-mail-green",
+		  "name": "Доспех из чешуи зеленого дракона"
+		},
+		{
+		  "index": "dragon-scale-mail-red",
+		  "name": "Доспех из чешуи красного дракона"
+		},
+		{
+		  "index": "dragon-scale-mail-silver",
+		  "name": "Доспех из чешуи серебряного дракона"
+		},
+		{
+		  "index": "dragon-scale-mail-white",
+		  "name": "Доспех из чешуи белого дракона"
+		}
+	  ]
+	},
+	{
+	  "index": "adventuring-gear",
+	  "name": "Снаряжение для приключений",
+	  "equipment": [
+		{
+		  "index": "abacus",
+		  "name": "Счеты"
+		},
+		{
+		  "index": "acid-vial",
+		  "name": "Кислота (флакон)"
+		},
+		{
+		  "index": "alchemists-fire-flask",
+		  "name": "Алхимический огонь (сосуд)"
+		},
+		{
+		  "index": "arrow",
+		  "name": "Стрела"
+		},
+		{
+		  "index": "blowgun-needle",
+		  "name": "Игла для духовой трубки"
+		},
+		{
+		  "index": "crossbow-bolt",
+		  "name": "Арбалетный болт"
+		},
+		{
+		  "index": "sling-bullet",
+		  "name": "Снаряд для пращи"
+		},
+		{
+		  "index": "alms-box",
+		  "name": "Кружка для пожертвований"
+		},
+		{
+		  "index": "amulet",
+		  "name": "Амулет"
+		},
+		{
+		  "index": "antitoxin-vial",
+		  "name": "Противоядие (флакон)"
+		},
+		{
+		  "index": "backpack",
+		  "name": "Рюкзак"
+		},
+		{
+		  "index": "ball-bearings-bag-of-1000",
+		  "name": "Шарики (сумка из 1000 шт.)"
+		},
+		{
+		  "index": "barrel",
+		  "name": "Бочка"
+		},
+		{
+		  "index": "basket",
+		  "name": "Корзина"
+		},
+		{
+		  "index": "bedroll",
+		  "name": "Спальник"
+		},
+		{
+		  "index": "bell",
+		  "name": "Колокольчик"
+		},
+		{
+		  "index": "blanket",
+		  "name": "Одеяло"
+		},
+		{
+		  "index": "block-and-tackle",
+		  "name": "Блок и тали"
+		},
+		{
+		  "index": "block-of-incense",
+		  "name": "Благовония (брусок)"
+		},
+		{
+		  "index": "book",
+		  "name": "Книга"
+		},
+		{
+		  "index": "bottle-glass",
+		  "name": "Бутылка, стеклянная"
+		},
+		{
+		  "index": "bucket",
+		  "name": "Ведро"
+		},
+		{
+		  "index": "caltrops",
+		  "name": "Чеснок (шипы)"
+		},
+		{
+		  "index": "candle",
+		  "name": "Свеча"
+		},
+		{
+		  "index": "case-crossbow-bolt",
+		  "name": "Футляр для болтов"
+		},
+		{
+		  "index": "case-map-or-scroll",
+		  "name": "Тубус для карт или свитков"
+		},
+		{
+		  "index": "censer",
+		  "name": "Кадило"
+		},
+		{
+		  "index": "chain-10-feet",
+		  "name": "Цепь (10 футов)"
+		},
+		{
+		  "index": "chalk-1-piece",
+		  "name": "Мел (1 кусок)"
+		},
+		{
+		  "index": "chest",
+		  "name": "Сундук"
+		},
+		{
+		  "index": "clothes-common",
+		  "name": "Одежда, обычная"
+		},
+		{
+		  "index": "clothes-costume",
+		  "name": "Одежда, костюм"
+		},
+		{
+		  "index": "clothes-fine",
+		  "name": "Одежда, дорогая"
+		},
+		{
+		  "index": "clothes-travelers",
+		  "name": "Одежда, дорожная"
+		},
+		{
+		  "index": "component-pouch",
+		  "name": "Кошель с компонентами"
+		},
+		{
+		  "index": "crowbar",
+		  "name": "Лом"
+		},
+		{
+		  "index": "emblem",
+		  "name": "Эмблема"
+		},
+		{
+		  "index": "fishing-tackle",
+		  "name": "Рыболовные снасти"
+		},
+		{
+		  "index": "flask-or-tankard",
+		  "name": "Фляга или кружка"
+		},
+		{
+		  "index": "grappling-hook",
+		  "name": "Крюк-кошка"
+		},
+		{
+		  "index": "hammer",
+		  "name": "Молоток"
+		},
+		{
+		  "index": "hammer-sledge",
+		  "name": "Кувалда"
+		},
+		{
+		  "index": "holy-water-flask",
+		  "name": "Святая вода (сосуд)"
+		},
+		{
+		  "index": "hourglass",
+		  "name": "Песочные часы"
+		},
+		{
+		  "index": "hunting-trap",
+		  "name": "Охотничий капкан"
+		},
+		{
+		  "index": "ink-1-ounce-bottle",
+		  "name": "Чернила (флакон в 1 унцию)"
+		},
+		{
+		  "index": "ink-pen",
+		  "name": "Писчее перо"
+		},
+		{
+		  "index": "jug-or-pitcher",
+		  "name": "Кувшин или графин"
+		},
+		{
+		  "index": "climbers-kit",
+		  "name": "Набор скалолаза"
+		},
+		{
+		  "index": "disguise-kit",
+		  "name": "Набор для грима"
+		},
+		{
+		  "index": "forgery-kit",
+		  "name": "Набор для фальсификации"
+		},
+		{
+		  "index": "herbalism-kit",
+		  "name": "Набор травника"
+		},
+		{
+		  "index": "healers-kit",
+		  "name": "Набор целителя"
+		},
+		{
+		  "index": "mess-kit",
+		  "name": "Столовый набор"
+		},
+		{
+		  "index": "poisoners-kit",
+		  "name": "Набор отравителя"
+		},
+		{
+		  "index": "ladder-10-foot",
+		  "name": "Лестница (10 футов)"
+		},
+		{
+		  "index": "lamp",
+		  "name": "Лампа"
+		},
+		{
+		  "index": "lantern-bullseye",
+		  "name": "Фонарь, направленный"
+		},
+		{
+		  "index": "lantern-hooded",
+		  "name": "Фонарь, закрытый"
+		},
+		{
+		  "index": "little-bag-of-sand",
+		  "name": "Мешочек с песком"
+		},
+		{
+		  "index": "lock",
+		  "name": "Замок"
+		},
+		{
+		  "index": "magnifying-glass",
+		  "name": "Увеличительное стекло"
+		},
+		{
+		  "index": "manacles",
+		  "name": "Кандалы"
+		},
+		{
+		  "index": "mirror-steel",
+		  "name": "Зеркало, стальное"
+		},
+		{
+		  "index": "oil-flask",
+		  "name": "Масло (сосуд)"
+		},
+		{
+		  "index": "paper-one-sheet",
+		  "name": "Бумага (один лист)"
+		},
+		{
+		  "index": "parchment-one-sheet",
+		  "name": "Пергамент (один лист)"
+		},
+		{
+		  "index": "perfume-vial",
+		  "name": "Духи (флакон)"
+		},
+		{
+		  "index": "pick-miners",
+		  "name": "Кирка"
+		},
+		{
+		  "index": "piton",
+		  "name": "Альпинистский крюк"
+		},
+		{
+		  "index": "poison-basic-vial",
+		  "name": "Яд, базовый (флакон)"
+		},
+		{
+		  "index": "pole-10-foot",
+		  "name": "Шест (10 футов)"
+		},
+		{
+		  "index": "pot-iron",
+		  "name": "Горшок, железный"
+		},
+		{
+		  "index": "pouch",
+		  "name": "Кошель"
+		},
+		{
+		  "index": "quiver",
+		  "name": "Колчан"
+		},
+		{
+		  "index": "ram-portable",
+		  "name": "Таран, переносной"
+		},
+		{
+		  "index": "rations-1-day",
+		  "name": "Рационы (1 день)"
+		},
+		{
+		  "index": "reliquary",
+		  "name": "Реликварий"
+		},
+		{
+		  "index": "robes",
+		  "name": "Ряса"
+		},
+		{
+		  "index": "rope-hempen-50-feet",
+		  "name": "Веревка, пеньковая (50 футов)"
+		},
+		{
+		  "index": "rope-silk-50-feet",
+		  "name": "Веревка, шелковая (50 футов)"
+		},
+		{
+		  "index": "sack",
+		  "name": "Мешок"
+		},
+		{
+		  "index": "scale-merchants",
+		  "name": "Весы, торговые"
+		},
+		{
+		  "index": "sealing-wax",
+		  "name": "Сургуч"
+		},
+		{
+		  "index": "shovel",
+		  "name": "Лопата"
+		},
+		{
+		  "index": "signal-whistle",
+		  "name": "Сигнальный свисток"
+		},
+		{
+		  "index": "signet-ring",
+		  "name": "Кольцо-печатка"
+		},
+		{
+		  "index": "small-knife",
+		  "name": "Маленький нож"
+		},
+		{
+		  "index": "soap",
+		  "name": "Мыло"
+		},
+		{
+		  "index": "spellbook",
+		  "name": "Книга заклинаний"
+		},
+		{
+		  "index": "spike-iron",
+		  "name": "Костыль, железный"
+		},
+		{
+		  "index": "spyglass",
+		  "name": "Подзорная труба"
+		},
+		{
+		  "index": "string-10-feet",
+		  "name": "Бечевка (10 футов)"
+		},
+		{
+		  "index": "tent-two-person",
+		  "name": "Палатка, двухместная"
+		},
+		{
+		  "index": "tinderbox",
+		  "name": "Трутница"
+		},
+		{
+		  "index": "torch",
+		  "name": "Факел"
+		},
+		{
+		  "index": "vestments",
+		  "name": "Облачение"
+		},
+		{
+		  "index": "vial",
+		  "name": "Флакон"
+		},
+		{
+		  "index": "waterskin",
+		  "name": "Бурдюк"
+		},
+		{
+		  "index": "whetstone",
+		  "name": "Точильный камень"
+		},
+		{
+		  "index": "burglars-pack",
+		  "name": "Набор взломщика"
+		},
+		{
+		  "index": "diplomats-pack",
+		  "name": "Набор дипломата"
+		},
+		{
+		  "index": "dungeoneers-pack",
+		  "name": "Набор подземельщика"
+		},
+		{
+		  "index": "entertainers-pack",
+		  "name": "Набор артиста"
+		},
+		{
+		  "index": "explorers-pack",
+		  "name": "Набор путешественника"
+		},
+		{
+		  "index": "priests-pack",
+		  "name": "Набор священника"
+		},
+		{
+		  "index": "scholars-pack",
+		  "name": "Набор ученого"
+		},
+		{
+		  "index": "crystal",
+		  "name": "Кристалл"
+		},
+		{
+		  "index": "orb",
+		  "name": "Сфера"
+		},
+		{
+		  "index": "rod",
+		  "name": "Жезл"
+		},
+		{
+		  "index": "staff",
+		  "name": "Посох"
+		},
+		{
+		  "index": "wand",
+		  "name": "Волшебная палочка"
+		},
+		{
+		  "index": "sprig-of-mistletoe",
+		  "name": "Веточка омелы"
+		},
+		{
+		  "index": "totem",
+		  "name": "Тотем"
+		},
+		{
+		  "index": "wooden-staff",
+		  "name": "Деревянный посох"
+		},
+		{
+		  "index": "yew-wand",
+		  "name": "Тисовая палочка"
+		}
+	  ]
+	},
+	{
+	  "index": "ammunition",
+	  "name": "Боеприпасы",
+	  "equipment": [
+		{
+		  "index": "arrow",
+		  "name": "Стрела"
+		},
+		{
+		  "index": "blowgun-needle",
+		  "name": "Игла для духовой трубки"
+		},
+		{
+		  "index": "crossbow-bolt",
+		  "name": "Арбалетный болт"
+		},
+		{
+		  "index": "sling-bullet",
+		  "name": "Снаряд для пращи"
+		},
+		{
+		  "index": "ammunition",
+		  "name": "Боеприпасы, +1, +2 или +3"
+		},
+		{
+		  "index": "arrow-of-slaying",
+		  "name": "Стрела убийства"
+		},
+		{
+		  "index": "ammunition-1",
+		  "name": "Боеприпасы, +1"
+		},
+		{
+		  "index": "ammunition-2",
+		  "name": "Боеприпасы, +2"
+		},
+		{
+		  "index": "ammunition-3",
+		  "name": "Боеприпасы, +3"
+		}
+	  ]
+	},
+	{
+	  "index": "tools",
+	  "name": "Инструменты",
+	  "equipment": [
+		{
+		  "index": "alchemists-supplies",
+		  "name": "Инструменты алхимика"
+		},
+		{
+		  "index": "brewers-supplies",
+		  "name": "Инструменты пивовара"
+		},
+		{
+		  "index": "calligraphers-supplies",
+		  "name": "Инструменты каллиграфа"
+		},
+		{
+		  "index": "carpenters-tools",
+		  "name": "Инструменты плотника"
+		},
+		{
+		  "index": "cartographers-tools",
+		  "name": "Инструменты картографа"
+		},
+		{
+		  "index": "cobblers-tools",
+		  "name": "Инструменты сапожника"
+		},
+		{
+		  "index": "cooks-utensils",
+		  "name": "Кухонная утварь"
+		},
+		{
+		  "index": "glassblowers-tools",
+		  "name": "Инструменты стеклодува"
+		},
+		{
+		  "index": "jewelers-tools",
+		  "name": "Инструменты ювелира"
+		},
+		{
+		  "index": "leatherworkers-tools",
+		  "name": "Инструменты кожевника"
+		},
+		{
+		  "index": "masons-tools",
+		  "name": "Инструменты каменщика"
+		},
+		{
+		  "index": "painters-supplies",
+		  "name": "Инструменты художника"
+		},
+		{
+		  "index": "potters-tools",
+		  "name": "Инструменты гончара"
+		},
+		{
+		  "index": "smiths-tools",
+		  "name": "Инструменты кузнеца"
+		},
+		{
+		  "index": "tinkers-tools",
+		  "name": "Инструменты жестянщика"
+		},
+		{
+		  "index": "weavers-tools",
+		  "name": "Инструменты ткача"
+		},
+		{
+		  "index": "woodcarvers-tools",
+		  "name": "Инструменты резчика по дереву"
+		},
+		{
+		  "index": "dice-set",
+		  "name": "Набор игральных костей"
+		},
+		{
+		  "index": "playing-card-set",
+		  "name": "Колода карт"
+		},
+		{
+		  "index": "bagpipes",
+		  "name": "Волынка"
+		},
+		{
+		  "index": "drum",
+		  "name": "Барабан"
+		},
+		{
+		  "index": "dulcimer",
+		  "name": "Цимбалы"
+		},
+		{
+		  "index": "flute",
+		  "name": "Флейта"
+		},
+		{
+		  "index": "lute",
+		  "name": "Лютня"
+		},
+		{
+		  "index": "lyre",
+		  "name": "Лира"
+		},
+		{
+		  "index": "horn",
+		  "name": "Рожок"
+		},
+		{
+		  "index": "pan-flute",
+		  "name": "Свирель"
+		},
+		{
+		  "index": "shawm",
+		  "name": "Шалмей"
+		},
+		{
+		  "index": "viol",
+		  "name": "Виола"
+		},
+		{
+		  "index": "navigators-tools",
+		  "name": "Инструменты навигатора"
+		},
+		{
+		  "index": "thieves-tools",
+		  "name": "Воровские инструменты"
+		}
+	  ]
+	},
+	{
+	  "index": "mounts-and-vehicles",
+	  "name": "Ездовые животные и транспорт",
+	  "equipment": [
+		{
+		  "index": "mule",
+		  "name": "Мул"
+		},
+		{
+		  "index": "elephant",
+		  "name": "Слон"
+		},
+		{
+		  "index": "horse-draft",
+		  "name": "Лошадь, ломовая"
+		},
+		{
+		  "index": "horse-riding",
+		  "name": "Лошадь, ездовая"
+		},
+		{
+		  "index": "mastiff",
+		  "name": "Мастиф"
+		},
+		{
+		  "index": "pony",
+		  "name": "Пони"
+		},
+		{
+		  "index": "warhorse",
+		  "name": "Боевой конь"
+		},
+		{
+		  "index": "barding-padded",
+		  "name": "Бард: Стеганый"
+		},
+		{
+		  "index": "barding-leather",
+		  "name": "Бард: Кожаный"
+		},
+		{
+		  "index": "barding-studded-leather",
+		  "name": "Бард: Проклепанный кожаный"
+		},
+		{
+		  "index": "barding-hide",
+		  "name": "Бард: Шкурный"
+		},
+		{
+		  "index": "barding-chain-shirt",
+		  "name": "Бард: Кольчужная рубаха"
+		},
+		{
+		  "index": "barding-scale-mail",
+		  "name": "Бард: Чешуйчатый"
+		},
+		{
+		  "index": "barding-breastplate",
+		  "name": "Бард: Кираса"
+		},
+		{
+		  "index": "barding-half-plate",
+		  "name": "Бард: Полулаты"
+		},
+		{
+		  "index": "barding-ring-mail",
+		  "name": "Бард: Кольчатый"
+		},
+		{
+		  "index": "barding-chain-mail",
+		  "name": "Бард: Кольчуга"
+		},
+		{
+		  "index": "barding-splint",
+		  "name": "Бард: Наборный"
+		},
+		{
+		  "index": "barding-plate",
+		  "name": "Бард: Латы"
+		},
+		{
+		  "index": "bit-and-bridle",
+		  "name": "Удила и уздечка"
+		},
+		{
+		  "index": "carriage",
+		  "name": "Карета"
+		},
+		{
+		  "index": "cart",
+		  "name": "Телега"
+		},
+		{
+		  "index": "chariot",
+		  "name": "Колесница"
+		},
+		{
+		  "index": "animal-feed-1-day",
+		  "name": "Корм (на 1 день)"
+		},
+		{
+		  "index": "saddle-exotic",
+		  "name": "Седло, экзотическое"
+		},
+		{
+		  "index": "saddle-military",
+		  "name": "Седло, военное"
+		},
+		{
+		  "index": "saddle-pack",
+		  "name": "Седло, вьючное"
+		},
+		{
+		  "index": "saddle-riding",
+		  "name": "Седло, ездовое"
+		},
+		{
+		  "index": "saddlebags",
+		  "name": "Переметные сумы"
+		},
+		{
+		  "index": "sled",
+		  "name": "Сани"
+		},
+		{
+		  "index": "stabling-1-day",
+		  "name": "Стойло (за 1 день)"
+		},
+		{
+		  "index": "wagon",
+		  "name": "Фургон"
+		},
+		{
+		  "index": "galley",
+		  "name": "Галера"
+		},
+		{
+		  "index": "keelboat",
+		  "name": "Килевая лодка"
+		},
+		{
+		  "index": "longship",
+		  "name": "Драккар (Longship)"
+		},
+		{
+		  "index": "rowboat",
+		  "name": "Шлюпка"
+		},
+		{
+		  "index": "sailing-ship",
+		  "name": "Парусный корабль"
+		},
+		{
+		  "index": "warship",
+		  "name": "Военный корабль"
+		}
+	  ]
+	},
+	{
+	  "index": "simple-weapons",
+	  "name": "Простое оружие",
+	  "equipment": [
+		{
+		  "index": "club",
+		  "name": "Дубинка"
+		},
+		{
+		  "index": "dagger",
+		  "name": "Кинжал"
+		},
+		{
+		  "index": "greatclub",
+		  "name": "Палица"
+		},
+		{
+		  "index": "handaxe",
+		  "name": "Ручной топор"
+		},
+		{
+		  "index": "javelin",
+		  "name": "Метательное копье"
+		},
+		{
+		  "index": "light-hammer",
+		  "name": "Легкий молот"
+		},
+		{
+		  "index": "mace",
+		  "name": "Булава"
+		},
+		{
+		  "index": "quarterstaff",
+		  "name": "Боевой посох"
+		},
+		{
+		  "index": "sickle",
+		  "name": "Серп"
+		},
+		{
+		  "index": "spear",
+		  "name": "Копье"
+		},
+		{
+		  "index": "crossbow-light",
+		  "name": "Арбалет, легкий"
+		},
+		{
+		  "index": "dart",
+		  "name": "Дротик"
+		},
+		{
+		  "index": "shortbow",
+		  "name": "Короткий лук"
+		},
+		{
+		  "index": "sling",
+		  "name": "Праща"
+		}
+	  ]
+	},
+	{
+	  "index": "martial-weapons",
+	  "name": "Воинское оружие",
+	  "equipment": [
+		{
+		  "index": "battleaxe",
+		  "name": "Боевой топор"
+		},
+		{
+		  "index": "flail",
+		  "name": "Цеп"
+		},
+		{
+		  "index": "glaive",
+		  "name": "Глефа"
+		},
+		{
+		  "index": "greataxe",
+		  "name": "Двуручный топор"
+		},
+		{
+		  "index": "greatsword",
+		  "name": "Двуручный меч"
+		},
+		{
+		  "index": "halberd",
+		  "name": "Алебарда"
+		},
+		{
+		  "index": "lance",
+		  "name": "Пика (Lance)"
+		},
+		{
+		  "index": "longsword",
+		  "name": "Длинный меч"
+		},
+		{
+		  "index": "maul",
+		  "name": "Молот"
+		},
+		{
+		  "index": "morningstar",
+		  "name": "Моргенштерн"
+		},
+		{
+		  "index": "pike",
+		  "name": "Пика (Pike)"
+		},
+		{
+		  "index": "rapier",
+		  "name": "Рапира"
+		},
+		{
+		  "index": "scimitar",
+		  "name": "Скимитар"
+		},
+		{
+		  "index": "shortsword",
+		  "name": "Короткий меч"
+		},
+		{
+		  "index": "trident",
+		  "name": "Трезубец"
+		},
+		{
+		  "index": "war-pick",
+		  "name": "Боевая кирка"
+		},
+		{
+		  "index": "warhammer",
+		  "name": "Боевой молот"
+		},
+		{
+		  "index": "whip",
+		  "name": "Кнут"
+		},
+		{
+		  "index": "blowgun",
+		  "name": "Духовая трубка"
+		},
+		{
+		  "index": "crossbow-hand",
+		  "name": "Арбалет, ручной"
+		},
+		{
+		  "index": "crossbow-heavy",
+		  "name": "Арбалет, тяжелый"
+		},
+		{
+		  "index": "longbow",
+		  "name": "Длинный лук"
+		},
+		{
+		  "index": "net",
+		  "name": "Сеть"
+		}
+	  ]
+	},
+	{
+	  "index": "melee-weapons",
+	  "name": "Оружие ближнего боя",
+	  "equipment": [
+		{
+		  "index": "battleaxe",
+		  "name": "Боевой топор"
+		},
+		{
+		  "index": "club",
+		  "name": "Дубинка"
+		},
+		{
+		  "index": "dagger",
+		  "name": "Кинжал"
+		},
+		{
+		  "index": "flail",
+		  "name": "Цеп"
+		},
+		{
+		  "index": "glaive",
+		  "name": "Глефа"
+		},
+		{
+		  "index": "greataxe",
+		  "name": "Двуручный топор"
+		},
+		{
+		  "index": "greatclub",
+		  "name": "Палица"
+		},
+		{
+		  "index": "greatsword",
+		  "name": "Двуручный меч"
+		},
+		{
+		  "index": "halberd",
+		  "name": "Алебарда"
+		},
+		{
+		  "index": "handaxe",
+		  "name": "Ручной топор"
+		},
+		{
+		  "index": "javelin",
+		  "name": "Метательное копье"
+		},
+		{
+		  "index": "lance",
+		  "name": "Пика (Lance)"
+		},
+		{
+		  "index": "light-hammer",
+		  "name": "Легкий молот"
+		},
+		{
+		  "index": "longsword",
+		  "name": "Длинный меч"
+		},
+		{
+		  "index": "mace",
+		  "name": "Булава"
+		},
+		{
+		  "index": "maul",
+		  "name": "Молот"
+		},
+		{
+		  "index": "morningstar",
+		  "name": "Моргенштерн"
+		},
+		{
+		  "index": "pike",
+		  "name": "Пика (Pike)"
+		},
+		{
+		  "index": "quarterstaff",
+		  "name": "Боевой посох"
+		},
+		{
+		  "index": "rapier",
+		  "name": "Рапира"
+		},
+		{
+		  "index": "scimitar",
+		  "name": "Скимитар"
+		},
+		{
+		  "index": "shortsword",
+		  "name": "Короткий меч"
+		},
+		{
+		  "index": "sickle",
+		  "name": "Серп"
+		},
+		{
+		  "index": "spear",
+		  "name": "Копье"
+		},
+		{
+		  "index": "trident",
+		  "name": "Трезубец"
+		},
+		{
+		  "index": "war-pick",
+		  "name": "Боевая кирка"
+		},
+		{
+		  "index": "warhammer",
+		  "name": "Боевой молот"
+		},
+		{
+		  "index": "whip",
+		  "name": "Кнут"
+		}
+	  ]
+	},
+	{
+	  "index": "ranged-weapons",
+	  "name": "Дальнобойное оружие",
+	  "equipment": [
+		{
+		  "index": "blowgun",
+		  "name": "Духовая трубка"
+		},
+		{
+		  "index": "crossbow-hand",
+		  "name": "Арбалет, ручной"
+		},
+		{
+		  "index": "crossbow-heavy",
+		  "name": "Арбалет, тяжелый"
+		},
+		{
+		  "index": "crossbow-light",
+		  "name": "Арбалет, легкий"
+		},
+		{
+		  "index": "dart",
+		  "name": "Дротик"
+		},
+		{
+		  "index": "longbow",
+		  "name": "Длинный лук"
+		},
+		{
+		  "index": "net",
+		  "name": "Сеть"
+		},
+		{
+		  "index": "shortbow",
+		  "name": "Короткий лук"
+		},
+		{
+		  "index": "sling",
+		  "name": "Праща"
+		}
+	  ]
+	},
+	{
+	  "index": "simple-melee-weapons",
+	  "name": "Простое рукопашное оружие",
+	  "equipment": [
+		{
+		  "index": "club",
+		  "name": "Дубинка"
+		},
+		{
+		  "index": "dagger",
+		  "name": "Кинжал"
+		},
+		{
+		  "index": "greatclub",
+		  "name": "Палица"
+		},
+		{
+		  "index": "handaxe",
+		  "name": "Ручной топор"
+		},
+		{
+		  "index": "javelin",
+		  "name": "Метательное копье"
+		},
+		{
+		  "index": "light-hammer",
+		  "name": "Легкий молот"
+		},
+		{
+		  "index": "mace",
+		  "name": "Булава"
+		},
+		{
+		  "index": "quarterstaff",
+		  "name": "Боевой посох"
+		},
+		{
+		  "index": "sickle",
+		  "name": "Серп"
+		},
+		{
+		  "index": "spear",
+		  "name": "Копье"
+		}
+	  ]
+	},
+	{
+	  "index": "simple-ranged-weapons",
+	  "name": "Простое дальнобойное оружие",
+	  "equipment": [
+		{
+		  "index": "crossbow-light",
+		  "name": "Арбалет, легкий"
+		},
+		{
+		  "index": "dart",
+		  "name": "Дротик"
+		},
+		{
+		  "index": "shortbow",
+		  "name": "Короткий лук"
+		},
+		{
+		  "index": "sling",
+		  "name": "Праща"
+		}
+	  ]
+	},
+	{
+	  "index": "martial-melee-weapons",
+	  "name": "Воинское рукопашное оружие",
+	  "equipment": [
+		{
+		  "index": "battleaxe",
+		  "name": "Боевой топор"
+		},
+		{
+		  "index": "flail",
+		  "name": "Цеп"
+		},
+		{
+		  "index": "glaive",
+		  "name": "Глефа"
+		},
+		{
+		  "index": "greataxe",
+		  "name": "Двуручный топор"
+		},
+		{
+		  "index": "greatsword",
+		  "name": "Двуручный меч"
+		},
+		{
+		  "index": "halberd",
+		  "name": "Алебарда"
+		},
+		{
+		  "index": "lance",
+		  "name": "Пика (Lance)"
+		},
+		{
+		  "index": "longsword",
+		  "name": "Длинный меч"
+		},
+		{
+		  "index": "maul",
+		  "name": "Молот"
+		},
+		{
+		  "index": "morningstar",
+		  "name": "Моргенштерн"
+		},
+		{
+		  "index": "pike",
+		  "name": "Пика (Pike)"
+		},
+		{
+		  "index": "rapier",
+		  "name": "Рапира"
+		},
+		{
+		  "index": "scimitar",
+		  "name": "Скимитар"
+		},
+		{
+		  "index": "shortsword",
+		  "name": "Короткий меч"
+		},
+		{
+		  "index": "trident",
+		  "name": "Трезубец"
+		},
+		{
+		  "index": "war-pick",
+		  "name": "Боевая кирка"
+		},
+		{
+		  "index": "warhammer",
+		  "name": "Боевой молот"
+		},
+		{
+		  "index": "whip",
+		  "name": "Кнут"
+		}
+	  ]
+	},
+	{
+	  "index": "martial-ranged-weapons",
+	  "name": "Воинское дальнобойное оружие",
+	  "equipment": [
+		{
+		  "index": "blowgun",
+		  "name": "Духовая трубка"
+		},
+		{
+		  "index": "crossbow-hand",
+		  "name": "Арбалет, ручной"
+		},
+		{
+		  "index": "crossbow-heavy",
+		  "name": "Арбалет, тяжелый"
+		},
+		{
+		  "index": "longbow",
+		  "name": "Длинный лук"
+		},
+		{
+		  "index": "net",
+		  "name": "Сеть"
+		}
+	  ]
+	},
+	{
+	  "index": "light-armor",
+	  "name": "Легкий доспех",
+	  "equipment": [
+		{
+		  "index": "padded-armor",
+		  "name": "Стеганый доспех"
+		},
+		{
+		  "index": "leather-armor",
+		  "name": "Кожаный доспех"
+		},
+		{
+		  "index": "studded-leather-armor",
+		  "name": "Проклепанный кожаный доспех"
+		}
+	  ]
+	},
+	{
+	  "index": "medium-armor",
+	  "name": "Средний доспех",
+	  "equipment": [
+		{
+		  "index": "hide-armor",
+		  "name": "Шкурный доспех"
+		},
+		{
+		  "index": "chain-shirt",
+		  "name": "Кольчужная рубаха"
+		},
+		{
+		  "index": "scale-mail",
+		  "name": "Чешуйчатый доспех"
+		},
+		{
+		  "index": "breastplate",
+		  "name": "Кираса"
+		},
+		{
+		  "index": "half-plate-armor",
+		  "name": "Полулаты"
+		}
+	  ]
+	},
+	{
+	  "index": "heavy-armor",
+	  "name": "Тяжелый доспех",
+	  "equipment": [
+		{
+		  "index": "ring-mail",
+		  "name": "Кольчатый доспех"
+		},
+		{
+		  "index": "chain-mail",
+		  "name": "Кольчуга"
+		},
+		{
+		  "index": "splint-armor",
+		  "name": "Наборный доспех"
+		},
+		{
+		  "index": "plate-armor",
+		  "name": "Латы"
+		}
+	  ]
+	},
+	{
+	  "index": "shields",
+	  "name": "Щиты",
+	  "equipment": [
+		{
+		  "index": "shield",
+		  "name": "Щит"
+		}
+	  ]
+	},
+	{
+	  "index": "standard-gear",
+	  "name": "Стандартное снаряжение",
+	  "equipment": [
+		{
+		  "index": "abacus",
+		  "name": "Счеты"
+		},
+		{
+		  "index": "acid-vial",
+		  "name": "Кислота (флакон)"
+		},
+		{
+		  "index": "alchemists-fire-flask",
+		  "name": "Алхимический огонь (сосуд)"
+		},
+		{
+		  "index": "arrow",
+		  "name": "Стрела"
+		},
+		{
+		  "index": "blowgun-needle",
+		  "name": "Игла для духовой трубки"
+		},
+		{
+		  "index": "crossbow-bolt",
+		  "name": "Арбалетный болт"
+		},
+		{
+		  "index": "sling-bullet",
+		  "name": "Снаряд для пращи"
+		},
+		{
+		  "index": "alms-box",
+		  "name": "Кружка для пожертвований"
+		},
+		{
+		  "index": "antitoxin-vial",
+		  "name": "Противоядие (флакон)"
+		},
+		{
+		  "index": "backpack",
+		  "name": "Рюкзак"
+		},
+		{
+		  "index": "ball-bearings-bag-of-1000",
+		  "name": "Шарики (сумка из 1000 шт.)"
+		},
+		{
+		  "index": "barrel",
+		  "name": "Бочка"
+		},
+		{
+		  "index": "basket",
+		  "name": "Корзина"
+		},
+		{
+		  "index": "bedroll",
+		  "name": "Спальник"
+		},
+		{
+		  "index": "bell",
+		  "name": "Колокольчик"
+		},
+		{
+		  "index": "blanket",
+		  "name": "Одеяло"
+		},
+		{
+		  "index": "block-and-tackle",
+		  "name": "Блок и тали"
+		},
+		{
+		  "index": "block-of-incense",
+		  "name": "Благовония (брусок)"
+		},
+		{
+		  "index": "book",
+		  "name": "Книга"
+		},
+		{
+		  "index": "bottle-glass",
+		  "name": "Бутылка, стеклянная"
+		},
+		{
+		  "index": "bucket",
+		  "name": "Ведро"
+		},
+		{
+		  "index": "caltrops",
+		  "name": "Чеснок (шипы)"
+		},
+		{
+		  "index": "candle",
+		  "name": "Свеча"
+		},
+		{
+		  "index": "case-crossbow-bolt",
+		  "name": "Футляр для болтов"
+		},
+		{
+		  "index": "case-map-or-scroll",
+		  "name": "Тубус для карт или свитков"
+		},
+		{
+		  "index": "censer",
+		  "name": "Кадило"
+		},
+		{
+		  "index": "chain-10-feet",
+		  "name": "Цепь (10 футов)"
+		},
+		{
+		  "index": "chalk-1-piece",
+		  "name": "Мел (1 кусок)"
+		},
+		{
+		  "index": "chest",
+		  "name": "Сундук"
+		},
+		{
+		  "index": "clothes-common",
+		  "name": "Одежда, обычная"
+		},
+		{
+		  "index": "clothes-costume",
+		  "name": "Одежда, костюм"
+		},
+		{
+		  "index": "clothes-fine",
+		  "name": "Одежда, дорогая"
+		},
+		{
+		  "index": "clothes-travelers",
+		  "name": "Одежда, дорожная"
+		},
+		{
+		  "index": "component-pouch",
+		  "name": "Кошель с компонентами"
+		},
+		{
+		  "index": "crowbar",
+		  "name": "Лом"
+		},
+		{
+		  "index": "fishing-tackle",
+		  "name": "Рыболовные снасти"
+		},
+		{
+		  "index": "flask-or-tankard",
+		  "name": "Фляга или кружка"
+		},
+		{
+		  "index": "grappling-hook",
+		  "name": "Крюк-кошка"
+		},
+		{
+		  "index": "hammer",
+		  "name": "Молоток"
+		},
+		{
+		  "index": "hammer-sledge",
+		  "name": "Кувалда"
+		},
+		{
+		  "index": "holy-water-flask",
+		  "name": "Святая вода (сосуд)"
+		},
+		{
+		  "index": "hourglass",
+		  "name": "Песочные часы"
+		},
+		{
+		  "index": "hunting-trap",
+		  "name": "Охотничий капкан"
+		},
+		{
+		  "index": "ink-1-ounce-bottle",
+		  "name": "Чернила (флакон в 1 унцию)"
+		},
+		{
+		  "index": "ink-pen",
+		  "name": "Писчее перо"
+		},
+		{
+		  "index": "jug-or-pitcher",
+		  "name": "Кувшин или графин"
+		},
+		{
+		  "index": "ladder-10-foot",
+		  "name": "Лестница (10 футов)"
+		},
+		{
+		  "index": "lamp",
+		  "name": "Лампа"
+		},
+		{
+		  "index": "lantern-bullseye",
+		  "name": "Фонарь, направленный"
+		},
+		{
+		  "index": "lantern-hooded",
+		  "name": "Фонарь, закрытый"
+		},
+		{
+		  "index": "little-bag-of-sand",
+		  "name": "Мешочек с песком"
+		},
+		{
+		  "index": "lock",
+		  "name": "Замок"
+		},
+		{
+		  "index": "magnifying-glass",
+		  "name": "Увеличительное стекло"
+		},
+		{
+		  "index": "manacles",
+		  "name": "Кандалы"
+		},
+		{
+		  "index": "mirror-steel",
+		  "name": "Зеркало, стальное"
+		},
+		{
+		  "index": "oil-flask",
+		  "name": "Масло (сосуд)"
+		},
+		{
+		  "index": "paper-one-sheet",
+		  "name": "Бумага (один лист)"
+		},
+		{
+		  "index": "parchment-one-sheet",
+		  "name": "Пергамент (один лист)"
+		},
+		{
+		  "index": "perfume-vial",
+		  "name": "Духи (флакон)"
+		},
+		{
+		  "index": "pick-miners",
+		  "name": "Кирка"
+		},
+		{
+		  "index": "piton",
+		  "name": "Альпинистский крюк"
+		},
+		{
+		  "index": "poison-basic-vial",
+		  "name": "Яд, базовый (флакон)"
+		},
+		{
+		  "index": "pole-10-foot",
+		  "name": "Шест (10 футов)"
+		},
+		{
+		  "index": "pot-iron",
+		  "name": "Горшок, железный"
+		},
+		{
+		  "index": "pouch",
+		  "name": "Кошель"
+		},
+		{
+		  "index": "quiver",
+		  "name": "Колчан"
+		},
+		{
+		  "index": "ram-portable",
+		  "name": "Таран, переносной"
+		},
+		{
+		  "index": "rations-1-day",
+		  "name": "Рационы (1 день)"
+		},
+		{
+		  "index": "robes",
+		  "name": "Ряса"
+		},
+		{
+		  "index": "rope-hempen-50-feet",
+		  "name": "Веревка, пеньковая (50 футов)"
+		},
+		{
+		  "index": "rope-silk-50-feet",
+		  "name": "Веревка, шелковая (50 футов)"
+		},
+		{
+		  "index": "sack",
+		  "name": "Мешок"
+		},
+		{
+		  "index": "scale-merchants",
+		  "name": "Весы, торговые"
+		},
+		{
+		  "index": "sealing-wax",
+		  "name": "Сургуч"
+		},
+		{
+		  "index": "shovel",
+		  "name": "Лопата"
+		},
+		{
+		  "index": "signal-whistle",
+		  "name": "Сигнальный свисток"
+		},
+		{
+		  "index": "signet-ring",
+		  "name": "Кольцо-печатка"
+		},
+		{
+		  "index": "small-knife",
+		  "name": "Маленький нож"
+		},
+		{
+		  "index": "soap",
+		  "name": "Мыло"
+		},
+		{
+		  "index": "spellbook",
+		  "name": "Книга заклинаний"
+		},
+		{
+		  "index": "spike-iron",
+		  "name": "Костыль, железный"
+		},
+		{
+		  "index": "spyglass",
+		  "name": "Подзорная труба"
+		},
+		{
+		  "index": "string-10-feet",
+		  "name": "Бечевка (10 футов)"
+		},
+		{
+		  "index": "tent-two-person",
+		  "name": "Палатка, двухместная"
+		},
+		{
+		  "index": "tinderbox",
+		  "name": "Трутница"
+		},
+		{
+		  "index": "torch",
+		  "name": "Факел"
+		},
+		{
+		  "index": "vestments",
+		  "name": "Облачение"
+		},
+		{
+		  "index": "vial",
+		  "name": "Флакон"
+		},
+		{
+		  "index": "waterskin",
+		  "name": "Бурдюк"
+		},
+		{
+		  "index": "whetstone",
+		  "name": "Точильный камень"
+		}
+	  ]
+	},
+	{
+	  "index": "kits",
+	  "name": "Наборы",
+	  "equipment": [
+		{
+		  "index": "climbers-kit",
+		  "name": "Набор скалолаза"
+		},
+		{
+		  "index": "disguise-kit",
+		  "name": "Набор для грима"
+		},
+		{
+		  "index": "forgery-kit",
+		  "name": "Набор для фальсификации"
+		},
+		{
+		  "index": "herbalism-kit",
+		  "name": "Набор травника"
+		},
+		{
+		  "index": "healers-kit",
+		  "name": "Набор целителя"
+		},
+		{
+		  "index": "mess-kit",
+		  "name": "Столовый набор"
+		},
+		{
+		  "index": "poisoners-kit",
+		  "name": "Набор отравителя"
+		}
+	  ]
+	},
+	{
+	  "index": "equipment-packs",
+	  "name": "Снаряжение в наборах",
+	  "equipment": [
+		{
+		  "index": "burglars-pack",
+		  "name": "Набор взломщика"
+		},
+		{
+		  "index": "diplomats-pack",
+		  "name": "Набор дипломата"
+		},
+		{
+		  "index": "dungeoneers-pack",
+		  "name": "Набор подземельщика"
+		},
+		{
+		  "index": "entertainers-pack",
+		  "name": "Набор артиста"
+		},
+		{
+		  "index": "explorers-pack",
+		  "name": "Набор путешественника"
+		},
+		{
+		  "index": "priests-pack",
+		  "name": "Набор священника"
+		},
+		{
+		  "index": "scholars-pack",
+		  "name": "Набор ученого"
+		}
+	  ]
+	},
+	{
+	  "index": "artisans-tools",
+	  "name": "Инструменты ремесленника",
+	  "equipment": [
+		{
+		  "index": "alchemists-supplies",
+		  "name": "Инструменты алхимика"
+		},
+		{
+		  "index": "brewers-supplies",
+		  "name": "Инструменты пивовара"
+		},
+		{
+		  "index": "calligraphers-supplies",
+		  "name": "Инструменты каллиграфа"
+		},
+		{
+		  "index": "carpenters-tools",
+		  "name": "Инструменты плотника"
+		},
+		{
+		  "index": "cartographers-tools",
+		  "name": "Инструменты картографа"
+		},
+		{
+		  "index": "cobblers-tools",
+		  "name": "Инструменты сапожника"
+		},
+		{
+		  "index": "cooks-utensils",
+		  "name": "Кухонная утварь"
+		},
+		{
+		  "index": "glassblowers-tools",
+		  "name": "Инструменты стеклодува"
+		},
+		{
+		  "index": "jewelers-tools",
+		  "name": "Инструменты ювелира"
+		},
+		{
+		  "index": "leatherworkers-tools",
+		  "name": "Инструменты кожевника"
+		},
+		{
+		  "index": "masons-tools",
+		  "name": "Инструменты каменщика"
+		},
+		{
+		  "index": "painters-supplies",
+		  "name": "Инструменты художника"
+		},
+		{
+		  "index": "potters-tools",
+		  "name": "Инструменты гончара"
+		},
+		{
+		  "index": "smiths-tools",
+		  "name": "Инструменты кузнеца"
+		},
+		{
+		  "index": "tinkers-tools",
+		  "name": "Инструменты жестянщика"
+		},
+		{
+		  "index": "weavers-tools",
+		  "name": "Инструменты ткача"
+		},
+		{
+		  "index": "woodcarvers-tools",
+		  "name": "Инструменты резчика по дереву"
+		}
+	  ]
+	},
+	{
+	  "index": "gaming-sets",
+	  "name": "Игровые наборы",
+	  "equipment": [
+		{
+		  "index": "dice-set",
+		  "name": "Набор игральных костей"
+		},
+		{
+		  "index": "playing-card-set",
+		  "name": "Колода карт"
+		}
+	  ]
+	},
+	{
+	  "index": "musical-instruments",
+	  "name": "Музыкальные инструменты",
+	  "equipment": [
+		{
+		  "index": "bagpipes",
+		  "name": "Волынка"
+		},
+		{
+		  "index": "drum",
+		  "name": "Барабан"
+		},
+		{
+		  "index": "dulcimer",
+		  "name": "Цимбалы"
+		},
+		{
+		  "index": "flute",
+		  "name": "Флейта"
+		},
+		{
+		  "index": "lute",
+		  "name": "Лютня"
+		},
+		{
+		  "index": "lyre",
+		  "name": "Лира"
+		},
+		{
+		  "index": "horn",
+		  "name": "Рожок"
+		},
+		{
+		  "index": "pan-flute",
+		  "name": "Свирель"
+		},
+		{
+		  "index": "shawm",
+		  "name": "Шалмей"
+		},
+		{
+		  "index": "viol",
+		  "name": "Виола"
+		}
+	  ]
+	},
+	{
+	  "index": "other-tools",
+	  "name": "Другие инструменты",
+	  "equipment": [
+		{
+		  "index": "navigators-tools",
+		  "name": "Инструменты навигатора"
+		},
+		{
+		  "index": "thieves-tools",
+		  "name": "Воровские инструменты"
+		}
+	  ]
+	},
+	{
+	  "index": "mounts-and-other-animals",
+	  "name": "Ездовые и другие животные",
+	  "equipment": [
+		{
+		  "index": "mule",
+		  "name": "Мул"
+		},
+		{
+		  "index": "elephant",
+		  "name": "Слон"
+		},
+		{
+		  "index": "horse-draft",
+		  "name": "Лошадь, ломовая"
+		},
+		{
+		  "index": "horse-riding",
+		  "name": "Лошадь, ездовая"
+		},
+		{
+		  "index": "mastiff",
+		  "name": "Мастиф"
+		},
+		{
+		  "index": "pony",
+		  "name": "Пони"
+		},
+		{
+		  "index": "warhorse",
+		  "name": "Боевой конь"
+		}
+	  ]
+	},
+	{
+	  "index": "tack-harness-and-drawn-vehicles",
+	  "name": "Сбруя, упряжь и повозки",
+	  "equipment": [
+		{
+		  "index": "barding-padded",
+		  "name": "Бард: Стеганый"
+		},
+		{
+		  "index": "barding-leather",
+		  "name": "Бард: Кожаный"
+		},
+		{
+		  "index": "barding-studded-leather",
+		  "name": "Бард: Проклепанный кожаный"
+		},
+		{
+		  "index": "barding-hide",
+		  "name": "Бард: Шкурный"
+		},
+		{
+		  "index": "barding-chain-shirt",
+		  "name": "Бард: Кольчужная рубаха"
+		},
+		{
+		  "index": "barding-scale-mail",
+		  "name": "Бард: Чешуйчатый"
+		},
+		{
+		  "index": "barding-breastplate",
+		  "name": "Бард: Кираса"
+		},
+		{
+		  "index": "barding-half-plate",
+		  "name": "Бард: Полулаты"
+		},
+		{
+		  "index": "barding-ring-mail",
+		  "name": "Бард: Кольчатый"
+		},
+		{
+		  "index": "barding-chain-mail",
+		  "name": "Бард: Кольчуга"
+		},
+		{
+		  "index": "barding-splint",
+		  "name": "Бард: Наборный"
+		},
+		{
+		  "index": "barding-plate",
+		  "name": "Бард: Латы"
+		},
+		{
+		  "index": "bit-and-bridle",
+		  "name": "Удила и уздечка"
+		},
+		{
+		  "index": "carriage",
+		  "name": "Карета"
+		},
+		{
+		  "index": "cart",
+		  "name": "Телега"
+		},
+		{
+		  "index": "chariot",
+		  "name": "Колесница"
+		},
+		{
+		  "index": "animal-feed-1-day",
+		  "name": "Корм (на 1 день)"
+		},
+		{
+		  "index": "saddle-exotic",
+		  "name": "Седло, экзотическое"
+		},
+		{
+		  "index": "saddle-military",
+		  "name": "Седло, военное"
+		},
+		{
+		  "index": "saddle-pack",
+		  "name": "Седло, вьючное"
+		},
+		{
+		  "index": "saddle-riding",
+		  "name": "Седло, ездовое"
+		},
+		{
+		  "index": "saddlebags",
+		  "name": "Переметные сумы"
+		},
+		{
+		  "index": "sled",
+		  "name": "Сани"
+		},
+		{
+		  "index": "stabling-1-day",
+		  "name": "Стойло (за 1 день)"
+		},
+		{
+		  "index": "wagon",
+		  "name": "Фургон"
+		}
+	  ]
+	},
+	{
+	  "index": "land-vehicles",
+	  "name": "Наземный транспорт",
+	  "equipment": [
+		{
+		  "index": "carriage",
+		  "name": "Карета"
+		},
+		{
+		  "index": "cart",
+		  "name": "Телега"
+		},
+		{
+		  "index": "chariot",
+		  "name": "Колесница"
+		},
+		{
+		  "index": "sled",
+		  "name": "Сани"
+		},
+		{
+		  "index": "wagon",
+		  "name": "Фургон"
+		}
+	  ]
+	},
+	{
+	  "index": "waterborne-vehicles",
+	  "name": "Водный транспорт",
+	  "equipment": [
+		{
+		  "index": "galley",
+		  "name": "Галера"
+		},
+		{
+		  "index": "keelboat",
+		  "name": "Килевая лодка"
+		},
+		{
+		  "index": "longship",
+		  "name": "Драккар (Longship)"
+		},
+		{
+		  "index": "rowboat",
+		  "name": "Шлюпка"
+		},
+		{
+		  "index": "sailing-ship",
+		  "name": "Парусный корабль"
+		},
+		{
+		  "index": "warship",
+		  "name": "Военный корабль"
+		}
+	  ]
+	},
+	{
+	  "index": "arcane-foci",
+	  "name": "Магические фокусировки",
+	  "equipment": [
+		{
+		  "index": "crystal",
+		  "name": "Кристалл"
+		},
+		{
+		  "index": "orb",
+		  "name": "Сфера"
+		},
+		{
+		  "index": "rod",
+		  "name": "Жезл"
+		},
+		{
+		  "index": "staff",
+		  "name": "Посох"
+		},
+		{
+		  "index": "wand",
+		  "name": "Волшебная палочка"
+		}
+	  ]
+	},
+	{
+	  "index": "druidic-foci",
+	  "name": "Друидические фокусировки",
+	  "equipment": [
+		{
+		  "index": "sprig-of-mistletoe",
+		  "name": "Веточка омелы"
+		},
+		{
+		  "index": "totem",
+		  "name": "Тотем"
+		},
+		{
+		  "index": "wooden-staff",
+		  "name": "Деревянный посох"
+		},
+		{
+		  "index": "yew-wand",
+		  "name": "Тисовая палочка"
+		}
+	  ]
+	},
+	{
+	  "index": "holy-symbols",
+	  "name": "Священные символы",
+	  "equipment": [
+		{
+		  "index": "amulet",
+		  "name": "Амулет"
+		},
+		{
+		  "index": "emblem",
+		  "name": "Эмблема"
+		},
+		{
+		  "index": "reliquary",
+		  "name": "Реликварий"
+		}
+	  ]
+	},
+	{
+	  "index": "wondrous-items",
+	  "name": "Чудные предметы",
+	  "equipment": [
+		{
+		  "index": "amulet-of-health",
+		  "name": "Амулет здоровья"
+		},
+		{
+		  "index": "amulet-of-proof-against-detection-and-location",
+		  "name": "Амулет защиты от обнаружения и определения местоположения"
+		},
+		{
+		  "index": "amulet-of-the-planes",
+		  "name": "Амулет планов"
+		},
+		{
+		  "index": "apparatus-of-the-crab",
+		  "name": "Аппарат Краба"
+		},
+		{
+		  "index": "bag-of-beans",
+		  "name": "Сумка бобов"
+		},
+		{
+		  "index": "bag-of-devouring",
+		  "name": "Пожирающая сумка"
+		},
+		{
+		  "index": "bag-of-holding",
+		  "name": "Бездонная сумка"
+		},
+		{
+		  "index": "bag-of-tricks",
+		  "name": "Сумка фокусов"
+		},
+		{
+		  "index": "bead-of-force",
+		  "name": "Бусина силы"
+		},
+		{
+		  "index": "belt-of-dwarvenkind",
+		  "name": "Пояс дварфов"
+		},
+		{
+		  "index": "belt-of-giant-strength",
+		  "name": "Пояс силы великана"
+		},
+		{
+		  "index": "boots-of-elvenkind",
+		  "name": "Сапоги эльфийской походки"
+		},
+		{
+		  "index": "boots-of-levitation",
+		  "name": "Сапоги левитации"
+		},
+		{
+		  "index": "boots-of-speed",
+		  "name": "Сапоги скорости"
+		},
+		{
+		  "index": "boots-of-striding-and-springing",
+		  "name": "Сапоги за шага и прыжка"
+		},
+		{
+		  "index": "boots-of-the-winterlands",
+		  "name": "Сапоги северных земель"
+		},
+		{
+		  "index": "bowl-of-commanding-water-elementals",
+		  "name": "Чаша управления водными элементалями"
+		},
+		{
+		  "index": "bracers-of-archery",
+		  "name": "Наручи стрельбы из лука"
+		},
+		{
+		  "index": "bracers-of-defense",
+		  "name": "Наручи защиты"
+		},
+		{
+		  "index": "brazier-of-commanding-fire-elementals",
+		  "name": "Жаровня управления огненными элементалями"
+		},
+		{
+		  "index": "brooch-of-shielding",
+		  "name": "Брошь щита"
+		},
+		{
+		  "index": "broom-of-flying",
+		  "name": "Метла полета"
+		},
+		{
+		  "index": "candle-of-invocation",
+		  "name": "Свеча воззвания"
+		},
+		{
+		  "index": "cape-of-the-mountebank",
+		  "name": "Плащ фокусника"
+		},
+		{
+		  "index": "carpet-of-flying",
+		  "name": "Ковер-самолет"
+		},
+		{
+		  "index": "censer-of-controlling-air-elementals",
+		  "name": "Кадило управления воздушными элементалями"
+		},
+		{
+		  "index": "chime-of-opening",
+		  "name": "Колокольчик открытия"
+		},
+		{
+		  "index": "circlet-of-blasting",
+		  "name": "Диадема взрыва"
+		},
+		{
+		  "index": "cloak-of-arachnida",
+		  "name": "Плащ паука"
+		},
+		{
+		  "index": "cloak-of-displacement",
+		  "name": "Плащ смещения"
+		},
+		{
+		  "index": "cloak-of-elvenkind",
+		  "name": "Плащ эльфийской походки"
+		},
+		{
+		  "index": "cloak-of-protection",
+		  "name": "Плащ защиты"
+		},
+		{
+		  "index": "cloak-of-the-bat",
+		  "name": "Плащ летучей мыши"
+		},
+		{
+		  "index": "cloak-of-the-manta-ray",
+		  "name": "Плащ морского дьявола"
+		},
+		{
+		  "index": "crystal-ball",
+		  "name": "Хрустальный шар"
+		},
+		{
+		  "index": "cube-of-force",
+		  "name": "Куб силы"
+		},
+		{
+		  "index": "cubic-gate",
+		  "name": "Кубические врата"
+		},
+		{
+		  "index": "decanter-of-endless-water",
+		  "name": "Графин бесконечной воды"
+		},
+		{
+		  "index": "deck-of-illusions",
+		  "name": "Колода иллюзий"
+		},
+		{
+		  "index": "deck-of-many-things",
+		  "name": "Колода многих вещей"
+		},
+		{
+		  "index": "dimensional-shackles",
+		  "name": "Межпространственные кандалы"
+		},
+		{
+		  "index": "dust-of-disappearance",
+		  "name": "Пыль исчезновения"
+		},
+		{
+		  "index": "dust-of-dryness",
+		  "name": "Пыль сухости"
+		},
+		{
+		  "index": "dust-of-sneezing-and-choking",
+		  "name": "Пыль чихания и удушья"
+		},
+		{
+		  "index": "efficient-quiver",
+		  "name": "Вместительный колчан"
+		},
+		{
+		  "index": "efreeti-bottle",
+		  "name": "Флакон ифрита"
+		},
+		{
+		  "index": "elemental-gem",
+		  "name": "Самоцвет элементаля"
+		},
+		{
+		  "index": "eversmoking-bottle",
+		  "name": "Вечнодымящий сосуд"
+		},
+		{
+		  "index": "eyes-of-charming",
+		  "name": "Очки очарования"
+		},
+		{
+		  "index": "eyes-of-minute-seeing",
+		  "name": "Очки пристального взгляда"
+		},
+		{
+		  "index": "eyes-of-the-eagle",
+		  "name": "Очки орла"
+		},
+		{
+		  "index": "feather-token",
+		  "name": "Перо-жетон"
+		},
+		{
+		  "index": "figurine-of-wondrous-power",
+		  "name": "Фигурка чудной силы"
+		},
+		{
+		  "index": "folding-boat",
+		  "name": "Складная лодка"
+		},
+		{
+		  "index": "gauntlets-of-ogre-power",
+		  "name": "Латные рукавицы силы огра"
+		},
+		{
+		  "index": "gem-of-brightness",
+		  "name": "Самоцвет яркости"
+		},
+		{
+		  "index": "gem-of-seeing",
+		  "name": "Самоцвет видения"
+		},
+		{
+		  "index": "gloves-of-missile-snaring",
+		  "name": "Перчатки лова снарядов"
+		},
+		{
+		  "index": "gloves-of-swimming-and-climbing",
+		  "name": "Перчатки плавания и лазания"
+		},
+		{
+		  "index": "goggles-of-night",
+		  "name": "Очки ночного зрения"
+		},
+		{
+		  "index": "handy-haversack",
+		  "name": "Удобный походный ранец"
+		},
+		{
+		  "index": "hat-of-disguise",
+		  "name": "Шляпа маскировки"
+		},
+		{
+		  "index": "headband-of-intellect",
+		  "name": "Ободок интеллекта"
+		},
+		{
+		  "index": "helm-of-brilliance",
+		  "name": "Шлем блеска"
+		},
+		{
+		  "index": "helm-of-comprehending-languages",
+		  "name": "Шлем понимания языков"
+		},
+		{
+		  "index": "helm-of-telepathy",
+		  "name": "Шлем телепатии"
+		},
+		{
+		  "index": "helm-of-teleportation",
+		  "name": "Шлем телепортации"
+		},
+		{
+		  "index": "horn-of-blasting",
+		  "name": "Рог взрыва"
+		},
+		{
+		  "index": "horn-of-valhalla",
+		  "name": "Рог Вальхаллы"
+		},
+		{
+		  "index": "horseshoes-of-a-zephyr",
+		  "name": "Подковы зефира"
+		},
+		{
+		  "index": "horseshoes-of-speed",
+		  "name": "Подковы скорости"
+		},
+		{
+		  "index": "instant-fortress",
+		  "name": "Переносная крепость"
+		},
+		{
+		  "index": "ioun-stone",
+		  "name": "Камень Иоун"
+		},
+		{
+		  "index": "iron-bands-of-binding",
+		  "name": "Железные узы связывания"
+		},
+		{
+		  "index": "iron-flask",
+		  "name": "Железный сосуд"
+		},
+		{
+		  "index": "lantern-of-revealing",
+		  "name": "Фонарь раскрытия"
+		},
+		{
+		  "index": "mantle-of-spell-resistance",
+		  "name": "Мантия сопротивления магии"
+		},
+		{
+		  "index": "manual-of-bodily-health",
+		  "name": "Руководство по телесному здоровью"
+		},
+		{
+		  "index": "manual-of-gainful-exercise",
+		  "name": "Руководство по полезным упражнениям"
+		},
+		{
+		  "index": "manual-of-golems",
+		  "name": "Руководство по големам"
+		},
+		{
+		  "index": "manual-of-quickness-of-action",
+		  "name": "Руководство по быстроте действий"
+		},
+		{
+		  "index": "marvelous-pigments",
+		  "name": "Чудесные краски"
+		},
+		{
+		  "index": "medallion-of-thoughts",
+		  "name": "Медальон мыслей"
+		},
+		{
+		  "index": "mirror-of-life-trapping",
+		  "name": "Зеркало пленения жизни"
+		},
+		{
+		  "index": "necklace-of-adaptation",
+		  "name": "Ожерелье адаптации"
+		},
+		{
+		  "index": "necklace-of-fireballs",
+		  "name": "Ожерелье огненных шаров"
+		},
+		{
+		  "index": "necklace-of-prayer-beads",
+		  "name": "Ожерелье молитвенных бусин"
+		},
+		{
+		  "index": "pearl-of-power",
+		  "name": "Жемчужина силы"
+		},
+		{
+		  "index": "periapt-of-health",
+		  "name": "Амулет здоровья"
+		},
+		{
+		  "index": "periapt-of-proof-against-poison",
+		  "name": "Амулет защиты от яда"
+		},
+		{
+		  "index": "periapt-of-wound-closure",
+		  "name": "Амулет заживления ран"
+		},
+		{
+		  "index": "pipes-of-haunting",
+		  "name": "Дудочка ужаса"
+		},
+		{
+		  "index": "pipes-of-the-sewers",
+		  "name": "Дудочка сточных вод"
+		},
+		{
+		  "index": "portable-hole",
+		  "name": "Переносная дыра"
+		},
+		{
+		  "index": "restorative-ointment",
+		  "name": "Восстанавливающая мазь"
+		},
+		{
+		  "index": "robe-of-eyes",
+		  "name": "Мантия глаз"
+		},
+		{
+		  "index": "robe-of-scintillating-colors",
+		  "name": "Мантия сверкающих цветов"
+		},
+		{
+		  "index": "robe-of-stars",
+		  "name": "Мантия звезд"
+		},
+		{
+		  "index": "robe-of-the-archmagi",
+		  "name": "Мантия архимага"
+		},
+		{
+		  "index": "robe-of-useful-items",
+		  "name": "Мантия полезных предметов"
+		},
+		{
+		  "index": "rope-of-climbing",
+		  "name": "Веревка лазания"
+		},
+		{
+		  "index": "rope-of-entanglement",
+		  "name": "Веревка опутывания"
+		},
+		{
+		  "index": "scarab-of-protection",
+		  "name": "Скарабей защиты"
+		},
+		{
+		  "index": "slippers-of-spider-climbing",
+		  "name": "Туфли паука"
+		},
+		{
+		  "index": "sovereign-glue",
+		  "name": "Всесильный клей"
+		},
+		{
+		  "index": "sphere-of-annihilation",
+		  "name": "Сфера аннигиляции"
+		},
+		{
+		  "index": "stone-of-controlling-earth-elementals",
+		  "name": "Камень управления земляными элементалями"
+		},
+		{
+		  "index": "stone-of-good-luck-luckstone",
+		  "name": "Камень удачи"
+		},
+		{
+		  "index": "talisman-of-pure-good",
+		  "name": "Талисман чистого добра"
+		},
+		{
+		  "index": "talisman-of-the-sphere",
+		  "name": "Талисман сферы"
+		},
+		{
+		  "index": "talisman-of-ultimate-evil",
+		  "name": "Талисман абсолютного зла"
+		},
+		{
+		  "index": "tome-of-clear-thought",
+		  "name": "Фолиант ясных мыслей"
+		},
+		{
+		  "index": "tome-of-leadership-and-influence",
+		  "name": "Фолиант лидерства и влияния"
+		},
+		{
+		  "index": "tome-of-understanding",
+		  "name": "Фолиант понимания"
+		},
+		{
+		  "index": "universal-solvent",
+		  "name": "Универсальный растворитель"
+		},
+		{
+		  "index": "well-of-many-worlds",
+		  "name": "Колодец многих миров"
+		},
+		{
+		  "index": "wind-fan",
+		  "name": "Веер ветров"
+		},
+		{
+		  "index": "winged-boots",
+		  "name": "Крылатые сапоги"
+		},
+		{
+		  "index": "wings-of-flying",
+		  "name": "Крылья полета"
+		},
+		{
+		  "index": "orb-of-dragonkind",
+		  "name": "Сфера драконьего рода"
+		},
+		{
+		  "index": "bag-of-tricks-gray",
+		  "name": "Серая сумка фокусов"
+		},
+		{
+		  "index": "bag-of-tricks-rust",
+		  "name": "Рыжая сумка фокусов"
+		},
+		{
+		  "index": "bag-of-tricks-tan",
+		  "name": "Коричневая сумка фокусов"
+		},
+		{
+		  "index": "belt-of-giant-strength-hill",
+		  "name": "Пояс силы холмового великана"
+		},
+		{
+		  "index": "belt-of-giant-strength-stone",
+		  "name": "Пояс силы каменного великана"
+		},
+		{
+		  "index": "belt-of-giant-strength-frost",
+		  "name": "Пояс силы ледяного великана"
+		},
+		{
+		  "index": "belt-of-giant-strength-fire",
+		  "name": "Пояс силы огненного великана"
+		},
+		{
+		  "index": "belt-of-giant-strength-cloud",
+		  "name": "Пояс силы облачного великана"
+		},
+		{
+		  "index": "belt-of-giant-strength-storm",
+		  "name": "Пояс силы штормового великана"
+		},
+		{
+		  "index": "carpet-of-flying-3x5",
+		  "name": "Ковер-самолет (3 на 5 футов)"
+		},
+		{
+		  "index": "carpet-of-flying-4x6",
+		  "name": "Ковер-самолет (4 на 6 футов)"
+		},
+		{
+		  "index": "carpet-of-flying-5x7",
+		  "name": "Ковер-самолет (5 на 7 футов)"
+		},
+		{
+		  "index": "carpet-of-flying-6x9",
+		  "name": "Ковер-самолет (6 на 9 футов)"
+		},
+		{
+		  "index": "crystal-ball-of-mind-reading",
+		  "name": "Хрустальный шар чтения мыслей"
+		},
+		{
+		  "index": "crystal-ball-of-telepathy",
+		  "name": "Хрустальный шар телепатии"
+		},
+		{
+		  "index": "crystal-ball-of-true-seeing",
+		  "name": "Хрустальный шар истинного зрения"
+		},
+		{
+		  "index": "elemental-gem-air",
+		  "name": "Самоцвет воздушного элементаля"
+		},
+		{
+		  "index": "elemental-gem-earth",
+		  "name": "Самоцвет земляного элементаля"
+		},
+		{
+		  "index": "elemental-gem-fire",
+		  "name": "Самоцвет огненного элементаля"
+		},
+		{
+		  "index": "elemental-gem-water",
+		  "name": "Самоцвет водного элементаля"
+		},
+		{
+		  "index": "feather-token-anchor",
+		  "name": "Перо-жетон: Якорь"
+		},
+		{
+		  "index": "feather-token-bird",
+		  "name": "Перо-жетон: Птица"
+		},
+		{
+		  "index": "feather-token-fan",
+		  "name": "Перо-жетон: Веер"
+		},
+		{
+		  "index": "feather-token-swan-boat",
+		  "name": "Перо-жетон: Лодка-лебедь"
+		},
+		{
+		  "index": "feather-token-tree",
+		  "name": "Перо-жетон: Дерево"
+		},
+		{
+		  "index": "feather-token-whip",
+		  "name": "Перо-жетон: Кнут"
+		},
+		{
+		  "index": "figurine-of-wondrous-power-bronze-griffon",
+		  "name": "Бронзовый грифон (фигурка чудной силы)"
+		},
+		{
+		  "index": "figurine-of-wondrous-power-ebony-fly",
+		  "name": "Эбеновая муха (фигурка чудной силы)"
+		},
+		{
+		  "index": "figurine-of-wondrous-power-golden-lions",
+		  "name": "Золотые львы (фигурка чудной силы)"
+		},
+		{
+		  "index": "figurine-of-wondrous-power-ivory-goats",
+		  "name": "Слоновые козлы (фигурка чудной силы)"
+		},
+		{
+		  "index": "figurine-of-wondrous-power-marble-elephant",
+		  "name": "Мраморный слон (фигурка чудной силы)"
+		},
+		{
+		  "index": "figurine-of-wondrous-power-obsidian-steed",
+		  "name": "Обсидиановый скакун (фигурка чудной силы)"
+		},
+		{
+		  "index": "figurine-of-wondrous-power-onyx-dog",
+		  "name": "Ониксовый пес (фигурка чудной силы)"
+		},
+		{
+		  "index": "figurine-of-wondrous-power-serpentine-owl",
+		  "name": "Змеевидная сова (фигурка чудной силы)"
+		},
+		{
+		  "index": "figurine-of-wondrous-power-silver-raven",
+		  "name": "Серебряный ворон (фигурка чудной силы)"
+		},
+		{
+		  "index": "horn-of-valhalla-silver",
+		  "name": "Серебряный рог Вальхаллы"
+		},
+		{
+		  "index": "horn-of-valhalla-brass",
+		  "name": "Латунный рог Вальхаллы"
+		},
+		{
+		  "index": "horn-of-valhalla-bronze",
+		  "name": "Бронзовый рог Вальхаллы"
+		},
+		{
+		  "index": "horn-of-valhalla-iron",
+		  "name": "Железный рог Вальхаллы"
+		},
+		{
+		  "index": "ioun-stone-of-absorption",
+		  "name": "Камень Иоун поглощения"
+		},
+		{
+		  "index": "ioun-stone-of-agility",
+		  "name": "Камень Иоун ловкости"
+		},
+		{
+		  "index": "ioun-stone-of-awareness",
+		  "name": "Камень Иоун осознания"
+		},
+		{
+		  "index": "ioun-stone-of-fortitude",
+		  "name": "Камень Иоун стойкости"
+		},
+		{
+		  "index": "ioun-stone-of-greater-absorption",
+		  "name": "Камень Иоун высшего поглощения"
+		},
+		{
+		  "index": "ioun-stone-of-insight",
+		  "name": "Камень Иоун проницательности"
+		},
+		{
+		  "index": "ioun-stone-of-intellect",
+		  "name": "Камень Иоун интеллекта"
+		},
+		{
+		  "index": "ioun-stone-of-leadership",
+		  "name": "Камень Иоун лидерства"
+		},
+		{
+		  "index": "ioun-stone-of-mastery",
+		  "name": "Камень Иоун владения"
+		},
+		{
+		  "index": "ioun-stone-of-protection",
+		  "name": "Камень Иоун защиты"
+		},
+		{
+		  "index": "ioun-stone-of-regeneration",
+		  "name": "Камень Иоун регенерации"
+		},
+		{
+		  "index": "ioun-stone-of-reserve",
+		  "name": "Камень Иоун запаса"
+		},
+		{
+		  "index": "ioun-stone-of-strength",
+		  "name": "Камень Иоун силы"
+		},
+		{
+		  "index": "ioun-stone-of-sustenance",
+		  "name": "Камень Иоун питания"
+		},
+		{
+		  "index": "manual-of-golems-clay",
+		  "name": "Руководство по глиняным големам"
+		},
+		{
+		  "index": "manual-of-golems-flesh",
+		  "name": "Руководство по плотяным големам"
+		},
+		{
+		  "index": "manual-of-golems-iron",
+		  "name": "Руководство по железным големам"
+		},
+		{
+		  "index": "manual-of-golems-stone",
+		  "name": "Руководство по каменным големам"
+		}
+	  ]
+	},
+	{
+	  "index": "rod",
+	  "name": "Скипетр (Rod)",
+	  "equipment": [
+		{
+		  "index": "immovable-rod",
+		  "name": "Неподвижный скипетр"
+		},
+		{
+		  "index": "rod-of-absorption",
+		  "name": "Скипетр поглощения"
+		},
+		{
+		  "index": "rod-of-alertness",
+		  "name": "Скипетр бдительности"
+		},
+		{
+		  "index": "rod-of-lordly-might",
+		  "name": "Скипетр господского могущества"
+		},
+		{
+		  "index": "rod-of-rulership",
+		  "name": "Скипетр правления"
+		},
+		{
+		  "index": "rod-of-security",
+		  "name": "Скипетр безопасности"
+		}
+	  ]
+	},
+	{
+	  "index": "potion",
+	  "name": "Зелье",
+	  "equipment": [
+		{
+		  "index": "oil-of-etherealness",
+		  "name": "Масло эфирности"
+		},
+		{
+		  "index": "oil-of-sharpness",
+		  "name": "Масло остроты"
+		},
+		{
+		  "index": "oil-of-slipperiness",
+		  "name": "Масло скольжения"
+		},
+		{
+		  "index": "philter-of-love",
+		  "name": "Любовный напиток"
+		},
+		{
+		  "index": "potion-of-animal-friendship",
+		  "name": "Зелье дружбы с животными"
+		},
+		{
+		  "index": "potion-of-clairvoyance",
+		  "name": "Зелье ясновидения"
+		},
+		{
+		  "index": "potion-of-climbing",
+		  "name": "Зелье лазания"
+		},
+		{
+		  "index": "potion-of-diminution",
+		  "name": "Зелье уменьшения"
+		},
+		{
+		  "index": "potion-of-flying",
+		  "name": "Зелье полета"
+		},
+		{
+		  "index": "potion-of-gaseous-form",
+		  "name": "Зелье газообразной формы"
+		},
+		{
+		  "index": "potion-of-giant-strength",
+		  "name": "Зелье силы великана"
+		},
+		{
+		  "index": "potion-of-growth",
+		  "name": "Зелье роста"
+		},
+		{
+		  "index": "potion-of-healing",
+		  "name": "Зелье исцеления"
+		},
+		{
+		  "index": "potion-of-heroism",
+		  "name": "Зелье героизма"
+		},
+		{
+		  "index": "potion-of-invisibility",
+		  "name": "Зелье невидимости"
+		},
+		{
+		  "index": "potion-of-mind-reading",
+		  "name": "Зелье чтения мыслей"
+		},
+		{
+		  "index": "potion-of-poison",
+		  "name": "Зелье яда"
+		},
+		{
+		  "index": "potion-of-resistance",
+		  "name": "Зелье сопротивления"
+		},
+		{
+		  "index": "potion-of-speed",
+		  "name": "Зелье скорости"
+		},
+		{
+		  "index": "potion-of-water-breathing",
+		  "name": "Зелье водного дыхания"
+		},
+		{
+		  "index": "potion-of-giant-strength-hill",
+		  "name": "Зелье силы холмового великана"
+		},
+		{
+		  "index": "potion-of-giant-strength-frost",
+		  "name": "Зелье силы ледяного великана"
+		},
+		{
+		  "index": "potion-of-giant-strength-stone",
+		  "name": "Зелье силы каменного великана"
+		},
+		{
+		  "index": "potion-of-giant-strength-fire",
+		  "name": "Зелье силы огненного великана"
+		},
+		{
+		  "index": "potion-of-giant-strength-cloud",
+		  "name": "Зелье силы облачного великана"
+		},
+		{
+		  "index": "potion-of-giant-strength-storm",
+		  "name": "Зелье силы штормового великана"
+		},
+		{
+		  "index": "potion-of-healing-common",
+		  "name": "Зелье исцеления"
+		},
+		{
+		  "index": "potion-of-healing-greater",
+		  "name": "Зелье большего исцеления"
+		},
+		{
+		  "index": "potion-of-healing-superior",
+		  "name": "Зелье превосходного исцеления"
+		},
+		{
+		  "index": "potion-of-healing-supreme",
+		  "name": "Зелье наивысшего исцеления"
+		},
+		{
+		  "index": "potion-of-resistance-acid",
+		  "name": "Зелье сопротивления кислоте"
+		},
+		{
+		  "index": "potion-of-resistance-cold",
+		  "name": "Зелье сопротивления холоду"
+		},
+		{
+		  "index": "potion-of-resistance-fire",
+		  "name": "Зелье сопротивления огню"
+		},
+		{
+		  "index": "potion-of-resistance-force",
+		  "name": "Зелье сопротивления силе"
+		},
+		{
+		  "index": "potion-of-resistance-lightning",
+		  "name": "Зелье сопротивления молнии"
+		},
+		{
+		  "index": "potion-of-resistance-necrotic",
+		  "name": "Зелье сопротивления некротической энергии"
+		},
+		{
+		  "index": "potion-of-resistance-poison",
+		  "name": "Зелье сопротивления яду"
+		},
+		{
+		  "index": "potion-of-resistance-psychic",
+		  "name": "Зелье сопротивления психической энергии"
+		},
+		{
+		  "index": "potion-of-resistance-radiant",
+		  "name": "Зелье сопротивления лучистой энергии"
+		},
+		{
+		  "index": "potion-of-resistance-thunder",
+		  "name": "Зелье сопротивления грому"
+		}
+	  ]
+	},
+	{
+	  "index": "ring",
+	  "name": "Кольцо",
+	  "equipment": [
+		{
+		  "index": "ring-of-animal-influence",
+		  "name": "Кольцо влияния на животных"
+		},
+		{
+		  "index": "ring-of-djinni-summoning",
+		  "name": "Кольцо призыва джинна"
+		},
+		{
+		  "index": "ring-of-elemental-command",
+		  "name": "Кольцо повеления элементалями"
+		},
+		{
+		  "index": "ring-of-evasion",
+		  "name": "Кольцо уклонения"
+		},
+		{
+		  "index": "ring-of-feather-falling",
+		  "name": "Кольцо плавного падения"
+		},
+		{
+		  "index": "ring-of-free-action",
+		  "name": "Кольцо свободы действий"
+		},
+		{
+		  "index": "ring-of-invisibility",
+		  "name": "Кольцо невидимости"
+		},
+		{
+		  "index": "ring-of-jumping",
+		  "name": "Кольцо прыжка"
+		},
+		{
+		  "index": "ring-of-mind-shielding",
+		  "name": "Кольцо защиты разума"
+		},
+		{
+		  "index": "ring-of-protection",
+		  "name": "Кольцо защиты"
+		},
+		{
+		  "index": "ring-of-regeneration",
+		  "name": "Кольцо регенерации"
+		},
+		{
+		  "index": "ring-of-resistance",
+		  "name": "Кольцо сопротивления"
+		},
+		{
+		  "index": "ring-of-shooting-stars",
+		  "name": "Кольцо падающих звезд"
+		},
+		{
+		  "index": "ring-of-spell-storing",
+		  "name": "Кольцо хранения заклинаний"
+		},
+		{
+		  "index": "ring-of-spell-turning",
+		  "name": "Кольцо отражения заклинаний"
+		},
+		{
+		  "index": "ring-of-swimming",
+		  "name": "Кольцо плавания"
+		},
+		{
+		  "index": "ring-of-telekinesis",
+		  "name": "Кольцо телекинеза"
+		},
+		{
+		  "index": "ring-of-the-ram",
+		  "name": "Кольцо барана"
+		},
+		{
+		  "index": "ring-of-three-wishes",
+		  "name": "Кольцо трех желаний"
+		},
+		{
+		  "index": "ring-of-warmth",
+		  "name": "Кольцо тепла"
+		},
+		{
+		  "index": "ring-of-water-walking",
+		  "name": "Кольцо хождения по воде"
+		},
+		{
+		  "index": "ring-of-x-ray-vision",
+		  "name": "Кольцо рентгеновского зрения"
+		},
+		{
+		  "index": "ring-of-elemental-command-air",
+		  "name": "Кольцо повеления элементалями воздуха"
+		},
+		{
+		  "index": "ring-of-elemental-command-earth",
+		  "name": "Кольцо повеления элементалями земли"
+		},
+		{
+		  "index": "ring-of-elemental-command-fire",
+		  "name": "Кольцо повеления элементалями огня"
+		},
+		{
+		  "index": "ring-of-elemental-command-water",
+		  "name": "Кольцо повеления элементалями воды"
+		},
+		{
+		  "index": "ring-of-resistance-acid",
+		  "name": "Кольцо сопротивления кислоте"
+		},
+		{
+		  "index": "ring-of-resistance-cold",
+		  "name": "Кольцо сопротивления холоду"
+		},
+		{
+		  "index": "ring-of-resistance-fire",
+		  "name": "Кольцо сопротивления огню"
+		},
+		{
+		  "index": "ring-of-resistance-force",
+		  "name": "Кольцо сопротивления силе"
+		},
+		{
+		  "index": "ring-of-resistance-lightning",
+		  "name": "Кольцо сопротивления молнии"
+		},
+		{
+		  "index": "ring-of-resistance-necrotic",
+		  "name": "Кольцо сопротивления некротической энергии"
+		},
+		{
+		  "index": "ring-of-resistance-poison",
+		  "name": "Кольцо сопротивления яду"
+		},
+		{
+		  "index": "ring-of-resistance-psychic",
+		  "name": "Кольцо сопротивления психической энергии"
+		},
+		{
+		  "index": "ring-of-resistance-radiant",
+		  "name": "Кольцо сопротивления лучистой энергии"
+		},
+		{
+		  "index": "ring-of-resistance-thunder",
+		  "name": "Кольцо сопротивления грому"
+		}
+	  ]
+	},
+	{
+	  "index": "scroll",
+	  "name": "Свиток",
+	  "equipment": [
+		{
+		  "index": "spell-scroll",
+		  "name": "Свиток заклинания"
+		},
+		{
+		  "index": "spell-scroll-cantrip",
+		  "name": "Свиток заклинания (Заговор)"
+		},
+		{
+		  "index": "spell-scroll-1st",
+		  "name": "Свиток заклинания (1-й уровень)"
+		},
+		{
+		  "index": "spell-scroll-2nd",
+		  "name": "Свиток заклинания (2-й уровень)"
+		},
+		{
+		  "index": "spell-scroll-3rd",
+		  "name": "Свиток заклинания (3-й уровень)"
+		},
+		{
+		  "index": "spell-scroll-4th",
+		  "name": "Свиток заклинания (4-й уровень)"
+		},
+		{
+		  "index": "spell-scroll-5th",
+		  "name": "Свиток заклинания (5-й уровень)"
+		},
+		{
+		  "index": "spell-scroll-6th",
+		  "name": "Свиток заклинания (6-й уровень)"
+		},
+		{
+		  "index": "spell-scroll-7th",
+		  "name": "Свиток заклинания (7-й уровень)"
+		},
+		{
+		  "index": "spell-scroll-8th",
+		  "name": "Свиток заклинания (8-й уровень)"
+		},
+		{
+		  "index": "spell-scroll-9th",
+		  "name": "Свиток заклинания (9-й уровень)"
+		}
+	  ]
+	},
+	{
+	  "index": "staff",
+	  "name": "Посох",
+	  "equipment": [
+		{
+		  "index": "staff-of-charming",
+		  "name": "Посох очарования"
+		},
+		{
+		  "index": "staff-of-fire",
+		  "name": "Посох огня"
+		},
+		{
+		  "index": "staff-of-frost",
+		  "name": "Посох мороза"
+		},
+		{
+		  "index": "staff-of-healing",
+		  "name": "Посох исцеления"
+		},
+		{
+		  "index": "staff-of-power",
+		  "name": "Посох мощи"
+		},
+		{
+		  "index": "staff-of-striking",
+		  "name": "Посох ударов"
+		},
+		{
+		  "index": "staff-of-swarming-insects",
+		  "name": "Посох роящихся насекомых"
+		},
+		{
+		  "index": "staff-of-the-magi",
+		  "name": "Посох магов"
+		},
+		{
+		  "index": "staff-of-the-python",
+		  "name": "Посох питона"
+		},
+		{
+		  "index": "staff-of-the-woodlands",
+		  "name": "Посох лесов"
+		},
+		{
+		  "index": "staff-of-thunder-and-lightning",
+		  "name": "Посох грома и молнии"
+		},
+		{
+		  "index": "staff-of-withering",
+		  "name": "Посох увядания"
+		}
+	  ]
+	},
+	{
+	  "index": "wand",
+	  "name": "Волшебная палочка",
+	  "equipment": [
+		{
+		  "index": "wand-of-binding",
+		  "name": "Палочка связывания"
+		},
+		{
+		  "index": "wand-of-enemy-detection",
+		  "name": "Палочка обнаружения врагов"
+		},
+		{
+		  "index": "wand-of-fear",
+		  "name": "Палочка страха"
+		},
+		{
+		  "index": "wand-of-fireballs",
+		  "name": "Палочка огненных шаров"
+		},
+		{
+		  "index": "wand-of-lightning-bolts",
+		  "name": "Палочка молний"
+		},
+		{
+		  "index": "wand-of-magic-detection",
+		  "name": "Палочка обнаружения магии"
+		},
+		{
+		  "index": "wand-of-magic-missiles",
+		  "name": "Палочка магических стрел"
+		},
+		{
+		  "index": "wand-of-paralysis",
+		  "name": "Палочка паралича"
+		},
+		{
+		  "index": "wand-of-polymorph",
+		  "name": "Палочка полиморфа"
+		},
+		{
+		  "index": "wand-of-secrets",
+		  "name": "Палочка секретов"
+		},
+		{
+		  "index": "wand-of-the-war-mage",
+		  "name": "Палочка боевого мага, +1, +2 или +3"
+		},
+		{
+		  "index": "wand-of-web",
+		  "name": "Палочка паутины"
+		},
+		{
+		  "index": "wand-of-wonder",
+		  "name": "Палочка чудес"
+		},
+		{
+		  "index": "wand-of-the-war-mage-1",
+		  "name": "Палочка боевого мага, +1"
+		},
+		{
+		  "index": "wand-of-the-war-mage-2",
+		  "name": "Палочка боевого мага, +2"
+		},
+		{
+		  "index": "wand-of-the-war-mage-3",
+		  "name": "Палочка боевого мага, +3"
+		}
+	  ]
+	}
+  ]
