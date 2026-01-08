@@ -1,111 +1,129 @@
 [
 	{
-	  "index": "hill-dwarf",
-	  "name": "Холмовой дворф",
-	  "race": {
-		"index": "dwarf",
-		"name": "Дворф"
-	  },
-	  "desc": "Будучи холмовым дворфом, вы обладаете острыми чувствами, глубокой интуицией и выдающейся выносливостью.",
-	  "ability_bonuses": [
-		{
-		  "ability_score": {
-			"index": "wis",
-			"name": "МУД"
-		  },
-		  "bonus": 1
-		}
-	  ],
-	  "racial_traits": [
-		{
-		  "index": "dwarven-toughness",
-		  "name": "Дворфийская стойкость"
-		}
-	  ]
+		"index": "hill-dwarf",
+		"name": "Холмовой дворф",
+		"race": {
+			"index": "dwarf",
+			"name": "Дворф",
+			"url": "/api/2014/races/dwarf"
+		},
+		"desc": "Будучи холмовым дворфом, вы обладаете острыми чувствами, глубокой интуицией и выдающейся выносливостью.",
+		"ability_bonuses": [
+			{
+				"ability_score": {
+					"index": "wis",
+					"name": "МУД",
+					"url": "/api/2014/ability-scores/wis"
+				},
+				"bonus": 1
+			}
+		],
+		"racial_traits": [
+			{
+				"index": "dwarven-toughness",
+				"name": "Дворфийская стойкость",
+				"url": "/api/2014/traits/dwarven-toughness"
+			}
+		],
+		"url": "/api/2014/subraces/hill-dwarf"
 	},
 	{
-	  "index": "high-elf",
-	  "name": "Высший эльф",
-	  "race": {
-		"index": "elf",
-		"name": "Эльф"
-	  },
-	  "desc": "Будучи высшим эльфом, вы обладаете острым умом и владеете по крайней мере основами магии. Во многих фэнтезийных мирах существует два типа высших эльфов. Один тип — надменные и замкнутые, считающие себя превосходящими не-эльфов и даже других эльфов. Другой тип более распространён и дружелюбен, и их часто можно встретить среди людей и других рас.",
-	  "ability_bonuses": [
-		{
-		  "ability_score": {
-			"index": "int",
-			"name": "ИНТ"
-		  },
-		  "bonus": 1
-		}
-	  ],
-	  "racial_traits": [
-		{
-		  "index": "elf-weapon-training",
-		  "name": "Эльфийская боевая подготовка"
+		"index": "high-elf",
+		"name": "Высший эльф",
+		"race": {
+			"index": "elf",
+			"name": "Эльф",
+			"url": "/api/2014/races/elf"
 		},
-		{
-		  "index": "high-elf-cantrip",
-		  "name": "Заговор высшего эльфа"
-		},
-		{
-		  "index": "extra-language",
-		  "name": "Дополнительный язык"
-		}
-	  ]
+		"desc": "Будучи высшим эльфом, вы обладаете острым умом и владеете по крайней мере основами магии. Во многих фэнтезийных мирах существует два типа высших эльфов. Один тип — надменные и замкнутые, считающие себя превосходящими не-эльфов и даже других эльфов. Другой тип более распространён и дружелюбен, и их часто можно встретить среди людей и других рас.",
+		"ability_bonuses": [
+			{
+				"ability_score": {
+					"index": "int",
+					"name": "ИНТ",
+					"url": "/api/2014/ability-scores/int"
+				},
+				"bonus": 1
+			}
+		],
+		"racial_traits": [
+			{
+				"index": "elf-weapon-training",
+				"name": "Эльфийская боевая подготовка",
+				"url": "/api/2014/traits/elf-weapon-training"
+			},
+			{
+				"index": "high-elf-cantrip",
+				"name": "Заговор высшего эльфа",
+				"url": "/api/2014/traits/high-elf-cantrip"
+			},
+			{
+				"index": "extra-language",
+				"name": "Дополнительный язык",
+				"url": "/api/2014/traits/extra-language"
+			}
+		],
+		"url": "/api/2014/subraces/high-elf"
 	},
 	{
-	  "index": "lightfoot-halfling",
-	  "name": "Легконогий полурослик",
-	  "race": {
-		"index": "halfling",
-		"name": "Полурослик"
-	  },
-	  "desc": "Будучи легконогим полуросликом, вы можете легко скрываться от посторонних глаз, даже используя других людей как укрытие. Вы склонны быть дружелюбным и легко ладить с окружающими. Легконогие чаще других полуросликов подвержены жажде странствий и нередко живут рядом с представителями других рас или ведут кочевой образ жизни.",
-	  "ability_bonuses": [
-		{
-		  "ability_score": {
-			"index": "cha",
-			"name": "ХАР"
-		  },
-		  "bonus": 1
-		}
-	  ],
-	  "racial_traits": [
-		{
-		  "index": "naturally-stealthy",
-		  "name": "Природная скрытность"
-		}
-	  ]
+		"index": "lightfoot-halfling",
+		"name": "Легконогий полурослик",
+		"race": {
+			"index": "halfling",
+			"name": "Полурослик",
+			"url": "/api/2014/races/halfling"
+		},
+		"desc": "Будучи легконогим полуросликом, вы можете легко скрываться от посторонних глаз, даже используя других людей как укрытие. Вы склонны быть дружелюбным и легко ладить с окружающими. Легконогие чаще других полуросликов подвержены жажде странствий и нередко живут рядом с представителями других рас или ведут кочевой образ жизни.",
+		"ability_bonuses": [
+			{
+				"ability_score": {
+					"index": "cha",
+					"name": "ХАР",
+					"url": "/api/2014/ability-scores/cha"
+				},
+				"bonus": 1
+			}
+		],
+		"racial_traits": [
+			{
+				"index": "naturally-stealthy",
+				"name": "Природная скрытность",
+				"url": "/api/2014/traits/naturally-stealthy"
+			}
+		],
+		"url": "/api/2014/subraces/lightfoot-halfling"
 	},
 	{
-	  "index": "rock-gnome",
-	  "name": "Скальный гном",
-	  "race": {
-		"index": "gnome",
-		"name": "Гном"
-	  },
-	  "desc": "Будучи скальным гномом, вы обладаете природной изобретательностью и выносливостью, превосходящей таковую у других гномов.",
-	  "ability_bonuses": [
-		{
-		  "ability_score": {
-			"index": "con",
-			"name": "ТЕЛ"
-		  },
-		  "bonus": 1
-		}
-	  ],
-	  "racial_traits": [
-		{
-		  "index": "artificers-lore",
-		  "name": "Знания ремесленника"
+		"index": "rock-gnome",
+		"name": "Скальный гном",
+		"race": {
+			"index": "gnome",
+			"name": "Гном",
+			"url": "/api/2014/races/gnome"
 		},
-		{
-		  "index": "tinker",
-		  "name": "Мастер на все руки"
-		}
-	  ]
+		"desc": "Будучи скальным гномом, вы обладаете природной изобретательностью и выносливостью, превосходящей таковую у других гномов.",
+		"ability_bonuses": [
+			{
+				"ability_score": {
+					"index": "con",
+					"name": "ТЕЛ",
+					"url": "/api/2014/ability-scores/con"
+				},
+				"bonus": 1
+			}
+		],
+		"racial_traits": [
+			{
+				"index": "artificers-lore",
+				"name": "Знания ремесленника",
+				"url": "/api/2014/traits/artificers-lore"
+			},
+			{
+				"index": "tinker",
+				"name": "Мастер на все руки",
+				"url": "/api/2014/traits/tinker"
+			}
+		],
+		"url": "/api/2014/subraces/rock-gnome"
 	}
-  ]
-  
+]

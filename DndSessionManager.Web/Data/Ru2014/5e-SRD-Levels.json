@@ -6,11 +6,13 @@
     "features": [
       {
         "index": "rage",
-        "name": "Ярость"
+        "name": "Ярость",
+        "url": "/api/2014/features/rage"
       },
       {
         "index": "barbarian-unarmored-defense",
-        "name": "Защита без доспехов"
+        "name": "Защита без доспехов",
+        "url": "/api/2014/features/barbarian-unarmored-defense"
       }
     ],
     "class_specific": {
@@ -21,8 +23,10 @@
     "index": "barbarian-1",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
-    }
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
+    },
+    "url": "/api/2014/classes/barbarian/levels/1"
   },
   {
     "level": 2,
@@ -31,11 +35,13 @@
     "features": [
       {
         "index": "reckless-attack",
-        "name": "Безрассудная атака"
+        "name": "Безрассудная атака",
+        "url": "/api/2014/features/reckless-attack"
       },
       {
         "index": "danger-sense",
-        "name": "Чувство опасности"
+        "name": "Чувство опасности",
+        "url": "/api/2014/features/danger-sense"
       }
     ],
     "class_specific": {
@@ -46,8 +52,10 @@
     "index": "barbarian-2",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
-    }
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
+    },
+    "url": "/api/2014/classes/barbarian/levels/2"
   },
   {
     "level": 3,
@@ -56,7 +64,8 @@
     "features": [
       {
         "index": "primal-path",
-        "name": "Первобытный путь"
+        "name": "Первобытный путь",
+        "url": "/api/2014/features/primal-path"
       }
     ],
     "class_specific": {
@@ -67,8 +76,10 @@
     "index": "barbarian-3",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
-    }
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
+    },
+    "url": "/api/2014/classes/barbarian/levels/3"
   },
   {
     "level": 4,
@@ -77,7 +88,8 @@
     "features": [
       {
         "index": "barbarian-ability-score-improvement-1",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/barbarian-ability-score-improvement-1"
       }
     ],
     "class_specific": {
@@ -88,8 +100,10 @@
     "index": "barbarian-4",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
-    }
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
+    },
+    "url": "/api/2014/classes/barbarian/levels/4"
   },
   {
     "level": 5,
@@ -98,11 +112,13 @@
     "features": [
       {
         "index": "barbarian-extra-attack",
-        "name": "Дополнительная атака"
+        "name": "Дополнительная атака",
+        "url": "/api/2014/features/barbarian-extra-attack"
       },
       {
         "index": "fast-movement",
-        "name": "Быстрое передвижение"
+        "name": "Быстрое передвижение",
+        "url": "/api/2014/features/fast-movement"
       }
     ],
     "class_specific": {
@@ -113,8 +129,10 @@
     "index": "barbarian-5",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
-    }
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
+    },
+    "url": "/api/2014/classes/barbarian/levels/5"
   },
   {
     "level": 6,
@@ -123,7 +141,8 @@
     "features": [
       {
         "index": "primal-path-improvement-1",
-        "name": "Умение пути"
+        "name": "Умение пути",
+        "url": "/api/2014/features/primal-path-improvement-1"
       }
     ],
     "class_specific": {
@@ -134,8 +153,10 @@
     "index": "barbarian-6",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
-    }
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
+    },
+    "url": "/api/2014/classes/barbarian/levels/6"
   },
   {
     "level": 7,
@@ -144,7 +165,8 @@
     "features": [
       {
         "index": "feral-instinct",
-        "name": "Дикий инстинкт"
+        "name": "Дикий инстинкт",
+        "url": "/api/2014/features/feral-instinct"
       }
     ],
     "class_specific": {
@@ -155,8 +177,10 @@
     "index": "barbarian-7",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
-    }
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
+    },
+    "url": "/api/2014/classes/barbarian/levels/7"
   },
   {
     "level": 8,
@@ -165,7 +189,8 @@
     "features": [
       {
         "index": "barbarian-ability-score-improvement-2",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/barbarian-ability-score-improvement-2"
       }
     ],
     "class_specific": {
@@ -176,8 +201,10 @@
     "index": "barbarian-8",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
-    }
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
+    },
+    "url": "/api/2014/classes/barbarian/levels/8"
   },
   {
     "level": 9,
@@ -186,7 +213,8 @@
     "features": [
       {
         "index": "brutal-critical-1-die",
-        "name": "Дикий критический удар (1 кость)"
+        "name": "Дикая критическая атака (1 кость)",
+        "url": "/api/2014/features/brutal-critical-1-die"
       }
     ],
     "class_specific": {
@@ -197,8 +225,10 @@
     "index": "barbarian-9",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
-    }
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
+    },
+    "url": "/api/2014/classes/barbarian/levels/9"
   },
   {
     "level": 10,
@@ -207,7 +237,8 @@
     "features": [
       {
         "index": "primal-path-improvement-2",
-        "name": "Умение пути"
+        "name": "Умение пути",
+        "url": "/api/2014/features/primal-path-improvement-2"
       }
     ],
     "class_specific": {
@@ -218,8 +249,10 @@
     "index": "barbarian-10",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
-    }
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
+    },
+    "url": "/api/2014/classes/barbarian/levels/10"
   },
   {
     "level": 11,
@@ -228,7 +261,8 @@
     "features": [
       {
         "index": "relentless-rage",
-        "name": "Неумолимая ярость"
+        "name": "Неумолимая ярость",
+        "url": "/api/2014/features/relentless-rage"
       }
     ],
     "class_specific": {
@@ -239,8 +273,10 @@
     "index": "barbarian-11",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
-    }
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
+    },
+    "url": "/api/2014/classes/barbarian/levels/11"
   },
   {
     "level": 12,
@@ -249,7 +285,8 @@
     "features": [
       {
         "index": "barbarian-ability-score-improvement-3",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/barbarian-ability-score-improvement-3"
       }
     ],
     "class_specific": {
@@ -260,8 +297,10 @@
     "index": "barbarian-12",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
-    }
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
+    },
+    "url": "/api/2014/classes/barbarian/levels/12"
   },
   {
     "level": 13,
@@ -270,7 +309,8 @@
     "features": [
       {
         "index": "brutal-critical-2-dice",
-        "name": "Дикий критический удар (2 кости)"
+        "name": "Дикая критическая атака (2 кости)",
+        "url": "/api/2014/features/brutal-critical-2-dice"
       }
     ],
     "class_specific": {
@@ -281,8 +321,10 @@
     "index": "barbarian-13",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
-    }
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
+    },
+    "url": "/api/2014/classes/barbarian/levels/13"
   },
   {
     "level": 14,
@@ -291,7 +333,8 @@
     "features": [
       {
         "index": "primal-path-improvement-3",
-        "name": "Умение пути"
+        "name": "Умение пути",
+        "url": "/api/2014/features/primal-path-improvement-3"
       }
     ],
     "class_specific": {
@@ -302,8 +345,10 @@
     "index": "barbarian-14",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
-    }
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
+    },
+    "url": "/api/2014/classes/barbarian/levels/14"
   },
   {
     "level": 15,
@@ -312,7 +357,8 @@
     "features": [
       {
         "index": "persistent-rage",
-        "name": "Непрекращающаяся ярость"
+        "name": "Бесконечная ярость",
+        "url": "/api/2014/features/persistent-rage"
       }
     ],
     "class_specific": {
@@ -323,8 +369,10 @@
     "index": "barbarian-15",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
-    }
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
+    },
+    "url": "/api/2014/classes/barbarian/levels/15"
   },
   {
     "level": 16,
@@ -333,7 +381,8 @@
     "features": [
       {
         "index": "barbarian-ability-score-improvement-4",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/barbarian-ability-score-improvement-4"
       }
     ],
     "class_specific": {
@@ -344,8 +393,10 @@
     "index": "barbarian-16",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
-    }
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
+    },
+    "url": "/api/2014/classes/barbarian/levels/16"
   },
   {
     "level": 17,
@@ -354,7 +405,8 @@
     "features": [
       {
         "index": "brutal-critical-3-dice",
-        "name": "Дикий критический удар (3 кости)"
+        "name": "Дикая критическая атака (3 кости)",
+        "url": "/api/2014/features/brutal-critical-3-dice"
       }
     ],
     "class_specific": {
@@ -365,8 +417,10 @@
     "index": "barbarian-17",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
-    }
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
+    },
+    "url": "/api/2014/classes/barbarian/levels/17"
   },
   {
     "level": 18,
@@ -375,7 +429,8 @@
     "features": [
       {
         "index": "indomitable-might",
-        "name": "Неукротимая мощь"
+        "name": "Неукротимая мощь",
+        "url": "/api/2014/features/indomitable-might"
       }
     ],
     "class_specific": {
@@ -386,8 +441,10 @@
     "index": "barbarian-18",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
-    }
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
+    },
+    "url": "/api/2014/classes/barbarian/levels/18"
   },
   {
     "level": 19,
@@ -396,7 +453,8 @@
     "features": [
       {
         "index": "barbarian-ability-score-improvement-5",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/barbarian-ability-score-improvement-5"
       }
     ],
     "class_specific": {
@@ -407,8 +465,10 @@
     "index": "barbarian-19",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
-    }
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
+    },
+    "url": "/api/2014/classes/barbarian/levels/19"
   },
   {
     "level": 20,
@@ -417,7 +477,8 @@
     "features": [
       {
         "index": "primal-champion",
-        "name": "Первобытный чемпион"
+        "name": "Первобытный чемпион",
+        "url": "/api/2014/features/primal-champion"
       }
     ],
     "class_specific": {
@@ -428,8 +489,10 @@
     "index": "barbarian-20",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
-    }
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
+    },
+    "url": "/api/2014/classes/barbarian/levels/20"
   },
   {
     "level": 1,
@@ -438,11 +501,13 @@
     "features": [
       {
         "index": "spellcasting-bard",
-        "name": "Использование заклинаний: Бард"
+        "name": "Использование заклинаний: Бард",
+        "url": "/api/2014/features/spellcasting-bard"
       },
       {
         "index": "bardic-inspiration-d6",
-        "name": "Вдохновение барда (d6)"
+        "name": "Бардовское вдохновение (d6)",
+        "url": "/api/2014/features/bardic-inspiration-d6"
       }
     ],
     "spellcasting": {
@@ -468,8 +533,10 @@
     "index": "bard-1",
     "class": {
       "index": "bard",
-      "name": "Бард"
-    }
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
+    },
+    "url": "/api/2014/classes/bard/levels/1"
   },
   {
     "level": 2,
@@ -478,11 +545,13 @@
     "features": [
       {
         "index": "jack-of-all-trades",
-        "name": "Мастер на все руки"
+        "name": "Мастер на все руки",
+        "url": "/api/2014/features/jack-of-all-trades"
       },
       {
         "index": "song-of-rest-d6",
-        "name": "Песнь отдыха (d6)"
+        "name": "Песнь отдыха (d6)",
+        "url": "/api/2014/features/song-of-rest-d6"
       }
     ],
     "spellcasting": {
@@ -508,8 +577,10 @@
     "index": "bard-2",
     "class": {
       "index": "bard",
-      "name": "Бард"
-    }
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
+    },
+    "url": "/api/2014/classes/bard/levels/2"
   },
   {
     "level": 3,
@@ -518,11 +589,13 @@
     "features": [
       {
         "index": "bard-expertise-1",
-        "name": "Познания"
+        "name": "Компетентность",
+        "url": "/api/2014/features/bard-expertise-1"
       },
       {
         "index": "bard-college",
-        "name": "Коллегия бардов"
+        "name": "Бардовская коллегия",
+        "url": "/api/2014/features/bard-college"
       }
     ],
     "spellcasting": {
@@ -548,8 +621,10 @@
     "index": "bard-3",
     "class": {
       "index": "bard",
-      "name": "Бард"
-    }
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
+    },
+    "url": "/api/2014/classes/bard/levels/3"
   },
   {
     "level": 4,
@@ -558,7 +633,8 @@
     "features": [
       {
         "index": "bard-ability-score-improvement-1",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/bard-ability-score-improvement-1"
       }
     ],
     "spellcasting": {
@@ -584,8 +660,10 @@
     "index": "bard-4",
     "class": {
       "index": "bard",
-      "name": "Бард"
-    }
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
+    },
+    "url": "/api/2014/classes/bard/levels/4"
   },
   {
     "level": 5,
@@ -594,11 +672,13 @@
     "features": [
       {
         "index": "bardic-inspiration-d8",
-        "name": "Вдохновение барда (d8)"
+        "name": "Бардовское вдохновение (d8)",
+        "url": "/api/2014/features/bardic-inspiration-d8"
       },
       {
         "index": "font-of-inspiration",
-        "name": "Источник вдохновения"
+        "name": "Источник вдохновения",
+        "url": "/api/2014/features/font-of-inspiration"
       }
     ],
     "spellcasting": {
@@ -624,8 +704,10 @@
     "index": "bard-5",
     "class": {
       "index": "bard",
-      "name": "Бард"
-    }
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
+    },
+    "url": "/api/2014/classes/bard/levels/5"
   },
   {
     "level": 6,
@@ -634,11 +716,13 @@
     "features": [
       {
         "index": "countercharm",
-        "name": "Контрочарование"
+        "name": "Контрочарование",
+        "url": "/api/2014/features/countercharm"
       },
       {
         "index": "bard-college-improvement-1",
-        "name": "Умение коллегии бардов"
+        "name": "Умение бардовской коллегии",
+        "url": "/api/2014/features/bard-college-improvement-1"
       }
     ],
     "spellcasting": {
@@ -664,8 +748,10 @@
     "index": "bard-6",
     "class": {
       "index": "bard",
-      "name": "Бард"
-    }
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
+    },
+    "url": "/api/2014/classes/bard/levels/6"
   },
   {
     "level": 7,
@@ -695,8 +781,10 @@
     "index": "bard-7",
     "class": {
       "index": "bard",
-      "name": "Бард"
-    }
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
+    },
+    "url": "/api/2014/classes/bard/levels/7"
   },
   {
     "level": 8,
@@ -705,7 +793,8 @@
     "features": [
       {
         "index": "bard-ability-score-improvement-2",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/bard-ability-score-improvement-2"
       }
     ],
     "spellcasting": {
@@ -731,8 +820,10 @@
     "index": "bard-8",
     "class": {
       "index": "bard",
-      "name": "Бард"
-    }
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
+    },
+    "url": "/api/2014/classes/bard/levels/8"
   },
   {
     "level": 9,
@@ -741,7 +832,8 @@
     "features": [
       {
         "index": "song-of-rest-d8",
-        "name": "Песнь отдыха (d8)"
+        "name": "Песнь отдыха (d8)",
+        "url": "/api/2014/features/song-of-rest-d8"
       }
     ],
     "spellcasting": {
@@ -767,8 +859,10 @@
     "index": "bard-9",
     "class": {
       "index": "bard",
-      "name": "Бард"
-    }
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
+    },
+    "url": "/api/2014/classes/bard/levels/9"
   },
   {
     "level": 10,
@@ -777,15 +871,18 @@
     "features": [
       {
         "index": "bard-expertise-2",
-        "name": "Познания"
+        "name": "Компетентность",
+        "url": "/api/2014/features/bard-expertise-2"
       },
       {
         "index": "bardic-inspiration-d10",
-        "name": "Вдохновение барда (d10)"
+        "name": "Бардовское вдохновение (d10)",
+        "url": "/api/2014/features/bardic-inspiration-d10"
       },
       {
         "index": "magical-secrets-1",
-        "name": "Магические секреты"
+        "name": "Магические секреты",
+        "url": "/api/2014/features/magical-secrets-1"
       }
     ],
     "spellcasting": {
@@ -811,8 +908,10 @@
     "index": "bard-10",
     "class": {
       "index": "bard",
-      "name": "Бард"
-    }
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
+    },
+    "url": "/api/2014/classes/bard/levels/10"
   },
   {
     "level": 11,
@@ -842,8 +941,10 @@
     "index": "bard-11",
     "class": {
       "index": "bard",
-      "name": "Бард"
-    }
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
+    },
+    "url": "/api/2014/classes/bard/levels/11"
   },
   {
     "level": 12,
@@ -852,7 +953,8 @@
     "features": [
       {
         "index": "bard-ability-score-improvement-3",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/bard-ability-score-improvement-3"
       }
     ],
     "spellcasting": {
@@ -878,8 +980,10 @@
     "index": "bard-12",
     "class": {
       "index": "bard",
-      "name": "Бард"
-    }
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
+    },
+    "url": "/api/2014/classes/bard/levels/12"
   },
   {
     "level": 13,
@@ -888,7 +992,8 @@
     "features": [
       {
         "index": "song-of-rest-d10",
-        "name": "Песнь отдыха (d10)"
+        "name": "Песнь отдыха (d10)",
+        "url": "/api/2014/features/song-of-rest-d10"
       }
     ],
     "spellcasting": {
@@ -914,8 +1019,10 @@
     "index": "bard-13",
     "class": {
       "index": "bard",
-      "name": "Бард"
-    }
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
+    },
+    "url": "/api/2014/classes/bard/levels/13"
   },
   {
     "level": 14,
@@ -924,11 +1031,13 @@
     "features": [
       {
         "index": "magical-secrets-2",
-        "name": "Магические секреты"
+        "name": "Магические секреты",
+        "url": "/api/2014/features/magical-secrets-2"
       },
       {
         "index": "bard-college-improvement-2",
-        "name": "Умение коллегии бардов"
+        "name": "Умение бардовской коллегии",
+        "url": "/api/2014/features/bard-college-improvement-2"
       }
     ],
     "spellcasting": {
@@ -954,8 +1063,10 @@
     "index": "bard-14",
     "class": {
       "index": "bard",
-      "name": "Бард"
-    }
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
+    },
+    "url": "/api/2014/classes/bard/levels/14"
   },
   {
     "level": 15,
@@ -964,7 +1075,8 @@
     "features": [
       {
         "index": "bardic-inspiration-d12",
-        "name": "Вдохновение барда (d12)"
+        "name": "Бардовское вдохновение (d12)",
+        "url": "/api/2014/features/bardic-inspiration-d12"
       }
     ],
     "spellcasting": {
@@ -990,8 +1102,10 @@
     "index": "bard-15",
     "class": {
       "index": "bard",
-      "name": "Бард"
-    }
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
+    },
+    "url": "/api/2014/classes/bard/levels/15"
   },
   {
     "level": 16,
@@ -1000,7 +1114,8 @@
     "features": [
       {
         "index": "bard-ability-score-improvement-4",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/bard-ability-score-improvement-4"
       }
     ],
     "spellcasting": {
@@ -1026,8 +1141,10 @@
     "index": "bard-16",
     "class": {
       "index": "bard",
-      "name": "Бард"
-    }
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
+    },
+    "url": "/api/2014/classes/bard/levels/16"
   },
   {
     "level": 17,
@@ -1036,7 +1153,8 @@
     "features": [
       {
         "index": "song-of-rest-d12",
-        "name": "Песнь отдыха (d12)"
+        "name": "Песнь отдыха (d12)",
+        "url": "/api/2014/features/song-of-rest-d12"
       }
     ],
     "spellcasting": {
@@ -1062,8 +1180,10 @@
     "index": "bard-17",
     "class": {
       "index": "bard",
-      "name": "Бард"
-    }
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
+    },
+    "url": "/api/2014/classes/bard/levels/17"
   },
   {
     "level": 18,
@@ -1072,7 +1192,8 @@
     "features": [
       {
         "index": "magical-secrets-3",
-        "name": "Магические секреты"
+        "name": "Магические секреты",
+        "url": "/api/2014/features/magical-secrets-3"
       }
     ],
     "spellcasting": {
@@ -1098,8 +1219,10 @@
     "index": "bard-18",
     "class": {
       "index": "bard",
-      "name": "Бард"
-    }
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
+    },
+    "url": "/api/2014/classes/bard/levels/18"
   },
   {
     "level": 19,
@@ -1108,7 +1231,8 @@
     "features": [
       {
         "index": "bard-ability-score-improvement-5",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/bard-ability-score-improvement-5"
       }
     ],
     "spellcasting": {
@@ -1134,8 +1258,10 @@
     "index": "bard-19",
     "class": {
       "index": "bard",
-      "name": "Бард"
-    }
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
+    },
+    "url": "/api/2014/classes/bard/levels/19"
   },
   {
     "level": 20,
@@ -1144,7 +1270,8 @@
     "features": [
       {
         "index": "superior-inspiration",
-        "name": "Высшее вдохновение"
+        "name": "Высшее вдохновение",
+        "url": "/api/2014/features/superior-inspiration"
       }
     ],
     "spellcasting": {
@@ -1170,8 +1297,10 @@
     "index": "bard-20",
     "class": {
       "index": "bard",
-      "name": "Бард"
-    }
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
+    },
+    "url": "/api/2014/classes/bard/levels/20"
   },
   {
     "level": 1,
@@ -1180,15 +1309,18 @@
     "features": [
       {
         "index": "spellcasting-cleric",
-        "name": "Использование заклинаний: Жрец"
+        "name": "Использование заклинаний: Жрец",
+        "url": "/api/2014/features/spellcasting-cleric"
       },
       {
         "index": "divine-domain",
-        "name": "Божественный домен"
+        "name": "Божественный домен",
+        "url": "/api/2014/features/divine-domain"
       },
       {
         "index": "domain-spells-1",
-        "name": "Заклинания домена"
+        "name": "Заклинания домена",
+        "url": "/api/2014/features/domain-spells-1"
       }
     ],
     "spellcasting": {
@@ -1210,8 +1342,10 @@
     "index": "cleric-1",
     "class": {
       "index": "cleric",
-      "name": "Жрец"
-    }
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
+    },
+    "url": "/api/2014/classes/cleric/levels/1"
   },
   {
     "level": 2,
@@ -1220,15 +1354,18 @@
     "features": [
       {
         "index": "channel-divinity-1-rest",
-        "name": "Божественный канал (1/отдых)"
+        "name": "Божественный канал (1/отдых)",
+        "url": "/api/2014/features/channel-divinity-1-rest"
       },
       {
         "index": "channel-divinity-turn-undead",
-        "name": "Божественный канал: Изгнание нежити"
+        "name": "Божественный канал: Изгнание нежити",
+        "url": "/api/2014/features/channel-divinity-turn-undead"
       },
       {
         "index": "divine-domain-improvement-1",
-        "name": "Умение божественного домена"
+        "name": "Умение божественного домена",
+        "url": "/api/2014/features/divine-domain-improvement-1"
       }
     ],
     "spellcasting": {
@@ -1250,8 +1387,10 @@
     "index": "cleric-2",
     "class": {
       "index": "cleric",
-      "name": "Жрец"
-    }
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
+    },
+    "url": "/api/2014/classes/cleric/levels/2"
   },
   {
     "level": 3,
@@ -1260,7 +1399,8 @@
     "features": [
       {
         "index": "domain-spells-2",
-        "name": "Заклинания домена"
+        "name": "Заклинания домена",
+        "url": "/api/2014/features/domain-spells-2"
       }
     ],
     "spellcasting": {
@@ -1282,8 +1422,10 @@
     "index": "cleric-3",
     "class": {
       "index": "cleric",
-      "name": "Жрец"
-    }
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
+    },
+    "url": "/api/2014/classes/cleric/levels/3"
   },
   {
     "level": 4,
@@ -1292,7 +1434,8 @@
     "features": [
       {
         "index": "cleric-ability-score-improvement-1",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/cleric-ability-score-improvement-1"
       }
     ],
     "spellcasting": {
@@ -1314,8 +1457,10 @@
     "index": "cleric-4",
     "class": {
       "index": "cleric",
-      "name": "Жрец"
-    }
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
+    },
+    "url": "/api/2014/classes/cleric/levels/4"
   },
   {
     "level": 5,
@@ -1324,11 +1469,13 @@
     "features": [
       {
         "index": "domain-spells-3",
-        "name": "Заклинания домена"
+        "name": "Заклинания домена",
+        "url": "/api/2014/features/domain-spells-3"
       },
       {
         "index": "destroy-undead-cr-1-2-or-below",
-        "name": "Уничтожение нежити (Опасность 1/2 или ниже)"
+        "name": "Уничтожение нежити (Опасность 1/2 или ниже)",
+        "url": "/api/2014/features/destroy-undead-cr-1-2-or-below"
       }
     ],
     "spellcasting": {
@@ -1350,8 +1497,10 @@
     "index": "cleric-5",
     "class": {
       "index": "cleric",
-      "name": "Жрец"
-    }
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
+    },
+    "url": "/api/2014/classes/cleric/levels/5"
   },
   {
     "level": 6,
@@ -1360,11 +1509,13 @@
     "features": [
       {
         "index": "channel-divinity-2-rest",
-        "name": "Божественный канал (2/отдых)"
+        "name": "Божественный канал (2/отдых)",
+        "url": "/api/2014/features/channel-divinity-2-rest"
       },
       {
         "index": "divine-domain-improvement-2",
-        "name": "Умение божественного домена"
+        "name": "Умение божественного домена",
+        "url": "/api/2014/features/divine-domain-improvement-2"
       }
     ],
     "spellcasting": {
@@ -1386,8 +1537,10 @@
     "index": "cleric-6",
     "class": {
       "index": "cleric",
-      "name": "Жрец"
-    }
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
+    },
+    "url": "/api/2014/classes/cleric/levels/6"
   },
   {
     "level": 7,
@@ -1396,7 +1549,8 @@
     "features": [
       {
         "index": "domain-spells-4",
-        "name": "Заклинания домена"
+        "name": "Заклинания домена",
+        "url": "/api/2014/features/domain-spells-4"
       }
     ],
     "spellcasting": {
@@ -1418,8 +1572,10 @@
     "index": "cleric-7",
     "class": {
       "index": "cleric",
-      "name": "Жрец"
-    }
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
+    },
+    "url": "/api/2014/classes/cleric/levels/7"
   },
   {
     "level": 8,
@@ -1428,15 +1584,18 @@
     "features": [
       {
         "index": "cleric-ability-score-improvement-2",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/cleric-ability-score-improvement-2"
       },
       {
         "index": "destroy-undead-cr-1-or-below",
-        "name": "Уничтожение нежити (Опасность 1 или ниже)"
+        "name": "Уничтожение нежити (Опасность 1 или ниже)",
+        "url": "/api/2014/features/destroy-undead-cr-1-or-below"
       },
       {
         "index": "divine-domain-improvement-3",
-        "name": "Умение божественного домена"
+        "name": "Умение божественного домена",
+        "url": "/api/2014/features/divine-domain-improvement-3"
       }
     ],
     "spellcasting": {
@@ -1458,8 +1617,10 @@
     "index": "cleric-8",
     "class": {
       "index": "cleric",
-      "name": "Жрец"
-    }
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
+    },
+    "url": "/api/2014/classes/cleric/levels/8"
   },
   {
     "level": 9,
@@ -1468,7 +1629,8 @@
     "features": [
       {
         "index": "domain-spells-5",
-        "name": "Заклинания домена"
+        "name": "Заклинания домена",
+        "url": "/api/2014/features/domain-spells-5"
       }
     ],
     "spellcasting": {
@@ -1490,8 +1652,10 @@
     "index": "cleric-9",
     "class": {
       "index": "cleric",
-      "name": "Жрец"
-    }
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
+    },
+    "url": "/api/2014/classes/cleric/levels/9"
   },
   {
     "level": 10,
@@ -1500,7 +1664,8 @@
     "features": [
       {
         "index": "divine-intervention",
-        "name": "Божественное вмешательство"
+        "name": "Божественное вмешательство",
+        "url": "/api/2014/features/divine-intervention"
       }
     ],
     "spellcasting": {
@@ -1522,8 +1687,10 @@
     "index": "cleric-10",
     "class": {
       "index": "cleric",
-      "name": "Жрец"
-    }
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
+    },
+    "url": "/api/2014/classes/cleric/levels/10"
   },
   {
     "level": 11,
@@ -1532,7 +1699,8 @@
     "features": [
       {
         "index": "destroy-undead-cr-2-or-below",
-        "name": "Уничтожение нежити (Опасность 2 или ниже)"
+        "name": "Уничтожение нежити (Опасность 2 или ниже)",
+        "url": "/api/2014/features/destroy-undead-cr-2-or-below"
       }
     ],
     "spellcasting": {
@@ -1554,8 +1722,10 @@
     "index": "cleric-11",
     "class": {
       "index": "cleric",
-      "name": "Жрец"
-    }
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
+    },
+    "url": "/api/2014/classes/cleric/levels/11"
   },
   {
     "level": 12,
@@ -1564,7 +1734,8 @@
     "features": [
       {
         "index": "cleric-ability-score-improvement-3",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/cleric-ability-score-improvement-3"
       }
     ],
     "spellcasting": {
@@ -1586,8 +1757,10 @@
     "index": "cleric-12",
     "class": {
       "index": "cleric",
-      "name": "Жрец"
-    }
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
+    },
+    "url": "/api/2014/classes/cleric/levels/12"
   },
   {
     "level": 13,
@@ -1613,8 +1786,10 @@
     "index": "cleric-13",
     "class": {
       "index": "cleric",
-      "name": "Жрец"
-    }
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
+    },
+    "url": "/api/2014/classes/cleric/levels/13"
   },
   {
     "level": 14,
@@ -1623,7 +1798,8 @@
     "features": [
       {
         "index": "destroy-undead-cr-3-or-below",
-        "name": "Уничтожение нежити (Опасность 3 или ниже)"
+        "name": "Уничтожение нежити (Опасность 3 или ниже)",
+        "url": "/api/2014/features/destroy-undead-cr-3-or-below"
       }
     ],
     "spellcasting": {
@@ -1645,8 +1821,10 @@
     "index": "cleric-14",
     "class": {
       "index": "cleric",
-      "name": "Жрец"
-    }
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
+    },
+    "url": "/api/2014/classes/cleric/levels/14"
   },
   {
     "level": 15,
@@ -1672,8 +1850,10 @@
     "index": "cleric-15",
     "class": {
       "index": "cleric",
-      "name": "Жрец"
-    }
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
+    },
+    "url": "/api/2014/classes/cleric/levels/15"
   },
   {
     "level": 16,
@@ -1682,7 +1862,8 @@
     "features": [
       {
         "index": "cleric-ability-score-improvement-4",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/cleric-ability-score-improvement-4"
       }
     ],
     "spellcasting": {
@@ -1704,8 +1885,10 @@
     "index": "cleric-16",
     "class": {
       "index": "cleric",
-      "name": "Жрец"
-    }
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
+    },
+    "url": "/api/2014/classes/cleric/levels/16"
   },
   {
     "level": 17,
@@ -1714,11 +1897,13 @@
     "features": [
       {
         "index": "destroy-undead-cr-4-or-below",
-        "name": "Уничтожение нежити (Опасность 4 или ниже)"
+        "name": "Уничтожение нежити (Опасность 4 или ниже)",
+        "url": "/api/2014/features/destroy-undead-cr-4-or-below"
       },
       {
         "index": "divine-domain-improvement-4",
-        "name": "Умение божественного домена"
+        "name": "Умение божественного домена",
+        "url": "/api/2014/features/divine-domain-improvement-4"
       }
     ],
     "spellcasting": {
@@ -1740,8 +1925,10 @@
     "index": "cleric-17",
     "class": {
       "index": "cleric",
-      "name": "Жрец"
-    }
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
+    },
+    "url": "/api/2014/classes/cleric/levels/17"
   },
   {
     "level": 18,
@@ -1750,7 +1937,8 @@
     "features": [
       {
         "index": "channel-divinity-3-rest",
-        "name": "Божественный канал (3/отдых)"
+        "name": "Божественный канал (3/отдых)",
+        "url": "/api/2014/features/channel-divinity-3-rest"
       }
     ],
     "spellcasting": {
@@ -1772,8 +1960,10 @@
     "index": "cleric-18",
     "class": {
       "index": "cleric",
-      "name": "Жрец"
-    }
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
+    },
+    "url": "/api/2014/classes/cleric/levels/18"
   },
   {
     "level": 19,
@@ -1782,7 +1972,8 @@
     "features": [
       {
         "index": "cleric-ability-score-improvement-5",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/cleric-ability-score-improvement-5"
       }
     ],
     "spellcasting": {
@@ -1804,8 +1995,10 @@
     "index": "cleric-19",
     "class": {
       "index": "cleric",
-      "name": "Жрец"
-    }
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
+    },
+    "url": "/api/2014/classes/cleric/levels/19"
   },
   {
     "level": 20,
@@ -1814,7 +2007,8 @@
     "features": [
       {
         "index": "divine-intervention-improvement",
-        "name": "Улучшенное божественное вмешательство"
+        "name": "Улучшенное божественное вмешательство",
+        "url": "/api/2014/features/divine-intervention-improvement"
       }
     ],
     "spellcasting": {
@@ -1836,8 +2030,10 @@
     "index": "cleric-20",
     "class": {
       "index": "cleric",
-      "name": "Жрец"
-    }
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
+    },
+    "url": "/api/2014/classes/cleric/levels/20"
   },
   {
     "level": 1,
@@ -1846,11 +2042,13 @@
     "features": [
       {
         "index": "spellcasting-druid",
-        "name": "Использование заклинаний: Друид"
+        "name": "Использование заклинаний: Друид",
+        "url": "/api/2014/features/spellcasting-druid"
       },
       {
         "index": "druidic",
-        "name": "Друидический язык"
+        "name": "Друидический язык",
+        "url": "/api/2014/features/druidic"
       }
     ],
     "spellcasting": {
@@ -1873,8 +2071,10 @@
     "index": "druid-1",
     "class": {
       "index": "druid",
-      "name": "Друид"
-    }
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
+    },
+    "url": "/api/2014/classes/druid/levels/1"
   },
   {
     "level": 2,
@@ -1883,11 +2083,13 @@
     "features": [
       {
         "index": "wild-shape-cr-1-4-or-below-no-flying-or-swim-speed",
-        "name": "Дикий облик (Опасность 1/4 или ниже, без полета и плавания)"
+        "name": "Дикий облик (Опасность 1/4 или ниже, без скорости полета или плавания)",
+        "url": "/api/2014/features/wild-shape-cr-1-4-or-below-no-flying-or-swim-speed"
       },
       {
         "index": "druid-circle",
-        "name": "Друидический круг"
+        "name": "Друидский круг",
+        "url": "/api/2014/features/druid-circle"
       }
     ],
     "spellcasting": {
@@ -1910,8 +2112,10 @@
     "index": "druid-2",
     "class": {
       "index": "druid",
-      "name": "Друид"
-    }
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
+    },
+    "url": "/api/2014/classes/druid/levels/2"
   },
   {
     "level": 3,
@@ -1938,8 +2142,10 @@
     "index": "druid-3",
     "class": {
       "index": "druid",
-      "name": "Друид"
-    }
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
+    },
+    "url": "/api/2014/classes/druid/levels/3"
   },
   {
     "level": 4,
@@ -1948,11 +2154,13 @@
     "features": [
       {
         "index": "wild-shape-cr-1-2-or-below-no-flying-speed",
-        "name": "Дикий облик (Опасность 1/2 или ниже, без полета)"
+        "name": "Дикий облик (Опасность 1/2 или ниже, без скорости полета)",
+        "url": "/api/2014/features/wild-shape-cr-1-2-or-below-no-flying-speed"
       },
       {
         "index": "druid-ability-score-improvement-1",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/druid-ability-score-improvement-1"
       }
     ],
     "spellcasting": {
@@ -1975,8 +2183,10 @@
     "index": "druid-4",
     "class": {
       "index": "druid",
-      "name": "Друид"
-    }
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
+    },
+    "url": "/api/2014/classes/druid/levels/4"
   },
   {
     "level": 5,
@@ -2003,8 +2213,10 @@
     "index": "druid-5",
     "class": {
       "index": "druid",
-      "name": "Друид"
-    }
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
+    },
+    "url": "/api/2014/classes/druid/levels/5"
   },
   {
     "level": 6,
@@ -2013,7 +2225,8 @@
     "features": [
       {
         "index": "druid-circle-improvement-1",
-        "name": "Умение друидического круга"
+        "name": "Умение друидского круга",
+        "url": "/api/2014/features/druid-circle-improvement-1"
       }
     ],
     "spellcasting": {
@@ -2036,8 +2249,10 @@
     "index": "druid-6",
     "class": {
       "index": "druid",
-      "name": "Друид"
-    }
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
+    },
+    "url": "/api/2014/classes/druid/levels/6"
   },
   {
     "level": 7,
@@ -2064,8 +2279,10 @@
     "index": "druid-7",
     "class": {
       "index": "druid",
-      "name": "Друид"
-    }
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
+    },
+    "url": "/api/2014/classes/druid/levels/7"
   },
   {
     "level": 8,
@@ -2074,11 +2291,13 @@
     "features": [
       {
         "index": "wild-shape-cr-1-or-below",
-        "name": "Дикий облик (Опасность 1 или ниже)"
+        "name": "Дикий облик (Опасность 1 или ниже)",
+        "url": "/api/2014/features/wild-shape-cr-1-or-below"
       },
       {
         "index": "druid-ability-score-improvement-2",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/druid-ability-score-improvement-2"
       }
     ],
     "spellcasting": {
@@ -2101,8 +2320,10 @@
     "index": "druid-8",
     "class": {
       "index": "druid",
-      "name": "Друид"
-    }
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
+    },
+    "url": "/api/2014/classes/druid/levels/8"
   },
   {
     "level": 9,
@@ -2129,8 +2350,10 @@
     "index": "druid-9",
     "class": {
       "index": "druid",
-      "name": "Друид"
-    }
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
+    },
+    "url": "/api/2014/classes/druid/levels/9"
   },
   {
     "level": 10,
@@ -2139,7 +2362,8 @@
     "features": [
       {
         "index": "druid-circle-improvement-2",
-        "name": "Умение друидического круга"
+        "name": "Умение друидского круга",
+        "url": "/api/2014/features/druid-circle-improvement-2"
       }
     ],
     "spellcasting": {
@@ -2162,8 +2386,10 @@
     "index": "druid-10",
     "class": {
       "index": "druid",
-      "name": "Друид"
-    }
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
+    },
+    "url": "/api/2014/classes/druid/levels/10"
   },
   {
     "level": 11,
@@ -2190,8 +2416,10 @@
     "index": "druid-11",
     "class": {
       "index": "druid",
-      "name": "Друид"
-    }
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
+    },
+    "url": "/api/2014/classes/druid/levels/11"
   },
   {
     "level": 12,
@@ -2200,7 +2428,8 @@
     "features": [
       {
         "index": "druid-ability-score-improvement-3",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/druid-ability-score-improvement-3"
       }
     ],
     "spellcasting": {
@@ -2223,8 +2452,10 @@
     "index": "druid-12",
     "class": {
       "index": "druid",
-      "name": "Друид"
-    }
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
+    },
+    "url": "/api/2014/classes/druid/levels/12"
   },
   {
     "level": 13,
@@ -2251,8 +2482,10 @@
     "index": "druid-13",
     "class": {
       "index": "druid",
-      "name": "Друид"
-    }
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
+    },
+    "url": "/api/2014/classes/druid/levels/13"
   },
   {
     "level": 14,
@@ -2261,7 +2494,8 @@
     "features": [
       {
         "index": "druid-circle-improvement-3",
-        "name": "Умение друидического круга"
+        "name": "Умение друидского круга",
+        "url": "/api/2014/features/druid-circle-improvement-3"
       }
     ],
     "spellcasting": {
@@ -2284,8 +2518,10 @@
     "index": "druid-14",
     "class": {
       "index": "druid",
-      "name": "Друид"
-    }
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
+    },
+    "url": "/api/2014/classes/druid/levels/14"
   },
   {
     "level": 15,
@@ -2312,8 +2548,10 @@
     "index": "druid-15",
     "class": {
       "index": "druid",
-      "name": "Друид"
-    }
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
+    },
+    "url": "/api/2014/classes/druid/levels/15"
   },
   {
     "level": 16,
@@ -2322,7 +2560,8 @@
     "features": [
       {
         "index": "druid-ability-score-improvement-4",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/druid-ability-score-improvement-4"
       }
     ],
     "spellcasting": {
@@ -2345,8 +2584,10 @@
     "index": "druid-16",
     "class": {
       "index": "druid",
-      "name": "Друид"
-    }
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
+    },
+    "url": "/api/2014/classes/druid/levels/16"
   },
   {
     "level": 17,
@@ -2373,8 +2614,10 @@
     "index": "druid-17",
     "class": {
       "index": "druid",
-      "name": "Друид"
-    }
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
+    },
+    "url": "/api/2014/classes/druid/levels/17"
   },
   {
     "level": 18,
@@ -2383,11 +2626,13 @@
     "features": [
       {
         "index": "druid-timeless-body",
-        "name": "Безвозрастное тело"
+        "name": "Тело без возраста",
+        "url": "/api/2014/features/druid-timeless-body"
       },
       {
         "index": "beast-spells",
-        "name": "Заклинания зверя"
+        "name": "Заклинания зверя",
+        "url": "/api/2014/features/beast-spells"
       }
     ],
     "spellcasting": {
@@ -2410,8 +2655,10 @@
     "index": "druid-18",
     "class": {
       "index": "druid",
-      "name": "Друид"
-    }
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
+    },
+    "url": "/api/2014/classes/druid/levels/18"
   },
   {
     "level": 19,
@@ -2420,7 +2667,8 @@
     "features": [
       {
         "index": "druid-ability-score-improvement-5",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/druid-ability-score-improvement-5"
       }
     ],
     "spellcasting": {
@@ -2443,8 +2691,10 @@
     "index": "druid-19",
     "class": {
       "index": "druid",
-      "name": "Друид"
-    }
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
+    },
+    "url": "/api/2014/classes/druid/levels/19"
   },
   {
     "level": 20,
@@ -2453,7 +2703,8 @@
     "features": [
       {
         "index": "archdruid",
-        "name": "Архидруид"
+        "name": "Архидруид",
+        "url": "/api/2014/features/archdruid"
       }
     ],
     "spellcasting": {
@@ -2476,8 +2727,10 @@
     "index": "druid-20",
     "class": {
       "index": "druid",
-      "name": "Друид"
-    }
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
+    },
+    "url": "/api/2014/classes/druid/levels/20"
   },
   {
     "level": 1,
@@ -2486,11 +2739,13 @@
     "features": [
       {
         "index": "fighter-fighting-style",
-        "name": "Боевой стиль"
+        "name": "Боевой стиль",
+        "url": "/api/2014/features/fighter-fighting-style"
       },
       {
         "index": "second-wind",
-        "name": "Второе дыхание"
+        "name": "Второе дыхание",
+        "url": "/api/2014/features/second-wind"
       }
     ],
     "class_specific": {
@@ -2501,8 +2756,10 @@
     "index": "fighter-1",
     "class": {
       "index": "fighter",
-      "name": "Воин"
-    }
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
+    },
+    "url": "/api/2014/classes/fighter/levels/1"
   },
   {
     "level": 2,
@@ -2511,7 +2768,8 @@
     "features": [
       {
         "index": "action-surge-1-use",
-        "name": "Всплеск действий (1 использование)"
+        "name": "Порыв к действию (1 использование)",
+        "url": "/api/2014/features/action-surge-1-use"
       }
     ],
     "class_specific": {
@@ -2522,8 +2780,10 @@
     "index": "fighter-2",
     "class": {
       "index": "fighter",
-      "name": "Воин"
-    }
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
+    },
+    "url": "/api/2014/classes/fighter/levels/2"
   },
   {
     "level": 3,
@@ -2532,7 +2792,8 @@
     "features": [
       {
         "index": "martial-archetype",
-        "name": "Воинский архетип"
+        "name": "Воинский архетип",
+        "url": "/api/2014/features/martial-archetype"
       }
     ],
     "class_specific": {
@@ -2543,8 +2804,10 @@
     "index": "fighter-3",
     "class": {
       "index": "fighter",
-      "name": "Воин"
-    }
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
+    },
+    "url": "/api/2014/classes/fighter/levels/3"
   },
   {
     "level": 4,
@@ -2553,7 +2816,8 @@
     "features": [
       {
         "index": "fighter-ability-score-improvement-1",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/fighter-ability-score-improvement-1"
       }
     ],
     "class_specific": {
@@ -2564,8 +2828,10 @@
     "index": "fighter-4",
     "class": {
       "index": "fighter",
-      "name": "Воин"
-    }
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
+    },
+    "url": "/api/2014/classes/fighter/levels/4"
   },
   {
     "level": 5,
@@ -2574,7 +2840,8 @@
     "features": [
       {
         "index": "extra-attack-1",
-        "name": "Дополнительная атака"
+        "name": "Дополнительная атака",
+        "url": "/api/2014/features/extra-attack-1"
       }
     ],
     "class_specific": {
@@ -2585,8 +2852,10 @@
     "index": "fighter-5",
     "class": {
       "index": "fighter",
-      "name": "Воин"
-    }
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
+    },
+    "url": "/api/2014/classes/fighter/levels/5"
   },
   {
     "level": 6,
@@ -2595,7 +2864,8 @@
     "features": [
       {
         "index": "fighter-ability-score-improvement-2",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/fighter-ability-score-improvement-2"
       }
     ],
     "class_specific": {
@@ -2606,8 +2876,10 @@
     "index": "fighter-6",
     "class": {
       "index": "fighter",
-      "name": "Воин"
-    }
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
+    },
+    "url": "/api/2014/classes/fighter/levels/6"
   },
   {
     "level": 7,
@@ -2616,7 +2888,8 @@
     "features": [
       {
         "index": "martial-archetype-improvement-1",
-        "name": "Умение воинского архетипа"
+        "name": "Умение воинского архетипа",
+        "url": "/api/2014/features/martial-archetype-improvement-1"
       }
     ],
     "class_specific": {
@@ -2627,8 +2900,10 @@
     "index": "fighter-7",
     "class": {
       "index": "fighter",
-      "name": "Воин"
-    }
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
+    },
+    "url": "/api/2014/classes/fighter/levels/7"
   },
   {
     "level": 8,
@@ -2637,7 +2912,8 @@
     "features": [
       {
         "index": "fighter-ability-score-improvement-3",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/fighter-ability-score-improvement-3"
       }
     ],
     "class_specific": {
@@ -2648,8 +2924,10 @@
     "index": "fighter-8",
     "class": {
       "index": "fighter",
-      "name": "Воин"
-    }
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
+    },
+    "url": "/api/2014/classes/fighter/levels/8"
   },
   {
     "level": 9,
@@ -2658,7 +2936,8 @@
     "features": [
       {
         "index": "indomitable-1-use",
-        "name": "Неукротимость (1 использование)"
+        "name": "Неукротимость (1 использование)",
+        "url": "/api/2014/features/indomitable-1-use"
       }
     ],
     "class_specific": {
@@ -2669,8 +2948,10 @@
     "index": "fighter-9",
     "class": {
       "index": "fighter",
-      "name": "Воин"
-    }
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
+    },
+    "url": "/api/2014/classes/fighter/levels/9"
   },
   {
     "level": 10,
@@ -2679,7 +2960,8 @@
     "features": [
       {
         "index": "martial-archetype-improvement-2",
-        "name": "Умение воинского архетипа"
+        "name": "Умение воинского архетипа",
+        "url": "/api/2014/features/martial-archetype-improvement-2"
       }
     ],
     "class_specific": {
@@ -2690,8 +2972,10 @@
     "index": "fighter-10",
     "class": {
       "index": "fighter",
-      "name": "Воин"
-    }
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
+    },
+    "url": "/api/2014/classes/fighter/levels/10"
   },
   {
     "level": 11,
@@ -2700,7 +2984,8 @@
     "features": [
       {
         "index": "extra-attack-2",
-        "name": "Дополнительная атака (2)"
+        "name": "Дополнительная атака (2)",
+        "url": "/api/2014/features/extra-attack-2"
       }
     ],
     "class_specific": {
@@ -2711,8 +2996,10 @@
     "index": "fighter-11",
     "class": {
       "index": "fighter",
-      "name": "Воин"
-    }
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
+    },
+    "url": "/api/2014/classes/fighter/levels/11"
   },
   {
     "level": 12,
@@ -2721,7 +3008,8 @@
     "features": [
       {
         "index": "fighter-ability-score-improvement-4",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/fighter-ability-score-improvement-4"
       }
     ],
     "class_specific": {
@@ -2732,8 +3020,10 @@
     "index": "fighter-12",
     "class": {
       "index": "fighter",
-      "name": "Воин"
-    }
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
+    },
+    "url": "/api/2014/classes/fighter/levels/12"
   },
   {
     "level": 13,
@@ -2742,7 +3032,8 @@
     "features": [
       {
         "index": "indomitable-2-uses",
-        "name": "Неукротимость (2 использования)"
+        "name": "Неукротимость (2 использования)",
+        "url": "/api/2014/features/indomitable-2-uses"
       }
     ],
     "class_specific": {
@@ -2753,8 +3044,10 @@
     "index": "fighter-13",
     "class": {
       "index": "fighter",
-      "name": "Воин"
-    }
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
+    },
+    "url": "/api/2014/classes/fighter/levels/13"
   },
   {
     "level": 14,
@@ -2763,7 +3056,8 @@
     "features": [
       {
         "index": "fighter-ability-score-improvement-5",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/fighter-ability-score-improvement-5"
       }
     ],
     "class_specific": {
@@ -2774,8 +3068,10 @@
     "index": "fighter-14",
     "class": {
       "index": "fighter",
-      "name": "Воин"
-    }
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
+    },
+    "url": "/api/2014/classes/fighter/levels/14"
   },
   {
     "level": 15,
@@ -2784,7 +3080,8 @@
     "features": [
       {
         "index": "martial-archetype-improvement-3",
-        "name": "Умение воинского архетипа"
+        "name": "Умение воинского архетитипа",
+        "url": "/api/2014/features/martial-archetype-improvement-3"
       }
     ],
     "class_specific": {
@@ -2795,8 +3092,10 @@
     "index": "fighter-15",
     "class": {
       "index": "fighter",
-      "name": "Воин"
-    }
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
+    },
+    "url": "/api/2014/classes/fighter/levels/15"
   },
   {
     "level": 16,
@@ -2805,7 +3104,8 @@
     "features": [
       {
         "index": "fighter-ability-score-improvement-6",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/fighter-ability-score-improvement-6"
       }
     ],
     "class_specific": {
@@ -2816,8 +3116,10 @@
     "index": "fighter-16",
     "class": {
       "index": "fighter",
-      "name": "Воин"
-    }
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
+    },
+    "url": "/api/2014/classes/fighter/levels/16"
   },
   {
     "level": 17,
@@ -2826,11 +3128,13 @@
     "features": [
       {
         "index": "action-surge-2-uses",
-        "name": "Всплеск действий (2 использования)"
+        "name": "Порыв к действию (2 использования)",
+        "url": "/api/2014/features/action-surge-2-uses"
       },
       {
         "index": "indomitable-3-uses",
-        "name": "Неукротимость (3 использования)"
+        "name": "Неукротимость (3 использования)",
+        "url": "/api/2014/features/indomitable-3-uses"
       }
     ],
     "class_specific": {
@@ -2841,8 +3145,10 @@
     "index": "fighter-17",
     "class": {
       "index": "fighter",
-      "name": "Воин"
-    }
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
+    },
+    "url": "/api/2014/classes/fighter/levels/17"
   },
   {
     "level": 18,
@@ -2851,7 +3157,8 @@
     "features": [
       {
         "index": "martial-archetype-improvement-4",
-        "name": "Умение воинского архетипа"
+        "name": "Умение воинского архетитипа",
+        "url": "/api/2014/features/martial-archetype-improvement-4"
       }
     ],
     "class_specific": {
@@ -2862,8 +3169,10 @@
     "index": "fighter-18",
     "class": {
       "index": "fighter",
-      "name": "Воин"
-    }
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
+    },
+    "url": "/api/2014/classes/fighter/levels/18"
   },
   {
     "level": 19,
@@ -2872,7 +3181,8 @@
     "features": [
       {
         "index": "fighter-ability-score-improvement-7",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/fighter-ability-score-improvement-7"
       }
     ],
     "class_specific": {
@@ -2883,8 +3193,10 @@
     "index": "fighter-19",
     "class": {
       "index": "fighter",
-      "name": "Воин"
-    }
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
+    },
+    "url": "/api/2014/classes/fighter/levels/19"
   },
   {
     "level": 20,
@@ -2893,7 +3205,8 @@
     "features": [
       {
         "index": "extra-attack-3",
-        "name": "Дополнительная атака (3)"
+        "name": "Дополнительная атака (3)",
+        "url": "/api/2014/features/extra-attack-3"
       }
     ],
     "class_specific": {
@@ -2904,8 +3217,10 @@
     "index": "fighter-20",
     "class": {
       "index": "fighter",
-      "name": "Воин"
-    }
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
+    },
+    "url": "/api/2014/classes/fighter/levels/20"
   },
   {
     "level": 1,
@@ -2914,11 +3229,13 @@
     "features": [
       {
         "index": "monk-unarmored-defense",
-        "name": "Защита без доспехов"
+        "name": "Защита без доспехов",
+        "url": "/api/2014/features/monk-unarmored-defense"
       },
       {
         "index": "martial-arts",
-        "name": "Боевые искусства"
+        "name": "Боевые искусства",
+        "url": "/api/2014/features/martial-arts"
       }
     ],
     "class_specific": {
@@ -2932,8 +3249,10 @@
     "index": "monk-1",
     "class": {
       "index": "monk",
-      "name": "Монах"
-    }
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
+    },
+    "url": "/api/2014/classes/monk/levels/1"
   },
   {
     "level": 2,
@@ -2942,23 +3261,28 @@
     "features": [
       {
         "index": "ki",
-        "name": "Ци"
+        "name": "Ки",
+        "url": "/api/2014/features/ki"
       },
       {
         "index": "flurry-of-blows",
-        "name": "Шквал ударов"
+        "name": "Шквал ударов",
+        "url": "/api/2014/features/flurry-of-blows"
       },
       {
         "index": "patient-defense",
-        "name": "Терпеливая оборона"
+        "name": "Терпеливая оборона",
+        "url": "/api/2014/features/patient-defense"
       },
       {
         "index": "step-of-the-wind",
-        "name": "Шаг ветра"
+        "name": "Шаг ветра",
+        "url": "/api/2014/features/step-of-the-wind"
       },
       {
         "index": "unarmored-movement-1",
-        "name": "Движение без доспехов"
+        "name": "Движение без доспехов",
+        "url": "/api/2014/features/unarmored-movement-1"
       }
     ],
     "class_specific": {
@@ -2972,8 +3296,10 @@
     "index": "monk-2",
     "class": {
       "index": "monk",
-      "name": "Монах"
-    }
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
+    },
+    "url": "/api/2014/classes/monk/levels/2"
   },
   {
     "level": 3,
@@ -2982,11 +3308,13 @@
     "features": [
       {
         "index": "monastic-tradition",
-        "name": "Монашеская традиция"
+        "name": "Монашеская традиция",
+        "url": "/api/2014/features/monastic-tradition"
       },
       {
         "index": "deflect-missiles",
-        "name": "Отражение снарядов"
+        "name": "Отражение снарядов",
+        "url": "/api/2014/features/deflect-missiles"
       }
     ],
     "class_specific": {
@@ -3000,8 +3328,10 @@
     "index": "monk-3",
     "class": {
       "index": "monk",
-      "name": "Монах"
-    }
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
+    },
+    "url": "/api/2014/classes/monk/levels/3"
   },
   {
     "level": 4,
@@ -3010,11 +3340,13 @@
     "features": [
       {
         "index": "monk-ability-score-improvement-1",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/monk-ability-score-improvement-1"
       },
       {
         "index": "slow-fall",
-        "name": "Медленное падение"
+        "name": "Медленное падение",
+        "url": "/api/2014/features/slow-fall"
       }
     ],
     "class_specific": {
@@ -3028,8 +3360,10 @@
     "index": "monk-4",
     "class": {
       "index": "monk",
-      "name": "Монах"
-    }
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
+    },
+    "url": "/api/2014/classes/monk/levels/4"
   },
   {
     "level": 5,
@@ -3038,11 +3372,13 @@
     "features": [
       {
         "index": "monk-extra-attack",
-        "name": "Дополнительная атака"
+        "name": "Дополнительная атака",
+        "url": "/api/2014/features/monk-extra-attack"
       },
       {
         "index": "stunning-strike",
-        "name": "Ошеломляющий удар"
+        "name": "Ошеломляющий удар",
+        "url": "/api/2014/features/stunning-strike"
       }
     ],
     "class_specific": {
@@ -3056,8 +3392,10 @@
     "index": "monk-5",
     "class": {
       "index": "monk",
-      "name": "Монах"
-    }
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
+    },
+    "url": "/api/2014/classes/monk/levels/5"
   },
   {
     "level": 6,
@@ -3066,11 +3404,13 @@
     "features": [
       {
         "index": "ki-empowered-strikes",
-        "name": "Удары, заряженные Ци"
+        "name": "Удары, заряженные Ки",
+        "url": "/api/2014/features/ki-empowered-strikes"
       },
       {
         "index": "monastic-tradition-improvement-1",
-        "name": "Умение монашеской традиции"
+        "name": "Умение монашеской традиции",
+        "url": "/api/2014/features/monastic-tradition-improvement-1"
       }
     ],
     "class_specific": {
@@ -3084,8 +3424,10 @@
     "index": "monk-6",
     "class": {
       "index": "monk",
-      "name": "Монах"
-    }
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
+    },
+    "url": "/api/2014/classes/monk/levels/6"
   },
   {
     "level": 7,
@@ -3094,11 +3436,13 @@
     "features": [
       {
         "index": "monk-evasion",
-        "name": "Уклонение"
+        "name": "Уклонение",
+        "url": "/api/2014/features/monk-evasion"
       },
       {
         "index": "stillness-of-mind",
-        "name": "Спокойствие разума"
+        "name": "Спокойствие разума",
+        "url": "/api/2014/features/stillness-of-mind"
       }
     ],
     "class_specific": {
@@ -3112,8 +3456,10 @@
     "index": "monk-7",
     "class": {
       "index": "monk",
-      "name": "Монах"
-    }
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
+    },
+    "url": "/api/2014/classes/monk/levels/7"
   },
   {
     "level": 8,
@@ -3122,7 +3468,8 @@
     "features": [
       {
         "index": "monk-ability-score-improvement-2",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/monk-ability-score-improvement-2"
       }
     ],
     "class_specific": {
@@ -3136,8 +3483,10 @@
     "index": "monk-8",
     "class": {
       "index": "monk",
-      "name": "Монах"
-    }
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
+    },
+    "url": "/api/2014/classes/monk/levels/8"
   },
   {
     "level": 9,
@@ -3146,7 +3495,8 @@
     "features": [
       {
         "index": "unarmored-movement-2",
-        "name": "Движение без доспехов"
+        "name": "Движение без доспехов",
+        "url": "/api/2014/features/unarmored-movement-2"
       }
     ],
     "class_specific": {
@@ -3160,8 +3510,10 @@
     "index": "monk-9",
     "class": {
       "index": "monk",
-      "name": "Монах"
-    }
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
+    },
+    "url": "/api/2014/classes/monk/levels/9"
   },
   {
     "level": 10,
@@ -3170,7 +3522,8 @@
     "features": [
       {
         "index": "purity-of-body",
-        "name": "Чистота тела"
+        "name": "Чистота тела",
+        "url": "/api/2014/features/purity-of-body"
       }
     ],
     "class_specific": {
@@ -3184,8 +3537,10 @@
     "index": "monk-10",
     "class": {
       "index": "monk",
-      "name": "Монах"
-    }
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
+    },
+    "url": "/api/2014/classes/monk/levels/10"
   },
   {
     "level": 11,
@@ -3194,7 +3549,8 @@
     "features": [
       {
         "index": "monastic-tradition-improvement-2",
-        "name": "Умение монашеской традиции"
+        "name": "Умение монашеской традиции",
+        "url": "/api/2014/features/monastic-tradition-improvement-2"
       }
     ],
     "class_specific": {
@@ -3208,8 +3564,10 @@
     "index": "monk-11",
     "class": {
       "index": "monk",
-      "name": "Монах"
-    }
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
+    },
+    "url": "/api/2014/classes/monk/levels/11"
   },
   {
     "level": 12,
@@ -3218,7 +3576,8 @@
     "features": [
       {
         "index": "monk-ability-score-improvement-3",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/monk-ability-score-improvement-3"
       }
     ],
     "class_specific": {
@@ -3232,8 +3591,10 @@
     "index": "monk-12",
     "class": {
       "index": "monk",
-      "name": "Монах"
-    }
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
+    },
+    "url": "/api/2014/classes/monk/levels/12"
   },
   {
     "level": 13,
@@ -3242,7 +3603,8 @@
     "features": [
       {
         "index": "tongue-of-the-sun-and-moon",
-        "name": "Язык солнца и луны"
+        "name": "Язык солнца и луны",
+        "url": "/api/2014/features/tongue-of-the-sun-and-moon"
       }
     ],
     "class_specific": {
@@ -3256,8 +3618,10 @@
     "index": "monk-13",
     "class": {
       "index": "monk",
-      "name": "Монах"
-    }
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
+    },
+    "url": "/api/2014/classes/monk/levels/13"
   },
   {
     "level": 14,
@@ -3266,7 +3630,8 @@
     "features": [
       {
         "index": "diamond-soul",
-        "name": "Алмазная душа"
+        "name": "Алмазная душа",
+        "url": "/api/2014/features/diamond-soul"
       }
     ],
     "class_specific": {
@@ -3280,8 +3645,10 @@
     "index": "monk-14",
     "class": {
       "index": "monk",
-      "name": "Монах"
-    }
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
+    },
+    "url": "/api/2014/classes/monk/levels/14"
   },
   {
     "level": 15,
@@ -3290,7 +3657,8 @@
     "features": [
       {
         "index": "monk-timeless-body",
-        "name": "Безвозрастное тело"
+        "name": "Тело вне времени",
+        "url": "/api/2014/features/monk-timeless-body"
       }
     ],
     "class_specific": {
@@ -3304,8 +3672,10 @@
     "index": "monk-15",
     "class": {
       "index": "monk",
-      "name": "Монах"
-    }
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
+    },
+    "url": "/api/2014/classes/monk/levels/15"
   },
   {
     "level": 16,
@@ -3314,7 +3684,8 @@
     "features": [
       {
         "index": "monk-ability-score-improvement-4",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/monk-ability-score-improvement-4"
       }
     ],
     "class_specific": {
@@ -3328,8 +3699,10 @@
     "index": "monk-16",
     "class": {
       "index": "monk",
-      "name": "Монах"
-    }
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
+    },
+    "url": "/api/2014/classes/monk/levels/16"
   },
   {
     "level": 17,
@@ -3338,7 +3711,8 @@
     "features": [
       {
         "index": "monastic-tradition-improvement-3",
-        "name": "Умение монашеской традиции"
+        "name": "Умение монашеской традиции",
+        "url": "/api/2014/features/monastic-tradition-improvement-3"
       }
     ],
     "class_specific": {
@@ -3352,8 +3726,10 @@
     "index": "monk-17",
     "class": {
       "index": "monk",
-      "name": "Монах"
-    }
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
+    },
+    "url": "/api/2014/classes/monk/levels/17"
   },
   {
     "level": 18,
@@ -3362,7 +3738,8 @@
     "features": [
       {
         "index": "empty-body",
-        "name": "Пустое тело"
+        "name": "Пустое тело",
+        "url": "/api/2014/features/empty-body"
       }
     ],
     "class_specific": {
@@ -3376,8 +3753,10 @@
     "index": "monk-18",
     "class": {
       "index": "monk",
-      "name": "Монах"
-    }
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
+    },
+    "url": "/api/2014/classes/monk/levels/18"
   },
   {
     "level": 19,
@@ -3386,7 +3765,8 @@
     "features": [
       {
         "index": "monk-ability-score-improvement-5",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/monk-ability-score-improvement-5"
       }
     ],
     "class_specific": {
@@ -3400,8 +3780,10 @@
     "index": "monk-19",
     "class": {
       "index": "monk",
-      "name": "Монах"
-    }
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
+    },
+    "url": "/api/2014/classes/monk/levels/19"
   },
   {
     "level": 20,
@@ -3410,7 +3792,8 @@
     "features": [
       {
         "index": "perfect-self",
-        "name": "Совершенство"
+        "name": "Совершенство",
+        "url": "/api/2014/features/perfect-self"
       }
     ],
     "class_specific": {
@@ -3424,8 +3807,10 @@
     "index": "monk-20",
     "class": {
       "index": "monk",
-      "name": "Монах"
-    }
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
+    },
+    "url": "/api/2014/classes/monk/levels/20"
   },
   {
     "level": 1,
@@ -3434,11 +3819,13 @@
     "features": [
       {
         "index": "divine-sense",
-        "name": "Божественное чувство"
+        "name": "Божественное чувство",
+        "url": "/api/2014/features/divine-sense"
       },
       {
         "index": "lay-on-hands",
-        "name": "Наложение рук"
+        "name": "Наложение рук",
+        "url": "/api/2014/features/lay-on-hands"
       }
     ],
     "spellcasting": {
@@ -3454,8 +3841,10 @@
     "index": "paladin-1",
     "class": {
       "index": "paladin",
-      "name": "Паладин"
-    }
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
+    },
+    "url": "/api/2014/classes/paladin/levels/1"
   },
   {
     "level": 2,
@@ -3464,15 +3853,18 @@
     "features": [
       {
         "index": "paladin-fighting-style",
-        "name": "Боевой стиль"
+        "name": "Боевой стиль",
+        "url": "/api/2014/features/paladin-fighting-style"
       },
       {
         "index": "spellcasting-paladin",
-        "name": "Использование заклинаний: Паладин"
+        "name": "Использование заклинаний: Паладин",
+        "url": "/api/2014/features/spellcasting-paladin"
       },
       {
         "index": "divine-smite",
-        "name": "Божественная кара"
+        "name": "Божественная кара",
+        "url": "/api/2014/features/divine-smite"
       }
     ],
     "spellcasting": {
@@ -3488,8 +3880,10 @@
     "index": "paladin-2",
     "class": {
       "index": "paladin",
-      "name": "Паладин"
-    }
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
+    },
+    "url": "/api/2014/classes/paladin/levels/2"
   },
   {
     "level": 3,
@@ -3498,19 +3892,23 @@
     "features": [
       {
         "index": "divine-health",
-        "name": "Божественное здоровье"
+        "name": "Божественное здоровье",
+        "url": "/api/2014/features/divine-health"
       },
       {
         "index": "sacred-oath",
-        "name": "Священная клятва"
+        "name": "Священная клятва",
+        "url": "/api/2014/features/sacred-oath"
       },
       {
         "index": "oath-spells",
-        "name": "Заклинания клятвы"
+        "name": "Заклинания клятвы",
+        "url": "/api/2014/features/oath-spells"
       },
       {
         "index": "channel-divinity",
-        "name": "Божественный канал"
+        "name": "Божественный канал",
+        "url": "/api/2014/features/channel-divinity"
       }
     ],
     "spellcasting": {
@@ -3526,8 +3924,10 @@
     "index": "paladin-3",
     "class": {
       "index": "paladin",
-      "name": "Паладин"
-    }
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
+    },
+    "url": "/api/2014/classes/paladin/levels/3"
   },
   {
     "level": 4,
@@ -3536,7 +3936,8 @@
     "features": [
       {
         "index": "paladin-ability-score-improvement-1",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/paladin-ability-score-improvement-1"
       }
     ],
     "spellcasting": {
@@ -3552,8 +3953,10 @@
     "index": "paladin-4",
     "class": {
       "index": "paladin",
-      "name": "Паладин"
-    }
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
+    },
+    "url": "/api/2014/classes/paladin/levels/4"
   },
   {
     "level": 5,
@@ -3562,7 +3965,8 @@
     "features": [
       {
         "index": "paladin-extra-attack",
-        "name": "Дополнительная атака"
+        "name": "Дополнительная атака",
+        "url": "/api/2014/features/paladin-extra-attack"
       }
     ],
     "spellcasting": {
@@ -3578,17 +3982,20 @@
     "index": "paladin-5",
     "class": {
       "index": "paladin",
-      "name": "Паладин"
-    }
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
+    },
+    "url": "/api/2014/classes/paladin/levels/5"
   },
   {
     "level": 6,
-    "ability_score_bonuses": 1,
+    "ability_score_bonuses": 0,
     "prof_bonus": 3,
     "features": [
       {
         "index": "aura-of-protection",
-        "name": "Аура защиты"
+        "name": "Аура защиты",
+        "url": "/api/2014/features/aura-of-protection"
       }
     ],
     "spellcasting": {
@@ -3604,17 +4011,20 @@
     "index": "paladin-6",
     "class": {
       "index": "paladin",
-      "name": "Паладин"
-    }
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
+    },
+    "url": "/api/2014/classes/paladin/levels/6"
   },
   {
     "level": 7,
-    "ability_score_bonuses": 1,
+    "ability_score_bonuses": 0,
     "prof_bonus": 3,
     "features": [
       {
         "index": "sacred-oath-improvement-1",
-        "name": "Умение священной клятвы"
+        "name": "Умение священной клятвы",
+        "url": "/api/2014/features/sacred-oath-improvement-1"
       }
     ],
     "spellcasting": {
@@ -3630,17 +4040,20 @@
     "index": "paladin-7",
     "class": {
       "index": "paladin",
-      "name": "Паладин"
-    }
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
+    },
+    "url": "/api/2014/classes/paladin/levels/7"
   },
   {
     "level": 8,
-    "ability_score_bonuses": 2,
+    "ability_score_bonuses": 1,
     "prof_bonus": 3,
     "features": [
       {
         "index": "paladin-ability-score-improvement-2",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/paladin-ability-score-improvement-2"
       }
     ],
     "spellcasting": {
@@ -3656,12 +4069,14 @@
     "index": "paladin-8",
     "class": {
       "index": "paladin",
-      "name": "Паладин"
-    }
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
+    },
+    "url": "/api/2014/classes/paladin/levels/8"
   },
   {
     "level": 9,
-    "ability_score_bonuses": 2,
+    "ability_score_bonuses": 0,
     "prof_bonus": 4,
     "features": [],
     "spellcasting": {
@@ -3677,17 +4092,20 @@
     "index": "paladin-9",
     "class": {
       "index": "paladin",
-      "name": "Паладин"
-    }
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
+    },
+    "url": "/api/2014/classes/paladin/levels/9"
   },
   {
     "level": 10,
-    "ability_score_bonuses": 2,
+    "ability_score_bonuses": 0,
     "prof_bonus": 4,
     "features": [
       {
         "index": "aura-of-courage",
-        "name": "Аура храбрости"
+        "name": "Аура мужества",
+        "url": "/api/2014/features/aura-of-courage"
       }
     ],
     "spellcasting": {
@@ -3703,17 +4121,20 @@
     "index": "paladin-10",
     "class": {
       "index": "paladin",
-      "name": "Паладин"
-    }
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
+    },
+    "url": "/api/2014/classes/paladin/levels/10"
   },
   {
     "level": 11,
-    "ability_score_bonuses": 2,
+    "ability_score_bonuses": 0,
     "prof_bonus": 4,
     "features": [
       {
         "index": "improved-divine-smite",
-        "name": "Улучшенная божественная кара"
+        "name": "Улучшенная божественная кара",
+        "url": "/api/2014/features/improved-divine-smite"
       }
     ],
     "spellcasting": {
@@ -3729,17 +4150,20 @@
     "index": "paladin-11",
     "class": {
       "index": "paladin",
-      "name": "Паладин"
-    }
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
+    },
+    "url": "/api/2014/classes/paladin/levels/11"
   },
   {
     "level": 12,
-    "ability_score_bonuses": 3,
+    "ability_score_bonuses": 1,
     "prof_bonus": 4,
     "features": [
       {
         "index": "paladin-ability-score-improvement-3",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/paladin-ability-score-improvement-3"
       }
     ],
     "spellcasting": {
@@ -3755,12 +4179,14 @@
     "index": "paladin-12",
     "class": {
       "index": "paladin",
-      "name": "Паладин"
-    }
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
+    },
+    "url": "/api/2014/classes/paladin/levels/12"
   },
   {
     "level": 13,
-    "ability_score_bonuses": 3,
+    "ability_score_bonuses": 0,
     "prof_bonus": 5,
     "features": [],
     "spellcasting": {
@@ -3776,17 +4202,20 @@
     "index": "paladin-13",
     "class": {
       "index": "paladin",
-      "name": "Паладин"
-    }
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
+    },
+    "url": "/api/2014/classes/paladin/levels/13"
   },
   {
     "level": 14,
-    "ability_score_bonuses": 3,
+    "ability_score_bonuses": 0,
     "prof_bonus": 5,
     "features": [
       {
         "index": "cleansing-touch",
-        "name": "Очищающее касание"
+        "name": "Очищающее касание",
+        "url": "/api/2014/features/cleansing-touch"
       }
     ],
     "spellcasting": {
@@ -3802,17 +4231,20 @@
     "index": "paladin-14",
     "class": {
       "index": "paladin",
-      "name": "Паладин"
-    }
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
+    },
+    "url": "/api/2014/classes/paladin/levels/14"
   },
   {
     "level": 15,
-    "ability_score_bonuses": 3,
+    "ability_score_bonuses": 0,
     "prof_bonus": 5,
     "features": [
       {
         "index": "sacred-oath-improvement-2",
-        "name": "Умение священной клятвы"
+        "name": "Умение священной клятвы",
+        "url": "/api/2014/features/sacred-oath-improvement-2"
       }
     ],
     "spellcasting": {
@@ -3828,17 +4260,20 @@
     "index": "paladin-15",
     "class": {
       "index": "paladin",
-      "name": "Паладин"
-    }
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
+    },
+    "url": "/api/2014/classes/paladin/levels/15"
   },
   {
     "level": 16,
-    "ability_score_bonuses": 4,
+    "ability_score_bonuses": 1,
     "prof_bonus": 5,
     "features": [
       {
         "index": "paladin-ability-score-improvement-4",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/paladin-ability-score-improvement-4"
       }
     ],
     "spellcasting": {
@@ -3854,12 +4289,14 @@
     "index": "paladin-16",
     "class": {
       "index": "paladin",
-      "name": "Паладин"
-    }
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
+    },
+    "url": "/api/2014/classes/paladin/levels/16"
   },
   {
     "level": 17,
-    "ability_score_bonuses": 4,
+    "ability_score_bonuses": 0,
     "prof_bonus": 6,
     "features": [],
     "spellcasting": {
@@ -3875,17 +4312,20 @@
     "index": "paladin-17",
     "class": {
       "index": "paladin",
-      "name": "Паладин"
-    }
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
+    },
+    "url": "/api/2014/classes/paladin/levels/17"
   },
   {
     "level": 18,
-    "ability_score_bonuses": 4,
+    "ability_score_bonuses": 0,
     "prof_bonus": 6,
     "features": [
       {
         "index": "aura-improvements",
-        "name": "Улучшение аур"
+        "name": "Улучшение ауры",
+        "url": "/api/2014/features/aura-improvements"
       }
     ],
     "spellcasting": {
@@ -3901,17 +4341,20 @@
     "index": "paladin-18",
     "class": {
       "index": "paladin",
-      "name": "Паладин"
-    }
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
+    },
+    "url": "/api/2014/classes/paladin/levels/18"
   },
   {
     "level": 19,
-    "ability_score_bonuses": 5,
+    "ability_score_bonuses": 1,
     "prof_bonus": 6,
     "features": [
       {
         "index": "paladin-ability-score-improvement-5",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/paladin-ability-score-improvement-5"
       }
     ],
     "spellcasting": {
@@ -3927,17 +4370,20 @@
     "index": "paladin-19",
     "class": {
       "index": "paladin",
-      "name": "Паладин"
-    }
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
+    },
+    "url": "/api/2014/classes/paladin/levels/19"
   },
   {
     "level": 20,
-    "ability_score_bonuses": 5,
+    "ability_score_bonuses": 0,
     "prof_bonus": 6,
     "features": [
       {
         "index": "sacred-oath-improvement-3",
-        "name": "Умение священной клятвы"
+        "name": "Умение священной клятвы",
+        "url": "/api/2014/features/sacred-oath-improvement-3"
       }
     ],
     "spellcasting": {
@@ -3953,8 +4399,10 @@
     "index": "paladin-20",
     "class": {
       "index": "paladin",
-      "name": "Паладин"
-    }
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
+    },
+    "url": "/api/2014/classes/paladin/levels/20"
   },
   {
     "level": 1,
@@ -3963,11 +4411,13 @@
     "features": [
       {
         "index": "favored-enemy-1-type",
-        "name": "Избранный враг (1 тип)"
+        "name": "Избранный враг (1 тип)",
+        "url": "/api/2014/features/favored-enemy-1-type"
       },
       {
         "index": "natural-explorer-1-terrain-type",
-        "name": "Исследователь природы (1 тип местности)"
+        "name": "Исследователь природы (1 тип местности)",
+        "url": "/api/2014/features/natural-explorer-1-terrain-type"
       }
     ],
     "spellcasting": {
@@ -3985,8 +4435,10 @@
     "index": "ranger-1",
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
-    }
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
+    },
+    "url": "/api/2014/classes/ranger/levels/1"
   },
   {
     "level": 2,
@@ -3995,11 +4447,13 @@
     "features": [
       {
         "index": "ranger-fighting-style",
-        "name": "Боевой стиль"
+        "name": "Боевой стиль",
+        "url": "/api/2014/features/ranger-fighting-style"
       },
       {
         "index": "spellcasting-ranger",
-        "name": "Использование заклинаний: Следопыт"
+        "name": "Использование заклинаний: Следопыт",
+        "url": "/api/2014/features/spellcasting-ranger"
       }
     ],
     "spellcasting": {
@@ -4017,8 +4471,10 @@
     "index": "ranger-2",
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
-    }
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
+    },
+    "url": "/api/2014/classes/ranger/levels/2"
   },
   {
     "level": 3,
@@ -4027,11 +4483,13 @@
     "features": [
       {
         "index": "ranger-archetype",
-        "name": "Архетип следопыта"
+        "name": "Архетип следопыта",
+        "url": "/api/2014/features/ranger-archetype"
       },
       {
         "index": "primeval-awareness",
-        "name": "Первобытная осведомленность"
+        "name": "Первобытная бдительность",
+        "url": "/api/2014/features/primeval-awareness"
       }
     ],
     "spellcasting": {
@@ -4049,8 +4507,10 @@
     "index": "ranger-3",
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
-    }
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
+    },
+    "url": "/api/2014/classes/ranger/levels/3"
   },
   {
     "level": 4,
@@ -4059,7 +4519,8 @@
     "features": [
       {
         "index": "ranger-ability-score-improvement-1",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/ranger-ability-score-improvement-1"
       }
     ],
     "spellcasting": {
@@ -4077,8 +4538,10 @@
     "index": "ranger-4",
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
-    }
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
+    },
+    "url": "/api/2014/classes/ranger/levels/4"
   },
   {
     "level": 5,
@@ -4087,7 +4550,8 @@
     "features": [
       {
         "index": "ranger-extra-attack",
-        "name": "Дополнительная атака"
+        "name": "Дополнительная атака",
+        "url": "/api/2014/features/ranger-extra-attack"
       }
     ],
     "spellcasting": {
@@ -4105,8 +4569,10 @@
     "index": "ranger-5",
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
-    }
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
+    },
+    "url": "/api/2014/classes/ranger/levels/5"
   },
   {
     "level": 6,
@@ -4115,11 +4581,13 @@
     "features": [
       {
         "index": "favored-enemy-2-types",
-        "name": "Избранный враг (2 типа)"
+        "name": "Избранный враг (2 типа)",
+        "url": "/api/2014/features/favored-enemy-2-types"
       },
       {
         "index": "natural-explorer-2-terrain-types",
-        "name": "Исследователь природы (2 типа местности)"
+        "name": "Исследователь природы (2 типа местности)",
+        "url": "/api/2014/features/natural-explorer-2-terrain-types"
       }
     ],
     "spellcasting": {
@@ -4137,8 +4605,10 @@
     "index": "ranger-6",
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
-    }
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
+    },
+    "url": "/api/2014/classes/ranger/levels/6"
   },
   {
     "level": 7,
@@ -4147,7 +4617,8 @@
     "features": [
       {
         "index": "ranger-archetype-improvement-1",
-        "name": "Умение архетипа следопыта"
+        "name": "Умение архетипа следопыта",
+        "url": "/api/2014/features/ranger-archetype-improvement-1"
       }
     ],
     "spellcasting": {
@@ -4165,8 +4636,10 @@
     "index": "ranger-7",
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
-    }
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
+    },
+    "url": "/api/2014/classes/ranger/levels/7"
   },
   {
     "level": 8,
@@ -4175,11 +4648,13 @@
     "features": [
       {
         "index": "ranger-ability-score-improvement-2",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/ranger-ability-score-improvement-2"
       },
       {
         "index": "ranger-lands-stride",
-        "name": "Поступь суши"
+        "name": "Поступь по суше",
+        "url": "/api/2014/features/ranger-lands-stride"
       }
     ],
     "spellcasting": {
@@ -4197,8 +4672,10 @@
     "index": "ranger-8",
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
-    }
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
+    },
+    "url": "/api/2014/classes/ranger/levels/8"
   },
   {
     "level": 9,
@@ -4220,8 +4697,10 @@
     "index": "ranger-9",
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
-    }
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
+    },
+    "url": "/api/2014/classes/ranger/levels/9"
   },
   {
     "level": 10,
@@ -4230,11 +4709,13 @@
     "features": [
       {
         "index": "natural-explorer-3-terrain-types",
-        "name": "Исследователь природы (3 типа местности)"
+        "name": "Исследователь природы (3 типа местности)",
+        "url": "/api/2014/features/natural-explorer-3-terrain-types"
       },
       {
         "index": "hide-in-plain-sight",
-        "name": "Маскировка на виду"
+        "name": "Маскировка на виду",
+        "url": "/api/2014/features/hide-in-plain-sight"
       }
     ],
     "spellcasting": {
@@ -4252,8 +4733,10 @@
     "index": "ranger-10",
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
-    }
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
+    },
+    "url": "/api/2014/classes/ranger/levels/10"
   },
   {
     "level": 11,
@@ -4262,7 +4745,8 @@
     "features": [
       {
         "index": "ranger-archetype-improvement-2",
-        "name": "Умение архетипа следопыта"
+        "name": "Умение архетипа следопыта",
+        "url": "/api/2014/features/ranger-archetype-improvement-2"
       }
     ],
     "spellcasting": {
@@ -4280,8 +4764,10 @@
     "index": "ranger-11",
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
-    }
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
+    },
+    "url": "/api/2014/classes/ranger/levels/11"
   },
   {
     "level": 12,
@@ -4290,7 +4776,8 @@
     "features": [
       {
         "index": "ranger-ability-score-improvement-3",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/ranger-ability-score-improvement-3"
       }
     ],
     "spellcasting": {
@@ -4308,8 +4795,10 @@
     "index": "ranger-12",
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
-    }
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
+    },
+    "url": "/api/2014/classes/ranger/levels/12"
   },
   {
     "level": 13,
@@ -4331,8 +4820,10 @@
     "index": "ranger-13",
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
-    }
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
+    },
+    "url": "/api/2014/classes/ranger/levels/13"
   },
   {
     "level": 14,
@@ -4341,11 +4832,13 @@
     "features": [
       {
         "index": "favored-enemy-3-enemies",
-        "name": "Избранный враг (3 типа)"
+        "name": "Избранный враг (3 типа)",
+        "url": "/api/2014/features/favored-enemy-3-enemies"
       },
       {
         "index": "vanish",
-        "name": "Исчезновение"
+        "name": "Исчезновение",
+        "url": "/api/2014/features/vanish"
       }
     ],
     "spellcasting": {
@@ -4363,8 +4856,10 @@
     "index": "ranger-14",
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
-    }
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
+    },
+    "url": "/api/2014/classes/ranger/levels/14"
   },
   {
     "level": 15,
@@ -4373,7 +4868,8 @@
     "features": [
       {
         "index": "ranger-archetype-improvement-3",
-        "name": "Умение архетипа следопыта"
+        "name": "Умение архетипа следопыта",
+        "url": "/api/2014/features/ranger-archetype-improvement-3"
       }
     ],
     "spellcasting": {
@@ -4391,8 +4887,10 @@
     "index": "ranger-15",
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
-    }
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
+    },
+    "url": "/api/2014/classes/ranger/levels/15"
   },
   {
     "level": 16,
@@ -4401,7 +4899,8 @@
     "features": [
       {
         "index": "ranger-ability-score-improvement-4",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/ranger-ability-score-improvement-4"
       }
     ],
     "spellcasting": {
@@ -4419,8 +4918,10 @@
     "index": "ranger-16",
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
-    }
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
+    },
+    "url": "/api/2014/classes/ranger/levels/16"
   },
   {
     "level": 17,
@@ -4442,8 +4943,10 @@
     "index": "ranger-17",
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
-    }
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
+    },
+    "url": "/api/2014/classes/ranger/levels/17"
   },
   {
     "level": 18,
@@ -4452,7 +4955,8 @@
     "features": [
       {
         "index": "feral-senses",
-        "name": "Дикие чувства"
+        "name": "Дикие чувства",
+        "url": "/api/2014/features/feral-senses"
       }
     ],
     "spellcasting": {
@@ -4470,8 +4974,10 @@
     "index": "ranger-18",
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
-    }
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
+    },
+    "url": "/api/2014/classes/ranger/levels/18"
   },
   {
     "level": 19,
@@ -4480,7 +4986,8 @@
     "features": [
       {
         "index": "ranger-ability-score-improvement-5",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/ranger-ability-score-improvement-5"
       }
     ],
     "spellcasting": {
@@ -4498,8 +5005,10 @@
     "index": "ranger-19",
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
-    }
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
+    },
+    "url": "/api/2014/classes/ranger/levels/19"
   },
   {
     "level": 20,
@@ -4508,7 +5017,8 @@
     "features": [
       {
         "index": "foe-slayer",
-        "name": "Убийца врагов"
+        "name": "Врагоубийца",
+        "url": "/api/2014/features/foe-slayer"
       }
     ],
     "spellcasting": {
@@ -4526,8 +5036,10 @@
     "index": "ranger-20",
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
-    }
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
+    },
+    "url": "/api/2014/classes/ranger/levels/20"
   },
   {
     "level": 1,
@@ -4536,15 +5048,18 @@
     "features": [
       {
         "index": "rogue-expertise-1",
-        "name": "Познания"
+        "name": "Компетентность",
+        "url": "/api/2014/features/rogue-expertise-1"
       },
       {
         "index": "sneak-attack",
-        "name": "Скрытая атака"
+        "name": "Скрытая атака",
+        "url": "/api/2014/features/sneak-attack"
       },
       {
         "index": "thieves-cant",
-        "name": "Воровской жаргон"
+        "name": "Воровской жаргон",
+        "url": "/api/2014/features/thieves-cant"
       }
     ],
     "class_specific": {
@@ -4556,8 +5071,10 @@
     "index": "rogue-1",
     "class": {
       "index": "rogue",
-      "name": "Плут"
-    }
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
+    },
+    "url": "/api/2014/classes/rogue/levels/1"
   },
   {
     "level": 2,
@@ -4566,7 +5083,8 @@
     "features": [
       {
         "index": "cunning-action",
-        "name": "Хитрое действие"
+        "name": "Хитрое действие",
+        "url": "/api/2014/features/cunning-action"
       }
     ],
     "class_specific": {
@@ -4578,8 +5096,10 @@
     "index": "rogue-2",
     "class": {
       "index": "rogue",
-      "name": "Плут"
-    }
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
+    },
+    "url": "/api/2014/classes/rogue/levels/2"
   },
   {
     "level": 3,
@@ -4588,7 +5108,8 @@
     "features": [
       {
         "index": "roguish-archetype",
-        "name": "Архетип плута"
+        "name": "Воровской архетип",
+        "url": "/api/2014/features/roguish-archetype"
       }
     ],
     "class_specific": {
@@ -4600,8 +5121,10 @@
     "index": "rogue-3",
     "class": {
       "index": "rogue",
-      "name": "Плут"
-    }
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
+    },
+    "url": "/api/2014/classes/rogue/levels/3"
   },
   {
     "level": 4,
@@ -4610,7 +5133,8 @@
     "features": [
       {
         "index": "rogue-ability-score-improvement-1",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/rogue-ability-score-improvement-1"
       }
     ],
     "class_specific": {
@@ -4622,8 +5146,10 @@
     "index": "rogue-4",
     "class": {
       "index": "rogue",
-      "name": "Плут"
-    }
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
+    },
+    "url": "/api/2014/classes/rogue/levels/4"
   },
   {
     "level": 5,
@@ -4632,7 +5158,8 @@
     "features": [
       {
         "index": "uncanny-dodge",
-        "name": "Необычайное уклонение"
+        "name": "Невероятное уклонение",
+        "url": "/api/2014/features/uncanny-dodge"
       }
     ],
     "class_specific": {
@@ -4644,8 +5171,10 @@
     "index": "rogue-5",
     "class": {
       "index": "rogue",
-      "name": "Плут"
-    }
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
+    },
+    "url": "/api/2014/classes/rogue/levels/5"
   },
   {
     "level": 6,
@@ -4654,7 +5183,8 @@
     "features": [
       {
         "index": "rogue-expertise-2",
-        "name": "Познания"
+        "name": "Компетентность",
+        "url": "/api/2014/features/rogue-expertise-2"
       }
     ],
     "class_specific": {
@@ -4666,8 +5196,10 @@
     "index": "rogue-6",
     "class": {
       "index": "rogue",
-      "name": "Плут"
-    }
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
+    },
+    "url": "/api/2014/classes/rogue/levels/6"
   },
   {
     "level": 7,
@@ -4676,7 +5208,8 @@
     "features": [
       {
         "index": "rogue-evasion",
-        "name": "Уклонение"
+        "name": "Уклонение",
+        "url": "/api/2014/features/rogue-evasion"
       }
     ],
     "class_specific": {
@@ -4688,8 +5221,10 @@
     "index": "rogue-7",
     "class": {
       "index": "rogue",
-      "name": "Плут"
-    }
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
+    },
+    "url": "/api/2014/classes/rogue/levels/7"
   },
   {
     "level": 8,
@@ -4698,7 +5233,8 @@
     "features": [
       {
         "index": "rogue-ability-score-improvement-2",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/rogue-ability-score-improvement-2"
       }
     ],
     "class_specific": {
@@ -4710,8 +5246,10 @@
     "index": "rogue-8",
     "class": {
       "index": "rogue",
-      "name": "Плут"
-    }
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
+    },
+    "url": "/api/2014/classes/rogue/levels/8"
   },
   {
     "level": 9,
@@ -4720,7 +5258,8 @@
     "features": [
       {
         "index": "roguish-archetype-improvement-1",
-        "name": "Умение архетипа плута"
+        "name": "Умение воровского архетипа",
+        "url": "/api/2014/features/roguish-archetype-improvement-1"
       }
     ],
     "class_specific": {
@@ -4732,8 +5271,10 @@
     "index": "rogue-9",
     "class": {
       "index": "rogue",
-      "name": "Плут"
-    }
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
+    },
+    "url": "/api/2014/classes/rogue/levels/9"
   },
   {
     "level": 10,
@@ -4742,7 +5283,8 @@
     "features": [
       {
         "index": "rogue-ability-score-improvement-3",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/rogue-ability-score-improvement-3"
       }
     ],
     "class_specific": {
@@ -4754,8 +5296,10 @@
     "index": "rogue-10",
     "class": {
       "index": "rogue",
-      "name": "Плут"
-    }
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
+    },
+    "url": "/api/2014/classes/rogue/levels/10"
   },
   {
     "level": 11,
@@ -4764,7 +5308,8 @@
     "features": [
       {
         "index": "reliable-talent",
-        "name": "Надежный талант"
+        "name": "Надежный талант",
+        "url": "/api/2014/features/reliable-talent"
       }
     ],
     "class_specific": {
@@ -4776,8 +5321,10 @@
     "index": "rogue-11",
     "class": {
       "index": "rogue",
-      "name": "Плут"
-    }
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
+    },
+    "url": "/api/2014/classes/rogue/levels/11"
   },
   {
     "level": 12,
@@ -4786,7 +5333,8 @@
     "features": [
       {
         "index": "rogue-ability-score-improvement-4",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/rogue-ability-score-improvement-4"
       }
     ],
     "class_specific": {
@@ -4798,8 +5346,10 @@
     "index": "rogue-12",
     "class": {
       "index": "rogue",
-      "name": "Плут"
-    }
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
+    },
+    "url": "/api/2014/classes/rogue/levels/12"
   },
   {
     "level": 13,
@@ -4808,7 +5358,8 @@
     "features": [
       {
         "index": "roguish-archetype-improvement-2",
-        "name": "Умение архетипа плута"
+        "name": "Умение воровского архетипа",
+        "url": "/api/2014/features/roguish-archetype-improvement-2"
       }
     ],
     "class_specific": {
@@ -4820,8 +5371,10 @@
     "index": "rogue-13",
     "class": {
       "index": "rogue",
-      "name": "Плут"
-    }
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
+    },
+    "url": "/api/2014/classes/rogue/levels/13"
   },
   {
     "level": 14,
@@ -4830,7 +5383,8 @@
     "features": [
       {
         "index": "blindsense",
-        "name": "Слепое чутье"
+        "name": "Слепое чувство",
+        "url": "/api/2014/features/blindsense"
       }
     ],
     "class_specific": {
@@ -4842,8 +5396,10 @@
     "index": "rogue-14",
     "class": {
       "index": "rogue",
-      "name": "Плут"
-    }
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
+    },
+    "url": "/api/2014/classes/rogue/levels/14"
   },
   {
     "level": 15,
@@ -4852,7 +5408,8 @@
     "features": [
       {
         "index": "slippery-mind",
-        "name": "Скользкий разум"
+        "name": "Ускользающий разум",
+        "url": "/api/2014/features/slippery-mind"
       }
     ],
     "class_specific": {
@@ -4864,8 +5421,10 @@
     "index": "rogue-15",
     "class": {
       "index": "rogue",
-      "name": "Плут"
-    }
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
+    },
+    "url": "/api/2014/classes/rogue/levels/15"
   },
   {
     "level": 16,
@@ -4874,7 +5433,8 @@
     "features": [
       {
         "index": "rogue-ability-score-improvement-5",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/rogue-ability-score-improvement-5"
       }
     ],
     "class_specific": {
@@ -4886,8 +5446,10 @@
     "index": "rogue-16",
     "class": {
       "index": "rogue",
-      "name": "Плут"
-    }
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
+    },
+    "url": "/api/2014/classes/rogue/levels/16"
   },
   {
     "level": 17,
@@ -4896,7 +5458,8 @@
     "features": [
       {
         "index": "roguish-archetype-improvement-3",
-        "name": "Умение архетипа плута"
+        "name": "Умение воровского архетипа",
+        "url": "/api/2014/features/roguish-archetype-improvement-3"
       }
     ],
     "class_specific": {
@@ -4908,8 +5471,10 @@
     "index": "rogue-17",
     "class": {
       "index": "rogue",
-      "name": "Плут"
-    }
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
+    },
+    "url": "/api/2014/classes/rogue/levels/17"
   },
   {
     "level": 18,
@@ -4918,7 +5483,8 @@
     "features": [
       {
         "index": "elusive",
-        "name": "Неуловимость"
+        "name": "Неуловимость",
+        "url": "/api/2014/features/elusive"
       }
     ],
     "class_specific": {
@@ -4930,8 +5496,10 @@
     "index": "rogue-18",
     "class": {
       "index": "rogue",
-      "name": "Плут"
-    }
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
+    },
+    "url": "/api/2014/classes/rogue/levels/18"
   },
   {
     "level": 19,
@@ -4940,7 +5508,8 @@
     "features": [
       {
         "index": "rogue-ability-score-improvement-6",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/rogue-ability-score-improvement-6"
       }
     ],
     "class_specific": {
@@ -4952,8 +5521,10 @@
     "index": "rogue-19",
     "class": {
       "index": "rogue",
-      "name": "Плут"
-    }
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
+    },
+    "url": "/api/2014/classes/rogue/levels/19"
   },
   {
     "level": 20,
@@ -4962,7 +5533,8 @@
     "features": [
       {
         "index": "stroke-of-luck",
-        "name": "Удача"
+        "name": "Удача",
+        "url": "/api/2014/features/stroke-of-luck"
       }
     ],
     "class_specific": {
@@ -4974,8 +5546,10 @@
     "index": "rogue-20",
     "class": {
       "index": "rogue",
-      "name": "Плут"
-    }
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
+    },
+    "url": "/api/2014/classes/rogue/levels/20"
   },
   {
     "level": 1,
@@ -4984,11 +5558,13 @@
     "features": [
       {
         "index": "spellcasting-sorcerer",
-        "name": "Использование заклинаний: Чародей"
+        "name": "Использование заклинаний: Чародей",
+        "url": "/api/2014/features/spellcasting-sorcerer"
       },
       {
         "index": "sorcerous-origin",
-        "name": "Происхождение чародея"
+        "name": "Происхождение чародея",
+        "url": "/api/2014/features/sorcerous-origin"
       }
     ],
     "spellcasting": {
@@ -5012,8 +5588,10 @@
     "index": "sorcerer-1",
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
-    }
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
+    },
+    "url": "/api/2014/classes/sorcerer/levels/1"
   },
   {
     "level": 2,
@@ -5022,15 +5600,18 @@
     "features": [
       {
         "index": "font-of-magic",
-        "name": "Источник магии"
+        "name": "Источник магии",
+        "url": "/api/2014/features/font-of-magic"
       },
       {
         "index": "flexible-casting-creating-spell-slots",
-        "name": "Гибкое колдовство: Создание ячеек заклинаний"
+        "name": "Гибкое колдовство: Создание ячеек заклинаний",
+        "url": "/api/2014/features/flexible-casting-creating-spell-slots"
       },
       {
         "index": "flexible-casting-converting-spell-slot",
-        "name": "Гибкое колдовство: Преобразование ячейки заклинания"
+        "name": "Гибкое колдовство: Преобразование ячеек заклинаний",
+        "url": "/api/2014/features/flexible-casting-converting-spell-slot"
       }
     ],
     "spellcasting": {
@@ -5075,8 +5656,10 @@
     "index": "sorcerer-2",
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
-    }
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
+    },
+    "url": "/api/2014/classes/sorcerer/levels/2"
   },
   {
     "level": 3,
@@ -5085,7 +5668,8 @@
     "features": [
       {
         "index": "metamagic-1",
-        "name": "Метамагия"
+        "name": "Метамагия",
+        "url": "/api/2014/features/metamagic-1"
       }
     ],
     "spellcasting": {
@@ -5130,8 +5714,10 @@
     "index": "sorcerer-3",
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
-    }
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
+    },
+    "url": "/api/2014/classes/sorcerer/levels/3"
   },
   {
     "level": 4,
@@ -5140,7 +5726,8 @@
     "features": [
       {
         "index": "sorcerer-ability-score-improvement-1",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/sorcerer-ability-score-improvement-1"
       }
     ],
     "spellcasting": {
@@ -5185,8 +5772,10 @@
     "index": "sorcerer-4",
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
-    }
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
+    },
+    "url": "/api/2014/classes/sorcerer/levels/4"
   },
   {
     "level": 5,
@@ -5235,8 +5824,10 @@
     "index": "sorcerer-5",
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
-    }
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
+    },
+    "url": "/api/2014/classes/sorcerer/levels/5"
   },
   {
     "level": 6,
@@ -5245,7 +5836,8 @@
     "features": [
       {
         "index": "sorcerous-origin-improvement-1",
-        "name": "Умение происхождения чародея"
+        "name": "Умение происхождения чародея",
+        "url": "/api/2014/features/sorcerous-origin-improvement-1"
       }
     ],
     "spellcasting": {
@@ -5290,8 +5882,10 @@
     "index": "sorcerer-6",
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
-    }
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
+    },
+    "url": "/api/2014/classes/sorcerer/levels/6"
   },
   {
     "level": 7,
@@ -5340,8 +5934,10 @@
     "index": "sorcerer-7",
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
-    }
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
+    },
+    "url": "/api/2014/classes/sorcerer/levels/7"
   },
   {
     "level": 8,
@@ -5350,7 +5946,8 @@
     "features": [
       {
         "index": "sorcerer-ability-score-improvement-2",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/sorcerer-ability-score-improvement-2"
       }
     ],
     "spellcasting": {
@@ -5395,8 +5992,10 @@
     "index": "sorcerer-8",
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
-    }
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
+    },
+    "url": "/api/2014/classes/sorcerer/levels/8"
   },
   {
     "level": 9,
@@ -5445,8 +6044,10 @@
     "index": "sorcerer-9",
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
-    }
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
+    },
+    "url": "/api/2014/classes/sorcerer/levels/9"
   },
   {
     "level": 10,
@@ -5455,7 +6056,8 @@
     "features": [
       {
         "index": "metamagic-2",
-        "name": "Метамагия"
+        "name": "Метамагия",
+        "url": "/api/2014/features/metamagic-2"
       }
     ],
     "spellcasting": {
@@ -5500,8 +6102,10 @@
     "index": "sorcerer-10",
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
-    }
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
+    },
+    "url": "/api/2014/classes/sorcerer/levels/10"
   },
   {
     "level": 11,
@@ -5550,8 +6154,10 @@
     "index": "sorcerer-11",
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
-    }
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
+    },
+    "url": "/api/2014/classes/sorcerer/levels/11"
   },
   {
     "level": 12,
@@ -5560,7 +6166,8 @@
     "features": [
       {
         "index": "sorcerer-ability-score-improvement-3",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/sorcerer-ability-score-improvement-3"
       }
     ],
     "spellcasting": {
@@ -5605,8 +6212,10 @@
     "index": "sorcerer-12",
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
-    }
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
+    },
+    "url": "/api/2014/classes/sorcerer/levels/12"
   },
   {
     "level": 13,
@@ -5655,8 +6264,10 @@
     "index": "sorcerer-13",
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
-    }
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
+    },
+    "url": "/api/2014/classes/sorcerer/levels/13"
   },
   {
     "level": 14,
@@ -5665,7 +6276,8 @@
     "features": [
       {
         "index": "sorcerous-origin-improvement-2",
-        "name": "Умение происхождения чародея"
+        "name": "Умение происхождения чародея",
+        "url": "/api/2014/features/sorcerous-origin-improvement-2"
       }
     ],
     "spellcasting": {
@@ -5710,8 +6322,10 @@
     "index": "sorcerer-14",
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
-    }
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
+    },
+    "url": "/api/2014/classes/sorcerer/levels/14"
   },
   {
     "level": 15,
@@ -5760,8 +6374,10 @@
     "index": "sorcerer-15",
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
-    }
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
+    },
+    "url": "/api/2014/classes/sorcerer/levels/15"
   },
   {
     "level": 16,
@@ -5770,7 +6386,8 @@
     "features": [
       {
         "index": "sorcerer-ability-score-improvement-4",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/sorcerer-ability-score-improvement-4"
       }
     ],
     "spellcasting": {
@@ -5815,8 +6432,10 @@
     "index": "sorcerer-16",
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
-    }
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
+    },
+    "url": "/api/2014/classes/sorcerer/levels/16"
   },
   {
     "level": 17,
@@ -5825,7 +6444,8 @@
     "features": [
       {
         "index": "metamagic-3",
-        "name": "Метамагия"
+        "name": "Метамагия",
+        "url": "/api/2014/features/metamagic-3"
       }
     ],
     "spellcasting": {
@@ -5870,8 +6490,10 @@
     "index": "sorcerer-17",
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
-    }
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
+    },
+    "url": "/api/2014/classes/sorcerer/levels/17"
   },
   {
     "level": 18,
@@ -5880,7 +6502,8 @@
     "features": [
       {
         "index": "sorcerous-origin-improvement-3",
-        "name": "Умение происхождения чародея"
+        "name": "Умение происхождения чародея",
+        "url": "/api/2014/features/sorcerous-origin-improvement-3"
       }
     ],
     "spellcasting": {
@@ -5925,8 +6548,10 @@
     "index": "sorcerer-18",
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
-    }
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
+    },
+    "url": "/api/2014/classes/sorcerer/levels/18"
   },
   {
     "level": 19,
@@ -5935,7 +6560,8 @@
     "features": [
       {
         "index": "sorcerer-ability-score-improvement-5",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/sorcerer-ability-score-improvement-5"
       }
     ],
     "spellcasting": {
@@ -5980,8 +6606,10 @@
     "index": "sorcerer-19",
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
-    }
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
+    },
+    "url": "/api/2014/classes/sorcerer/levels/19"
   },
   {
     "level": 20,
@@ -5990,7 +6618,8 @@
     "features": [
       {
         "index": "sorcerous-restoration",
-        "name": "Восстановление чар"
+        "name": "Чародейское восстановление",
+        "url": "/api/2014/features/sorcerous-restoration"
       }
     ],
     "spellcasting": {
@@ -6035,8 +6664,10 @@
     "index": "sorcerer-20",
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
-    }
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
+    },
+    "url": "/api/2014/classes/sorcerer/levels/20"
   },
   {
     "level": 1,
@@ -6045,11 +6676,13 @@
     "features": [
       {
         "index": "otherworldly-patron",
-        "name": "Покровитель"
+        "name": "Покровитель из иного мира",
+        "url": "/api/2014/features/otherworldly-patron"
       },
       {
         "index": "pact-magic",
-        "name": "Магия договора"
+        "name": "Магия пакта",
+        "url": "/api/2014/features/pact-magic"
       }
     ],
     "spellcasting": {
@@ -6075,8 +6708,10 @@
     "index": "warlock-1",
     "class": {
       "index": "warlock",
-      "name": "Колдун"
-    }
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
+    },
+    "url": "/api/2014/classes/warlock/levels/1"
   },
   {
     "level": 2,
@@ -6085,7 +6720,8 @@
     "features": [
       {
         "index": "eldritch-invocations",
-        "name": "Таинственные воззвания"
+        "name": "Таинственные воззвания",
+        "url": "/api/2014/features/eldritch-invocations"
       }
     ],
     "spellcasting": {
@@ -6111,8 +6747,10 @@
     "index": "warlock-2",
     "class": {
       "index": "warlock",
-      "name": "Колдун"
-    }
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
+    },
+    "url": "/api/2014/classes/warlock/levels/2"
   },
   {
     "level": 3,
@@ -6121,7 +6759,8 @@
     "features": [
       {
         "index": "pact-boon",
-        "name": "Дар договора"
+        "name": "Дары пакта",
+        "url": "/api/2014/features/pact-boon"
       }
     ],
     "spellcasting": {
@@ -6147,8 +6786,10 @@
     "index": "warlock-3",
     "class": {
       "index": "warlock",
-      "name": "Колдун"
-    }
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
+    },
+    "url": "/api/2014/classes/warlock/levels/3"
   },
   {
     "level": 4,
@@ -6157,7 +6798,8 @@
     "features": [
       {
         "index": "warlock-ability-score-improvement-1",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/warlock-ability-score-improvement-1"
       }
     ],
     "spellcasting": {
@@ -6183,8 +6825,10 @@
     "index": "warlock-4",
     "class": {
       "index": "warlock",
-      "name": "Колдун"
-    }
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
+    },
+    "url": "/api/2014/classes/warlock/levels/4"
   },
   {
     "level": 5,
@@ -6208,14 +6852,16 @@
       "invocations_known": 3,
       "mystic_arcanum_level_6": 0,
       "mystic_arcanum_level_7": 0,
-      "mystic_arcanum_level_8": 0,
+      "mystic_arcan_level_8": 0,
       "mystic_arcanum_level_9": 0
     },
     "index": "warlock-5",
     "class": {
       "index": "warlock",
-      "name": "Колдун"
-    }
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
+    },
+    "url": "/api/2014/classes/warlock/levels/5"
   },
   {
     "level": 6,
@@ -6224,7 +6870,8 @@
     "features": [
       {
         "index": "otherworldly-patron-improvement-1",
-        "name": "Умение покровителя"
+        "name": "Умение покровителя из иного мира",
+        "url": "/api/2014/features/otherworldly-patron-improvement-1"
       }
     ],
     "spellcasting": {
@@ -6250,8 +6897,10 @@
     "index": "warlock-6",
     "class": {
       "index": "warlock",
-      "name": "Колдун"
-    }
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
+    },
+    "url": "/api/2014/classes/warlock/levels/6"
   },
   {
     "level": 7,
@@ -6281,8 +6930,10 @@
     "index": "warlock-7",
     "class": {
       "index": "warlock",
-      "name": "Колдун"
-    }
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
+    },
+    "url": "/api/2014/classes/warlock/levels/7"
   },
   {
     "level": 8,
@@ -6291,7 +6942,8 @@
     "features": [
       {
         "index": "warlock-ability-score-improvement-2",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/warlock-ability-score-improvement-2"
       }
     ],
     "spellcasting": {
@@ -6317,8 +6969,10 @@
     "index": "warlock-8",
     "class": {
       "index": "warlock",
-      "name": "Колдун"
-    }
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
+    },
+    "url": "/api/2014/classes/warlock/levels/8"
   },
   {
     "level": 9,
@@ -6348,8 +7002,10 @@
     "index": "warlock-9",
     "class": {
       "index": "warlock",
-      "name": "Колдун"
-    }
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
+    },
+    "url": "/api/2014/classes/warlock/levels/9"
   },
   {
     "level": 10,
@@ -6358,7 +7014,8 @@
     "features": [
       {
         "index": "otherworldly-patron-improvement-2",
-        "name": "Умение покровителя"
+        "name": "Умение покровителя из иного мира",
+        "url": "/api/2014/features/otherworldly-patron-improvement-2"
       }
     ],
     "spellcasting": {
@@ -6384,8 +7041,10 @@
     "index": "warlock-10",
     "class": {
       "index": "warlock",
-      "name": "Колдун"
-    }
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
+    },
+    "url": "/api/2014/classes/warlock/levels/10"
   },
   {
     "level": 11,
@@ -6394,7 +7053,8 @@
     "features": [
       {
         "index": "mystic-arcanum-6th-level",
-        "name": "Таинственный аркан (6-й уровень)"
+        "name": "Таинственный аркан (6-й уровень)",
+        "url": "/api/2014/features/mystic-arcanum-6th-level"
       }
     ],
     "spellcasting": {
@@ -6420,8 +7080,10 @@
     "index": "warlock-11",
     "class": {
       "index": "warlock",
-      "name": "Колдун"
-    }
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
+    },
+    "url": "/api/2014/classes/warlock/levels/11"
   },
   {
     "level": 12,
@@ -6430,7 +7092,8 @@
     "features": [
       {
         "index": "warlock-ability-score-improvement-3",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/warlock-ability-score-improvement-3"
       }
     ],
     "spellcasting": {
@@ -6456,8 +7119,10 @@
     "index": "warlock-12",
     "class": {
       "index": "warlock",
-      "name": "Колдун"
-    }
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
+    },
+    "url": "/api/2014/classes/warlock/levels/12"
   },
   {
     "level": 13,
@@ -6466,7 +7131,8 @@
     "features": [
       {
         "index": "mystic-arcanum-7th-level",
-        "name": "Таинственный аркан (7-й уровень)"
+        "name": "Таинственный аркан (7-й уровень)",
+        "url": "/api/2014/features/mystic-arcanum-7th-level"
       }
     ],
     "spellcasting": {
@@ -6492,8 +7158,10 @@
     "index": "warlock-13",
     "class": {
       "index": "warlock",
-      "name": "Колдун"
-    }
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
+    },
+    "url": "/api/2014/classes/warlock/levels/13"
   },
   {
     "level": 14,
@@ -6502,7 +7170,8 @@
     "features": [
       {
         "index": "otherworldly-patron-improvement-3",
-        "name": "Умение покровителя"
+        "name": "Умение покровителя из иного мира",
+        "url": "/api/2014/features/otherworldly-patron-improvement-3"
       }
     ],
     "spellcasting": {
@@ -6528,8 +7197,10 @@
     "index": "warlock-14",
     "class": {
       "index": "warlock",
-      "name": "Колдун"
-    }
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
+    },
+    "url": "/api/2014/classes/warlock/levels/14"
   },
   {
     "level": 15,
@@ -6538,7 +7209,8 @@
     "features": [
       {
         "index": "mystic-arcanum-8th-level",
-        "name": "Таинственный аркан (8-й уровень)"
+        "name": "Таинственный аркан (8-й уровень)",
+        "url": "/api/2014/features/mystic-arcanum-8th-level"
       }
     ],
     "spellcasting": {
@@ -6564,8 +7236,10 @@
     "index": "warlock-15",
     "class": {
       "index": "warlock",
-      "name": "Колдун"
-    }
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
+    },
+    "url": "/api/2014/classes/warlock/levels/15"
   },
   {
     "level": 16,
@@ -6574,7 +7248,8 @@
     "features": [
       {
         "index": "warlock-ability-score-improvement-4",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/warlock-ability-score-improvement-4"
       }
     ],
     "spellcasting": {
@@ -6600,8 +7275,10 @@
     "index": "warlock-16",
     "class": {
       "index": "warlock",
-      "name": "Колдун"
-    }
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
+    },
+    "url": "/api/2014/classes/warlock/levels/16"
   },
   {
     "level": 17,
@@ -6610,7 +7287,8 @@
     "features": [
       {
         "index": "mystic-arcanum-9th-level",
-        "name": "Таинственный аркан (9-й уровень)"
+        "name": "Таинственный аркан (9-й уровень)",
+        "url": "/api/2014/features/mystic-arcanum-9th-level"
       }
     ],
     "spellcasting": {
@@ -6636,8 +7314,10 @@
     "index": "warlock-17",
     "class": {
       "index": "warlock",
-      "name": "Колдун"
-    }
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
+    },
+    "url": "/api/2014/classes/warlock/levels/17"
   },
   {
     "level": 18,
@@ -6667,8 +7347,10 @@
     "index": "warlock-18",
     "class": {
       "index": "warlock",
-      "name": "Колдун"
-    }
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
+    },
+    "url": "/api/2014/classes/warlock/levels/18"
   },
   {
     "level": 19,
@@ -6677,7 +7359,8 @@
     "features": [
       {
         "index": "warlock-ability-score-improvement-5",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/warlock-ability-score-improvement-5"
       }
     ],
     "spellcasting": {
@@ -6703,8 +7386,10 @@
     "index": "warlock-19",
     "class": {
       "index": "warlock",
-      "name": "Колдун"
-    }
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
+    },
+    "url": "/api/2014/classes/warlock/levels/19"
   },
   {
     "level": 20,
@@ -6713,7 +7398,8 @@
     "features": [
       {
         "index": "eldritch-master",
-        "name": "Мастер тайной магии"
+        "name": "Мастер оккультизма",
+        "url": "/api/2014/features/eldritch-master"
       }
     ],
     "spellcasting": {
@@ -6739,8 +7425,10 @@
     "index": "warlock-20",
     "class": {
       "index": "warlock",
-      "name": "Колдун"
-    }
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
+    },
+    "url": "/api/2014/classes/warlock/levels/20"
   },
   {
     "level": 1,
@@ -6749,11 +7437,13 @@
     "features": [
       {
         "index": "spellcasting-wizard",
-        "name": "Использование заклинаний: Волшебник"
+        "name": "Использование заклинаний: Волшебник",
+        "url": "/api/2014/features/spellcasting-wizard"
       },
       {
         "index": "arcane-recovery",
-        "name": "Магическое восстановление"
+        "name": "Магическое восстановление",
+        "url": "/api/2014/features/arcane-recovery"
       }
     ],
     "spellcasting": {
@@ -6774,8 +7464,10 @@
     "index": "wizard-1",
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
-    }
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
+    },
+    "url": "/api/2014/classes/wizard/levels/1"
   },
   {
     "level": 2,
@@ -6784,7 +7476,8 @@
     "features": [
       {
         "index": "arcane-tradition",
-        "name": "Магическая традиция"
+        "name": "Магическая традиция",
+        "url": "/api/2014/features/arcane-tradition"
       }
     ],
     "spellcasting": {
@@ -6805,8 +7498,10 @@
     "index": "wizard-2",
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
-    }
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
+    },
+    "url": "/api/2014/classes/wizard/levels/2"
   },
   {
     "level": 3,
@@ -6831,8 +7526,10 @@
     "index": "wizard-3",
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
-    }
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
+    },
+    "url": "/api/2014/classes/wizard/levels/3"
   },
   {
     "level": 4,
@@ -6841,7 +7538,8 @@
     "features": [
       {
         "index": "wizard-ability-score-improvement-1",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/wizard-ability-score-improvement-1"
       }
     ],
     "spellcasting": {
@@ -6862,8 +7560,10 @@
     "index": "wizard-4",
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
-    }
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
+    },
+    "url": "/api/2014/classes/wizard/levels/4"
   },
   {
     "level": 5,
@@ -6888,8 +7588,10 @@
     "index": "wizard-5",
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
-    }
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
+    },
+    "url": "/api/2014/classes/wizard/levels/5"
   },
   {
     "level": 6,
@@ -6898,7 +7600,8 @@
     "features": [
       {
         "index": "arcane-tradition-improvement-1",
-        "name": "Умение магической традиции"
+        "name": "Умение магической традиции",
+        "url": "/api/2014/features/arcane-tradition-improvement-1"
       }
     ],
     "spellcasting": {
@@ -6919,8 +7622,10 @@
     "index": "wizard-6",
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
-    }
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
+    },
+    "url": "/api/2014/classes/wizard/levels/6"
   },
   {
     "level": 7,
@@ -6945,8 +7650,10 @@
     "index": "wizard-7",
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
-    }
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
+    },
+    "url": "/api/2014/classes/wizard/levels/7"
   },
   {
     "level": 8,
@@ -6955,7 +7662,8 @@
     "features": [
       {
         "index": "wizard-ability-score-improvement-2",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/wizard-ability-score-improvement-2"
       }
     ],
     "spellcasting": {
@@ -6976,8 +7684,10 @@
     "index": "wizard-8",
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
-    }
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
+    },
+    "url": "/api/2014/classes/wizard/levels/8"
   },
   {
     "level": 9,
@@ -7002,8 +7712,10 @@
     "index": "wizard-9",
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
-    }
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
+    },
+    "url": "/api/2014/classes/wizard/levels/9"
   },
   {
     "level": 10,
@@ -7012,7 +7724,8 @@
     "features": [
       {
         "index": "arcane-tradition-improvement-2",
-        "name": "Умение магической традиции"
+        "name": "Умение магической традиции",
+        "url": "/api/2014/features/arcane-tradition-improvement-2"
       }
     ],
     "spellcasting": {
@@ -7033,8 +7746,10 @@
     "index": "wizard-10",
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
-    }
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
+    },
+    "url": "/api/2014/classes/wizard/levels/10"
   },
   {
     "level": 11,
@@ -7059,8 +7774,10 @@
     "index": "wizard-11",
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
-    }
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
+    },
+    "url": "/api/2014/classes/wizard/levels/11"
   },
   {
     "level": 12,
@@ -7069,7 +7786,8 @@
     "features": [
       {
         "index": "wizard-ability-score-improvement-3",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/wizard-ability-score-improvement-3"
       }
     ],
     "spellcasting": {
@@ -7090,8 +7808,10 @@
     "index": "wizard-12",
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
-    }
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
+    },
+    "url": "/api/2014/classes/wizard/levels/12"
   },
   {
     "level": 13,
@@ -7116,8 +7836,10 @@
     "index": "wizard-13",
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
-    }
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
+    },
+    "url": "/api/2014/classes/wizard/levels/13"
   },
   {
     "level": 14,
@@ -7126,7 +7848,8 @@
     "features": [
       {
         "index": "arcane-tradition-improvement-3",
-        "name": "Умение магической традиции"
+        "name": "Умение магической традиции",
+        "url": "/api/2014/features/arcane-tradition-improvement-3"
       }
     ],
     "spellcasting": {
@@ -7147,8 +7870,10 @@
     "index": "wizard-14",
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
-    }
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
+    },
+    "url": "/api/2014/classes/wizard/levels/14"
   },
   {
     "level": 15,
@@ -7173,8 +7898,10 @@
     "index": "wizard-15",
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
-    }
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
+    },
+    "url": "/api/2014/classes/wizard/levels/15"
   },
   {
     "level": 16,
@@ -7183,7 +7910,8 @@
     "features": [
       {
         "index": "wizard-ability-score-improvement-4",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/wizard-ability-score-improvement-4"
       }
     ],
     "spellcasting": {
@@ -7204,8 +7932,10 @@
     "index": "wizard-16",
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
-    }
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
+    },
+    "url": "/api/2014/classes/wizard/levels/16"
   },
   {
     "level": 17,
@@ -7230,8 +7960,10 @@
     "index": "wizard-17",
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
-    }
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
+    },
+    "url": "/api/2014/classes/wizard/levels/17"
   },
   {
     "level": 18,
@@ -7240,7 +7972,8 @@
     "features": [
       {
         "index": "spell-mastery",
-        "name": "Мастерство заклинаний"
+        "name": "Магическое мастерство",
+        "url": "/api/2014/features/spell-mastery"
       }
     ],
     "spellcasting": {
@@ -7261,8 +7994,10 @@
     "index": "wizard-18",
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
-    }
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
+    },
+    "url": "/api/2014/classes/wizard/levels/18"
   },
   {
     "level": 19,
@@ -7271,7 +8006,8 @@
     "features": [
       {
         "index": "wizard-ability-score-improvement-5",
-        "name": "Увеличение характеристик"
+        "name": "Увеличение характеристик",
+        "url": "/api/2014/features/wizard-ability-score-improvement-5"
       }
     ],
     "spellcasting": {
@@ -7292,8 +8028,10 @@
     "index": "wizard-19",
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
-    }
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
+    },
+    "url": "/api/2014/classes/wizard/levels/19"
   },
   {
     "level": 20,
@@ -7302,11 +8040,12 @@
     "features": [
       {
         "index": "signature-spell",
-        "name": "Фирменное заклинание"
+        "name": "Фирменное заклинание",
+        "url": "/api/2014/features/signature-spell"
       }
     ],
     "spellcasting": {
-      "cantrips_known": 5,
+      "cantrips_known": 4,
       "spell_slots_level_1": 4,
       "spell_slots_level_2": 3,
       "spell_slots_level_3": 3,
@@ -7323,25 +8062,31 @@
     "index": "wizard-20",
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
-    }
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
+    },
+    "url": "/api/2014/classes/wizard/levels/20"
   },
   {
     "level": 3,
     "features": [
       {
         "index": "frenzy",
-        "name": "Бешенство"
+        "name": "Бешенство",
+        "url": "/api/2014/features/frenzy"
       }
     ],
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
     },
     "subclass": {
       "index": "berserker",
-      "name": "Берсерк"
+      "name": "Берсерк",
+      "url": "/api/2014/subclasses/berserker"
     },
+    "url": "/api/2014/subclasses/berserker/levels/3",
     "index": "berserker-3"
   },
   {
@@ -7349,35 +8094,43 @@
     "features": [
       {
         "index": "mindless-rage",
-        "name": "Бездумная ярость"
+        "name": "Безумная ярость",
+        "url": "/api/2014/features/mindless-rage"
       }
     ],
     "index": "berserker-6",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
     },
     "subclass": {
       "index": "berserker",
-      "name": "Берсерк"
-    }
+      "name": "Берсерк",
+      "url": "/api/2014/subclasses/berserker"
+    },
+    "url": "/api/2014/subclasses/berserker/levels/6"
   },
   {
     "level": 10,
     "features": [
       {
         "index": "intimidating-presence",
-        "name": "Устрашающее присутствие"
+        "name": "Пугающее присутствие",
+        "url": "/api/2014/features/intimidating-presence"
       }
     ],
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
     },
     "subclass": {
       "index": "berserker",
-      "name": "Берсерк"
+      "name": "Берсерк",
+      "url": "/api/2014/subclasses/berserker"
     },
+    "url": "/api/2014/subclasses/berserker/levels/10",
     "index": "berserker-10"
   },
   {
@@ -7385,17 +8138,21 @@
     "features": [
       {
         "index": "retaliation",
-        "name": "Возмездие"
+        "name": "Возмездие",
+        "url": "/api/2014/features/retaliation"
       }
     ],
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
     },
     "subclass": {
       "index": "berserker",
-      "name": "Берсерк"
+      "name": "Берсерк",
+      "url": "/api/2014/subclasses/berserker"
     },
+    "url": "/api/2014/subclasses/berserker/levels/14",
     "index": "berserker-14"
   },
   {
@@ -7403,11 +8160,13 @@
     "features": [
       {
         "index": "bonus-proficiencies",
-        "name": "Дополнительные владения"
+        "name": "Дополнительные владения",
+        "url": "/api/2014/features/bonus-proficiencies"
       },
       {
         "index": "cutting-words",
-        "name": "Острые слова"
+        "name": "Острое слово",
+        "url": "/api/2014/features/cutting-words"
       }
     ],
     "subclass_specific": {
@@ -7415,12 +8174,15 @@
     },
     "class": {
       "index": "bard",
-      "name": "Бард"
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
     },
     "subclass": {
       "index": "lore",
-      "name": "Коллегия Знаний"
+      "name": "Коллегия Знаний",
+      "url": "/api/2014/subclasses/lore"
     },
+    "url": "/api/2014/subclasses/lore/levels/3",
     "index": "lore-3"
   },
   {
@@ -7428,7 +8190,8 @@
     "features": [
       {
         "index": "additional-magical-secrets",
-        "name": "Дополнительные магические секреты"
+        "name": "Дополнительные магические секреты",
+        "url": "/api/2014/features/additional-magical-secrets"
       }
     ],
     "subclass_specific": {
@@ -7436,12 +8199,15 @@
     },
     "class": {
       "index": "bard",
-      "name": "Бард"
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
     },
     "subclass": {
       "index": "lore",
-      "name": "Коллегия Знаний"
+      "name": "Коллегия Знаний",
+      "url": "/api/2014/subclasses/lore"
     },
+    "url": "/api/2014/subclasses/lore/levels/6",
     "index": "lore-6"
   },
   {
@@ -7449,7 +8215,8 @@
     "features": [
       {
         "index": "peerless-skill",
-        "name": "Несравненное умение"
+        "name": "Несравненное умение",
+        "url": "/api/2014/features/peerless-skill"
       }
     ],
     "subclass_specific": {
@@ -7457,12 +8224,15 @@
     },
     "class": {
       "index": "bard",
-      "name": "Бард"
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
     },
     "subclass": {
       "index": "lore",
-      "name": "Коллегия Знаний"
+      "name": "Коллегия Знаний",
+      "url": "/api/2014/subclasses/lore"
     },
+    "url": "/api/2014/subclasses/lore/levels/14",
     "index": "lore-14"
   },
   {
@@ -7470,21 +8240,26 @@
     "features": [
       {
         "index": "bonus-proficiency",
-        "name": "Дополнительное владение"
+        "name": "Дополнительное владение",
+        "url": "/api/2014/features/bonus-proficiency"
       },
       {
         "index": "disciple-of-life",
-        "name": "Послушник жизни"
+        "name": "Послушник жизни",
+        "url": "/api/2014/features/disciple-of-life"
       }
     ],
     "class": {
       "index": "cleric",
-      "name": "Жрец"
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
     },
     "subclass": {
       "index": "life",
-      "name": "Жизнь"
+      "name": "Жизнь",
+      "url": "/api/2014/subclasses/life"
     },
+    "url": "/api/2014/subclasses/life/levels/1",
     "index": "life-1"
   },
   {
@@ -7492,17 +8267,21 @@
     "features": [
       {
         "index": "channel-divinity-preserve-life",
-        "name": "Божественный канал: Сохранение жизни"
+        "name": "Божественный канал: Сохранение жизни",
+        "url": "/api/2014/features/channel-divinity-preserve-life"
       }
     ],
     "class": {
       "index": "cleric",
-      "name": "Жрец"
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
     },
     "subclass": {
       "index": "life",
-      "name": "Жизнь"
+      "name": "Жизнь",
+      "url": "/api/2014/subclasses/life"
     },
+    "url": "/api/2014/subclasses/life/levels/2",
     "index": "life-2"
   },
   {
@@ -7510,17 +8289,21 @@
     "features": [
       {
         "index": "blessed-healer",
-        "name": "Благословенный целитель"
+        "name": "Благословенный целитель",
+        "url": "/api/2014/features/blessed-healer"
       }
     ],
     "class": {
       "index": "cleric",
-      "name": "Жрец"
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
     },
     "subclass": {
       "index": "life",
-      "name": "Жизнь"
+      "name": "Жизнь",
+      "url": "/api/2014/subclasses/life"
     },
+    "url": "/api/2014/subclasses/life/levels/6",
     "index": "life-6"
   },
   {
@@ -7528,17 +8311,21 @@
     "features": [
       {
         "index": "divine-strike",
-        "name": "Божественный удар"
+        "name": "Божественный удар",
+        "url": "/api/2014/features/divine-strike"
       }
     ],
     "class": {
       "index": "cleric",
-      "name": "Жрец"
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
     },
     "subclass": {
       "index": "life",
-      "name": "Жизнь"
+      "name": "Жизнь",
+      "url": "/api/2014/subclasses/life"
     },
+    "url": "/api/2014/subclasses/life/levels/8",
     "index": "life-8"
   },
   {
@@ -7546,17 +8333,21 @@
     "features": [
       {
         "index": "supreme-healing",
-        "name": "Высшее исцеление"
+        "name": "Высшее исцеление",
+        "url": "/api/2014/features/supreme-healing"
       }
     ],
     "class": {
       "index": "cleric",
-      "name": "Жрец"
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
     },
     "subclass": {
       "index": "life",
-      "name": "Жизнь"
+      "name": "Жизнь",
+      "url": "/api/2014/subclasses/life"
     },
+    "url": "/api/2014/subclasses/life/levels/17",
     "index": "life-17"
   },
   {
@@ -7564,21 +8355,26 @@
     "features": [
       {
         "index": "bonus-cantrip",
-        "name": "Дополнительный заговор"
+        "name": "Дополнительный заговор",
+        "url": "/api/2014/features/bonus-cantrip"
       },
       {
         "index": "natural-recovery",
-        "name": "Естественное восстановление"
+        "name": "Естественное восстановление",
+        "url": "/api/2014/features/natural-recovery"
       }
     ],
     "class": {
       "index": "druid",
-      "name": "Друид"
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
     },
     "subclass": {
       "index": "land",
-      "name": "Земля"
+      "name": "Земля",
+      "url": "/api/2014/subclasses/land"
     },
+    "url": "/api/2014/subclasses/land/levels/2",
     "index": "land-2"
   },
   {
@@ -7586,17 +8382,21 @@
     "features": [
       {
         "index": "druid-lands-stride",
-        "name": "Поступь суши"
+        "name": "Поступь по суше",
+        "url": "/api/2014/features/druid-lands-stride"
       }
     ],
     "class": {
       "index": "druid",
-      "name": "Друид"
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
     },
     "subclass": {
       "index": "land",
-      "name": "Земля"
+      "name": "Земля",
+      "url": "/api/2014/subclasses/land"
     },
+    "url": "/api/2014/subclasses/land/levels/6",
     "index": "land-6"
   },
   {
@@ -7604,17 +8404,21 @@
     "features": [
       {
         "index": "natures-ward",
-        "name": "Оберег природы"
+        "name": "Защита природы",
+        "url": "/api/2014/features/natures-ward"
       }
     ],
     "class": {
       "index": "druid",
-      "name": "Друид"
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
     },
     "subclass": {
       "index": "land",
-      "name": "Земля"
+      "name": "Земля",
+      "url": "/api/2014/subclasses/land"
     },
+    "url": "/api/2014/subclasses/land/levels/10",
     "index": "land-10"
   },
   {
@@ -7622,17 +8426,21 @@
     "features": [
       {
         "index": "natures-sanctuary",
-        "name": "Прибежище природы"
+        "name": "Природное святилище",
+        "url": "/api/2014/features/natures-sanctuary"
       }
     ],
     "class": {
       "index": "druid",
-      "name": "Друид"
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
     },
     "subclass": {
       "index": "land",
-      "name": "Земля"
+      "name": "Земля",
+      "url": "/api/2014/subclasses/land"
     },
+    "url": "/api/2014/subclasses/land/levels/14",
     "index": "land-14"
   },
   {
@@ -7640,17 +8448,21 @@
     "features": [
       {
         "index": "improved-critical",
-        "name": "Улучшенный критический удар"
+        "name": "Улучшенный критический удар",
+        "url": "/api/2014/features/improved-critical"
       }
     ],
     "class": {
       "index": "fighter",
-      "name": "Воин"
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
     },
     "subclass": {
       "index": "champion",
-      "name": "Чемпион"
+      "name": "Чемпион",
+      "url": "/api/2014/subclasses/champion"
     },
+    "url": "/api/2014/subclasses/champion/levels/3",
     "index": "champion-3"
   },
   {
@@ -7658,17 +8470,21 @@
     "features": [
       {
         "index": "remarkable-athlete",
-        "name": "Необычайный атлет"
+        "name": "Выдающийся атлет",
+        "url": "/api/2014/features/remarkable-athlete"
       }
     ],
     "class": {
       "index": "fighter",
-      "name": "Воин"
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
     },
     "subclass": {
       "index": "champion",
-      "name": "Чемпион"
+      "name": "Чемпион",
+      "url": "/api/2014/subclasses/champion"
     },
+    "url": "/api/2014/classes/champion/levels/7",
     "index": "champion-7"
   },
   {
@@ -7676,17 +8492,21 @@
     "features": [
       {
         "index": "additional-fighting-style",
-        "name": "Дополнительный боевой стиль"
+        "name": "Дополнительный боевой стиль",
+        "url": "/api/2014/features/additional-fighting-style"
       }
     ],
     "class": {
       "index": "fighter",
-      "name": "Воин"
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
     },
     "subclass": {
       "index": "champion",
-      "name": "Чемпион"
+      "name": "Чемпион",
+      "url": "/api/2014/subclasses/champion"
     },
+    "url": "/api/2014/classes/champion/levels/10",
     "index": "champion-10"
   },
   {
@@ -7694,17 +8514,21 @@
     "features": [
       {
         "index": "superior-critical",
-        "name": "Превосходный критический удар"
+        "name": "Превосходный критический удар",
+        "url": "/api/2014/features/superior-critical"
       }
     ],
     "class": {
       "index": "fighter",
-      "name": "Воин"
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
     },
     "subclass": {
       "index": "champion",
-      "name": "Чемпион"
+      "name": "Чемпион",
+      "url": "/api/2014/subclasses/champion"
     },
+    "url": "/api/2014/classes/champion/levels/15",
     "index": "champion-15"
   },
   {
@@ -7712,17 +8536,21 @@
     "features": [
       {
         "index": "survivor",
-        "name": "Уцелевший"
+        "name": "Выживший",
+        "url": "/api/2014/features/survivor"
       }
     ],
     "class": {
       "index": "fighter",
-      "name": "Воин"
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
     },
     "subclass": {
       "index": "champion",
-      "name": "Чемпион"
+      "name": "Чемпион",
+      "url": "/api/2014/subclasses/champion"
     },
+    "url": "/api/2014/classes/champion/levels/18",
     "index": "champion-18"
   },
   {
@@ -7730,17 +8558,21 @@
     "features": [
       {
         "index": "open-hand-technique",
-        "name": "Техника открытой ладони"
+        "name": "Техника открытой ладони",
+        "url": "/api/2014/features/open-hand-technique"
       }
     ],
     "class": {
       "index": "monk",
-      "name": "Монах"
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
     },
     "subclass": {
       "index": "open-hand",
-      "name": "Открытая Ладонь"
+      "name": "Открытая ладонь",
+      "url": "/api/2014/subclasses/open-hand"
     },
+    "url": "/api/2014/subclasses/open-hand/levels/3",
     "index": "open-hand-3"
   },
   {
@@ -7748,17 +8580,21 @@
     "features": [
       {
         "index": "wholeness-of-body",
-        "name": "Целостность тела"
+        "name": "Целостность тела",
+        "url": "/api/2014/features/wholeness-of-body"
       }
     ],
     "class": {
       "index": "monk",
-      "name": "Монах"
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
     },
     "subclass": {
       "index": "open-hand",
-      "name": "Открытая Ладонь"
+      "name": "Открытая ладонь",
+      "url": "/api/2014/subclasses/open-hand"
     },
+    "url": "/api/2014/subclasses/open-hand/levels/6",
     "index": "open-hand-6"
   },
   {
@@ -7766,17 +8602,21 @@
     "features": [
       {
         "index": "tranquility",
-        "name": "Спокойствие"
+        "name": "Спокойствие",
+        "url": "/api/2014/features/tranquility"
       }
     ],
     "class": {
       "index": "monk",
-      "name": "Монах"
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
     },
     "subclass": {
       "index": "open-hand",
-      "name": "Открытая Ладонь"
+      "name": "Открытая ладонь",
+      "url": "/api/2014/subclasses/open-hand"
     },
+    "url": "/api/2014/subclasses/open-hand/levels/11",
     "index": "open-hand-11"
   },
   {
@@ -7784,17 +8624,21 @@
     "features": [
       {
         "index": "quivering-palm",
-        "name": "Дрожащая ладонь"
+        "name": "Дрожащая ладонь",
+        "url": "/api/2014/features/quivering-palm"
       }
     ],
     "class": {
       "index": "monk",
-      "name": "Монах"
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
     },
     "subclass": {
       "index": "open-hand",
-      "name": "Открытая Ладонь"
+      "name": "Открытая ладонь",
+      "url": "/api/2014/subclasses/open-hand"
     },
+    "url": "/api/2014/subclasses/open-hand/levels/17",
     "index": "open-hand-17"
   },
   {
@@ -7802,21 +8646,26 @@
     "features": [
       {
         "index": "channel-divinity-sacred-weapon",
-        "name": "Божественный канал: Священное оружие"
+        "name": "Божественный канал: Священное оружие",
+        "url": "/api/2014/features/channel-divinity-sacred-weapon"
       },
       {
         "index": "channel-divinity-turn-the-unholy",
-        "name": "Божественный канал: Изгнание нечисти"
+        "name": "Божественный канал: Изгнание нечестивых",
+        "url": "/api/2014/features/channel-divinity-turn-the-unholy"
       }
     ],
     "class": {
       "index": "paladin",
-      "name": "Паладин"
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
     },
     "subclass": {
       "index": "devotion",
-      "name": "Преданность"
+      "name": "Преданность",
+      "url": "/api/2014/subclasses/devotion"
     },
+    "url": "/api/2014/subclasses/devotion/levels/3",
     "index": "devotion-3"
   },
   {
@@ -7824,7 +8673,8 @@
     "features": [
       {
         "index": "aura-of-devotion",
-        "name": "Аура преданности"
+        "name": "Аура преданности",
+        "url": "/api/2014/features/aura-of-devotion"
       }
     ],
     "subclass_specific": {
@@ -7832,12 +8682,15 @@
     },
     "class": {
       "index": "paladin",
-      "name": "Паладин"
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
     },
     "subclass": {
       "index": "devotion",
-      "name": "Преданность"
+      "name": "Преданность",
+      "url": "/api/2014/subclasses/devotion"
     },
+    "url": "/api/2014/subclasses/devotion/levels/7",
     "index": "devotion-7"
   },
   {
@@ -7845,7 +8698,8 @@
     "features": [
       {
         "index": "purity-of-spirit",
-        "name": "Чистота духа"
+        "name": "Чистота духа",
+        "url": "/api/2014/features/purity-of-spirit"
       }
     ],
     "subclass_specific": {
@@ -7853,12 +8707,15 @@
     },
     "class": {
       "index": "paladin",
-      "name": "Паладин"
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
     },
     "subclass": {
       "index": "devotion",
-      "name": "Преданность"
+      "name": "Преданность",
+      "url": "/api/2014/subclasses/devotion"
     },
+    "url": "/api/2014/subclasses/devotion/levels/15",
     "index": "devotion-15"
   },
   {
@@ -7869,12 +8726,15 @@
     },
     "class": {
       "index": "paladin",
-      "name": "Паладин"
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
     },
     "subclass": {
       "index": "devotion",
-      "name": "Преданность"
+      "name": "Преданность",
+      "url": "/api/2014/subclasses/devotion"
     },
+    "url": "/api/2014/subclasses/devotion/levels/18",
     "index": "devotion-18"
   },
   {
@@ -7882,7 +8742,8 @@
     "features": [
       {
         "index": "holy-nimbus",
-        "name": "Святой нимб"
+        "name": "Святой нимб",
+        "url": "/api/2014/features/holy-nimbus"
       }
     ],
     "subclass_specific": {
@@ -7890,12 +8751,15 @@
     },
     "class": {
       "index": "paladin",
-      "name": "Паладин"
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
     },
     "subclass": {
       "index": "devotion",
-      "name": "Преданность"
+      "name": "Преданность",
+      "url": "/api/2014/subclasses/devotion"
     },
+    "url": "/api/2014/subclasses/devotion/levels/20",
     "index": "devotion-20"
   },
   {
@@ -7903,17 +8767,21 @@
     "features": [
       {
         "index": "hunters-prey",
-        "name": "Добыча охотника"
+        "name": "Добыча охотника",
+        "url": "/api/2014/features/hunters-prey"
       }
     ],
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
     },
     "subclass": {
       "index": "hunter",
-      "name": "Охотник"
+      "name": "Охотник",
+      "url": "/api/2014/subclasses/hunter"
     },
+    "url": "/api/2014/subclasses/hunter/levels/3",
     "index": "hunter-3"
   },
   {
@@ -7921,17 +8789,21 @@
     "features": [
       {
         "index": "defensive-tactics",
-        "name": "Защитная тактика"
+        "name": "Защитная тактика",
+        "url": "/api/2014/features/defensive-tactics"
       }
     ],
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
     },
     "subclass": {
       "index": "hunter",
-      "name": "Охотник"
+      "name": "Охотник",
+      "url": "/api/2014/subclasses/hunter"
     },
+    "url": "/api/2014/subclasses/hunter/levels/7",
     "index": "hunter-7"
   },
   {
@@ -7939,17 +8811,21 @@
     "features": [
       {
         "index": "multiattack",
-        "name": "Многократная атака"
+        "name": "Град ударов",
+        "url": "/api/2014/features/multiattack"
       }
     ],
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
     },
     "subclass": {
       "index": "hunter",
-      "name": "Охотник"
+      "name": "Охотник",
+      "url": "/api/2014/subclasses/hunter"
     },
+    "url": "/api/2014/subclasses/hunter/levels/11",
     "index": "hunter-11"
   },
   {
@@ -7957,17 +8833,21 @@
     "features": [
       {
         "index": "superior-hunters-defense",
-        "name": "Превосходная защита охотника"
+        "name": "Превосходная защита охотника",
+        "url": "/api/2014/features/superior-hunters-defense"
       }
     ],
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
     },
     "subclass": {
       "index": "hunter",
-      "name": "Охотник"
+      "name": "Охотник",
+      "url": "/api/2014/subclasses/hunter"
     },
+    "url": "/api/2014/subclasses/hunter/levels/15",
     "index": "hunter-15"
   },
   {
@@ -7975,21 +8855,26 @@
     "features": [
       {
         "index": "fast-hands",
-        "name": "Ловкие руки"
+        "name": "Ловкие руки",
+        "url": "/api/2014/features/fast-hands"
       },
       {
         "index": "second-story-work",
-        "name": "Работа на втором этаже"
+        "name": "Верхолаз",
+        "url": "/api/2014/features/second-story-work"
       }
     ],
     "class": {
       "index": "rogue",
-      "name": "Плут"
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
     },
     "subclass": {
       "index": "thief",
-      "name": "Вор"
+      "name": "Вор",
+      "url": "/api/2014/subclasses/thief"
     },
+    "url": "/api/2014/subclasses/thief/levels/3",
     "index": "thief-3"
   },
   {
@@ -7997,17 +8882,21 @@
     "features": [
       {
         "index": "supreme-sneak",
-        "name": "Высшая скрытность"
+        "name": "Верховная скрытность",
+        "url": "/api/2014/features/supreme-sneak"
       }
     ],
     "class": {
       "index": "rogue",
-      "name": "Плут"
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
     },
     "subclass": {
       "index": "thief",
-      "name": "Вор"
+      "name": "Вор",
+      "url": "/api/2014/subclasses/thief"
     },
+    "url": "/api/2014/subclasses/thief/levels/9",
     "index": "thief-9"
   },
   {
@@ -8015,17 +8904,21 @@
     "features": [
       {
         "index": "use-magic-device",
-        "name": "Использование магических устройств"
+        "name": "Использование магических устройств",
+        "url": "/api/2014/features/use-magic-device"
       }
     ],
     "class": {
       "index": "rogue",
-      "name": "Плут"
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
     },
     "subclass": {
       "index": "thief",
-      "name": "Вор"
+      "name": "Вор",
+      "url": "/api/2014/subclasses/thief"
     },
+    "url": "/api/2014/subclasses/thief/levels/13",
     "index": "thief-13"
   },
   {
@@ -8033,17 +8926,21 @@
     "features": [
       {
         "index": "thiefs-reflexes",
-        "name": "Воровские рефлексы"
+        "name": "Воровские рефлексы",
+        "url": "/api/2014/features/thiefs-reflexes"
       }
     ],
     "class": {
       "index": "rogue",
-      "name": "Плут"
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
     },
     "subclass": {
       "index": "thief",
-      "name": "Вор"
+      "name": "Вор",
+      "url": "/api/2014/subclasses/thief"
     },
+    "url": "/api/2014/subclasses/thief/levels/17",
     "index": "thief-17"
   },
   {
@@ -8051,21 +8948,26 @@
     "features": [
       {
         "index": "dragon-ancestor",
-        "name": "Драконий предок"
+        "name": "Драконий предок",
+        "url": "/api/2014/features/dragon-ancestor"
       },
       {
         "index": "draconic-resilience",
-        "name": "Драконья устойчивость"
+        "name": "Драконья стойкость",
+        "url": "/api/2014/features/draconic-resilience"
       }
     ],
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
     },
     "subclass": {
       "index": "draconic",
-      "name": "Драконья кровь"
+      "name": "Драконья кровь",
+      "url": "/api/2014/subclasses/draconic"
     },
+    "url": "/api/2014/subclasses/draconic/levels/1",
     "index": "draconic-1"
   },
   {
@@ -8073,17 +8975,21 @@
     "features": [
       {
         "index": "elemental-affinity",
-        "name": "Родство со стихией"
+        "name": "Элементальное сродство",
+        "url": "/api/2014/features/elemental-affinity"
       }
     ],
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
     },
     "subclass": {
       "index": "draconic",
-      "name": "Драконья кровь"
+      "name": "Драконья кровь",
+      "url": "/api/2014/subclasses/draconic"
     },
+    "url": "/api/2014/subclasses/draconic/levels/6",
     "index": "draconic-6"
   },
   {
@@ -8091,17 +8997,21 @@
     "features": [
       {
         "index": "dragon-wings",
-        "name": "Драконьи крылья"
+        "name": "Драконьи крылья",
+        "url": "/api/2014/features/dragon-wings"
       }
     ],
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
     },
     "subclass": {
       "index": "draconic",
-      "name": "Драконья кровь"
+      "name": "Драконья кровь",
+      "url": "/api/2014/subclasses/draconic"
     },
+    "url": "/api/2014/subclasses/draconic/levels/14",
     "index": "draconic-14"
   },
   {
@@ -8109,17 +9019,21 @@
     "features": [
       {
         "index": "draconic-presence",
-        "name": "Драконье величие"
+        "name": "Драконье присутствие",
+        "url": "/api/2014/features/draconic-presence"
       }
     ],
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
     },
     "subclass": {
       "index": "draconic",
-      "name": "Драконья кровь"
+      "name": "Драконья кровь",
+      "url": "/api/2014/subclasses/draconic"
     },
+    "url": "/api/2014/subclasses/draconic/levels/18",
     "index": "draconic-18"
   },
   {
@@ -8127,17 +9041,21 @@
     "features": [
       {
         "index": "dark-ones-blessing",
-        "name": "Благословение Темного"
+        "name": "Благословение Темного",
+        "url": "/api/2014/features/dark-ones-blessing"
       }
     ],
     "class": {
       "index": "warlock",
-      "name": "Колдун"
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
     },
     "subclass": {
       "index": "fiend",
-      "name": "Бестия"
+      "name": "Исчадие",
+      "url": "/api/2014/subclasses/fiend"
     },
+    "url": "/api/2014/subclasses/fiend/levels/1",
     "index": "fiend-1"
   },
   {
@@ -8145,17 +9063,21 @@
     "features": [
       {
         "index": "dark-ones-own-luck",
-        "name": "Удача Темного"
+        "name": "Собственная удача Темного",
+        "url": "/api/2014/features/dark-ones-own-luck"
       }
     ],
     "class": {
       "index": "warlock",
-      "name": "Колдун"
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
     },
     "subclass": {
       "index": "fiend",
-      "name": "Бестия"
+      "name": "Исчадие",
+      "url": "/api/2014/subclasses/fiend"
     },
+    "url": "/api/2014/subclasses/fiend/levels/6",
     "index": "fiend-6"
   },
   {
@@ -8163,17 +9085,21 @@
     "features": [
       {
         "index": "fiendish-resilience",
-        "name": "Бестиальная устойчивость"
+        "name": "Дьявольская стойкость",
+        "url": "/api/2014/features/fiendish-resilience"
       }
     ],
     "class": {
       "index": "warlock",
-      "name": "Колдун"
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
     },
     "subclass": {
       "index": "fiend",
-      "name": "Бестия"
+      "name": "Исчадие",
+      "url": "/api/2014/subclasses/fiend"
     },
+    "url": "/api/2014/subclasses/fiend/levels/10",
     "index": "fiend-10"
   },
   {
@@ -8181,17 +9107,21 @@
     "features": [
       {
         "index": "hurl-through-hell",
-        "name": "Бросок сквозь ад"
+        "name": "Бросок сквозь преисподнюю",
+        "url": "/api/2014/features/hurl-through-hell"
       }
     ],
     "class": {
       "index": "warlock",
-      "name": "Колдун"
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
     },
     "subclass": {
       "index": "fiend",
-      "name": "Бестия"
+      "name": "Исчадие",
+      "url": "/api/2014/subclasses/fiend"
     },
+    "url": "/api/2014/subclasses/fiend/levels/14",
     "index": "fiend-14"
   },
   {
@@ -8199,21 +9129,26 @@
     "features": [
       {
         "index": "evocation-savant",
-        "name": "Ученый-эвокатор"
+        "name": "Ученый-воплотитель",
+        "url": "/api/2014/features/evocation-savant"
       },
       {
         "index": "sculpt-spells",
-        "name": "Скульптор заклинаний"
+        "name": "Скульптор заклинаний",
+        "url": "/api/2014/features/sculpt-spells"
       }
     ],
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
     },
     "subclass": {
       "index": "evocation",
-      "name": "Воплощение"
+      "name": "Воплощение",
+      "url": "/api/2014/subclasses/evocation"
     },
+    "url": "/api/2014/subclasses/evocation/levels/2",
     "index": "evocation-2"
   },
   {
@@ -8221,17 +9156,21 @@
     "features": [
       {
         "index": "potent-cantrip",
-        "name": "Мощный заговор"
+        "name": "Мощный заговор",
+        "url": "/api/2014/features/potent-cantrip"
       }
     ],
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
     },
     "subclass": {
       "index": "evocation",
-      "name": "Воплощение"
+      "name": "Воплощение",
+      "url": "/api/2014/subclasses/evocation"
     },
+    "url": "/api/2014/subclasses/evocation/levels/6",
     "index": "evocation-6"
   },
   {
@@ -8239,17 +9178,21 @@
     "features": [
       {
         "index": "empowered-evocation",
-        "name": "Усиленное воплощение"
+        "name": "Усиленное воплощение",
+        "url": "/api/2014/features/empowered-evocation"
       }
     ],
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
     },
     "subclass": {
       "index": "evocation",
-      "name": "Воплощение"
+      "name": "Воплощение",
+      "url": "/api/2014/subclasses/evocation"
     },
+    "url": "/api/2014/subclasses/evocation/levels/10",
     "index": "evocation-10"
   },
   {
@@ -8257,17 +9200,21 @@
     "features": [
       {
         "index": "overchannel",
-        "name": "Перегрузка"
+        "name": "Перегрузка",
+        "url": "/api/2014/features/overchannel"
       }
     ],
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
     },
     "subclass": {
       "index": "evocation",
-      "name": "Воплощение"
+      "name": "Воплощение",
+      "url": "/api/2014/subclasses/evocation"
     },
+    "url": "/api/2014/subclasses/evocation/levels/14",
     "index": "evocation-14"
   }
 ]

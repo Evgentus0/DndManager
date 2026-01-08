@@ -7,8 +7,10 @@
     ],
     "ability_score": {
       "index": "dex",
-      "name": "DEX"
-    }
+      "name": "DEX",
+      "url": "/api/2014/ability-scores/dex"
+    },
+    "url": "/api/2014/skills/acrobatics"
   },
   {
     "index": "animal-handling",
@@ -18,8 +20,10 @@
     ],
     "ability_score": {
       "index": "wis",
-      "name": "WIS"
-    }
+      "name": "WIS",
+      "url": "/api/2014/ability-scores/wis"
+    },
+    "url": "/api/2014/skills/animal-handling"
   },
   {
     "index": "arcana",
@@ -29,8 +33,10 @@
     ],
     "ability_score": {
       "index": "int",
-      "name": "INT"
-    }
+      "name": "INT",
+      "url": "/api/2014/ability-scores/int"
+    },
+    "url": "/api/2014/skills/arcana"
   },
   {
     "index": "athletics",
@@ -40,8 +46,10 @@
     ],
     "ability_score": {
       "index": "str",
-      "name": "STR"
-    }
+      "name": "STR",
+      "url": "/api/2014/ability-scores/str"
+    },
+    "url": "/api/2014/skills/athletics"
   },
   {
     "index": "deception",
@@ -51,8 +59,10 @@
     ],
     "ability_score": {
       "index": "cha",
-      "name": "CHA"
-    }
+      "name": "CHA",
+      "url": "/api/2014/ability-scores/cha"
+    },
+    "url": "/api/2014/skills/deception"
   },
   {
     "index": "history",
@@ -62,8 +72,10 @@
     ],
     "ability_score": {
       "index": "int",
-      "name": "INT"
-    }
+      "name": "INT",
+      "url": "/api/2014/ability-scores/int"
+    },
+    "url": "/api/2014/skills/history"
   },
   {
     "index": "insight",
@@ -73,8 +85,10 @@
     ],
     "ability_score": {
       "index": "wis",
-      "name": "WIS"
-    }
+      "name": "WIS",
+      "url": "/api/2014/ability-scores/wis"
+    },
+    "url": "/api/2014/skills/insight"
   },
   {
     "index": "intimidation",
@@ -84,8 +98,10 @@
     ],
     "ability_score": {
       "index": "cha",
-      "name": "CHA"
-    }
+      "name": "CHA",
+      "url": "/api/2014/ability-scores/cha"
+    },
+    "url": "/api/2014/skills/intimidation"
   },
   {
     "index": "investigation",
@@ -95,8 +111,10 @@
     ],
     "ability_score": {
       "index": "int",
-      "name": "INT"
-    }
+      "name": "INT",
+      "url": "/api/2014/ability-scores/int"
+    },
+    "url": "/api/2014/skills/investigation"
   },
   {
     "index": "medicine",
@@ -106,8 +124,10 @@
     ],
     "ability_score": {
       "index": "wis",
-      "name": "WIS"
-    }
+      "name": "WIS",
+      "url": "/api/2014/ability-scores/wis"
+    },
+    "url": "/api/2014/skills/medicine"
   },
   {
     "index": "nature",
@@ -117,8 +137,10 @@
     ],
     "ability_score": {
       "index": "int",
-      "name": "INT"
-    }
+      "name": "INT",
+      "url": "/api/2014/ability-scores/int"
+    },
+    "url": "/api/2014/skills/nature"
   },
   {
     "index": "perception",
@@ -128,8 +150,10 @@
     ],
     "ability_score": {
       "index": "wis",
-      "name": "WIS"
-    }
+      "name": "WIS",
+      "url": "/api/2014/ability-scores/wis"
+    },
+    "url": "/api/2014/skills/perception"
   },
   {
     "index": "performance",
@@ -139,8 +163,10 @@
     ],
     "ability_score": {
       "index": "cha",
-      "name": "CHA"
-    }
+      "name": "CHA",
+      "url": "/api/2014/ability-scores/cha"
+    },
+    "url": "/api/2014/skills/performance"
   },
   {
     "index": "persuasion",
@@ -150,8 +176,10 @@
     ],
     "ability_score": {
       "index": "cha",
-      "name": "CHA"
-    }
+      "name": "CHA",
+      "url": "/api/2014/ability-scores/cha"
+    },
+    "url": "/api/2014/skills/persuasion"
   },
   {
     "index": "religion",
@@ -161,8 +189,10 @@
     ],
     "ability_score": {
       "index": "int",
-      "name": "INT"
-    }
+      "name": "INT",
+      "url": "/api/2014/ability-scores/int"
+    },
+    "url": "/api/2014/skills/religion"
   },
   {
     "index": "sleight-of-hand",
@@ -172,8 +202,10 @@
     ],
     "ability_score": {
       "index": "dex",
-      "name": "DEX"
-    }
+      "name": "DEX",
+      "url": "/api/2014/ability-scores/dex"
+    },
+    "url": "/api/2014/skills/sleight-of-hand"
   },
   {
     "index": "stealth",
@@ -183,8 +215,10 @@
     ],
     "ability_score": {
       "index": "dex",
-      "name": "DEX"
-    }
+      "name": "DEX",
+      "url": "/api/2014/ability-scores/dex"
+    },
+    "url": "/api/2014/skills/stealth"
   },
   {
     "index": "survival",
@@ -194,7 +228,9 @@
     ],
     "ability_score": {
       "index": "wis",
-      "name": "WIS"
-    }
+      "name": "WIS",
+      "url": "/api/2014/ability-scores/wis"
+    },
+    "url": "/api/2014/skills/survival"
   }
 ]

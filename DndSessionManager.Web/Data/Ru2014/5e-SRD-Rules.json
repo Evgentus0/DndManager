@@ -6,69 +6,84 @@
     "subsections": [
       {
         "name": "Порядок боя",
-        "index": "the-order-of-combat"
+        "index": "the-order-of-combat",
+        "url": "/api/2014/rule-sections/the-order-of-combat"
       },
       {
         "name": "Движение и позиция",
-        "index": "movement-and-position"
+        "index": "movement-and-position",
+        "url": "/api/2014/rule-sections/movement-and-position"
       },
       {
         "name": "Действия в бою",
-        "index": "actions-in-combat"
+        "index": "actions-in-combat",
+        "url": "/api/2014/rule-sections/actions-in-combat"
       },
       {
         "name": "Совершение атаки",
-        "index": "making-an-attack"
+        "index": "making-an-attack",
+        "url": "/api/2014/rule-sections/making-an-attack"
       },
       {
         "name": "Укрытие",
-        "index": "cover"
+        "index": "cover",
+        "url": "/api/2014/rule-sections/cover"
       },
       {
         "name": "Урон и лечение",
-        "index": "damage-and-healing"
+        "index": "damage-and-healing",
+        "url": "/api/2014/rule-sections/damage-and-healing"
       },
       {
         "name": "Боевые действия верхом",
-        "index": "mounted-combat"
+        "index": "mounted-combat",
+        "url": "/api/2014/rule-sections/mounted-combat"
       },
       {
         "name": "Подводный бой",
-        "index": "underwater-combat"
+        "index": "underwater-combat",
+        "url": "/api/2014/rule-sections/underwater-combat"
       }
-    ]
+    ],
+    "url": "/api/2014/rules/combat"
   },
   {
     "name": "Использование характеристик",
     "index": "using-ability-scores",
-    "desc": "# Использование характеристик\n\nШесть характеристик дают общее представление о физических и умственных качествах каждого существа:\n- **Сила** — измеряет физическую мощь\n- **Ловкость** — измеряет проворство\n- **Телосложение** — измеряет выносливость\n- **Интеллект** — измеряет умственные способности и память\n- **Мудрость** — измеряет восприятие и проницательность\n- **Харизма** — измеряет силу личности\n\nХарактер персонажа мускулистый и проницательный? Умный и обаятельный? Ловкий и выносливый? Характеристики определяют эти качества — сильные стороны существа и его слабости.\n\nТри основных броска игры — проверка характеристики, спасбросок и бросок атаки — опираются на шесть характеристик. Введение книги описывает базовое правило: бросьте d20, прибавьте модификатор характеристики и сравните сумму с целевым числом.\n\n**Характеристики и модификаторы** Каждая характеристика существа имеет значение, которое определяет её величину. Значение характеристики отражает не только врождённые способности, но и обучение и компетентность существа в деятельности, связанной с этой характеристикой.\n\nЗначение 10 или 11 — среднее для человека, но приключенцы и многие монстры превосходят средний уровень в большинстве характеристик. Значение 18 — наивысшее, обычно достигаемое человеком. Приключенцы могут иметь значения до 20, а монстры и божественные существа — до 30.\n\nКаждая характеристика имеет модификатор, рассчитанный на основе значения и варьирующийся от -5 (для характеристики 1) до +10 (для характеристики 30). Таблица характеристик и модификаторов показывает модификаторы для всех возможных значений от 1 до 30."
-    ,
+    "desc": "# Использование характеристик\n\nШесть характеристик дают общее представление о физических и умственных качествах каждого существа:\n- **Сила** — измеряет физическую мощь\n- **Ловкость** — измеряет проворство\n- **Телосложение** — измеряет выносливость\n- **Интеллект** — измеряет умственные способности и память\n- **Мудрость** — измеряет восприятие и проницательность\n- **Харизма** — измеряет силу личности\n\nХарактер персонажа мускулистый и проницательный? Умный и обаятельный? Ловкий и выносливый? Характеристики определяют эти качества — сильные стороны существа и его слабости.\n\nТри основных броска игры — проверка характеристики, спасбросок и бросок атаки — опираются на шесть характеристик. Введение книги описывает базовое правило: бросьте d20, прибавьте модификатор характеристики и сравните сумму с целевым числом.\n\n**Характеристики и модификаторы** Каждая характеристика существа имеет значение, которое определяет её величину. Значение характеристики отражает не только врождённые способности, но и обучение и компетентность существа в деятельности, связанной с этой характеристикой.\n\nЗначение 10 или 11 — среднее для человека, но приключенцы и многие монстры превосходят средний уровень в большинстве характеристик. Значение 18 — наивысшее, обычно достигаемое человеком. Приключенцы могут иметь значения до 20, а монстры и божественные существа — до 30.\n\nКаждая характеристика имеет модификатор, рассчитанный на основе значения и варьирующийся от -5 (для характеристики 1) до +10 (для характеристики 30). Таблица характеристик и модификаторов показывает модификаторы для всех возможных значений от 1 до 30.",
     "subsections": [
       {
         "name": "Характеристики и модификаторы",
-        "index": "ability-scores-and-modifiers"
+        "index": "ability-scores-and-modifiers",
+        "url": "/api/2014/rule-sections/ability-scores-and-modifiers"
       },
       {
         "name": "Преимущество и недостаток",
-        "index": "advantage-and-disadvantage"
+        "index": "advantage-and-disadvantage",
+        "url": "/api/2014/rule-sections/advantage-and-disadvantage"
       },
       {
         "name": "Бонус мастерства",
-        "index": "proficiency-bonus"
+        "index": "proficiency-bonus",
+        "url": "/api/2014/rule-sections/proficiency-bonus"
       },
       {
         "name": "Проверки характеристик",
-        "index": "ability-checks"
+        "index": "ability-checks",
+        "url": "/api/2014/rule-sections/ability-checks"
       },
       {
         "name": "Использование каждой характеристики",
-        "index": "using-each-ability"
+        "index": "using-each-ability",
+        "url": "/api/2014/rule-sections/using-each-ability"
       },
       {
         "name": "Спасброски",
-        "index": "saving-throws"
+        "index": "saving-throws",
+        "url": "/api/2014/rule-sections/saving-throws"
       }
-    ]
+    ],
+    "url": "/api/2014/rules/using-ability-scores"
   },
   {
     "name": "Приключения",
@@ -77,37 +92,46 @@
     "subsections": [
       {
         "name": "Время",
-        "index": "time"
+        "index": "time",
+        "url": "/api/2014/rule-sections/time"
       },
       {
         "name": "Движение",
-        "index": "movement"
+        "index": "movement",
+        "url": "/api/2014/rule-sections/movement"
       },
       {
         "name": "Окружение",
-        "index": "the-environment"
+        "index": "the-environment",
+        "url": "/api/2014/rule-sections/the-environment"
       },
       {
         "name": "Ловушки",
-        "index": "traps"
+        "index": "traps",
+        "url": "/api/2014/rule-sections/traps"
       },
       {
         "name": "Болезни",
-        "index": "diseases"
+        "index": "diseases",
+        "url": "/api/2014/rule-sections/diseases"
       },
       {
         "name": "Безумие",
-        "index": "madness"
+        "index": "madness",
+        "url": "/api/2014/rule-sections/madness"
       },
       {
         "name": "Отдых",
-        "index": "resting"
+        "index": "resting",
+        "url": "/api/2014/rule-sections/resting"
       },
       {
         "name": "Между приключениями",
-        "index": "between-adventures"
+        "index": "between-adventures",
+        "url": "/api/2014/rule-sections/between-adventures"
       }
-    ]
+    ],
+    "url": "/api/2014/rules/adventuring"
   },
   {
     "name": "Заклинания",
@@ -116,13 +140,16 @@
     "subsections": [
       {
         "name": "Что такое заклинание?",
-        "index": "what-is-a-spell"
+        "index": "what-is-a-spell",
+        "url": "/api/2014/rule-sections/what-is-a-spell"
       },
       {
         "name": "Сотворение заклинания",
-        "index": "casting-a-spell"
+        "index": "casting-a-spell",
+        "url": "/api/2014/rule-sections/casting-a-spell"
       }
-    ]
+    ],
+    "url": "/api/2014/rules/spellcasting"
   },
   {
     "name": "Снаряжение",
@@ -131,33 +158,41 @@
     "subsections": [
       {
         "name": "Стандартные обменные курсы",
-        "index": "standard-exchange-rates"
+        "index": "standard-exchange-rates",
+        "url": "/api/2014/rule-sections/standard-exchange-rates"
       },
       {
         "name": "Предметы",
-        "index": "objects"
+        "index": "objects",
+        "url": "/api/2014/rule-sections/objects"
       },
       {
         "name": "Яды",
-        "index": "poisons"
+        "index": "poisons",
+        "url": "/api/2014/rule-sections/poisons"
       },
       {
         "name": "Настройка",
-        "index": "attunement"
+        "index": "attunement",
+        "url": "/api/2014/rule-sections/attunement"
       },
       {
         "name": "Ношение и использование предметов",
-        "index": "wearing-and-wielding-items"
+        "index": "wearing-and-wielding-items",
+        "url": "/api/2014/rule-sections/wearing-and-wielding-items"
       },
       {
         "name": "Активация предмета",
-        "index": "activating-an-item"
+        "index": "activating-an-item",
+        "url": "/api/2014/rule-sections/activating-an-item"
       },
       {
         "name": "Одушевлённые магические предметы",
-        "index": "sentient-magic-items"
+        "index": "sentient-magic-items",
+        "url": "/api/2014/rule-sections/sentient-magic-items"
       }
-    ]
+    ],
+    "url": "/api/2014/rules/equipment"
   },
   {
     "name": "Приложение",
@@ -166,12 +201,15 @@
     "subsections": [
       {
         "name": "Фантастические и исторические пантеоны",
-        "index": "fantasy-historical-pantheons"
+        "index": "fantasy-historical-pantheons",
+        "url": "/api/2014/rule-sections/fantasy-historical-pantheons"
       },
       {
         "name": "Планы существования",
-        "index": "the-planes-of-existence"
+        "index": "the-planes-of-existence",
+        "url": "/api/2014/rule-sections/the-planes-of-existence"
       }
-    ]
+    ],
+    "url": "/api/2014/rules/appendix"
   }
 ]

@@ -3,33 +3,38 @@
     "index": "berserker",
     "class": {
       "index": "barbarian",
-      "name": "Варвар"
+      "name": "Варвар",
+      "url": "/api/2014/classes/barbarian"
     },
     "name": "Берсерк",
     "subclass_flavor": "Первобытный путь",
     "desc": [
       "Для некоторых варваров ярость — это средство достижения цели, а цель — насилие. Путь Берсерка — это путь безудержной ярости, залитый кровью. Когда вы входите в ярость берсерка, вы упиваетесь хаосом битвы, не заботясь о собственном здоровье или благополучии."
     ],
-    "subclass_levels": "/api/2014/subclasses/berserker/levels"
+    "subclass_levels": "/api/2014/subclasses/berserker/levels",
+    "url": "/api/2014/subclasses/berserker"
   },
   {
     "index": "lore",
     "class": {
       "index": "bard",
-      "name": "Бард"
+      "name": "Бард",
+      "url": "/api/2014/classes/bard"
     },
     "name": "Знания",
     "subclass_flavor": "Бардовская коллегия",
     "desc": [
       "Барды Коллегии Знаний знают кое-что обо всем на свете, собирая крупицы знаний из самых разных источников — от ученых фолиантов до крестьянских баек. Поют ли они народные баллады в тавернах или исполняют сложные композиции в королевских дворцах, эти барды используют свои таланты, чтобы заворожить аудиторию. Когда аплодисменты стихают, слушатели могут обнаружить, что ставят под сомнение всё, что считали истиной: от веры в местное жречество до преданности королю. Преданность этих бардов заключается в стремлении к красоте и истине, а не в верности монарху или следовании догмам божества. Дворянин, держащий такого барда в качестве герольда или советника, знает, что бард скорее будет честным, чем дипломатичным. Члены коллегии собираются в библиотеках, а иногда и в настоящих колледжах с учебными классами и общежитиями, чтобы делиться знаниями друг с другом. Они также встречаются на фестивалях или государственных приемах, где могут разоблачать коррупцию, распутывать ложь и высмеивать самодовольных власть имущих."
     ],
-    "subclass_levels": "/api/2014/subclasses/lore/levels"
+    "subclass_levels": "/api/2014/subclasses/lore/levels",
+    "url": "/api/2014/subclasses/lore"
   },
   {
     "index": "life",
     "class": {
       "index": "cleric",
-      "name": "Жрец"
+      "name": "Жрец",
+      "url": "/api/2014/classes/cleric"
     },
     "name": "Жизнь",
     "subclass_flavor": "Божественный домен",
@@ -42,12 +47,14 @@
           {
             "index": "cleric-1",
             "type": "level",
-            "name": "Жрец 1"
+            "name": "Жрец 1",
+            "url": "/api/2014/classes/cleric/levels/1"
           }
         ],
         "spell": {
           "index": "bless",
-          "name": "Благословение"
+          "name": "Благословение",
+          "url": "/api/2014/spells/bless"
         }
       },
       {
@@ -55,12 +62,14 @@
           {
             "index": "cleric-1",
             "type": "level",
-            "name": "Жрец 1"
+            "name": "Жрец 1",
+            "url": "/api/2014/classes/cleric/levels/1"
           }
         ],
         "spell": {
           "index": "cure-wounds",
-          "name": "Лечение ран"
+          "name": "Лечение ран",
+          "url": "/api/2014/spells/cure-wounds"
         }
       },
       {
@@ -68,12 +77,14 @@
           {
             "index": "cleric-3",
             "type": "level",
-            "name": "Жрец 3"
+            "name": "Жрец 3",
+            "url": "/api/2014/classes/cleric/levels/3"
           }
         ],
         "spell": {
           "index": "lesser-restoration",
-          "name": "Низшее восстановление"
+          "name": "Низшее восстановление",
+          "url": "/api/2014/spells/lesser-restoration"
         }
       },
       {
@@ -81,12 +92,14 @@
           {
             "index": "cleric-3",
             "type": "level",
-            "name": "Жрец 3"
+            "name": "Жрец 3",
+            "url": "/api/2014/classes/cleric/levels/3"
           }
         ],
         "spell": {
           "index": "spiritual-weapon",
-          "name": "Духовное оружие"
+          "name": "Духовное оружие",
+          "url": "/api/2014/spells/spiritual-weapon"
         }
       },
       {
@@ -94,12 +107,14 @@
           {
             "index": "cleric-5",
             "type": "level",
-            "name": "Жрец 5"
+            "name": "Жрец 5",
+            "url": "/api/2014/classes/cleric/levels/5"
           }
         ],
         "spell": {
           "index": "beacon-of-hope",
-          "name": "Маяк надежды"
+          "name": "Маяк надежды",
+          "url": "/api/2014/spells/beacon-of-hope"
         }
       },
       {
@@ -107,12 +122,14 @@
           {
             "index": "cleric-5",
             "type": "level",
-            "name": "Жрец 5"
+            "name": "Жрец 5",
+            "url": "/api/2014/classes/cleric/levels/5"
           }
         ],
         "spell": {
           "index": "revivify",
-          "name": "Оживление"
+          "name": "Оживление",
+          "url": "/api/2014/spells/revivify"
         }
       },
       {
@@ -120,12 +137,14 @@
           {
             "index": "cleric-7",
             "type": "level",
-            "name": "Жрец 7"
+            "name": "Жрец 7",
+            "url": "/api/2014/classes/cleric/levels/7"
           }
         ],
         "spell": {
           "index": "death-ward",
-          "name": "Оберег от смерти"
+          "name": "Оберег от смерти",
+          "url": "/api/2014/spells/death-ward"
         }
       },
       {
@@ -133,12 +152,14 @@
           {
             "index": "cleric-9",
             "type": "level",
-            "name": "Жрец 9"
+            "name": "Жрец 9",
+            "url": "/api/2014/classes/cleric/levels/9"
           }
         ],
         "spell": {
           "index": "mass-cure-wounds",
-          "name": "Массовое лечение ран"
+          "name": "Массовое лечение ран",
+          "url": "/api/2014/spells/mass-cure-wounds"
         }
       },
       {
@@ -146,27 +167,31 @@
           {
             "index": "cleric-9",
             "type": "level",
-            "name": "Жрец 9"
+            "name": "Жрец 9",
+            "url": "/api/2014/classes/cleric/levels/9"
           }
         ],
         "spell": {
           "index": "raise-dead",
-          "name": "Воскрешение"
+          "name": "Воскрешение",
+          "url": "/api/2014/spells/raise-dead"
         }
       }
     ],
-    "subclass_levels": "/api/2014/subclasses/life/levels"
+    "subclass_levels": "/api/2014/subclasses/life/levels",
+    "url": "/api/2014/subclasses/life"
   },
   {
     "index": "land",
     "class": {
       "index": "druid",
-      "name": "Друид"
+      "name": "Друид",
+      "url": "/api/2014/classes/druid"
     },
     "name": "Земля",
     "subclass_flavor": "Друидский круг",
     "desc": [
-      "Круг Земли состоит из мистиков и мудрецов, хранящих древние знания и обряды через устную традицию. Эти друиды встречаются в священных кругах из деревьев или стоячих камней, чтобы шептать первобытные тайны на Друидическом языке. Мудрейшие члены круга выступают в роли главных жрецов общин, придерживающихся Старой Веры, и служат советниками правителей этих народов. Будучи членом этого круга, ваша магия зависит от того типа местности, где вы были инициированы в таинственные обряды круга."
+      "Круг Земли состоит из мистиков и мудрецов, охраняющих древние знания и обряды через обширную устную традицию. Эти друиды встречаются в священных кругах деревьев или стоячих камней, чтобы шептать первобытные секреты на Друидике. Мудрейшие члены круга выступают в качестве главных жрецов общин, придерживающихся Старой Веры, и служат советниками правителей этих народов. Как член этого круга, ваша магия находится под влиянием земли, где вы были посвящены в таинственные обряды круга."
     ],
     "spells": [
       {
@@ -174,17 +199,20 @@
           {
             "index": "druid-3",
             "type": "level",
-            "name": "Друид 3"
+            "name": "Друид 3",
+            "url": "/api/2014/classes/druid/levels/3"
           },
           {
             "index": "circle-of-the-land-arctic",
             "type": "feature",
-            "name": "Круг Земли: Арктика"
+            "name": "Круг Земли: Арктика",
+            "url": "/api/2014/features/circle-of-the-land-arctic"
           }
         ],
         "spell": {
           "index": "hold-person",
-          "name": "Удержание личности"
+          "name": "Удержание личности",
+          "url": "/api/2014/spells/hold-person"
         }
       },
       {
@@ -192,17 +220,20 @@
           {
             "index": "druid-3",
             "type": "level",
-            "name": "Друид 3"
+            "name": "Друид 3",
+            "url": "/api/2014/classes/druid/levels/3"
           },
           {
             "index": "circle-of-the-land-arctic",
             "type": "feature",
-            "name": "Круг Земли: Арктика"
+            "name": "Круг Земли: Арктика",
+            "url": "/api/2014/features/circle-of-the-land-arctic"
           }
         ],
         "spell": {
           "index": "spike-growth",
-          "name": "Разрастание шипов"
+          "name": "Разрастание шипов",
+          "url": "/api/2014/spells/spike-growth"
         }
       },
       {
@@ -210,17 +241,20 @@
           {
             "index": "druid-5",
             "type": "level",
-            "name": "Друид 5"
+            "name": "Друид 5",
+            "url": "/api/2014/classes/druid/levels/5"
           },
           {
             "index": "circle-of-the-land-arctic",
             "type": "feature",
-            "name": "Круг Земли: Арктика"
+            "name": "Круг Земли: Арктика",
+            "url": "/api/2014/features/circle-of-the-land-arctic"
           }
         ],
         "spell": {
           "index": "sleet-storm",
-          "name": "Ледяной шторм"
+          "name": "Ледяной шторм",
+          "url": "/api/2014/spells/sleet-storm"
         }
       },
       {
@@ -228,17 +262,20 @@
           {
             "index": "druid-5",
             "type": "level",
-            "name": "Друид 5"
+            "name": "Друид 5",
+            "url": "/api/2014/classes/druid/levels/5"
           },
           {
             "index": "circle-of-the-land-arctic",
             "type": "feature",
-            "name": "Круг Земли: Арктика"
+            "name": "Круг Земли: Арктика",
+            "url": "/api/2014/features/circle-of-the-land-arctic"
           }
         ],
         "spell": {
           "index": "slow",
-          "name": "Замедление"
+          "name": "Замедление",
+          "url": "/api/2014/spells/slow"
         }
       },
       {
@@ -246,17 +283,20 @@
           {
             "index": "druid-7",
             "type": "level",
-            "name": "Друид 7"
+            "name": "Друид 7",
+            "url": "/api/2014/classes/druid/levels/7"
           },
           {
             "index": "circle-of-the-land-arctic",
             "type": "feature",
-            "name": "Круг Земли: Арктика"
+            "name": "Круг Земли: Арктика",
+            "url": "/api/2014/features/circle-of-the-land-arctic"
           }
         ],
         "spell": {
           "index": "freedom-of-movement",
-          "name": "Свобода движений"
+          "name": "Свобода перемещения",
+          "url": "/api/2014/spells/freedom-of-movement"
         }
       },
       {
@@ -264,17 +304,20 @@
           {
             "index": "druid-7",
             "type": "level",
-            "name": "Друид 7"
+            "name": "Друид 7",
+            "url": "/api/2014/classes/druid/levels/7"
           },
           {
             "index": "circle-of-the-land-arctic",
             "type": "feature",
-            "name": "Круг Земли: Арктика"
+            "name": "Круг Земли: Арктика",
+            "url": "/api/2014/features/circle-of-the-land-arctic"
           }
         ],
         "spell": {
           "index": "ice-storm",
-          "name": "Ледяной шторм"
+          "name": "Ледяной шторм",
+          "url": "/api/2014/spells/ice-storm"
         }
       },
       {
@@ -282,17 +325,20 @@
           {
             "index": "druid-9",
             "type": "level",
-            "name": "Друид 9"
+            "name": "Друид 9",
+            "url": "/api/2014/classes/druid/levels/9"
           },
           {
             "index": "circle-of-the-land-arctic",
             "type": "feature",
-            "name": "Круг Земли: Арктика"
+            "name": "Круг Земли: Арктика",
+            "url": "/api/2014/features/circle-of-the-land-arctic"
           }
         ],
         "spell": {
           "index": "commune-with-nature",
-          "name": "Общение с природой"
+          "name": "Общение с природой",
+          "url": "/api/2014/spells/commune-with-nature"
         }
       },
       {
@@ -300,17 +346,20 @@
           {
             "index": "druid-9",
             "type": "level",
-            "name": "Друид 9"
+            "name": "Друид 9",
+            "url": "/api/2014/classes/druid/levels/9"
           },
           {
             "index": "circle-of-the-land-arctic",
             "type": "feature",
-            "name": "Круг Земли: Арктика"
+            "name": "Круг Земли: Арктика",
+            "url": "/api/2014/features/circle-of-the-land-arctic"
           }
         ],
         "spell": {
           "index": "cone-of-cold",
-          "name": "Конус холода"
+          "name": "Конус холода",
+          "url": "/api/2014/spells/cone-of-cold"
         }
       },
       {
@@ -318,17 +367,20 @@
           {
             "index": "druid-3",
             "type": "level",
-            "name": "Друид 3"
+            "name": "Друид 3",
+            "url": "/api/2014/classes/druid/levels/3"
           },
           {
             "index": "circle-of-the-land-coast",
             "type": "feature",
-            "name": "Круг Земли: Побережье"
+            "name": "Круг Земли: Побережье",
+            "url": "/api/2014/features/circle-of-the-land-coast"
           }
         ],
         "spell": {
           "index": "mirror-image",
-          "name": "Зеркальный образ"
+          "name": "Зеркальное отражение",
+          "url": "/api/2014/spells/mirror-image"
         }
       },
       {
@@ -336,17 +388,20 @@
           {
             "index": "druid-3",
             "type": "level",
-            "name": "Друид 3"
+            "name": "Друид 3",
+            "url": "/api/2014/classes/druid/levels/3"
           },
           {
             "index": "circle-of-the-land-coast",
             "type": "feature",
-            "name": "Круг Земли: Побережье"
+            "name": "Круг Земли: Побережье",
+            "url": "/api/2014/features/circle-of-the-land-coast"
           }
         ],
         "spell": {
           "index": "misty-step",
-          "name": "Туманный шаг"
+          "name": "Туманный шаг",
+          "url": "/api/2014/spells/misty-step"
         }
       },
       {
@@ -354,17 +409,20 @@
           {
             "index": "druid-5",
             "type": "level",
-            "name": "Друид 5"
+            "name": "Друид 5",
+            "url": "/api/2014/classes/druid/levels/5"
           },
           {
             "index": "circle-of-the-land-coast",
             "type": "feature",
-            "name": "Круг Земли: Побережье"
+            "name": "Круг Земли: Побережье",
+            "url": "/api/2014/features/circle-of-the-land-coast"
           }
         ],
         "spell": {
           "index": "water-breathing",
-          "name": "Водное дыхание"
+          "name": "Водное дыхание",
+          "url": "/api/2014/spells/water-breathing"
         }
       },
       {
@@ -372,17 +430,20 @@
           {
             "index": "druid-5",
             "type": "level",
-            "name": "Друид 5"
+            "name": "Друид 5",
+            "url": "/api/2014/classes/druid/levels/5"
           },
           {
             "index": "circle-of-the-land-coast",
             "type": "feature",
-            "name": "Круг Земли: Побережье"
+            "name": "Круг Земли: Побережье",
+            "url": "/api/2014/features/circle-of-the-land-coast"
           }
         ],
         "spell": {
           "index": "water-walk",
-          "name": "Хождение по воде"
+          "name": "Хождение по воде",
+          "url": "/api/2014/spells/water-walk"
         }
       },
       {
@@ -390,17 +451,20 @@
           {
             "index": "druid-7",
             "type": "level",
-            "name": "Друид 7"
+            "name": "Друид 7",
+            "url": "/api/2014/classes/druid/levels/7"
           },
           {
             "index": "circle-of-the-land-coast",
             "type": "feature",
-            "name": "Круг Земли: Побережье"
+            "name": "Круг Земли: Побережье",
+            "url": "/api/2014/features/circle-of-the-land-coast"
           }
         ],
         "spell": {
           "index": "control-water",
-          "name": "Управление водой"
+          "name": "Управление водой",
+          "url": "/api/2014/spells/control-water"
         }
       },
       {
@@ -408,17 +472,20 @@
           {
             "index": "druid-7",
             "type": "level",
-            "name": "Друид 7"
+            "name": "Друид 7",
+            "url": "/api/2014/classes/druid/levels/7"
           },
           {
             "index": "circle-of-the-land-coast",
             "type": "feature",
-            "name": "Круг Земли: Побережье"
+            "name": "Круг Земли: Побережье",
+            "url": "/api/2014/features/circle-of-the-land-coast"
           }
         ],
         "spell": {
           "index": "freedom-of-movement",
-          "name": "Свобода движений"
+          "name": "Свобода перемещения",
+          "url": "/api/2014/spells/freedom-of-movement"
         }
       },
       {
@@ -426,17 +493,20 @@
           {
             "index": "druid-9",
             "type": "level",
-            "name": "Друид 9"
+            "name": "Друид 9",
+            "url": "/api/2014/classes/druid/levels/9"
           },
           {
             "index": "circle-of-the-land-coast",
             "type": "feature",
-            "name": "Круг Земли: Побережье"
+            "name": "Круг Земли: Побережье",
+            "url": "/api/2014/features/circle-of-the-land-coast"
           }
         ],
         "spell": {
           "index": "conjure-elemental",
-          "name": "Призыв элементаля"
+          "name": "Призыв элементаля",
+          "url": "/api/2014/spells/conjure-elemental"
         }
       },
       {
@@ -444,17 +514,20 @@
           {
             "index": "druid-9",
             "type": "level",
-            "name": "Друид 9"
+            "name": "Друид 9",
+            "url": "/api/2014/classes/druid/levels/9"
           },
           {
             "index": "circle-of-the-land-coast",
             "type": "feature",
-            "name": "Круг Земли: Побережье"
+            "name": "Круг Земли: Побережье",
+            "url": "/api/2014/features/circle-of-the-land-coast"
           }
         ],
         "spell": {
           "index": "scrying",
-          "name": "Прорицание"
+          "name": "Предсказание",
+          "url": "/api/2014/spells/scrying"
         }
       },
       {
@@ -462,17 +535,20 @@
           {
             "index": "druid-3",
             "type": "level",
-            "name": "Друид 3"
+            "name": "Друид 3",
+            "url": "/api/2014/classes/druid/levels/3"
           },
           {
             "index": "circle-of-the-land-desert",
             "type": "feature",
-            "name": "Круг Земли: Пустыня"
+            "name": "Круг Земли: Пустыня",
+            "url": "/api/2014/features/circle-of-the-land-desert"
           }
         ],
         "spell": {
           "index": "blur",
-          "name": "Расплывчатость"
+          "name": "Размытый образ",
+          "url": "/api/2014/spells/blur"
         }
       },
       {
@@ -480,17 +556,20 @@
           {
             "index": "druid-3",
             "type": "level",
-            "name": "Друид 3"
+            "name": "Друид 3",
+            "url": "/api/2014/classes/druid/levels/3"
           },
           {
             "index": "circle-of-the-land-desert",
             "type": "feature",
-            "name": "Круг Земли: Пустыня"
+            "name": "Круг Земли: Пустыня",
+            "url": "/api/2014/features/circle-of-the-land-desert"
           }
         ],
         "spell": {
           "index": "silence",
-          "name": "Тишина"
+          "name": "Безмолвие",
+          "url": "/api/2014/spells/silence"
         }
       },
       {
@@ -498,17 +577,20 @@
           {
             "index": "druid-5",
             "type": "level",
-            "name": "Друид 5"
+            "name": "Друид 5",
+            "url": "/api/2014/classes/druid/levels/5"
           },
           {
             "index": "circle-of-the-land-desert",
             "type": "feature",
-            "name": "Круг Земли: Пустыня"
+            "name": "Круг Земли: Пустыня",
+            "url": "/api/2014/features/circle-of-the-land-desert"
           }
         ],
         "spell": {
           "index": "create-food-and-water",
-          "name": "Создание пищи и воды"
+          "name": "Создание пищи и воды",
+          "url": "/api/2014/spells/create-food-and-water"
         }
       },
       {
@@ -516,17 +598,20 @@
           {
             "index": "druid-5",
             "type": "level",
-            "name": "Друид 5"
+            "name": "Друид 5",
+            "url": "/api/2014/classes/druid/levels/5"
           },
           {
             "index": "circle-of-the-land-desert",
             "type": "feature",
-            "name": "Круг Земли: Пустыня"
+            "name": "Круг Земли: Пустыня",
+            "url": "/api/2014/features/circle-of-the-land-desert"
           }
         ],
         "spell": {
           "index": "protection-from-energy",
-          "name": "Защита от энергии"
+          "name": "Защита от энергии",
+          "url": "/api/2014/spells/protection-from-energy"
         }
       },
       {
@@ -534,17 +619,20 @@
           {
             "index": "druid-7",
             "type": "level",
-            "name": "Друид 7"
+            "name": "Друид 7",
+            "url": "/api/2014/classes/druid/levels/7"
           },
           {
             "index": "circle-of-the-land-desert",
             "type": "feature",
-            "name": "Круг Земли: Пустыня"
+            "name": "Круг Земли: Пустыня",
+            "url": "/api/2014/features/circle-of-the-land-desert"
           }
         ],
         "spell": {
           "index": "blight",
-          "name": "Увядание"
+          "name": "Увядание",
+          "url": "/api/2014/spells/blight"
         }
       },
       {
@@ -552,17 +640,20 @@
           {
             "index": "druid-7",
             "type": "level",
-            "name": "Друид 7"
+            "name": "Друид 7",
+            "url": "/api/2014/classes/druid/levels/7"
           },
           {
             "index": "circle-of-the-land-desert",
             "type": "feature",
-            "name": "Круг Земли: Пустыня"
+            "name": "Круг Земли: Пустыня",
+            "url": "/api/2014/features/circle-of-the-land-desert"
           }
         ],
         "spell": {
           "index": "hallucinatory-terrain",
-          "name": "Галлюцинаторный ландшафт"
+          "name": "Галлюцинация ландшафта",
+          "url": "/api/2014/spells/hallucinatory-terrain"
         }
       },
       {
@@ -570,17 +661,20 @@
           {
             "index": "druid-9",
             "type": "level",
-            "name": "Друид 9"
+            "name": "Друид 9",
+            "url": "/api/2014/classes/druid/levels/9"
           },
           {
             "index": "circle-of-the-land-desert",
             "type": "feature",
-            "name": "Круг Земли: Пустыня"
+            "name": "Круг Земли: Пустыня",
+            "url": "/api/2014/features/circle-of-the-land-desert"
           }
         ],
         "spell": {
           "index": "insect-plague",
-          "name": "Нашествие насекомых"
+          "name": "Нашествие насекомых",
+          "url": "/api/2014/spells/insect-plague"
         }
       },
       {
@@ -588,17 +682,20 @@
           {
             "index": "druid-9",
             "type": "level",
-            "name": "Друид 9"
+            "name": "Друид 9",
+            "url": "/api/2014/classes/druid/levels/9"
           },
           {
             "index": "circle-of-the-land-desert",
             "type": "feature",
-            "name": "Круг Земли: Пустыня"
+            "name": "Круг Земли: Пустыня",
+            "url": "/api/2014/features/circle-of-the-land-desert"
           }
         ],
         "spell": {
           "index": "wall-of-stone",
-          "name": "Каменная стена"
+          "name": "Каменная стена",
+          "url": "/api/2014/spells/wall-of-stone"
         }
       },
       {
@@ -606,17 +703,20 @@
           {
             "index": "druid-3",
             "type": "level",
-            "name": "Друид 3"
+            "name": "Друид 3",
+            "url": "/api/2014/classes/druid/levels/3"
           },
           {
             "index": "circle-of-the-land-forest",
             "type": "feature",
-            "name": "Круг Земли: Лес"
+            "name": "Круг Земли: Лес",
+            "url": "/api/2014/features/circle-of-the-land-forest"
           }
         ],
         "spell": {
           "index": "barkskin",
-          "name": "Кора-кожа"
+          "name": "Дубовая кора",
+          "url": "/api/2014/spells/barkskin"
         }
       },
       {
@@ -624,17 +724,20 @@
           {
             "index": "druid-3",
             "type": "level",
-            "name": "Друид 3"
+            "name": "Друид 3",
+            "url": "/api/2014/classes/druid/levels/3"
           },
           {
             "index": "circle-of-the-land-forest",
             "type": "feature",
-            "name": "Круг Земли: Лес"
+            "name": "Круг Земли: Лес",
+            "url": "/api/2014/features/circle-of-the-land-forest"
           }
         ],
         "spell": {
           "index": "spider-climb",
-          "name": "Паук"
+          "name": "Паук",
+          "url": "/api/2014/spells/spider-climb"
         }
       },
       {
@@ -642,17 +745,20 @@
           {
             "index": "druid-5",
             "type": "level",
-            "name": "Друид 5"
+            "name": "Друид 5",
+            "url": "/api/2014/classes/druid/levels/5"
           },
           {
             "index": "circle-of-the-land-forest",
             "type": "feature",
-            "name": "Круг Земли: Лес"
+            "name": "Круг Земли: Лес",
+            "url": "/api/2014/features/circle-of-the-land-forest"
           }
         ],
         "spell": {
           "index": "call-lightning",
-          "name": "Призыв молнии"
+          "name": "Призыв молнии",
+          "url": "/api/2014/spells/call-lightning"
         }
       },
       {
@@ -660,17 +766,20 @@
           {
             "index": "druid-5",
             "type": "level",
-            "name": "Друид 5"
+            "name": "Друид 5",
+            "url": "/api/2014/classes/druid/levels/5"
           },
           {
             "index": "circle-of-the-land-forest",
             "type": "feature",
-            "name": "Круг Земли: Лес"
+            "name": "Круг Земли: Лес",
+            "url": "/api/2014/features/circle-of-the-land-forest"
           }
         ],
         "spell": {
           "index": "plant-growth",
-          "name": "Рост растений"
+          "name": "Рост растений",
+          "url": "/api/2014/spells/plant-growth"
         }
       },
       {
@@ -678,17 +787,20 @@
           {
             "index": "druid-7",
             "type": "level",
-            "name": "Друид 7"
+            "name": "Друид 7",
+            "url": "/api/2014/classes/druid/levels/7"
           },
           {
             "index": "circle-of-the-land-forest",
             "type": "feature",
-            "name": "Круг Земли: Лес"
+            "name": "Круг Земли: Лес",
+            "url": "/api/2014/features/circle-of-the-land-forest"
           }
         ],
         "spell": {
           "index": "divination",
-          "name": "Прорицание"
+          "name": "Прорицание",
+          "url": "/api/2014/spells/divination"
         }
       },
       {
@@ -696,17 +808,20 @@
           {
             "index": "druid-7",
             "type": "level",
-            "name": "Друид 7"
+            "name": "Друид 7",
+            "url": "/api/2014/classes/druid/levels/7"
           },
           {
             "index": "circle-of-the-land-forest",
             "type": "feature",
-            "name": "Круг Земли: Лес"
+            "name": "Круг Земли: Лес",
+            "url": "/api/2014/features/circle-of-the-land-forest"
           }
         ],
         "spell": {
           "index": "freedom-of-movement",
-          "name": "Свобода движений"
+          "name": "Свобода перемещения",
+          "url": "/api/2014/spells/freedom-of-movement"
         }
       },
       {
@@ -714,17 +829,20 @@
           {
             "index": "druid-9",
             "type": "level",
-            "name": "Друид 9"
+            "name": "Друид 9",
+            "url": "/api/2014/classes/druid/levels/9"
           },
           {
             "index": "circle-of-the-land-forest",
             "type": "feature",
-            "name": "Круг Земли: Лес"
+            "name": "Круг Земли: Лес",
+            "url": "/api/2014/features/circle-of-the-land-forest"
           }
         ],
         "spell": {
           "index": "commune-with-nature",
-          "name": "Общение с природой"
+          "name": "Общение с природой",
+          "url": "/api/2014/spells/commune-with-nature"
         }
       },
       {
@@ -732,17 +850,20 @@
           {
             "index": "druid-9",
             "type": "level",
-            "name": "Друид 9"
+            "name": "Друид 9",
+            "url": "/api/2014/classes/druid/levels/9"
           },
           {
             "index": "circle-of-the-land-forest",
             "type": "feature",
-            "name": "Круг Земли: Лес"
+            "name": "Круг Земли: Лес",
+            "url": "/api/2014/features/circle-of-the-land-forest"
           }
         ],
         "spell": {
           "index": "tree-stride",
-          "name": "Шаг сквозь деревья"
+          "name": "Шаг по деревьям",
+          "url": "/api/2014/spells/tree-stride"
         }
       },
       {
@@ -750,17 +871,20 @@
           {
             "index": "druid-3",
             "type": "level",
-            "name": "Друид 3"
+            "name": "Друид 3",
+            "url": "/api/2014/classes/druid/levels/3"
           },
           {
             "index": "circle-of-the-land-grassland",
             "type": "feature",
-            "name": "Круг Земли: Равнины"
+            "name": "Круг Земли: Равнина",
+            "url": "/api/2014/features/circle-of-the-land-grassland"
           }
         ],
         "spell": {
           "index": "invisibility",
-          "name": "Невидимость"
+          "name": "Невидимость",
+          "url": "/api/2014/spells/invisibility"
         }
       },
       {
@@ -768,17 +892,20 @@
           {
             "index": "druid-3",
             "type": "level",
-            "name": "Друид 3"
+            "name": "Друид 3",
+            "url": "/api/2014/classes/druid/levels/3"
           },
           {
             "index": "circle-of-the-land-grassland",
             "type": "feature",
-            "name": "Круг Земли: Равнины"
+            "name": "Круг Земли: Равнина",
+            "url": "/api/2014/features/circle-of-the-land-grassland"
           }
         ],
         "spell": {
           "index": "pass-without-trace",
-          "name": "Безмолвный шаг"
+          "name": "Бесследный шаг",
+          "url": "/api/2014/spells/pass-without-trace"
         }
       },
       {
@@ -786,17 +913,20 @@
           {
             "index": "druid-5",
             "type": "level",
-            "name": "Друид 5"
+            "name": "Друид 5",
+            "url": "/api/2014/classes/druid/levels/5"
           },
           {
             "index": "circle-of-the-land-grassland",
             "type": "feature",
-            "name": "Круг Земли: Равнины"
+            "name": "Круг Земли: Равнина",
+            "url": "/api/2014/features/circle-of-the-land-grassland"
           }
         ],
         "spell": {
           "index": "daylight",
-          "name": "Дневной свет"
+          "name": "Дневной свет",
+          "url": "/api/2014/spells/daylight"
         }
       },
       {
@@ -804,17 +934,20 @@
           {
             "index": "druid-5",
             "type": "level",
-            "name": "Друид 5"
+            "name": "Друид 5",
+            "url": "/api/2014/classes/druid/levels/5"
           },
           {
             "index": "circle-of-the-land-grassland",
             "type": "feature",
-            "name": "Круг Земли: Равнины"
+            "name": "Круг Земли: Равнина",
+            "url": "/api/2014/features/circle-of-the-land-grassland"
           }
         ],
         "spell": {
           "index": "haste",
-          "name": "Ускорение"
+          "name": "Ускорение",
+          "url": "/api/2014/spells/haste"
         }
       },
       {
@@ -822,17 +955,20 @@
           {
             "index": "druid-7",
             "type": "level",
-            "name": "Друид 7"
+            "name": "Друид 7",
+            "url": "/api/2014/classes/druid/levels/7"
           },
           {
             "index": "circle-of-the-land-grassland",
             "type": "feature",
-            "name": "Круг Земли: Равнины"
+            "name": "Круг Земли: Равнина",
+            "url": "/api/2014/features/circle-of-the-land-grassland"
           }
         ],
         "spell": {
           "index": "divination",
-          "name": "Прорицание"
+          "name": "Прорицание",
+          "url": "/api/2014/spells/divination"
         }
       },
       {
@@ -840,17 +976,20 @@
           {
             "index": "druid-7",
             "type": "level",
-            "name": "Друид 7"
+            "name": "Друид 7",
+            "url": "/api/2014/classes/druid/levels/7"
           },
           {
             "index": "circle-of-the-land-grassland",
             "type": "feature",
-            "name": "Круг Земли: Равнины"
+            "name": "Круг Земли: Равнина",
+            "url": "/api/2014/features/circle-of-the-land-grassland"
           }
         ],
         "spell": {
           "index": "freedom-of-movement",
-          "name": "Свобода движений"
+          "name": "Свобода перемещения",
+          "url": "/api/2014/spells/freedom-of-movement"
         }
       },
       {
@@ -858,17 +997,20 @@
           {
             "index": "druid-9",
             "type": "level",
-            "name": "Друид 9"
+            "name": "Друид 9",
+            "url": "/api/2014/classes/druid/levels/9"
           },
           {
             "index": "circle-of-the-land-grassland",
             "type": "feature",
-            "name": "Круг Земли: Равнины"
+            "name": "Круг Земли: Равнина",
+            "url": "/api/2014/features/circle-of-the-land-grassland"
           }
         ],
         "spell": {
           "index": "dream",
-          "name": "Сон"
+          "name": "Сон",
+          "url": "/api/2014/spells/dream"
         }
       },
       {
@@ -876,17 +1018,20 @@
           {
             "index": "druid-9",
             "type": "level",
-            "name": "Друид 9"
+            "name": "Друид 9",
+            "url": "/api/2014/classes/druid/levels/9"
           },
           {
             "index": "circle-of-the-land-grassland",
             "type": "feature",
-            "name": "Круг Земли: Равнины"
+            "name": "Круг Земли: Равнина",
+            "url": "/api/2014/features/circle-of-the-land-grassland"
           }
         ],
         "spell": {
           "index": "insect-plague",
-          "name": "Нашествие насекомых"
+          "name": "Нашествие насекомых",
+          "url": "/api/2014/spells/insect-plague"
         }
       },
       {
@@ -894,17 +1039,20 @@
           {
             "index": "druid-3",
             "type": "level",
-            "name": "Друид 3"
+            "name": "Друид 3",
+            "url": "/api/2014/classes/druid/levels/3"
           },
           {
             "index": "circle-of-the-land-mountain",
             "type": "feature",
-            "name": "Круг Земли: Горы"
+            "name": "Круг Земли: Горы",
+            "url": "/api/2014/features/circle-of-the-land-mountain"
           }
         ],
         "spell": {
           "index": "spider-climb",
-          "name": "Паук"
+          "name": "Паук",
+          "url": "/api/2014/spells/spider-climb"
         }
       },
       {
@@ -912,17 +1060,20 @@
           {
             "index": "druid-3",
             "type": "level",
-            "name": "Друид 3"
+            "name": "Друид 3",
+            "url": "/api/2014/classes/druid/levels/3"
           },
           {
             "index": "circle-of-the-land-mountain",
             "type": "feature",
-            "name": "Круг Земли: Горы"
+            "name": "Круг Земли: Горы",
+            "url": "/api/2014/features/circle-of-the-land-mountain"
           }
         ],
         "spell": {
           "index": "spike-growth",
-          "name": "Разрастание шипов"
+          "name": "Разрастание шипов",
+          "url": "/api/2014/spells/spike-growth"
         }
       },
       {
@@ -930,17 +1081,20 @@
           {
             "index": "druid-5",
             "type": "level",
-            "name": "Друид 5"
+            "name": "Друид 5",
+            "url": "/api/2014/classes/druid/levels/5"
           },
           {
             "index": "circle-of-the-land-mountain",
             "type": "feature",
-            "name": "Круг Земли: Горы"
+            "name": "Круг Земли: Горы",
+            "url": "/api/2014/features/circle-of-the-land-mountain"
           }
         ],
         "spell": {
           "index": "lightning-bolt",
-          "name": "Удар молнии"
+          "name": "Молния",
+          "url": "/api/2014/spells/lightning-bolt"
         }
       },
       {
@@ -948,17 +1102,20 @@
           {
             "index": "druid-5",
             "type": "level",
-            "name": "Друид 5"
+            "name": "Друид 5",
+            "url": "/api/2014/classes/druid/levels/5"
           },
           {
             "index": "circle-of-the-land-mountain",
             "type": "feature",
-            "name": "Круг Земли: Горы"
+            "name": "Круг Земли: Горы",
+            "url": "/api/2014/features/circle-of-the-land-mountain"
           }
         ],
         "spell": {
           "index": "meld-into-stone",
-          "name": "Слияние с камнем"
+          "name": "Слияние с камнем",
+          "url": "/api/2014/spells/meld-into-stone"
         }
       },
       {
@@ -966,17 +1123,20 @@
           {
             "index": "druid-7",
             "type": "level",
-            "name": "Друид 7"
+            "name": "Друид 7",
+            "url": "/api/2014/classes/druid/levels/7"
           },
           {
             "index": "circle-of-the-land-mountain",
             "type": "feature",
-            "name": "Круг Земли: Горы"
+            "name": "Круг Земли: Горы",
+            "url": "/api/2014/features/circle-of-the-land-mountain"
           }
         ],
         "spell": {
           "index": "stone-shape",
-          "name": "Формовка камня"
+          "name": "Формование камня",
+          "url": "/api/2014/spells/stone-shape"
         }
       },
       {
@@ -984,17 +1144,20 @@
           {
             "index": "druid-7",
             "type": "level",
-            "name": "Друид 7"
+            "name": "Друид 7",
+            "url": "/api/2014/classes/druid/levels/7"
           },
           {
             "index": "circle-of-the-land-mountain",
             "type": "feature",
-            "name": "Круг Земли: Горы"
+            "name": "Круг Земли: Горы",
+            "url": "/api/2014/features/circle-of-the-land-mountain"
           }
         ],
         "spell": {
           "index": "stoneskin",
-          "name": "Каменная кожа"
+          "name": "Каменная кожа",
+          "url": "/api/2014/spells/stoneskin"
         }
       },
       {
@@ -1002,17 +1165,20 @@
           {
             "index": "druid-9",
             "type": "level",
-            "name": "Друид 9"
+            "name": "Друид 9",
+            "url": "/api/2014/classes/druid/levels/9"
           },
           {
             "index": "circle-of-the-land-mountain",
             "type": "feature",
-            "name": "Круг Земли: Горы"
+            "name": "Круг Земли: Горы",
+            "url": "/api/2014/features/circle-of-the-land-mountain"
           }
         ],
         "spell": {
           "index": "passwall",
-          "name": "Проход сквозь стены"
+          "name": "Проход сквозь стену",
+          "url": "/api/2014/spells/passwall"
         }
       },
       {
@@ -1020,17 +1186,20 @@
           {
             "index": "druid-9",
             "type": "level",
-            "name": "Друид 9"
+            "name": "Друид 9",
+            "url": "/api/2014/classes/druid/levels/9"
           },
           {
             "index": "circle-of-the-land-mountain",
             "type": "feature",
-            "name": "Круг Земли: Горы"
+            "name": "Круг Земли: Горы",
+            "url": "/api/2014/features/circle-of-the-land-mountain"
           }
         ],
         "spell": {
           "index": "wall-of-stone",
-          "name": "Каменная стена"
+          "name": "Каменная стена",
+          "url": "/api/2014/spells/wall-of-stone"
         }
       },
       {
@@ -1038,17 +1207,20 @@
           {
             "index": "druid-3",
             "type": "level",
-            "name": "Друид 3"
+            "name": "Друид 3",
+            "url": "/api/2014/classes/druid/levels/3"
           },
           {
             "index": "circle-of-the-land-swamp",
             "type": "feature",
-            "name": "Круг Земли: Болото"
+            "name": "Круг Земли: Болото",
+            "url": "/api/2014/features/circle-of-the-land-swamp"
           }
         ],
         "spell": {
           "index": "acid-arrow",
-          "name": "Кислотная стрела"
+          "name": "Кислотная стрела",
+          "url": "/api/2014/spells/acid-arrow"
         }
       },
       {
@@ -1056,17 +1228,20 @@
           {
             "index": "druid-3",
             "type": "level",
-            "name": "Друид 3"
+            "name": "Друид 3",
+            "url": "/api/2014/classes/druid/levels/3"
           },
           {
             "index": "circle-of-the-land-swamp",
             "type": "feature",
-            "name": "Круг Земли: Болото"
+            "name": "Круг Земли: Болото",
+            "url": "/api/2014/features/circle-of-the-land-swamp"
           }
         ],
         "spell": {
           "index": "darkness",
-          "name": "Тьма"
+          "name": "Тьма",
+          "url": "/api/2014/spells/darkness"
         }
       },
       {
@@ -1074,17 +1249,20 @@
           {
             "index": "druid-5",
             "type": "level",
-            "name": "Друид 5"
+            "name": "Друид 5",
+            "url": "/api/2014/classes/druid/levels/5"
           },
           {
             "index": "circle-of-the-land-swamp",
             "type": "feature",
-            "name": "Круг Земли: Болото"
+            "name": "Круг Земли: Болото",
+            "url": "/api/2014/features/circle-of-the-land-swamp"
           }
         ],
         "spell": {
           "index": "water-walk",
-          "name": "Хождение по воде"
+          "name": "Хождение по воде",
+          "url": "/api/2014/spells/water-walk"
         }
       },
       {
@@ -1092,17 +1270,20 @@
           {
             "index": "druid-5",
             "type": "level",
-            "name": "Друид 5"
+            "name": "Друид 5",
+            "url": "/api/2014/classes/druid/levels/5"
           },
           {
             "index": "circle-of-the-land-swamp",
             "type": "feature",
-            "name": "Круг Земли: Болото"
+            "name": "Круг Земли: Болото",
+            "url": "/api/2014/features/circle-of-the-land-swamp"
           }
         ],
         "spell": {
           "index": "stinking-cloud",
-          "name": "Зловонное облако"
+          "name": "Зловонное облако",
+          "url": "/api/2014/spells/stinking-cloud"
         }
       },
       {
@@ -1110,17 +1291,20 @@
           {
             "index": "druid-7",
             "type": "level",
-            "name": "Друид 7"
+            "name": "Друид 7",
+            "url": "/api/2014/classes/druid/levels/7"
           },
           {
             "index": "circle-of-the-land-swamp",
             "type": "feature",
-            "name": "Круг Земли: Болото"
+            "name": "Круг Земли: Болото",
+            "url": "/api/2014/features/circle-of-the-land-swamp"
           }
         ],
         "spell": {
           "index": "freedom-of-movement",
-          "name": "Свобода движений"
+          "name": "Свобода перемещения",
+          "url": "/api/2014/spells/freedom-of-movement"
         }
       },
       {
@@ -1128,17 +1312,20 @@
           {
             "index": "druid-7",
             "type": "level",
-            "name": "Друид 7"
+            "name": "Друид 7",
+            "url": "/api/2014/classes/druid/levels/7"
           },
           {
             "index": "circle-of-the-land-swamp",
             "type": "feature",
-            "name": "Круг Земли: Болото"
+            "name": "Круг Земли: Болото",
+            "url": "/api/2014/features/circle-of-the-land-swamp"
           }
         ],
         "spell": {
           "index": "locate-creature",
-          "name": "Поиск существа"
+          "name": "Поиск существа",
+          "url": "/api/2014/spells/locate-creature"
         }
       },
       {
@@ -1146,17 +1333,20 @@
           {
             "index": "druid-9",
             "type": "level",
-            "name": "Друид 9"
+            "name": "Друид 9",
+            "url": "/api/2014/classes/druid/levels/9"
           },
           {
             "index": "circle-of-the-land-swamp",
             "type": "feature",
-            "name": "Круг Земли: Болото"
+            "name": "Круг Земли: Болото",
+            "url": "/api/2014/features/circle-of-the-land-swamp"
           }
         ],
         "spell": {
           "index": "insect-plague",
-          "name": "Нашествие насекомых"
+          "name": "Нашествие насекомых",
+          "url": "/api/2014/spells/insect-plague"
         }
       },
       {
@@ -1164,58 +1354,67 @@
           {
             "index": "druid-9",
             "type": "level",
-            "name": "Друид 9"
+            "name": "Друид 9",
+            "url": "/api/2014/classes/druid/levels/9"
           },
           {
             "index": "circle-of-the-land-swamp",
             "type": "feature",
-            "name": "Круг Земли: Болото"
+            "name": "Круг Земли: Болото",
+            "url": "/api/2014/features/circle-of-the-land-swamp"
           }
         ],
         "spell": {
           "index": "scrying",
-          "name": "Прорицание"
+          "name": "Предсказание",
+          "url": "/api/2014/spells/scrying"
         }
       }
     ],
-    "subclass_levels": "/api/2014/subclasses/land/levels"
+    "subclass_levels": "/api/2014/subclasses/land/levels",
+    "url": "/api/2014/subclasses/land"
   },
   {
     "index": "champion",
     "class": {
       "index": "fighter",
-      "name": "Воин"
+      "name": "Воин",
+      "url": "/api/2014/classes/fighter"
     },
     "name": "Чемпион",
     "subclass_flavor": "Воинский архетип",
     "desc": [
-      "Архетипичный Чемпион фокусируется на развитии грубой физической силы, отточенной до смертоносного совершенства. Те, кто следует этому архетипу, сочетают суровые тренировки с физическим превосходством, чтобы наносить сокрушительные удары."
+      "Архетипичный Чемпион фокусируется на развитии чистой физической мощи, отточенной до смертоносного совершенства. Те, кто следует этому архетипу, сочетают строгие тренировки с физическим превосходством, чтобы наносить разрушительные удары."
     ],
-    "subclass_levels": "/api/2014/subclasses/champion/levels"
+    "subclass_levels": "/api/2014/subclasses/champion/levels",
+    "url": "/api/2014/subclasses/champion"
   },
   {
     "index": "open-hand",
     "class": {
       "index": "monk",
-      "name": "Монах"
+      "name": "Монах",
+      "url": "/api/2014/classes/monk"
     },
     "name": "Открытая ладонь",
-    "subclass_flavor": "Монастырская традиция",
+    "subclass_flavor": "Монашеская традиция",
     "desc": [
-      "Монахи Пути Открытой Ладони — непревзойденные мастера рукопашного боя, как с оружием, так и без него. Они обучаются техникам, позволяющим толкать и опрокидывать противников, манипулировать ки для исцеления своего тела и практиковать продвинутую медитацию, способную защитить их от вреда."
+      "Монахи Пути Открытой Ладони — непревзойденные мастера боевых искусств, будь то с оружием или без него. Они изучают техники, позволяющие толкать и сбивать противников с ног, манипулировать энергией Ки для исцеления своего тела и практиковать продвинутую медитацию, которая может защитить их от вреда."
     ],
-    "subclass_levels": "/api/2014/subclasses/open-hand/levels"
+    "subclass_levels": "/api/2014/subclasses/open-hand/levels",
+    "url": "/api/2014/subclasses/open-hand"
   },
   {
     "index": "devotion",
     "class": {
       "index": "paladin",
-      "name": "Паладин"
+      "name": "Паладин",
+      "url": "/api/2014/classes/paladin"
     },
     "name": "Преданность",
     "subclass_flavor": "Священная клятва",
     "desc": [
-      "Клятва Преданности обязывает паладина следовать самым возвышенным идеалам справедливости, добродетели и порядка. Этих паладинов, которых иногда называют кавалерами, белыми рыцарями или святыми воителями, представляют как идеального рыцаря в сияющих доспехах, действующего с честью во имя справедливости и общего блага. Они придерживаются строжайших стандартов поведения, и некоторые из них, к лучшему или к худшему, требуют того же от остального мира. Многие из тех, кто приносит эту клятву, преданы богам закона и добра, используя заветы своих богов как меру своей преданности. Они почитают ангелов — совершенных слуг добра — как свои идеалы и помещают изображения ангельских крыльев на свои шлемы или гербы."
+      "Клятва Преданности связывает паладина с высочайшими идеалами справедливости, добродетели и порядка. Этих паладинов, которых иногда называют кавалерами, белыми рыцарями или святыми воинами, представляют собой идеал рыцаря в сияющих доспехах, действующего с честью в погоне за справедливостью и общим благом. Они придерживаются самых высоких стандартов поведения, а некоторые, к лучшему или худшему, требуют того же от остального мира. Многие из тех, кто приносит эту клятву, преданы богам закона и добра и используют догматы своих богов как меру своей преданности. Они считают ангелов — совершенных слуг добра — своими идеалами и включают изображения ангельских крыльев в свои шлемы или гербы."
     ],
     "spells": [
       {
@@ -1223,12 +1422,14 @@
           {
             "index": "paladin-3",
             "type": "level",
-            "name": "Паладин 3"
+            "name": "Паладин 3",
+            "url": "/api/2014/classes/paladin/levels/3"
           }
         ],
         "spell": {
           "index": "protection-from-evil-and-good",
-          "name": "Защита от добра и зла"
+          "name": "Защита от зла и добра",
+          "url": "/api/2014/spells/protection-from-evil-and-good"
         }
       },
       {
@@ -1236,12 +1437,14 @@
           {
             "index": "paladin-3",
             "type": "level",
-            "name": "Паладин 3"
+            "name": "Паладин 3",
+            "url": "/api/2014/classes/paladin/levels/3"
           }
         ],
         "spell": {
           "index": "sanctuary",
-          "name": "Убежище"
+          "name": "Убежище",
+          "url": "/api/2014/spells/sanctuary"
         }
       },
       {
@@ -1249,12 +1452,14 @@
           {
             "index": "paladin-5",
             "type": "level",
-            "name": "Паладин 5"
+            "name": "Паладин 5",
+            "url": "/api/2014/classes/paladin/levels/5"
           }
         ],
         "spell": {
           "index": "lesser-restoration",
-          "name": "Низшее восстановление"
+          "name": "Малое восстановление",
+          "url": "/api/2014/spells/lesser-restoration"
         }
       },
       {
@@ -1262,12 +1467,14 @@
           {
             "index": "paladin-5",
             "type": "level",
-            "name": "Паладин 5"
+            "name": "Паладин 5",
+            "url": "/api/2014/classes/paladin/levels/5"
           }
         ],
         "spell": {
           "index": "zone-of-truth",
-          "name": "Зона истины"
+          "name": "Зона истины",
+          "url": "/api/2014/spells/zone-of-truth"
         }
       },
       {
@@ -1275,12 +1482,14 @@
           {
             "index": "paladin-9",
             "type": "level",
-            "name": "Паладин 9"
+            "name": "Паладин 9",
+            "url": "/api/2014/classes/paladin/levels/9"
           }
         ],
         "spell": {
           "index": "beacon-of-hope",
-          "name": "Маяк надежды"
+          "name": "Маяк надежды",
+          "url": "/api/2014/spells/beacon-of-hope"
         }
       },
       {
@@ -1288,12 +1497,14 @@
           {
             "index": "paladin-9",
             "type": "level",
-            "name": "Паладин 9"
+            "name": "Паладин 9",
+            "url": "/api/2014/classes/paladin/levels/9"
           }
         ],
         "spell": {
           "index": "dispel-magic",
-          "name": "Рассеивание магии"
+          "name": "Рассеивание магии",
+          "url": "/api/2014/spells/dispel-magic"
         }
       },
       {
@@ -1301,12 +1512,14 @@
           {
             "index": "paladin-13",
             "type": "level",
-            "name": "Паладин 13"
+            "name": "Паладин 13",
+            "url": "/api/2014/classes/paladin/levels/13"
           }
         ],
         "spell": {
           "index": "freedom-of-movement",
-          "name": "Свобода движений"
+          "name": "Свобода перемещения",
+          "url": "/api/2014/spells/freedom-of-movement"
         }
       },
       {
@@ -1314,12 +1527,14 @@
           {
             "index": "paladin-13",
             "type": "level",
-            "name": "Паладин 13"
+            "name": "Паладин 13",
+            "url": "/api/2014/classes/paladin/levels/13"
           }
         ],
         "spell": {
           "index": "guardian-of-faith",
-          "name": "Страж веры"
+          "name": "Страж веры",
+          "url": "/api/2014/spells/guardian-of-faith"
         }
       },
       {
@@ -1327,12 +1542,14 @@
           {
             "index": "paladin-17",
             "type": "level",
-            "name": "Паладин 17"
+            "name": "Паладин 17",
+            "url": "/api/2014/classes/paladin/levels/17"
           }
         ],
         "spell": {
           "index": "commune",
-          "name": "Общение"
+          "name": "Общение",
+          "url": "/api/2014/spells/commune"
         }
       },
       {
@@ -1340,66 +1557,76 @@
           {
             "index": "paladin-17",
             "type": "level",
-            "name": "Паладин 17"
+            "name": "Паладин 17",
+            "url": "/api/2014/classes/paladin/levels/17"
           }
         ],
         "spell": {
           "index": "flame-strike",
-          "name": "Огненный удар"
+          "name": "Огненный столп",
+          "url": "/api/2014/spells/flame-strike"
         }
       }
     ],
-    "subclass_levels": "/api/2014/subclasses/devotion/levels"
+    "subclass_levels": "/api/2014/subclasses/devotion/levels",
+    "url": "/api/2014/subclasses/devotion"
   },
   {
     "index": "hunter",
     "class": {
       "index": "ranger",
-      "name": "Следопыт"
+      "name": "Следопыт",
+      "url": "/api/2014/classes/ranger"
     },
     "name": "Охотник",
     "subclass_flavor": "Архетип следопыта",
     "desc": [
-      "Следовать архетипу Охотника — значит принять свою роль оплота между цивилизацией и ужасами дикой природы. Ступая по пути Охотника, вы обучаетесь специализированным техникам борьбы с угрозами, с которыми вы сталкиваетесь: от свирепых огров и орд орков до гигантских великанов и ужасающих драконов."
+      "Следование архетипу Охотника означает признание своего места в качестве оплота между цивилизацией и ужасами дикой природы. Ступая по пути Охотника, вы обучаетесь специализированным техникам борьбы с угрозами, с которыми сталкиваетесь: от беснующихся огров и орд орков до возвышающихся гигантов и внушающих ужас драконов."
     ],
-    "subclass_levels": "/api/2014/subclasses/hunter/levels"
+    "subclass_levels": "/api/2014/subclasses/hunter/levels",
+    "url": "/api/2014/subclasses/hunter"
   },
   {
     "index": "thief",
     "class": {
       "index": "rogue",
-      "name": "Плут"
+      "name": "Плут",
+      "url": "/api/2014/classes/rogue"
     },
     "name": "Вор",
-    "subclass_flavor": "Плутовской архетип",
+    "subclass_flavor": "Воровской архетип",
     "desc": [
-      "Вы оттачиваете свои навыки в воровском искусстве. Взломщики, бандиты, карманники и другие преступники обычно следуют этому архетипу, но также его выбирают и плуты, предпочитающие считать себя профессиональными искателями сокровищ, исследователями, спелеологами и детективами. В дополнение к улучшению вашей ловкости и скрытности, вы обучаетесь навыкам, полезным для исследования древних руин, чтения незнакомых языков и использования магических предметов, которые вы обычно не могли бы применить."
+      "Вы оттачиваете свои навыки в искусстве воровства. Взломщики, бандиты, карманники и другие преступники обычно следуют этому архетипу, но так же поступают и те плуты, которые предпочитают считать себя профессиональными охотниками за сокровищами, исследователями, первопроходцами и следователями. В дополнение к улучшению вашей ловкости и скрытности, вы изучаете навыки, полезные для проникновения в древние руины, чтения незнакомых языков и использования магических предметов, которые обычно вы не могли бы использовать."
     ],
-    "subclass_levels": "/api/2014/subclasses/thief/levels"
+    "subclass_levels": "/api/2014/subclasses/thief/levels",
+    "url": "/api/2014/subclasses/thief"
   },
   {
     "index": "draconic",
     "class": {
       "index": "sorcerer",
-      "name": "Чародей"
+      "name": "Чародей",
+      "url": "/api/2014/classes/sorcerer"
     },
     "name": "Драконья кровь",
-    "subclass_flavor": "Происхождение чародейства",
+    "subclass_flavor": "Происхождение чародея",
     "desc": [
-      "Ваша врожденная магия проистекает из драконьей магии, смешавшейся с вашей кровью или кровью ваших предков. Чаще всего чародеи с таким происхождением ведут свою родословную от могущественного мага древности, заключившего сделку с драконом или даже имевшего родителя-дракона. Некоторые из этих линий крови хорошо известны в мире, но большинство остаются тайными. Любой чародей может стать первым в новой родословной в результате пакта или иных исключительных обстоятельств."
+      "Ваша врожденная магия проистекает из драконьей магии, которая смешалась с вашей кровью или кровью ваших предков. Чаще всего чародеи с этим происхождением ведут свою родословную от могущественного чародея древности, который заключил сделку с драконом или даже мог называть дракона своим родителем. Некоторые из этих родословных хорошо известны в мире, но большинство остаются неясными. Любой чародей может стать первым в новой родословной в результате пакта или какого-то другого исключительного обстоятельства."
     ],
-    "subclass_levels": "/api/2014/subclasses/draconic/levels"
+    "subclass_levels": "/api/2014/subclasses/draconic/levels",
+    "url": "/api/2014/subclasses/draconic"
   },
   {
     "index": "fiend",
     "class": {
       "index": "warlock",
-      "name": "Колдун"
+      "name": "Колдун",
+      "url": "/api/2014/classes/warlock"
     },
-    "name": "Бестия",
+    "name": "Исчадие",
     "subclass_flavor": "Покровитель из иного мира",
     "desc": [
-      "Вы заключили контракт с бестией из низших планов существования — существом, чьи цели несут зло, даже если вы сами пытаетесь противостоять им. Такие сущности жаждут развращения или уничтожения всего сущего, включая в конечном итоге и вас. К бестиям, достаточно могущественным для заключения пакта, относятся лорды демонов, такие как Демогоргон, Оркус, Фраз-Урб-лу и Бафомет; архидьяволы, такие как Асмодей, Диспатер, Мефистофель и Белиал; особо могучие ледяные дьяволы и балоры; а также ультролоты и другие лорды юголотов."
+      "Вы заключили пакт с исчадием из нижних планов существования, существом, чьи цели злы, даже если вы боретесь против этих целей. Такие существа желают развращения или уничтожения всего сущего, в конечном итоге включая и вас. К исчадиям, достаточно могущественным, чтобы заключить пакт, относятся повелители демонов, такие как Демогоргон, Оркус, Фраз-Урб-луу и Бафомет; архидьяволы, такие как Асмодей, Диспатер, Мефистофель и Белиал; особенно могучие исчадия преисподней и балоры; а также ультролоты и другие лорды юголотов."
     ],
     "spells": [
       {
@@ -1407,12 +1634,14 @@
           {
             "index": "warlock-1",
             "type": "level",
-            "name": "Колдун 1"
+            "name": "Колдун 1",
+            "url": "/api/2014/classes/warlock/levels/1"
           }
         ],
         "spell": {
           "index": "burning-hands",
-          "name": "Горящие руки"
+          "name": "Горящие руки",
+          "url": "/api/2014/spells/burning-hands"
         }
       },
       {
@@ -1420,12 +1649,14 @@
           {
             "index": "warlock-1",
             "type": "level",
-            "name": "Колдун 1"
+            "name": "Колдун 1",
+            "url": "/api/2014/classes/warlock/levels/1"
           }
         ],
         "spell": {
           "index": "command",
-          "name": "Приказ"
+          "name": "Приказ",
+          "url": "/api/2014/spells/command"
         }
       },
       {
@@ -1433,12 +1664,14 @@
           {
             "index": "warlock-3",
             "type": "level",
-            "name": "Колдун 3"
+            "name": "Колдун 3",
+            "url": "/api/2014/classes/warlock/levels/3"
           }
         ],
         "spell": {
           "index": "blindness-deafness",
-          "name": "Слепота/Глухота"
+          "name": "Слепота/Глухота",
+          "url": "/api/2014/spells/blindness-deafness"
         }
       },
       {
@@ -1446,12 +1679,14 @@
           {
             "index": "warlock-3",
             "type": "level",
-            "name": "Колдун 3"
+            "name": "Колдун 3",
+            "url": "/api/2014/classes/warlock/levels/3"
           }
         ],
         "spell": {
           "index": "scorching-ray",
-          "name": "Палящий луч"
+          "name": "Палящий луч",
+          "url": "/api/2014/spells/scorching-ray"
         }
       },
       {
@@ -1459,12 +1694,14 @@
           {
             "index": "warlock-5",
             "type": "level",
-            "name": "Колдун 5"
+            "name": "Колдун 5",
+            "url": "/api/2014/classes/warlock/levels/5"
           }
         ],
         "spell": {
           "index": "fireball",
-          "name": "Огненный шар"
+          "name": "Огненный шар",
+          "url": "/api/2014/spells/fireball"
         }
       },
       {
@@ -1472,12 +1709,14 @@
           {
             "index": "warlock-5",
             "type": "level",
-            "name": "Колдун 5"
+            "name": "Колдун 5",
+            "url": "/api/2014/classes/warlock/levels/5"
           }
         ],
         "spell": {
           "index": "stinking-cloud",
-          "name": "Зловонное облако"
+          "name": "Зловонное облако",
+          "url": "/api/2014/spells/stinking-cloud"
         }
       },
       {
@@ -1485,12 +1724,14 @@
           {
             "index": "warlock-7",
             "type": "level",
-            "name": "Колдун 7"
+            "name": "Колдун 7",
+            "url": "/api/2014/classes/warlock/levels/7"
           }
         ],
         "spell": {
           "index": "fire-shield",
-          "name": "Огненный щит"
+          "name": "Огненный щит",
+          "url": "/api/2014/spells/fire-shield"
         }
       },
       {
@@ -1498,12 +1739,14 @@
           {
             "index": "warlock-7",
             "type": "level",
-            "name": "Колдун 7"
+            "name": "Колдун 7",
+            "url": "/api/2014/classes/warlock/levels/7"
           }
         ],
         "spell": {
           "index": "wall-of-fire",
-          "name": "Огненная стена"
+          "name": "Огненная стена",
+          "url": "/api/2014/spells/wall-of-fire"
         }
       },
       {
@@ -1511,12 +1754,14 @@
           {
             "index": "warlock-9",
             "type": "level",
-            "name": "Колдун 9"
+            "name": "Колдун 9",
+            "url": "/api/2014/classes/warlock/levels/9"
           }
         ],
         "spell": {
           "index": "flame-strike",
-          "name": "Огненный удар"
+          "name": "Огненный столп",
+          "url": "/api/2014/spells/flame-strike"
         }
       },
       {
@@ -1524,28 +1769,33 @@
           {
             "index": "warlock-9",
             "type": "level",
-            "name": "Колдун 9"
+            "name": "Колдун 9",
+            "url": "/api/2014/classes/warlock/levels/9"
           }
         ],
         "spell": {
           "index": "hallow",
-          "name": "Освящение"
+          "name": "Освящение",
+          "url": "/api/2014/spells/hallow"
         }
       }
     ],
-    "subclass_levels": "/api/2014/subclasses/fiend/levels"
+    "subclass_levels": "/api/2014/subclasses/fiend/levels",
+    "url": "/api/2014/subclasses/fiend"
   },
   {
     "index": "evocation",
     "class": {
       "index": "wizard",
-      "name": "Волшебник"
+      "name": "Волшебник",
+      "url": "/api/2014/classes/wizard"
     },
     "name": "Воплощение",
     "subclass_flavor": "Магическая традиция",
     "desc": [
-      "Вы сосредотачиваете свое обучение на магии, которая создает мощные стихийные эффекты, такие как лютый холод, обжигающее пламя, грохочущий гром, треск молнии и едкая кислота. Некоторые эвокаторы находят работу в армии, служа артиллерией для уничтожения вражеских войск издалека. Другие используют свои зрелищные способности для защиты слабых, а кто-то ищет собственной выгоды как бандит, искатель приключений или честолюбивый тиран."
+      "Вы фокусируете свое обучение на магии, создающей мощные стихийные эффекты, такие как лютый холод, обжигающее пламя, рокочущий гром, трескучая молния и едкая кислота. Некоторые специалисты в школе воплощения находят работу в армии, служа в качестве артиллерии, поражающей вражеские войска издалека. Другие используют свою впечатляющую силу для защиты слабых, в то время как третьи ищут собственной выгоды в качестве бандитов, искателей приключений или начинающих тиранов."
     ],
-    "subclass_levels": "/api/2014/subclasses/evocation/levels"
+    "subclass_levels": "/api/2014/subclasses/evocation/levels",
+    "url": "/api/2014/subclasses/evocation"
   }
 ]

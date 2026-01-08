@@ -5,11 +5,13 @@
     "starting_proficiencies": [
       {
         "index": "skill-insight",
-        "name": "Навык: Проницательность"
+        "name": "Навык: Проницательность",
+        "url": "/api/2014/proficiencies/skill-insight"
       },
       {
         "index": "skill-religion",
-        "name": "Навык: Религия"
+        "name": "Навык: Религия",
+        "url": "/api/2014/proficiencies/skill-religion"
       }
     ],
     "language_options": {
@@ -24,14 +26,16 @@
       {
         "equipment": {
           "index": "clothes-common",
-          "name": "Одежда, обычная"
+          "name": "Одежда, обычная",
+          "url": "/api/2014/equipment/clothes-common"
         },
         "quantity": 1
       },
       {
         "equipment": {
           "index": "pouch",
-          "name": "Поясная сумка"
+          "name": "Поясная сумка",
+          "url": "/api/2014/equipment/pouch"
         },
         "quantity": 1
       }
@@ -44,7 +48,8 @@
           "option_set_type": "equipment_category",
           "equipment_category": {
             "index": "holy-symbols",
-            "name": "Священные символы"
+            "name": "Священные символы",
+            "url": "/api/2014/equipment-categories/holy-symbols"
           }
         }
       }
@@ -109,15 +114,18 @@
             "alignments": [
               {
                 "index": "lawful-good",
-                "name": "Законопослушный добрый"
+                "name": "Законопослушный добрый",
+                "url": "/api/2014/alignments/lawful-good"
               },
               {
                 "index": "lawful-neutral",
-                "name": "Законопослушный нейтральный"
+                "name": "Законопослушный нейтральный",
+                "url": "/api/2014/alignments/lawful-neutral"
               },
               {
                 "index": "lawful-evil",
-                "name": "Законопослушный злой"
+                "name": "Законопослушный злой",
+                "url": "/api/2014/alignments/lawful-evil"
               }
             ]
           },
@@ -127,15 +135,18 @@
             "alignments": [
               {
                 "index": "lawful-good",
-                "name": "Законопослушный добрый"
+                "name": "Законопослушный добрый",
+                "url": "/api/2014/alignments/lawful-good"
               },
               {
                 "index": "neutral-good",
-                "name": "Нейтральный добрый"
+                "name": "Нейтральный добрый",
+                "url": "/api/2014/alignments/neutral-good"
               },
               {
                 "index": "chaotic-good",
-                "name": "Хаотичный добрый"
+                "name": "Хаотичный добрый",
+                "url": "/api/2014/alignments/chaotic-good"
               }
             ]
           },
@@ -145,15 +156,18 @@
             "alignments": [
               {
                 "index": "chaotic-good",
-                "name": "Хаотичный добрый"
+                "name": "Хаотичный добрый",
+                "url": "/api/2014/alignments/chaotic-good"
               },
               {
                 "index": "chaotic-neutral",
-                "name": "Хаотичный нейтральный"
+                "name": "Хаотичный нейтральный",
+                "url": "/api/2014/alignments/chaotic-neutral"
               },
               {
                 "index": "chaotic-evil",
-                "name": "Хаотичный злой"
+                "name": "Хаотичный злой",
+                "url": "/api/2014/alignments/chaotic-evil"
               }
             ]
           },
@@ -163,15 +177,18 @@
             "alignments": [
               {
                 "index": "lawful-good",
-                "name": "Законопослушный добрый"
+                "name": "Законопослушный добрый",
+                "url": "/api/2014/alignments/lawful-good"
               },
               {
                 "index": "lawful-neutral",
-                "name": "Законопослушный нейтральный"
+                "name": "Законопослушный нейтральный",
+                "url": "/api/2014/alignments/lawful-neutral"
               },
               {
                 "index": "lawful-evil",
-                "name": "Законопослушный злой"
+                "name": "Законопослушный злой",
+                "url": "/api/2014/alignments/lawful-evil"
               }
             ]
           },
@@ -181,15 +198,18 @@
             "alignments": [
               {
                 "index": "lawful-good",
-                "name": "Законопослушный добрый"
+                "name": "Законопослушный добрый",
+                "url": "/api/2014/alignments/lawful-good"
               },
               {
                 "index": "lawful-neutral",
-                "name": "Законопослушный нейтральный"
+                "name": "Законопослушный нейтральный",
+                "url": "/api/2014/alignments/lawful-neutral"
               },
               {
                 "index": "lawful-evil",
-                "name": "Законопослушный злой"
+                "name": "Законопослушный злой",
+                "url": "/api/2014/alignments/lawful-evil"
               }
             ]
           },
@@ -199,39 +219,48 @@
             "alignments": [
               {
                 "index": "lawful-good",
-                "name": "Законопослушный добрый"
+                "name": "Законопослушный добрый",
+                "url": "/api/2014/alignments/lawful-good"
               },
               {
                 "index": "neutral-good",
-                "name": "Нейтральный добрый"
+                "name": "Нейтральный добрый",
+                "url": "/api/2014/alignments/neutral-good"
               },
               {
                 "index": "chaotic-good",
-                "name": "Хаотичный добрый"
+                "name": "Хаотичный добрый",
+                "url": "/api/2014/alignments/chaotic-good"
               },
               {
                 "index": "lawful-neutral",
-                "name": "Законопослушный нейтральный"
+                "name": "Законопослушный нейтральный",
+                "url": "/api/2014/alignments/lawful-neutral"
               },
               {
                 "index": "neutral",
-                "name": "Нейтральный"
+                "name": "Нейтральный",
+                "url": "/api/2014/alignments/neutral"
               },
               {
                 "index": "chaotic-neutral",
-                "name": "Хаотичный нейтральный"
+                "name": "Хаотичный нейтральный",
+                "url": "/api/2014/alignments/chaotic-neutral"
               },
               {
                 "index": "lawful-evil",
-                "name": "Законопослушный злой"
+                "name": "Законопослушный злой",
+                "url": "/api/2014/alignments/lawful-evil"
               },
               {
                 "index": "neutral-evil",
-                "name": "Нейтральный злой"
+                "name": "Нейтральный злой",
+                "url": "/api/2014/alignments/neutral-evil"
               },
               {
                 "index": "chaotic-evil",
-                "name": "Хаотичный злой"
+                "name": "Хаотичный злой",
+                "url": "/api/2014/alignments/chaotic-evil"
               }
             ]
           }
@@ -303,6 +332,7 @@
           }
         ]
       }
-    }
+    },
+    "url": "/api/2014/backgrounds/acolyte"
   }
 ]
