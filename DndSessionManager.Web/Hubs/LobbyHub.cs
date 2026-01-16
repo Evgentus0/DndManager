@@ -38,8 +38,7 @@ public class LobbyHub : Hub
             {
                 user.Id,
                 user.Username,
-                Role = user.Role.ToString(),
-                user.IsReady
+                Role = user.Role.ToString()
             });
 
             // Send current user list to the new user
@@ -47,8 +46,7 @@ public class LobbyHub : Hub
             {
                 u.Id,
                 u.Username,
-                Role = u.Role.ToString(),
-                u.IsReady
+                Role = u.Role.ToString()
             });
             await Clients.Caller.SendAsync("InitialUserList", users);
 
@@ -79,28 +77,6 @@ public class LobbyHub : Hub
         }
 
         await Groups.RemoveFromGroupAsync(Context.ConnectionId, sessionId);
-    }
-
-    public async Task ToggleReady(string sessionId, string userId)
-    {
-        if (!Guid.TryParse(sessionId, out var sessionGuid) || !Guid.TryParse(userId, out var userGuid))
-            return;
-
-        var user = _userService.GetUser(sessionGuid, userGuid);
-        if (user != null)
-        {
-            user.IsReady = !user.IsReady;
-
-            await Clients.Group(sessionId).SendAsync("UserReadyChanged", new
-            {
-                user.Id,
-                user.IsReady
-            });
-
-            // Check if all players are ready
-            var allReady = _userService.AreAllPlayersReady(sessionGuid);
-            await Clients.Group(sessionId).SendAsync("AllPlayersReadyStatus", allReady);
-        }
     }
 
     public async Task SendMessage(string sessionId, string userId, string message)
@@ -162,20 +138,6 @@ public class LobbyHub : Hub
                 targetUser.Username
             });
         }
-    }
-
-    public async Task StartSession(string sessionId, string masterUserId)
-    {
-        if (!Guid.TryParse(sessionId, out var sessionGuid) ||
-            !Guid.TryParse(masterUserId, out var masterUserGuid))
-            return;
-
-        // Verify the requester is the master
-        if (!_userService.IsUserMaster(sessionGuid, masterUserGuid))
-            return;
-
-        // Notify all users that the session is starting
-        await Clients.Group(sessionId).SendAsync("SessionStarted");
     }
 
     public async Task ToggleSessionOpen(string sessionId, string masterUserId, bool isOpen)

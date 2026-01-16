@@ -31,16 +31,6 @@ public class UserService
         return null;
     }
 
-    public bool UpdateReadyStatus(Guid sessionId, Guid userId, bool isReady)
-    {
-        var user = GetUser(sessionId, userId);
-        if (user == null)
-            return false;
-
-        user.IsReady = isReady;
-        return true;
-    }
-
     public bool IsUserMaster(Guid sessionId, Guid userId)
     {
         var session = _sessionService.GetSession(sessionId);
@@ -60,16 +50,5 @@ public class UserService
         {
             user.ConnectionId = connectionId;
         }
-    }
-
-    public bool AreAllPlayersReady(Guid sessionId)
-    {
-        var session = _sessionService.GetSession(sessionId);
-        if (session == null || session.Users.Count == 0)
-            return false;
-
-        // All players (not master) must be ready
-        var players = session.Users.Where(u => u.Role == UserRole.Player);
-        return players.Any() && players.All(p => p.IsReady);
     }
 }

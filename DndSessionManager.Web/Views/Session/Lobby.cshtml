@@ -40,9 +40,6 @@
                                 <span v-else class="badge bg-primary ms-2">
                                     {{ $t('lobby.players.player') }}
                                 </span>
-                                <span v-if="user.isReady" class="badge bg-success ms-2">
-                                    {{ $t('lobby.players.ready') }}
-                                </span>
                             </div>
                             <button v-if="canKick(user)"
                                     @@click="kickUser(user.id)"
@@ -60,34 +57,11 @@
                     <h5 class="mb-0">{{ $t('lobby.master.title') }}</h5>
                 </div>
                 <div class="card-body">
-                    <div class="form-check form-switch mb-3">
+                    <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="toggleOpen"
                                v-model="sessionOpen" @@change="toggleSessionOpen">
                         <label class="form-check-label" for="toggleOpen">
                             {{ $t('lobby.master.openToggle') }}
-                        </label>
-                    </div>
-                    <div class="d-grid">
-                        <button type="button" class="btn btn-success btn-lg"
-                                :disabled="!allPlayersReady"
-                                @@click="confirmStartSession">
-                            {{ $t('lobby.master.startButton') }}
-                        </button>
-                        <small v-if="!allPlayersReady" class="text-muted mt-2 text-center">
-                            {{ $t('lobby.master.startHint') }}
-                        </small>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Player Ready Status -->
-            <div v-if="!isMaster" class="card shadow-sm mt-3">
-                <div class="card-body">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="readyToggle"
-                               v-model="playerReady" @@change="toggleReady">
-                        <label class="form-check-label" for="readyToggle">
-                            <strong>{{ $t('lobby.player.readyToggle') }}</strong>
                         </label>
                     </div>
                 </div>
@@ -156,8 +130,6 @@
 				const chatHistory = ref([])
 				const chatInput = ref('')
 				const sessionOpen = ref(@Json.Serialize(session.IsOpen))
-				const playerReady = ref(@Json.Serialize(currentUser.IsReady))
-				const allPlayersReady = ref(false)
 				const chatMessages = ref(null)
 				let connection = null
 
@@ -209,17 +181,9 @@
 					}
 				}
 
-				async function toggleReady() {
-					try {
-						await connection.invoke('ToggleReady', sessionId, userId)
-					} catch (err) {
-						console.error('Error toggling ready:', err)
-					}
-				}
-
 				async function toggleSessionOpen() {
 					try {
-						await connection.invoke('ToggleSessionOpen', sessionId, userId)
+						await connection.invoke('ToggleSessionOpen', sessionId, userId, sessionOpen.value);
 					} catch (err) {
 						console.error('Error toggling session open:', err)
 					}
@@ -231,16 +195,6 @@
 							await connection.invoke('KickUser', sessionId, userId, kickedUserId)
 						} catch (err) {
 							console.error('Error kicking user:', err)
-						}
-					}
-				}
-
-				async function confirmStartSession() {
-					if (confirm(t('lobby.master.startConfirm'))) {
-						try {
-							await connection.invoke('StartSession', sessionId, userId)
-						} catch (err) {
-							console.error('Error starting session:', err)
 						}
 					}
 				}
@@ -273,17 +227,6 @@
 						addSystemMessage(t('lobby.messages.userDisconnected', { username: data.username }))
 					})
 
-					connection.on('UserReadyChanged', (data) => {
-						const user = users.value.find(u => u.id === data.id)
-						if (user) {
-							user.isReady = data.isReady
-						}
-					})
-
-					connection.on('AllPlayersReadyStatus', (ready) => {
-						allPlayersReady.value = ready
-					})
-
 					connection.on('ReceiveMessage', (data) => {
 						addChatMessage(data.username, data.message, data.timestamp)
 					})
@@ -301,13 +244,6 @@
 					connection.on('UserKicked', () => {
 						alert(t('lobby.messages.kicked'))
 						window.location.href = '/'
-					})
-
-					connection.on('SessionStarted', () => {
-						addSystemMessage(t('lobby.messages.sessionStarting'))
-						setTimeout(() => {
-							alert(t('lobby.messages.sessionStarted'))
-						}, 500)
 					})
 
 					connection.on('SessionOpenChanged', (isOpen) => {
@@ -348,16 +284,12 @@
 					chatHistory,
 					chatInput,
 					sessionOpen,
-					playerReady,
-					allPlayersReady,
 					chatMessages,
 					canKick,
 					formatTime,
 					sendMessage,
-					toggleReady,
 					toggleSessionOpen,
-					kickUser,
-					confirmStartSession
+					kickUser
 				}
 			}
 		})
