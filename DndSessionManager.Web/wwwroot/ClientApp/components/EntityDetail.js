@@ -87,7 +87,7 @@ export default {
 
 				html += `<div class="detail-section mb-3">`
 				html += `<h5 class="text-capitalize">${formatKey(key)}</h5>`
-				html += formatValue(key, value)
+				html += formatValue(value)
 				html += `</div>`
 			}
 
@@ -99,46 +99,67 @@ export default {
 			return key.replace(/_/g, ' ').replace(/([A-Z])/g, ' $1').trim()
 		}
 
-		function formatValue(key, value) {
+		function isReference(obj) {
+			return obj && typeof obj === 'object' && !Array.isArray(obj) && typeof obj.url === 'string'
+		}
+
+		function formatValue(value) {
 			if (value === null || value === undefined) {
-				return '<p class="text-muted">—</p>'
+				return '<span class="text-muted">—</span>'
 			}
 
-			// Array
+			if (isReference(value)) {
+				return formatReference(value)
+			}
+
 			if (Array.isArray(value)) {
-				if (value.length === 0) return '<p class="text-muted">None</p>'
-
-				// Check if array contains objects with references
-				if (value[0] && typeof value[0] === 'object' && value[0].url) {
-					return '<ul class="list-unstyled">' +
-						value.map(item => `<li>${formatReference(item)}</li>`).join('') +
-						'</ul>'
-				}
-
-				// String array (like descriptions)
-				if (typeof value[0] === 'string') {
-					return value.map(item => `<p>${escapeHtml(item)}</p>`).join('')
-				}
-
-				// Generic object array
-				return '<pre class="bg-light p-2">' + JSON.stringify(value, null, 2) + '</pre>'
+				return formatArray(value)
 			}
 
-			// Object (possibly a reference)
 			if (typeof value === 'object') {
-				if (value.url) {
-					return formatReference(value)
-				}
-				return '<pre class="bg-light p-2">' + JSON.stringify(value, null, 2) + '</pre>'
+				return formatObject(value)
 			}
 
-			// Boolean
 			if (typeof value === 'boolean') {
-				return `<p><span class="badge bg-${value ? 'success' : 'secondary'}">${value ? 'Yes' : 'No'}</span></p>`
+				return `<span class="badge bg-${value ? 'success' : 'secondary'}">${value ? 'Yes' : 'No'}</span>`
 			}
 
-			// Number or String
-			return `<p>${escapeHtml(String(value))}</p>`
+			return escapeHtml(String(value))
+		}
+
+		function formatArray(arr) {
+			if (arr.length === 0) {
+				return '<span class="text-muted">None</span>'
+			}
+
+			if (arr.every(item => typeof item === 'string')) {
+				return arr.map(item => `<p>${escapeHtml(item)}</p>`).join('')
+			}
+
+			if (arr.every(isReference)) {
+				return '<ul class="list-unstyled">' +
+					arr.map(item => `<li>${formatReference(item)}</li>`).join('') +
+					'</ul>'
+			}
+
+			return '<ul class="list-group list-group-flush">' +
+				arr.map(item => `<li class="list-group-item">${formatValue(item)}</li>`).join('') +
+				'</ul>'
+		}
+
+		function formatObject(obj) {
+			const entries = Object.entries(obj).filter(([k]) => k !== 'url')
+
+			if (entries.length === 0) {
+				return '<span class="text-muted">—</span>'
+			}
+
+			return '<dl class="row mb-0">' +
+				entries.map(([key, val]) =>
+					`<dt class="col-sm-4 text-capitalize">${formatKey(key)}</dt>` +
+					`<dd class="col-sm-8">${formatValue(val)}</dd>`
+				).join('') +
+				'</dl>'
 		}
 
 		function formatReference(ref) {
