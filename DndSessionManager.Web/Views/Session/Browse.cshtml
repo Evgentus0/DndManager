@@ -24,44 +24,69 @@
 
     <div v-else class="row">
         <div v-for="session in sessions" :key="session.id" class="col-12 col-md-6 col-lg-4 mb-4">
-            <div class="card h-100 shadow-sm">
+            <div class="card h-100 shadow-sm" :class="{ 'border-warning': session.state === 1 }">
                 <div class="card-body">
                     <h5 class="card-title">{{ session.name }}</h5>
                     <p v-if="session.description" class="card-text text-muted small">{{ session.description }}</p>
                     <p v-else class="card-text text-muted small fst-italic">{{ $t('browse.card.noDescription') }}</p>
 
                     <div class="mb-2">
-                        <span class="badge bg-info">
+                        <!-- Saved session badge -->
+                        <span v-if="session.state === 1" class="badge bg-warning text-dark">
+                            {{ $t('browse.card.saved') }}
+                        </span>
+                        <!-- Active session badges -->
+                        <span v-else class="badge bg-success">
+                            {{ $t('browse.card.active') }}
+                        </span>
+                        <span v-if="session.state === 0" class="badge bg-info">
                             {{ session.users.length }} / {{ session.maxPlayers }} {{ $t('browse.card.players') }}
                         </span>
-                        <span v-if="session.passwordHash" class="badge bg-warning text-dark">
-                            {{ $t('browse.card.passwordProtected') }}
+                        <span v-if="session.passwordHash" class="badge bg-secondary">
+                            <i class="bi bi-lock-fill"></i>
                         </span>
-                        <span v-if="!session.isOpen" class="badge bg-danger">
+                        <span v-if="session.state === 0 && !session.isOpen" class="badge bg-danger">
                             {{ $t('browse.card.closed') }}
                         </span>
                     </div>
 
                     <p class="card-text small text-muted">
-                        {{ $t('browse.card.created') }} {{ formatDate(session.createdAt) }}
+                        <template v-if="session.state === 1 && session.lastPlayedAt">
+                            {{ $t('browse.card.lastPlayed') }} {{ formatDate(session.lastPlayedAt) }}
+                        </template>
+                        <template v-else>
+                            {{ $t('browse.card.created') }} {{ formatDate(session.createdAt) }}
+                        </template>
+                    </p>
+                    <p v-if="session.masterUsername" class="card-text small text-muted">
+                        <i class="bi bi-person-fill"></i> {{ session.masterUsername }}
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a v-if="session.isOpen && session.users.length < session.maxPlayers"
-                       :href="`/Session/Join/${session.id}`"
-                       class="btn btn-success w-100">
-                        {{ $t('browse.card.joinButton') }}
-                    </a>
-                    <button v-else-if="!session.isOpen"
-                            class="btn btn-secondary w-100"
-                            disabled>
-                        {{ $t('browse.card.closedButton') }}
-                    </button>
-                    <button v-else
-                            class="btn btn-secondary w-100"
-                            disabled>
-                        {{ $t('browse.card.fullButton') }}
-                    </button>
+                    <!-- Saved session: Resume button -->
+                    <template v-if="session.state === 1">
+                        <a :href="`/Session/Resume/${session.id}`" class="btn btn-warning w-100">
+                            {{ $t('browse.card.resumeButton') }}
+                        </a>
+                    </template>
+                    <!-- Active session: Join/Closed/Full buttons -->
+                    <template v-else>
+                        <a v-if="session.isOpen && session.users.length < session.maxPlayers"
+                           :href="`/Session/Join/${session.id}`"
+                           class="btn btn-success w-100">
+                            {{ $t('browse.card.joinButton') }}
+                        </a>
+                        <button v-else-if="!session.isOpen"
+                                class="btn btn-secondary w-100"
+                                disabled>
+                            {{ $t('browse.card.closedButton') }}
+                        </button>
+                        <button v-else
+                                class="btn btn-secondary w-100"
+                                disabled>
+                            {{ $t('browse.card.fullButton') }}
+                        </button>
+                    </template>
                 </div>
             </div>
         </div>
@@ -79,6 +104,7 @@
 				const { t, locale } = useI18n()
 
 				function formatDate(dateString) {
+					if (!dateString) return ''
 					const date = new Date(dateString)
 					return date.toLocaleString(locale.value)
 				}

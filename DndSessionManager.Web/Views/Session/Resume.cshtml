@@ -1,0 +1,46 @@
+@{
+    ViewData["Title"] = "Resume Session";
+}
+
+<div id="resume-app" class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+        <div class="card shadow">
+            <div class="card-header bg-warning text-dark">
+                <h2 class="mb-0">{{ $t('resume.title') }}</h2>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info mb-4">
+                    <strong>{{ $t('resume.sessionLabel') }}</strong> @ViewBag.SessionName
+                </div>
+
+                <p class="text-muted mb-4">{{ $t('resume.description') }}</p>
+
+                <form asp-controller="Session" asp-action="Resume" asp-route-id="@ViewBag.SessionId" method="post">
+                    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">{{ $t('resume.fields.password.label') }} <span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="password" name="password" required :placeholder="$t('resume.fields.password.placeholder')" autofocus>
+                        <div class="form-text">{{ $t('resume.fields.password.help') }}</div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-warning btn-lg">{{ $t('resume.buttons.resume') }}</button>
+                        <a asp-controller="Session" asp-action="Browse" class="btn btn-secondary">{{ $t('resume.buttons.back') }}</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+	<script type="module">
+		import { createApp } from 'vue'
+		import { i18n } from '/ClientApp/i18n.js'
+
+		const app = createApp({})
+		app.use(i18n)
+		app.mount('#resume-app')
+	</script>
+}

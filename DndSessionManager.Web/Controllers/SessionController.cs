@@ -47,8 +47,8 @@ public class SessionController : Controller
             Role = UserRole.Master
         };
 
-        // Create the session
-        var session = _sessionService.CreateSession(sessionName, password, maxPlayers, description, masterUser.Id);
+        // Create the session with master username
+        var session = _sessionService.CreateSession(sessionName, password, maxPlayers, description, masterUser.Id, masterUser.Username);
 
         // Set the session ID for the user
         masterUser.SessionId = session.Id;
@@ -66,8 +66,94 @@ public class SessionController : Controller
     [HttpGet]
     public IActionResult Browse()
     {
-        var sessions = _sessionService.GetAllSessions();
+        var sessions = _sessionService.GetAllSessionsForBrowse();
         return View(sessions);
+    }
+
+    // GET: /session/resume/{id}
+    [HttpGet]
+    public IActionResult Resume(Guid id)
+    {
+        var session = _sessionService.GetSessionFromDb(id);
+        if (session == null || session.State != SessionState.Saved)
+        {
+            return NotFound("Saved session not found.");
+        }
+
+        ViewBag.SessionId = id;
+        ViewBag.SessionName = session.Name;
+        return View();
+    }
+
+    // POST: /session/resume/{id}
+    [HttpPost]
+    public IActionResult Resume(Guid id, string password)
+    {
+        if (string.IsNullOrWhiteSpace(password))
+        {
+            ModelState.AddModelError("", "Password is required.");
+            ViewBag.SessionId = id;
+            return View();
+        }
+
+        var savedSession = _sessionService.GetSessionFromDb(id);
+        if (savedSession == null || savedSession.State != SessionState.Saved)
+        {
+            return NotFound("Saved session not found.");
+        }
+
+        if (!_sessionService.ValidateSessionPassword(id, password))
+        {
+            ModelState.AddModelError("", "Incorrect password.");
+            ViewBag.SessionId = id;
+            ViewBag.SessionName = savedSession.Name;
+            return View();
+        }
+
+        // Resume the session
+        var session = _sessionService.ResumeSession(id);
+        if (session == null)
+        {
+            ModelState.AddModelError("", "Failed to resume session.");
+            ViewBag.SessionId = id;
+            ViewBag.SessionName = savedSession.Name;
+            return View();
+        }
+
+        // Create master user for resumed session
+        var masterUser = new User
+        {
+            Id = session.MasterId,
+            Username = session.MasterUsername ?? "Game Master",
+            Role = UserRole.Master,
+            SessionId = session.Id
+        };
+
+        // Add master to the session
+        _sessionService.AddUserToSession(session.Id, masterUser);
+
+        // Store user ID in session
+        HttpContext.Session.SetString($"UserId_{session.Id}", masterUser.Id.ToString());
+
+        return RedirectToAction("Lobby", new { id = session.Id });
+    }
+
+    // POST: /session/delete/{id}
+    [HttpPost]
+    public IActionResult Delete(Guid id, string password)
+    {
+        if (string.IsNullOrWhiteSpace(password))
+        {
+            return RedirectToAction("Browse");
+        }
+
+        if (!_sessionService.ValidateSessionPassword(id, password))
+        {
+            return RedirectToAction("Browse");
+        }
+
+        _sessionService.DeleteSavedSession(id);
+        return RedirectToAction("Browse");
     }
 
     // GET: /session/join/{id}

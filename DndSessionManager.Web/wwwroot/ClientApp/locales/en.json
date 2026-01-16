@@ -54,10 +54,10 @@
   },
   "browse": {
     "title": "Available Sessions",
-    "subtitle": "Select a session to join",
+    "subtitle": "Select a session to join or resume a saved session",
     "empty": {
-      "title": "No active sessions",
-      "message": "There are currently no active sessions. Why not create one?",
+      "title": "No sessions",
+      "message": "There are currently no active or saved sessions. Why not create one?",
       "button": "Create Session"
     },
     "card": {
@@ -65,12 +65,32 @@
       "passwordProtected": "Password Protected",
       "closed": "Closed",
       "created": "Created:",
+      "lastPlayed": "Last played:",
       "joinButton": "Join Session",
+      "resumeButton": "Resume Session",
       "closedButton": "Closed to New Players",
       "fullButton": "Session Full",
-      "noDescription": "No description provided"
+      "noDescription": "No description provided",
+      "saved": "Saved",
+      "active": "Active"
     },
     "backButton": "Back to Home"
+  },
+  "resume": {
+    "title": "Resume Session",
+    "sessionLabel": "Session:",
+    "description": "Enter the session password to resume as Game Master",
+    "fields": {
+      "password": {
+        "label": "Session Password",
+        "placeholder": "Enter session password",
+        "help": "Use the password you set when creating the session"
+      }
+    },
+    "buttons": {
+      "resume": "Resume Session",
+      "back": "Back to Browse"
+    }
   },
   "join": {
     "title": "Join Session",

@@ -1,4 +1,5 @@
-﻿using DndSessionManager.Web.Hubs;
+﻿using DndSessionManager.Web.Data;
+using DndSessionManager.Web.Hubs;
 using DndSessionManager.Web.Services;
 
 namespace DndSessionManager.Web;
@@ -23,6 +24,9 @@ public static class WebAppStartup
 
 		// Add memory cache for Handbook
 		builder.Services.AddMemoryCache();
+
+		// Register repository (LiteDB)
+		builder.Services.AddSingleton<ISessionRepository, LiteDbRepository>();
 
 		// Register application services
 		builder.Services.AddSingleton<SessionService>();

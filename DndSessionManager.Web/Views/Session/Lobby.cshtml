@@ -147,7 +147,7 @@
 				// Session data
 				const sessionId = '@session.Id'
 				const userId = '@currentUser.Id'
-				const sessionName = '@session.Name'
+				const sessionName = '@Html.Raw(session.Name)'
 				const isMaster = @Json.Serialize(isMaster)
 				const maxPlayers = @session.MaxPlayers
 

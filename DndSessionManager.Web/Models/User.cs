@@ -9,4 +9,7 @@ public class User
     public bool IsReady { get; set; }
     public string ConnectionId { get; set; } = string.Empty;
     public DateTime JoinedAt { get; set; } = DateTime.UtcNow;
+
+    // Character reference (for future use)
+    public Guid? CharacterId { get; set; }
 }
