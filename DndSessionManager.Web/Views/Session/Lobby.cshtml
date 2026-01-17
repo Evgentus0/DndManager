@@ -95,9 +95,13 @@
                 :user-id="userId">
             </lobby-chat-panel>
 
-            <lobby-character-list
-                v-show="activeTab === 'characters'">
-            </lobby-character-list>
+            <lobby-character-panel
+                v-show="activeTab === 'characters'"
+                :connection="connection"
+                :session-id="sessionId"
+                :user-id="userId"
+                :is-master="isMaster">
+            </lobby-character-panel>
         </div>
     </div>
 </div>
@@ -108,12 +112,12 @@
 		import { useI18n } from 'vue-i18n'
 		import { i18n } from '/ClientApp/i18n.js'
 		import LobbyChatPanel from '/ClientApp/components/LobbyChatPanel.js'
-		import LobbyCharacterList from '/ClientApp/components/LobbyCharacterList.js'
+		import LobbyCharacterPanel from '/ClientApp/components/LobbyCharacterPanel.js'
 
 		const app = createApp({
 			components: {
 				LobbyChatPanel,
-				LobbyCharacterList
+				LobbyCharacterPanel
 			},
 			setup() {
 				const { t } = useI18n()

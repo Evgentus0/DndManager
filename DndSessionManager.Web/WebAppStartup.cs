@@ -32,6 +32,7 @@ public static class WebAppStartup
 		builder.Services.AddScoped<SessionService>();
 		builder.Services.AddScoped<UserService>();
 		builder.Services.AddScoped<HandbookService>();
+		builder.Services.AddScoped<CharacterService>();
 
 		builder.Services.AddScoped<IHubCallerService, HubCallerService>();
 

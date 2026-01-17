@@ -1,8 +1,7 @@
 namespace DndSessionManager.Web.Models;
 
 /// <summary>
-/// Stub for future Character entity. Players can claim existing characters
-/// or create new ones when joining a session.
+/// D&D character entity with full stats. Each player can have one character per session.
 /// </summary>
 public class Character
 {
@@ -11,12 +10,32 @@ public class Character
     public Guid? OwnerId { get; set; }
     public string Name { get; set; } = string.Empty;
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public DateTime? UpdatedAt { get; set; }
 
-    // Future properties (stubs)
-    public string? Race { get; set; }
-    public string? Class { get; set; }
+    // Handbook references (index values like "elf", "fighter")
+    public string? RaceIndex { get; set; }
+    public string? ClassIndex { get; set; }
+
+    // Display names (for custom entries or cached names)
+    public string? RaceName { get; set; }
+    public string? ClassName { get; set; }
+
+    // Core stats
     public int Level { get; set; } = 1;
-    public string? Notes { get; set; }
+    public int MaxHitPoints { get; set; }
+    public int CurrentHitPoints { get; set; }
+    public int ArmorClass { get; set; } = 10;
+    public int ProficiencyBonus { get; set; } = 2;
 
-    // TODO: Add full character stats, inventory, abilities, etc.
+    // Ability scores
+    public int Strength { get; set; } = 10;
+    public int Dexterity { get; set; } = 10;
+    public int Constitution { get; set; } = 10;
+    public int Intelligence { get; set; } = 10;
+    public int Wisdom { get; set; } = 10;
+    public int Charisma { get; set; } = 10;
+
+    // Additional info
+    public string? Background { get; set; }
+    public string? Notes { get; set; }
 }

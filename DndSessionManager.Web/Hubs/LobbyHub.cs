@@ -8,11 +8,13 @@ public class LobbyHub : Hub
 {
     private readonly SessionService _sessionService;
     private readonly UserService _userService;
+    private readonly CharacterService _characterService;
 
-    public LobbyHub(SessionService sessionService, UserService userService)
+    public LobbyHub(SessionService sessionService, UserService userService, CharacterService characterService)
     {
         _sessionService = sessionService;
         _userService = userService;
+        _characterService = characterService;
     }
 
     public async Task JoinLobby(string sessionId, string userId)
@@ -58,6 +60,10 @@ public class LobbyHub : Hub
                 m.Message,
                 m.Timestamp
             }));
+
+            // Send character list to the new user
+            var characters = _characterService.GetSessionCharacters(sessionGuid);
+            await Clients.Caller.SendAsync("CharacterList", characters.Select(MapCharacterToDto));
         }
     }
 
@@ -175,4 +181,170 @@ public class LobbyHub : Hub
 
         await base.OnDisconnectedAsync(exception);
     }
+
+    // Character management methods
+    public async Task CreateCharacter(string sessionId, string userId, CharacterDto characterData)
+    {
+        if (!Guid.TryParse(sessionId, out var sessionGuid) || !Guid.TryParse(userId, out var userGuid))
+            return;
+
+        var user = _userService.GetUser(sessionGuid, userGuid);
+        if (user == null)
+            return;
+
+        // Check if user already has a character
+        if (_characterService.HasCharacter(sessionGuid, userGuid))
+        {
+            await Clients.Caller.SendAsync("CharacterError", "You already have a character in this session.");
+            return;
+        }
+
+        var character = new Character
+        {
+            SessionId = sessionGuid,
+            OwnerId = userGuid,
+            Name = characterData.Name,
+            RaceIndex = characterData.RaceIndex,
+            ClassIndex = characterData.ClassIndex,
+            RaceName = characterData.RaceName,
+            ClassName = characterData.ClassName,
+            Level = characterData.Level,
+            MaxHitPoints = characterData.MaxHitPoints,
+            CurrentHitPoints = characterData.CurrentHitPoints,
+            ArmorClass = characterData.ArmorClass,
+            ProficiencyBonus = characterData.ProficiencyBonus,
+            Strength = characterData.Strength,
+            Dexterity = characterData.Dexterity,
+            Constitution = characterData.Constitution,
+            Intelligence = characterData.Intelligence,
+            Wisdom = characterData.Wisdom,
+            Charisma = characterData.Charisma,
+            Background = characterData.Background,
+            Notes = characterData.Notes
+        };
+
+        _characterService.CreateCharacter(character);
+
+        await Clients.Group(sessionId).SendAsync("CharacterCreated", MapCharacterToDto(character));
+    }
+
+    public async Task UpdateCharacter(string sessionId, string userId, CharacterDto characterData)
+    {
+        if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+            !Guid.TryParse(userId, out var userGuid) ||
+            !Guid.TryParse(characterData.Id, out var characterGuid))
+            return;
+
+        var user = _userService.GetUser(sessionGuid, userGuid);
+        if (user == null)
+            return;
+
+        var existingCharacter = _characterService.GetCharacter(characterGuid);
+        if (existingCharacter == null || existingCharacter.SessionId != sessionGuid)
+            return;
+
+        var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
+        if (!_characterService.CanUserEditCharacter(userGuid, existingCharacter, isMaster))
+        {
+            await Clients.Caller.SendAsync("CharacterError", "You cannot edit this character.");
+            return;
+        }
+
+        existingCharacter.Name = characterData.Name;
+        existingCharacter.RaceIndex = characterData.RaceIndex;
+        existingCharacter.ClassIndex = characterData.ClassIndex;
+        existingCharacter.RaceName = characterData.RaceName;
+        existingCharacter.ClassName = characterData.ClassName;
+        existingCharacter.Level = characterData.Level;
+        existingCharacter.MaxHitPoints = characterData.MaxHitPoints;
+        existingCharacter.CurrentHitPoints = characterData.CurrentHitPoints;
+        existingCharacter.ArmorClass = characterData.ArmorClass;
+        existingCharacter.ProficiencyBonus = characterData.ProficiencyBonus;
+        existingCharacter.Strength = characterData.Strength;
+        existingCharacter.Dexterity = characterData.Dexterity;
+        existingCharacter.Constitution = characterData.Constitution;
+        existingCharacter.Intelligence = characterData.Intelligence;
+        existingCharacter.Wisdom = characterData.Wisdom;
+        existingCharacter.Charisma = characterData.Charisma;
+        existingCharacter.Background = characterData.Background;
+        existingCharacter.Notes = characterData.Notes;
+
+        _characterService.UpdateCharacter(existingCharacter);
+
+        await Clients.Group(sessionId).SendAsync("CharacterUpdated", MapCharacterToDto(existingCharacter));
+    }
+
+    public async Task DeleteCharacter(string sessionId, string userId, string characterId)
+    {
+        if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+            !Guid.TryParse(userId, out var userGuid) ||
+            !Guid.TryParse(characterId, out var characterGuid))
+            return;
+
+        var user = _userService.GetUser(sessionGuid, userGuid);
+        if (user == null)
+            return;
+
+        var character = _characterService.GetCharacter(characterGuid);
+        if (character == null || character.SessionId != sessionGuid)
+            return;
+
+        var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
+        if (!_characterService.CanUserDeleteCharacter(userGuid, character, isMaster))
+        {
+            await Clients.Caller.SendAsync("CharacterError", "You cannot delete this character.");
+            return;
+        }
+
+        _characterService.DeleteCharacter(characterGuid);
+
+        await Clients.Group(sessionId).SendAsync("CharacterDeleted", characterId);
+    }
+
+    private static object MapCharacterToDto(Character c) => new
+    {
+        Id = c.Id.ToString(),
+        OwnerId = c.OwnerId?.ToString(),
+        c.Name,
+        c.RaceIndex,
+        c.ClassIndex,
+        c.RaceName,
+        c.ClassName,
+        c.Level,
+        c.MaxHitPoints,
+        c.CurrentHitPoints,
+        c.ArmorClass,
+        c.ProficiencyBonus,
+        c.Strength,
+        c.Dexterity,
+        c.Constitution,
+        c.Intelligence,
+        c.Wisdom,
+        c.Charisma,
+        c.Background,
+        c.Notes
+    };
+}
+
+public class CharacterDto
+{
+    public string? Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public string? RaceIndex { get; set; }
+    public string? ClassIndex { get; set; }
+    public string? RaceName { get; set; }
+    public string? ClassName { get; set; }
+    public int Level { get; set; } = 1;
+    public int MaxHitPoints { get; set; }
+    public int CurrentHitPoints { get; set; }
+    public int ArmorClass { get; set; } = 10;
+    public int ProficiencyBonus { get; set; } = 2;
+    public int Strength { get; set; } = 10;
+    public int Dexterity { get; set; } = 10;
+    public int Constitution { get; set; } = 10;
+    public int Intelligence { get; set; } = 10;
+    public int Wisdom { get; set; } = 10;
+    public int Charisma { get; set; } = 10;
+    public string? Background { get; set; }
+    public string? Notes { get; set; }
 }

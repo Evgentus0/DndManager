@@ -109,6 +109,38 @@
     "characters": {
       "placeholder": "Character list coming soon..."
     },
+    "character": {
+      "title": "Characters",
+      "createButton": "Create Character",
+      "editButton": "Edit",
+      "deleteButton": "Delete",
+      "deleteConfirm": "Are you sure you want to delete this character?",
+      "noCharacter": "No characters yet. Create one to get started!",
+      "form": {
+        "title": "Character",
+        "name": "Character Name",
+        "race": "Race",
+        "class": "Class",
+        "level": "Level",
+        "customOption": "Custom...",
+        "hp": "Hit Points",
+        "maxHp": "Max HP",
+        "currentHp": "Current HP",
+        "ac": "Armor Class",
+        "proficiency": "Proficiency Bonus",
+        "abilities": "Ability Scores",
+        "str": "STR",
+        "dex": "DEX",
+        "con": "CON",
+        "int": "INT",
+        "wis": "WIS",
+        "cha": "CHA",
+        "background": "Background",
+        "notes": "Notes",
+        "save": "Save",
+        "cancel": "Cancel"
+      }
+    },
     "players": {
       "title": "Players",
       "ready": "Ready",
