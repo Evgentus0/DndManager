@@ -12,7 +12,7 @@ public class LiteDbRepository : ISessionRepository, IDisposable
 
     public LiteDbRepository(IWebHostEnvironment env)
     {
-        var dbPath = Path.Combine(env.ContentRootPath, "Data", "dndmanager.db");
+        var dbPath = Path.Combine(env.ContentRootPath, "Data", "db", "dndmanager.db");
 
         // Ensure Data directory exists
         var dataDir = Path.GetDirectoryName(dbPath);

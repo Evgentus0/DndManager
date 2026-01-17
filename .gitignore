@@ -449,3 +449,4 @@ yarn-error.log*
 
 # Vue Build Output
 wwwroot/dist/
+DndSessionManager.Web/Data/db
