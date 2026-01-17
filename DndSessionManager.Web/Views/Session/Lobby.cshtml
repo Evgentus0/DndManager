@@ -68,53 +68,53 @@
             </div>
         </div>
 
-        <!-- Chat Panel -->
+        <!-- Activities Panel -->
         <div class="col-12 col-lg-8">
-            <div class="card shadow-sm">
-                <div class="card-header bg-dark text-white">
-                    <h5 class="mb-0">{{ $t('lobby.chat.title') }}</h5>
-                </div>
-                <div class="card-body p-0">
-                    <div ref="chatMessages" class="chat-messages p-3">
-                        <div v-if="chatHistory.length === 0" class="text-muted text-center">
-                            <small>{{ $t('lobby.chat.placeholder') }}</small>
-                        </div>
-                        <div v-for="(message, index) in chatHistory" :key="index" class="chat-message mb-2">
-                            <div v-if="message.isSystem" class="text-muted fst-italic">
-                                <small>{{ message.text }}</small>
-                            </div>
-                            <div v-else>
-                                <strong>{{ message.username }}:</strong>
-                                <span class="ms-2">{{ message.text }}</span>
-                                <small class="text-muted ms-2">{{ formatTime(message.timestamp) }}</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="input-group">
-                        <input type="text" class="form-control" v-model="chatInput"
-                               :placeholder="$t('lobby.chat.input')" maxlength="500"
-                               @@keyup.enter="sendMessage">
-                        <button class="btn btn-primary" type="button"
-                                :disabled="!chatInput.trim()"
-                                @@click="sendMessage">
-                            {{ $t('lobby.chat.sendButton') }}
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <!-- Tabs Navigation -->
+            <ul class="nav nav-tabs mb-3">
+                <li class="nav-item">
+                    <a class="nav-link" :class="{ active: activeTab === 'chat' }"
+                       href="#" @@click.prevent="activeTab = 'chat'">
+                        {{ $t('lobby.tabs.chat') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" :class="{ active: activeTab === 'characters' }"
+                       href="#" @@click.prevent="activeTab = 'characters'">
+                        {{ $t('lobby.tabs.characters') }}
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <lobby-chat-panel
+                v-show="activeTab === 'chat'"
+                ref="chatPanelRef"
+                :connection="connection"
+                :session-id="sessionId"
+                :user-id="userId">
+            </lobby-chat-panel>
+
+            <lobby-character-list
+                v-show="activeTab === 'characters'">
+            </lobby-character-list>
         </div>
     </div>
 </div>
 
 @section Scripts {
 	<script type="module">
-		import { createApp, ref, computed, nextTick } from 'vue'
+		import { createApp, ref, computed, shallowRef } from 'vue'
 		import { useI18n } from 'vue-i18n'
 		import { i18n } from '/ClientApp/i18n.js'
+		import LobbyChatPanel from '/ClientApp/components/LobbyChatPanel.js'
+		import LobbyCharacterList from '/ClientApp/components/LobbyCharacterList.js'
 
 		const app = createApp({
+			components: {
+				LobbyChatPanel,
+				LobbyCharacterList
+			},
 			setup() {
 				const { t } = useI18n()
 
@@ -127,11 +127,10 @@
 
 				// Reactive state
 				const users = ref(@Html.Raw(Json.Serialize(session.Users)))
-				const chatHistory = ref([])
-				const chatInput = ref('')
 				const sessionOpen = ref(@Json.Serialize(session.IsOpen))
-				const chatMessages = ref(null)
-				let connection = null
+				const activeTab = ref('chat')
+				const connection = shallowRef(null)
+				const chatPanelRef = ref(null)
 
 				// Computed
 				const canKick = computed(() => {
@@ -139,51 +138,9 @@
 				})
 
 				// Methods
-				function formatTime(timestamp) {
-					const date = new Date(timestamp)
-					return date.toLocaleTimeString()
-				}
-
-				function addSystemMessage(message) {
-					chatHistory.value.push({
-						text: message,
-						timestamp: new Date().toISOString(),
-						isSystem: true
-					})
-					scrollToBottom()
-				}
-
-				function addChatMessage(username, message, timestamp) {
-					chatHistory.value.push({
-						username,
-						text: message,
-						timestamp,
-						isSystem: false
-					})
-					scrollToBottom()
-				}
-
-				async function scrollToBottom() {
-					await nextTick()
-					if (chatMessages.value) {
-						chatMessages.value.scrollTop = chatMessages.value.scrollHeight
-					}
-				}
-
-				async function sendMessage() {
-					if (chatInput.value.trim()) {
-						try {
-							await connection.invoke('SendMessage', sessionId, userId, chatInput.value)
-							chatInput.value = ''
-						} catch (err) {
-							console.error('Error sending message:', err)
-						}
-					}
-				}
-
 				async function toggleSessionOpen() {
 					try {
-						await connection.invoke('ToggleSessionOpen', sessionId, userId, sessionOpen.value);
+						await connection.value.invoke('ToggleSessionOpen', sessionId, userId, sessionOpen.value);
 					} catch (err) {
 						console.error('Error toggling session open:', err)
 					}
@@ -192,86 +149,77 @@
 				async function kickUser(kickedUserId) {
 					if (confirm(t('lobby.master.kickConfirm'))) {
 						try {
-							await connection.invoke('KickUser', sessionId, userId, kickedUserId)
+							await connection.value.invoke('KickUser', sessionId, userId, kickedUserId)
 						} catch (err) {
 							console.error('Error kicking user:', err)
 						}
 					}
 				}
 
+				function addSystemMessageToChat(message) {
+					if (chatPanelRef.value) {
+						chatPanelRef.value.addSystemMessage(message)
+					}
+				}
+
 				async function initializeSignalR() {
-					connection = new signalR.HubConnectionBuilder()
+					connection.value = new signalR.HubConnectionBuilder()
 						.withUrl('/lobbyHub')
 						.withAutomaticReconnect()
 						.build()
 
-					// Event handlers
-					connection.on('InitialUserList', (usersList) => {
+					// Event handlers for user management (stay in parent)
+					connection.value.on('InitialUserList', (usersList) => {
 						users.value = usersList
 					})
 
-					connection.on('UserJoined', (user) => {
+					connection.value.on('UserJoined', (user) => {
 						const existingIndex = users.value.findIndex(u => u.id === user.id)
 						if (existingIndex === -1) {
 							users.value.push(user)
-							addSystemMessage(t('lobby.messages.userJoined', { username: user.username }))
+							addSystemMessageToChat(t('lobby.messages.userJoined', { username: user.username }))
 						}
 					})
 
-					connection.on('UserLeft', (data) => {
+					connection.value.on('UserLeft', (data) => {
 						users.value = users.value.filter(u => u.id !== data.id)
-						addSystemMessage(t('lobby.messages.userLeft', { username: data.username }))
+						addSystemMessageToChat(t('lobby.messages.userLeft', { username: data.username }))
 					})
 
-					connection.on('UserDisconnected', (data) => {
-						addSystemMessage(t('lobby.messages.userDisconnected', { username: data.username }))
+					connection.value.on('UserDisconnected', (data) => {
+						addSystemMessageToChat(t('lobby.messages.userDisconnected', { username: data.username }))
 					})
 
-					connection.on('ReceiveMessage', (data) => {
-						addChatMessage(data.username, data.message, data.timestamp)
-					})
-
-					connection.on('ChatHistory', (messages) => {
-						chatHistory.value = messages.map(msg => ({
-							username: msg.username,
-							text: msg.message,
-							timestamp: msg.timestamp,
-							isSystem: false
-						}))
-						scrollToBottom()
-					})
-
-					connection.on('UserKicked', () => {
+					connection.value.on('UserKicked', () => {
 						alert(t('lobby.messages.kicked'))
 						window.location.href = '/'
 					})
 
-					connection.on('MasterLeave', () => {
+					connection.value.on('MasterLeave', () => {
 						alert(t('lobby.messages.masterLeave'))
 						window.location.href = '/'
 					})
 
-					connection.on('SessionOpenChanged', (isOpen) => {
+					connection.value.on('SessionOpenChanged', (isOpen) => {
 						sessionOpen.value = isOpen
 					})
 
-					connection.onreconnecting(() => {
-						addSystemMessage(t('lobby.messages.connectionLost'))
+					connection.value.onreconnecting(() => {
+						addSystemMessageToChat(t('lobby.messages.connectionLost'))
 					})
 
-					connection.onreconnected(() => {
-						addSystemMessage(t('lobby.messages.reconnected'))
-						connection.invoke('JoinLobby', sessionId, userId)
+					connection.value.onreconnected(() => {
+						addSystemMessageToChat(t('lobby.messages.reconnected'))
+						connection.value.invoke('JoinLobby', sessionId, userId)
 					})
 
-					connection.onclose(() => {
-						addSystemMessage(t('lobby.messages.connectionClosed'));
-						connection.invoke('LeaveLobby', sessionId, userId)
+					connection.value.onclose(() => {
+						addSystemMessageToChat(t('lobby.messages.connectionClosed'));
 					})
 
 					try {
-						await connection.start()
-						await connection.invoke('JoinLobby', sessionId, userId)
+						await connection.value.start()
+						await connection.value.invoke('JoinLobby', sessionId, userId)
 					} catch (err) {
 						console.error('SignalR connection error:', err)
 					}
@@ -287,13 +235,11 @@
 					isMaster,
 					maxPlayers,
 					users,
-					chatHistory,
-					chatInput,
 					sessionOpen,
-					chatMessages,
+					activeTab,
+					connection,
+					chatPanelRef,
 					canKick,
-					formatTime,
-					sendMessage,
 					toggleSessionOpen,
 					kickUser
 				}

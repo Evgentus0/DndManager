@@ -102,6 +102,13 @@
     }
   },
   "lobby": {
+    "tabs": {
+      "chat": "Chat",
+      "characters": "Characters"
+    },
+    "characters": {
+      "placeholder": "Character list coming soon..."
+    },
     "players": {
       "title": "Players",
       "ready": "Ready",

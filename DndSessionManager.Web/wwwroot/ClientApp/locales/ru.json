@@ -122,6 +122,13 @@
     }
   },
   "lobby": {
+    "tabs": {
+      "chat": "Чат",
+      "characters": "Персонажи"
+    },
+    "characters": {
+      "placeholder": "Список персонажей скоро появится..."
+    },
     "players": {
       "title": "Игроки",
       "ready": "Готов",
