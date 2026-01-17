@@ -119,11 +119,11 @@
 				const { t } = useI18n()
 
 				// Session data
-				const sessionId = '@session.Id'
-				const userId = '@currentUser.Id'
+				const sessionId = '@session.Id';
+				const userId = '@currentUser?.Id';
 				const sessionName = '@Html.Raw(session.Name)'
-				const isMaster = @Json.Serialize(isMaster)
-				const maxPlayers = @session.MaxPlayers
+				const isMaster = @Json.Serialize(isMaster);
+				const maxPlayers = @session.MaxPlayers;
 
 				// Reactive state
 				const users = ref(@Html.Raw(Json.Serialize(session.Users)))
@@ -246,6 +246,11 @@
 						window.location.href = '/'
 					})
 
+					connection.on('MasterLeave', () => {
+						alert(t('lobby.messages.masterLeave'))
+						window.location.href = '/'
+					})
+
 					connection.on('SessionOpenChanged', (isOpen) => {
 						sessionOpen.value = isOpen
 					})
@@ -260,7 +265,8 @@
 					})
 
 					connection.onclose(() => {
-						addSystemMessage(t('lobby.messages.connectionClosed'))
+						addSystemMessage(t('lobby.messages.connectionClosed'));
+						connection.invoke('LeaveLobby', sessionId, userId)
 					})
 
 					try {

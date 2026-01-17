@@ -95,7 +95,7 @@
 
 @section Scripts {
 	<script type="module">
-		import { createApp } from 'vue'
+		import { createApp, ref } from 'vue'
 		import { useI18n } from 'vue-i18n'
 		import { i18n } from '/ClientApp/i18n.js'
 
@@ -103,27 +103,43 @@
 			setup() {
 				const { t, locale } = useI18n()
 
+				// Reactive state
+				const sessions = ref(@Html.Raw(Json.Serialize(Model)));
+				let connection = null;
+
 				function formatDate(dateString) {
 					if (!dateString) return ''
 					const date = new Date(dateString)
 					return date.toLocaleString(locale.value)
 				}
+				async function initializeSignalR() {
+					connection = new signalR.HubConnectionBuilder()
+						.withUrl('/browseHub')
+						.withAutomaticReconnect()
+						.build();
 
-				return { formatDate }
-			},
-			data() {
+					connection.on('ReceiveAvailableSessionsList', (sessionList) => {
+						sessions.value = sessionList
+					});
+
+					try {
+						await connection.start()
+					} catch (err) {
+						console.error('SignalR connection error:', err)
+					}
+				}
+
+				// Initialize on mount
+				initializeSignalR();
+
 				return {
-					sessions: @Html.Raw(Json.Serialize(Model))
+					formatDate,
+					sessions
 				}
 			}
 		})
 
 		app.use(i18n)
 		app.mount('#browse-app')
-
-		// Auto-refresh every 5 seconds
-		setTimeout(function() {
-			location.reload();
-		}, 5000);
 	</script>
 }

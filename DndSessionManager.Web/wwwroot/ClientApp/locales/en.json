@@ -160,7 +160,8 @@
       "sessionStarted": "The session has started! The Game Master will now guide the adventure.",
       "connectionLost": "Connection lost. Reconnecting...",
       "reconnected": "Reconnected successfully",
-      "connectionClosed": "Connection closed. Please refresh the page."
+      "connectionClosed": "Connection closed. Please refresh the page.",
+      "masterLeave": "Master leave. Session finished."
     },
     "buttons": {
       "leave": "Leave Session"

@@ -29,9 +29,11 @@ public static class WebAppStartup
 		builder.Services.AddSingleton<ISessionRepository, LiteDbRepository>();
 
 		// Register application services
-		builder.Services.AddSingleton<SessionService>();
-		builder.Services.AddSingleton<UserService>();
+		builder.Services.AddScoped<SessionService>();
+		builder.Services.AddScoped<UserService>();
 		builder.Services.AddScoped<HandbookService>();
+
+		builder.Services.AddScoped<IHubCallerService, HubCallerService>();
 
 
 		// Enable detailed errors for debugging
@@ -58,6 +60,7 @@ public static class WebAppStartup
 				pattern: "{controller=Home}/{action=Index}/{id?}");
 
 		app.MapHub<LobbyHub>("/lobbyHub");
+		app.MapHub<BrowseHub>("/browseHub");
 
 		app.MapGet("/health", () => new { status = "healthy", timestamp = DateTime.UtcNow });
 	}

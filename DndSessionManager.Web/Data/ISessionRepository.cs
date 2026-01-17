@@ -21,4 +21,5 @@ public interface ISessionRepository
     Character? GetCharacter(Guid characterId);
     void SaveCharacter(Character character);
     void DeleteCharacter(Guid characterId);
+	void SetSaveForAllSessions();
 }

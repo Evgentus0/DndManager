@@ -1,0 +1,8 @@
+﻿using DndSessionManager.Web.Models;
+using Microsoft.AspNetCore.SignalR;
+
+namespace DndSessionManager.Web.Hubs;
+
+public class BrowseHub : Hub
+{
+}
