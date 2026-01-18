@@ -1,0 +1,251 @@
+@using DndSessionManager.Web.Models
+@{
+    ViewData["Title"] = "Select Character";
+    var session = ViewBag.Session as Session;
+    var currentUser = ViewBag.CurrentUser as User;
+    var characters = ViewBag.Characters as List<Character>;
+}
+
+<div id="character-select-app" class="container py-4">
+    <div class="row mb-4">
+        <div class="col">
+            <h1 class="display-6">{{ $t('characterSelect.title') }}</h1>
+            <p class="text-muted">{{ $t('characterSelect.subtitle') }}</p>
+            <div class="alert alert-info">
+                <strong>{{ $t('characterSelect.sessionLabel') }}</strong> @session?.Name
+            </div>
+        </div>
+    </div>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <!-- Create New Character Card -->
+    <div class="card mb-4 border-success">
+        <div class="card-header bg-success text-white">
+            <h5 class="mb-0">{{ $t('characterSelect.createNew.title') }}</h5>
+        </div>
+        <div class="card-body">
+            <p>{{ $t('characterSelect.createNew.description') }}</p>
+            <button type="button" class="btn btn-success" @@click="openCreateModal" :disabled="!isConnected">
+                <span v-if="!isConnected" class="spinner-border spinner-border-sm me-1"></span>
+                {{ $t('characterSelect.createNew.button') }}
+            </button>
+            <small class="text-muted d-block mt-2">{{ $t('characterSelect.createNew.note') }}</small>
+        </div>
+    </div>
+
+    @if (characters != null && characters.Any())
+    {
+        <h4 class="mb-3">{{ $t('characterSelect.existing.title') }}</h4>
+        <p class="text-muted mb-3">{{ $t('characterSelect.existing.description') }}</p>
+
+        <div class="row g-3">
+            @foreach (var character in characters)
+            {
+                var isClaimed = !string.IsNullOrEmpty(character.PasswordHash);
+                var isOnline = session?.Users.Any(u => u.Id == character.OwnerId) ?? false;
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 @(isOnline ? "border-danger" : isClaimed ? "border-warning" : "border-primary")">
+                        <div class="card-header @(isOnline ? "bg-danger text-white" : isClaimed ? "bg-warning text-dark" : "bg-primary text-white")">
+                            <h6 class="mb-0">@character.Name</h6>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text text-muted small mb-2">
+                                @(character.RaceName ?? "Unknown Race") &bull;
+                                @(character.ClassName ?? "Unknown Class") &bull;
+                                {{ $t('characterSelect.level') }} @character.Level
+                            </p>
+
+                            @if (!string.IsNullOrEmpty(character.OwnerUsername))
+                            {
+                                <p class="small mb-2">
+                                    <i class="bi bi-person"></i> {{ $t('characterSelect.previousOwner') }}: @character.OwnerUsername
+                                </p>
+                            }
+
+                            @if (isOnline)
+                            {
+                                <div class="alert alert-danger py-2 mb-0">
+                                    <small>{{ $t('characterSelect.currentlyPlayed') }}</small>
+                                </div>
+                            }
+                            else
+                            {
+                                <form asp-controller="Session" asp-action="ClaimCharacter" asp-route-id="@session?.Id" method="post">
+                                    <input type="hidden" name="characterId" value="@character.Id" />
+
+                                    @if (isClaimed)
+                                    {
+                                        <div class="mb-2">
+                                            <input type="password" class="form-control form-control-sm"
+                                                   name="characterPassword"
+                                                   placeholder="@(ViewData["CharacterPasswordPlaceholder"] ?? "Enter character password")"
+                                                   required minlength="4">
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="mb-2">
+                                            <input type="password" class="form-control form-control-sm"
+                                                   name="newPassword"
+                                                   placeholder="@(ViewData["NewPasswordPlaceholder"] ?? "Set new password (min 4 chars)")"
+                                                   required minlength="4">
+                                        </div>
+                                    }
+
+                                    <button type="submit" class="btn @(isClaimed ? "btn-warning" : "btn-primary") btn-sm w-100">
+                                        {{ $t('characterSelect.claimButton') }}
+                                    </button>
+                                </form>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-secondary">
+            {{ $t('characterSelect.noCharacters') }}
+        </div>
+    }
+
+    <!-- Character Form Modal -->
+    <character-form-modal
+        ref="formModalRef"
+        :connection="connection"
+        :session-id="sessionId"
+        :user-id="userId"
+        :races="races"
+        :skills="skills"
+        :classes="classes"
+        @@character-saved="onCharacterSaved">
+    </character-form-modal>
+</div>
+
+@section Scripts {
+    <script type="module">
+        import { createApp, ref, shallowRef, onMounted, onUnmounted } from 'vue'
+        import { i18n } from '/ClientApp/i18n.js'
+        import CharacterFormModal from '/ClientApp/components/CharacterFormModal.js'
+
+        const app = createApp({
+            components: {
+                CharacterFormModal
+            },
+            setup() {
+                const sessionId = '@session?.Id'
+                const userId = '@currentUser?.Id'
+
+                const connection = shallowRef(null)
+                const isConnected = ref(false)
+                const formModalRef = ref(null)
+                const races = ref([])
+                const classes = ref([])
+                const skills = ref([])
+
+                function openCreateModal() {
+                    if (formModalRef.value && isConnected.value) {
+                        formModalRef.value.openForCreate()
+                    }
+                }
+
+                function onCharacterSaved() {
+                    // Character created successfully, redirect to lobby
+                    window.location.href = '/session/' + '/lobby/' + sessionId;
+                }
+
+                async function fetchHandbookData() {
+                    try {
+                        const savedLanguage = localStorage.getItem('user-language')
+                        const browserLanguage = navigator.language.split('-')[0]
+                        const defaultLanguage = savedLanguage || (browserLanguage === 'ru' ? 'ru' : 'en')
+                        const [racesRes, classesRes, skillsRes] = await Promise.all([
+                            fetch('/api/handbook/races', { headers: { 'X-Locale': defaultLanguage } }),
+                            fetch('/api/handbook/classes', { headers: { 'X-Locale': defaultLanguage } }),
+                            fetch('/api/handbook/skills', { headers: { 'X-Locale': defaultLanguage } })
+                        ])
+
+                        if (racesRes.ok) {
+                            races.value = await racesRes.json()
+                        }
+                        if (classesRes.ok) {
+                            classes.value = await classesRes.json()
+                        }
+                        if (skillsRes.ok) {
+                            skills.value = await skillsRes.json()
+                        }
+                    } catch (err) {
+                        console.error('Error fetching handbook data:', err)
+                    }
+                }
+
+                async function initializeSignalR() {
+                    connection.value = new signalR.HubConnectionBuilder()
+                        .withUrl('/lobbyHub')
+                        .withAutomaticReconnect()
+                        .build()
+
+                    // Handle character creation response
+                    connection.value.on('CharacterCreated', (character) => {
+                        // Character created, onCharacterSaved will handle redirect
+                    })
+
+                    connection.value.on('CharacterError', (message) => {
+                        alert(message)
+                    })
+
+                    connection.value.onreconnected(() => {
+                        isConnected.value = true
+                    })
+
+                    connection.value.onclose(() => {
+                        isConnected.value = false
+                    })
+
+                    try {
+                        await connection.value.start()
+                        isConnected.value = true
+                    } catch (err) {
+                        console.error('SignalR connection error:', err)
+                    }
+                }
+
+                onMounted(() => {
+                    initializeSignalR()
+                    fetchHandbookData()
+                })
+
+                onUnmounted(() => {
+                    if (connection.value) {
+                        connection.value.stop()
+                    }
+                })
+
+                return {
+                    sessionId,
+                    userId,
+                    connection,
+                    isConnected,
+                    formModalRef,
+                    races,
+                    classes,
+                    skills,
+                    openCreateModal,
+                    onCharacterSaved
+                }
+            }
+        })
+
+        app.use(i18n)
+        app.mount('#character-select-app')
+    </script>
+}

@@ -29,6 +29,16 @@ export default {
 								</div>
 							</div>
 
+							<!-- Password (only for new characters) -->
+							<div v-if="!isEditing" class="row g-3 mb-4">
+								<div class="col-md-6">
+									<label class="form-label">{{ $t('lobby.character.form.password') }} *</label>
+									<input type="password" class="form-control" v-model="form.password" required minlength="4"
+										:placeholder="$t('lobby.character.form.passwordPlaceholder')">
+									<div class="form-text">{{ $t('lobby.character.form.passwordHelp') }}</div>
+								</div>
+							</div>
+
 							<!-- Race Selection -->
 							<div class="row g-3 mb-4">
 								<div class="col-md-6">
@@ -261,6 +271,7 @@ export default {
 
 		const defaultForm = () => ({
 			name: '',
+			password: '',
 			raceIndex: null,
 			classIndex: null,
 			raceName: '',
@@ -284,7 +295,9 @@ export default {
 		const form = ref(defaultForm())
 
 		const isValid = computed(() => {
-			return form.value.name.trim().length > 0
+			const nameValid = form.value.name.trim().length > 0
+			const passwordValid = isEditing.value || form.value.password.length >= 4
+			return nameValid && passwordValid
 		})
 
 		// Calculate proficiency bonus based on level
@@ -426,6 +439,7 @@ export default {
 				const characterData = {
 					id: editingCharacterId.value,
 					name: form.value.name.trim(),
+					password: isEditing.value ? null : form.value.password,
 					raceIndex: form.value.raceIndex,
 					classIndex: form.value.classIndex,
 					raceName: form.value.raceName,

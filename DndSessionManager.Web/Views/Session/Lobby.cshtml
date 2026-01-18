@@ -15,7 +15,7 @@
             </span>
         </div>
         <div class="col-auto">
-            <form asp-controller="Session" asp-action="Leave" asp-route-id="@session.Id" method="post" class="d-inline">
+            <form asp-controller="Session" asp-action="Leave" asp-route-id="@session?.Id" method="post" class="d-inline">
                 <button type="submit" class="btn btn-danger">{{ $t('lobby.buttons.leave') }}</button>
             </form>
         </div>
@@ -100,7 +100,8 @@
                 :connection="connection"
                 :session-id="sessionId"
                 :user-id="userId"
-                :is-master="isMaster">
+                :is-master="isMaster"
+                :users="users">
             </lobby-character-panel>
         </div>
     </div>
@@ -123,15 +124,15 @@
 				const { t } = useI18n()
 
 				// Session data
-				const sessionId = '@session.Id';
+				const sessionId = '@session?.Id';
 				const userId = '@currentUser?.Id';
-				const sessionName = '@Html.Raw(session.Name)'
+				const sessionName = '@Html.Raw(session?.Name)'
 				const isMaster = @Json.Serialize(isMaster);
-				const maxPlayers = @session.MaxPlayers;
+				const maxPlayers = @(session?.MaxPlayers ?? 0);
 
 				// Reactive state
-				const users = ref(@Html.Raw(Json.Serialize(session.Users)))
-				const sessionOpen = ref(@Json.Serialize(session.IsOpen))
+				const users = ref(@Html.Raw(Json.Serialize(session?.Users)))
+				const sessionOpen = ref(@Json.Serialize(session?.IsOpen))
 				const activeTab = ref('chat')
 				const connection = shallowRef(null)
 				const chatPanelRef = ref(null)

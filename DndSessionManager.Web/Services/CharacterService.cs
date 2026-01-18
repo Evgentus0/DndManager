@@ -33,10 +33,11 @@ public class CharacterService
         return GetCharacterByOwner(sessionId, ownerId) != null;
     }
 
-    public Character CreateCharacter(Character character)
+    public Character CreateCharacter(Character character, string password)
     {
         character.Id = Guid.NewGuid();
         character.CreatedAt = DateTime.UtcNow;
+        character.PasswordHash = BCrypt.Net.BCrypt.HashPassword(password);
         _repository.SaveCharacter(character);
         return character;
     }
@@ -71,5 +72,48 @@ public class CharacterService
     public bool CanUserDeleteCharacter(Guid userId, Character character, bool isMaster)
     {
         return isMaster || character.OwnerId == userId;
+    }
+
+    public bool IsCharacterClaimed(Character character)
+    {
+        return !string.IsNullOrEmpty(character.PasswordHash);
+    }
+
+    public bool ValidateCharacterPassword(Guid characterId, string password)
+    {
+        var character = _repository.GetCharacter(characterId);
+        if (character == null || string.IsNullOrEmpty(character.PasswordHash))
+            return false;
+
+        return BCrypt.Net.BCrypt.Verify(password, character.PasswordHash);
+    }
+
+    public Character? ClaimCharacter(Guid characterId, Guid newOwnerId, string newOwnerUsername, string password)
+    {
+        var character = _repository.GetCharacter(characterId);
+        if (character == null)
+            return null;
+
+        character.OwnerId = newOwnerId;
+        character.OwnerUsername = newOwnerUsername;
+        character.PasswordHash = BCrypt.Net.BCrypt.HashPassword(password);
+        character.UpdatedAt = DateTime.UtcNow;
+
+        _repository.SaveCharacter(character);
+        return character;
+    }
+
+    public bool ResetCharacterPassword(Guid characterId)
+    {
+        var character = _repository.GetCharacter(characterId);
+        if (character == null)
+            return false;
+
+        character.PasswordHash = null;
+        character.OwnerId = null;
+        character.UpdatedAt = DateTime.UtcNow;
+
+        _repository.SaveCharacter(character);
+        return true;
     }
 }

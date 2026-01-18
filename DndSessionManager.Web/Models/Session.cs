@@ -8,6 +8,7 @@ public class Session
     public Guid Id { get; set; } = Guid.NewGuid();
     public string Name { get; set; } = string.Empty;
     public string PasswordHash { get; set; } = string.Empty;
+    public string? MasterPasswordHash { get; set; }
     public int MaxPlayers { get; set; } = 6;
     public bool IsOpen { get; set; } = true;
     public Guid MasterId { get; set; }

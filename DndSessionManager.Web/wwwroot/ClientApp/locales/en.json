@@ -27,11 +27,15 @@
         "placeholder": "Enter session name",
         "required": true
       },
-      "password": {
-        "label": "Password",
-        "placeholder": "Enter password",
-        "help": "Players will need this password to join",
-        "required": true
+      "joinPassword": {
+        "label": "Join Password",
+        "placeholder": "Password for players to join",
+        "help": "Players will need this password to join the session"
+      },
+      "masterPassword": {
+        "label": "Master Password",
+        "placeholder": "Password to resume session",
+        "help": "You'll need this to resume the session later. Keep it secret!"
       },
       "maxPlayers": {
         "label": "Max Players",
@@ -48,7 +52,7 @@
       "cancel": "Cancel"
     },
     "validation": {
-      "required": "Session name and password are required.",
+      "required": "Session name and both passwords are required.",
       "maxPlayers": "Max players must be between 2 and 20."
     }
   },
@@ -79,16 +83,32 @@
   "resume": {
     "title": "Resume Session",
     "sessionLabel": "Session:",
-    "description": "Enter the session password to resume as Game Master",
+    "description": "Enter the master password to resume as Game Master",
     "fields": {
       "password": {
-        "label": "Session Password",
-        "placeholder": "Enter session password",
-        "help": "Use the password you set when creating the session"
+        "label": "Master Password",
+        "placeholder": "Enter master password",
+        "help": "Use the master password you set when creating the session"
       }
     },
     "buttons": {
       "resume": "Resume Session",
+      "back": "Back to Browse"
+    }
+  },
+  "delete": {
+    "title": "Delete Session",
+    "sessionLabel": "Session:",
+    "description": "Enter the master password to delete as Game Master",
+    "fields": {
+      "password": {
+        "label": "Master Password",
+        "placeholder": "Enter master password",
+        "help": "Use the master password you set when creating the session"
+      }
+    },
+    "buttons": {
+      "delete": "Delete Session",
       "back": "Back to Browse"
     }
   },
@@ -121,6 +141,26 @@
       "failed": "Failed to join session."
     }
   },
+  "characterSelect": {
+    "title": "Select Your Character",
+    "subtitle": "Choose an existing character or create a new one to continue",
+    "sessionLabel": "Session:",
+    "createNew": {
+      "title": "Create New Character",
+      "description": "Start fresh with a new character for this adventure",
+      "button": "Create Character",
+      "note": "Fill in the character details and you'll be taken to the lobby"
+    },
+    "existing": {
+      "title": "Existing Characters",
+      "description": "Select a character to play. Enter the password to claim it."
+    },
+    "noCharacters": "No existing characters in this session. Create a new one!",
+    "level": "Level",
+    "previousOwner": "Previous owner",
+    "currentlyPlayed": "This character is currently being played",
+    "claimButton": "Claim Character"
+  },
   "lobby": {
     "tabs": {
       "chat": "Chat",
@@ -136,9 +176,17 @@
       "deleteButton": "Delete",
       "deleteConfirm": "Are you sure you want to delete this character?",
       "noCharacter": "No characters yet. Create one to get started!",
+      "claimed": "Password protected",
+      "unclaimed": "No password",
+      "online": "Online",
+      "resetPassword": "Reset Password",
+      "resetPasswordConfirm": "Are you sure you want to reset the password for {name}? The character will become available for anyone to claim.",
       "form": {
         "title": "Character",
         "name": "Character Name",
+        "password": "Character Password",
+        "passwordPlaceholder": "Set a password for your character",
+        "passwordHelp": "You'll need this to reclaim your character if the session is resumed",
         "race": "Race",
         "class": "Class",
         "level": "Level",

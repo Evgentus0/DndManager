@@ -17,12 +17,13 @@ public class SessionService
 		_hubCaller = hubCaller;
 	}
 
-	public Session CreateSession(string name, string password, int maxPlayers, string? description, Guid masterId, string masterUsername)
+	public Session CreateSession(string name, string joinPassword, string masterPassword, int maxPlayers, string? description, Guid masterId, string masterUsername)
 	{
 		var session = new Session
 		{
 			Name = name,
-			PasswordHash = BCrypt.Net.BCrypt.HashPassword(password),
+			PasswordHash = BCrypt.Net.BCrypt.HashPassword(joinPassword),
+			MasterPasswordHash = BCrypt.Net.BCrypt.HashPassword(masterPassword),
 			MaxPlayers = maxPlayers,
 			Description = description,
 			MasterId = masterId,
@@ -158,6 +159,29 @@ public class SessionService
 		}
 
 		return false;
+	}
+
+	public bool ValidateMasterPassword(Guid sessionId, string password)
+	{
+		Session? session = null;
+
+		// First check active sessions
+		if (_activeSessions.TryGetValue(sessionId, out var activeSession))
+		{
+			session = activeSession;
+		}
+		else
+		{
+			// Then check saved sessions in DB
+			session = _repository.GetSession(sessionId);
+		}
+
+		if (session == null)
+			return false;
+
+		// If MasterPasswordHash is not set (old sessions), fall back to PasswordHash
+		var hashToVerify = session.MasterPasswordHash ?? session.PasswordHash;
+		return BCrypt.Net.BCrypt.Verify(password, hashToVerify);
 	}
 
 	public bool AddUserToSession(Guid sessionId, User user)

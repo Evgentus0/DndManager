@@ -8,12 +8,14 @@ public class SessionController : Controller
 {
     private readonly SessionService _sessionService;
     private readonly UserService _userService;
+    private readonly CharacterService _characterService;
     private readonly ILogger<SessionController> _logger;
 
-    public SessionController(SessionService sessionService, UserService userService, ILogger<SessionController> logger)
+    public SessionController(SessionService sessionService, UserService userService, CharacterService characterService, ILogger<SessionController> logger)
     {
         _sessionService = sessionService;
         _userService = userService;
+        _characterService = characterService;
         _logger = logger;
     }
 
@@ -26,11 +28,11 @@ public class SessionController : Controller
 
     // POST: /session/create
     [HttpPost]
-    public IActionResult Create(string sessionName, string password, int maxPlayers = 6, string? description = null)
+    public IActionResult Create(string sessionName, string joinPassword, string masterPassword, int maxPlayers = 6, string? description = null)
     {
-        if (string.IsNullOrWhiteSpace(sessionName) || string.IsNullOrWhiteSpace(password))
+        if (string.IsNullOrWhiteSpace(sessionName) || string.IsNullOrWhiteSpace(joinPassword) || string.IsNullOrWhiteSpace(masterPassword))
         {
-            ModelState.AddModelError("", "Session name and password are required.");
+            ModelState.AddModelError("", "Session name and both passwords are required.");
             return View();
         }
 
@@ -47,8 +49,8 @@ public class SessionController : Controller
             Role = UserRole.Master
         };
 
-        // Create the session with master username
-        var session = _sessionService.CreateSession(sessionName, password, maxPlayers, description, masterUser.Id, masterUser.Username);
+        // Create the session with both passwords
+        var session = _sessionService.CreateSession(sessionName, joinPassword, masterPassword, maxPlayers, description, masterUser.Id, masterUser.Username);
 
         // Set the session ID for the user
         masterUser.SessionId = session.Id;
@@ -102,9 +104,9 @@ public class SessionController : Controller
             return NotFound("Saved session not found.");
         }
 
-        if (!_sessionService.ValidateSessionPassword(id, password))
+        if (!_sessionService.ValidateMasterPassword(id, password))
         {
-            ModelState.AddModelError("", "Incorrect password.");
+            ModelState.AddModelError("", "Incorrect master password.");
             ViewBag.SessionId = id;
             ViewBag.SessionName = savedSession.Name;
             return View();
@@ -138,23 +140,49 @@ public class SessionController : Controller
         return RedirectToAction("Lobby", new { id = session.Id });
     }
 
-    // POST: /session/delete/{id}
-    [HttpPost]
-    public IActionResult Delete(Guid id, string password)
-    {
-        if (string.IsNullOrWhiteSpace(password))
-        {
-            return RedirectToAction("Browse");
-        }
+	// POST: /session/delete/{id}
+	[HttpGet]
+	public IActionResult Delete(Guid id)
+	{
+		var session = _sessionService.GetSessionFromDb(id);
+		if (session == null)
+		{
+			return NotFound("Saved not found.");
+		}
 
-        if (!_sessionService.ValidateSessionPassword(id, password))
-        {
-            return RedirectToAction("Browse");
-        }
+		ViewBag.SessionId = id;
+		ViewBag.SessionName = session.Name;
+		return View();
+	}
 
-        _sessionService.DeleteSavedSession(id);
-        return RedirectToAction("Browse");
-    }
+	// POST: /session/delete/{id}
+	[HttpPost]
+	public IActionResult Delete(Guid id, string password)
+	{
+		if (string.IsNullOrWhiteSpace(password))
+		{
+			ModelState.AddModelError("", "Password is required.");
+			ViewBag.SessionId = id;
+			return View();
+		}
+
+		var session = _sessionService.GetSessionFromDb(id);
+		if (session == null)
+		{
+			return NotFound("Saved not found.");
+		}
+
+		if (!_sessionService.ValidateMasterPassword(id, password))
+		{
+			ModelState.AddModelError("", "Incorrect master password.");
+			ViewBag.SessionId = id;
+			ViewBag.SessionName = session.Name;
+			return View();
+		}
+
+		_sessionService.DeleteSavedSession(id);
+		return RedirectToAction("Browse");
+	}
 
     // GET: /session/join/{id}
     [HttpGet]
@@ -238,10 +266,12 @@ public class SessionController : Controller
             return View();
         }
 
-        // Store user ID in session
+        // Store user ID and username in session
         HttpContext.Session.SetString($"UserId_{id}", playerUser.Id.ToString());
+        HttpContext.Session.SetString($"Username_{id}", username);
 
-        return RedirectToAction("Lobby", new { id });
+        // Redirect to character selection instead of lobby
+        return RedirectToAction("CharacterSelect", new { id });
     }
 
     // GET: /session/{id}/lobby
@@ -267,6 +297,12 @@ public class SessionController : Controller
             return RedirectToAction("Join", new { id });
         }
 
+        // Check if user has a character (required to enter lobby)
+        if (user.Role != UserRole.Master && !_characterService.HasCharacter(id, userId))
+        {
+            return RedirectToAction("CharacterSelect", new { id });
+        }
+
         ViewBag.Session = session;
         ViewBag.CurrentUser = user;
         ViewBag.IsMaster = user.Role == UserRole.Master;
@@ -283,8 +319,114 @@ public class SessionController : Controller
         {
             _sessionService.RemoveUserFromSession(id, userId);
             HttpContext.Session.Remove($"UserId_{id}");
+            HttpContext.Session.Remove($"Username_{id}");
         }
 
         return RedirectToAction("Index", "Home");
+    }
+
+    // GET: /session/{id}/characterselect
+    [HttpGet]
+    public IActionResult CharacterSelect(Guid id)
+    {
+        var session = _sessionService.GetSession(id);
+        if (session == null)
+        {
+            return NotFound("Session not found.");
+        }
+
+        var userIdStr = HttpContext.Session.GetString($"UserId_{id}");
+        if (string.IsNullOrEmpty(userIdStr) || !Guid.TryParse(userIdStr, out var userId))
+        {
+            return RedirectToAction("Join", new { id });
+        }
+
+        var user = _userService.GetUser(id, userId);
+        if (user == null)
+        {
+            return RedirectToAction("Join", new { id });
+        }
+
+        // Check if user already has a character (already selected)
+        if (_characterService.HasCharacter(id, userId))
+        {
+            return RedirectToAction("Lobby", new { id });
+        }
+
+        var characters = _characterService.GetSessionCharacters(id).ToList();
+
+        ViewBag.Session = session;
+        ViewBag.CurrentUser = user;
+        ViewBag.Characters = characters;
+
+        return View();
+    }
+
+    // POST: /session/{id}/claimcharacter
+    [HttpPost]
+    public IActionResult ClaimCharacter(Guid id, Guid characterId, string? characterPassword, string? newPassword)
+    {
+        var session = _sessionService.GetSession(id);
+        if (session == null)
+        {
+            return NotFound("Session not found.");
+        }
+
+        var userIdStr = HttpContext.Session.GetString($"UserId_{id}");
+        var username = HttpContext.Session.GetString($"Username_{id}") ?? "Unknown";
+        if (string.IsNullOrEmpty(userIdStr) || !Guid.TryParse(userIdStr, out var userId))
+        {
+            return RedirectToAction("Join", new { id });
+        }
+
+        var character = _characterService.GetCharacter(characterId);
+        if (character == null || character.SessionId != id)
+        {
+            TempData["Error"] = "Character not found.";
+            return RedirectToAction("CharacterSelect", new { id });
+        }
+
+        // Check if character is already owned by someone online
+        var currentOwner = character.OwnerId.HasValue
+            ? session.Users.FirstOrDefault(u => u.Id == character.OwnerId.Value)
+            : null;
+        if (currentOwner != null)
+        {
+            TempData["Error"] = "This character is already being played by someone.";
+            return RedirectToAction("CharacterSelect", new { id });
+        }
+
+        // If character has no password (unclaimed or reset), just claim it with new password
+        if (!_characterService.IsCharacterClaimed(character))
+        {
+            if (string.IsNullOrWhiteSpace(newPassword) || newPassword.Length < 4)
+            {
+                TempData["Error"] = "Password is required (minimum 4 characters).";
+                return RedirectToAction("CharacterSelect", new { id });
+            }
+
+            _characterService.ClaimCharacter(characterId, userId, username, newPassword);
+            return RedirectToAction("Lobby", new { id });
+        }
+
+        // Character has a password - verify it
+        if (string.IsNullOrWhiteSpace(characterPassword))
+        {
+            TempData["Error"] = "Character password is required.";
+            return RedirectToAction("CharacterSelect", new { id });
+        }
+
+        if (!_characterService.ValidateCharacterPassword(characterId, characterPassword))
+        {
+            TempData["Error"] = "Incorrect character password.";
+            return RedirectToAction("CharacterSelect", new { id });
+        }
+
+        // Password correct - update ownership (keep same password)
+        character.OwnerId = userId;
+        character.OwnerUsername = username;
+        _characterService.UpdateCharacter(character);
+
+        return RedirectToAction("Lobby", new { id });
     }
 }

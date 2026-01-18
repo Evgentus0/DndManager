@@ -18,9 +18,15 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="password" class="form-label">{{ $t('create.fields.password.label') }} <span class="text-danger">*</span></label>
-                        <input type="password" class="form-control" id="password" name="password" required minlength="4" :placeholder="$t('create.fields.password.placeholder')">
-                        <div class="form-text">{{ $t('create.fields.password.help') }}</div>
+                        <label for="joinPassword" class="form-label">{{ $t('create.fields.joinPassword.label') }} <span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="joinPassword" name="joinPassword" required minlength="4" :placeholder="$t('create.fields.joinPassword.placeholder')">
+                        <div class="form-text">{{ $t('create.fields.joinPassword.help') }}</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="masterPassword" class="form-label">{{ $t('create.fields.masterPassword.label') }} <span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="masterPassword" name="masterPassword" required minlength="4" :placeholder="$t('create.fields.masterPassword.placeholder')">
+                        <div class="form-text">{{ $t('create.fields.masterPassword.help') }}</div>
                     </div>
 
                     <div class="mb-3">

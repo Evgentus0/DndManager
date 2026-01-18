@@ -27,7 +27,15 @@ export default {
 							<div class="card-body">
 								<div class="d-flex justify-content-between align-items-start">
 									<div>
-										<h5 class="card-title mb-1">{{ char.name }}</h5>
+										<h5 class="card-title mb-1">
+											{{ char.name }}
+											<span v-if="char.isClaimed" class="badge bg-success ms-1" :title="$t('lobby.character.claimed')">
+												<i class="bi bi-shield-lock"></i>
+											</span>
+											<span v-else class="badge bg-secondary ms-1" :title="$t('lobby.character.unclaimed')">
+												<i class="bi bi-shield"></i>
+											</span>
+										</h5>
 										<p class="card-text text-muted mb-2">
 											<a v-if="char.raceIndex" :href="raceLink(char)" class="text-decoration-none">
 												{{ char.raceName }}
@@ -41,13 +49,22 @@ export default {
 											&bull;
 											{{ $t('lobby.character.form.level') }} {{ char.level }}
 										</p>
+										<p v-if="char.ownerUsername" class="card-text small text-muted mb-0">
+											<i class="bi bi-person"></i> {{ char.ownerUsername }}
+											<span v-if="isCharacterOwnerOnline(char)" class="badge bg-success ms-1">{{ $t('lobby.character.online') }}</span>
+										</p>
 									</div>
-									<div v-if="canEdit(char)" class="btn-group">
-										<button class="btn btn-sm btn-outline-primary" @click="openEditModal(char)">
+									<div class="btn-group">
+										<button v-if="canEdit(char)" class="btn btn-sm btn-outline-primary" @click="openEditModal(char)">
 											<i class="bi bi-pencil"></i>
 										</button>
-										<button class="btn btn-sm btn-outline-danger" @click="deleteCharacter(char)">
+										<button v-if="canEdit(char)" class="btn btn-sm btn-outline-danger" @click="deleteCharacter(char)">
 											<i class="bi bi-trash"></i>
+										</button>
+										<button v-if="canResetPassword(char)" class="btn btn-sm btn-outline-warning"
+											@click="resetCharacterPassword(char)"
+											:title="$t('lobby.character.resetPassword')">
+											<i class="bi bi-key"></i>
 										</button>
 									</div>
 								</div>
@@ -168,6 +185,10 @@ export default {
 		isMaster: {
 			type: Boolean,
 			default: false
+		},
+		users: {
+			type: Array,
+			default: () => []
 		}
 	},
 	setup(props) {
@@ -193,6 +214,28 @@ export default {
 
 		function canEdit(char) {
 			return props.isMaster || char.ownerId === props.userId
+		}
+
+		function isCharacterOwnerOnline(char) {
+			if (!char.ownerId) return false
+			return props.users.some(u => u.id === char.ownerId)
+		}
+
+		function canResetPassword(char) {
+			// Master can reset password only for characters that:
+			// 1. Have a password (are claimed)
+			// 2. Owner is not currently online
+			return props.isMaster && char.isClaimed && !isCharacterOwnerOnline(char)
+		}
+
+		async function resetCharacterPassword(char) {
+			if (confirm(t('lobby.character.resetPasswordConfirm', { name: char.name }))) {
+				try {
+					await props.connection.invoke('ResetCharacterPassword', props.sessionId, props.userId, char.id)
+				} catch (err) {
+					console.error('Error resetting character password:', err)
+				}
+			}
 		}
 
 		function getModifier(score) {
@@ -317,6 +360,9 @@ export default {
 			isMyCharacter,
 			canSeeFullStats,
 			canEdit,
+			isCharacterOwnerOnline,
+			canResetPassword,
+			resetCharacterPassword,
 			getModifier,
 			raceLink,
 			classLink,

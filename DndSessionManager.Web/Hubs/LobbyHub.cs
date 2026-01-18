@@ -199,10 +199,18 @@ public class LobbyHub : Hub
 			return;
 		}
 
+		// Validate password
+		if (string.IsNullOrWhiteSpace(characterData.Password) || characterData.Password.Length < 4)
+		{
+			await Clients.Caller.SendAsync("CharacterError", "Character password is required (minimum 4 characters).");
+			return;
+		}
+
 		var character = new Character
 		{
 			SessionId = sessionGuid,
 			OwnerId = userGuid,
+			OwnerUsername = user.Username,
 			Name = characterData.Name,
 			RaceIndex = characterData.RaceIndex,
 			ClassIndex = characterData.ClassIndex,
@@ -224,7 +232,7 @@ public class LobbyHub : Hub
 			Skills = characterData.Skills ?? []
 		};
 
-		_characterService.CreateCharacter(character);
+		_characterService.CreateCharacter(character, characterData.Password);
 
 		await Clients.Group(sessionId).SendAsync("CharacterCreated", MapCharacterToDto(character));
 	}
@@ -303,10 +311,55 @@ public class LobbyHub : Hub
 		await Clients.Group(sessionId).SendAsync("CharacterDeleted", characterId);
 	}
 
+	public async Task ResetCharacterPassword(string sessionId, string masterUserId, string characterId)
+	{
+		if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+			!Guid.TryParse(masterUserId, out var masterUserGuid) ||
+			!Guid.TryParse(characterId, out var characterGuid))
+			return;
+
+		// Verify the requester is the master
+		if (!_userService.IsUserMaster(sessionGuid, masterUserGuid))
+		{
+			await Clients.Caller.SendAsync("CharacterError", "Only the Game Master can reset character passwords.");
+			return;
+		}
+
+		var character = _characterService.GetCharacter(characterGuid);
+		if (character == null || character.SessionId != sessionGuid)
+		{
+			await Clients.Caller.SendAsync("CharacterError", "Character not found.");
+			return;
+		}
+
+		// Check if character is currently owned by someone online
+		var session = _sessionService.GetSession(sessionGuid);
+		if (session != null && character.OwnerId.HasValue)
+		{
+			var currentOwner = session.Users.FirstOrDefault(u => u.Id == character.OwnerId.Value);
+			if (currentOwner != null)
+			{
+				await Clients.Caller.SendAsync("CharacterError", "Cannot reset password for a character that is currently being played.");
+				return;
+			}
+		}
+
+		// Reset the password
+		_characterService.ResetCharacterPassword(characterGuid);
+
+		// Notify all clients about the update
+		var updatedCharacter = _characterService.GetCharacter(characterGuid);
+		if (updatedCharacter != null)
+		{
+			await Clients.Group(sessionId).SendAsync("CharacterUpdated", MapCharacterToDto(updatedCharacter));
+		}
+	}
+
 	private static object MapCharacterToDto(Character c) => new
 	{
 		Id = c.Id.ToString(),
 		OwnerId = c.OwnerId?.ToString(),
+		c.OwnerUsername,
 		c.Name,
 		c.RaceIndex,
 		c.ClassIndex,
@@ -325,7 +378,8 @@ public class LobbyHub : Hub
 		c.Charisma,
 		c.Background,
 		c.Notes,
-		c.Skills
+		c.Skills,
+		IsClaimed = !string.IsNullOrEmpty(c.PasswordHash)
 	};
 }
 
@@ -333,6 +387,7 @@ public class CharacterDto
 {
 	public string? Id { get; set; }
 	public string Name { get; set; } = string.Empty;
+	public string? Password { get; set; }
 	public string? RaceIndex { get; set; }
 	public string? ClassIndex { get; set; }
 	public string? RaceName { get; set; }
