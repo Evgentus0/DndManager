@@ -44,21 +44,22 @@ namespace DndSessionManager.Web.Controllers
 			object? entities = category switch
 			{
 				"spells" => _handbookService.GetEntities<Spell>(language, entityType),
-				"monsters" => _handbookService.GetEntities<Monster>(language, entityType),
 				"classes" => _handbookService.GetEntities<Class>(language, entityType),
-				"subclasses" => _handbookService.GetEntities<Subclass>(language, entityType),
-				"equipment" => _handbookService.GetEntities<Equipment>(language, entityType),
-				"magic-items" => _handbookService.GetEntities<MagicItem>(language, entityType),
-				"features" => _handbookService.GetEntities<Feature>(language, entityType),
-				"races" => _handbookService.GetEntities<Race>(language, entityType),
-				"traits" => _handbookService.GetEntities<Trait>(language, entityType),
-				"languages" => _handbookService.GetEntities<Language>(language, entityType),
-				"conditions" => _handbookService.GetEntities<Condition>(language, entityType),
-				"skills" => _handbookService.GetEntities<Skill>(language, entityType),
 				"ability-scores" => _handbookService.GetEntities<AbilityScore>(language, entityType),
-				"damage-types" => _handbookService.GetEntities<DamageType>(language, entityType),
-				"magic-schools" => _handbookService.GetEntities<MagicSchool>(language, entityType),
-				"weapon-properties" => _handbookService.GetEntities<WeaponProperty>(language, entityType),
+
+				"monsters"
+				or "subclasses"
+				or "equipment"
+				or "magic-items"
+				or "features"
+				or "races"
+				or "traits"
+				or "languages"
+				or "conditions"
+				or "skills"
+				or "damage-types"
+				or "magic-schools"
+				or "weapon-properties" => _handbookService.GetEntities<BaseGameObject>(language, entityType),
 				_ => null
 			};
 
@@ -90,21 +91,22 @@ namespace DndSessionManager.Web.Controllers
 			object? entity = category switch
 			{
 				"spells" => _handbookService.GetEntity<Spell>(language, entityType, index),
-				"monsters" => _handbookService.GetEntity<Monster>(language, entityType, index),
 				"classes" => _handbookService.GetEntity<Class>(language, entityType, index),
-				"subclasses" => _handbookService.GetEntity<Subclass>(language, entityType, index),
-				"equipment" => _handbookService.GetEntity<Equipment>(language, entityType, index),
-				"magic-items" => _handbookService.GetEntity<MagicItem>(language, entityType, index),
-				"features" => _handbookService.GetEntity<Feature>(language, entityType, index),
-				"races" => _handbookService.GetEntity<Race>(language, entityType, index),
-				"traits" => _handbookService.GetEntity<Trait>(language, entityType, index),
-				"languages" => _handbookService.GetEntity<Language>(language, entityType, index),
-				"conditions" => _handbookService.GetEntity<Condition>(language, entityType, index),
-				"skills" => _handbookService.GetEntity<Skill>(language, entityType, index),
 				"ability-scores" => _handbookService.GetEntity<AbilityScore>(language, entityType, index),
-				"damage-types" => _handbookService.GetEntity<DamageType>(language, entityType, index),
-				"magic-schools" => _handbookService.GetEntity<MagicSchool>(language, entityType, index),
-				"weapon-properties" => _handbookService.GetEntity<WeaponProperty>(language, entityType, index),
+
+				"monsters"
+				or "subclasses"
+				or "equipment"
+				or "magic-items"
+				or "features"
+				or "races"
+				or "traits"
+				or "languages"
+				or "conditions"
+				or "skills"
+				or "damage-types"
+				or "magic-schools"
+				or "weapon-properties" => _handbookService.GetEntity<BaseGameObject>(language, entityType, index),
 				_ => null
 			};
 

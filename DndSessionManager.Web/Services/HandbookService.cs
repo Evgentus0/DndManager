@@ -89,7 +89,7 @@ namespace DndSessionManager.Web.Services
 		/// <summary>
 		/// Gets basic entity list (index + name only) for list view
 		/// </summary>
-		public List<BasicEntityInfo> GetBasicEntityList(string language, string entityType)
+		public List<BaseGameObject> GetBasicEntityList(string language, string entityType)
 		{
 			try
 			{
@@ -99,14 +99,14 @@ namespace DndSessionManager.Web.Services
 				if (!File.Exists(path))
 				{
 					_logger.LogWarning("Data file not found: {Path}", path);
-					return new List<BasicEntityInfo>();
+					return new List<BaseGameObject>();
 				}
 
 				var json = File.ReadAllText(path);
 				using var document = JsonDocument.Parse(json);
 				var root = document.RootElement;
 
-				var basicList = new List<BasicEntityInfo>();
+				var basicList = new List<BaseGameObject>();
 
 				foreach (var element in root.EnumerateArray())
 				{
@@ -115,7 +115,7 @@ namespace DndSessionManager.Web.Services
 
 					if (!string.IsNullOrEmpty(index) && !string.IsNullOrEmpty(name))
 					{
-						basicList.Add(new BasicEntityInfo
+						basicList.Add(new BaseGameObject
 						{
 							Index = index,
 							Name = name
@@ -128,7 +128,7 @@ namespace DndSessionManager.Web.Services
 			catch (Exception ex)
 			{
 				_logger.LogError(ex, "Error loading basic entity list for {EntityType} in {Language}", entityType, language);
-				return new List<BasicEntityInfo>();
+				return new List<BaseGameObject>();
 			}
 		}
 	}
