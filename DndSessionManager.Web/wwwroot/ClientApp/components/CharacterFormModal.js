@@ -222,6 +222,10 @@ export default {
 		classes: {
 			type: Array,
 			default: () => []
+		},
+		skills: {
+			type: Array,
+			default: () => []
 		}
 	},
 	emits: ['character-saved'],
@@ -237,8 +241,6 @@ export default {
 		const selectedRace = ref('')
 		const selectedClass = ref('')
 
-		const skills = ref([])
-
 		const skillsGroupedByAbility = computed(() => {
 			const groups = {
 				str: { label: t('lobby.character.form.str'), skills: [] },
@@ -248,7 +250,7 @@ export default {
 				wis: { label: t('lobby.character.form.wis'), skills: [] },
 				cha: { label: t('lobby.character.form.cha'), skills: [] }
 			}
-			skills.value.forEach(skill => {
+			props.skills.forEach(skill => {
 				const abilityIndex = skill.ability_score?.index
 				if (abilityIndex && groups[abilityIndex]) {
 					groups[abilityIndex].skills.push(skill)
@@ -317,22 +319,6 @@ export default {
 
 		function skillLink(skillIndex) {
 			return `/handbook?category=skills&index=${skillIndex}`
-		}
-
-		async function fetchSkills() {
-			try {
-				const savedLanguage = localStorage.getItem('user-language')
-				const browserLanguage = navigator.language.split('-')[0]
-				const defaultLanguage = savedLanguage || (browserLanguage === 'ru' ? 'ru' : 'en')
-				const response = await fetch('/api/handbook/skills', {
-					headers: { 'X-Locale': defaultLanguage }
-				})
-				if (response.ok) {
-					skills.value = await response.json()
-				}
-			} catch (err) {
-				console.error('Error fetching skills:', err)
-			}
 		}
 
 		function onRaceChange() {
@@ -419,9 +405,6 @@ export default {
 		}
 
 		function showModal() {
-			if (skills.value.length === 0) {
-				fetchSkills()
-			}
 			if (modalRef.value && window.bootstrap) {
 				modalInstance.value = new window.bootstrap.Modal(modalRef.value)
 				modalInstance.value.show()
@@ -487,7 +470,6 @@ export default {
 			isEditing,
 			isSaving,
 			isValid,
-			skills,
 			skillsGroupedByAbility,
 			getModifier,
 			increment,

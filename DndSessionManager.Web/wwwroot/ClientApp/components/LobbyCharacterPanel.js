@@ -147,6 +147,7 @@ export default {
 			:session-id="sessionId"
 			:user-id="userId"
 			:races="races"
+			:skills="skills"
 			:classes="classes"
 			@character-saved="onCharacterSaved">
 		</character-form-modal>
