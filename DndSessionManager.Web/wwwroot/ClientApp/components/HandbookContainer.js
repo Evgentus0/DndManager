@@ -57,6 +57,7 @@ export default {
 			classes: 'classes',
 			subclasses: 'subclasses',
 			equipment: 'equipment',
+			weaponProperties: 'weapon-properties',
 			magicItems: 'magic-items',
 			features: 'features',
 			races: 'races',

@@ -183,6 +183,7 @@ export default {
 				'monsters': 'monsters',
 				'classes': 'classes',
 				'equipment': 'equipment',
+				'weapon-properties': 'weapon-properties',
 				'magic-items': 'magic-items',
 				'features': 'features',
 				'races': 'races',

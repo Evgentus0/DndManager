@@ -58,6 +58,7 @@ namespace DndSessionManager.Web.Controllers
 				"ability-scores" => _handbookService.GetEntities<AbilityScore>(language, entityType),
 				"damage-types" => _handbookService.GetEntities<DamageType>(language, entityType),
 				"magic-schools" => _handbookService.GetEntities<MagicSchool>(language, entityType),
+				"weapon-properties" => _handbookService.GetEntities<WeaponProperty>(language, entityType),
 				_ => null
 			};
 
@@ -103,6 +104,7 @@ namespace DndSessionManager.Web.Controllers
 				"ability-scores" => _handbookService.GetEntity<AbilityScore>(language, entityType, index),
 				"damage-types" => _handbookService.GetEntity<DamageType>(language, entityType, index),
 				"magic-schools" => _handbookService.GetEntity<MagicSchool>(language, entityType, index),
+				"weapon-properties" => _handbookService.GetEntity<WeaponProperty>(language, entityType, index),
 				_ => null
 			};
 

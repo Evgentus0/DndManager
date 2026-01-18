@@ -31,6 +31,7 @@ export default {
 			{ value: 'classes' },
 			{ value: 'subclasses' },
 			{ value: 'equipment' },
+			{ value: 'weaponProperties' },
 			{ value: 'magicItems' },
 			{ value: 'features' },
 			{ value: 'races' },
