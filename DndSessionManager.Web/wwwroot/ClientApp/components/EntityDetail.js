@@ -192,7 +192,8 @@ export default {
 				'ability-scores': 'ability-scores',
 				'damage-types': 'damage-types',
 				'magic-schools': 'magic-schools',
-				'subclasses': 'subclasses'
+				'subclasses': 'subclasses',
+				'equipment-categories': 'equipment-categories'
 			}
 
 			return mapping[categoryPath] || categoryPath

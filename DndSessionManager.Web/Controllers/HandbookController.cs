@@ -59,7 +59,8 @@ namespace DndSessionManager.Web.Controllers
 				or "skills"
 				or "damage-types"
 				or "magic-schools"
-				or "weapon-properties" => _handbookService.GetEntities<BaseGameObject>(language, entityType),
+				or "weapon-properties"
+				or "equipment-categories" => _handbookService.GetEntities<BaseGameObject>(language, entityType),
 				_ => null
 			};
 
@@ -106,7 +107,8 @@ namespace DndSessionManager.Web.Controllers
 				or "skills"
 				or "damage-types"
 				or "magic-schools"
-				or "weapon-properties" => _handbookService.GetEntity<BaseGameObject>(language, entityType, index),
+				or "weapon-properties"
+				or "equipment-categories" => _handbookService.GetEntity<BaseGameObject>(language, entityType, index),
 				_ => null
 			};
 

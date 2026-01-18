@@ -229,7 +229,8 @@
       "skills": "Навыки",
       "abilityScores": "Характеристики",
       "damageTypes": "Типы урона",
-      "magicSchools": "Школы магии"
+      "magicSchools": "Школы магии",
+      "equipmentCategories": "Категории Снаряжения"
     },
     "search": {
       "placeholder": "Поиск...",

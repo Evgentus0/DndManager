@@ -150,7 +150,11 @@ public partial class MainWindow : Window
 
 			if (_webApp != null)
 			{
-				_webApp.Services.GetRequiredService<SessionService>().ShutdownAllSessions();
+				try
+				{
+					_webApp.Services.GetRequiredService<SessionService>().ShutdownAllSessions();
+				}
+				catch {}
 
 				await _webApp.StopAsync();
 				await _webApp.DisposeAsync();

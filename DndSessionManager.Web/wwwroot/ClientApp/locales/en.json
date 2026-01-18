@@ -226,7 +226,8 @@
       "traits": "Traits",
       "languages": "Languages",
       "conditions": "Conditions",
-      "skills": "Skills"
+      "skills": "Skills",
+      "equipmentCategories": "Equipment Categories"
     },
     "search": {
       "placeholder": "Search...",

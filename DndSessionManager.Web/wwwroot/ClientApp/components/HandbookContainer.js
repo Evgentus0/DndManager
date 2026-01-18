@@ -67,7 +67,8 @@ export default {
 			skills: 'skills',
 			abilityScores: 'ability-scores',
 			damageTypes: 'damage-types',
-			magicSchools: 'magic-schools'
+			magicSchools: 'magic-schools',
+			equipmentCategories: 'equipment-categories'
 		}
 
 		// Reverse mapping for URL params

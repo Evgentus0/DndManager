@@ -38,7 +38,8 @@ export default {
 			{ value: 'traits' },
 			{ value: 'languages' },
 			{ value: 'conditions' },
-			{ value: 'skills' }
+			{ value: 'skills' },
+			{ value: 'equipmentCategories' }
 		]
 
 		function selectTab(tabValue) {
