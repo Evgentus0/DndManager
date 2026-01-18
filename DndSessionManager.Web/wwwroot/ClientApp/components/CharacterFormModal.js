@@ -79,7 +79,9 @@ export default {
 							<h6 class="mb-3">{{ $t('lobby.character.form.abilities') }}</h6>
 							<div class="row g-3 mb-4">
 								<div class="col-4 col-md-2">
-									<label class="form-label small">{{ $t('lobby.character.form.str') }}</label>
+									<label class="form-label small">
+										<a :href="abilityLink('str')" class="text-decoration-none">{{ $t('lobby.character.form.str') }}</a>
+									</label>
 									<div class="input-group input-group-sm">
 										<button type="button" class="btn btn-outline-secondary" @click="decrement('strength')">-</button>
 										<input type="number" class="form-control text-center" v-model.number="form.strength" min="1" max="30">
@@ -88,7 +90,9 @@ export default {
 									<div class="text-center small text-muted">{{ getModifier(form.strength) }}</div>
 								</div>
 								<div class="col-4 col-md-2">
-									<label class="form-label small">{{ $t('lobby.character.form.dex') }}</label>
+									<label class="form-label small">
+										<a :href="abilityLink('dex')" class="text-decoration-none">{{ $t('lobby.character.form.dex') }}</a>
+									</label>
 									<div class="input-group input-group-sm">
 										<button type="button" class="btn btn-outline-secondary" @click="decrement('dexterity')">-</button>
 										<input type="number" class="form-control text-center" v-model.number="form.dexterity" min="1" max="30">
@@ -97,7 +101,9 @@ export default {
 									<div class="text-center small text-muted">{{ getModifier(form.dexterity) }}</div>
 								</div>
 								<div class="col-4 col-md-2">
-									<label class="form-label small">{{ $t('lobby.character.form.con') }}</label>
+									<label class="form-label small">
+										<a :href="abilityLink('con')" class="text-decoration-none">{{ $t('lobby.character.form.con') }}</a>
+									</label>
 									<div class="input-group input-group-sm">
 										<button type="button" class="btn btn-outline-secondary" @click="decrement('constitution')">-</button>
 										<input type="number" class="form-control text-center" v-model.number="form.constitution" min="1" max="30">
@@ -106,7 +112,9 @@ export default {
 									<div class="text-center small text-muted">{{ getModifier(form.constitution) }}</div>
 								</div>
 								<div class="col-4 col-md-2">
-									<label class="form-label small">{{ $t('lobby.character.form.int') }}</label>
+									<label class="form-label small">
+										<a :href="abilityLink('int')" class="text-decoration-none">{{ $t('lobby.character.form.int') }}</a>
+									</label>
 									<div class="input-group input-group-sm">
 										<button type="button" class="btn btn-outline-secondary" @click="decrement('intelligence')">-</button>
 										<input type="number" class="form-control text-center" v-model.number="form.intelligence" min="1" max="30">
@@ -115,7 +123,9 @@ export default {
 									<div class="text-center small text-muted">{{ getModifier(form.intelligence) }}</div>
 								</div>
 								<div class="col-4 col-md-2">
-									<label class="form-label small">{{ $t('lobby.character.form.wis') }}</label>
+									<label class="form-label small">
+										<a :href="abilityLink('wis')" class="text-decoration-none">{{ $t('lobby.character.form.wis') }}</a>
+									</label>
 									<div class="input-group input-group-sm">
 										<button type="button" class="btn btn-outline-secondary" @click="decrement('wisdom')">-</button>
 										<input type="number" class="form-control text-center" v-model.number="form.wisdom" min="1" max="30">
@@ -124,13 +134,45 @@ export default {
 									<div class="text-center small text-muted">{{ getModifier(form.wisdom) }}</div>
 								</div>
 								<div class="col-4 col-md-2">
-									<label class="form-label small">{{ $t('lobby.character.form.cha') }}</label>
+									<label class="form-label small">
+										<a :href="abilityLink('cha')" class="text-decoration-none">{{ $t('lobby.character.form.cha') }}</a>
+									</label>
 									<div class="input-group input-group-sm">
 										<button type="button" class="btn btn-outline-secondary" @click="decrement('charisma')">-</button>
 										<input type="number" class="form-control text-center" v-model.number="form.charisma" min="1" max="30">
 										<button type="button" class="btn btn-outline-secondary" @click="increment('charisma')">+</button>
 									</div>
 									<div class="text-center small text-muted">{{ getModifier(form.charisma) }}</div>
+								</div>
+							</div>
+
+							<!-- Skills Selection -->
+							<h6 class="mb-3">{{ $t('lobby.character.form.skills') }}</h6>
+							<div class="row g-2 mb-4">
+								<div v-for="(group, abilityKey) in skillsGroupedByAbility" :key="abilityKey" class="col-md-6 col-lg-4">
+									<div class="card h-100">
+										<div class="card-header py-2">
+											<a :href="abilityLink(abilityKey)" class="text-decoration-none fw-bold small">
+												{{ group.label }}
+											</a>
+										</div>
+										<div class="card-body py-2">
+											<div v-if="group.skills.length === 0" class="text-muted small">
+												{{ $t('lobby.character.form.noSkills') }}
+											</div>
+											<div v-for="skill in group.skills" :key="skill.index" class="form-check">
+												<input class="form-check-input" type="checkbox"
+													:id="'skill-' + skill.index"
+													:value="skill.index"
+													v-model="form.skills">
+												<label class="form-check-label small" :for="'skill-' + skill.index">
+													<a :href="skillLink(skill.index)" class="text-decoration-none">
+														{{ skill.name }}
+													</a>
+												</label>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 
@@ -195,6 +237,26 @@ export default {
 		const selectedRace = ref('')
 		const selectedClass = ref('')
 
+		const skills = ref([])
+
+		const skillsGroupedByAbility = computed(() => {
+			const groups = {
+				str: { label: t('lobby.character.form.str'), skills: [] },
+				dex: { label: t('lobby.character.form.dex'), skills: [] },
+				con: { label: t('lobby.character.form.con'), skills: [] },
+				int: { label: t('lobby.character.form.int'), skills: [] },
+				wis: { label: t('lobby.character.form.wis'), skills: [] },
+				cha: { label: t('lobby.character.form.cha'), skills: [] }
+			}
+			skills.value.forEach(skill => {
+				const abilityIndex = skill.ability_score?.index
+				if (abilityIndex && groups[abilityIndex]) {
+					groups[abilityIndex].skills.push(skill)
+				}
+			})
+			return groups
+		})
+
 		const defaultForm = () => ({
 			name: '',
 			raceIndex: null,
@@ -213,7 +275,8 @@ export default {
 			wisdom: 10,
 			charisma: 10,
 			background: '',
-			notes: ''
+			notes: '',
+			skills: []
 		})
 
 		const form = ref(defaultForm())
@@ -245,6 +308,30 @@ export default {
 		function decrement(stat) {
 			if (form.value[stat] > 1) {
 				form.value[stat]--
+			}
+		}
+
+		function abilityLink(abilityIndex) {
+			return `/handbook?category=abilityScores&index=${abilityIndex}`
+		}
+
+		function skillLink(skillIndex) {
+			return `/handbook?category=skills&index=${skillIndex}`
+		}
+
+		async function fetchSkills() {
+			try {
+				const savedLanguage = localStorage.getItem('user-language')
+				const browserLanguage = navigator.language.split('-')[0]
+				const defaultLanguage = savedLanguage || (browserLanguage === 'ru' ? 'ru' : 'en')
+				const response = await fetch('/api/handbook/skills', {
+					headers: { 'X-Locale': defaultLanguage }
+				})
+				if (response.ok) {
+					skills.value = await response.json()
+				}
+			} catch (err) {
+				console.error('Error fetching skills:', err)
 			}
 		}
 
@@ -307,7 +394,8 @@ export default {
 				wisdom: character.wisdom || 10,
 				charisma: character.charisma || 10,
 				background: character.background || '',
-				notes: character.notes || ''
+				notes: character.notes || '',
+				skills: character.skills || []
 			}
 
 			// Set selected values for dropdowns
@@ -331,6 +419,9 @@ export default {
 		}
 
 		function showModal() {
+			if (skills.value.length === 0) {
+				fetchSkills()
+			}
 			if (modalRef.value && window.bootstrap) {
 				modalInstance.value = new window.bootstrap.Modal(modalRef.value)
 				modalInstance.value.show()
@@ -368,7 +459,8 @@ export default {
 					wisdom: form.value.wisdom,
 					charisma: form.value.charisma,
 					background: form.value.background,
-					notes: form.value.notes
+					notes: form.value.notes,
+					skills: form.value.skills
 				}
 
 				if (isEditing.value) {
@@ -395,9 +487,13 @@ export default {
 			isEditing,
 			isSaving,
 			isValid,
+			skills,
+			skillsGroupedByAbility,
 			getModifier,
 			increment,
 			decrement,
+			abilityLink,
+			skillLink,
 			onRaceChange,
 			onClassChange,
 			openForCreate,

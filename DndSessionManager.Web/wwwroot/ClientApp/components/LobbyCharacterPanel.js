@@ -56,42 +56,54 @@ export default {
 									<div class="row g-2 mb-2">
 										<div class="col-4 col-md-2">
 											<div class="text-center border rounded p-2">
-												<div class="small text-muted">{{ $t('lobby.character.form.str') }}</div>
+												<div class="small">
+													<a :href="abilityLink('str')" class="text-muted text-decoration-none">{{ $t('lobby.character.form.str') }}</a>
+												</div>
 												<div class="fw-bold">{{ char.strength }}</div>
 												<div class="small text-muted">({{ getModifier(char.strength) }})</div>
 											</div>
 										</div>
 										<div class="col-4 col-md-2">
 											<div class="text-center border rounded p-2">
-												<div class="small text-muted">{{ $t('lobby.character.form.dex') }}</div>
+												<div class="small">
+													<a :href="abilityLink('dex')" class="text-muted text-decoration-none">{{ $t('lobby.character.form.dex') }}</a>
+												</div>
 												<div class="fw-bold">{{ char.dexterity }}</div>
 												<div class="small text-muted">({{ getModifier(char.dexterity) }})</div>
 											</div>
 										</div>
 										<div class="col-4 col-md-2">
 											<div class="text-center border rounded p-2">
-												<div class="small text-muted">{{ $t('lobby.character.form.con') }}</div>
+												<div class="small">
+													<a :href="abilityLink('con')" class="text-muted text-decoration-none">{{ $t('lobby.character.form.con') }}</a>
+												</div>
 												<div class="fw-bold">{{ char.constitution }}</div>
 												<div class="small text-muted">({{ getModifier(char.constitution) }})</div>
 											</div>
 										</div>
 										<div class="col-4 col-md-2">
 											<div class="text-center border rounded p-2">
-												<div class="small text-muted">{{ $t('lobby.character.form.int') }}</div>
+												<div class="small">
+													<a :href="abilityLink('int')" class="text-muted text-decoration-none">{{ $t('lobby.character.form.int') }}</a>
+												</div>
 												<div class="fw-bold">{{ char.intelligence }}</div>
 												<div class="small text-muted">({{ getModifier(char.intelligence) }})</div>
 											</div>
 										</div>
 										<div class="col-4 col-md-2">
 											<div class="text-center border rounded p-2">
-												<div class="small text-muted">{{ $t('lobby.character.form.wis') }}</div>
+												<div class="small">
+													<a :href="abilityLink('wis')" class="text-muted text-decoration-none">{{ $t('lobby.character.form.wis') }}</a>
+												</div>
 												<div class="fw-bold">{{ char.wisdom }}</div>
 												<div class="small text-muted">({{ getModifier(char.wisdom) }})</div>
 											</div>
 										</div>
 										<div class="col-4 col-md-2">
 											<div class="text-center border rounded p-2">
-												<div class="small text-muted">{{ $t('lobby.character.form.cha') }}</div>
+												<div class="small">
+													<a :href="abilityLink('cha')" class="text-muted text-decoration-none">{{ $t('lobby.character.form.cha') }}</a>
+												</div>
 												<div class="fw-bold">{{ char.charisma }}</div>
 												<div class="small text-muted">({{ getModifier(char.charisma) }})</div>
 											</div>
@@ -102,6 +114,17 @@ export default {
 										<span><strong>HP:</strong> {{ char.currentHitPoints }}/{{ char.maxHitPoints }}</span>
 										<span><strong>AC:</strong> {{ char.armorClass }}</span>
 										<span><strong>{{ $t('lobby.character.form.proficiency') }}:</strong> +{{ char.proficiencyBonus }}</span>
+									</div>
+
+									<div v-if="char.skills && char.skills.length > 0" class="mt-2">
+										<strong class="small">{{ $t('lobby.character.form.skills') }}:</strong>
+										<div class="d-flex flex-wrap gap-1 mt-1">
+											<a v-for="skillIndex in char.skills" :key="skillIndex"
+												:href="skillLink(skillIndex)"
+												class="badge bg-secondary text-decoration-none">
+												{{ getSkillName(skillIndex) }}
+											</a>
+										</div>
 									</div>
 
 									<div v-if="char.background" class="mt-2 small">
@@ -152,6 +175,7 @@ export default {
 		const characters = ref([])
 		const races = ref([])
 		const classes = ref([])
+		const skills = ref([])
 		const formModalRef = ref(null)
 
 		const myCharacter = computed(() => {
@@ -176,11 +200,24 @@ export default {
 		}
 
 		function raceLink(char) {
-			return `/handbook?tab=races&item=${char.raceIndex}`
+			return `/handbook?category=races&index=${char.raceIndex}`
 		}
 
 		function classLink(char) {
-			return `/handbook?tab=classes&item=${char.classIndex}`
+			return `/handbook?category=classes&index=${char.classIndex}`
+		}
+
+		function abilityLink(abilityIndex) {
+			return `/handbook?category=abilityScores&index=${abilityIndex}`
+		}
+
+		function skillLink(skillIndex) {
+			return `/handbook?category=skills&index=${skillIndex}`
+		}
+
+		function getSkillName(skillIndex) {
+			const skill = skills.value.find(s => s.index === skillIndex)
+			return skill ? skill.name : skillIndex
 		}
 
 		function openCreateModal() {
@@ -214,9 +251,10 @@ export default {
 				const savedLanguage = localStorage.getItem('user-language')
 				const browserLanguage = navigator.language.split('-')[0]
 				const defaultLanguage = savedLanguage || (browserLanguage === 'ru' ? 'ru' : 'en')
-				const [racesRes, classesRes] = await Promise.all([
+				const [racesRes, classesRes, skillsRes] = await Promise.all([
 					fetch('/api/handbook/races', { headers: { 'X-Locale': defaultLanguage } }),
-					fetch('/api/handbook/classes', { headers: { 'X-Locale': defaultLanguage } })
+					fetch('/api/handbook/classes', { headers: { 'X-Locale': defaultLanguage } }),
+					fetch('/api/handbook/skills', { headers: { 'X-Locale': defaultLanguage } })
 				])
 
 				if (racesRes.ok) {
@@ -224,6 +262,9 @@ export default {
 				}
 				if (classesRes.ok) {
 					classes.value = await classesRes.json()
+				}
+				if (skillsRes.ok) {
+					skills.value = await skillsRes.json()
 				}
 			} catch (err) {
 				console.error('Error fetching handbook data:', err)
@@ -269,6 +310,7 @@ export default {
 			characters,
 			races,
 			classes,
+			skills,
 			formModalRef,
 			myCharacter,
 			isMyCharacter,
@@ -277,6 +319,9 @@ export default {
 			getModifier,
 			raceLink,
 			classLink,
+			abilityLink,
+			skillLink,
+			getSkillName,
 			openCreateModal,
 			openEditModal,
 			deleteCharacter,

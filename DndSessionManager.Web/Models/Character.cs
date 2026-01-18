@@ -38,4 +38,7 @@ public class Character
     // Additional info
     public string? Background { get; set; }
     public string? Notes { get; set; }
+
+    // Skill proficiencies (list of skill indices like "athletics", "perception")
+    public List<string> Skills { get; set; } = new();
 }

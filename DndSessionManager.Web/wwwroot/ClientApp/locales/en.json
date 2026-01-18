@@ -157,6 +157,8 @@
         "cha": "CHA",
         "background": "Background",
         "notes": "Notes",
+        "skills": "Skill Proficiencies",
+        "noSkills": "No skills",
         "save": "Save",
         "cancel": "Cancel"
       }
