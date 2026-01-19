@@ -1,6 +1,8 @@
-using Microsoft.AspNetCore.Mvc;
+using DndSessionManager.Web.Extensions;
 using DndSessionManager.Web.Models;
 using DndSessionManager.Web.Services;
+using Microsoft.AspNetCore.Mvc;
+using static System.Collections.Specialized.BitVector32;
 
 namespace DndSessionManager.Web.Controllers;
 
@@ -58,10 +60,9 @@ public class SessionController : Controller
         // Add master to the session
         _sessionService.AddUserToSession(session.Id, masterUser);
 
-        // Store user ID in session
-        HttpContext.Session.SetString($"UserId_{session.Id}", masterUser.Id.ToString());
+        HttpContext.SetUserToSession(session.Id.ToString(), masterUser.Id.ToString());
 
-        return RedirectToAction("Lobby", new { id = session.Id });
+		return RedirectToAction("Lobby", new { id = session.Id });
     }
 
     // GET: /session/browse
@@ -134,10 +135,10 @@ public class SessionController : Controller
         // Add master to the session
         _sessionService.AddUserToSession(session.Id, masterUser);
 
-        // Store user ID in session
-        HttpContext.Session.SetString($"UserId_{session.Id}", masterUser.Id.ToString());
+		// Store user ID in session
+		HttpContext.SetUserToSession(session.Id.ToString(), masterUser.Id.ToString());
 
-        return RedirectToAction("Lobby", new { id = session.Id });
+		return RedirectToAction("Lobby", new { id = session.Id });
     }
 
 	// POST: /session/delete/{id}
@@ -257,18 +258,17 @@ public class SessionController : Controller
             SessionId = id
         };
 
-        // Add player to session
-        if (!_sessionService.AddUserToSession(id, playerUser))
-        {
-            ModelState.AddModelError("", "Failed to join session.");
-            ViewBag.SessionId = id;
-            ViewBag.SessionName = session.Name;
-            return View();
-        }
+		// Add player to session
+		if (!_sessionService.AddUserToSession(id, playerUser))
+		{
+			ModelState.AddModelError("", "Failed to join session.");
+			ViewBag.SessionId = id;
+			ViewBag.SessionName = session.Name;
+			return View();
+		}
 
-        // Store user ID and username in session
-        HttpContext.Session.SetString($"UserId_{id}", playerUser.Id.ToString());
-        HttpContext.Session.SetString($"Username_{id}", username);
+		// Store user ID and username in session
+		HttpContext.SetUserToSession(id.ToString(), playerUser.Id.ToString(), username);
 
         // Redirect to character selection instead of lobby
         return RedirectToAction("CharacterSelect", new { id });
@@ -285,7 +285,7 @@ public class SessionController : Controller
         }
 
         // Get user ID from session
-        var userIdStr = HttpContext.Session.GetString($"UserId_{id}");
+        var userIdStr = HttpContext.GetUserIdBySession(id.ToString());
         if (string.IsNullOrEmpty(userIdStr) || !Guid.TryParse(userIdStr, out var userId))
         {
             return RedirectToAction("Join", new { id });
@@ -307,20 +307,22 @@ public class SessionController : Controller
         ViewBag.CurrentUser = user;
         ViewBag.IsMaster = user.Role == UserRole.Master;
 
-        return View();
+		HttpContext.AddCurrentGameSession(session.Id.ToString(), session.Name);
+
+		return View();
     }
 
     // POST: /session/{id}/leave
     [HttpPost]
     public IActionResult Leave(Guid id)
     {
-        var userIdStr = HttpContext.Session.GetString($"UserId_{id}");
+        var userIdStr = HttpContext.GetUserIdBySession(id.ToString());
         if (!string.IsNullOrEmpty(userIdStr) && Guid.TryParse(userIdStr, out var userId))
         {
             _sessionService.RemoveUserFromSession(id, userId);
-            HttpContext.Session.Remove($"UserId_{id}");
-            HttpContext.Session.Remove($"Username_{id}");
-        }
+            HttpContext.RemoveUserFromSession(id.ToString());
+			HttpContext.RemoveCurrentGameSession();
+		}
 
         return RedirectToAction("Index", "Home");
     }
@@ -335,7 +337,7 @@ public class SessionController : Controller
             return NotFound("Session not found.");
         }
 
-        var userIdStr = HttpContext.Session.GetString($"UserId_{id}");
+        var userIdStr = HttpContext.GetUserIdBySession(id.ToString());
         if (string.IsNullOrEmpty(userIdStr) || !Guid.TryParse(userIdStr, out var userId))
         {
             return RedirectToAction("Join", new { id });
@@ -372,8 +374,8 @@ public class SessionController : Controller
             return NotFound("Session not found.");
         }
 
-        var userIdStr = HttpContext.Session.GetString($"UserId_{id}");
-        var username = HttpContext.Session.GetString($"Username_{id}") ?? "Unknown";
+        var userIdStr = HttpContext.GetUserIdBySession(id.ToString());
+        var username = HttpContext.GetUsernameBySession(id.ToString()) ?? "Unknown";
         if (string.IsNullOrEmpty(userIdStr) || !Guid.TryParse(userIdStr, out var userId))
         {
             return RedirectToAction("Join", new { id });

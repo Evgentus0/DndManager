@@ -15,7 +15,7 @@
             </span>
         </div>
         <div class="col-auto">
-            <form asp-controller="Session" asp-action="Leave" asp-route-id="@session?.Id" method="post" class="d-inline">
+            <form id="leave-form" asp-controller="Session" asp-action="Leave" asp-route-id="@session?.Id" method="post" class="d-inline">
                 <button type="submit" class="btn btn-danger">{{ $t('lobby.buttons.leave') }}</button>
             </form>
         </div>
@@ -197,12 +197,12 @@
 
 					connection.value.on('UserKicked', () => {
 						alert(t('lobby.messages.kicked'))
-						window.location.href = '/'
+						submitLeaveForm({ id: sessionId })
 					})
 
 					connection.value.on('MasterLeave', () => {
 						alert(t('lobby.messages.masterLeave'))
-						window.location.href = '/'
+						submitLeaveForm({ id: sessionId })
 					})
 
 					connection.value.on('SessionOpenChanged', (isOpen) => {
@@ -225,9 +225,28 @@
 					try {
 						await connection.value.start()
 						await connection.value.invoke('JoinLobby', sessionId, userId)
+
 					} catch (err) {
 						console.error('SignalR connection error:', err)
 					}
+				}
+
+				// simulate leave form sumbit
+				function submitLeaveForm(data) {
+					const form = document.createElement('form');
+					form.method = 'POST';
+					form.action = '/session/leave';
+					if (data) {
+						Object.keys(data).forEach(key => {
+							const input = document.createElement('input');
+							input.type = 'hidden';
+							input.name = key;
+							input.value = data[key];
+							form.appendChild(input);
+						});
+					}
+					document.body.appendChild(form);
+					form.submit();
 				}
 
 				// Initialize on mount

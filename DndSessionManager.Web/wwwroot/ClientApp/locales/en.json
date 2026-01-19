@@ -3,7 +3,8 @@
     "brand": "D&D Session Manager",
     "home": "Home",
     "browse": "Browse Sessions",
-    "language": "Language"
+    "language": "Language",
+    "currentSession": "Current Session"
   },
   "home": {
     "tagline": "Manage your Dungeons & Dragons sessions with ease",

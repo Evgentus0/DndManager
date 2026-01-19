@@ -36,6 +36,7 @@ public static class WebAppStartup
 
 		builder.Services.AddScoped<IHubCallerService, HubCallerService>();
 
+		builder.Services.AddHttpContextAccessor();
 
 		// Enable detailed errors for debugging
 		builder.Services.AddRazorPages().AddRazorRuntimeCompilation();

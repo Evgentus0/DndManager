@@ -3,7 +3,8 @@
     "brand": "Менеджер D&D Сессий",
     "home": "Главная",
     "browse": "Обзор Сессий",
-    "language": "Язык"
+    "language": "Язык",
+    "currentSession": "Текущая сессия"
   },
   "home": {
     "tagline": "Управляйте своими сессиями Dungeons & Dragons с легкостью",
