@@ -208,6 +208,11 @@
         "notes": "Notes",
         "skills": "Skill Proficiencies",
         "noSkills": "No skills",
+        "equipment": "Equipment",
+        "addEquipment": "Add Equipment",
+        "selectEquipment": "Select item...",
+        "ammo": "Ammo",
+        "damage": "Damage",
         "save": "Save",
         "cancel": "Cancel"
       }

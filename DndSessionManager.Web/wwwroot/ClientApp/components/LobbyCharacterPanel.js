@@ -181,6 +181,34 @@ export default {
 									<div v-if="char.notes" class="mt-2 small text-muted fst-italic">
 										{{ char.notes }}
 									</div>
+
+									<!-- Equipment -->
+									<div v-if="char.equipment && char.equipment.length > 0" class="mt-3">
+										<strong>{{ $t('lobby.character.form.equipment') }}:</strong>
+										<div class="mt-2">
+											<div v-for="item in char.equipment" :key="item.id"
+												class="d-flex align-items-center justify-content-between py-1 border-bottom">
+												<div>
+													<a :href="equipmentLink(item.equipmentIndex)" class="text-decoration-none">
+														{{ item.equipmentName }}
+													</a>
+													<span v-if="item.quantity > 1" class="text-muted ms-1">(x{{ item.quantity }})</span>
+													<span v-if="getEquipmentDamage(item.equipmentIndex)" class="text-muted ms-2 small">
+														{{ getEquipmentDamage(item.equipmentIndex) }}
+													</span>
+												</div>
+												<div v-if="item.currentAmmo !== null && item.currentAmmo !== undefined"
+													class="d-flex align-items-center">
+													<button v-if="canEdit(char)" class="btn btn-sm btn-outline-secondary py-0 px-1"
+														@click="updateAmmo(char, item, -1)">-</button>
+													<span class="mx-2 badge"
+														:class="ammoClass(item.currentAmmo)">{{ item.currentAmmo }}</span>
+													<button v-if="canEdit(char)" class="btn btn-sm btn-outline-secondary py-0 px-1"
+														@click="updateAmmo(char, item, 1)">+</button>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -306,6 +334,34 @@ export default {
 			})
 		}
 
+		function equipmentLink(equipmentIndex) {
+			return `/handbook?category=equipment&index=${equipmentIndex}`
+		}
+
+		function getEquipmentDamage(equipmentIndex) {
+			const item = equipmentList.value.find(e => e.index === equipmentIndex)
+			if (!item) return null
+			const dmg = item.damage || item.additionalData?.damage
+			if (!dmg) return null
+			return `${dmg.damage_dice} ${dmg.damage_type?.name || ''}`
+		}
+
+		function ammoClass(ammo) {
+			if (ammo === 0) return 'bg-danger'
+			if (ammo <= 5) return 'bg-warning text-dark'
+			return 'bg-secondary'
+		}
+
+		async function updateAmmo(char, item, delta) {
+			const newCount = Math.max(0, (item.currentAmmo || 0) + delta)
+			try {
+				await props.connection.invoke('UpdateEquipmentAmmo',
+					props.sessionId, props.userId, char.id, item.id, newCount)
+			} catch (err) {
+				console.error('Error updating ammo:', err)
+			}
+		}
+
 		function openCreateModal() {
 			if (formModalRef.value) {
 				formModalRef.value.openForCreate()
@@ -337,10 +393,11 @@ export default {
 				const savedLanguage = localStorage.getItem('user-language')
 				const browserLanguage = navigator.language.split('-')[0]
 				const defaultLanguage = savedLanguage || (browserLanguage === 'ru' ? 'ru' : 'en')
-				const [racesRes, classesRes, skillsRes] = await Promise.all([
+				const [racesRes, classesRes, skillsRes, equipmentRes] = await Promise.all([
 					fetch('/api/handbook/races', { headers: { 'X-Locale': defaultLanguage } }),
 					fetch('/api/handbook/classes', { headers: { 'X-Locale': defaultLanguage } }),
-					fetch('/api/handbook/skills', { headers: { 'X-Locale': defaultLanguage } })
+					fetch('/api/handbook/skills', { headers: { 'X-Locale': defaultLanguage } }),
+					fetch('/api/handbook/equipment', { headers: { 'X-Locale': defaultLanguage } })
 				])
 
 				if (racesRes.ok) {
@@ -351,6 +408,9 @@ export default {
 				}
 				if (skillsRes.ok) {
 					skills.value = await skillsRes.json()
+				}
+				if (equipmentRes.ok) {
+					equipmentList.value = await equipmentRes.json()
 				}
 			} catch (err) {
 				console.error('Error fetching handbook data:', err)
@@ -385,6 +445,16 @@ export default {
 			props.connection.on('CharacterError', (message) => {
 				alert(message)
 			})
+
+			props.connection.on('CharacterEquipmentUpdated', (characterId, equipmentItemId, newAmmoCount) => {
+				const char = characters.value.find(c => c.id === characterId)
+				if (char && char.equipment) {
+					const item = char.equipment.find(e => e.id === equipmentItemId)
+					if (item) {
+						item.currentAmmo = newAmmoCount
+					}
+				}
+			})
 		}
 
 		onMounted(() => {
@@ -415,7 +485,12 @@ export default {
 			openCreateModal,
 			openEditModal,
 			deleteCharacter,
-			onCharacterSaved
+			onCharacterSaved,
+			equipmentList,
+			equipmentLink,
+			getEquipmentDamage,
+			ammoClass,
+			updateAmmo
 		}
 	}
 }
