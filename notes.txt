@@ -1,0 +1,5 @@
+# Опубликовать и создать ZIP
+.\publish.ps1 -Zip
+
+# С указанием версии
+.\publish.ps1 -Zip -Version "1.2.3"
