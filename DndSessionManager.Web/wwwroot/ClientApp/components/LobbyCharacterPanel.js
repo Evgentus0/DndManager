@@ -78,6 +78,13 @@ export default {
 												</div>
 												<div class="fw-bold">{{ char.strength }}</div>
 												<div class="small text-muted">({{ getModifier(char.strength) }})</div>
+												<div v-if="getSkillsForAbility(char, 'str').length > 0" class="mt-1">
+													<a v-for="skill in getSkillsForAbility(char, 'str')" :key="skill.index"
+														:href="skillLink(skill.index)"
+														class="badge bg-secondary text-decoration-none d-block mb-1 small">
+														{{ skill.name }}
+													</a>
+												</div>
 											</div>
 										</div>
 										<div class="col-4 col-md-2">
@@ -87,6 +94,13 @@ export default {
 												</div>
 												<div class="fw-bold">{{ char.dexterity }}</div>
 												<div class="small text-muted">({{ getModifier(char.dexterity) }})</div>
+												<div v-if="getSkillsForAbility(char, 'dex').length > 0" class="mt-1">
+													<a v-for="skill in getSkillsForAbility(char, 'dex')" :key="skill.index"
+														:href="skillLink(skill.index)"
+														class="badge bg-secondary text-decoration-none d-block mb-1 small">
+														{{ skill.name }}
+													</a>
+												</div>
 											</div>
 										</div>
 										<div class="col-4 col-md-2">
@@ -96,6 +110,13 @@ export default {
 												</div>
 												<div class="fw-bold">{{ char.constitution }}</div>
 												<div class="small text-muted">({{ getModifier(char.constitution) }})</div>
+												<div v-if="getSkillsForAbility(char, 'con').length > 0" class="mt-1">
+													<a v-for="skill in getSkillsForAbility(char, 'con')" :key="skill.index"
+														:href="skillLink(skill.index)"
+														class="badge bg-secondary text-decoration-none d-block mb-1 small">
+														{{ skill.name }}
+													</a>
+												</div>
 											</div>
 										</div>
 										<div class="col-4 col-md-2">
@@ -105,6 +126,13 @@ export default {
 												</div>
 												<div class="fw-bold">{{ char.intelligence }}</div>
 												<div class="small text-muted">({{ getModifier(char.intelligence) }})</div>
+												<div v-if="getSkillsForAbility(char, 'int').length > 0" class="mt-1">
+													<a v-for="skill in getSkillsForAbility(char, 'int')" :key="skill.index"
+														:href="skillLink(skill.index)"
+														class="badge bg-secondary text-decoration-none d-block mb-1 small">
+														{{ skill.name }}
+													</a>
+												</div>
 											</div>
 										</div>
 										<div class="col-4 col-md-2">
@@ -114,6 +142,13 @@ export default {
 												</div>
 												<div class="fw-bold">{{ char.wisdom }}</div>
 												<div class="small text-muted">({{ getModifier(char.wisdom) }})</div>
+												<div v-if="getSkillsForAbility(char, 'wis').length > 0" class="mt-1">
+													<a v-for="skill in getSkillsForAbility(char, 'wis')" :key="skill.index"
+														:href="skillLink(skill.index)"
+														class="badge bg-secondary text-decoration-none d-block mb-1 small">
+														{{ skill.name }}
+													</a>
+												</div>
 											</div>
 										</div>
 										<div class="col-4 col-md-2">
@@ -123,6 +158,13 @@ export default {
 												</div>
 												<div class="fw-bold">{{ char.charisma }}</div>
 												<div class="small text-muted">({{ getModifier(char.charisma) }})</div>
+												<div v-if="getSkillsForAbility(char, 'cha').length > 0" class="mt-1">
+													<a v-for="skill in getSkillsForAbility(char, 'cha')" :key="skill.index"
+														:href="skillLink(skill.index)"
+														class="badge bg-secondary text-decoration-none d-block mb-1 small">
+														{{ skill.name }}
+													</a>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -131,17 +173,6 @@ export default {
 										<span><strong>HP:</strong> {{ char.currentHitPoints }}/{{ char.maxHitPoints }}</span>
 										<span><strong>AC:</strong> {{ char.armorClass }}</span>
 										<span><strong>{{ $t('lobby.character.form.proficiency') }}:</strong> +{{ char.proficiencyBonus }}</span>
-									</div>
-
-									<div v-if="char.skills && char.skills.length > 0" class="mt-2">
-										<strong class="small">{{ $t('lobby.character.form.skills') }}:</strong>
-										<div class="d-flex flex-wrap gap-1 mt-1">
-											<a v-for="skillIndex in char.skills" :key="skillIndex"
-												:href="skillLink(skillIndex)"
-												class="badge bg-secondary text-decoration-none">
-												{{ getSkillName(skillIndex) }}
-											</a>
-										</div>
 									</div>
 
 									<div v-if="char.background" class="mt-2 small">
@@ -166,6 +197,7 @@ export default {
 			:races="races"
 			:skills="skills"
 			:classes="classes"
+			:equipment-list="equipmentList"
 			@character-saved="onCharacterSaved">
 		</character-form-modal>
 	`,
@@ -198,6 +230,7 @@ export default {
 		const races = ref([])
 		const classes = ref([])
 		const skills = ref([])
+		const equipmentList = ref([])
 		const formModalRef = ref(null)
 
 		const myCharacter = computed(() => {
@@ -262,6 +295,15 @@ export default {
 		function getSkillName(skillIndex) {
 			const skill = skills.value.find(s => s.index === skillIndex)
 			return skill ? skill.name : skillIndex
+		}
+
+		function getSkillsForAbility(char, abilityIndex) {
+			if (!char.skills || char.skills.length === 0) return []
+			return skills.value.filter(skill => {
+				const skillAbility = skill.additionalData?.ability_score?.index ||
+					skill.ability_score?.index
+				return skillAbility === abilityIndex && char.skills.includes(skill.index)
+			})
 		}
 
 		function openCreateModal() {
@@ -369,6 +411,7 @@ export default {
 			abilityLink,
 			skillLink,
 			getSkillName,
+			getSkillsForAbility,
 			openCreateModal,
 			openEditModal,
 			deleteCharacter,

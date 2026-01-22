@@ -229,7 +229,8 @@ public class LobbyHub : Hub
 			Charisma = characterData.Charisma,
 			Background = characterData.Background,
 			Notes = characterData.Notes,
-			Skills = characterData.Skills ?? []
+			Skills = characterData.Skills ?? [],
+			Equipment = MapEquipmentDtoToModel(characterData.Equipment)
 		};
 
 		_characterService.CreateCharacter(character, characterData.Password);
@@ -278,6 +279,7 @@ public class LobbyHub : Hub
 		existingCharacter.Background = characterData.Background;
 		existingCharacter.Notes = characterData.Notes;
 		existingCharacter.Skills = characterData.Skills ?? [];
+		existingCharacter.Equipment = MapEquipmentDtoToModel(characterData.Equipment);
 
 		_characterService.UpdateCharacter(existingCharacter);
 
@@ -355,6 +357,43 @@ public class LobbyHub : Hub
 		}
 	}
 
+	public async Task UpdateEquipmentAmmo(string sessionId, string userId, string characterId, string equipmentItemId, int newAmmoCount)
+	{
+		if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+			!Guid.TryParse(userId, out var userGuid) ||
+			!Guid.TryParse(characterId, out var characterGuid) ||
+			!Guid.TryParse(equipmentItemId, out var itemGuid))
+			return;
+
+		var user = _userService.GetUser(sessionGuid, userGuid);
+		if (user == null)
+			return;
+
+		var character = _characterService.GetCharacter(characterGuid);
+		if (character == null || character.SessionId != sessionGuid)
+			return;
+
+		var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
+		if (!_characterService.CanUserEditCharacter(userGuid, character, isMaster))
+		{
+			await Clients.Caller.SendAsync("CharacterError", "You cannot edit this character.");
+			return;
+		}
+
+		var equipmentItem = character.Equipment.FirstOrDefault(e => e.Id == itemGuid);
+		if (equipmentItem == null || equipmentItem.CurrentAmmo == null)
+			return;
+
+		equipmentItem.CurrentAmmo = Math.Max(0, newAmmoCount);
+		_characterService.UpdateCharacter(character);
+
+		await Clients.Group(sessionId).SendAsync("CharacterEquipmentUpdated", new
+		{
+			CharacterId = characterId,
+			Equipment = character.Equipment.Select(MapEquipmentItemToDto).ToList()
+		});
+	}
+
 	private static object MapCharacterToDto(Character c) => new
 	{
 		Id = c.Id.ToString(),
@@ -379,8 +418,35 @@ public class LobbyHub : Hub
 		c.Background,
 		c.Notes,
 		c.Skills,
+		Equipment = c.Equipment.Select(MapEquipmentItemToDto).ToList(),
 		IsClaimed = !string.IsNullOrEmpty(c.PasswordHash)
 	};
+
+	private static object MapEquipmentItemToDto(CharacterEquipmentItem e) => new
+	{
+		Id = e.Id.ToString(),
+		e.EquipmentIndex,
+		e.EquipmentName,
+		e.Quantity,
+		e.CurrentAmmo,
+		e.IsEquipped
+	};
+
+	private static List<CharacterEquipmentItem> MapEquipmentDtoToModel(List<CharacterEquipmentItemDto>? equipmentDto)
+	{
+		if (equipmentDto == null || equipmentDto.Count == 0)
+			return [];
+
+		return equipmentDto.Select(e => new CharacterEquipmentItem
+		{
+			Id = Guid.TryParse(e.Id, out var id) ? id : Guid.NewGuid(),
+			EquipmentIndex = e.EquipmentIndex,
+			EquipmentName = e.EquipmentName,
+			Quantity = e.Quantity,
+			CurrentAmmo = e.CurrentAmmo,
+			IsEquipped = e.IsEquipped
+		}).ToList();
+	}
 }
 
 public class CharacterDto
@@ -406,4 +472,15 @@ public class CharacterDto
 	public string? Background { get; set; }
 	public string? Notes { get; set; }
 	public List<string>? Skills { get; set; }
+	public List<CharacterEquipmentItemDto>? Equipment { get; set; }
+}
+
+public class CharacterEquipmentItemDto
+{
+	public string? Id { get; set; }
+	public string EquipmentIndex { get; set; } = string.Empty;
+	public string EquipmentName { get; set; } = string.Empty;
+	public int Quantity { get; set; } = 1;
+	public int? CurrentAmmo { get; set; }
+	public bool IsEquipped { get; set; } = true;
 }

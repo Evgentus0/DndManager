@@ -186,6 +186,44 @@ export default {
 								</div>
 							</div>
 
+							<!-- Equipment Selection -->
+							<h6 class="mb-3">{{ $t('lobby.character.form.equipment') }}</h6>
+							<div class="row g-3 mb-4">
+								<div class="col-md-8">
+									<select class="form-select" v-model="selectedEquipment" @change="addEquipment">
+										<option value="">-- {{ $t('lobby.character.form.selectEquipment') }} --</option>
+										<optgroup v-for="(cat, catKey) in equipmentByCategory" :key="catKey" :label="cat.name">
+											<option v-for="item in cat.items" :key="item.index" :value="item.index">
+												{{ item.name }}
+											</option>
+										</optgroup>
+									</select>
+								</div>
+							</div>
+
+							<!-- Equipment List -->
+							<div v-if="form.equipment.length > 0" class="mb-4">
+								<div v-for="(item, idx) in form.equipment" :key="item.id"
+									class="d-flex align-items-center border rounded p-2 mb-2">
+									<div class="flex-grow-1">
+										<a :href="equipmentLink(item.equipmentIndex)" class="text-decoration-none fw-bold">
+											{{ item.equipmentName }}
+										</a>
+										<span v-if="getEquipmentDamage(item.equipmentIndex)" class="text-muted ms-2 small">
+											({{ getEquipmentDamage(item.equipmentIndex) }})
+										</span>
+									</div>
+									<div v-if="isAmmunitionWeapon(item.equipmentIndex)" class="me-3 d-flex align-items-center">
+										<label class="form-label small mb-0 me-2">{{ $t('lobby.character.form.ammo') }}:</label>
+										<input type="number" class="form-control form-control-sm"
+											v-model.number="item.currentAmmo" min="0" max="999" style="width: 70px;">
+									</div>
+									<button type="button" class="btn btn-sm btn-outline-danger" @click="removeEquipment(idx)">
+										<i class="bi bi-trash"></i>
+									</button>
+								</div>
+							</div>
+
 							<!-- Background & Notes -->
 							<div class="row g-3">
 								<div class="col-md-6">
@@ -236,6 +274,10 @@ export default {
 		skills: {
 			type: Array,
 			default: () => []
+		},
+		equipmentList: {
+			type: Array,
+			default: () => []
 		}
 	},
 	emits: ['character-saved'],
@@ -269,6 +311,66 @@ export default {
 			return groups
 		})
 
+		const equipmentByCategory = computed(() => {
+			const categories = {}
+			props.equipmentList.forEach(item => {
+				const catIndex = item.equipment_category?.index || item.additionalData?.equipment_category?.index || 'other'
+				const catName = item.equipment_category?.name || item.additionalData?.equipment_category?.name || 'Other'
+				if (!categories[catIndex]) {
+					categories[catIndex] = { name: catName, items: [] }
+				}
+				categories[catIndex].items.push(item)
+			})
+			return categories
+		})
+
+		function isAmmunitionWeapon(equipmentIndex) {
+			const item = props.equipmentList.find(e => e.index === equipmentIndex)
+			if (!item) return false
+			const props_arr = item.properties || item.additionalData?.properties
+			if (!props_arr) return false
+			return props_arr.some(p => p.index === 'ammunition')
+		}
+
+		function getEquipmentDamage(equipmentIndex) {
+			const item = props.equipmentList.find(e => e.index === equipmentIndex)
+			if (!item) return null
+			const damage = item.damage || item.additionalData?.damage
+			if (!damage) return null
+			const dice = damage.damage_dice
+			const typeName = damage.damage_type?.name
+			return typeName ? `${dice} ${typeName.toLowerCase()}` : dice
+		}
+
+		function addEquipment() {
+			if (!selectedEquipment.value) return
+			const item = props.equipmentList.find(e => e.index === selectedEquipment.value)
+			if (!item) return
+
+			const isAmmo = isAmmunitionWeapon(item.index)
+
+			form.value.equipment.push({
+				id: crypto.randomUUID(),
+				equipmentIndex: item.index,
+				equipmentName: item.name,
+				quantity: 1,
+				currentAmmo: isAmmo ? 20 : null,
+				isEquipped: true
+			})
+
+			selectedEquipment.value = ''
+		}
+
+		function removeEquipment(index) {
+			form.value.equipment.splice(index, 1)
+		}
+
+		function equipmentLink(equipmentIndex) {
+			return `/handbook?category=equipment&index=${equipmentIndex}`
+		}
+
+		const selectedEquipment = ref('')
+
 		const defaultForm = () => ({
 			name: '',
 			password: '',
@@ -289,7 +391,8 @@ export default {
 			charisma: 10,
 			background: '',
 			notes: '',
-			skills: []
+			skills: [],
+			equipment: []
 		})
 
 		const form = ref(defaultForm())
@@ -368,6 +471,7 @@ export default {
 			form.value = defaultForm()
 			selectedRace.value = ''
 			selectedClass.value = ''
+			selectedEquipment.value = ''
 			showModal()
 		}
 
@@ -394,7 +498,15 @@ export default {
 				charisma: character.charisma || 10,
 				background: character.background || '',
 				notes: character.notes || '',
-				skills: character.skills || []
+				skills: character.skills || [],
+				equipment: (character.equipment || []).map(e => ({
+					id: e.id,
+					equipmentIndex: e.equipmentIndex,
+					equipmentName: e.equipmentName,
+					quantity: e.quantity || 1,
+					currentAmmo: e.currentAmmo,
+					isEquipped: e.isEquipped !== false
+				}))
 			}
 
 			// Set selected values for dropdowns
@@ -414,6 +526,7 @@ export default {
 				selectedClass.value = ''
 			}
 
+			selectedEquipment.value = ''
 			showModal()
 		}
 
@@ -457,7 +570,8 @@ export default {
 					charisma: form.value.charisma,
 					background: form.value.background,
 					notes: form.value.notes,
-					skills: form.value.skills
+					skills: form.value.skills,
+					equipment: form.value.equipment
 				}
 
 				if (isEditing.value) {
@@ -481,15 +595,22 @@ export default {
 			form,
 			selectedRace,
 			selectedClass,
+			selectedEquipment,
 			isEditing,
 			isSaving,
 			isValid,
 			skillsGroupedByAbility,
+			equipmentByCategory,
 			getModifier,
 			increment,
 			decrement,
 			abilityLink,
 			skillLink,
+			equipmentLink,
+			isAmmunitionWeapon,
+			getEquipmentDamage,
+			addEquipment,
+			removeEquipment,
 			onRaceChange,
 			onClassChange,
 			openForCreate,

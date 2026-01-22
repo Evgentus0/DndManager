@@ -43,4 +43,7 @@ public class Character
 
     // Skill proficiencies (list of skill indices like "athletics", "perception")
     public List<string> Skills { get; set; } = new();
+
+    // Equipment items (list of equipment references with state)
+    public List<CharacterEquipmentItem> Equipment { get; set; } = new();
 }
