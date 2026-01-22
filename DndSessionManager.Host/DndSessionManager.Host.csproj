@@ -8,12 +8,30 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+  </PropertyGroup>
+
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DndSessionManager.Web\DndSessionManager.Web.csproj" />
+  </ItemGroup>
+
+  <!-- Include Web project content files for publish -->
+  <ItemGroup>
+    <Content Include="..\DndSessionManager.Web\Data\**\*" LinkBase="Data">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\DndSessionManager.Web\Views\**\*" LinkBase="Views">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\DndSessionManager.Web\wwwroot\**\*" LinkBase="wwwroot">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
