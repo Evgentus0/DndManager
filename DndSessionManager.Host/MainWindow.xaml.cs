@@ -46,9 +46,15 @@ public partial class MainWindow : Window
 		{
 			AddMessage("Starting server...");
 
+			// Parse port from UI
+			if (!int.TryParse(PortTextBox.Text, out int port) || port < 1 || port > 65535)
+			{
+				MessageBox.Show("Please enter a valid port number (1-65535).", "Invalid Port", MessageBoxButton.OK, MessageBoxImage.Warning);
+				return;
+			}
+
 			// Get local IP address
 			string localIp = GetLocalIPAddress();
-			int port = 5008;
 			string url = $"http://{localIp}:{port}";
 
 			// Create the web application with proper options
@@ -118,6 +124,8 @@ public partial class MainWindow : Window
 			StatusText.Foreground = new SolidColorBrush(Colors.Green);
 			UrlText.Text = $"Local: http://localhost:{port}\nNetwork: {url}";
 			ToggleButton.Content = "Stop Server";
+			PortTextBox.IsReadOnly = true;
+			PortTextBox.Background = new SolidColorBrush(Color.FromRgb(240, 240, 240));
 
 			AddMessage($"Server started successfully!");
 			AddMessage($"Local access: http://localhost:{port}");
@@ -181,6 +189,8 @@ public partial class MainWindow : Window
 			NetworkHealthText.Text = "Not tested";
 			NetworkHealthText.Foreground = new SolidColorBrush(Colors.Gray);
 			ToggleButton.Content = "Start Server";
+			PortTextBox.IsReadOnly = false;
+			PortTextBox.Background = new SolidColorBrush(Colors.White);
 
 			AddMessage("Server stopped.");
 		}
