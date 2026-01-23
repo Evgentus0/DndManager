@@ -212,15 +212,17 @@ public partial class MainWindow : Window
 
 	private string CurrentDir()
 	{
-		// Get the solution directory (assuming Host and Web are in the same solution)
-		var currentDir = AppDomain.CurrentDomain.BaseDirectory;
+		// For single-file publish, use ProcessPath to get the actual exe directory
+		// AppDomain.CurrentDomain.BaseDirectory points to temp extraction folder in single-file mode
+		var exePath = Environment.ProcessPath ?? AppDomain.CurrentDomain.BaseDirectory;
+		var currentDir = Path.GetDirectoryName(exePath) ?? AppDomain.CurrentDomain.BaseDirectory;
 
 		if (currentDir != null)
 		{
 			return currentDir;
 		}
 
-		throw new DirectoryNotFoundException("Could not find DndSessionManager.Web project directory.");
+		throw new DirectoryNotFoundException("Could not find application directory.");
 	}
 
 	private async Task<bool> TestEndpoint(string url, string name)

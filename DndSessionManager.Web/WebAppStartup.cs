@@ -38,8 +38,13 @@ public static class WebAppStartup
 
 		builder.Services.AddHttpContextAccessor();
 
-		// Enable detailed errors for debugging
-		builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+		// Enable runtime compilation only in development
+		// Runtime compilation doesn't work with single-file publish
+		var razorPagesBuilder = builder.Services.AddRazorPages();
+
+#if DEBUG
+		razorPagesBuilder.AddRazorRuntimeCompilation();
+#endif
 	}
 
 	public static void ConfigureWebApp(WebApplication app)
