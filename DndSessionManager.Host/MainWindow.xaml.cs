@@ -52,20 +52,20 @@ public partial class MainWindow : Window
 			string url = $"http://{localIp}:{port}";
 
 			// Create the web application with proper options
-			var webProjectPath = GetWebProjectPath();
-			AddMessage($"Web project path: {webProjectPath}");
+			var currentDir = CurrentDir();
+			AddMessage($"Current project path: {currentDir}");
 
-			if (!Directory.Exists(webProjectPath))
+			if (!Directory.Exists(currentDir))
 			{
-				throw new DirectoryNotFoundException($"Web project directory not found: {webProjectPath}");
+				throw new DirectoryNotFoundException($"Current project directory not found: {currentDir}");
 			}
 
-			var wwwrootPath = Path.Combine(webProjectPath, "wwwroot");
+			var wwwrootPath = Path.Combine(currentDir, "wwwroot");
 			AddMessage($"wwwroot path: {wwwrootPath}");
 
 			var options = new WebApplicationOptions
 			{
-				ContentRootPath = webProjectPath,
+				ContentRootPath = currentDir,
 				WebRootPath = wwwrootPath
 			};
 
@@ -210,19 +210,14 @@ public partial class MainWindow : Window
 		}
 	}
 
-	private string GetWebProjectPath()
+	private string CurrentDir()
 	{
 		// Get the solution directory (assuming Host and Web are in the same solution)
 		var currentDir = AppDomain.CurrentDomain.BaseDirectory;
-		var solutionDir = Directory.GetParent(currentDir)?.Parent?.Parent?.Parent?.Parent?.FullName;
 
-		if (solutionDir != null)
+		if (currentDir != null)
 		{
-			var webProjectPath = Path.Combine(solutionDir, "DndSessionManager.Web");
-			if (Directory.Exists(webProjectPath))
-			{
-				return webProjectPath;
-			}
+			return currentDir;
 		}
 
 		throw new DirectoryNotFoundException("Could not find DndSessionManager.Web project directory.");
