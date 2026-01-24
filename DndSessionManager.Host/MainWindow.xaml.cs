@@ -273,6 +273,23 @@ public partial class MainWindow : Window
 
 	private string CurrentDir()
 	{
+#if DEBUG
+		// During debugging, use the Web project's source directory so JS/CSS changes are reflected immediately
+		// Navigate from bin/Debug/net8.0-windows/ up to solution root, then to Web project
+		var exePath = Environment.ProcessPath ?? AppDomain.CurrentDomain.BaseDirectory;
+		var binDir = Path.GetDirectoryName(exePath) ?? AppDomain.CurrentDomain.BaseDirectory;
+
+		// Go up: bin/Debug/net8.0-windows -> bin/Debug -> bin -> Host -> solution -> Web
+		var webProjectDir = Path.GetFullPath(Path.Combine(binDir, "..", "..", "..", "..", "DndSessionManager.Web"));
+
+		if (Directory.Exists(webProjectDir))
+		{
+			return webProjectDir;
+		}
+
+		// Fallback if debug path doesn't exist
+		return binDir;
+#else
 		// For single-file publish, use ProcessPath to get the actual exe directory
 		// AppDomain.CurrentDomain.BaseDirectory points to temp extraction folder in single-file mode
 		var exePath = Environment.ProcessPath ?? AppDomain.CurrentDomain.BaseDirectory;
@@ -284,6 +301,7 @@ public partial class MainWindow : Window
 		}
 
 		throw new DirectoryNotFoundException("Could not find application directory.");
+#endif
 	}
 
 	private void EnsureFirewallRule(int port)

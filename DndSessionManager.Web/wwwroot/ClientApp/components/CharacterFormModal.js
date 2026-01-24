@@ -354,7 +354,7 @@ export default {
 
 		function generateUUID() {
 			if (typeof crypto !== 'undefined' && crypto.randomUUID) {
-				return generateUUID()
+				return crypto.randomUUID();
 			}
 			// Fallback for older browsers or non-secure contexts
 			return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
