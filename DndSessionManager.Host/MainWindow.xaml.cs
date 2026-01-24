@@ -1,8 +1,10 @@
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Net.Sockets;
 using System.Windows;
+using System.Windows.Documents;
 using System.Windows.Media;
 using DndSessionManager.Web.Services;
 using Microsoft.AspNetCore.Builder;
@@ -53,9 +55,10 @@ public partial class MainWindow : Window
 				return;
 			}
 
-			// Get local IP address
-			string localIp = GetLocalIPAddress();
-			string url = $"http://{localIp}:{port}";
+			// Get all IP addresses
+			var allIps = GetAllIPAddresses();
+			var primaryIp = allIps.FirstOrDefault(IsPrivateIP) ?? allIps.FirstOrDefault() ?? "127.0.0.1";
+			string url = $"http://{primaryIp}:{port}";
 
 			// Create the web application with proper options
 			var currentDir = CurrentDir();
@@ -105,6 +108,9 @@ public partial class MainWindow : Window
 			// Wait a moment to ensure server started
 			await Task.Delay(1000);
 
+			// Add firewall rule if needed
+			EnsureFirewallRule(port);
+
 			AddMessage("Checking if server is responding...");
 
 			// Test localhost
@@ -122,7 +128,7 @@ public partial class MainWindow : Window
 			_isRunning = true;
 			StatusText.Text = "Running";
 			StatusText.Foreground = new SolidColorBrush(Colors.Green);
-			UrlText.Text = $"Local: http://localhost:{port}\nNetwork: {url}";
+			UpdateUrlDisplay(port, allIps);
 			ToggleButton.Content = "Stop Server";
 			PortTextBox.IsReadOnly = true;
 			PortTextBox.Background = new SolidColorBrush(Color.FromRgb(240, 240, 240));
@@ -182,7 +188,8 @@ public partial class MainWindow : Window
 			_isRunning = false;
 			StatusText.Text = "Stopped";
 			StatusText.Foreground = new SolidColorBrush(Colors.Red);
-			UrlText.Text = "Not available";
+			UrlText.Inlines.Clear();
+			UrlText.Inlines.Add(new Run("Not available"));
 			UsersText.Text = "0";
 			LocalHealthText.Text = "Not tested";
 			LocalHealthText.Foreground = new SolidColorBrush(Colors.Gray);
@@ -200,23 +207,62 @@ public partial class MainWindow : Window
 		}
 	}
 
-	private string GetLocalIPAddress()
+	private List<string> GetAllIPAddresses()
 	{
+		var ips = new List<string>();
 		try
 		{
 			var host = Dns.GetHostEntry(Dns.GetHostName());
 			foreach (var ip in host.AddressList)
 			{
-				if (ip.AddressFamily == AddressFamily.InterNetwork)
+				if (ip.AddressFamily == AddressFamily.InterNetwork && ip.ToString() != "127.0.0.1")
 				{
-					return ip.ToString();
+					ips.Add(ip.ToString());
 				}
 			}
-			return "127.0.0.1";
 		}
-		catch
+		catch { }
+		return ips;
+	}
+
+	private bool IsPrivateIP(string ip)
+	{
+		// Private IP ranges: 10.x.x.x, 172.16-31.x.x, 192.168.x.x
+		if (ip.StartsWith("10.")) return true;
+		if (ip.StartsWith("192.168.")) return true;
+		if (ip.StartsWith("172."))
 		{
-			return "127.0.0.1";
+			var parts = ip.Split('.');
+			if (parts.Length >= 2 && int.TryParse(parts[1], out int second))
+			{
+				return second >= 16 && second <= 31;
+			}
+		}
+		return false;
+	}
+
+	private void UpdateUrlDisplay(int port, List<string> ips)
+	{
+		UrlText.Inlines.Clear();
+
+		// Add localhost
+		UrlText.Inlines.Add(new Run($"http://localhost:{port}\n"));
+
+		// Sort IPs: private first, then others
+		var sortedIps = ips.OrderByDescending(IsPrivateIP).ToList();
+
+		foreach (var ip in sortedIps)
+		{
+			var url = $"http://{ip}:{port}";
+			var run = new Run(url + "\n");
+
+			if (IsPrivateIP(ip))
+			{
+				run.FontWeight = FontWeights.Bold;
+				run.Text = url + " (LAN)\n";
+			}
+
+			UrlText.Inlines.Add(run);
 		}
 	}
 
@@ -233,6 +279,118 @@ public partial class MainWindow : Window
 		}
 
 		throw new DirectoryNotFoundException("Could not find application directory.");
+	}
+
+	private void EnsureFirewallRule(int port)
+	{
+		var ruleName = $"DndSessionManager Port {port}";
+
+		if (!FirewallRuleExists(ruleName))
+		{
+			AddMessage($"Adding firewall rule for port {port}...");
+			AddFirewallRule(ruleName, port);
+		}
+		else
+		{
+			AddMessage($"Firewall rule for port {port} already exists");
+		}
+	}
+
+	private bool FirewallRuleExists(string ruleName)
+	{
+		try
+		{
+			var psi = new ProcessStartInfo("netsh", $"advfirewall firewall show rule name=\"{ruleName}\"")
+			{
+				UseShellExecute = false,
+				RedirectStandardOutput = true,
+				CreateNoWindow = true
+			};
+
+			using var process = Process.Start(psi);
+			process?.WaitForExit();
+			return process?.ExitCode == 0;
+		}
+		catch
+		{
+			return false;
+		}
+	}
+
+	private void AddFirewallRule(string ruleName, int port)
+	{
+		try
+		{
+			var args = $"advfirewall firewall add rule name=\"{ruleName}\" dir=in action=allow protocol=TCP localport={port}";
+
+			var psi = new ProcessStartInfo("netsh", args)
+			{
+				Verb = "runas",
+				UseShellExecute = true,
+				CreateNoWindow = true
+			};
+
+			var process = Process.Start(psi);
+			process?.WaitForExit();
+
+			if (process?.ExitCode == 0)
+			{
+				AddMessage($"✓ Firewall rule added successfully");
+			}
+			else
+			{
+				AddMessage($"⚠ Could not add firewall rule (may need admin rights)");
+			}
+		}
+		catch (Exception ex)
+		{
+			AddMessage($"⚠ Firewall rule: {ex.Message}");
+		}
+	}
+
+	private void RemoveFirewallRuleButton_Click(object sender, RoutedEventArgs e)
+	{
+		if (!int.TryParse(PortTextBox.Text, out int port) || port < 1 || port > 65535)
+		{
+			MessageBox.Show("Please enter a valid port number (1-65535).", "Invalid Port", MessageBoxButton.OK, MessageBoxImage.Warning);
+			return;
+		}
+
+		var ruleName = $"DndSessionManager Port {port}";
+
+		if (!FirewallRuleExists(ruleName))
+		{
+			AddMessage($"No firewall rule exists for port {port}");
+			return;
+		}
+
+		try
+		{
+			var args = $"advfirewall firewall delete rule name=\"{ruleName}\"";
+
+			var psi = new ProcessStartInfo("netsh", args)
+			{
+				Verb = "runas",
+				UseShellExecute = true,
+				CreateNoWindow = true
+			};
+
+			var process = Process.Start(psi);
+			process?.WaitForExit();
+
+			if (process?.ExitCode == 0)
+			{
+				AddMessage($"✓ Firewall rule for port {port} removed");
+			}
+			else
+			{
+				AddMessage($"⚠ Could not remove firewall rule");
+			}
+		}
+		catch (Exception ex)
+		{
+			AddMessage($"⚠ Remove firewall rule: {ex.Message}");
+		}
 	}
 
 	private async Task<bool> TestEndpoint(string url, string name)
