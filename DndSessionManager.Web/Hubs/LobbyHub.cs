@@ -192,8 +192,9 @@ public class LobbyHub : Hub
 		if (user == null)
 			return;
 
-		// Check if user already has a character
-		if (_characterService.HasCharacter(sessionGuid, userGuid))
+		var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
+		// Check if user already has a character and user not master
+		if (_characterService.HasCharacter(sessionGuid, userGuid) && !isMaster)
 		{
 			await Clients.Caller.SendAsync("CharacterError", "You already have a character in this session.");
 			return;
@@ -209,7 +210,7 @@ public class LobbyHub : Hub
 		var character = new Character
 		{
 			SessionId = sessionGuid,
-			OwnerId = userGuid,
+			OwnerId = isMaster ? null : userGuid,
 			OwnerUsername = user.Username,
 			Name = characterData.Name,
 			RaceIndex = characterData.RaceIndex,
