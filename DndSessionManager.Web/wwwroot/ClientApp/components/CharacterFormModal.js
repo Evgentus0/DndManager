@@ -88,7 +88,7 @@ export default {
 							<!-- Ability Scores -->
 							<h6 class="mb-3">{{ $t('lobby.character.form.abilities') }}</h6>
 							<div class="row g-3 mb-4">
-								<div class="col-4 col-md-2">
+								<div class="col-6 col-sm-4 col-md-2">
 									<label class="form-label small">
 										<a :href="abilityLink('str')" class="text-decoration-none">{{ $t('lobby.character.form.str') }}</a>
 									</label>
@@ -99,7 +99,7 @@ export default {
 									</div>
 									<div class="text-center small text-muted">{{ getModifier(form.strength) }}</div>
 								</div>
-								<div class="col-4 col-md-2">
+								<div class="col-6 col-sm-4 col-md-2">
 									<label class="form-label small">
 										<a :href="abilityLink('dex')" class="text-decoration-none">{{ $t('lobby.character.form.dex') }}</a>
 									</label>
@@ -110,7 +110,7 @@ export default {
 									</div>
 									<div class="text-center small text-muted">{{ getModifier(form.dexterity) }}</div>
 								</div>
-								<div class="col-4 col-md-2">
+								<div class="col-6 col-sm-4 col-md-2">
 									<label class="form-label small">
 										<a :href="abilityLink('con')" class="text-decoration-none">{{ $t('lobby.character.form.con') }}</a>
 									</label>
@@ -121,7 +121,7 @@ export default {
 									</div>
 									<div class="text-center small text-muted">{{ getModifier(form.constitution) }}</div>
 								</div>
-								<div class="col-4 col-md-2">
+								<div class="col-6 col-sm-4 col-md-2">
 									<label class="form-label small">
 										<a :href="abilityLink('int')" class="text-decoration-none">{{ $t('lobby.character.form.int') }}</a>
 									</label>
@@ -132,7 +132,7 @@ export default {
 									</div>
 									<div class="text-center small text-muted">{{ getModifier(form.intelligence) }}</div>
 								</div>
-								<div class="col-4 col-md-2">
+								<div class="col-6 col-sm-4 col-md-2">
 									<label class="form-label small">
 										<a :href="abilityLink('wis')" class="text-decoration-none">{{ $t('lobby.character.form.wis') }}</a>
 									</label>
@@ -143,7 +143,7 @@ export default {
 									</div>
 									<div class="text-center small text-muted">{{ getModifier(form.wisdom) }}</div>
 								</div>
-								<div class="col-4 col-md-2">
+								<div class="col-6 col-sm-4 col-md-2">
 									<label class="form-label small">
 										<a :href="abilityLink('cha')" class="text-decoration-none">{{ $t('lobby.character.form.cha') }}</a>
 									</label>
@@ -159,7 +159,7 @@ export default {
 							<!-- Skills Selection -->
 							<h6 class="mb-3">{{ $t('lobby.character.form.skills') }}</h6>
 							<div class="row g-2 mb-4">
-								<div v-for="(group, abilityKey) in skillsGroupedByAbility" :key="abilityKey" class="col-md-6 col-lg-4">
+								<div v-for="(group, abilityKey) in skillsGroupedByAbility" :key="abilityKey" class="col-12 col-sm-6 col-lg-4">
 									<div class="card h-100">
 										<div class="card-header py-2">
 											<a :href="abilityLink(abilityKey)" class="text-decoration-none fw-bold small">
@@ -188,9 +188,11 @@ export default {
 
 							<!-- Equipment Selection -->
 							<h6 class="mb-3">{{ $t('lobby.character.form.equipment') }}</h6>
-							<div class="row g-3 mb-4">
-								<div class="col-md-8">
-									<select class="form-select" v-model="selectedEquipment" @change="addEquipment">
+							<div class="row g-2 mb-4">
+								<div class="col-12 col-md-8">
+									<input type="text" class="form-control mb-2" v-model="equipmentSearch"
+										:placeholder="$t('lobby.character.form.searchPlaceholder')">
+									<select class="form-select" v-model="selectedEquipment" @change="addEquipment" size="6">
 										<option value="">-- {{ $t('lobby.character.form.selectEquipment') }} --</option>
 										<optgroup v-for="(cat, catKey) in equipmentByCategory" :key="catKey" :label="cat.name">
 											<option v-for="item in cat.items" :key="item.index" :value="item.index">
@@ -241,9 +243,11 @@ export default {
 
 							<!-- Spells Selection -->
 							<h6 class="mb-3">{{ $t('lobby.character.form.spells') }}</h6>
-							<div class="row g-3 mb-4">
-								<div class="col-md-8">
-									<select class="form-select" v-model="selectedSpell" @change="addSpell">
+							<div class="row g-2 mb-4">
+								<div class="col-12 col-md-8">
+									<input type="text" class="form-control mb-2" v-model="spellSearch"
+										:placeholder="$t('lobby.character.form.searchPlaceholder')">
+									<select class="form-select" v-model="selectedSpell" @change="addSpell" size="6">
 										<option value="">-- {{ $t('lobby.character.form.selectSpell') }} --</option>
 										<optgroup v-for="(levelGroup, levelKey) in spellsByLevel" :key="levelKey" :label="levelGroup.label">
 											<option v-for="spell in levelGroup.spells" :key="spell.index" :value="spell.index"
@@ -389,7 +393,14 @@ export default {
 
 		const equipmentByCategory = computed(() => {
 			const categories = {}
-			props.equipmentList.forEach(item => {
+
+			// Filter by search term
+			const searchTerm = equipmentSearch.value.toLowerCase().trim()
+			const filteredList = searchTerm
+				? props.equipmentList.filter(item => item.name.toLowerCase().includes(searchTerm))
+				: props.equipmentList
+
+			filteredList.forEach(item => {
 				const catIndex = item.equipment_category?.index || item.additionalData?.equipment_category?.index || 'other'
 				const catName = item.equipment_category?.name || item.additionalData?.equipment_category?.name || 'Other'
 				if (!categories[catIndex]) {
@@ -397,6 +408,12 @@ export default {
 				}
 				categories[catIndex].items.push(item)
 			})
+
+			// Sort items alphabetically within each category
+			Object.values(categories).forEach(cat => {
+				cat.items.sort((a, b) => a.name.localeCompare(b.name))
+			})
+
 			return categories
 		})
 
@@ -486,13 +503,23 @@ export default {
 
 		const selectedEquipment = ref('')
 		const selectedSpell = ref('')
+		const spellSearch = ref('')
+		const equipmentSearch = ref('')
 
 		const spellsByLevel = computed(() => {
 			const levels = {}
 			// Get spells for character's class, or all spells if no class selected
-			const availableSpells = selectedClass.value && selectedClass.value !== '__custom__'
+			let availableSpells = selectedClass.value && selectedClass.value !== '__custom__'
 				? props.spellsList.filter(s => s.classes?.some(c => c.index === selectedClass.value))
 				: props.spellsList
+
+			// Filter by search term
+			const searchTerm = spellSearch.value.toLowerCase().trim()
+			if (searchTerm) {
+				availableSpells = availableSpells.filter(s =>
+					s.name.toLowerCase().includes(searchTerm)
+				)
+			}
 
 			availableSpells.forEach(spell => {
 				const level = spell.level
@@ -504,6 +531,12 @@ export default {
 				}
 				levels[level].spells.push(spell)
 			})
+
+			// Sort spells alphabetically within each level
+			Object.values(levels).forEach(group => {
+				group.spells.sort((a, b) => a.name.localeCompare(b.name))
+			})
+
 			return levels
 		})
 
@@ -763,6 +796,8 @@ export default {
 			selectedClass,
 			selectedEquipment,
 			selectedSpell,
+			spellSearch,
+			equipmentSearch,
 			isEditing,
 			isSaving,
 			isValid,

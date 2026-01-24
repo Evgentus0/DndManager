@@ -218,6 +218,7 @@
         "spells": "Заклинания",
         "spellSlots": "Ячейки заклинаний",
         "selectSpell": "Выберите заклинание...",
+        "searchPlaceholder": "Поиск...",
         "cantrips": "Заговоры",
         "prepared": "Подготовлено",
         "notPrepared": "Не подготовлено",

@@ -218,6 +218,7 @@
         "spells": "Spells",
         "spellSlots": "Spell Slots",
         "selectSpell": "Select spell...",
+        "searchPlaceholder": "Search...",
         "cantrips": "Cantrips",
         "prepared": "Prepared",
         "notPrepared": "Not prepared",
