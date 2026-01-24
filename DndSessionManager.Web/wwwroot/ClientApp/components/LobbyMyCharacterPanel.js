@@ -393,13 +393,10 @@ export default {
 				alert(message)
 			})
 
-			props.connection.on('CharacterEquipmentUpdated', (characterId, equipmentItemId, newAmmoCount) => {
-				const char = characters.value.find(c => c.id === characterId)
-				if (char && char.equipment) {
-					const item = char.equipment.find(e => e.id === equipmentItemId)
-					if (item) {
-						item.currentAmmo = newAmmoCount
-					}
+			props.connection.on('CharacterEquipmentUpdated', (data) => {
+				const char = characters.value.find(c => c.id === data.characterId)
+				if (char) {
+					char.equipment = data.equipment
 				}
 			})
 		}
