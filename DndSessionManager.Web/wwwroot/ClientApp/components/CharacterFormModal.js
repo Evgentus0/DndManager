@@ -348,6 +348,18 @@ export default {
 	setup(props, { emit }) {
 		const { t } = useI18n()
 
+		function generateUUID() {
+			if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+				return generateUUID()
+			}
+			// Fallback for older browsers or non-secure contexts
+			return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+				const r = Math.random() * 16 | 0
+				const v = c === 'x' ? r : (r & 0x3 | 0x8)
+				return v.toString(16)
+			})
+		}
+
 		const modalRef = ref(null)
 		const modalInstance = ref(null)
 		const isEditing = ref(false)
@@ -414,7 +426,7 @@ export default {
 			const isAmmo = isAmmunitionWeapon(item.index)
 
 			form.value.equipment.push({
-				id: crypto.randomUUID(),
+				id: generateUUID(),
 				equipmentIndex: item.index,
 				equipmentName: item.name,
 				quantity: 1,
@@ -445,7 +457,7 @@ export default {
 			}
 
 			form.value.spells.push({
-				id: crypto.randomUUID(),
+				id: generateUUID(),
 				spellIndex: spell.index,
 				spellName: spell.name,
 				level: spell.level,

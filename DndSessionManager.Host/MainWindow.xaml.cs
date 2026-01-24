@@ -188,8 +188,7 @@ public partial class MainWindow : Window
 			_isRunning = false;
 			StatusText.Text = "Stopped";
 			StatusText.Foreground = new SolidColorBrush(Colors.Red);
-			UrlText.Inlines.Clear();
-			UrlText.Inlines.Add(new Run("Not available"));
+			UrlText.Document = new FlowDocument(new Paragraph(new Run("Not available"))) { PagePadding = new Thickness(0) };
 			UsersText.Text = "0";
 			LocalHealthText.Text = "Not tested";
 			LocalHealthText.Foreground = new SolidColorBrush(Colors.Gray);
@@ -243,10 +242,11 @@ public partial class MainWindow : Window
 
 	private void UpdateUrlDisplay(int port, List<string> ips)
 	{
-		UrlText.Inlines.Clear();
+		var paragraph = new Paragraph();
 
 		// Add localhost
-		UrlText.Inlines.Add(new Run($"http://localhost:{port}\n"));
+		paragraph.Inlines.Add(new Run($"http://localhost:{port}") { Foreground = Brushes.Gray });
+		paragraph.Inlines.Add(new LineBreak());
 
 		// Sort IPs: private first, then others
 		var sortedIps = ips.OrderByDescending(IsPrivateIP).ToList();
@@ -254,16 +254,21 @@ public partial class MainWindow : Window
 		foreach (var ip in sortedIps)
 		{
 			var url = $"http://{ip}:{port}";
-			var run = new Run(url + "\n");
 
 			if (IsPrivateIP(ip))
 			{
-				run.FontWeight = FontWeights.Bold;
-				run.Text = url + " (LAN)\n";
+				paragraph.Inlines.Add(new Run(url) { FontWeight = FontWeights.Bold });
+				paragraph.Inlines.Add(new Run(" (LAN)") { Foreground = Brushes.Green, FontWeight = FontWeights.Bold });
+			}
+			else
+			{
+				paragraph.Inlines.Add(new Run(url));
 			}
 
-			UrlText.Inlines.Add(run);
+			paragraph.Inlines.Add(new LineBreak());
 		}
+
+		UrlText.Document = new FlowDocument(paragraph) { PagePadding = new Thickness(0) };
 	}
 
 	private string CurrentDir()
