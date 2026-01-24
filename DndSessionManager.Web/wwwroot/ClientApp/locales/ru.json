@@ -165,6 +165,7 @@
   "lobby": {
     "tabs": {
       "chat": "Чат",
+      "myCharacter": "Мой персонаж",
       "characters": "Персонажи"
     },
     "characters": {
@@ -177,6 +178,7 @@
       "deleteButton": "Удалить",
       "deleteConfirm": "Вы уверены, что хотите удалить этого персонажа?",
       "noCharacter": "Персонажей пока нет. Создайте своего!",
+      "noMyCharacter": "У вас ещё нет персонажа.",
       "claimed": "Защищён паролем",
       "unclaimed": "Без пароля",
       "online": "Онлайн",

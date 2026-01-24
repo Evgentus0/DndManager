@@ -78,6 +78,12 @@
                         {{ $t('lobby.tabs.chat') }}
                     </a>
                 </li>
+                <li v-if="!isMaster" class="nav-item">
+                    <a class="nav-link" :class="{ active: activeTab === 'myCharacter' }"
+                       href="#" @@click.prevent="activeTab = 'myCharacter'">
+                        {{ $t('lobby.tabs.myCharacter') }}
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" :class="{ active: activeTab === 'characters' }"
                        href="#" @@click.prevent="activeTab = 'characters'">
@@ -94,6 +100,14 @@
                 :session-id="sessionId"
                 :user-id="userId">
             </lobby-chat-panel>
+
+            <lobby-my-character-panel
+                v-if="!isMaster"
+                v-show="activeTab === 'myCharacter'"
+                :connection="connection"
+                :session-id="sessionId"
+                :user-id="userId">
+            </lobby-my-character-panel>
 
             <lobby-character-panel
                 v-show="activeTab === 'characters'"
@@ -114,11 +128,13 @@
 		import { i18n } from '/ClientApp/i18n.js'
 		import LobbyChatPanel from '/ClientApp/components/LobbyChatPanel.js'
 		import LobbyCharacterPanel from '/ClientApp/components/LobbyCharacterPanel.js'
+		import LobbyMyCharacterPanel from '/ClientApp/components/LobbyMyCharacterPanel.js'
 
 		const app = createApp({
 			components: {
 				LobbyChatPanel,
-				LobbyCharacterPanel
+				LobbyCharacterPanel,
+				LobbyMyCharacterPanel
 			},
 			setup() {
 				const { t } = useI18n()

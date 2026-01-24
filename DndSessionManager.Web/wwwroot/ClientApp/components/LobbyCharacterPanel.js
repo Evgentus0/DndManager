@@ -8,10 +8,11 @@ export default {
 		CharacterFormModal
 	},
 	template: `
+		<div>
 		<div class="card shadow-sm h-100">
 			<div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
 				<h5 class="mb-0">{{ $t('lobby.character.title') }}</h5>
-				<button v-if="!myCharacter" class="btn btn-sm btn-success" @click="openCreateModal">
+				<button v-if="isMaster && !myCharacter" class="btn btn-sm btn-success" @click="openCreateModal">
 					<i class="bi bi-plus-lg me-1"></i>{{ $t('lobby.character.createButton') }}
 				</button>
 			</div>
@@ -54,11 +55,11 @@ export default {
 											<span v-if="isCharacterOwnerOnline(char)" class="badge bg-success ms-1">{{ $t('lobby.character.online') }}</span>
 										</p>
 									</div>
-									<div class="btn-group">
-										<button v-if="canEdit(char)" class="btn btn-sm btn-outline-primary" @click="openEditModal(char)">
+									<div v-if="isMaster" class="btn-group">
+										<button class="btn btn-sm btn-outline-primary" @click="openEditModal(char)">
 											<i class="bi bi-pencil"></i>
 										</button>
-										<button v-if="canEdit(char)" class="btn btn-sm btn-outline-danger" @click="deleteCharacter(char)">
+										<button class="btn btn-sm btn-outline-danger" @click="deleteCharacter(char)">
 											<i class="bi bi-trash"></i>
 										</button>
 										<button v-if="canResetPassword(char)" class="btn btn-sm btn-outline-warning"
@@ -69,7 +70,7 @@ export default {
 									</div>
 								</div>
 
-								<div v-if="canSeeFullStats(char)" class="mt-3">
+								<div v-if="isMaster" class="mt-3">
 									<div class="row g-2 mb-2">
 										<div class="col-4 col-md-2">
 											<div class="text-center border rounded p-2">
@@ -228,6 +229,7 @@ export default {
 			:equipment-list="equipmentList"
 			@character-saved="onCharacterSaved">
 		</character-form-modal>
+		</div>
 	`,
 	props: {
 		connection: {
@@ -463,6 +465,7 @@ export default {
 		})
 
 		return {
+			isMaster: props.isMaster,
 			characters,
 			races,
 			classes,
