@@ -1,11 +1,14 @@
-import { ref, computed, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useCharacterData } from '../composables/useCharacterData.js'
 import CharacterFormModal from './CharacterFormModal.js'
+import CharacterCard from './CharacterCard.js'
 
 export default {
 	name: 'LobbyCharacterPanel',
 	components: {
-		CharacterFormModal
+		CharacterFormModal,
+		CharacterCard
 	},
 	template: `
 		<div>
@@ -24,195 +27,22 @@ export default {
 
 				<div v-else class="row g-3">
 					<div v-for="char in characters" :key="char.id" class="col-12">
-						<div class="card" :class="{ 'border-primary': isMyCharacter(char) }">
-							<div class="card-body">
-								<div class="d-flex justify-content-between align-items-start">
-									<div>
-										<h5 class="card-title mb-1">
-											{{ char.name }}
-											<span v-if="char.isClaimed" class="badge bg-success ms-1" :title="$t('lobby.character.claimed')">
-												<i class="bi bi-shield-lock"></i>
-											</span>
-											<span v-else class="badge bg-secondary ms-1" :title="$t('lobby.character.unclaimed')">
-												<i class="bi bi-shield"></i>
-											</span>
-										</h5>
-										<p class="card-text text-muted mb-2">
-											<a v-if="char.raceIndex" :href="raceLink(char)" class="text-decoration-none">
-												{{ char.raceName }}
-											</a>
-											<span v-else>{{ char.raceName }}</span>
-											&bull;
-											<a v-if="char.classIndex" :href="classLink(char)" class="text-decoration-none">
-												{{ char.className }}
-											</a>
-											<span v-else>{{ char.className }}</span>
-											&bull;
-											{{ $t('lobby.character.form.level') }} {{ char.level }}
-										</p>
-										<p v-if="char.ownerUsername" class="card-text small text-muted mb-0">
-											<i class="bi bi-person"></i> {{ char.ownerUsername }}
-											<span v-if="isCharacterOwnerOnline(char)" class="badge bg-success ms-1">{{ $t('lobby.character.online') }}</span>
-										</p>
-									</div>
-									<div v-if="isMaster" class="btn-group">
-										<button class="btn btn-sm btn-outline-primary" @click="openEditModal(char)">
-											<i class="bi bi-pencil"></i>
-										</button>
-										<button class="btn btn-sm btn-outline-danger" @click="deleteCharacter(char)">
-											<i class="bi bi-trash"></i>
-										</button>
-										<button v-if="canResetPassword(char)" class="btn btn-sm btn-outline-warning"
-											@click="resetCharacterPassword(char)"
-											:title="$t('lobby.character.resetPassword')">
-											<i class="bi bi-key"></i>
-										</button>
-									</div>
-								</div>
-
-								<div v-if="isMaster" class="mt-3">
-									<div class="row g-2 mb-2">
-										<div class="col-4 col-md-2">
-											<div class="text-center border rounded p-2">
-												<div class="small">
-													<a :href="abilityLink('str')" class="text-muted text-decoration-none">{{ $t('lobby.character.form.str') }}</a>
-												</div>
-												<div class="fw-bold">{{ char.strength }}</div>
-												<div class="small text-muted">({{ getModifier(char.strength) }})</div>
-												<div v-if="getSkillsForAbility(char, 'str').length > 0" class="mt-1">
-													<a v-for="skill in getSkillsForAbility(char, 'str')" :key="skill.index"
-														:href="skillLink(skill.index)"
-														class="badge bg-secondary text-decoration-none d-block mb-1 small">
-														{{ skill.name }}
-													</a>
-												</div>
-											</div>
-										</div>
-										<div class="col-4 col-md-2">
-											<div class="text-center border rounded p-2">
-												<div class="small">
-													<a :href="abilityLink('dex')" class="text-muted text-decoration-none">{{ $t('lobby.character.form.dex') }}</a>
-												</div>
-												<div class="fw-bold">{{ char.dexterity }}</div>
-												<div class="small text-muted">({{ getModifier(char.dexterity) }})</div>
-												<div v-if="getSkillsForAbility(char, 'dex').length > 0" class="mt-1">
-													<a v-for="skill in getSkillsForAbility(char, 'dex')" :key="skill.index"
-														:href="skillLink(skill.index)"
-														class="badge bg-secondary text-decoration-none d-block mb-1 small">
-														{{ skill.name }}
-													</a>
-												</div>
-											</div>
-										</div>
-										<div class="col-4 col-md-2">
-											<div class="text-center border rounded p-2">
-												<div class="small">
-													<a :href="abilityLink('con')" class="text-muted text-decoration-none">{{ $t('lobby.character.form.con') }}</a>
-												</div>
-												<div class="fw-bold">{{ char.constitution }}</div>
-												<div class="small text-muted">({{ getModifier(char.constitution) }})</div>
-												<div v-if="getSkillsForAbility(char, 'con').length > 0" class="mt-1">
-													<a v-for="skill in getSkillsForAbility(char, 'con')" :key="skill.index"
-														:href="skillLink(skill.index)"
-														class="badge bg-secondary text-decoration-none d-block mb-1 small">
-														{{ skill.name }}
-													</a>
-												</div>
-											</div>
-										</div>
-										<div class="col-4 col-md-2">
-											<div class="text-center border rounded p-2">
-												<div class="small">
-													<a :href="abilityLink('int')" class="text-muted text-decoration-none">{{ $t('lobby.character.form.int') }}</a>
-												</div>
-												<div class="fw-bold">{{ char.intelligence }}</div>
-												<div class="small text-muted">({{ getModifier(char.intelligence) }})</div>
-												<div v-if="getSkillsForAbility(char, 'int').length > 0" class="mt-1">
-													<a v-for="skill in getSkillsForAbility(char, 'int')" :key="skill.index"
-														:href="skillLink(skill.index)"
-														class="badge bg-secondary text-decoration-none d-block mb-1 small">
-														{{ skill.name }}
-													</a>
-												</div>
-											</div>
-										</div>
-										<div class="col-4 col-md-2">
-											<div class="text-center border rounded p-2">
-												<div class="small">
-													<a :href="abilityLink('wis')" class="text-muted text-decoration-none">{{ $t('lobby.character.form.wis') }}</a>
-												</div>
-												<div class="fw-bold">{{ char.wisdom }}</div>
-												<div class="small text-muted">({{ getModifier(char.wisdom) }})</div>
-												<div v-if="getSkillsForAbility(char, 'wis').length > 0" class="mt-1">
-													<a v-for="skill in getSkillsForAbility(char, 'wis')" :key="skill.index"
-														:href="skillLink(skill.index)"
-														class="badge bg-secondary text-decoration-none d-block mb-1 small">
-														{{ skill.name }}
-													</a>
-												</div>
-											</div>
-										</div>
-										<div class="col-4 col-md-2">
-											<div class="text-center border rounded p-2">
-												<div class="small">
-													<a :href="abilityLink('cha')" class="text-muted text-decoration-none">{{ $t('lobby.character.form.cha') }}</a>
-												</div>
-												<div class="fw-bold">{{ char.charisma }}</div>
-												<div class="small text-muted">({{ getModifier(char.charisma) }})</div>
-												<div v-if="getSkillsForAbility(char, 'cha').length > 0" class="mt-1">
-													<a v-for="skill in getSkillsForAbility(char, 'cha')" :key="skill.index"
-														:href="skillLink(skill.index)"
-														class="badge bg-secondary text-decoration-none d-block mb-1 small">
-														{{ skill.name }}
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-
-									<div class="d-flex gap-3 text-muted small">
-										<span><strong>HP:</strong> {{ char.currentHitPoints }}/{{ char.maxHitPoints }}</span>
-										<span><strong>AC:</strong> {{ char.armorClass }}</span>
-										<span><strong>{{ $t('lobby.character.form.proficiency') }}:</strong> +{{ char.proficiencyBonus }}</span>
-									</div>
-
-									<div v-if="char.background" class="mt-2 small">
-										<strong>{{ $t('lobby.character.form.background') }}:</strong> {{ char.background }}
-									</div>
-									<div v-if="char.notes" class="mt-2 small text-muted fst-italic">
-										{{ char.notes }}
-									</div>
-
-									<!-- Equipment -->
-									<div v-if="char.equipment && char.equipment.length > 0" class="mt-3">
-										<strong>{{ $t('lobby.character.form.equipment') }}:</strong>
-										<div class="mt-2">
-											<div v-for="item in char.equipment" :key="item.id"
-												class="d-flex align-items-center justify-content-between py-1 border-bottom">
-												<div>
-													<a :href="equipmentLink(item.equipmentIndex)" class="text-decoration-none">
-														{{ item.equipmentName }}
-													</a>
-													<span v-if="item.quantity > 1" class="text-muted ms-1">(x{{ item.quantity }})</span>
-													<span v-if="getEquipmentDamage(item.equipmentIndex)" class="text-muted ms-2 small">
-														{{ getEquipmentDamage(item.equipmentIndex) }}
-													</span>
-												</div>
-												<div v-if="item.currentAmmo !== null && item.currentAmmo !== undefined"
-													class="d-flex align-items-center">
-													<button v-if="canEdit(char)" class="btn btn-sm btn-outline-secondary py-0 px-1"
-														@click="updateAmmo(char, item, -1)">-</button>
-													<span class="mx-2 badge"
-														:class="ammoClass(item.currentAmmo)">{{ item.currentAmmo }}</span>
-													<button v-if="canEdit(char)" class="btn btn-sm btn-outline-secondary py-0 px-1"
-														@click="updateAmmo(char, item, 1)">+</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+						<character-card
+							:character="char"
+							:skills="skills"
+							:equipment-list="equipmentList"
+							:show-full-stats="isMaster"
+							:show-owner="true"
+							:show-edit-buttons="isMaster"
+							:show-reset-password="canResetPassword(char)"
+							:can-edit-ammo="canEdit(char)"
+							:is-highlighted="isMyCharacter(char)"
+							:is-owner-online="isCharacterOwnerOnline(char)"
+							@edit="openEditModal"
+							@delete="deleteCharacter"
+							@reset-password="resetCharacterPassword"
+							@update-ammo="updateAmmo">
+						</character-card>
 					</div>
 				</div>
 			</div>
@@ -255,24 +85,21 @@ export default {
 	},
 	setup(props) {
 		const { t } = useI18n()
-
-		const characters = ref([])
-		const races = ref([])
-		const classes = ref([])
-		const skills = ref([])
-		const equipmentList = ref([])
 		const formModalRef = ref(null)
 
-		const myCharacter = computed(() => {
-			return characters.value.find(c => c.ownerId === props.userId)
-		})
+		const {
+			characters,
+			races,
+			classes,
+			skills,
+			equipmentList,
+			myCharacter,
+			updateAmmo,
+			init
+		} = useCharacterData(props)
 
 		function isMyCharacter(char) {
 			return char.ownerId === props.userId
-		}
-
-		function canSeeFullStats(char) {
-			return props.isMaster || char.ownerId === props.userId
 		}
 
 		function canEdit(char) {
@@ -285,9 +112,6 @@ export default {
 		}
 
 		function canResetPassword(char) {
-			// Master can reset password only for characters that:
-			// 1. Have a password (are claimed)
-			// 2. Owner is not currently online
 			return props.isMaster && char.isClaimed && !isCharacterOwnerOnline(char)
 		}
 
@@ -298,69 +122,6 @@ export default {
 				} catch (err) {
 					console.error('Error resetting character password:', err)
 				}
-			}
-		}
-
-		function getModifier(score) {
-			const mod = Math.floor((score - 10) / 2)
-			return mod >= 0 ? `+${mod}` : `${mod}`
-		}
-
-		function raceLink(char) {
-			return `/handbook?category=races&index=${char.raceIndex}`
-		}
-
-		function classLink(char) {
-			return `/handbook?category=classes&index=${char.classIndex}`
-		}
-
-		function abilityLink(abilityIndex) {
-			return `/handbook?category=abilityScores&index=${abilityIndex}`
-		}
-
-		function skillLink(skillIndex) {
-			return `/handbook?category=skills&index=${skillIndex}`
-		}
-
-		function getSkillName(skillIndex) {
-			const skill = skills.value.find(s => s.index === skillIndex)
-			return skill ? skill.name : skillIndex
-		}
-
-		function getSkillsForAbility(char, abilityIndex) {
-			if (!char.skills || char.skills.length === 0) return []
-			return skills.value.filter(skill => {
-				const skillAbility = skill.additionalData?.ability_score?.index ||
-					skill.ability_score?.index
-				return skillAbility === abilityIndex && char.skills.includes(skill.index)
-			})
-		}
-
-		function equipmentLink(equipmentIndex) {
-			return `/handbook?category=equipment&index=${equipmentIndex}`
-		}
-
-		function getEquipmentDamage(equipmentIndex) {
-			const item = equipmentList.value.find(e => e.index === equipmentIndex)
-			if (!item) return null
-			const dmg = item.damage || item.additionalData?.damage
-			if (!dmg) return null
-			return `${dmg.damage_dice} ${dmg.damage_type?.name || ''}`
-		}
-
-		function ammoClass(ammo) {
-			if (ammo === 0) return 'bg-danger'
-			if (ammo <= 5) return 'bg-warning text-dark'
-			return 'bg-secondary'
-		}
-
-		async function updateAmmo(char, item, delta) {
-			const newCount = Math.max(0, (item.currentAmmo || 0) + delta)
-			try {
-				await props.connection.invoke('UpdateEquipmentAmmo',
-					props.sessionId, props.userId, char.id, item.id, newCount)
-			} catch (err) {
-				console.error('Error updating ammo:', err)
 			}
 		}
 
@@ -390,75 +151,8 @@ export default {
 			// Modal handles the save, SignalR will update the list
 		}
 
-		async function fetchHandbookData() {
-			try {
-				const savedLanguage = localStorage.getItem('user-language')
-				const browserLanguage = navigator.language.split('-')[0]
-				const defaultLanguage = savedLanguage || (browserLanguage === 'ru' ? 'ru' : 'en')
-				const [racesRes, classesRes, skillsRes, equipmentRes] = await Promise.all([
-					fetch('/api/handbook/races', { headers: { 'X-Locale': defaultLanguage } }),
-					fetch('/api/handbook/classes', { headers: { 'X-Locale': defaultLanguage } }),
-					fetch('/api/handbook/skills', { headers: { 'X-Locale': defaultLanguage } }),
-					fetch('/api/handbook/equipment', { headers: { 'X-Locale': defaultLanguage } })
-				])
-
-				if (racesRes.ok) {
-					races.value = await racesRes.json()
-				}
-				if (classesRes.ok) {
-					classes.value = await classesRes.json()
-				}
-				if (skillsRes.ok) {
-					skills.value = await skillsRes.json()
-				}
-				if (equipmentRes.ok) {
-					equipmentList.value = await equipmentRes.json()
-				}
-			} catch (err) {
-				console.error('Error fetching handbook data:', err)
-			}
-		}
-
-		function setupSignalRHandlers() {
-			if (!props.connection) return
-
-			props.connection.on('CharacterList', (characterList) => {
-				characters.value = characterList
-			})
-
-			props.connection.on('CharacterCreated', (character) => {
-				const existingIndex = characters.value.findIndex(c => c.id === character.id)
-				if (existingIndex === -1) {
-					characters.value.push(character)
-				}
-			})
-
-			props.connection.on('CharacterUpdated', (character) => {
-				const index = characters.value.findIndex(c => c.id === character.id)
-				if (index !== -1) {
-					characters.value[index] = character
-				}
-			})
-
-			props.connection.on('CharacterDeleted', (characterId) => {
-				characters.value = characters.value.filter(c => c.id !== characterId)
-			})
-
-			props.connection.on('CharacterError', (message) => {
-				alert(message)
-			})
-
-			props.connection.on('CharacterEquipmentUpdated', (data) => {
-				const char = characters.value.find(c => c.id === data.characterId)
-				if (char) {
-					char.equipment = data.equipment
-				}
-			})
-		}
-
 		onMounted(() => {
-			setupSignalRHandlers()
-			fetchHandbookData()
+			init()
 		})
 
 		return {
@@ -467,29 +161,18 @@ export default {
 			races,
 			classes,
 			skills,
+			equipmentList,
 			formModalRef,
 			myCharacter,
 			isMyCharacter,
-			canSeeFullStats,
 			canEdit,
 			isCharacterOwnerOnline,
 			canResetPassword,
 			resetCharacterPassword,
-			getModifier,
-			raceLink,
-			classLink,
-			abilityLink,
-			skillLink,
-			getSkillName,
-			getSkillsForAbility,
 			openCreateModal,
 			openEditModal,
 			deleteCharacter,
 			onCharacterSaved,
-			equipmentList,
-			equipmentLink,
-			getEquipmentDamage,
-			ammoClass,
 			updateAmmo
 		}
 	}
