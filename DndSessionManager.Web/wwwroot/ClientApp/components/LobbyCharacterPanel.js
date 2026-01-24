@@ -36,12 +36,14 @@ export default {
 							:show-edit-buttons="isMaster"
 							:show-reset-password="canResetPassword(char)"
 							:can-edit-ammo="canEdit(char)"
+							:can-edit-spell-slots="canEdit(char)"
 							:is-highlighted="isMyCharacter(char)"
 							:is-owner-online="isCharacterOwnerOnline(char)"
 							@edit="openEditModal"
 							@delete="deleteCharacter"
 							@reset-password="resetCharacterPassword"
-							@update-ammo="updateAmmo">
+							@update-ammo="updateAmmo"
+							@use-spell-slot="useSpellSlot">
 						</character-card>
 					</div>
 				</div>
@@ -57,6 +59,7 @@ export default {
 			:skills="skills"
 			:classes="classes"
 			:equipment-list="equipmentList"
+			:spells-list="spellsList"
 			@character-saved="onCharacterSaved">
 		</character-form-modal>
 		</div>
@@ -93,8 +96,10 @@ export default {
 			classes,
 			skills,
 			equipmentList,
+			spellsList,
 			myCharacter,
 			updateAmmo,
+			useSpellSlot,
 			init
 		} = useCharacterData(props)
 
@@ -162,6 +167,7 @@ export default {
 			classes,
 			skills,
 			equipmentList,
+			spellsList,
 			formModalRef,
 			myCharacter,
 			isMyCharacter,
@@ -173,7 +179,8 @@ export default {
 			openEditModal,
 			deleteCharacter,
 			onCharacterSaved,
-			updateAmmo
+			updateAmmo,
+			useSpellSlot
 		}
 	}
 }

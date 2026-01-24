@@ -215,6 +215,12 @@
         "selectEquipment": "Select item...",
         "ammo": "Ammo",
         "damage": "Damage",
+        "spells": "Spells",
+        "spellSlots": "Spell Slots",
+        "selectSpell": "Select spell...",
+        "cantrips": "Cantrips",
+        "prepared": "Prepared",
+        "notPrepared": "Not prepared",
         "save": "Save",
         "cancel": "Cancel"
       }

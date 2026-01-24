@@ -46,4 +46,10 @@ public class Character
 
     // Equipment items (list of equipment references with state)
     public List<CharacterEquipmentItem> Equipment { get; set; } = new();
+
+    // Spells known by this character
+    public List<CharacterSpellItem> Spells { get; set; } = new();
+
+    // Spell slots per level (1-9)
+    public List<CharacterSpellSlot> SpellSlots { get; set; } = new();
 }

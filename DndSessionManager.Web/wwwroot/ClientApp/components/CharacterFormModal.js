@@ -224,6 +224,66 @@ export default {
 								</div>
 							</div>
 
+							<!-- Spell Slots -->
+							<div v-if="form.spells.some(s => s.level > 0)" class="mb-4">
+								<h6 class="mb-3">{{ $t('lobby.character.form.spellSlots') }}</h6>
+								<div class="row g-2">
+									<div v-for="slot in form.spellSlots.filter(s => s.total > 0 || s.level <= 5)"
+										:key="slot.level" class="col-4 col-md-2">
+										<div class="text-center border rounded p-2">
+											<div class="small text-muted">{{ $t('handbook.level') }} {{ slot.level }}</div>
+											<input type="number" class="form-control form-control-sm text-center"
+												v-model.number="slot.total" min="0" max="9">
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Spells Selection -->
+							<h6 class="mb-3">{{ $t('lobby.character.form.spells') }}</h6>
+							<div class="row g-3 mb-4">
+								<div class="col-md-8">
+									<select class="form-select" v-model="selectedSpell" @change="addSpell">
+										<option value="">-- {{ $t('lobby.character.form.selectSpell') }} --</option>
+										<optgroup v-for="(levelGroup, levelKey) in spellsByLevel" :key="levelKey" :label="levelGroup.label">
+											<option v-for="spell in levelGroup.spells" :key="spell.index" :value="spell.index"
+												:disabled="form.spells.some(s => s.spellIndex === spell.index)">
+												{{ spell.name }}
+											</option>
+										</optgroup>
+									</select>
+								</div>
+							</div>
+
+							<!-- Spells List grouped by level -->
+							<div v-if="form.spells.length > 0" class="mb-4">
+								<div v-for="level in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" :key="level">
+									<div v-if="getCharacterSpellsByLevel(level).length > 0" class="mb-3">
+										<h6 class="text-muted small">
+											{{ level === 0 ? $t('lobby.character.form.cantrips') : $t('handbook.level') + ' ' + level }}
+										</h6>
+										<div v-for="spell in getCharacterSpellsByLevel(level)" :key="spell.id"
+											class="d-flex align-items-center border rounded p-2 mb-2">
+											<div v-if="level > 0" class="me-2">
+												<input type="checkbox" class="form-check-input"
+													:checked="spell.isPrepared"
+													@change="toggleSpellPrepared(spell)"
+													:title="$t('lobby.character.form.prepared')">
+											</div>
+											<div class="flex-grow-1">
+												<a :href="spellLink(spell.spellIndex)" class="text-decoration-none fw-bold">
+													{{ spell.spellName }}
+												</a>
+											</div>
+											<button type="button" class="btn btn-sm btn-outline-danger"
+												@click="removeSpell(form.spells.indexOf(spell))">
+												<i class="bi bi-trash"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
 							<!-- Background & Notes -->
 							<div class="row g-3">
 								<div class="col-md-6">
@@ -276,6 +336,10 @@ export default {
 			default: () => []
 		},
 		equipmentList: {
+			type: Array,
+			default: () => []
+		},
+		spellsList: {
 			type: Array,
 			default: () => []
 		}
@@ -369,7 +433,67 @@ export default {
 			return `/handbook?category=equipment&index=${equipmentIndex}`
 		}
 
+		function addSpell() {
+			if (!selectedSpell.value) return
+			const spell = props.spellsList.find(s => s.index === selectedSpell.value)
+			if (!spell) return
+
+			// Check if already added
+			if (form.value.spells.some(s => s.spellIndex === spell.index)) {
+				selectedSpell.value = ''
+				return
+			}
+
+			form.value.spells.push({
+				id: crypto.randomUUID(),
+				spellIndex: spell.index,
+				spellName: spell.name,
+				level: spell.level,
+				isPrepared: spell.level === 0 // Cantrips always prepared
+			})
+
+			selectedSpell.value = ''
+		}
+
+		function removeSpell(index) {
+			form.value.spells.splice(index, 1)
+		}
+
+		function toggleSpellPrepared(spell) {
+			if (spell.level === 0) return // Cantrips are always prepared
+			spell.isPrepared = !spell.isPrepared
+		}
+
+		function spellLink(spellIndex) {
+			return `/handbook?category=spells&index=${spellIndex}`
+		}
+
+		function getCharacterSpellsByLevel(level) {
+			return form.value.spells.filter(s => s.level === level)
+		}
+
 		const selectedEquipment = ref('')
+		const selectedSpell = ref('')
+
+		const spellsByLevel = computed(() => {
+			const levels = {}
+			// Get spells for character's class, or all spells if no class selected
+			const availableSpells = selectedClass.value && selectedClass.value !== '__custom__'
+				? props.spellsList.filter(s => s.classes?.some(c => c.index === selectedClass.value))
+				: props.spellsList
+
+			availableSpells.forEach(spell => {
+				const level = spell.level
+				if (!levels[level]) {
+					levels[level] = {
+						label: level === 0 ? t('lobby.character.form.cantrips') : `${t('handbook.level')} ${level}`,
+						spells: []
+					}
+				}
+				levels[level].spells.push(spell)
+			})
+			return levels
+		})
 
 		const defaultForm = () => ({
 			name: '',
@@ -392,7 +516,19 @@ export default {
 			background: '',
 			notes: '',
 			skills: [],
-			equipment: []
+			equipment: [],
+			spells: [],
+			spellSlots: [
+				{ level: 1, total: 0, used: 0 },
+				{ level: 2, total: 0, used: 0 },
+				{ level: 3, total: 0, used: 0 },
+				{ level: 4, total: 0, used: 0 },
+				{ level: 5, total: 0, used: 0 },
+				{ level: 6, total: 0, used: 0 },
+				{ level: 7, total: 0, used: 0 },
+				{ level: 8, total: 0, used: 0 },
+				{ level: 9, total: 0, used: 0 }
+			]
 		})
 
 		const form = ref(defaultForm())
@@ -472,6 +608,7 @@ export default {
 			selectedRace.value = ''
 			selectedClass.value = ''
 			selectedEquipment.value = ''
+			selectedSpell.value = ''
 			showModal()
 		}
 
@@ -506,7 +643,21 @@ export default {
 					quantity: e.quantity || 1,
 					currentAmmo: e.currentAmmo,
 					isEquipped: e.isEquipped !== false
-				}))
+				})),
+				spells: (character.spells || []).map(s => ({
+					id: s.id,
+					spellIndex: s.spellIndex,
+					spellName: s.spellName,
+					level: s.level,
+					isPrepared: s.isPrepared !== false
+				})),
+				spellSlots: character.spellSlots?.length > 0
+					? character.spellSlots.map(s => ({
+						level: s.level,
+						total: s.total || 0,
+						used: s.used || 0
+					}))
+					: defaultForm().spellSlots
 			}
 
 			// Set selected values for dropdowns
@@ -527,6 +678,7 @@ export default {
 			}
 
 			selectedEquipment.value = ''
+			selectedSpell.value = ''
 			showModal()
 		}
 
@@ -571,7 +723,9 @@ export default {
 					background: form.value.background,
 					notes: form.value.notes,
 					skills: form.value.skills,
-					equipment: form.value.equipment
+					equipment: form.value.equipment,
+					spells: form.value.spells,
+					spellSlots: form.value.spellSlots.filter(s => s.total > 0)
 				}
 
 				if (isEditing.value) {
@@ -596,21 +750,28 @@ export default {
 			selectedRace,
 			selectedClass,
 			selectedEquipment,
+			selectedSpell,
 			isEditing,
 			isSaving,
 			isValid,
 			skillsGroupedByAbility,
 			equipmentByCategory,
+			spellsByLevel,
 			getModifier,
 			increment,
 			decrement,
 			abilityLink,
 			skillLink,
 			equipmentLink,
+			spellLink,
 			isAmmunitionWeapon,
 			getEquipmentDamage,
 			addEquipment,
 			removeEquipment,
+			addSpell,
+			removeSpell,
+			toggleSpellPrepared,
+			getCharacterSpellsByLevel,
 			onRaceChange,
 			onClassChange,
 			openForCreate,

@@ -230,7 +230,9 @@ public class LobbyHub : Hub
 			Background = characterData.Background,
 			Notes = characterData.Notes,
 			Skills = characterData.Skills ?? [],
-			Equipment = MapEquipmentDtoToModel(characterData.Equipment)
+			Equipment = MapEquipmentDtoToModel(characterData.Equipment),
+			Spells = MapSpellsDtoToModel(characterData.Spells),
+			SpellSlots = MapSpellSlotsDtoToModel(characterData.SpellSlots)
 		};
 
 		_characterService.CreateCharacter(character, characterData.Password);
@@ -280,6 +282,8 @@ public class LobbyHub : Hub
 		existingCharacter.Notes = characterData.Notes;
 		existingCharacter.Skills = characterData.Skills ?? [];
 		existingCharacter.Equipment = MapEquipmentDtoToModel(characterData.Equipment);
+		existingCharacter.Spells = MapSpellsDtoToModel(characterData.Spells);
+		existingCharacter.SpellSlots = MapSpellSlotsDtoToModel(characterData.SpellSlots);
 
 		_characterService.UpdateCharacter(existingCharacter);
 
@@ -394,6 +398,42 @@ public class LobbyHub : Hub
 		});
 	}
 
+	public async Task UseSpellSlot(string sessionId, string userId, string characterId, int spellLevel, int newUsedCount)
+	{
+		if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+			!Guid.TryParse(userId, out var userGuid) ||
+			!Guid.TryParse(characterId, out var characterGuid))
+			return;
+
+		var user = _userService.GetUser(sessionGuid, userGuid);
+		if (user == null)
+			return;
+
+		var character = _characterService.GetCharacter(characterGuid);
+		if (character == null || character.SessionId != sessionGuid)
+			return;
+
+		var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
+		if (!_characterService.CanUserEditCharacter(userGuid, character, isMaster))
+		{
+			await Clients.Caller.SendAsync("CharacterError", "You cannot edit this character.");
+			return;
+		}
+
+		var slot = character.SpellSlots.FirstOrDefault(s => s.Level == spellLevel);
+		if (slot == null)
+			return;
+
+		slot.Used = Math.Clamp(newUsedCount, 0, slot.Total);
+		_characterService.UpdateCharacter(character);
+
+		await Clients.Group(sessionId).SendAsync("CharacterSpellSlotsUpdated", new
+		{
+			CharacterId = characterId,
+			SpellSlots = character.SpellSlots.Select(MapSpellSlotToDto).ToList()
+		});
+	}
+
 	private static object MapCharacterToDto(Character c) => new
 	{
 		Id = c.Id.ToString(),
@@ -419,6 +459,8 @@ public class LobbyHub : Hub
 		c.Notes,
 		c.Skills,
 		Equipment = c.Equipment.Select(MapEquipmentItemToDto).ToList(),
+		Spells = c.Spells.Select(MapSpellItemToDto).ToList(),
+		SpellSlots = c.SpellSlots.Select(MapSpellSlotToDto).ToList(),
 		IsClaimed = !string.IsNullOrEmpty(c.PasswordHash)
 	};
 
@@ -447,6 +489,50 @@ public class LobbyHub : Hub
 			IsEquipped = e.IsEquipped
 		}).ToList();
 	}
+
+	private static object MapSpellItemToDto(CharacterSpellItem s) => new
+	{
+		Id = s.Id.ToString(),
+		s.SpellIndex,
+		s.SpellName,
+		s.Level,
+		s.IsPrepared
+	};
+
+	private static object MapSpellSlotToDto(CharacterSpellSlot s) => new
+	{
+		s.Level,
+		s.Total,
+		s.Used
+	};
+
+	private static List<CharacterSpellItem> MapSpellsDtoToModel(List<CharacterSpellItemDto>? spellsDto)
+	{
+		if (spellsDto == null || spellsDto.Count == 0)
+			return [];
+
+		return spellsDto.Select(s => new CharacterSpellItem
+		{
+			Id = Guid.TryParse(s.Id, out var id) ? id : Guid.NewGuid(),
+			SpellIndex = s.SpellIndex,
+			SpellName = s.SpellName,
+			Level = s.Level,
+			IsPrepared = s.IsPrepared
+		}).ToList();
+	}
+
+	private static List<CharacterSpellSlot> MapSpellSlotsDtoToModel(List<CharacterSpellSlotDto>? slotsDto)
+	{
+		if (slotsDto == null || slotsDto.Count == 0)
+			return [];
+
+		return slotsDto.Select(s => new CharacterSpellSlot
+		{
+			Level = s.Level,
+			Total = s.Total,
+			Used = s.Used
+		}).ToList();
+	}
 }
 
 public class CharacterDto
@@ -473,6 +559,8 @@ public class CharacterDto
 	public string? Notes { get; set; }
 	public List<string>? Skills { get; set; }
 	public List<CharacterEquipmentItemDto>? Equipment { get; set; }
+	public List<CharacterSpellItemDto>? Spells { get; set; }
+	public List<CharacterSpellSlotDto>? SpellSlots { get; set; }
 }
 
 public class CharacterEquipmentItemDto
@@ -483,4 +571,20 @@ public class CharacterEquipmentItemDto
 	public int Quantity { get; set; } = 1;
 	public int? CurrentAmmo { get; set; }
 	public bool IsEquipped { get; set; } = true;
+}
+
+public class CharacterSpellItemDto
+{
+	public string? Id { get; set; }
+	public string SpellIndex { get; set; } = string.Empty;
+	public string SpellName { get; set; } = string.Empty;
+	public int Level { get; set; }
+	public bool IsPrepared { get; set; } = true;
+}
+
+public class CharacterSpellSlotDto
+{
+	public int Level { get; set; }
+	public int Total { get; set; }
+	public int Used { get; set; }
 }

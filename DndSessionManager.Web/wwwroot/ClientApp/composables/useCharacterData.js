@@ -6,6 +6,7 @@ export function useCharacterData(props) {
 	const classes = ref([])
 	const skills = ref([])
 	const equipmentList = ref([])
+	const spellsList = ref([])
 
 	const myCharacter = computed(() => {
 		return characters.value.find(c => c.ownerId === props.userId)
@@ -45,6 +46,10 @@ export function useCharacterData(props) {
 		return `/handbook?category=equipment&index=${equipmentIndex}`
 	}
 
+	function spellLink(spellIndex) {
+		return `/handbook?category=spells&index=${spellIndex}`
+	}
+
 	function getEquipmentDamage(equipmentIndex) {
 		const item = equipmentList.value.find(e => e.index === equipmentIndex)
 		if (!item) return null
@@ -69,16 +74,29 @@ export function useCharacterData(props) {
 		}
 	}
 
+	async function useSpellSlot(char, slotLevel, delta) {
+		const slot = char.spellSlots?.find(s => s.level === slotLevel)
+		if (!slot) return
+		const newUsed = Math.max(0, Math.min(slot.total, (slot.used || 0) + delta))
+		try {
+			await props.connection.invoke('UseSpellSlot',
+				props.sessionId, props.userId, char.id, slotLevel, newUsed)
+		} catch (err) {
+			console.error('Error using spell slot:', err)
+		}
+	}
+
 	async function fetchHandbookData() {
 		try {
 			const savedLanguage = localStorage.getItem('user-language')
 			const browserLanguage = navigator.language.split('-')[0]
 			const defaultLanguage = savedLanguage || (browserLanguage === 'ru' ? 'ru' : 'en')
-			const [racesRes, classesRes, skillsRes, equipmentRes] = await Promise.all([
+			const [racesRes, classesRes, skillsRes, equipmentRes, spellsRes] = await Promise.all([
 				fetch('/api/handbook/races', { headers: { 'X-Locale': defaultLanguage } }),
 				fetch('/api/handbook/classes', { headers: { 'X-Locale': defaultLanguage } }),
 				fetch('/api/handbook/skills', { headers: { 'X-Locale': defaultLanguage } }),
-				fetch('/api/handbook/equipment', { headers: { 'X-Locale': defaultLanguage } })
+				fetch('/api/handbook/equipment', { headers: { 'X-Locale': defaultLanguage } }),
+				fetch('/api/handbook/spells', { headers: { 'X-Locale': defaultLanguage } })
 			])
 
 			if (racesRes.ok) {
@@ -92,6 +110,9 @@ export function useCharacterData(props) {
 			}
 			if (equipmentRes.ok) {
 				equipmentList.value = await equipmentRes.json()
+			}
+			if (spellsRes.ok) {
+				spellsList.value = await spellsRes.json()
 			}
 		} catch (err) {
 			console.error('Error fetching handbook data:', err)
@@ -133,6 +154,13 @@ export function useCharacterData(props) {
 				char.equipment = data.equipment
 			}
 		})
+
+		props.connection.on('CharacterSpellSlotsUpdated', (data) => {
+			const char = characters.value.find(c => c.id === data.characterId)
+			if (char) {
+				char.spellSlots = data.spellSlots
+			}
+		})
 	}
 
 	function init() {
@@ -146,6 +174,7 @@ export function useCharacterData(props) {
 		classes,
 		skills,
 		equipmentList,
+		spellsList,
 		myCharacter,
 		getModifier,
 		raceLink,
@@ -154,9 +183,11 @@ export function useCharacterData(props) {
 		skillLink,
 		getSkillsForAbility,
 		equipmentLink,
+		spellLink,
 		getEquipmentDamage,
 		ammoClass,
 		updateAmmo,
+		useSpellSlot,
 		init
 	}
 }

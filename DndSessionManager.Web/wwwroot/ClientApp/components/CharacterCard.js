@@ -187,6 +187,56 @@ export default {
 							</div>
 						</div>
 					</div>
+
+					<!-- Spells -->
+					<div v-if="character.spells && character.spells.length > 0" class="mt-3">
+						<strong>{{ $t('lobby.character.form.spells') }}:</strong>
+
+						<!-- Spell Slots -->
+						<div v-if="character.spellSlots && character.spellSlots.some(s => s.total > 0)" class="mt-2 mb-3">
+							<div class="d-flex flex-wrap gap-2">
+								<div v-for="slot in character.spellSlots.filter(s => s.total > 0)" :key="slot.level"
+									class="border rounded px-2 py-1 text-center" style="min-width: 60px;">
+									<div class="small text-muted">{{ $t('handbook.level') }} {{ slot.level }}</div>
+									<div class="d-flex align-items-center justify-content-center">
+										<button v-if="canEditSpellSlots" class="btn btn-sm btn-link p-0"
+											@click="$emit('use-spell-slot', character, slot.level, 1)"
+											:disabled="slot.used >= slot.total">
+											<i class="bi bi-dash-circle"></i>
+										</button>
+										<span class="mx-1" :class="{ 'text-danger': slot.used >= slot.total }">
+											{{ slot.total - (slot.used || 0) }}/{{ slot.total }}
+										</span>
+										<button v-if="canEditSpellSlots" class="btn btn-sm btn-link p-0"
+											@click="$emit('use-spell-slot', character, slot.level, -1)"
+											:disabled="!slot.used || slot.used <= 0">
+											<i class="bi bi-plus-circle"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Spell Lists by Level -->
+						<div v-for="level in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" :key="level">
+							<div v-if="getCharacterSpellsByLevel(level).length > 0" class="mt-2">
+								<div class="text-muted small fw-bold">
+									{{ level === 0 ? $t('lobby.character.form.cantrips') : $t('handbook.level') + ' ' + level }}
+								</div>
+								<div class="d-flex flex-wrap gap-1 mt-1">
+									<a v-for="spell in getCharacterSpellsByLevel(level)" :key="spell.id"
+										:href="spellLink(spell.spellIndex)"
+										class="badge text-decoration-none"
+										:class="spell.isPrepared || level === 0 ? 'bg-primary' : 'bg-secondary'">
+										{{ spell.spellName }}
+										<span v-if="level > 0 && !spell.isPrepared" class="ms-1" :title="$t('lobby.character.form.notPrepared')">
+											<i class="bi bi-moon"></i>
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -231,9 +281,13 @@ export default {
 		isOwnerOnline: {
 			type: Boolean,
 			default: false
+		},
+		canEditSpellSlots: {
+			type: Boolean,
+			default: false
 		}
 	},
-	emits: ['edit', 'delete', 'reset-password', 'update-ammo'],
+	emits: ['edit', 'delete', 'reset-password', 'update-ammo', 'use-spell-slot'],
 	setup(props) {
 		function getModifier(score) {
 			const mod = Math.floor((score - 10) / 2)
@@ -283,6 +337,25 @@ export default {
 			return 'bg-secondary'
 		}
 
+		function spellLink(spellIndex) {
+			return `/handbook?category=spells&index=${spellIndex}`
+		}
+
+		function getCharacterSpellsByLevel(level) {
+			if (!props.character.spells) return []
+			return props.character.spells.filter(s => s.level === level)
+		}
+
+		function getAvailableSlots(slotLevel) {
+			const slot = props.character.spellSlots?.find(s => s.level === slotLevel)
+			if (!slot) return { total: 0, used: 0, available: 0 }
+			return {
+				total: slot.total,
+				used: slot.used || 0,
+				available: slot.total - (slot.used || 0)
+			}
+		}
+
 		return {
 			getModifier,
 			raceLink,
@@ -292,7 +365,10 @@ export default {
 			getSkillsForAbility,
 			equipmentLink,
 			getEquipmentDamage,
-			ammoClass
+			ammoClass,
+			spellLink,
+			getCharacterSpellsByLevel,
+			getAvailableSlots
 		}
 	}
 }
