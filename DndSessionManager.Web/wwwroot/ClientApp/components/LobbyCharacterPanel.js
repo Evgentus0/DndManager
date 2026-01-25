@@ -60,6 +60,8 @@ export default {
 			:classes="classes"
 			:equipment-list="equipmentList"
 			:spells-list="spellsList"
+			:features-list="featuresList"
+			:traits-list="traitsList"
 			@character-saved="onCharacterSaved">
 		</character-form-modal>
 		</div>
@@ -97,6 +99,8 @@ export default {
 			skills,
 			equipmentList,
 			spellsList,
+			featuresList,
+			traitsList,
 			myCharacter,
 			updateAmmo,
 			useSpellSlot,
@@ -168,6 +172,8 @@ export default {
 			skills,
 			equipmentList,
 			spellsList,
+			featuresList,
+			traitsList,
 			formModalRef,
 			myCharacter,
 			isMyCharacter,

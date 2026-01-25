@@ -233,7 +233,9 @@ public class LobbyHub : Hub
 			Skills = characterData.Skills ?? [],
 			Equipment = MapEquipmentDtoToModel(characterData.Equipment),
 			Spells = MapSpellsDtoToModel(characterData.Spells),
-			SpellSlots = MapSpellSlotsDtoToModel(characterData.SpellSlots)
+			SpellSlots = MapSpellSlotsDtoToModel(characterData.SpellSlots),
+			Features = MapFeaturesDtoToModel(characterData.Features),
+			Traits = MapTraitsDtoToModel(characterData.Traits)
 		};
 
 		_characterService.CreateCharacter(character, characterData.Password);
@@ -285,6 +287,8 @@ public class LobbyHub : Hub
 		existingCharacter.Equipment = MapEquipmentDtoToModel(characterData.Equipment);
 		existingCharacter.Spells = MapSpellsDtoToModel(characterData.Spells);
 		existingCharacter.SpellSlots = MapSpellSlotsDtoToModel(characterData.SpellSlots);
+		existingCharacter.Features = MapFeaturesDtoToModel(characterData.Features);
+		existingCharacter.Traits = MapTraitsDtoToModel(characterData.Traits);
 
 		_characterService.UpdateCharacter(existingCharacter);
 
@@ -462,6 +466,8 @@ public class LobbyHub : Hub
 		Equipment = c.Equipment.Select(MapEquipmentItemToDto).ToList(),
 		Spells = c.Spells.Select(MapSpellItemToDto).ToList(),
 		SpellSlots = c.SpellSlots.Select(MapSpellSlotToDto).ToList(),
+		Features = c.Features.Select(MapFeatureItemToDto).ToList(),
+		Traits = c.Traits.Select(MapTraitItemToDto).ToList(),
 		IsClaimed = !string.IsNullOrEmpty(c.PasswordHash)
 	};
 
@@ -534,6 +540,48 @@ public class LobbyHub : Hub
 			Used = s.Used
 		}).ToList();
 	}
+
+	private static object MapFeatureItemToDto(CharacterFeatureItem f) => new
+	{
+		Id = f.Id.ToString(),
+		f.FeatureIndex,
+		f.FeatureName,
+		f.Level
+	};
+
+	private static List<CharacterFeatureItem> MapFeaturesDtoToModel(List<CharacterFeatureItemDto>? featuresDto)
+	{
+		if (featuresDto == null || featuresDto.Count == 0)
+			return [];
+
+		return featuresDto.Select(f => new CharacterFeatureItem
+		{
+			Id = Guid.TryParse(f.Id, out var id) ? id : Guid.NewGuid(),
+			FeatureIndex = f.FeatureIndex,
+			FeatureName = f.FeatureName,
+			Level = f.Level
+		}).ToList();
+	}
+
+	private static object MapTraitItemToDto(CharacterTraitItem t) => new
+	{
+		Id = t.Id.ToString(),
+		t.TraitIndex,
+		t.TraitName
+	};
+
+	private static List<CharacterTraitItem> MapTraitsDtoToModel(List<CharacterTraitItemDto>? traitsDto)
+	{
+		if (traitsDto == null || traitsDto.Count == 0)
+			return [];
+
+		return traitsDto.Select(t => new CharacterTraitItem
+		{
+			Id = Guid.TryParse(t.Id, out var id) ? id : Guid.NewGuid(),
+			TraitIndex = t.TraitIndex,
+			TraitName = t.TraitName
+		}).ToList();
+	}
 }
 
 public class CharacterDto
@@ -562,6 +610,8 @@ public class CharacterDto
 	public List<CharacterEquipmentItemDto>? Equipment { get; set; }
 	public List<CharacterSpellItemDto>? Spells { get; set; }
 	public List<CharacterSpellSlotDto>? SpellSlots { get; set; }
+	public List<CharacterFeatureItemDto>? Features { get; set; }
+	public List<CharacterTraitItemDto>? Traits { get; set; }
 }
 
 public class CharacterEquipmentItemDto
@@ -588,4 +638,19 @@ public class CharacterSpellSlotDto
 	public int Level { get; set; }
 	public int Total { get; set; }
 	public int Used { get; set; }
+}
+
+public class CharacterFeatureItemDto
+{
+	public string? Id { get; set; }
+	public string FeatureIndex { get; set; } = string.Empty;
+	public string FeatureName { get; set; } = string.Empty;
+	public int Level { get; set; }
+}
+
+public class CharacterTraitItemDto
+{
+	public string? Id { get; set; }
+	public string TraitIndex { get; set; } = string.Empty;
+	public string TraitName { get; set; } = string.Empty;
 }

@@ -52,4 +52,10 @@ public class Character
 
     // Spell slots per level (1-9)
     public List<CharacterSpellSlot> SpellSlots { get; set; } = new();
+
+    // Features known by this character (class features)
+    public List<CharacterFeatureItem> Features { get; set; } = new();
+
+    // Traits possessed by this character (racial traits)
+    public List<CharacterTraitItem> Traits { get; set; } = new();
 }

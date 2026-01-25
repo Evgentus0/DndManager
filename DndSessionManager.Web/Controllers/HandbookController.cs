@@ -69,7 +69,7 @@ namespace DndSessionManager.Web.Controllers
 				return NotFound(new { error = $"Entities not found for category '{category}'" });
 			}
 
-			Response.Headers.Append("Cache-Control", "public, max-age=3600");
+			//Response.Headers.Append("Cache-Control", "public, max-age=3600");
 
 			return Ok(entities);
 		}
@@ -117,7 +117,7 @@ namespace DndSessionManager.Web.Controllers
 				return NotFound(new { error = $"Entity '{index}' not found in category '{category}'" });
 			}
 
-			Response.Headers.Append("Cache-Control", "public, max-age=3600");
+			//Response.Headers.Append("Cache-Control", "public, max-age=3600");
 
 			return Ok(entity);
 		}

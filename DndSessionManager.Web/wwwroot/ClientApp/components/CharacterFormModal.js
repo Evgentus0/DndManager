@@ -288,6 +288,77 @@ export default {
 								</div>
 							</div>
 
+							<!-- Features Selection -->
+							<h6 class="mb-3">{{ $t('lobby.character.form.features') }}</h6>
+							<div class="row g-2 mb-4">
+								<div class="col-12 col-md-8">
+									<input type="text" class="form-control mb-2" v-model="featureSearch"
+										:placeholder="$t('lobby.character.form.searchPlaceholder')">
+									<select class="form-select" v-model="selectedFeature" @change="addFeature" size="6">
+										<option value="">-- {{ $t('lobby.character.form.selectFeature') }} --</option>
+										<optgroup v-for="(levelGroup, levelKey) in featuresByLevel" :key="levelKey" :label="levelGroup.label">
+											<option v-for="feature in levelGroup.features" :key="feature.index" :value="feature.index"
+												:disabled="form.features.some(f => f.featureIndex === feature.index)">
+												{{ feature.name }}
+											</option>
+										</optgroup>
+									</select>
+								</div>
+							</div>
+
+							<!-- Features List grouped by level -->
+							<div v-if="form.features.length > 0" class="mb-4">
+								<div v-for="level in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]" :key="level">
+									<div v-if="getCharacterFeaturesByLevel(level).length > 0" class="mb-3">
+										<h6 class="text-muted small">{{ $t('handbook.level') + ' ' + level }}</h6>
+										<div v-for="feature in getCharacterFeaturesByLevel(level)" :key="feature.id"
+											class="d-flex align-items-center border rounded p-2 mb-2">
+											<div class="flex-grow-1">
+												<a :href="featureLink(feature.featureIndex)" class="text-decoration-none fw-bold">
+													{{ feature.featureName }}
+												</a>
+											</div>
+											<button type="button" class="btn btn-sm btn-outline-danger"
+												@click="removeFeature(form.features.indexOf(feature))">
+												<i class="bi bi-trash"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Traits Selection -->
+							<h6 class="mb-3">{{ $t('lobby.character.form.traits') }}</h6>
+							<div class="row g-2 mb-4">
+								<div class="col-12 col-md-8">
+									<input type="text" class="form-control mb-2" v-model="traitSearch"
+										:placeholder="$t('lobby.character.form.searchPlaceholder')">
+									<select class="form-select" v-model="selectedTrait" @change="addTrait" size="6">
+										<option value="">-- {{ $t('lobby.character.form.selectTrait') }} --</option>
+										<option v-for="trait in traitsByRace" :key="trait.index" :value="trait.index"
+											:disabled="form.traits.some(t => t.traitIndex === trait.index)">
+											{{ trait.name }}
+										</option>
+									</select>
+								</div>
+							</div>
+
+							<!-- Traits List -->
+							<div v-if="form.traits.length > 0" class="mb-4">
+								<div v-for="trait in form.traits" :key="trait.id"
+									class="d-flex align-items-center border rounded p-2 mb-2">
+									<div class="flex-grow-1">
+										<a :href="traitLink(trait.traitIndex)" class="text-decoration-none fw-bold">
+											{{ trait.traitName }}
+										</a>
+									</div>
+									<button type="button" class="btn btn-sm btn-outline-danger"
+										@click="removeTrait(form.traits.indexOf(trait))">
+										<i class="bi bi-trash"></i>
+									</button>
+								</div>
+							</div>
+
 							<!-- Background & Notes -->
 							<div class="row g-3">
 								<div class="col-md-6">
@@ -344,6 +415,14 @@ export default {
 			default: () => []
 		},
 		spellsList: {
+			type: Array,
+			default: () => []
+		},
+		featuresList: {
+			type: Array,
+			default: () => []
+		},
+		traitsList: {
 			type: Array,
 			default: () => []
 		}
@@ -501,10 +580,67 @@ export default {
 			return form.value.spells.filter(s => s.level === level)
 		}
 
+		function addFeature() {
+			if (!selectedFeature.value) return
+			const feature = props.featuresList.find(f => f.index === selectedFeature.value)
+			if (!feature) return
+			if (form.value.features.some(f => f.featureIndex === feature.index)) {
+				selectedFeature.value = ''
+				return
+			}
+			form.value.features.push({
+				id: generateUUID(),
+				featureIndex: feature.index,
+				featureName: feature.name,
+				level: feature.level
+			})
+			selectedFeature.value = ''
+		}
+
+		function removeFeature(index) {
+			form.value.features.splice(index, 1)
+		}
+
+		function addTrait() {
+			if (!selectedTrait.value) return
+			const trait = props.traitsList.find(t => t.index === selectedTrait.value)
+			if (!trait) return
+			if (form.value.traits.some(t => t.traitIndex === trait.index)) {
+				selectedTrait.value = ''
+				return
+			}
+			form.value.traits.push({
+				id: generateUUID(),
+				traitIndex: trait.index,
+				traitName: trait.name
+			})
+			selectedTrait.value = ''
+		}
+
+		function removeTrait(index) {
+			form.value.traits.splice(index, 1)
+		}
+
+		function getCharacterFeaturesByLevel(level) {
+			return form.value.features.filter(f => f.level === level)
+		}
+
+		function featureLink(featureIndex) {
+			return `/handbook?category=features&index=${featureIndex}`
+		}
+
+		function traitLink(traitIndex) {
+			return `/handbook?category=traits&index=${traitIndex}`
+		}
+
 		const selectedEquipment = ref('')
 		const selectedSpell = ref('')
+		const selectedFeature = ref('')
+		const selectedTrait = ref('')
 		const spellSearch = ref('')
 		const equipmentSearch = ref('')
+		const featureSearch = ref('')
+		const traitSearch = ref('')
 
 		const spellsByLevel = computed(() => {
 			const levels = {}
@@ -540,6 +676,47 @@ export default {
 			return levels
 		})
 
+		const featuresByLevel = computed(() => {
+			const levels = {}
+			let availableFeatures = selectedClass.value && selectedClass.value !== '__custom__'
+				? props.featuresList.filter(f => f.class?.index === selectedClass.value)
+				: props.featuresList
+
+			const searchTerm = featureSearch.value.toLowerCase().trim()
+			if (searchTerm) {
+				availableFeatures = availableFeatures.filter(f =>
+					f.name.toLowerCase().includes(searchTerm))
+			}
+
+			availableFeatures.forEach(feature => {
+				const level = feature.level
+				if (!levels[level]) {
+					levels[level] = { label: `${t('handbook.level')} ${level}`, features: [] }
+				}
+				levels[level].features.push(feature)
+			})
+
+			Object.values(levels).forEach(group => {
+				group.features.sort((a, b) => a.name.localeCompare(b.name))
+			})
+
+			return levels
+		})
+
+		const traitsByRace = computed(() => {
+			let availableTraits = selectedRace.value && selectedRace.value !== '__custom__'
+				? props.traitsList.filter(t => t.races?.some(r => r.index === selectedRace.value))
+				: props.traitsList
+
+			const searchTerm = traitSearch.value.toLowerCase().trim()
+			if (searchTerm) {
+				availableTraits = availableTraits.filter(t =>
+					t.name.toLowerCase().includes(searchTerm))
+			}
+
+			return availableTraits.sort((a, b) => a.name.localeCompare(b.name))
+		})
+
 		const defaultForm = () => ({
 			name: '',
 			password: '',
@@ -563,6 +740,8 @@ export default {
 			skills: [],
 			equipment: [],
 			spells: [],
+			features: [],
+			traits: [],
 			spellSlots: [
 				{ level: 1, total: 0, used: 0 },
 				{ level: 2, total: 0, used: 0 },
@@ -696,6 +875,17 @@ export default {
 					level: s.level,
 					isPrepared: s.isPrepared !== false
 				})),
+				features: (character.features || []).map(f => ({
+					id: f.id,
+					featureIndex: f.featureIndex,
+					featureName: f.featureName,
+					level: f.level
+				})),
+				traits: (character.traits || []).map(t => ({
+					id: t.id,
+					traitIndex: t.traitIndex,
+					traitName: t.traitName
+				})),
 				spellSlots: character.spellSlots?.length > 0
 					? character.spellSlots.map(s => ({
 						level: s.level,
@@ -770,6 +960,8 @@ export default {
 					skills: form.value.skills,
 					equipment: form.value.equipment,
 					spells: form.value.spells,
+					features: form.value.features,
+					traits: form.value.traits,
 					spellSlots: form.value.spellSlots.filter(s => s.total > 0)
 				}
 
@@ -796,14 +988,20 @@ export default {
 			selectedClass,
 			selectedEquipment,
 			selectedSpell,
+			selectedFeature,
+			selectedTrait,
 			spellSearch,
 			equipmentSearch,
+			featureSearch,
+			traitSearch,
 			isEditing,
 			isSaving,
 			isValid,
 			skillsGroupedByAbility,
 			equipmentByCategory,
 			spellsByLevel,
+			featuresByLevel,
+			traitsByRace,
 			getModifier,
 			increment,
 			decrement,
@@ -811,6 +1009,8 @@ export default {
 			skillLink,
 			equipmentLink,
 			spellLink,
+			featureLink,
+			traitLink,
 			isAmmunitionWeapon,
 			getEquipmentDamage,
 			addEquipment,
@@ -819,6 +1019,11 @@ export default {
 			removeSpell,
 			toggleSpellPrepared,
 			getCharacterSpellsByLevel,
+			addFeature,
+			removeFeature,
+			addTrait,
+			removeTrait,
+			getCharacterFeaturesByLevel,
 			onRaceChange,
 			onClassChange,
 			openForCreate,
