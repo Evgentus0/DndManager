@@ -149,7 +149,7 @@ export default {
 
 					<div class="d-flex gap-3 text-muted small">
 						<div class="d-flex align-items-center gap-2">
-							<span><strong>HP:</strong></span>
+							<span><strong>{{ $t('lobby.character.form.hp') }}:</strong></span>
 							<div v-if="canEditHP" class="d-flex align-items-center">
 								<button class="btn btn-sm btn-outline-secondary py-0 px-1"
 									@click="$emit('update-hp', character, -1)"
@@ -163,71 +163,72 @@ export default {
 							</div>
 							<span v-else>{{ character.currentHitPoints }}/{{ character.maxHitPoints }}</span>
 						</div>
-						<span><strong>AC:</strong> {{ character.armorClass }}</span>
+						<span><strong>{{ $t('lobby.character.form.ac') }}:</strong> {{ character.armorClass }}</span>
 						<span><strong>{{ $t('lobby.character.form.proficiency') }}:</strong> +{{ character.proficiencyBonus }}</span>
 					</div>
 
-					<div v-if="character.background" class="mt-2 small">
-						<!-- Coins -->
-			<div v-if="showFullStats" class="mt-3">
-				<strong>{{ $t('lobby.character.form.coins') }}:</strong>
-				<div class="d-flex gap-2 mt-2 flex-wrap">
-					<div v-if="character.platinumPieces > 0 || canEditCoins" class="d-flex align-items-center">
-						<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
-							@click="$emit('update-coins', character, 'pp', -1)"
-							:disabled="character.platinumPieces <= 0">-</button>
-						<span class="mx-2 badge bg-light text-dark border">
-							{{ character.platinumPieces }} {{ $t('lobby.character.form.pp') }}
-						</span>
-						<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
-							@click="$emit('update-coins', character, 'pp', 1)">+</button>
+					<!-- Coins Section -->
+					<div v-if="showFullStats" class="mt-3">
+						<strong>{{ $t('lobby.character.form.coins') }}:</strong>
+						<div class="d-flex gap-2 mt-2 flex-wrap">
+							<div v-if="character.platinumPieces > 0 || canEditCoins" class="d-flex align-items-center">
+								<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
+									@click="$emit('update-coins', character, 'pp', -1)"
+									:disabled="character.platinumPieces <= 0">-</button>
+								<span class="mx-2 badge bg-light text-dark border">
+									{{ character.platinumPieces }} {{ $t('lobby.character.form.pp') }}
+								</span>
+								<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
+									@click="$emit('update-coins', character, 'pp', 1)">+</button>
+							</div>
+							<div v-if="character.goldPieces > 0 || canEditCoins" class="d-flex align-items-center">
+								<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
+									@click="$emit('update-coins', character, 'gp', -1)"
+									:disabled="character.goldPieces <= 0">-</button>
+								<span class="mx-2 badge bg-warning text-dark">
+									{{ character.goldPieces }} {{ $t('lobby.character.form.gp') }}
+								</span>
+								<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
+									@click="$emit('update-coins', character, 'gp', 1)">+</button>
+							</div>
+							<div v-if="character.electrumPieces > 0 || canEditCoins" class="d-flex align-items-center">
+								<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
+									@click="$emit('update-coins', character, 'ep', -1)"
+									:disabled="character.electrumPieces <= 0">-</button>
+								<span class="mx-2 badge bg-info text-dark">
+									{{ character.electrumPieces }} {{ $t('lobby.character.form.ep') }}
+								</span>
+								<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
+									@click="$emit('update-coins', character, 'ep', 1)">+</button>
+							</div>
+							<div v-if="character.silverPieces > 0 || canEditCoins" class="d-flex align-items-center">
+								<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
+									@click="$emit('update-coins', character, 'sp', -1)"
+									:disabled="character.silverPieces <= 0">-</button>
+								<span class="mx-2 badge bg-secondary">
+									{{ character.silverPieces }} {{ $t('lobby.character.form.sp') }}
+								</span>
+								<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
+									@click="$emit('update-coins', character, 'sp', 1)">+</button>
+							</div>
+							<div v-if="character.copperPieces > 0 || canEditCoins" class="d-flex align-items-center">
+								<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
+									@click="$emit('update-coins', character, 'cp', -1)"
+									:disabled="character.copperPieces <= 0">-</button>
+								<span class="mx-2 badge" style="background-color: #b87333; color: white;">
+									{{ character.copperPieces }} {{ $t('lobby.character.form.cp') }}
+								</span>
+								<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
+									@click="$emit('update-coins', character, 'cp', 1)">+</button>
+							</div>
+						</div>
 					</div>
-					<div v-if="character.goldPieces > 0 || canEditCoins" class="d-flex align-items-center">
-						<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
-							@click="$emit('update-coins', character, 'gp', -1)"
-							:disabled="character.goldPieces <= 0">-</button>
-						<span class="mx-2 badge bg-warning text-dark">
-							{{ character.goldPieces }} {{ $t('lobby.character.form.gp') }}
-						</span>
-						<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
-							@click="$emit('update-coins', character, 'gp', 1)">+</button>
-					</div>
-					<div v-if="character.electrumPieces > 0 || canEditCoins" class="d-flex align-items-center">
-						<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
-							@click="$emit('update-coins', character, 'ep', -1)"
-							:disabled="character.electrumPieces <= 0">-</button>
-						<span class="mx-2 badge bg-info text-dark">
-							{{ character.electrumPieces }} {{ $t('lobby.character.form.ep') }}
-						</span>
-						<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
-							@click="$emit('update-coins', character, 'ep', 1)">+</button>
-					</div>
-					<div v-if="character.silverPieces > 0 || canEditCoins" class="d-flex align-items-center">
-						<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
-							@click="$emit('update-coins', character, 'sp', -1)"
-							:disabled="character.silverPieces <= 0">-</button>
-						<span class="mx-2 badge bg-secondary">
-							{{ character.silverPieces }} {{ $t('lobby.character.form.sp') }}
-						</span>
-						<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
-							@click="$emit('update-coins', character, 'sp', 1)">+</button>
-					</div>
-					<div v-if="character.copperPieces > 0 || canEditCoins" class="d-flex align-items-center">
-						<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
-							@click="$emit('update-coins', character, 'cp', -1)"
-							:disabled="character.copperPieces <= 0">-</button>
-						<span class="mx-2 badge" style="background-color: #b87333; color: white;">
-							{{ character.copperPieces }} {{ $t('lobby.character.form.cp') }}
-						</span>
-						<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
-							@click="$emit('update-coins', character, 'cp', 1)">+</button>
-					</div>
-				</div>
-			</div>
 
-			<strong>{{ $t('lobby.character.form.background') }}:</strong> {{ character.background }}
-					</div>
-					<div v-if="character.notes" class="mt-2 small text-muted fst-italic">
+					<!-- Background Section -->
+				<div v-if="character.background" class="mt-2 small">
+					<strong>{{ $t('lobby.character.form.background') }}:</strong> {{ character.background }}
+				</div>
+				<div v-if="character.notes" class="mt-2 small text-muted fst-italic">
 						{{ character.notes }}
 					</div>
 
