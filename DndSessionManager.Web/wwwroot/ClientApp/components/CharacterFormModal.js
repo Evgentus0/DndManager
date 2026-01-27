@@ -333,7 +333,23 @@ export default {
 
 							<!-- Spells Selection -->
 							<h6 class="mb-3">{{ $t('lobby.character.form.spells') }}</h6>
-							<div class="row g-2 mb-4">
+
+							<!-- Mode Toggle -->
+							<div class="btn-group mb-3" role="group">
+								<button type="button" class="btn btn-sm"
+									:class="spellMode === 'handbook' ? 'btn-primary' : 'btn-outline-secondary'"
+									@click="spellMode = 'handbook'">
+									{{ $t('lobby.character.form.handbookSpells') }}
+								</button>
+								<button type="button" class="btn btn-sm"
+									:class="spellMode === 'custom' ? 'btn-primary' : 'btn-outline-secondary'"
+									@click="spellMode = 'custom'">
+									{{ $t('lobby.character.form.customSpells') }}
+								</button>
+							</div>
+
+							<!-- Handbook Spell Selection -->
+							<div v-if="spellMode === 'handbook'" class="row g-2 mb-4">
 								<div class="col-12 col-md-8">
 									<input type="text" class="form-control mb-2" v-model="spellSearch"
 										:placeholder="$t('lobby.character.form.searchPlaceholder')">
@@ -346,6 +362,44 @@ export default {
 											</option>
 										</optgroup>
 									</select>
+								</div>
+							</div>
+
+							<!-- Custom Spell Form -->
+							<div v-if="spellMode === 'custom'" class="row g-3 mb-4">
+								<div class="col-md-6">
+									<label class="form-label">{{ $t('lobby.character.form.spellName') }} *</label>
+									<input type="text" class="form-control" v-model="customSpellForm.name" maxlength="100">
+								</div>
+								<div class="col-md-3">
+									<label class="form-label">{{ $t('lobby.character.form.spellLevel') }}</label>
+									<select class="form-select" v-model.number="customSpellForm.level">
+										<option :value="0">{{ $t('lobby.character.form.cantrips') }}</option>
+										<option v-for="lvl in [1,2,3,4,5,6,7,8,9]" :key="lvl" :value="lvl">
+											{{ $t('handbook.level') }} {{ lvl }}
+										</option>
+									</select>
+								</div>
+								<div class="col-md-3">
+									<label class="form-label">{{ $t('lobby.character.form.damage') }}</label>
+									<input type="text" class="form-control" v-model="customSpellForm.damage"
+										placeholder="8d6" maxlength="50">
+								</div>
+								<div class="col-md-6">
+									<label class="form-label">{{ $t('lobby.character.form.damageType') }}</label>
+									<input type="text" class="form-control" v-model="customSpellForm.damageType"
+										placeholder="fire" maxlength="50">
+								</div>
+								<div class="col-md-12">
+									<label class="form-label">{{ $t('lobby.character.form.description') }}</label>
+									<textarea class="form-control" v-model="customSpellForm.description"
+										rows="2" maxlength="500"></textarea>
+								</div>
+								<div class="col-12">
+									<button type="button" class="btn btn-sm btn-primary" @click="addCustomSpell"
+										:disabled="!customSpellForm.name.trim()">
+										{{ $t('lobby.character.form.addCustomSpell') }}
+									</button>
 								</div>
 							</div>
 
@@ -365,9 +419,24 @@ export default {
 													:title="$t('lobby.character.form.prepared')">
 											</div>
 											<div class="flex-grow-1">
-												<a :href="spellLink(spell.spellIndex)" class="text-decoration-none fw-bold">
+												<!-- Handbook spell with link -->
+												<a v-if="spell.spellIndex" :href="spellLink(spell.spellIndex)"
+													class="text-decoration-none fw-bold">
 													{{ spell.spellName }}
 												</a>
+												<!-- Custom spell -->
+												<span v-else class="fw-bold">{{ spell.spellName }}</span>
+												<span v-if="!spell.spellIndex" class="badge bg-secondary ms-2 small">Custom</span>
+
+												<!-- Show custom damage -->
+												<span v-if="spell.customDamage" class="text-muted ms-2 small">
+													({{ spell.customDamage }}
+													<span v-if="spell.customDamageType">{{ spell.customDamageType }}</span>)
+												</span>
+
+												<!-- Show custom description as tooltip -->
+												<i v-if="spell.customDescription" class="bi bi-info-circle ms-1"
+													:title="spell.customDescription"></i>
 											</div>
 											<button type="button" class="btn btn-sm btn-outline-danger"
 												@click="removeSpell(form.spells.indexOf(spell))">
@@ -672,6 +741,24 @@ export default {
 			selectedSpell.value = ''
 		}
 
+		function addCustomSpell() {
+			if (!customSpellForm.value.name.trim()) return
+
+			form.value.spells.push({
+				id: generateUUID(),
+				spellIndex: '', // Empty = custom
+				spellName: customSpellForm.value.name.trim(),
+				level: customSpellForm.value.level,
+				isPrepared: customSpellForm.value.level === 0, // Cantrips auto-prepared
+				customDamage: customSpellForm.value.damage.trim() || null,
+				customDamageType: customSpellForm.value.damageType.trim() || null,
+				customDescription: customSpellForm.value.description.trim() || null
+			})
+
+			// Reset form
+			customSpellForm.value = { name: '', level: 0, damage: '', damageType: '', description: '' }
+		}
+
 		function removeSpell(index) {
 			form.value.spells.splice(index, 1)
 		}
@@ -756,6 +843,14 @@ export default {
 			damage: '',
 			description: '',
 			cost: ''
+		})
+		const spellMode = ref('handbook')
+		const customSpellForm = ref({
+			name: '',
+			level: 0,
+			damage: '',
+			damageType: '',
+			description: ''
 		})
 
 		const spellsByLevel = computed(() => {
@@ -1002,7 +1097,10 @@ export default {
 					spellIndex: s.spellIndex,
 					spellName: s.spellName,
 					level: s.level,
-					isPrepared: s.isPrepared !== false
+					isPrepared: s.isPrepared !== false,
+					customDamage: s.customDamage || null,
+					customDamageType: s.customDamageType || null,
+					customDescription: s.customDescription || null
 				})),
 				features: (character.features || []).map(f => ({
 					id: f.id,
@@ -1152,7 +1250,10 @@ export default {
 			removeEquipment,
 			equipmentMode,
 			customEquipmentForm,
+			spellMode,
+			customSpellForm,
 			addSpell,
+			addCustomSpell,
 			removeSpell,
 			toggleSpellPrepared,
 			getCharacterSpellsByLevel,

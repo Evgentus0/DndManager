@@ -596,7 +596,10 @@ public class LobbyHub : Hub
 		s.SpellIndex,
 		s.SpellName,
 		s.Level,
-		s.IsPrepared
+		s.IsPrepared,
+		s.CustomDescription,
+		s.CustomDamage,
+		s.CustomDamageType
 	};
 
 	private static object MapSpellSlotToDto(CharacterSpellSlot s) => new
@@ -617,7 +620,10 @@ public class LobbyHub : Hub
 			SpellIndex = s.SpellIndex,
 			SpellName = s.SpellName,
 			Level = s.Level,
-			IsPrepared = s.IsPrepared
+			IsPrepared = s.IsPrepared,
+			CustomDescription = s.CustomDescription,
+			CustomDamage = s.CustomDamage,
+			CustomDamageType = s.CustomDamageType
 		}).ToList();
 	}
 
@@ -732,6 +738,9 @@ public class CharacterSpellItemDto
 	public string SpellName { get; set; } = string.Empty;
 	public int Level { get; set; }
 	public bool IsPrepared { get; set; } = true;
+	public string? CustomDescription { get; set; }
+	public string? CustomDamage { get; set; }
+	public string? CustomDamageType { get; set; }
 }
 
 public class CharacterSpellSlotDto

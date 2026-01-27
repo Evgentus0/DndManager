@@ -318,13 +318,25 @@ export default {
 								</div>
 								<div class="d-flex flex-wrap gap-1 mt-1">
 									<a v-for="spell in getCharacterSpellsByLevel(level)" :key="spell.id"
-										:href="spellLink(spell.spellIndex)"
+										:href="spell.spellIndex ? spellLink(spell.spellIndex) : '#'"
 										class="badge text-decoration-none"
 										:class="spell.isPrepared || level === 0 ? 'bg-primary' : 'bg-secondary'">
+										<!-- Custom indicator -->
+										<span v-if="!spell.spellIndex" class="me-1" :title="$t('lobby.character.form.customSpell')">
+											<i class="bi bi-star-fill"></i>
+										</span>
 										{{ spell.spellName }}
+										<!-- Not prepared indicator -->
 										<span v-if="level > 0 && !spell.isPrepared" class="ms-1" :title="$t('lobby.character.form.notPrepared')">
 											<i class="bi bi-moon"></i>
 										</span>
+										<!-- Custom damage inline -->
+										<span v-if="spell.customDamage" class="ms-1 small">
+											({{ spell.customDamage }}<span v-if="spell.customDamageType"> {{ spell.customDamageType }}</span>)
+										</span>
+										<!-- Info icon for custom description -->
+										<i v-if="spell.customDescription" class="bi bi-info-circle ms-1"
+											:title="spell.customDescription" style="cursor: help;"></i>
 									</a>
 								</div>
 							</div>

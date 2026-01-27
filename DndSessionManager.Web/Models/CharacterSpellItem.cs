@@ -31,4 +31,22 @@ public class CharacterSpellItem
     /// Cantrips (level 0) are always considered prepared.
     /// </summary>
     public bool IsPrepared { get; set; } = true;
+
+    /// <summary>
+    /// Custom description for non-handbook spells.
+    /// Only used when SpellIndex is empty or null.
+    /// </summary>
+    public string? CustomDescription { get; set; }
+
+    /// <summary>
+    /// Custom damage for non-handbook spells (e.g., "8d6 fire").
+    /// Only used when SpellIndex is empty or null.
+    /// </summary>
+    public string? CustomDamage { get; set; }
+
+    /// <summary>
+    /// Custom damage type for non-handbook spells (e.g., "fire", "necrotic").
+    /// Only used when SpellIndex is empty or null.
+    /// </summary>
+    public string? CustomDamageType { get; set; }
 }
