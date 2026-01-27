@@ -222,6 +222,11 @@ public class LobbyHub : Hub
 			CurrentHitPoints = characterData.CurrentHitPoints,
 			ArmorClass = characterData.ArmorClass,
 			ProficiencyBonus = characterData.ProficiencyBonus,
+			CopperPieces = characterData.CopperPieces,
+			SilverPieces = characterData.SilverPieces,
+			ElectrumPieces = characterData.ElectrumPieces,
+			GoldPieces = characterData.GoldPieces,
+			PlatinumPieces = characterData.PlatinumPieces,
 			Strength = characterData.Strength,
 			Dexterity = characterData.Dexterity,
 			Constitution = characterData.Constitution,
@@ -275,6 +280,11 @@ public class LobbyHub : Hub
 		existingCharacter.CurrentHitPoints = characterData.CurrentHitPoints;
 		existingCharacter.ArmorClass = characterData.ArmorClass;
 		existingCharacter.ProficiencyBonus = characterData.ProficiencyBonus;
+		existingCharacter.CopperPieces = characterData.CopperPieces;
+		existingCharacter.SilverPieces = characterData.SilverPieces;
+		existingCharacter.ElectrumPieces = characterData.ElectrumPieces;
+		existingCharacter.GoldPieces = characterData.GoldPieces;
+		existingCharacter.PlatinumPieces = characterData.PlatinumPieces;
 		existingCharacter.Strength = characterData.Strength;
 		existingCharacter.Dexterity = characterData.Dexterity;
 		existingCharacter.Constitution = characterData.Constitution;
@@ -435,6 +445,46 @@ public class LobbyHub : Hub
 		});
 	}
 
+	public async Task UpdateCharacterCoins(string sessionId, string userId, string characterId,
+		int copperPieces, int silverPieces, int electrumPieces, int goldPieces, int platinumPieces)
+	{
+		if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+			!Guid.TryParse(userId, out var userGuid) ||
+			!Guid.TryParse(characterId, out var characterGuid))
+			return;
+
+		var user = _userService.GetUser(sessionGuid, userGuid);
+		if (user == null) return;
+
+		var character = _characterService.GetCharacter(characterGuid);
+		if (character == null || character.SessionId != sessionGuid) return;
+
+		var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
+		if (!_characterService.CanUserEditCharacter(userGuid, character, isMaster))
+		{
+			await Clients.Caller.SendAsync("CharacterError", "You cannot edit this character.");
+			return;
+		}
+
+		character.CopperPieces = Math.Clamp(copperPieces, 0, 999999);
+		character.SilverPieces = Math.Clamp(silverPieces, 0, 999999);
+		character.ElectrumPieces = Math.Clamp(electrumPieces, 0, 999999);
+		character.GoldPieces = Math.Clamp(goldPieces, 0, 999999);
+		character.PlatinumPieces = Math.Clamp(platinumPieces, 0, 999999);
+
+		_characterService.UpdateCharacter(character);
+
+		await Clients.Group(sessionId).SendAsync("CharacterCoinsUpdated", new
+		{
+			CharacterId = characterId,
+			CopperPieces = character.CopperPieces,
+			SilverPieces = character.SilverPieces,
+			ElectrumPieces = character.ElectrumPieces,
+			GoldPieces = character.GoldPieces,
+			PlatinumPieces = character.PlatinumPieces
+		});
+	}
+
 	public async Task UseSpellSlot(string sessionId, string userId, string characterId, int spellLevel, int newUsedCount)
 	{
 		if (!Guid.TryParse(sessionId, out var sessionGuid) ||
@@ -486,6 +536,11 @@ public class LobbyHub : Hub
 		c.CurrentHitPoints,
 		c.ArmorClass,
 		c.ProficiencyBonus,
+		c.CopperPieces,
+		c.SilverPieces,
+		c.ElectrumPieces,
+		c.GoldPieces,
+		c.PlatinumPieces,
 		c.Strength,
 		c.Dexterity,
 		c.Constitution,
@@ -630,6 +685,11 @@ public class CharacterDto
 	public int CurrentHitPoints { get; set; }
 	public int ArmorClass { get; set; } = 10;
 	public int ProficiencyBonus { get; set; } = 2;
+	public int CopperPieces { get; set; } = 0;
+	public int SilverPieces { get; set; } = 0;
+	public int ElectrumPieces { get; set; } = 0;
+	public int GoldPieces { get; set; } = 0;
+	public int PlatinumPieces { get; set; } = 0;
 	public int Strength { get; set; } = 10;
 	public int Dexterity { get; set; } = 10;
 	public int Constitution { get; set; } = 10;

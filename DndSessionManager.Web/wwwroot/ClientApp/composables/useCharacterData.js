@@ -94,6 +94,27 @@ export function useCharacterData(props) {
 		}
 	}
 
+	async function updateCoins(char, coinType, delta) {
+		const newValues = {
+			cp: char.copperPieces || 0,
+			sp: char.silverPieces || 0,
+			ep: char.electrumPieces || 0,
+			gp: char.goldPieces || 0,
+			pp: char.platinumPieces || 0
+		}
+
+		const key = coinType.toLowerCase()
+		newValues[key] = Math.max(0, newValues[key] + delta)
+
+		try {
+			await props.connection.invoke('UpdateCharacterCoins',
+				props.sessionId, props.userId, char.id,
+				newValues.cp, newValues.sp, newValues.ep, newValues.gp, newValues.pp)
+		} catch (err) {
+			console.error('Error updating coins:', err)
+		}
+	}
+
 	async function useSpellSlot(char, slotLevel, delta) {
 		const slot = char.spellSlots?.find(s => s.level === slotLevel)
 		if (!slot) return
@@ -196,6 +217,17 @@ export function useCharacterData(props) {
 				char.currentHitPoints = data.currentHitPoints
 			}
 		})
+
+		props.connection.on('CharacterCoinsUpdated', (data) => {
+			const char = characters.value.find(c => c.id === data.characterId)
+			if (char) {
+				char.copperPieces = data.copperPieces
+				char.silverPieces = data.silverPieces
+				char.electrumPieces = data.electrumPieces
+				char.goldPieces = data.goldPieces
+				char.platinumPieces = data.platinumPieces
+			}
+		})
 	}
 
 	function init() {
@@ -227,6 +259,7 @@ export function useCharacterData(props) {
 		ammoClass,
 		updateAmmo,
 		updateHP,
+		updateCoins,
 		useSpellSlot,
 		init
 	}

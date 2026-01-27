@@ -86,32 +86,7 @@ export default {
 							</div>
 
 							<!-- Ability Scores -->
-							<h6 class="mb-3">{{ $t('lobby.character.form.coins') }}</h6>
-				<div class="row g-3 mb-4">
-					<div class="col-6 col-md-2">
-						<label class="form-label">{{ $t('lobby.character.form.pp') }}</label>
-						<input type="number" class="form-control" v-model.number="form.platinumPieces" min="0" max="999999">
-					</div>
-					<div class="col-6 col-md-2">
-						<label class="form-label">{{ $t('lobby.character.form.gp') }}</label>
-						<input type="number" class="form-control" v-model.number="form.goldPieces" min="0" max="999999">
-					</div>
-					<div class="col-6 col-md-2">
-						<label class="form-label">{{ $t('lobby.character.form.ep') }}</label>
-						<input type="number" class="form-control" v-model.number="form.electrumPieces" min="0" max="999999">
-					</div>
-					<div class="col-6 col-md-2">
-						<label class="form-label">{{ $t('lobby.character.form.sp') }}</label>
-						<input type="number" class="form-control" v-model.number="form.silverPieces" min="0" max="999999">
-					</div>
-					<div class="col-6 col-md-2">
-						<label class="form-label">{{ $t('lobby.character.form.cp') }}</label>
-						<input type="number" class="form-control" v-model.number="form.copperPieces" min="0" max="999999">
-					</div>
-				</div>
-
-				<!-- Ability Scores -->
-				<h6 class="mb-3">{{ $t('lobby.character.form.abilities') }}</h6>
+							<h6 class="mb-3">{{ $t('lobby.character.form.abilities') }}</h6>
 							<div class="row g-3 mb-4">
 								<div class="col-6 col-sm-4 col-md-2">
 									<label class="form-label small">
@@ -881,11 +856,6 @@ export default {
 				currentHitPoints: character.currentHitPoints || 10,
 				armorClass: character.armorClass || 10,
 				proficiencyBonus: character.proficiencyBonus || 2,
-				copperPieces: character.copperPieces || 0,
-				silverPieces: character.silverPieces || 0,
-				electrumPieces: character.electrumPieces || 0,
-				goldPieces: character.goldPieces || 0,
-				platinumPieces: character.platinumPieces || 0,
 				strength: character.strength || 10,
 				dexterity: character.dexterity || 10,
 				constitution: character.constitution || 10,
@@ -984,11 +954,6 @@ export default {
 					currentHitPoints: form.value.currentHitPoints,
 					armorClass: form.value.armorClass,
 					proficiencyBonus: form.value.proficiencyBonus,
-					copperPieces: form.value.copperPieces,
-					silverPieces: form.value.silverPieces,
-					electrumPieces: form.value.electrumPieces,
-					goldPieces: form.value.goldPieces,
-					platinumPieces: form.value.platinumPieces,
 					strength: form.value.strength,
 					dexterity: form.value.dexterity,
 					constitution: form.value.constitution,

@@ -168,7 +168,64 @@ export default {
 					</div>
 
 					<div v-if="character.background" class="mt-2 small">
-						<strong>{{ $t('lobby.character.form.background') }}:</strong> {{ character.background }}
+						<!-- Coins -->
+			<div v-if="showFullStats" class="mt-3">
+				<strong>{{ $t('lobby.character.form.coins') }}:</strong>
+				<div class="d-flex gap-2 mt-2 flex-wrap">
+					<div v-if="character.platinumPieces > 0 || canEditCoins" class="d-flex align-items-center">
+						<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
+							@click="$emit('update-coins', character, 'pp', -1)"
+							:disabled="character.platinumPieces <= 0">-</button>
+						<span class="mx-2 badge bg-light text-dark border">
+							{{ character.platinumPieces }} {{ $t('lobby.character.form.pp') }}
+						</span>
+						<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
+							@click="$emit('update-coins', character, 'pp', 1)">+</button>
+					</div>
+					<div v-if="character.goldPieces > 0 || canEditCoins" class="d-flex align-items-center">
+						<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
+							@click="$emit('update-coins', character, 'gp', -1)"
+							:disabled="character.goldPieces <= 0">-</button>
+						<span class="mx-2 badge bg-warning text-dark">
+							{{ character.goldPieces }} {{ $t('lobby.character.form.gp') }}
+						</span>
+						<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
+							@click="$emit('update-coins', character, 'gp', 1)">+</button>
+					</div>
+					<div v-if="character.electrumPieces > 0 || canEditCoins" class="d-flex align-items-center">
+						<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
+							@click="$emit('update-coins', character, 'ep', -1)"
+							:disabled="character.electrumPieces <= 0">-</button>
+						<span class="mx-2 badge bg-info text-dark">
+							{{ character.electrumPieces }} {{ $t('lobby.character.form.ep') }}
+						</span>
+						<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
+							@click="$emit('update-coins', character, 'ep', 1)">+</button>
+					</div>
+					<div v-if="character.silverPieces > 0 || canEditCoins" class="d-flex align-items-center">
+						<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
+							@click="$emit('update-coins', character, 'sp', -1)"
+							:disabled="character.silverPieces <= 0">-</button>
+						<span class="mx-2 badge bg-secondary">
+							{{ character.silverPieces }} {{ $t('lobby.character.form.sp') }}
+						</span>
+						<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
+							@click="$emit('update-coins', character, 'sp', 1)">+</button>
+					</div>
+					<div v-if="character.copperPieces > 0 || canEditCoins" class="d-flex align-items-center">
+						<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
+							@click="$emit('update-coins', character, 'cp', -1)"
+							:disabled="character.copperPieces <= 0">-</button>
+						<span class="mx-2 badge" style="background-color: #b87333; color: white;">
+							{{ character.copperPieces }} {{ $t('lobby.character.form.cp') }}
+						</span>
+						<button v-if="canEditCoins" class="btn btn-sm btn-outline-secondary py-0 px-1"
+							@click="$emit('update-coins', character, 'cp', 1)">+</button>
+					</div>
+				</div>
+			</div>
+
+			<strong>{{ $t('lobby.character.form.background') }}:</strong> {{ character.background }}
 					</div>
 					<div v-if="character.notes" class="mt-2 small text-muted fst-italic">
 						{{ character.notes }}
@@ -335,9 +392,13 @@ export default {
 		canEditSpellSlots: {
 			type: Boolean,
 			default: false
+		},
+		canEditCoins: {
+			type: Boolean,
+			default: false
 		}
 	},
-	emits: ['edit', 'delete', 'reset-password', 'update-ammo', 'use-spell-slot', 'update-hp'],
+	emits: ['edit', 'delete', 'reset-password', 'update-ammo', 'use-spell-slot', 'update-hp', 'update-coins'],
 	setup(props) {
 		function getModifier(score) {
 			const mod = Math.floor((score - 10) / 2)

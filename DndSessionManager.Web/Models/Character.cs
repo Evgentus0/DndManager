@@ -29,6 +29,13 @@ public class Character
     public int ArmorClass { get; set; } = 10;
     public int ProficiencyBonus { get; set; } = 2;
 
+    // Coins (D&D 5e standard currency)
+    public int CopperPieces { get; set; } = 0;
+    public int SilverPieces { get; set; } = 0;
+    public int ElectrumPieces { get; set; } = 0;
+    public int GoldPieces { get; set; } = 0;
+    public int PlatinumPieces { get; set; } = 0;
+
     // Ability scores
     public int Strength { get; set; } = 10;
     public int Dexterity { get; set; } = 10;

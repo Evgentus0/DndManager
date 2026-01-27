@@ -39,14 +39,12 @@ export default {
 						:can-edit-ammo="true"
 						:can-edit-h-p="true"
 						:can-edit-spell-slots="true"
-						:can-edit-coins="true"
 						:is-highlighted="true"
 						:is-owner-online="false"
 						@edit="openEditModal"
 						@delete="deleteCharacter"
 						@update-ammo="updateAmmo"
 						@update-hp="updateHP"
-						@update-coins="updateCoins"
 						@use-spell-slot="useSpellSlot">
 					</character-card>
 				</div>
@@ -95,7 +93,6 @@ export default {
 			updateAmmo,
 			updateHP,
 			useSpellSlot,
-			updateCoins,
 			init
 		} = useCharacterData(props)
 
@@ -140,7 +137,6 @@ export default {
 			updateAmmo,
 			updateHP,
 			useSpellSlot,
-			updateCoins,
 			openCreateModal,
 			openEditModal,
 			deleteCharacter,
