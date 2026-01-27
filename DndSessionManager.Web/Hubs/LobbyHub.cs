@@ -521,6 +521,50 @@ public class LobbyHub : Hub
 		});
 	}
 
+	public async Task SaveMasterNotes(string sessionId, string masterUserId, string notes)
+	{
+		if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+			!Guid.TryParse(masterUserId, out var masterUserGuid))
+			return;
+
+		// Verify the requester is the master
+		if (!_userService.IsUserMaster(sessionGuid, masterUserGuid))
+		{
+			await Clients.Caller.SendAsync("NotesError", "Only the Game Master can edit notes.");
+			return;
+		}
+
+		var session = _sessionService.GetSession(sessionGuid);
+		if (session == null)
+		{
+			await Clients.Caller.SendAsync("NotesError", "Session not found.");
+			return;
+		}
+
+		// Update notes in memory and persist to database
+		_sessionService.UpdateSessionNotes(sessionGuid, notes);
+
+		// Notify caller of success
+		await Clients.Caller.SendAsync("NotesSaved");
+	}
+
+	public async Task LoadMasterNotes(string sessionId, string masterUserId)
+	{
+		if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+			!Guid.TryParse(masterUserId, out var masterUserGuid))
+			return;
+
+		// Verify the requester is the master
+		if (!_userService.IsUserMaster(sessionGuid, masterUserGuid))
+			return;
+
+		var session = _sessionService.GetSession(sessionGuid);
+		if (session == null)
+			return;
+
+		await Clients.Caller.SendAsync("NotesLoaded", session.MasterNotes ?? "");
+	}
+
 	private static object MapCharacterToDto(Character c) => new
 	{
 		Id = c.Id.ToString(),

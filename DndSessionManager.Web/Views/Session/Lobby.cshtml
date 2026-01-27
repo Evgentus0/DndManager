@@ -5,6 +5,10 @@
     var isMaster = ViewBag.IsMaster;
 }
 
+@section Styles {
+	<link rel="stylesheet" href="~/css/lobbyMasterNotesPanel.css" asp-append-version="true" />
+}
+
 <div id="lobby-app" class="container-fluid">
     <div class="row mb-3">
         <div class="col">
@@ -23,7 +27,7 @@
 
     <div class="row">
         <!-- User List Panel -->
-        <div class="col-12 col-lg-4 mb-3">
+        <div class="col-12 col-lg-3 mb-3">
             <div class="card shadow-sm">
                 <div class="card-header bg-dark text-white">
                     <h5 class="mb-0">{{ $t('lobby.players.title') }} ({{ users.length }}/{{ maxPlayers }})</h5>
@@ -69,7 +73,7 @@
         </div>
 
         <!-- Activities Panel -->
-        <div class="col-12 col-lg-8">
+        <div class="col-12 col-lg-9">
             <!-- Tabs Navigation -->
             <ul class="nav nav-tabs mb-3">
                 <li class="nav-item">
@@ -88,6 +92,12 @@
                     <a class="nav-link" :class="{ active: activeTab === 'characters' }"
                        href="#" @@click.prevent="activeTab = 'characters'">
                         {{ $t('lobby.tabs.characters') }}
+                    </a>
+                </li>
+                <li v-if="isMaster" class="nav-item">
+                    <a class="nav-link" :class="{ active: activeTab === 'masterNotes' }"
+                       href="#" @@click.prevent="activeTab = 'masterNotes'">
+                        {{ $t('lobby.tabs.masterNotes') }}
                     </a>
                 </li>
             </ul>
@@ -117,6 +127,14 @@
                 :is-master="isMaster"
                 :users="users">
             </lobby-character-panel>
+
+            <lobby-master-notes-panel
+                v-if="isMaster"
+                v-show="activeTab === 'masterNotes'"
+                :connection="connection"
+                :session-id="sessionId"
+                :user-id="userId">
+            </lobby-master-notes-panel>
         </div>
     </div>
 </div>
@@ -129,12 +147,14 @@
 		import LobbyChatPanel from '/ClientApp/components/LobbyChatPanel.js'
 		import LobbyCharacterPanel from '/ClientApp/components/LobbyCharacterPanel.js'
 		import LobbyMyCharacterPanel from '/ClientApp/components/LobbyMyCharacterPanel.js'
+		import LobbyMasterNotesPanel from '/ClientApp/components/LobbyMasterNotesPanel.js'
 
 		const app = createApp({
 			components: {
 				LobbyChatPanel,
 				LobbyCharacterPanel,
-				LobbyMyCharacterPanel
+				LobbyMyCharacterPanel,
+				LobbyMasterNotesPanel
 			},
 			setup() {
 				const { t } = useI18n()

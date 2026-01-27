@@ -166,7 +166,8 @@
     "tabs": {
       "chat": "Chat",
       "myCharacter": "My Character",
-      "characters": "Characters"
+      "characters": "Characters",
+      "masterNotes": "Master Notes"
     },
     "characters": {
       "placeholder": "Character list coming soon..."
@@ -274,6 +275,27 @@
       "placeholder": "Chat messages will appear here",
       "input": "Type a message...",
       "sendButton": "Send"
+    },
+    "masterNotes": {
+      "title": "Master Notes",
+      "editMode": "Edit",
+      "viewMode": "View",
+      "saveButton": "Save Notes",
+      "saving": "Saving...",
+      "navigation": "Navigation",
+      "noHeaders": "No headers found. Add headers with # syntax.",
+      "placeholder": "Write your master notes here using Markdown...\n\n# Example Header\n## Subheader\n- Bullet point\n- Another point\n\n**Bold text** and *italic text*",
+      "toolbar": {
+        "bold": "Bold",
+        "italic": "Italic",
+        "heading": "Heading",
+        "list": "List",
+        "link": "Link"
+      },
+      "errors": {
+        "loadFailed": "Failed to load notes",
+        "saveFailed": "Failed to save notes"
+      }
     },
     "status": {
       "open": "Open to New Players",

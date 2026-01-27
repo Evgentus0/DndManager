@@ -22,4 +22,5 @@ public class Session
     public DateTime? LastSavedAt { get; set; }
     public DateTime? LastPlayedAt { get; set; }
     public string? MasterUsername { get; set; }
+    public string? MasterNotes { get; set; }
 }

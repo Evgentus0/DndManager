@@ -255,6 +255,15 @@ public class SessionService
 		}
 	}
 
+	public void UpdateSessionNotes(Guid sessionId, string notes)
+	{
+		if (_activeSessions.TryGetValue(sessionId, out var session))
+		{
+			session.MasterNotes = notes;
+			_repository.SaveSession(session);
+		}
+	}
+
 	public void ShutdownAllSessions()
 	{
 		var activeSessionIds = _activeSessions.Keys.ToList();
