@@ -31,6 +31,7 @@ export default {
 							:character="char"
 							:skills="skills"
 							:equipment-list="equipmentList"
+							:class-list="classes"
 							:show-full-stats="isMaster"
 							:show-owner="true"
 							:show-edit-buttons="isMaster"

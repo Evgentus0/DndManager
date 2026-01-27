@@ -167,7 +167,18 @@ export default {
 						<span><strong>{{ $t('lobby.character.form.proficiency') }}:</strong> +{{ character.proficiencyBonus }}</span>
 					</div>
 
-					<!-- Coins Section -->
+					<!-- Saving Throws Section -->
+					<div v-if="getSavingThrows().length > 0" class="mt-2">
+						<strong class="text-muted small">{{ $t('lobby.character.form.savingThrows') }}:</strong>
+						<div class="d-flex flex-wrap gap-1 mt-1">
+						<span v-for="savingThrow in getSavingThrows()" :key="savingThrow.index"
+							class="badge bg-primary">
+							{{ $t('lobby.character.form.' + savingThrow.ability) }}
+						</span>
+					</div>
+					</div>
+
+				<!-- Coins Section -->
 					<div v-if="showFullStats" class="mt-3">
 						<strong>{{ $t('lobby.character.form.coins') }}:</strong>
 						<div class="d-flex gap-2 mt-2 flex-wrap">
@@ -391,6 +402,10 @@ export default {
 			type: Array,
 			default: () => []
 		},
+		classList: {
+			type: Array,
+			default: () => []
+		},
 		showFullStats: {
 			type: Boolean,
 			default: false
@@ -522,6 +537,23 @@ export default {
 			}
 		}
 
+		function getSavingThrows() {
+			if (!props.character.classIndex || !props.classList || props.classList.length === 0) return []
+			const charClass = props.classList.find(c => c.index === props.character.classIndex)
+			if (!charClass || !charClass.proficiencies) return []
+
+			return charClass.proficiencies
+				.filter(p => p.index && p.index.startsWith('saving-throw-'))
+				.map(p => {
+					const ability = p.index.replace('saving-throw-', '')
+					return {
+						ability: ability,
+						name: p.name,
+						index: p.index
+					}
+				})
+		}
+
 		return {
 			getModifier,
 			raceLink,
@@ -538,7 +570,8 @@ export default {
 			featureLink,
 			traitLink,
 			getCharacterFeaturesByLevel,
-			getAvailableSlots
+			getAvailableSlots,
+			getSavingThrows
 		}
 	}
 }
