@@ -565,7 +565,10 @@ public class LobbyHub : Hub
 		e.EquipmentName,
 		e.Quantity,
 		e.CurrentAmmo,
-		e.IsEquipped
+		e.IsEquipped,
+		e.CustomDamage,
+		e.CustomDescription,
+		e.CustomCost
 	};
 
 	private static List<CharacterEquipmentItem> MapEquipmentDtoToModel(List<CharacterEquipmentItemDto>? equipmentDto)
@@ -580,7 +583,10 @@ public class LobbyHub : Hub
 			EquipmentName = e.EquipmentName,
 			Quantity = e.Quantity,
 			CurrentAmmo = e.CurrentAmmo,
-			IsEquipped = e.IsEquipped
+			IsEquipped = e.IsEquipped,
+			CustomDamage = e.CustomDamage,
+			CustomDescription = e.CustomDescription,
+			CustomCost = e.CustomCost
 		}).ToList();
 	}
 
@@ -714,6 +720,9 @@ public class CharacterEquipmentItemDto
 	public int Quantity { get; set; } = 1;
 	public int? CurrentAmmo { get; set; }
 	public bool IsEquipped { get; set; } = true;
+	public string? CustomDamage { get; set; }
+	public string? CustomDescription { get; set; }
+	public string? CustomCost { get; set; }
 }
 
 public class CharacterSpellItemDto

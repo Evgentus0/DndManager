@@ -38,4 +38,22 @@ public class CharacterEquipmentItem
     /// Whether this item is currently equipped (vs. in inventory).
     /// </summary>
     public bool IsEquipped { get; set; } = true;
+
+    /// <summary>
+    /// Custom damage for non-handbook equipment (e.g., "1d8 slashing").
+    /// Only used when EquipmentIndex is empty or null.
+    /// </summary>
+    public string? CustomDamage { get; set; }
+
+    /// <summary>
+    /// Custom description for non-handbook equipment.
+    /// Only used when EquipmentIndex is empty or null.
+    /// </summary>
+    public string? CustomDescription { get; set; }
+
+    /// <summary>
+    /// Custom cost for non-handbook equipment (e.g., "15 gp").
+    /// Only used when EquipmentIndex is empty or null.
+    /// </summary>
+    public string? CustomCost { get; set; }
 }

@@ -238,14 +238,35 @@ export default {
 						<div class="mt-2">
 							<div v-for="item in character.equipment" :key="item.id"
 								class="d-flex align-items-center justify-content-between py-1 border-bottom">
-								<div>
-									<a :href="equipmentLink(item.equipmentIndex)" class="text-decoration-none">
+								<div class="flex-grow-1">
+									<!-- Handbook equipment with link -->
+									<a v-if="item.equipmentIndex" :href="equipmentLink(item.equipmentIndex)"
+										class="text-decoration-none">
 										{{ item.equipmentName }}
 									</a>
+									<!-- Custom equipment -->
+									<span v-else>{{ item.equipmentName }}</span>
+									<span v-if="!item.equipmentIndex" class="badge bg-secondary ms-1 small">Custom</span>
+
 									<span v-if="item.quantity > 1" class="text-muted ms-1">(x{{ item.quantity }})</span>
-									<span v-if="getEquipmentDamage(item.equipmentIndex)" class="text-muted ms-2 small">
+
+									<!-- Damage: handbook or custom -->
+									<span v-if="item.equipmentIndex && getEquipmentDamage(item.equipmentIndex)"
+										class="text-muted ms-2 small">
 										{{ getEquipmentDamage(item.equipmentIndex) }}
 									</span>
+									<span v-else-if="item.customDamage" class="text-muted ms-2 small">
+										{{ item.customDamage }}
+									</span>
+
+									<!-- Custom cost -->
+									<span v-if="item.customCost" class="text-muted ms-2 small">
+										({{ item.customCost }})
+									</span>
+
+									<!-- Custom description tooltip -->
+									<i v-if="item.customDescription" class="bi bi-info-circle ms-1 text-muted"
+										:title="item.customDescription" style="cursor: help;"></i>
 								</div>
 								<div v-if="item.currentAmmo !== null && item.currentAmmo !== undefined"
 									class="d-flex align-items-center">

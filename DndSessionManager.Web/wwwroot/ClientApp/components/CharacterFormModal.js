@@ -213,7 +213,23 @@ export default {
 
 							<!-- Equipment Selection -->
 							<h6 class="mb-3">{{ $t('lobby.character.form.equipment') }}</h6>
-							<div class="row g-2 mb-4">
+
+							<!-- Mode Toggle -->
+							<div class="btn-group mb-3" role="group">
+								<button type="button" class="btn btn-sm"
+									:class="equipmentMode === 'handbook' ? 'btn-primary' : 'btn-outline-secondary'"
+									@click="equipmentMode = 'handbook'">
+									{{ $t('lobby.character.form.handbookEquipment') }}
+								</button>
+								<button type="button" class="btn btn-sm"
+									:class="equipmentMode === 'custom' ? 'btn-primary' : 'btn-outline-secondary'"
+									@click="equipmentMode = 'custom'">
+									{{ $t('lobby.character.form.customEquipment') }}
+								</button>
+							</div>
+
+							<!-- Handbook Equipment Selection -->
+							<div v-if="equipmentMode === 'handbook'" class="row g-2 mb-4">
 								<div class="col-12 col-md-8">
 									<input type="text" class="form-control mb-2" v-model="equipmentSearch"
 										:placeholder="$t('lobby.character.form.searchPlaceholder')">
@@ -228,17 +244,66 @@ export default {
 								</div>
 							</div>
 
+							<!-- Custom Equipment Form -->
+							<div v-if="equipmentMode === 'custom'" class="row g-3 mb-4">
+								<div class="col-md-6">
+									<label class="form-label">{{ $t('lobby.character.form.equipmentName') }} *</label>
+									<input type="text" class="form-control" v-model="customEquipmentForm.name" maxlength="100">
+								</div>
+								<div class="col-md-6">
+									<label class="form-label">{{ $t('lobby.character.form.damage') }}</label>
+									<input type="text" class="form-control" v-model="customEquipmentForm.damage"
+										placeholder="1d8 slashing" maxlength="50">
+								</div>
+								<div class="col-md-6">
+									<label class="form-label">{{ $t('lobby.character.form.cost') }}</label>
+									<input type="text" class="form-control" v-model="customEquipmentForm.cost"
+										placeholder="15 gp" maxlength="50">
+								</div>
+								<div class="col-md-12">
+									<label class="form-label">{{ $t('lobby.character.form.description') }}</label>
+									<textarea class="form-control" v-model="customEquipmentForm.description"
+										rows="2" maxlength="500"></textarea>
+								</div>
+								<div class="col-12">
+									<button type="button" class="btn btn-sm btn-primary" @click="addCustomEquipment"
+										:disabled="!customEquipmentForm.name.trim()">
+										{{ $t('lobby.character.form.addCustomEquipment') }}
+									</button>
+								</div>
+							</div>
+
 							<!-- Equipment List -->
 							<div v-if="form.equipment.length > 0" class="mb-4">
 								<div v-for="(item, idx) in form.equipment" :key="item.id"
 									class="d-flex align-items-center border rounded p-2 mb-2">
 									<div class="flex-grow-1">
-										<a :href="equipmentLink(item.equipmentIndex)" class="text-decoration-none fw-bold">
+										<!-- Handbook equipment: show link -->
+										<a v-if="item.equipmentIndex" :href="equipmentLink(item.equipmentIndex)"
+											class="text-decoration-none fw-bold">
 											{{ item.equipmentName }}
 										</a>
-										<span v-if="getEquipmentDamage(item.equipmentIndex)" class="text-muted ms-2 small">
+										<!-- Custom equipment: just show name -->
+										<span v-else class="fw-bold">{{ item.equipmentName }}</span>
+										<span v-if="!item.equipmentIndex" class="badge bg-secondary ms-2 small">Custom</span>
+
+										<!-- Show damage (handbook or custom) -->
+										<span v-if="item.equipmentIndex && getEquipmentDamage(item.equipmentIndex)"
+											class="text-muted ms-2 small">
 											({{ getEquipmentDamage(item.equipmentIndex) }})
 										</span>
+										<span v-else-if="item.customDamage" class="text-muted ms-2 small">
+											({{ item.customDamage }})
+										</span>
+
+										<!-- Show custom cost if present -->
+										<span v-if="item.customCost" class="text-muted ms-2 small">
+											- {{ item.customCost }}
+										</span>
+
+										<!-- Show custom description as tooltip -->
+										<i v-if="item.customDescription" class="bi bi-info-circle ms-1"
+											:title="item.customDescription"></i>
 									</div>
 									<div v-if="isAmmunitionWeapon(item.equipmentIndex)" class="me-3 d-flex align-items-center">
 										<label class="form-label small mb-0 me-2">{{ $t('lobby.character.form.ammo') }}:</label>
@@ -558,6 +623,25 @@ export default {
 			selectedEquipment.value = ''
 		}
 
+		function addCustomEquipment() {
+			if (!customEquipmentForm.value.name.trim()) return
+
+			form.value.equipment.push({
+				id: generateUUID(),
+				equipmentIndex: '', // Empty = custom
+				equipmentName: customEquipmentForm.value.name.trim(),
+				quantity: 1,
+				currentAmmo: null,
+				isEquipped: true,
+				customDamage: customEquipmentForm.value.damage.trim() || null,
+				customDescription: customEquipmentForm.value.description.trim() || null,
+				customCost: customEquipmentForm.value.cost.trim() || null
+			})
+
+			// Reset form
+			customEquipmentForm.value = { name: '', damage: '', description: '', cost: '' }
+		}
+
 		function removeEquipment(index) {
 			form.value.equipment.splice(index, 1)
 		}
@@ -666,6 +750,13 @@ export default {
 		const equipmentSearch = ref('')
 		const featureSearch = ref('')
 		const traitSearch = ref('')
+		const equipmentMode = ref('handbook')
+		const customEquipmentForm = ref({
+			name: '',
+			damage: '',
+			description: '',
+			cost: ''
+		})
 
 		const spellsByLevel = computed(() => {
 			const levels = {}
@@ -901,7 +992,10 @@ export default {
 					equipmentName: e.equipmentName,
 					quantity: e.quantity || 1,
 					currentAmmo: e.currentAmmo,
-					isEquipped: e.isEquipped !== false
+					isEquipped: e.isEquipped !== false,
+					customDamage: e.customDamage || null,
+					customDescription: e.customDescription || null,
+					customCost: e.customCost || null
 				})),
 				spells: (character.spells || []).map(s => ({
 					id: s.id,
@@ -1054,7 +1148,10 @@ export default {
 			isAmmunitionWeapon,
 			getEquipmentDamage,
 			addEquipment,
+			addCustomEquipment,
 			removeEquipment,
+			equipmentMode,
+			customEquipmentForm,
 			addSpell,
 			removeSpell,
 			toggleSpellPrepared,
