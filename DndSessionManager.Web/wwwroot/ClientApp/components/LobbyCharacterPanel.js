@@ -36,6 +36,7 @@ export default {
 							:show-edit-buttons="isMaster"
 							:show-reset-password="canResetPassword(char)"
 							:can-edit-ammo="canEdit(char)"
+							:can-edit-h-p="canEdit(char)"
 							:can-edit-spell-slots="canEdit(char)"
 							:is-highlighted="isMyCharacter(char)"
 							:is-owner-online="isCharacterOwnerOnline(char)"
@@ -43,6 +44,7 @@ export default {
 							@delete="deleteCharacter"
 							@reset-password="resetCharacterPassword"
 							@update-ammo="updateAmmo"
+							@update-hp="updateHP"
 							@use-spell-slot="useSpellSlot">
 						</character-card>
 					</div>
@@ -103,6 +105,7 @@ export default {
 			traitsList,
 			myCharacter,
 			updateAmmo,
+			updateHP,
 			useSpellSlot,
 			init
 		} = useCharacterData(props)
@@ -186,6 +189,7 @@ export default {
 			deleteCharacter,
 			onCharacterSaved,
 			updateAmmo,
+			updateHP,
 			useSpellSlot
 		}
 	}

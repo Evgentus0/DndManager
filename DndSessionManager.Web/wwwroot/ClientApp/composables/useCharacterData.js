@@ -84,6 +84,16 @@ export function useCharacterData(props) {
 		}
 	}
 
+	async function updateHP(char, delta) {
+		const newHP = Math.max(0, Math.min(char.maxHitPoints, (char.currentHitPoints || 0) + delta))
+		try {
+			await props.connection.invoke('UpdateCharacterHP',
+				props.sessionId, props.userId, char.id, newHP)
+		} catch (err) {
+			console.error('Error updating HP:', err)
+		}
+	}
+
 	async function useSpellSlot(char, slotLevel, delta) {
 		const slot = char.spellSlots?.find(s => s.level === slotLevel)
 		if (!slot) return
@@ -179,6 +189,13 @@ export function useCharacterData(props) {
 				char.spellSlots = data.spellSlots
 			}
 		})
+
+		props.connection.on('CharacterHPUpdated', (data) => {
+			const char = characters.value.find(c => c.id === data.characterId)
+			if (char) {
+				char.currentHitPoints = data.currentHitPoints
+			}
+		})
 	}
 
 	function init() {
@@ -209,6 +226,7 @@ export function useCharacterData(props) {
 		getEquipmentDamage,
 		ammoClass,
 		updateAmmo,
+		updateHP,
 		useSpellSlot,
 		init
 	}

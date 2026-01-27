@@ -148,7 +148,21 @@ export default {
 					</div>
 
 					<div class="d-flex gap-3 text-muted small">
-						<span><strong>HP:</strong> {{ character.currentHitPoints }}/{{ character.maxHitPoints }}</span>
+						<div class="d-flex align-items-center gap-2">
+							<span><strong>HP:</strong></span>
+							<div v-if="canEditHP" class="d-flex align-items-center">
+								<button class="btn btn-sm btn-outline-secondary py-0 px-1"
+									@click="$emit('update-hp', character, -1)"
+									:disabled="character.currentHitPoints <= 0">-</button>
+								<span class="mx-2 badge" :class="hpClass(character.currentHitPoints, character.maxHitPoints)">
+									{{ character.currentHitPoints }}/{{ character.maxHitPoints }}
+								</span>
+								<button class="btn btn-sm btn-outline-secondary py-0 px-1"
+									@click="$emit('update-hp', character, 1)"
+									:disabled="character.currentHitPoints >= character.maxHitPoints">+</button>
+							</div>
+							<span v-else>{{ character.currentHitPoints }}/{{ character.maxHitPoints }}</span>
+						</div>
 						<span><strong>AC:</strong> {{ character.armorClass }}</span>
 						<span><strong>{{ $t('lobby.character.form.proficiency') }}:</strong> +{{ character.proficiencyBonus }}</span>
 					</div>
@@ -306,6 +320,10 @@ export default {
 			type: Boolean,
 			default: false
 		},
+		canEditHP: {
+			type: Boolean,
+			default: false
+		},
 		isHighlighted: {
 			type: Boolean,
 			default: false
@@ -319,7 +337,7 @@ export default {
 			default: false
 		}
 	},
-	emits: ['edit', 'delete', 'reset-password', 'update-ammo', 'use-spell-slot'],
+	emits: ['edit', 'delete', 'reset-password', 'update-ammo', 'use-spell-slot', 'update-hp'],
 	setup(props) {
 		function getModifier(score) {
 			const mod = Math.floor((score - 10) / 2)
@@ -369,6 +387,14 @@ export default {
 			return 'bg-secondary'
 		}
 
+		function hpClass(current, max) {
+			const percentage = (current / max) * 100
+			if (percentage <= 0) return 'bg-danger'
+			if (percentage <= 25) return 'bg-warning text-dark'
+			if (percentage <= 50) return 'bg-info text-dark'
+			return 'bg-success'
+		}
+
 		function spellLink(spellIndex) {
 			return `/handbook?category=spells&index=${spellIndex}`
 		}
@@ -411,6 +437,7 @@ export default {
 			equipmentLink,
 			getEquipmentDamage,
 			ammoClass,
+			hpClass,
 			spellLink,
 			getCharacterSpellsByLevel,
 			featureLink,

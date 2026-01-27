@@ -403,6 +403,38 @@ public class LobbyHub : Hub
 		});
 	}
 
+	public async Task UpdateCharacterHP(string sessionId, string userId, string characterId, int newHP)
+	{
+		if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+			!Guid.TryParse(userId, out var userGuid) ||
+			!Guid.TryParse(characterId, out var characterGuid))
+			return;
+
+		var user = _userService.GetUser(sessionGuid, userGuid);
+		if (user == null)
+			return;
+
+		var character = _characterService.GetCharacter(characterGuid);
+		if (character == null || character.SessionId != sessionGuid)
+			return;
+
+		var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
+		if (!_characterService.CanUserEditCharacter(userGuid, character, isMaster))
+		{
+			await Clients.Caller.SendAsync("CharacterError", "You cannot edit this character.");
+			return;
+		}
+
+		character.CurrentHitPoints = Math.Max(0, Math.Min(character.MaxHitPoints, newHP));
+		_characterService.UpdateCharacter(character);
+
+		await Clients.Group(sessionId).SendAsync("CharacterHPUpdated", new
+		{
+			CharacterId = characterId,
+			CurrentHitPoints = character.CurrentHitPoints
+		});
+	}
+
 	public async Task UseSpellSlot(string sessionId, string userId, string characterId, int spellLevel, int newUsedCount)
 	{
 		if (!Guid.TryParse(sessionId, out var sessionGuid) ||

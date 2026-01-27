@@ -37,12 +37,14 @@ export default {
 						:show-edit-buttons="true"
 						:show-reset-password="false"
 						:can-edit-ammo="true"
+						:can-edit-h-p="true"
 						:can-edit-spell-slots="true"
 						:is-highlighted="true"
 						:is-owner-online="false"
 						@edit="openEditModal"
 						@delete="deleteCharacter"
 						@update-ammo="updateAmmo"
+						@update-hp="updateHP"
 						@use-spell-slot="useSpellSlot">
 					</character-card>
 				</div>
@@ -89,6 +91,7 @@ export default {
 			spellsList,
 			myCharacter,
 			updateAmmo,
+			updateHP,
 			useSpellSlot,
 			init
 		} = useCharacterData(props)
@@ -132,6 +135,7 @@ export default {
 			spellsList,
 			formModalRef,
 			updateAmmo,
+			updateHP,
 			useSpellSlot,
 			openCreateModal,
 			openEditModal,
