@@ -118,7 +118,15 @@ export default {
 						const headers = viewContainer.querySelectorAll('h1, h2, h3, h4, h5, h6')
 						for (const el of headers) {
 							if (el.textContent === header.text) {
-								el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+								// Scroll within the container instead of the whole page
+								const containerRect = viewContainer.getBoundingClientRect()
+								const elementRect = el.getBoundingClientRect()
+								const relativeTop = elementRect.top - containerRect.top + viewContainer.scrollTop
+
+								viewContainer.scrollTo({
+									top: relativeTop,
+									behavior: 'smooth'
+								})
 								break
 							}
 						}
@@ -389,6 +397,7 @@ export default {
 	`,
 	components: {
 		'tree-node': {
+			name: 'TreeNode',
 			props: {
 				header: { type: Object, required: true },
 				onToggle: { type: Function, required: true },
@@ -399,20 +408,22 @@ export default {
 					<div
 						class="tree-node"
 						:style="{ paddingLeft: (header.level * 15) + 'px' }"
-						@click="header.children.length > 0 ? onToggle(header) : onClick(header)"
 					>
-						<span v-if="header.children.length > 0" class="tree-icon">
-							{{ header.expanded ? '▼' : '▶' }}
-						</span>
-						<span class="tree-text">{{ header.text }}</span>
+						<i
+							v-if="header.children.length > 0"
+							class="tree-icon bi"
+							:class="header.expanded ? 'bi-chevron-down' : 'bi-chevron-right'"
+							@click.stop="onToggle(header)"
+						></i>
+						<span class="tree-text" @click="onClick(header)">{{ header.text }}</span>
 					</div>
 					<div v-if="header.expanded && header.children.length > 0">
 						<tree-node
 							v-for="child in header.children"
 							:key="child.line"
 							:header="child"
-							:on-toggle="onToggle"
-							:on-click="onClick"
+							:onToggle="onToggle"
+							:onClick="onClick"
 						></tree-node>
 					</div>
 				</div>
