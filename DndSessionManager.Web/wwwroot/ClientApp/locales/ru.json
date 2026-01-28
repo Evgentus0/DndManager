@@ -243,6 +243,8 @@
         "selectFeature": "Выберите умение...",
         "traits": "Расовые черты",
         "selectTrait": "Выберите черту...",
+        "languages": "Языки",
+        "selectLanguage": "Выберите язык...",
         "searchPlaceholder": "Поиск...",
         "cantrips": "Заговоры",
         "prepared": "Подготовлено",

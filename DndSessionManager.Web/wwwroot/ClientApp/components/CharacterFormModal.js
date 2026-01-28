@@ -518,6 +518,40 @@ export default {
 								</div>
 							</div>
 
+							<!-- Languages Selection -->
+							<h6 class="mb-3">{{ $t('lobby.character.form.languages') }}</h6>
+							<div class="row g-2 mb-4">
+								<div class="col-12 col-md-8">
+									<input type="text" class="form-control mb-2" v-model="languageSearch"
+										:placeholder="$t('lobby.character.form.searchPlaceholder')">
+									<select class="form-select" v-model="selectedLanguage" @change="addLanguage" size="6">
+										<option value="">-- {{ $t('lobby.character.form.selectLanguage') }} --</option>
+										<optgroup v-for="(typeGroup, typeKey) in languagesByType" :key="typeKey" :label="typeGroup.label">
+											<option v-for="language in typeGroup.languages" :key="language.index" :value="language.index"
+												:disabled="form.languages.some(l => l.languageIndex === language.index)">
+												{{ language.name }}
+											</option>
+										</optgroup>
+									</select>
+								</div>
+							</div>
+
+							<!-- Languages List -->
+							<div v-if="form.languages.length > 0" class="mb-4">
+								<div v-for="language in form.languages" :key="language.id"
+									class="d-flex align-items-center border rounded p-2 mb-2">
+									<div class="flex-grow-1">
+										<a :href="languageLink(language.languageIndex)" class="text-decoration-none fw-bold">
+											{{ language.languageName }}
+										</a>
+									</div>
+									<button type="button" class="btn btn-sm btn-outline-danger"
+										@click="removeLanguage(form.languages.indexOf(language))">
+										<i class="bi bi-trash"></i>
+									</button>
+								</div>
+							</div>
+
 							<!-- Background & Notes -->
 							<div class="row g-3">
 								<div class="col-md-6">
@@ -582,6 +616,10 @@ export default {
 			default: () => []
 		},
 		traitsList: {
+			type: Array,
+			default: () => []
+		},
+		languagesList: {
 			type: Array,
 			default: () => []
 		}
@@ -797,6 +835,29 @@ export default {
 			form.value.features.splice(index, 1)
 		}
 
+		function addLanguage() {
+			if (!selectedLanguage.value) return
+			const language = props.languagesList.find(t => t.index === selectedLanguage.value)
+			if (!language) return
+			if (form.value.languages.some(t => t.languageIndex === language.index)) {
+				selectedLanguage.value = ''
+				return
+			}
+			form.value.languages.push({
+				id: generateUUID(),
+				languageIndex: language.index,
+				languageName: language.name
+			})
+			selectedLanguage.value = ''
+		}
+		function removeLanguage() {
+			form.value.languages.splice(index, 1)
+		}
+
+		function languageLink(languageIndex) {
+			return `/handbook?category=languages&index=${languageIndex}`
+		}
+
 		function addTrait() {
 			if (!selectedTrait.value) return
 			const trait = props.traitsList.find(t => t.index === selectedTrait.value)
@@ -833,10 +894,12 @@ export default {
 		const selectedSpell = ref('')
 		const selectedFeature = ref('')
 		const selectedTrait = ref('')
+		const selectedLanguage = ref('')
 		const spellSearch = ref('')
 		const equipmentSearch = ref('')
 		const featureSearch = ref('')
 		const traitSearch = ref('')
+		const languageSearch = ref('')
 		const equipmentMode = ref('handbook')
 		const customEquipmentForm = ref({
 			name: '',
@@ -928,6 +991,33 @@ export default {
 			return availableTraits.sort((a, b) => a.name.localeCompare(b.name))
 		})
 
+
+	const languagesByType = computed(() => {
+		let availableLanguages = props.languagesList
+
+		const searchTerm = languageSearch.value.toLowerCase().trim()
+		if (searchTerm) {
+			availableLanguages = availableLanguages.filter(l =>
+				l.name.toLowerCase().includes(searchTerm))
+		}
+
+		// Collect all unique types from the languages list
+		const types = {}
+		availableLanguages.forEach(language => {
+			const type = language.type || 'Standard'
+			if (!types[type]) {
+				types[type] = { label: type, languages: [] }
+			}
+			types[type].languages.push(language)
+		})
+
+		// Sort languages alphabetically within each type
+		Object.values(types).forEach(group => {
+			group.languages.sort((a, b) => a.name.localeCompare(b.name))
+		})
+
+		return types
+	})
 		const defaultForm = () => ({
 			name: '',
 			password: '',
@@ -958,6 +1048,7 @@ export default {
 			spells: [],
 			features: [],
 			traits: [],
+			languages: [],
 			spellSlots: [
 				{ level: 1, total: 0, used: 0 },
 				{ level: 2, total: 0, used: 0 },
@@ -1112,6 +1203,11 @@ export default {
 					id: t.id,
 					traitIndex: t.traitIndex,
 					traitName: t.traitName
+			})),
+			languages: (character.languages || []).map(l => ({
+				id: l.id,
+				languageIndex: l.languageIndex,
+				languageName: l.languageName
 				})),
 				spellSlots: character.spellSlots?.length > 0
 					? character.spellSlots.map(s => ({
@@ -1194,6 +1290,7 @@ export default {
 					spells: form.value.spells,
 					features: form.value.features,
 					traits: form.value.traits,
+					languages: form.value.languages,
 					spellSlots: form.value.spellSlots.filter(s => s.total > 0)
 				}
 
@@ -1261,6 +1358,12 @@ export default {
 			removeFeature,
 			addTrait,
 			removeTrait,
+			selectedLanguage,
+			languageSearch,
+			languagesByType,
+			addLanguage,
+			removeLanguage,
+			languageLink,
 			getCharacterFeaturesByLevel,
 			onRaceChange,
 			onClassChange,

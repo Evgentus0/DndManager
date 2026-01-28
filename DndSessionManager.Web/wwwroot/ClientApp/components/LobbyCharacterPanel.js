@@ -67,6 +67,7 @@ export default {
 			:spells-list="spellsList"
 			:features-list="featuresList"
 			:traits-list="traitsList"
+			:languages-list="languagesList"
 			@character-saved="onCharacterSaved">
 		</character-form-modal>
 		</div>
@@ -106,6 +107,7 @@ export default {
 			spellsList,
 			featuresList,
 			traitsList,
+			languagesList,
 			myCharacter,
 			updateAmmo,
 			updateHP,
@@ -181,6 +183,7 @@ export default {
 			spellsList,
 			featuresList,
 			traitsList,
+			languagesList,
 			formModalRef,
 			myCharacter,
 			isMyCharacter,

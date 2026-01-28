@@ -65,4 +65,7 @@ public class Character
 
     // Traits possessed by this character (racial traits)
     public List<CharacterTraitItem> Traits { get; set; } = new();
+
+    // Languages known by this character
+    public List<CharacterLanguageItem> Languages { get; set; } = new();
 }

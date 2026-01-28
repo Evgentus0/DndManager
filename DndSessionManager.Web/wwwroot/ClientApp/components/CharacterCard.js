@@ -386,6 +386,18 @@ export default {
 						</div>
 					</div>
 				</div>
+
+				<!-- Languages -->
+				<div v-if="character.languages && character.languages.length > 0" class="mt-3">
+					<strong>{{ $t('lobby.character.form.languages') }}:</strong>
+					<div class="d-flex flex-wrap gap-1 mt-2">
+						<a v-for="language in character.languages" :key="language.id"
+							:href="languageLink(language.languageIndex)"
+							class="badge bg-warning text-dark text-decoration-none">
+							{{ language.languageName }}
+						</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	`,
@@ -518,6 +530,10 @@ export default {
 			return `/handbook?category=features&index=${featureIndex}`
 		}
 
+		function languageLink(languageIndex) {
+			return `/handbook?category=languages&index=${languageIndex}`
+		}
+
 		function traitLink(traitIndex) {
 			return `/handbook?category=traits&index=${traitIndex}`
 		}
@@ -569,6 +585,7 @@ export default {
 			getCharacterSpellsByLevel,
 			featureLink,
 			traitLink,
+			languageLink,
 			getCharacterFeaturesByLevel,
 			getAvailableSlots,
 			getSavingThrows

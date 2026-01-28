@@ -240,7 +240,8 @@ public class LobbyHub : Hub
 			Spells = MapSpellsDtoToModel(characterData.Spells),
 			SpellSlots = MapSpellSlotsDtoToModel(characterData.SpellSlots),
 			Features = MapFeaturesDtoToModel(characterData.Features),
-			Traits = MapTraitsDtoToModel(characterData.Traits)
+			Traits = MapTraitsDtoToModel(characterData.Traits),
+			Languages = MapLanguagesDtoToModel(characterData.Languages)
 		};
 
 		_characterService.CreateCharacter(character, characterData.Password);
@@ -299,6 +300,7 @@ public class LobbyHub : Hub
 		existingCharacter.SpellSlots = MapSpellSlotsDtoToModel(characterData.SpellSlots);
 		existingCharacter.Features = MapFeaturesDtoToModel(characterData.Features);
 		existingCharacter.Traits = MapTraitsDtoToModel(characterData.Traits);
+		existingCharacter.Languages = MapLanguagesDtoToModel(characterData.Languages);
 
 		_characterService.UpdateCharacter(existingCharacter);
 
@@ -599,6 +601,7 @@ public class LobbyHub : Hub
 		SpellSlots = c.SpellSlots.Select(MapSpellSlotToDto).ToList(),
 		Features = c.Features.Select(MapFeatureItemToDto).ToList(),
 		Traits = c.Traits.Select(MapTraitItemToDto).ToList(),
+		Languages = c.Languages.Select(MapLanguageItemToDto).ToList(),
 		IsClaimed = !string.IsNullOrEmpty(c.PasswordHash)
 	};
 
@@ -725,6 +728,26 @@ public class LobbyHub : Hub
 			TraitName = t.TraitName
 		}).ToList();
 	}
+
+	private static object MapLanguageItemToDto(CharacterLanguageItem l) => new
+	{
+		Id = l.Id.ToString(),
+		l.LanguageIndex,
+		l.LanguageName
+	};
+
+	private static List<CharacterLanguageItem> MapLanguagesDtoToModel(List<CharacterLanguageItemDto>? languagesDto)
+	{
+		if (languagesDto == null || languagesDto.Count == 0)
+			return [];
+
+		return languagesDto.Select(l => new CharacterLanguageItem
+		{
+			Id = Guid.TryParse(l.Id, out var id) ? id : Guid.NewGuid(),
+			LanguageIndex = l.LanguageIndex,
+			LanguageName = l.LanguageName
+		}).ToList();
+	}
 }
 
 public class CharacterDto
@@ -760,6 +783,7 @@ public class CharacterDto
 	public List<CharacterSpellSlotDto>? SpellSlots { get; set; }
 	public List<CharacterFeatureItemDto>? Features { get; set; }
 	public List<CharacterTraitItemDto>? Traits { get; set; }
+	public List<CharacterLanguageItemDto>? Languages { get; set; }
 }
 
 public class CharacterEquipmentItemDto
@@ -807,4 +831,11 @@ public class CharacterTraitItemDto
 	public string? Id { get; set; }
 	public string TraitIndex { get; set; } = string.Empty;
 	public string TraitName { get; set; } = string.Empty;
+}
+
+public class CharacterLanguageItemDto
+{
+	public string? Id { get; set; }
+	public string LanguageIndex { get; set; } = string.Empty;
+	public string LanguageName { get; set; } = string.Empty;
 }

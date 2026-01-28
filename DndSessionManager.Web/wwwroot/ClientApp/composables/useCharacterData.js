@@ -9,6 +9,7 @@ export function useCharacterData(props) {
 	const spellsList = ref([])
 	const featuresList = ref([])
 	const traitsList = ref([])
+	const languagesList = ref([])
 
 	const myCharacter = computed(() => {
 		return characters.value.find(c => c.ownerId === props.userId)
@@ -58,6 +59,10 @@ export function useCharacterData(props) {
 
 	function traitLink(traitIndex) {
 		return `/handbook?category=traits&index=${traitIndex}`
+	}
+
+	function languageLink(languageIndex) {
+		return `/handbook?category=languages&index=${languageIndex}`
 	}
 
 	function getEquipmentDamage(equipmentIndex) {
@@ -132,14 +137,15 @@ export function useCharacterData(props) {
 			const savedLanguage = localStorage.getItem('user-language')
 			const browserLanguage = navigator.language.split('-')[0]
 			const defaultLanguage = savedLanguage || (browserLanguage === 'ru' ? 'ru' : 'en')
-			const [racesRes, classesRes, skillsRes, equipmentRes, spellsRes, featuresRes, traitsRes] = await Promise.all([
+			const [racesRes, classesRes, skillsRes, equipmentRes, spellsRes, featuresRes, traitsRes, languagesRes] = await Promise.all([
 				fetch('/api/handbook/races', { headers: { 'X-Locale': defaultLanguage } }),
 				fetch('/api/handbook/classes', { headers: { 'X-Locale': defaultLanguage } }),
 				fetch('/api/handbook/skills', { headers: { 'X-Locale': defaultLanguage } }),
 				fetch('/api/handbook/equipment', { headers: { 'X-Locale': defaultLanguage } }),
 				fetch('/api/handbook/spells', { headers: { 'X-Locale': defaultLanguage } }),
 				fetch('/api/handbook/features', { headers: { 'X-Locale': defaultLanguage } }),
-				fetch('/api/handbook/traits', { headers: { 'X-Locale': defaultLanguage } })
+				fetch('/api/handbook/traits', { headers: { 'X-Locale': defaultLanguage } }),
+			fetch('/api/handbook/languages', { headers: { 'X-Locale': defaultLanguage } })
 			])
 
 			if (racesRes.ok) {
@@ -163,7 +169,10 @@ export function useCharacterData(props) {
 			if (traitsRes.ok) {
 				traitsList.value = await traitsRes.json()
 			}
-		} catch (err) {
+		if (languagesRes.ok) {
+			languagesList.value = await languagesRes.json()
+		}
+	} catch (err) {
 			console.error('Error fetching handbook data:', err)
 		}
 	}
@@ -244,6 +253,7 @@ export function useCharacterData(props) {
 		spellsList,
 		featuresList,
 		traitsList,
+		languagesList,
 		myCharacter,
 		getModifier,
 		raceLink,
@@ -255,6 +265,7 @@ export function useCharacterData(props) {
 		spellLink,
 		featureLink,
 		traitLink,
+		languageLink,
 		getEquipmentDamage,
 		ammoClass,
 		updateAmmo,

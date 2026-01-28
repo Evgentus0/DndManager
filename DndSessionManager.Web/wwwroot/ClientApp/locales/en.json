@@ -243,6 +243,8 @@
         "selectFeature": "Select feature...",
         "traits": "Racial Traits",
         "selectTrait": "Select trait...",
+        "languages": "Languages",
+        "selectLanguage": "Select language...",
         "searchPlaceholder": "Search...",
         "cantrips": "Cantrips",
         "prepared": "Prepared",
