@@ -398,6 +398,20 @@ export default {
 						</a>
 					</div>
 				</div>
+
+			<!-- Custom Properties -->
+			<div v-if="character.customProperties && character.customProperties.length > 0" class="mt-3">
+				<strong>{{ $t('lobby.character.form.customProperties') }}:</strong>
+				<div class="mt-2">
+					<div v-for="property in character.customProperties" :key="property.id"
+						class="border rounded p-2 mb-2">
+						<div class="fw-bold small">{{ property.name }}</div>
+						<div v-if="property.description" class="text-muted small mt-1">
+							{{ property.description }}
+						</div>
+					</div>
+				</div>
+			</div>
 			</div>
 		</div>
 	`,

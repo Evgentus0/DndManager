@@ -301,6 +301,7 @@ public class LobbyHub : Hub
 		existingCharacter.Features = MapFeaturesDtoToModel(characterData.Features);
 		existingCharacter.Traits = MapTraitsDtoToModel(characterData.Traits);
 		existingCharacter.Languages = MapLanguagesDtoToModel(characterData.Languages);
+		existingCharacter.CustomProperties = MapCharacterCustomPropertyDtoToModel(characterData.CustomProperties);
 
 		_characterService.UpdateCharacter(existingCharacter);
 
@@ -602,7 +603,8 @@ public class LobbyHub : Hub
 		Features = c.Features.Select(MapFeatureItemToDto).ToList(),
 		Traits = c.Traits.Select(MapTraitItemToDto).ToList(),
 		Languages = c.Languages.Select(MapLanguageItemToDto).ToList(),
-		IsClaimed = !string.IsNullOrEmpty(c.PasswordHash)
+		IsClaimed = !string.IsNullOrEmpty(c.PasswordHash),
+		CustomProperties = c.CustomProperties.Select(MapCustomPropertyToDto).ToList()
 	};
 
 	private static object MapEquipmentItemToDto(CharacterEquipmentItem e) => new
@@ -736,6 +738,13 @@ public class LobbyHub : Hub
 		l.LanguageName
 	};
 
+	private static object MapCustomPropertyToDto(CharacterCustomPropertyItem l) => new
+	{
+		Id = l.Id.ToString(),
+		l.Name,
+		l.Description
+	};
+
 	private static List<CharacterLanguageItem> MapLanguagesDtoToModel(List<CharacterLanguageItemDto>? languagesDto)
 	{
 		if (languagesDto == null || languagesDto.Count == 0)
@@ -746,6 +755,19 @@ public class LobbyHub : Hub
 			Id = Guid.TryParse(l.Id, out var id) ? id : Guid.NewGuid(),
 			LanguageIndex = l.LanguageIndex,
 			LanguageName = l.LanguageName
+		}).ToList();
+	}
+
+	private static List<CharacterCustomPropertyItem> MapCharacterCustomPropertyDtoToModel(List<CharacterCustomPropertyDto>? properties)
+	{
+		if (properties == null || properties.Count == 0)
+			return [];
+
+		return properties.Select(l => new CharacterCustomPropertyItem
+		{
+			Id = Guid.TryParse(l.Id, out var id) ? id : Guid.NewGuid(),
+			Name = l.Name,
+			Description = l.Description
 		}).ToList();
 	}
 }
@@ -784,6 +806,7 @@ public class CharacterDto
 	public List<CharacterFeatureItemDto>? Features { get; set; }
 	public List<CharacterTraitItemDto>? Traits { get; set; }
 	public List<CharacterLanguageItemDto>? Languages { get; set; }
+	public List<CharacterCustomPropertyDto>? CustomProperties { get; set; }
 }
 
 public class CharacterEquipmentItemDto
@@ -838,4 +861,11 @@ public class CharacterLanguageItemDto
 	public string? Id { get; set; }
 	public string LanguageIndex { get; set; } = string.Empty;
 	public string LanguageName { get; set; } = string.Empty;
+}
+
+public class CharacterCustomPropertyDto
+{
+	public string Id { get; set; }
+	public string Name { get; set; } = string.Empty;
+	public string Description { get; set; } = string.Empty;
 }

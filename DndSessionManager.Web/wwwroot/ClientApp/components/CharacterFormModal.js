@@ -552,6 +552,47 @@ export default {
 								</div>
 							</div>
 
+						<!-- Custom Properties Section -->
+						<h6 class="mb-3">{{ $t('lobby.character.form.customProperties') }}</h6>
+						<div class="row g-3 mb-4">
+							<div class="col-md-12">
+								<label class="form-label">{{ $t('lobby.character.form.customPropertyName') }}</label>
+								<input type="text" class="form-control" v-model="customPropertyForm.name"
+									:placeholder="$t('lobby.character.form.customPropertyNamePlaceholder')" maxlength="100">
+							</div>
+							<div class="col-md-12">
+								<label class="form-label">{{ $t('lobby.character.form.customPropertyDescription') }}</label>
+								<textarea class="form-control" v-model="customPropertyForm.description"
+									:placeholder="$t('lobby.character.form.customPropertyDescriptionPlaceholder')"
+									rows="3" maxlength="5000"></textarea>
+							</div>
+							<div class="col-12">
+								<button type="button" class="btn btn-sm btn-primary" @click="addCustomProperty"
+									:disabled="!customPropertyForm.name.trim()">
+									{{ $t('lobby.character.form.addCustomProperty') }}
+								</button>
+							</div>
+						</div>
+
+						<!-- Custom Properties List -->
+						<div v-if="form.customProperties.length > 0" class="mb-4">
+							<div v-for="(property, idx) in form.customProperties" :key="property.id"
+								class="border rounded p-3 mb-2">
+								<div class="d-flex justify-content-between align-items-start">
+									<div class="flex-grow-1">
+										<div class="fw-bold">{{ property.name }}</div>
+										<div class="text-muted small mt-1" v-if="property.description">
+											{{ property.description }}
+										</div>
+									</div>
+									<button type="button" class="btn btn-sm btn-outline-danger ms-2"
+										@click="removeCustomProperty(idx)">
+										<i class="bi bi-trash"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+
 							<!-- Background & Notes -->
 							<div class="row g-3">
 								<div class="col-md-6">
@@ -858,6 +899,23 @@ export default {
 			return `/handbook?category=languages&index=${languageIndex}`
 		}
 
+	function addCustomProperty() {
+		if (!customPropertyForm.value.name.trim()) return
+
+		form.value.customProperties.push({
+			id: generateUUID(),
+			name: customPropertyForm.value.name.trim(),
+			description: customPropertyForm.value.description.trim() || ''
+		})
+
+		// Reset form
+		customPropertyForm.value = { name: '', description: '' }
+	}
+
+	function removeCustomProperty(index) {
+		form.value.customProperties.splice(index, 1)
+	}
+
 		function addTrait() {
 			if (!selectedTrait.value) return
 			const trait = props.traitsList.find(t => t.index === selectedTrait.value)
@@ -913,6 +971,10 @@ export default {
 			level: 0,
 			damage: '',
 			damageType: '',
+			description: ''
+		})
+		const customPropertyForm = ref({
+			name: '',
 			description: ''
 		})
 
@@ -1049,6 +1111,7 @@ export default {
 			features: [],
 			traits: [],
 			languages: [],
+			customProperties: [],
 			spellSlots: [
 				{ level: 1, total: 0, used: 0 },
 				{ level: 2, total: 0, used: 0 },
@@ -1209,6 +1272,11 @@ export default {
 				languageIndex: l.languageIndex,
 				languageName: l.languageName
 				})),
+			customProperties: (character.customProperties || []).map(p => ({
+				id: p.id,
+				name: p.name,
+				description: p.description
+			})),
 				spellSlots: character.spellSlots?.length > 0
 					? character.spellSlots.map(s => ({
 						level: s.level,
@@ -1291,6 +1359,7 @@ export default {
 					features: form.value.features,
 					traits: form.value.traits,
 					languages: form.value.languages,
+					customProperties: form.value.customProperties,
 					spellSlots: form.value.spellSlots.filter(s => s.total > 0)
 				}
 
@@ -1364,6 +1433,9 @@ export default {
 			addLanguage,
 			removeLanguage,
 			languageLink,
+			customPropertyForm,
+			addCustomProperty,
+			removeCustomProperty,
 			getCharacterFeaturesByLevel,
 			onRaceChange,
 			onClassChange,

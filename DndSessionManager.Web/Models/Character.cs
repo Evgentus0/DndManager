@@ -68,4 +68,7 @@ public class Character
 
     // Languages known by this character
     public List<CharacterLanguageItem> Languages { get; set; } = new();
+
+    // Custom properties/characteristics added by player
+    public List<CharacterCustomPropertyItem> CustomProperties { get; set; } = new();
 }
