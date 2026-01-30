@@ -438,7 +438,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # Claude Code
-.claude/
+.claude/settings.local.json
 
 # Node.js
 node_modules/

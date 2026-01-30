@@ -1,0 +1,23 @@
+{
+  "hooks": {
+    "pre_work": {
+      "description": "Pre-work checks: verify on master branch, clean working tree, and pull latest changes",
+      "commands": [
+        {
+          "command": "git rev-parse --abbrev-ref HEAD",
+          "description": "Check current branch is master",
+          "assert_output": "master"
+        },
+        {
+          "command": "git status --porcelain",
+          "description": "Check working tree is clean (no uncommitted changes)",
+          "assert_output": ""
+        },
+        {
+          "command": "git pull --ff-only",
+          "description": "Pull latest changes from remote"
+        }
+      ]
+    }
+  }
+}
