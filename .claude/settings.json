@@ -1,6 +1,9 @@
 {
   "permissions": {
-    "defaultMode": "bypassPermissions"
+    "defaultMode": "bypassPermissions",
+    "allow": [
+      "Bash(move lobbyMasterNotesPanel.css markdownEditorPanel.css)"
+    ]
   },
   "hooks": {
     "UserPromptSubmit": [

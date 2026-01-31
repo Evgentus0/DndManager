@@ -2,7 +2,7 @@ using DndSessionManager.Web.Extensions;
 using DndSessionManager.Web.Models;
 using DndSessionManager.Web.Services;
 using Microsoft.AspNetCore.Mvc;
-using static System.Collections.Specialized.BitVector32;
+using Microsoft.AspNetCore.Mvc.ViewComponents;
 
 namespace DndSessionManager.Web.Controllers;
 
@@ -306,6 +306,9 @@ public class SessionController : Controller
         ViewBag.Session = session;
         ViewBag.CurrentUser = user;
         ViewBag.IsMaster = user.Role == UserRole.Master;
+		ViewBag.CurrentCharacter = user.Role == UserRole.Master
+			? null
+			: _characterService.GetCharacterByOwner(id, userId);
 
 		HttpContext.AddCurrentGameSession(session.Id.ToString(), session.Name);
 

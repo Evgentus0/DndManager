@@ -568,6 +568,109 @@ public class LobbyHub : Hub
 		await Clients.Caller.SendAsync("NotesLoaded", session.MasterNotes ?? "");
 	}
 
+	public async Task SaveCharacterNotes(string sessionId, string userId, string characterId, string notes)
+	{
+		// 1. Parse and validate GUIDs
+		if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+			!Guid.TryParse(userId, out var userGuid) ||
+			!Guid.TryParse(characterId, out var characterGuid))
+		{
+			await Clients.Caller.SendAsync("NotesError", "Invalid request parameters.");
+			return;
+		}
+
+		// 2. Get user
+		var user = _userService.GetUser(sessionGuid, userGuid);
+		if (user == null)
+		{
+			await Clients.Caller.SendAsync("NotesError", "User not found.");
+			return;
+		}
+
+		// 3. Get character
+		var character = _characterService.GetCharacter(characterGuid);
+		if (character == null)
+		{
+			await Clients.Caller.SendAsync("NotesError", "Character not found.");
+			return;
+		}
+
+		// 4. Validate session
+		if (character.SessionId != sessionGuid)
+		{
+			await Clients.Caller.SendAsync("NotesError", "Character does not belong to this session.");
+			return;
+		}
+
+		// 5. Check permissions (owner or master)
+		var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
+		if (!_characterService.CanUserEditCharacter(userGuid, character, isMaster))
+		{
+			await Clients.Caller.SendAsync("NotesError", "You don't have permission to edit this character's notes.");
+			return;
+		}
+
+		// 6. Update notes field only
+		character.Notes = notes;
+		_characterService.UpdateCharacter(character);
+
+		// 7. Broadcast to session group (for master visibility)
+		await Clients.Group(sessionId).SendAsync("CharacterNotesUpdated", new
+		{
+			characterId = character.Id.ToString(),
+			notes = notes
+		});
+
+		// 8. Confirm to caller
+		await Clients.Caller.SendAsync("NotesSaved");
+	}
+
+	public async Task LoadCharacterNotes(string sessionId, string userId, string characterId)
+	{
+		// 1. Parse and validate GUIDs
+		if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+			!Guid.TryParse(userId, out var userGuid) ||
+			!Guid.TryParse(characterId, out var characterGuid))
+		{
+			await Clients.Caller.SendAsync("NotesError", "Invalid request parameters.");
+			return;
+		}
+
+		// 2. Get user
+		var user = _userService.GetUser(sessionGuid, userGuid);
+		if (user == null)
+		{
+			await Clients.Caller.SendAsync("NotesError", "User not found.");
+			return;
+		}
+
+		// 3. Get character
+		var character = _characterService.GetCharacter(characterGuid);
+		if (character == null)
+		{
+			await Clients.Caller.SendAsync("NotesError", "Character not found.");
+			return;
+		}
+
+		// 4. Validate session
+		if (character.SessionId != sessionGuid)
+		{
+			await Clients.Caller.SendAsync("NotesError", "Character does not belong to this session.");
+			return;
+		}
+
+		// 5. Check permissions (owner or master)
+		var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
+		if (!_characterService.CanUserEditCharacter(userGuid, character, isMaster))
+		{
+			await Clients.Caller.SendAsync("NotesError", "You don't have permission to view this character's notes.");
+			return;
+		}
+
+		// 6. Send notes to caller
+		await Clients.Caller.SendAsync("CharacterNotesLoaded", character.Notes ?? "");
+	}
+
 	private static object MapCharacterToDto(Character c) => new
 	{
 		Id = c.Id.ToString(),

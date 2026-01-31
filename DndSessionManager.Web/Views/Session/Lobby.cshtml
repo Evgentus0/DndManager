@@ -1,12 +1,13 @@
 @{
-    ViewData["Title"] = "Lobby";
-    var session = ViewBag.Session as DndSessionManager.Web.Models.Session;
-    var currentUser = ViewBag.CurrentUser as DndSessionManager.Web.Models.User;
-    var isMaster = ViewBag.IsMaster;
+	ViewData["Title"] = "Lobby";
+	var session = ViewBag.Session as DndSessionManager.Web.Models.Session;
+	var currentUser = ViewBag.CurrentUser as DndSessionManager.Web.Models.User;
+	var currentCharacter = ViewBag.CurrentCharacter as DndSessionManager.Web.Models.Character;
+	var isMaster = ViewBag.IsMaster;
 }
 
 @section Styles {
-	<link rel="stylesheet" href="~/css/lobbyMasterNotesPanel.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/markdownEditorPanel.css" asp-append-version="true" />
 }
 
 <div id="lobby-app" class="container-fluid">
@@ -94,6 +95,12 @@
                         {{ $t('lobby.tabs.characters') }}
                     </a>
                 </li>
+				<li v-if="!isMaster && characterId" class="nav-item">
+                    <a class="nav-link" :class="{ active: activeTab === 'myNotes' }"
+                       href="#" @@click.prevent="activeTab = 'myNotes'">
+                        {{ $t('lobby.tabs.myNotes') }}
+                    </a>
+                </li>
                 <li v-if="isMaster" class="nav-item">
                     <a class="nav-link" :class="{ active: activeTab === 'masterNotes' }"
                        href="#" @@click.prevent="activeTab = 'masterNotes'">
@@ -128,6 +135,15 @@
                 :users="users">
             </lobby-character-panel>
 
+            <lobby-character-notes-panel
+                v-if="!isMaster && characterId"
+                v-show="activeTab === 'myNotes'"
+                :connection="connection"
+                :session-id="sessionId"
+                :user-id="userId"
+                :character-id="characterId">
+            </lobby-character-notes-panel>
+
             <lobby-master-notes-panel
                 v-if="isMaster"
                 v-show="activeTab === 'masterNotes'"
@@ -144,17 +160,22 @@
 		import { createApp, ref, computed, shallowRef } from 'vue'
 		import { useI18n } from 'vue-i18n'
 		import { i18n } from '/ClientApp/i18n.js'
+		import { useCharacterData } from '/ClientApp/composables/useCharacterData.js'
 		import LobbyChatPanel from '/ClientApp/components/LobbyChatPanel.js'
 		import LobbyCharacterPanel from '/ClientApp/components/LobbyCharacterPanel.js'
 		import LobbyMyCharacterPanel from '/ClientApp/components/LobbyMyCharacterPanel.js'
 		import LobbyMasterNotesPanel from '/ClientApp/components/LobbyMasterNotesPanel.js'
+		import LobbyCharacterNotesPanel from '/ClientApp/components/LobbyCharacterNotesPanel.js'
+		import MarkdownEditorPanel from '/ClientApp/components/MarkdownEditorPanel.js'
 
 		const app = createApp({
 			components: {
 				LobbyChatPanel,
 				LobbyCharacterPanel,
 				LobbyMyCharacterPanel,
-				LobbyMasterNotesPanel
+				LobbyMasterNotesPanel,
+				LobbyCharacterNotesPanel,
+				MarkdownEditorPanel
 			},
 			setup() {
 				const { t } = useI18n()
@@ -162,6 +183,7 @@
 				// Session data
 				const sessionId = '@session?.Id';
 				const userId = '@currentUser?.Id';
+				const characterId = '@currentCharacter?.Id';
 				const sessionName = '@Html.Raw(session?.Name)'
 				const isMaster = @Json.Serialize(isMaster);
 				const maxPlayers = @(session?.MaxPlayers ?? 0);
@@ -285,12 +307,12 @@
 					form.submit();
 				}
 
-				// Initialize on mount
-				initializeSignalR()
+				initializeSignalR();
 
 				return {
 					sessionId,
 					userId,
+					characterId,
 					sessionName,
 					isMaster,
 					maxPlayers,

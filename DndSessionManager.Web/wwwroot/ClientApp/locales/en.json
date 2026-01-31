@@ -167,6 +167,7 @@
       "chat": "Chat",
       "myCharacter": "My Character",
       "characters": "Characters",
+      "myNotes": "My Notes",
       "masterNotes": "Master Notes"
     },
     "characters": {
@@ -297,6 +298,24 @@
         "bold": "Bold",
         "italic": "Italic",
         "heading": "Heading",
+        "list": "List",
+        "link": "Link"
+      },
+      "errors": {
+        "loadFailed": "Failed to load notes",
+        "saveFailed": "Failed to save notes"
+      }
+    },
+    "characterNotes": {
+      "title": "Character Notes",
+      "editMode": "Edit",
+      "viewMode": "View",
+      "saveButton": "Save Notes",
+      "saving": "Saving...",
+      "navigation": "Navigation",
+      "noHeaders": "No headers found. Add headers with # syntax.",
+      "placeholder": "Write your character notes here using Markdown...\n\n# Quest Log\n## Current Quest\n- Objective 1\n\n# Character Background\n**Backstory details**\n\n# Session Notes\n*What happened last session...*",
+      "toolbar": {
         "list": "List",
         "link": "Link"
       },
