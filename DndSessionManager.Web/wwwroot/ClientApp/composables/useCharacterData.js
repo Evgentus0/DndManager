@@ -1,15 +1,42 @@
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onUnmounted } from 'vue'
+
+// =============================================================================
+// SINGLETON STATE - Shared across all component instances
+// =============================================================================
+
+// Shared reactive state
+const characters = ref([])
+const races = ref([])
+const classes = ref([])
+const skills = ref([])
+const equipmentList = ref([])
+const spellsList = ref([])
+const featuresList = ref([])
+const traitsList = ref([])
+const languagesList = ref([])
+
+// Initialization tracking
+let isInitialized = false
+let isInitializing = null // Promise when in progress
+let activeInstanceCount = 0
+
+// Store handler references for cleanup
+let currentConnection = null
+const handlerRefs = {
+	CharacterList: null,
+	CharacterCreated: null,
+	CharacterUpdated: null,
+	CharacterDeleted: null,
+	CharacterError: null,
+	CharacterEquipmentUpdated: null,
+	CharacterSpellSlotsUpdated: null,
+	CharacterHPUpdated: null,
+	CharacterCoinsUpdated: null
+}
 
 export function useCharacterData(props) {
-	const characters = ref([])
-	const races = ref([])
-	const classes = ref([])
-	const skills = ref([])
-	const equipmentList = ref([])
-	const spellsList = ref([])
-	const featuresList = ref([])
-	const traitsList = ref([])
-	const languagesList = ref([])
+	// Increment instance counter
+	activeInstanceCount++
 
 	const myCharacter = computed(() => {
 		return characters.value.find(c => c.ownerId === props.userId)
@@ -177,57 +204,61 @@ export function useCharacterData(props) {
 		}
 	}
 
-	function setupSignalRHandlers() {
-		if (!props.connection) return
+	function setupSignalRHandlers(connection) {
+		if (!connection) return
 
-		props.connection.on('CharacterList', (characterList) => {
+		// Store connection reference for cleanup
+		currentConnection = connection
+
+		// Create handler functions and store references
+		handlerRefs.CharacterList = (characterList) => {
 			characters.value = characterList
-		})
+		}
 
-		props.connection.on('CharacterCreated', (character) => {
+		handlerRefs.CharacterCreated = (character) => {
 			const existingIndex = characters.value.findIndex(c => c.id === character.id)
 			if (existingIndex === -1) {
 				characters.value.push(character)
 			}
-		})
+		}
 
-		props.connection.on('CharacterUpdated', (character) => {
+		handlerRefs.CharacterUpdated = (character) => {
 			const index = characters.value.findIndex(c => c.id === character.id)
 			if (index !== -1) {
 				characters.value[index] = character
 			}
-		})
+		}
 
-		props.connection.on('CharacterDeleted', (characterId) => {
+		handlerRefs.CharacterDeleted = (characterId) => {
 			characters.value = characters.value.filter(c => c.id !== characterId)
-		})
+		}
 
-		props.connection.on('CharacterError', (message) => {
+		handlerRefs.CharacterError = (message) => {
 			alert(message)
-		})
+		}
 
-		props.connection.on('CharacterEquipmentUpdated', (data) => {
+		handlerRefs.CharacterEquipmentUpdated = (data) => {
 			const char = characters.value.find(c => c.id === data.characterId)
 			if (char) {
 				char.equipment = data.equipment
 			}
-		})
+		}
 
-		props.connection.on('CharacterSpellSlotsUpdated', (data) => {
+		handlerRefs.CharacterSpellSlotsUpdated = (data) => {
 			const char = characters.value.find(c => c.id === data.characterId)
 			if (char) {
 				char.spellSlots = data.spellSlots
 			}
-		})
+		}
 
-		props.connection.on('CharacterHPUpdated', (data) => {
+		handlerRefs.CharacterHPUpdated = (data) => {
 			const char = characters.value.find(c => c.id === data.characterId)
 			if (char) {
 				char.currentHitPoints = data.currentHitPoints
 			}
-		})
+		}
 
-		props.connection.on('CharacterCoinsUpdated', (data) => {
+		handlerRefs.CharacterCoinsUpdated = (data) => {
 			const char = characters.value.find(c => c.id === data.characterId)
 			if (char) {
 				char.copperPieces = data.copperPieces
@@ -236,13 +267,80 @@ export function useCharacterData(props) {
 				char.goldPieces = data.goldPieces
 				char.platinumPieces = data.platinumPieces
 			}
+		}
+
+		// Register all handlers
+		Object.entries(handlerRefs).forEach(([eventName, handler]) => {
+			connection.on(eventName, handler)
 		})
 	}
 
-	function init() {
-		setupSignalRHandlers()
-		fetchHandbookData()
+	function cleanupSignalRHandlers() {
+		if (!currentConnection) return
+
+		// Unregister all handlers
+		Object.entries(handlerRefs).forEach(([eventName, handler]) => {
+			if (handler) {
+				currentConnection.off(eventName, handler)
+			}
+		})
+
+		// Clear references
+		currentConnection = null
+		Object.keys(handlerRefs).forEach(key => {
+			handlerRefs[key] = null
+		})
+
+		// Reset initialization state
+		isInitialized = false
+		isInitializing = null
 	}
+
+	async function init(connection) {
+		// Guard: Already fully initialized
+		if (isInitialized) {
+			return
+		}
+
+		// Guard: Currently initializing - return existing promise
+		if (isInitializing) {
+			return isInitializing
+		}
+
+		// Start initialization
+		isInitializing = (async () => {
+			try {
+				// Setup handlers first
+				setupSignalRHandlers(connection)
+
+				// Fetch static handbook data
+				await fetchHandbookData()
+
+				// Mark as initialized
+				isInitialized = true
+			} catch (error) {
+				console.error('Error during character data initialization:', error)
+				// Reset on error so it can be retried
+				isInitialized = false
+				cleanupSignalRHandlers()
+				throw error
+			} finally {
+				isInitializing = null
+			}
+		})()
+
+		return isInitializing
+	}
+
+	// Setup cleanup on component unmount
+	onUnmounted(() => {
+		activeInstanceCount--
+
+		// Only cleanup when last instance unmounts
+		if (activeInstanceCount === 0) {
+			cleanupSignalRHandlers()
+		}
+	})
 
 	return {
 		characters,
@@ -272,6 +370,6 @@ export function useCharacterData(props) {
 		updateHP,
 		updateCoins,
 		useSpellSlot,
-		init
+		init: () => init(props.connection)
 	}
 }
