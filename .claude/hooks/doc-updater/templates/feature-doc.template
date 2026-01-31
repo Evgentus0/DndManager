@@ -1,0 +1,33 @@
+# {FeatureName} Feature
+
+## Overview
+
+{FeatureDescription}
+
+## Implementation
+
+### Backend Changes
+
+#### Modified Files:
+{BackendFilesList}
+
+### Frontend Changes
+
+#### Modified Files:
+{FrontendFilesList}
+
+### Localization
+
+{LocalizationChanges}
+
+## Data Structure
+
+{DataStructureExample}
+
+## Usage
+
+{UsageInstructions}
+
+## Notes
+
+{AdditionalNotes}

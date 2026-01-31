@@ -1,0 +1,101 @@
+{
+  "fileMappings": [
+    {
+      "pattern": "DndSessionManager.Web/Models/Session*.cs",
+      "docs": ["docs/modules/01_SESSION_MANAGEMENT.md"],
+      "tableSection": "Backend Services and Models",
+      "updateType": "model"
+    },
+    {
+      "pattern": "DndSessionManager.Web/Models/User*.cs",
+      "docs": ["docs/modules/01_SESSION_MANAGEMENT.md"],
+      "tableSection": "Backend Services and Models",
+      "updateType": "model"
+    },
+    {
+      "pattern": "DndSessionManager.Web/Models/ChatMessage.cs",
+      "docs": ["docs/modules/01_SESSION_MANAGEMENT.md"],
+      "tableSection": "Backend Services and Models",
+      "updateType": "model"
+    },
+    {
+      "pattern": "DndSessionManager.Web/Models/Character*.cs",
+      "docs": ["docs/modules/02_CHARACTER_SYSTEM.md"],
+      "tableSection": "Backend Services and Models",
+      "updateType": "model"
+    },
+    {
+      "pattern": "DndSessionManager.Web/Services/SessionService.cs",
+      "docs": ["docs/modules/01_SESSION_MANAGEMENT.md"],
+      "tableSection": "Backend Services and Models",
+      "updateType": "service"
+    },
+    {
+      "pattern": "DndSessionManager.Web/Services/UserService.cs",
+      "docs": ["docs/modules/01_SESSION_MANAGEMENT.md"],
+      "tableSection": "Backend Services and Models",
+      "updateType": "service"
+    },
+    {
+      "pattern": "DndSessionManager.Web/Services/CharacterService.cs",
+      "docs": ["docs/modules/02_CHARACTER_SYSTEM.md"],
+      "tableSection": "Backend Services and Models",
+      "updateType": "service"
+    },
+    {
+      "pattern": "DndSessionManager.Web/Services/HandbookService.cs",
+      "docs": ["docs/modules/04_HANDBOOK_SYSTEM.md"],
+      "tableSection": "Backend Services",
+      "updateType": "service"
+    },
+    {
+      "pattern": "DndSessionManager.Web/Services/HubCallerService.cs",
+      "docs": ["docs/modules/03_REALTIME_COMMUNICATION.md"],
+      "tableSection": "Services",
+      "updateType": "service"
+    },
+    {
+      "pattern": "DndSessionManager.Web/Hubs/LobbyHub.cs",
+      "docs": [
+        "docs/modules/01_SESSION_MANAGEMENT.md",
+        "docs/modules/03_REALTIME_COMMUNICATION.md"
+      ],
+      "tableSection": "SignalR",
+      "updateType": "hub"
+    },
+    {
+      "pattern": "DndSessionManager.Web/Hubs/BrowseHub.cs",
+      "docs": ["docs/modules/03_REALTIME_COMMUNICATION.md"],
+      "tableSection": "SignalR",
+      "updateType": "hub"
+    },
+    {
+      "pattern": "DndSessionManager.Web/Controllers/SessionController.cs",
+      "docs": ["docs/modules/01_SESSION_MANAGEMENT.md"],
+      "tableSection": "Controllers",
+      "updateType": "controller"
+    },
+    {
+      "pattern": "DndSessionManager.Web/Controllers/CharacterController.cs",
+      "docs": ["docs/modules/02_CHARACTER_SYSTEM.md"],
+      "tableSection": "Controllers",
+      "updateType": "controller"
+    },
+    {
+      "pattern": "DndSessionManager.Web/Controllers/HandbookController.cs",
+      "docs": ["docs/modules/04_HANDBOOK_SYSTEM.md"],
+      "tableSection": "Controllers",
+      "updateType": "controller"
+    },
+    {
+      "pattern": "DndSessionManager.Web/wwwroot/ClientApp/components/*.js",
+      "docs": ["docs/modules/05_FRONTEND_UI.md"],
+      "tableSection": "Vue Components",
+      "updateType": "vue-component"
+    }
+  ],
+  "featureDetection": {
+    "multiFileThreshold": 3,
+    "newFeatureDocPath": "docs/features/"
+  }
+}
