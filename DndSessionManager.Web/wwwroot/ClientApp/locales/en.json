@@ -341,7 +341,8 @@
       "masterLeave": "Master leave. Session finished."
     },
     "buttons": {
-      "leave": "Leave Session"
+      "leave": "Leave Session",
+      "battleMap": "Battle Map"
     }
   },
   "footer": {

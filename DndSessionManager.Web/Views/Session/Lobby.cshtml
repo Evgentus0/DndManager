@@ -20,6 +20,9 @@
             </span>
         </div>
         <div class="col-auto">
+            <a asp-controller="Session" asp-action="BattleMap" asp-route-id="@session?.Id" class="btn btn-primary me-2">
+                <i class="bi bi-map"></i> {{ $t('lobby.buttons.battleMap') }}
+            </a>
             <form id="leave-form" asp-controller="Session" asp-action="Leave" asp-route-id="@session?.Id" method="post" class="d-inline">
                 <button type="submit" class="btn btn-danger">{{ $t('lobby.buttons.leave') }}</button>
             </form>
