@@ -11,13 +11,15 @@ public class SessionController : Controller
     private readonly SessionService _sessionService;
     private readonly UserService _userService;
     private readonly CharacterService _characterService;
+    private readonly BattleMapService _battleMapService;
     private readonly ILogger<SessionController> _logger;
 
-    public SessionController(SessionService sessionService, UserService userService, CharacterService characterService, ILogger<SessionController> logger)
+    public SessionController(SessionService sessionService, UserService userService, CharacterService characterService, BattleMapService battleMapService, ILogger<SessionController> logger)
     {
         _sessionService = sessionService;
         _userService = userService;
         _characterService = characterService;
+        _battleMapService = battleMapService;
         _logger = logger;
     }
 
@@ -433,5 +435,45 @@ public class SessionController : Controller
         _characterService.UpdateCharacter(character);
 
         return RedirectToAction("Lobby", new { id });
+    }
+
+    // GET: /session/{id}/battlemap
+    [HttpGet]
+    public IActionResult BattleMap(Guid id)
+    {
+        var session = _sessionService.GetSession(id);
+        if (session == null)
+        {
+            return NotFound("Session not found.");
+        }
+
+        var userIdStr = HttpContext.GetUserIdBySession(id.ToString());
+        if (string.IsNullOrEmpty(userIdStr) || !Guid.TryParse(userIdStr, out var userId))
+        {
+            return RedirectToAction("Join", new { id });
+        }
+
+        var user = _userService.GetUser(id, userId);
+        if (user == null)
+        {
+            return RedirectToAction("Join", new { id });
+        }
+
+        // Ensure battle map exists
+        var map = _battleMapService.GetBattleMapBySession(id);
+        if (map == null)
+        {
+            // Create default map
+            map = _battleMapService.CreateBattleMap(id);
+        }
+
+        ViewBag.Session = session;
+        ViewBag.CurrentUser = user;
+        ViewBag.IsMaster = user.Role == UserRole.Master;
+        ViewBag.BattleMap = map;
+
+        HttpContext.AddCurrentGameSession(session.Id.ToString(), session.Name);
+
+        return View();
     }
 }

@@ -9,6 +9,7 @@ public class LiteDbRepository : ISessionRepository, IDisposable
 	private readonly ILiteCollection<Session> _sessions;
 	private readonly ILiteCollection<ChatMessage> _chatMessages;
 	private readonly ILiteCollection<Character> _characters;
+	private readonly ILiteCollection<BattleMap> _battleMaps;
 
 	public LiteDbRepository(IWebHostEnvironment env)
 	{
@@ -26,11 +27,13 @@ public class LiteDbRepository : ISessionRepository, IDisposable
 		_sessions = _database.GetCollection<Session>("sessions");
 		_chatMessages = _database.GetCollection<ChatMessage>("chat_messages");
 		_characters = _database.GetCollection<Character>("characters");
+		_battleMaps = _database.GetCollection<BattleMap>("battle_maps");
 
 		// Create indexes
 		_sessions.EnsureIndex(x => x.State);
 		_chatMessages.EnsureIndex(x => x.SessionId);
 		_characters.EnsureIndex(x => x.SessionId);
+		_battleMaps.EnsureIndex(x => x.SessionId);
 	}
 
 	// Session operations
@@ -64,6 +67,13 @@ public class LiteDbRepository : ISessionRepository, IDisposable
 		foreach (var character in characters)
 		{
 			_characters.Delete(character.Id);
+		}
+
+		// Delete associated battle map
+		var battleMap = _battleMaps.FindOne(m => m.SessionId == sessionId);
+		if (battleMap != null)
+		{
+			_battleMaps.Delete(battleMap.Id);
 		}
 	}
 
@@ -112,6 +122,28 @@ public class LiteDbRepository : ISessionRepository, IDisposable
 	{
 		_ = _sessions.UpdateMany(s => new Session { State = SessionState.Saved },
 			s => s.State != SessionState.Saved);
+	}
+
+	// Battle map operations
+	public BattleMap? GetBattleMap(Guid mapId)
+	{
+		return _battleMaps.FindById(mapId);
+	}
+
+	public BattleMap? GetBattleMapBySession(Guid sessionId)
+	{
+		return _battleMaps.FindOne(m => m.SessionId == sessionId);
+	}
+
+	public void SaveBattleMap(BattleMap map)
+	{
+		map.UpdatedAt = DateTime.UtcNow;
+		_battleMaps.Upsert(map);
+	}
+
+	public void DeleteBattleMap(Guid mapId)
+	{
+		_battleMaps.Delete(mapId);
 	}
 
 	public void Dispose()

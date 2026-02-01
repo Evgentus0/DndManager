@@ -8,17 +8,18 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 export default defineConfig({
   plugins: [vue()],
   build: {
+    target: 'esnext',
     outDir: 'wwwroot/dist',
     manifest: true,
     rollupOptions: {
       input: {
-        main: './ClientApp/main.js'
+        main: './wwwroot/ClientApp/main.js'
       }
     }
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './ClientApp')
+      '@': path.resolve(__dirname, './wwwroot/ClientApp')
     }
   }
 })

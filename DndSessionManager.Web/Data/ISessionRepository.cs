@@ -22,4 +22,10 @@ public interface ISessionRepository
     void SaveCharacter(Character character);
     void DeleteCharacter(Guid characterId);
 	void SetSaveForAllSessions();
+
+	// Battle map operations
+	BattleMap? GetBattleMap(Guid mapId);
+	BattleMap? GetBattleMapBySession(Guid sessionId);
+	void SaveBattleMap(BattleMap map);
+	void DeleteBattleMap(Guid mapId);
 }

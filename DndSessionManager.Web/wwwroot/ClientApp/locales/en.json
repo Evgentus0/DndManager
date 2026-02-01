@@ -373,5 +373,45 @@
     "error": "Failed to load data",
     "backToList": "Back to List",
     "level": "Level"
+  },
+  "battlemap": {
+    "title": "Battle Map",
+    "connecting": "Connecting to battle map...",
+    "backToLobby": "Back to Lobby",
+    "addToken": "Add Token",
+    "removeToken": "Remove Token",
+    "gridSize": "Grid Size",
+    "tokensCount": "Tokens",
+    "promptTokenName": "Enter token name:",
+    "confirmRemove": "Are you sure you want to remove this token?",
+    "tools": {
+      "select": "Select",
+      "wall": "Wall",
+      "fog": "Fog"
+    },
+    "actions": {
+      "addToken": "Add Token",
+      "removeToken": "Remove",
+      "clearWalls": "Clear Walls",
+      "save": "Save",
+      "enableFog": "Enable Fog",
+      "disableFog": "Disable Fog"
+    },
+    "wallTypes": {
+      "solid": "Solid Wall",
+      "window": "Window"
+    },
+    "fogModes": {
+      "reveal": "Reveal",
+      "shroud": "Shroud"
+    },
+    "instructions": {
+      "wall": "Click two points to draw a wall",
+      "fog": "Click and drag to reveal or shroud areas"
+    },
+    "toolInfo": {
+      "wall": "Wall Drawing Mode - Click grid intersections to place walls",
+      "fog": "Fog of War Mode - Click and drag to reveal or shroud areas"
+    }
   }
 }

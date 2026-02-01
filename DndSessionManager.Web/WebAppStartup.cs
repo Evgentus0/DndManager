@@ -33,6 +33,7 @@ public static class WebAppStartup
 		builder.Services.AddScoped<UserService>();
 		builder.Services.AddScoped<HandbookService>();
 		builder.Services.AddScoped<CharacterService>();
+		builder.Services.AddScoped<BattleMapService>();
 
 		builder.Services.AddScoped<IHubCallerService, HubCallerService>();
 
@@ -68,6 +69,7 @@ public static class WebAppStartup
 
 		app.MapHub<LobbyHub>("/lobbyHub");
 		app.MapHub<BrowseHub>("/browseHub");
+		app.MapHub<BattleMapHub>("/battleMapHub");
 
 		app.MapGet("/health", () => new { status = "healthy", timestamp = DateTime.UtcNow });
 	}
