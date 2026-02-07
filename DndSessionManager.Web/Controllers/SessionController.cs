@@ -476,4 +476,121 @@ public class SessionController : Controller
 
         return View();
     }
+
+    // POST: /session/UploadBattleMapBackground/{id}
+    [HttpPost]
+    public async Task<IActionResult> UploadBattleMapBackground(Guid id, IFormFile backgroundImage)
+    {
+        // Validate user is DM
+        var userIdStr = HttpContext.GetUserIdBySession(id.ToString());
+        if (string.IsNullOrEmpty(userIdStr) || !Guid.TryParse(userIdStr, out var userId))
+        {
+            return Json(new { success = false, error = "User not authenticated" });
+        }
+
+        var user = _userService.GetUser(id, userId);
+        if (user == null || user.Role != UserRole.Master)
+        {
+            return Json(new { success = false, error = "Only the DM can upload background images" });
+        }
+
+        // Validate file
+        if (backgroundImage == null || backgroundImage.Length == 0)
+        {
+            return Json(new { success = false, error = "No file uploaded" });
+        }
+
+        // Validate file size (10MB max)
+        if (backgroundImage.Length > 20 * 1024 * 1024)
+        {
+            return Json(new { success = false, error = "File too large (max 10MB)" });
+        }
+
+        // Validate file type
+        var allowedTypes = new[] { "image/png", "image/jpeg", "image/jpg" };
+        if (!allowedTypes.Contains(backgroundImage.ContentType?.ToLower()))
+        {
+            return Json(new { success = false, error = "Only PNG and JPEG images are supported" });
+        }
+
+        try
+        {
+            // Create directory if it doesn't exist
+            var uploadDir = Path.Combine("wwwroot", "uploads", "battlemap-backgrounds", id.ToString());
+            Directory.CreateDirectory(uploadDir);
+
+            // Generate unique filename
+            var extension = Path.GetExtension(backgroundImage.FileName);
+            var filename = $"{Guid.NewGuid()}{extension}";
+            var filePath = Path.Combine(uploadDir, filename);
+
+            // Save file
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await backgroundImage.CopyToAsync(stream);
+            }
+
+            // Get map and delete old background if exists
+            var map = _battleMapService.GetBattleMapBySession(id);
+            if (map != null && !string.IsNullOrEmpty(map.Background.ImageUrl))
+            {
+                var oldFilePath = Path.Combine("wwwroot", map.Background.ImageUrl.TrimStart('/'));
+                if (System.IO.File.Exists(oldFilePath))
+                {
+                    System.IO.File.Delete(oldFilePath);
+                }
+            }
+
+            // Return URL path
+            var imageUrl = $"/uploads/battlemap-backgrounds/{id}/{filename}";
+            return Json(new { success = true, imageUrl });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error uploading battle map background");
+            return Json(new { success = false, error = "Upload failed" });
+        }
+    }
+
+    // POST: /session/RemoveBattleMapBackground/{id}
+    [HttpPost]
+    public IActionResult RemoveBattleMapBackground(Guid id)
+    {
+        // Validate user is DM
+        var userIdStr = HttpContext.GetUserIdBySession(id.ToString());
+        if (string.IsNullOrEmpty(userIdStr) || !Guid.TryParse(userIdStr, out var userId))
+        {
+            return Json(new { success = false, error = "User not authenticated" });
+        }
+
+        var user = _userService.GetUser(id, userId);
+        if (user == null || user.Role != UserRole.Master)
+        {
+            return Json(new { success = false, error = "Only the DM can remove background images" });
+        }
+
+        try
+        {
+            // Get map and delete background file if exists
+            var map = _battleMapService.GetBattleMapBySession(id);
+            if (map != null && !string.IsNullOrEmpty(map.Background.ImageUrl))
+            {
+                var filePath = Path.Combine("wwwroot", map.Background.ImageUrl.TrimStart('/'));
+                if (System.IO.File.Exists(filePath))
+                {
+                    System.IO.File.Delete(filePath);
+                }
+
+                // Update map to clear image URL
+                _battleMapService.RemoveBackgroundImage(map.Id);
+            }
+
+            return Json(new { success = true });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error removing battle map background");
+            return Json(new { success = false, error = "Remove failed" });
+        }
+    }
 }

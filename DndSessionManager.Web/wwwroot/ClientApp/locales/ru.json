@@ -394,7 +394,27 @@
     "actions": {
       "addToken": "Добавить Токен",
       "removeToken": "Удалить",
-      "save": "Сохранить"
+      "save": "Сохранить",
+      "uploadBackground": "Загрузить Фон",
+      "removeBackground": "Удалить Фон",
+      "editGridSize": "Изменить Размер Сетки"
+    },
+    "gridSettings": {
+      "title": "Настройки Сетки",
+      "width": "Ширина Сетки (клетки)",
+      "height": "Высота Сетки (клетки)",
+      "tokenWarning": "Внимание: Некоторые токены находятся за пределами новой сетки и будут перемещены.",
+      "tokensMoved": "Перемещено токенов: {count}"
+    },
+    "confirmRemoveBackground": "Удалить фоновое изображение карты?",
+    "errors": {
+      "fileTooLarge": "Файл изображения слишком большой (макс. 10МБ)",
+      "uploadFailed": "Ошибка загрузки изображения",
+      "invalidFileType": "Поддерживаются только PNG и JPEG"
     }
+  },
+  "common": {
+    "save": "Сохранить",
+    "cancel": "Отмена"
   }
 }

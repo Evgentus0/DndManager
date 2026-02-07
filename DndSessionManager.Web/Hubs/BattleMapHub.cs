@@ -325,6 +325,84 @@ public class BattleMapHub : Hub
 		}
 	}
 
+	// === Background Operations ===
+
+	public async Task UpdateBackground(string sessionId, string userId, BackgroundDto backgroundData)
+	{
+		if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+			!Guid.TryParse(userId, out var userGuid))
+			return;
+
+		var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
+		if (!_mapService.CanUserEditMap(isMaster))
+		{
+			await Clients.Caller.SendAsync("BattleMapError", "Only the DM can update the background.");
+			return;
+		}
+
+		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		if (map == null)
+			return;
+
+		if (_mapService.UpdateBackgroundImage(map.Id, backgroundData.ImageUrl, backgroundData.Scale, backgroundData.OffsetX, backgroundData.OffsetY))
+		{
+			await Clients.Group($"battlemap_{sessionId}").SendAsync("BackgroundUpdated", new
+			{
+				imageUrl = backgroundData.ImageUrl,
+				scale = backgroundData.Scale,
+				offsetX = backgroundData.OffsetX,
+				offsetY = backgroundData.OffsetY,
+				version = map.Version
+			});
+		}
+	}
+
+	// === Grid Operations ===
+
+	public async Task UpdateGridSize(string sessionId, string userId, int newWidth, int newHeight)
+	{
+		if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+			!Guid.TryParse(userId, out var userGuid))
+			return;
+
+		var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
+		if (!_mapService.CanUserEditMap(isMaster))
+		{
+			await Clients.Caller.SendAsync("BattleMapError", "Only the DM can update grid size.");
+			return;
+		}
+
+		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		if (map == null)
+			return;
+
+		// Validate dimensions
+		if (newWidth < 5 || newWidth > 100 || newHeight < 5 || newHeight > 100)
+		{
+			await Clients.Caller.SendAsync("BattleMapError", "Grid dimensions must be between 5 and 100.");
+			return;
+		}
+
+		var (success, movedTokens) = _mapService.UpdateGridDimensions(map.Id, newWidth, newHeight);
+		if (success)
+		{
+			await Clients.Group($"battlemap_{sessionId}").SendAsync("GridSizeUpdated", new
+			{
+				width = newWidth,
+				height = newHeight,
+				movedTokens = movedTokens.Select(t => new
+				{
+					id = t.TokenId.ToString(),
+					oldX = t.OldX,
+					oldY = t.OldY,
+					newX = t.NewX,
+					newY = t.NewY
+				}).ToList(),
+				version = map.Version
+			});
+		}
+	}
+
 	// === Persistence ===
 
 	public async Task SaveBattleMap(string sessionId, string userId)
@@ -430,4 +508,12 @@ public class GridCellDto
 {
 	public int X { get; set; }
 	public int Y { get; set; }
+}
+
+public class BackgroundDto
+{
+	public string? ImageUrl { get; set; }
+	public double Scale { get; set; } = 1.0;
+	public int OffsetX { get; set; } = 0;
+	public int OffsetY { get; set; } = 0;
 }

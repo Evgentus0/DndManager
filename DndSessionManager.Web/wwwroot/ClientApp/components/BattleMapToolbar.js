@@ -37,6 +37,36 @@ export default {
 					</button>
 				</div>
 
+				<!-- Background controls -->
+				<div class="btn-group me-2" role="group" v-if="isMaster">
+					<button
+						type="button"
+						class="btn btn-sm btn-outline-light"
+						@click="$emit('upload-background')"
+						:title="$t('battlemap.actions.uploadBackground')">
+						<i class="bi bi-image"></i> {{ $t('battlemap.actions.uploadBackground') }}
+					</button>
+					<button
+						type="button"
+						class="btn btn-sm btn-outline-light"
+						@click="$emit('remove-background')"
+						:disabled="!hasBackground"
+						:title="$t('battlemap.actions.removeBackground')">
+						<i class="bi bi-x-circle"></i> {{ $t('battlemap.actions.removeBackground') }}
+					</button>
+				</div>
+
+				<!-- Grid controls -->
+				<div class="btn-group me-2" role="group" v-if="isMaster">
+					<button
+						type="button"
+						class="btn btn-sm btn-outline-light"
+						@click="$emit('edit-grid-size')"
+						:title="$t('battlemap.actions.editGridSize')">
+						<i class="bi bi-grid-3x3-gap"></i> {{ $t('battlemap.actions.editGridSize') }}
+					</button>
+				</div>
+
 				<!-- Additional actions -->
 				<div class="btn-group" role="group" v-if="isMaster">
 					<button
@@ -52,9 +82,10 @@ export default {
 	`,
 	props: {
 		isMaster: { type: Boolean, required: true },
-		canRemove: { type: Boolean, default: false }
+		canRemove: { type: Boolean, default: false },
+		hasBackground: { type: Boolean, default: false }
 	},
-	emits: ['add-token', 'remove-token', 'tool-changed', 'save-map'],
+	emits: ['add-token', 'remove-token', 'tool-changed', 'save-map', 'upload-background', 'remove-background', 'edit-grid-size'],
 	setup(props, { emit }) {
 		const { t } = useI18n()
 

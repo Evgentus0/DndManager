@@ -78,16 +78,45 @@ export default {
 
 			backgroundLayer.destroyChildren()
 
-			const background = new Konva.Rect({
-				x: 0,
-				y: 0,
-				width: canvasWidth.value,
-				height: canvasHeight.value,
-				fill: store.background.color || '#2c3e50'
-			})
-
-			backgroundLayer.add(background)
-			backgroundLayer.batchDraw()
+			if (store.background.imageUrl) {
+				// Load and render background image
+				const imageObj = new Image()
+				imageObj.onload = () => {
+					const konvaImage = new Konva.Image({
+						image: imageObj,
+						x: store.background.offsetX || 0,
+						y: store.background.offsetY || 0,
+						width: canvasWidth.value * (store.background.scale || 1.0),
+						height: canvasHeight.value * (store.background.scale || 1.0),
+					})
+					backgroundLayer.add(konvaImage)
+					backgroundLayer.batchDraw()
+				}
+				imageObj.onerror = () => {
+					// Fallback to solid color on image load error
+					const background = new Konva.Rect({
+						x: 0,
+						y: 0,
+						width: canvasWidth.value,
+						height: canvasHeight.value,
+						fill: '#2c3e50'
+					})
+					backgroundLayer.add(background)
+					backgroundLayer.batchDraw()
+				}
+				imageObj.src = store.background.imageUrl
+			} else {
+				// Solid color background (default)
+				const background = new Konva.Rect({
+					x: 0,
+					y: 0,
+					width: canvasWidth.value,
+					height: canvasHeight.value,
+					fill: '#2c3e50'
+				})
+				backgroundLayer.add(background)
+				backgroundLayer.batchDraw()
+			}
 		}
 
 		function drawGrid() {
@@ -476,6 +505,17 @@ export default {
 				stage.container().style.cursor = 'default'
 			}
 		})
+
+		watch(() => store.background, () => {
+			drawBackground()
+		}, { deep: true })
+
+		watch(() => [store.grid.width, store.grid.height], () => {
+			drawBackground()
+			drawGrid()
+			drawTokens()
+			centerViewport()
+		}, { deep: true })
 
 		onMounted(() => {
 			initializeKonva()

@@ -3,12 +3,14 @@ import { useBattleMapStore } from '../stores/useBattleMapStore.js'
 import { useI18n } from 'vue-i18n'
 import BattleMapCanvas from './BattleMapCanvas.js'
 import BattleMapToolbar from './BattleMapToolbar.js'
+import BattleMapGridSettings from './BattleMapGridSettings.js'
 
 export default {
 	name: 'BattleMapContainer',
 	components: {
 		BattleMapCanvas,
-		BattleMapToolbar
+		BattleMapToolbar,
+		BattleMapGridSettings
 	},
 	template: `
 		<div class="battlemap-wrapper">
@@ -37,10 +39,14 @@ export default {
 					<battle-map-toolbar
 						:is-master="isMaster"
 						:can-remove="!!store.selectedToken"
+						:has-background="!!store.background.imageUrl"
 						@add-token="handleAddToken"
 						@remove-token="handleRemoveToken"
 						@tool-changed="handleToolChanged"
-						@save-map="handleSaveMap">
+						@save-map="handleSaveMap"
+						@upload-background="handleUploadBackground"
+						@remove-background="handleRemoveBackground"
+						@edit-grid-size="handleEditGridSize">
 					</battle-map-toolbar>
 
 					<battle-map-canvas
@@ -85,6 +91,15 @@ export default {
 					</div>
 				</div>
 			</div>
+
+			<!-- Grid Settings Modal -->
+			<battle-map-grid-settings
+				ref="gridSettingsModal"
+				:current-width="store.grid.width"
+				:current-height="store.grid.height"
+				:tokens="store.tokensList"
+				@save="handleGridSizeChange">
+			</battle-map-grid-settings>
 		</div>
 	`,
 	props: {
@@ -98,6 +113,7 @@ export default {
 		const store = useBattleMapStore()
 		const connection = shallowRef(null)
 		const currentTool = ref('select')
+		const gridSettingsModal = ref(null)
 
 		async function initializeSignalR() {
 			connection.value = new signalR.HubConnectionBuilder()
@@ -119,6 +135,18 @@ export default {
 
 			connection.value.on('TokenRemoved', (data) => {
 				store.removeToken(data.tokenId)
+			})
+
+			connection.value.on('BackgroundUpdated', (data) => {
+				store.updateBackground(data.imageUrl, data.scale, data.offsetX, data.offsetY)
+			})
+
+			connection.value.on('GridSizeUpdated', (data) => {
+				store.updateGridSize(data.width, data.height)
+
+				if (data.movedTokens && data.movedTokens.length > 0) {
+					alert(t('battlemap.gridSettings.tokensMoved', { count: data.movedTokens.length }))
+				}
 			})
 
 			connection.value.on('BattleMapError', (message) => {
@@ -182,6 +210,85 @@ export default {
 			}
 		}
 
+		async function handleUploadBackground() {
+			// Create hidden file input
+			const input = document.createElement('input')
+			input.type = 'file'
+			input.accept = 'image/png,image/jpeg,image/jpg'
+
+			input.onchange = async (e) => {
+				const file = e.target.files[0]
+				if (!file) return
+
+				// Validate size (10MB max)
+				if (file.size > 20 * 1024 * 1024) {
+					alert(t('battlemap.errors.fileTooLarge'))
+					return
+				}
+
+				// Upload via FormData
+				const formData = new FormData()
+				formData.append('backgroundImage', file)
+
+				try {
+					const response = await fetch(`/session/UploadBattleMapBackground/${props.sessionId}`, {
+						method: 'POST',
+						body: formData
+					})
+
+					const result = await response.json()
+
+					if (result.success) {
+						// Broadcast via SignalR
+						await connection.value.invoke('UpdateBackground', props.sessionId, props.userId, {
+							imageUrl: result.imageUrl,
+							scale: 1.0,
+							offsetX: 0,
+							offsetY: 0
+						})
+					} else {
+						alert(result.error || t('battlemap.errors.uploadFailed'))
+					}
+				} catch (err) {
+					console.error('Upload error:', err)
+					alert(t('battlemap.errors.uploadFailed'))
+				}
+			}
+
+			input.click()
+		}
+
+		async function handleRemoveBackground() {
+			if (!confirm(t('battlemap.confirmRemoveBackground'))) return
+
+			try {
+				await fetch(`/session/RemoveBattleMapBackground/${props.sessionId}`, {
+					method: 'POST'
+				})
+
+				await connection.value.invoke('UpdateBackground', props.sessionId, props.userId, {
+					imageUrl: null,
+					scale: 1.0,
+					offsetX: 0,
+					offsetY: 0
+				})
+			} catch (err) {
+				console.error('Remove error:', err)
+			}
+		}
+
+		function handleEditGridSize() {
+			gridSettingsModal.value?.show()
+		}
+
+		async function handleGridSizeChange({ width, height }) {
+			try {
+				await connection.value.invoke('UpdateGridSize', props.sessionId, props.userId, width, height)
+			} catch (err) {
+				console.error('Grid size update error:', err)
+			}
+		}
+
 		onMounted(() => {
 			store.initializeMap(props.initialMap)
 			initializeSignalR()
@@ -198,10 +305,15 @@ export default {
 			store,
 			connection,
 			currentTool,
+			gridSettingsModal,
 			handleAddToken,
 			handleRemoveToken,
 			handleToolChanged,
-			handleSaveMap
+			handleSaveMap,
+			handleUploadBackground,
+			handleRemoveBackground,
+			handleEditGridSize,
+			handleGridSizeChange
 		}
 	}
 }

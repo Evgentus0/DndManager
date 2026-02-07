@@ -391,7 +391,27 @@
     "actions": {
       "addToken": "Add Token",
       "removeToken": "Remove",
-      "save": "Save"
+      "save": "Save",
+      "uploadBackground": "Upload Background",
+      "removeBackground": "Remove Background",
+      "editGridSize": "Edit Grid Size"
+    },
+    "gridSettings": {
+      "title": "Grid Settings",
+      "width": "Grid Width (cells)",
+      "height": "Grid Height (cells)",
+      "tokenWarning": "Warning: Some tokens are outside the new grid bounds and will be moved.",
+      "tokensMoved": "{count} token(s) were moved to fit the new grid size"
+    },
+    "confirmRemoveBackground": "Remove battle map background image?",
+    "errors": {
+      "fileTooLarge": "Image file is too large (max 10MB)",
+      "uploadFailed": "Failed to upload image",
+      "invalidFileType": "Only PNG and JPEG images are supported"
     }
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel"
   }
 }

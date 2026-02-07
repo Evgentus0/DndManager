@@ -196,6 +196,82 @@ public class BattleMapService
 		_repository.SaveBattleMap(map);
 	}
 
+	// === Background Operations ===
+
+	public bool UpdateBackgroundImage(Guid mapId, string? imageUrl, double scale = 1.0, int offsetX = 0, int offsetY = 0)
+	{
+		if (!_activeMaps.TryGetValue(mapId, out var map))
+			return false;
+
+		map.Background.ImageUrl = imageUrl;
+		map.Background.Scale = scale;
+		map.Background.OffsetX = offsetX;
+		map.Background.OffsetY = offsetY;
+		map.Version++;
+		map.UpdatedAt = DateTime.UtcNow;
+
+		_repository.SaveBattleMap(map);
+		return true;
+	}
+
+	public bool RemoveBackgroundImage(Guid mapId)
+	{
+		if (!_activeMaps.TryGetValue(mapId, out var map))
+			return false;
+
+		map.Background.ImageUrl = null;
+		map.Background.Scale = 1.0;
+		map.Background.OffsetX = 0;
+		map.Background.OffsetY = 0;
+		map.Version++;
+		map.UpdatedAt = DateTime.UtcNow;
+
+		_repository.SaveBattleMap(map);
+		return true;
+	}
+
+	// === Grid Operations ===
+
+	public (bool Success, List<(Guid TokenId, int OldX, int OldY, int NewX, int NewY)> MovedTokens) UpdateGridDimensions(Guid mapId, int newWidth, int newHeight)
+	{
+		if (!_activeMaps.TryGetValue(mapId, out var map))
+			return (false, new List<(Guid, int, int, int, int)>());
+
+		// Validate dimensions
+		if (newWidth < 5 || newWidth > 100 || newHeight < 5 || newHeight > 100)
+			return (false, new List<(Guid, int, int, int, int)>());
+
+		var movedTokens = new List<(Guid TokenId, int OldX, int OldY, int NewX, int NewY)>();
+
+		// Clamp token positions to new bounds
+		foreach (var token in map.Tokens)
+		{
+			var oldX = token.X;
+			var oldY = token.Y;
+			var newX = Math.Min(token.X, newWidth - 1);
+			var newY = Math.Min(token.Y, newHeight - 1);
+
+			if (oldX != newX || oldY != newY)
+			{
+				token.X = newX;
+				token.Y = newY;
+				movedTokens.Add((token.Id, oldX, oldY, newX, newY));
+			}
+		}
+
+		// Remove fog cells outside new bounds
+		map.FogOfWar.RevealedCells.RemoveAll(c => c.X >= newWidth || c.Y >= newHeight);
+
+		// Update grid dimensions
+		map.Grid.Width = newWidth;
+		map.Grid.Height = newHeight;
+		map.Version++;
+		map.UpdatedAt = DateTime.UtcNow;
+
+		_repository.SaveBattleMap(map);
+		return (true, movedTokens);
+	}
+
 	// === Permission Checks ===
 
 	public bool CanUserMoveToken(BattleToken token, Guid userId, bool isMaster)

@@ -169,6 +169,22 @@ export const useBattleMapStore = defineStore('battleMap', () => {
 		}
 	}
 
+	function updateBackground(imageUrl, scale = 1.0, offsetX = 0, offsetY = 0) {
+		background.value = {
+			imageUrl,
+			scale,
+			offsetX,
+			offsetY
+		}
+		version.value++
+	}
+
+	function updateGridSize(newWidth, newHeight) {
+		grid.value.width = newWidth
+		grid.value.height = newHeight
+		version.value++
+	}
+
 	return {
 		// State
 		mapId,
@@ -204,6 +220,8 @@ export const useBattleMapStore = defineStore('battleMap', () => {
 		setSelectedTool,
 		updateViewport,
 		snapToGrid,
-		gridToPixel
+		gridToPixel,
+		updateBackground,
+		updateGridSize
 	}
 })
