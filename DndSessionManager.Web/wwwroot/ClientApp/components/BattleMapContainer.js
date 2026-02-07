@@ -37,14 +37,9 @@ export default {
 					<battle-map-toolbar
 						:is-master="isMaster"
 						:can-remove="!!store.selectedToken"
-						:fog-enabled="store.fogOfWar.enabled"
 						@add-token="handleAddToken"
 						@remove-token="handleRemoveToken"
 						@tool-changed="handleToolChanged"
-						@wall-type-changed="handleWallTypeChanged"
-						@fog-mode-changed="handleFogModeChanged"
-						@toggle-fog="handleToggleFog"
-						@clear-walls="handleClearWalls"
 						@save-map="handleSaveMap">
 					</battle-map-toolbar>
 
@@ -54,8 +49,6 @@ export default {
 						:is-master="isMaster"
 						:connection="connection"
 						:current-tool="currentTool"
-						:wall-type="currentWallType"
-						:fog-mode="currentFogMode"
 						class="mt-3">
 					</battle-map-canvas>
 
@@ -105,8 +98,6 @@ export default {
 		const store = useBattleMapStore()
 		const connection = shallowRef(null)
 		const currentTool = ref('select')
-		const currentWallType = ref('Solid')
-		const currentFogMode = ref('reveal')
 
 		async function initializeSignalR() {
 			connection.value = new signalR.HubConnectionBuilder()
@@ -128,25 +119,6 @@ export default {
 
 			connection.value.on('TokenRemoved', (data) => {
 				store.removeToken(data.tokenId)
-			})
-
-			connection.value.on('WallAdded', (data) => {
-				store.addWall(data.wall)
-			})
-
-			connection.value.on('WallRemoved', (data) => {
-				store.removeWall(data.wallId)
-			})
-
-			connection.value.on('FogOfWarUpdated', (data) => {
-				// Update revealed cells from server
-				// Note: server sends full list of revealed cells
-				// Server uses capital X, Y (GridCellDto), convert to lowercase for store
-				store.fogOfWar.revealedCells = data.revealedCells.map(c => ({ x: c.X, y: c.Y }))
-			})
-
-			connection.value.on('FogEnabledChanged', (data) => {
-				store.fogOfWar.enabled = data.enabled
 			})
 
 			connection.value.on('BattleMapError', (message) => {
@@ -201,21 +173,6 @@ export default {
 			currentTool.value = tool
 		}
 
-		function handleWallTypeChanged(wallType) {
-			currentWallType.value = wallType
-		}
-
-		async function handleClearWalls() {
-			if (!confirm('Are you sure you want to clear all walls?')) return
-
-			try {
-				// TODO: Implement clear all walls on server
-				console.log('Clear walls not implemented yet')
-			} catch (err) {
-				console.error('Error clearing walls:', err)
-			}
-		}
-
 		async function handleSaveMap() {
 			try {
 				// Maps are auto-saved on every change
@@ -223,25 +180,6 @@ export default {
 			} catch (err) {
 				console.error('Error saving map:', err)
 			}
-		}
-
-		async function handleToggleFog() {
-			const newEnabled = !store.fogOfWar.enabled
-
-			try {
-				// Update local state optimistically
-				store.fogOfWar.enabled = newEnabled
-
-				await connection.value.invoke('ToggleFog', props.sessionId, props.userId, newEnabled)
-			} catch (err) {
-				console.error('Error toggling fog:', err)
-				// Rollback on error
-				store.fogOfWar.enabled = !newEnabled
-			}
-		}
-
-		function handleFogModeChanged(mode) {
-			currentFogMode.value = mode
 		}
 
 		onMounted(() => {
@@ -260,15 +198,9 @@ export default {
 			store,
 			connection,
 			currentTool,
-			currentWallType,
-			currentFogMode,
 			handleAddToken,
 			handleRemoveToken,
 			handleToolChanged,
-			handleWallTypeChanged,
-			handleFogModeChanged,
-			handleToggleFog,
-			handleClearWalls,
 			handleSaveMap
 		}
 	}

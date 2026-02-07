@@ -1,6 +1,5 @@
 import { ref, onMounted, onUnmounted, watch, computed } from 'vue'
 import { useBattleMapStore } from '../stores/useBattleMapStore.js'
-import { useLineOfSight } from '../composables/useLineOfSight.js'
 import Konva from 'konva'
 
 export default {
@@ -15,35 +14,19 @@ export default {
 		userId: { type: String, required: true },
 		isMaster: { type: Boolean, required: true },
 		connection: { type: Object, required: false },
-		currentTool: { type: String, default: 'select' },
-		wallType: { type: String, default: 'Solid' },
-		fogMode: { type: String, default: 'reveal' }
+		currentTool: { type: String, default: 'select' }
 	},
 	emits: ['token-moved'],
 	setup(props, { emit }) {
 		const store = useBattleMapStore()
-		const { calculateVisibleCells } = useLineOfSight()
 		const containerRef = ref(null)
 
 		let stage = null
 		let backgroundLayer = null
 		let gridLayer = null
-		let wallsLayer = null
-		let fogLayer = null
 		let tokensLayer = null
 
 		const tokenShapes = new Map() // tokenId -> Konva.Group
-		const wallShapes = new Map() // wallId -> Konva.Line
-
-		// Wall drawing state
-		const isDrawingWall = ref(false)
-		const wallStartPoint = ref(null)
-		let tempWallLine = null
-
-		// Fog drawing state
-		const isDrawingFog = ref(false)
-		const fogBrushRadius = ref(2) // cells
-		const fogPaintedCells = new Set() // Track cells painted in current stroke
 
 		// Movement throttling
 		const MOVE_THROTTLE_MS = 50 // 20 updates/sec max
@@ -72,31 +55,19 @@ export default {
 			// Create layers (order matters for z-index)
 			backgroundLayer = new Konva.Layer({ listening: false })
 			gridLayer = new Konva.Layer({ listening: false })
-			wallsLayer = new Konva.Layer({ listening: false })
-			fogLayer = new Konva.Layer({ listening: false })
 			tokensLayer = new Konva.Layer()
 
 			stage.add(backgroundLayer)
 			stage.add(gridLayer)
-			stage.add(wallsLayer)
-			stage.add(fogLayer)
 			stage.add(tokensLayer)
 
 			// Draw initial content
 			drawBackground()
 			drawGrid()
 			drawTokens()
-			drawWalls()
-			drawFogOfWar()
 
 			// Setup zoom and pan
 			setupZoomAndPan()
-
-			// Setup wall drawing
-			setupWallDrawing()
-
-			// Setup fog drawing
-			setupFogDrawing()
 
 			// Center viewport
 			centerViewport()
@@ -259,9 +230,6 @@ export default {
 					// Send to server (throttled)
 					try {
 						await sendTokenMove(token.id, snappedPos.x, snappedPos.y)
-
-						// Auto-reveal fog of war for player tokens
-						await autoRevealOnTokenMove(token, snappedPos.x, snappedPos.y)
 					} catch (err) {
 						// Rollback on error
 						store.moveToken(token.id, originalPos.x, originalPos.y)
@@ -331,350 +299,6 @@ export default {
 			tokensLayer.batchDraw()
 		}
 
-		function drawWalls() {
-			if (!wallsLayer) return
-
-			// Remove walls that no longer exist
-			for (const [wallId, shape] of wallShapes.entries()) {
-				if (!store.walls[wallId]) {
-					shape.destroy()
-					wallShapes.delete(wallId)
-				}
-			}
-
-			// Add or update walls
-			for (const wall of store.wallsList) {
-				if (!wallShapes.has(wall.id)) {
-					createWallShape(wall)
-				}
-			}
-
-			wallsLayer.batchDraw()
-		}
-
-		function createWallShape(wall) {
-			const cellSize = store.grid.cellSizePixels
-
-			const line = new Konva.Line({
-				points: [
-					wall.x1 * cellSize,
-					wall.y1 * cellSize,
-					wall.x2 * cellSize,
-					wall.y2 * cellSize
-				],
-				stroke: wall.type === 'Solid' ? '#e74c3c' : '#f39c12',
-				strokeWidth: 4,
-				lineCap: 'round'
-			})
-
-			wallShapes.set(wall.id, line)
-			wallsLayer.add(line)
-		}
-
-		function drawFogOfWar() {
-			if (!fogLayer) return
-
-			fogLayer.destroyChildren()
-
-			// Only render fog if enabled
-			if (!store.fogOfWar.enabled) {
-				fogLayer.batchDraw()
-				return
-			}
-
-			const cellSize = store.grid.cellSizePixels
-			const width = canvasWidth.value
-			const height = canvasHeight.value
-
-			// Create full black rectangle covering the entire map
-			const fogRect = new Konva.Rect({
-				x: 0,
-				y: 0,
-				width: width,
-				height: height,
-				fill: 'black',
-				opacity: 0.85
-			})
-
-			fogLayer.add(fogRect)
-
-			// Create a group for revealed cells with destination-out composite
-			const revealedGroup = new Konva.Group({
-				globalCompositeOperation: 'destination-out'
-			})
-
-			// Draw revealed cells as white rectangles (will "cut out" from fog)
-			store.fogOfWar.revealedCells.forEach(cell => {
-				const revealedRect = new Konva.Rect({
-					x: cell.x * cellSize,
-					y: cell.y * cellSize,
-					width: cellSize,
-					height: cellSize,
-					fill: 'white',
-					opacity: 1
-				})
-
-				revealedGroup.add(revealedRect)
-			})
-
-			fogLayer.add(revealedGroup)
-			fogLayer.batchDraw()
-
-			// Cache for performance
-			fogLayer.cache()
-		}
-
-		function snapToGridIntersection(pixelX, pixelY) {
-			const cellSize = store.grid.cellSizePixels
-			const gridX = Math.round(pixelX / cellSize)
-			const gridY = Math.round(pixelY / cellSize)
-
-			// Clamp to grid bounds (intersections go from 0 to width/height)
-			const clampedX = Math.max(0, Math.min(store.grid.width, gridX))
-			const clampedY = Math.max(0, Math.min(store.grid.height, gridY))
-
-			return { x: clampedX, y: clampedY }
-		}
-
-		function setupWallDrawing() {
-			if (!stage || !wallsLayer) return
-
-			stage.on('click', (e) => {
-				// Only handle wall drawing in wall mode
-				if (props.currentTool !== 'wall' || !props.isMaster) return
-
-				// Ignore clicks on tokens
-				if (e.target !== stage && e.target.getLayer() === tokensLayer) return
-
-				const pos = stage.getPointerPosition()
-				const transform = stage.getAbsoluteTransform().copy().invert()
-				const localPos = transform.point(pos)
-
-				const snapped = snapToGridIntersection(localPos.x, localPos.y)
-
-				if (!isDrawingWall.value) {
-					// Start drawing wall
-					wallStartPoint.value = snapped
-					isDrawingWall.value = true
-
-					// Create temporary line
-					const cellSize = store.grid.cellSizePixels
-					tempWallLine = new Konva.Line({
-						points: [
-							snapped.x * cellSize,
-							snapped.y * cellSize,
-							snapped.x * cellSize,
-							snapped.y * cellSize
-						],
-						stroke: props.wallType === 'Solid' ? '#e74c3c' : '#f39c12',
-						strokeWidth: 4,
-						lineCap: 'round',
-						opacity: 0.6,
-						dash: [10, 5]
-					})
-
-					wallsLayer.add(tempWallLine)
-					wallsLayer.batchDraw()
-				} else {
-					// Finish drawing wall
-					finishWallDrawing(snapped)
-				}
-			})
-
-			stage.on('mousemove', () => {
-				if (!isDrawingWall.value || !tempWallLine) return
-
-				const pos = stage.getPointerPosition()
-				const transform = stage.getAbsoluteTransform().copy().invert()
-				const localPos = transform.point(pos)
-
-				const snapped = snapToGridIntersection(localPos.x, localPos.y)
-				const cellSize = store.grid.cellSizePixels
-
-				tempWallLine.points([
-					wallStartPoint.value.x * cellSize,
-					wallStartPoint.value.y * cellSize,
-					snapped.x * cellSize,
-					snapped.y * cellSize
-				])
-
-				wallsLayer.batchDraw()
-			})
-		}
-
-		async function finishWallDrawing(endPoint) {
-			if (!wallStartPoint.value) return
-
-			const start = wallStartPoint.value
-
-			// Don't create wall if start and end are the same
-			if (start.x === endPoint.x && start.y === endPoint.y) {
-				cancelWallDrawing()
-				return
-			}
-
-			// Create wall data
-			const wallData = {
-				x1: start.x,
-				y1: start.y,
-				x2: endPoint.x,
-				y2: endPoint.y,
-				type: props.wallType,
-				blocksLight: true,
-				blocksMovement: true
-			}
-
-			// Remove temporary line
-			if (tempWallLine) {
-				tempWallLine.destroy()
-				tempWallLine = null
-			}
-
-			// Reset state
-			isDrawingWall.value = false
-			wallStartPoint.value = null
-
-			// Send to server
-			try {
-				if (props.connection) {
-					await props.connection.invoke('AddWall', props.sessionId, props.userId, wallData)
-				}
-			} catch (err) {
-				console.error('Error adding wall:', err)
-			}
-
-			wallsLayer.batchDraw()
-		}
-
-		function cancelWallDrawing() {
-			if (tempWallLine) {
-				tempWallLine.destroy()
-				tempWallLine = null
-			}
-
-			isDrawingWall.value = false
-			wallStartPoint.value = null
-			wallsLayer.batchDraw()
-		}
-
-		function setupFogDrawing() {
-			if (!stage) return
-
-			stage.on('mousedown', (e) => {
-				// Only handle fog drawing in fog mode
-				if (props.currentTool !== 'fog' || !props.isMaster) return
-
-				// Ignore clicks on tokens
-				if (e.target !== stage && e.target.getLayer() === tokensLayer) return
-
-				isDrawingFog.value = true
-				fogPaintedCells.clear()
-
-				// Paint initial cell
-				paintFogCells(e)
-			})
-
-			stage.on('mousemove', (e) => {
-				if (!isDrawingFog.value) return
-
-				// Paint cells as we drag
-				paintFogCells(e)
-			})
-
-			stage.on('mouseup', async () => {
-				if (!isDrawingFog.value) return
-
-				isDrawingFog.value = false
-
-				// Send accumulated cells to server
-				if (fogPaintedCells.size > 0) {
-					const cells = Array.from(fogPaintedCells).map(key => {
-						const [x, y] = key.split(',').map(Number)
-						return { x, y }
-					})
-
-					try {
-						if (props.connection) {
-							if (props.fogMode === 'reveal') {
-								await props.connection.invoke('RevealArea', props.sessionId, props.userId, cells)
-							} else {
-								await props.connection.invoke('ShroudArea', props.sessionId, props.userId, cells)
-							}
-						}
-					} catch (err) {
-						console.error('Error updating fog:', err)
-					}
-				}
-
-				fogPaintedCells.clear()
-			})
-		}
-
-		function paintFogCells(e) {
-			const pos = stage.getPointerPosition()
-			const transform = stage.getAbsoluteTransform().copy().invert()
-			const localPos = transform.point(pos)
-
-			const cellSize = store.grid.cellSizePixels
-			const centerX = Math.floor(localPos.x / cellSize)
-			const centerY = Math.floor(localPos.y / cellSize)
-
-			// Paint cells in a circular brush
-			const radius = fogBrushRadius.value
-			for (let dx = -radius; dx <= radius; dx++) {
-				for (let dy = -radius; dy <= radius; dy++) {
-					// Circular brush shape
-					if (dx * dx + dy * dy <= radius * radius) {
-						const x = centerX + dx
-						const y = centerY + dy
-
-						// Check bounds
-						if (x >= 0 && x < store.grid.width && y >= 0 && y < store.grid.height) {
-							const cellKey = `${x},${y}`
-
-							// Track cell for batch update
-							fogPaintedCells.add(cellKey)
-
-							// Optimistic update
-							if (props.fogMode === 'reveal') {
-								store.revealCells([{ x, y }])
-							} else {
-								store.shroudCells([{ x, y }])
-							}
-						}
-					}
-				}
-			}
-		}
-
-		async function autoRevealOnTokenMove(token, x, y) {
-			// Only auto-reveal if:
-			// 1. Fog is enabled
-			// 2. Token is not DM-only
-			// 3. Token has a vision radius (default 10 if not specified)
-			if (!store.fogOfWar.enabled || token.isDmOnly) {
-				return
-			}
-
-			try {
-				// Calculate visible cells using LOS
-				const visibleCells = calculateVisibleCells({
-					tokenX: x,
-					tokenY: y,
-					visionRadius: token.visionRadius || 10,
-					walls: store.wallsList,
-					gridWidth: store.grid.width,
-					gridHeight: store.grid.height
-				})
-
-				// Send to server for persistence
-				if (props.connection && visibleCells.length > 0) {
-					await props.connection.invoke('RevealArea', props.sessionId, props.userId, visibleCells)
-				}
-			} catch (err) {
-				console.error('Error auto-revealing fog:', err)
-			}
-		}
 
 		function isTokenVisibleToPlayer(token) {
 			// Master sees all tokens
@@ -687,17 +311,8 @@ export default {
 				return false
 			}
 
-			// If fog is disabled, all non-DM tokens are visible
-			if (!store.fogOfWar.enabled) {
-				return true
-			}
-
-			// Check if token position is in revealed fog cells
-			const isRevealed = store.fogOfWar.revealedCells.some(
-				cell => cell.x === token.x && cell.y === token.y
-			)
-
-			return isRevealed
+			// All non-DM tokens are visible to players (no fog checks)
+			return true
 		}
 
 		function canDragToken(token) {
@@ -851,37 +466,14 @@ export default {
 			drawTokens()
 		}, { deep: true })
 
-		watch(() => store.wallsList, () => {
-			drawWalls()
-		}, { deep: true })
-
 		watch(() => store.selectedTokenId, () => {
 			highlightSelectedToken()
 		})
 
-		watch(() => store.fogOfWar, () => {
-			// Clear cache before redrawing
-			if (fogLayer) {
-				fogLayer.clearCache()
-			}
-			drawFogOfWar()
-		}, { deep: true })
-
-		watch(() => props.currentTool, (newTool) => {
-			// Cancel wall drawing when switching tools
-			if (newTool !== 'wall') {
-				cancelWallDrawing()
-			}
-
+		watch(() => props.currentTool, () => {
 			// Update cursor based on tool
 			if (stage) {
-				if (newTool === 'wall') {
-					stage.container().style.cursor = 'crosshair'
-				} else if (newTool === 'fog') {
-					stage.container().style.cursor = 'cell'
-				} else {
-					stage.container().style.cursor = 'default'
-				}
+				stage.container().style.cursor = 'default'
 			}
 		})
 
