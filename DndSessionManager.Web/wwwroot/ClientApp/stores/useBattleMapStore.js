@@ -185,6 +185,11 @@ export const useBattleMapStore = defineStore('battleMap', () => {
 		version.value++
 	}
 
+	function updateGridColor(newColor) {
+		grid.value.gridColor = newColor
+		version.value++
+	}
+
 	return {
 		// State
 		mapId,
@@ -222,6 +227,7 @@ export const useBattleMapStore = defineStore('battleMap', () => {
 		snapToGrid,
 		gridToPixel,
 		updateBackground,
-		updateGridSize
+		updateGridSize,
+		updateGridColor
 	}
 })

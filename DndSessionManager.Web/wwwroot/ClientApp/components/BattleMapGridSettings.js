@@ -30,7 +30,15 @@ export default {
 								min="5"
 								max="100">
 						</div>
-						<div class="alert alert-warning" v-if="willMoveTokens">
+						<div class="mb-3">
+					<label class="form-label">{{ $t('battlemap.gridSettings.color') }}</label>
+					<input
+						type="color"
+						class="form-control form-control-color"
+						v-model="localColor"
+						style="width: 100%; height: 50px;">
+				</div>
+				<div class="alert alert-warning" v-if="willMoveTokens">
 							<i class="bi bi-exclamation-triangle"></i>
 							{{ $t('battlemap.gridSettings.tokenWarning') }}
 						</div>
@@ -50,6 +58,7 @@ export default {
 	props: {
 		currentWidth: { type: Number, required: true },
 		currentHeight: { type: Number, required: true },
+		currentColor: { type: String, required: true },
 		tokens: { type: Array, default: () => [] }
 	},
 	emits: ['save'],
@@ -58,6 +67,7 @@ export default {
 		const modalRef = ref(null)
 		const localWidth = ref(props.currentWidth)
 		const localHeight = ref(props.currentHeight)
+		const localColor = ref(props.currentColor)
 		let modalInstance = null
 
 		const willMoveTokens = computed(() => {
@@ -69,6 +79,7 @@ export default {
 		function show() {
 			localWidth.value = props.currentWidth
 			localHeight.value = props.currentHeight
+			localColor.value = props.currentColor
 			if (modalRef.value) {
 				modalInstance = new bootstrap.Modal(modalRef.value)
 				modalInstance.show()
@@ -82,7 +93,11 @@ export default {
 		}
 
 		function handleSave() {
-			emit('save', { width: localWidth.value, height: localHeight.value })
+			emit('save', {
+				width: localWidth.value,
+				height: localHeight.value,
+				color: localColor.value
+			})
 			hide()
 		}
 
@@ -98,6 +113,7 @@ export default {
 			modalRef,
 			localWidth,
 			localHeight,
+			localColor,
 			willMoveTokens,
 			show,
 			hide,

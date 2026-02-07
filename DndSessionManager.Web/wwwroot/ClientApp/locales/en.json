@@ -400,6 +400,7 @@
       "title": "Grid Settings",
       "width": "Grid Width (cells)",
       "height": "Grid Height (cells)",
+      "color": "Grid Color",
       "tokenWarning": "Warning: Some tokens are outside the new grid bounds and will be moved.",
       "tokensMoved": "{count} token(s) were moved to fit the new grid size"
     },

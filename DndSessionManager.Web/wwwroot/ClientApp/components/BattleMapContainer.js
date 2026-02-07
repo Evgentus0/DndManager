@@ -97,6 +97,7 @@ export default {
 				ref="gridSettingsModal"
 				:current-width="store.grid.width"
 				:current-height="store.grid.height"
+				:current-color="store.grid.gridColor"
 				:tokens="store.tokensList"
 				@save="handleGridSizeChange">
 			</battle-map-grid-settings>
@@ -149,7 +150,11 @@ export default {
 				}
 			})
 
-			connection.value.on('BattleMapError', (message) => {
+			connection.value.on('GridColorUpdated', (data) => {
+			store.updateGridColor(data.color)
+		})
+
+		connection.value.on('BattleMapError', (message) => {
 				alert(message)
 			})
 
@@ -281,9 +286,17 @@ export default {
 			gridSettingsModal.value?.show()
 		}
 
-		async function handleGridSizeChange({ width, height }) {
+		async function handleGridSizeChange({ width, height, color }) {
 			try {
+				// Update dimensions if changed
+			if (width !== store.grid.width || height !== store.grid.height) {
 				await connection.value.invoke('UpdateGridSize', props.sessionId, props.userId, width, height)
+			}
+
+			// Update color if changed
+			if (color !== store.grid.gridColor) {
+				await connection.value.invoke('UpdateGridColor', props.sessionId, props.userId, color)
+			}
 			} catch (err) {
 				console.error('Grid size update error:', err)
 			}

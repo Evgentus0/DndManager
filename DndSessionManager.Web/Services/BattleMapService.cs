@@ -272,6 +272,23 @@ public class BattleMapService
 		return (true, movedTokens);
 	}
 
+	public bool UpdateGridColor(Guid mapId, string newColor)
+	{
+		if (!_activeMaps.TryGetValue(mapId, out var map))
+			return false;
+
+		// Validate hex color format
+		if (string.IsNullOrWhiteSpace(newColor) || !newColor.StartsWith("#"))
+			return false;
+
+		map.Grid.GridColor = newColor;
+		map.Version++;
+		map.UpdatedAt = DateTime.UtcNow;
+
+		_repository.SaveBattleMap(map);
+		return true;
+	}
+
 	// === Permission Checks ===
 
 	public bool CanUserMoveToken(BattleToken token, Guid userId, bool isMaster)

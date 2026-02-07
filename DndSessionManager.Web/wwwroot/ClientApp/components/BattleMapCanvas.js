@@ -132,7 +132,7 @@ export default {
 			for (let i = 0; i <= store.grid.width; i++) {
 				const line = new Konva.Line({
 					points: [i * cellSize, 0, i * cellSize, height],
-					stroke: '#34495e',
+					stroke: store.grid.gridColor,
 					strokeWidth: 1,
 					opacity: 0.5
 				})
@@ -143,7 +143,7 @@ export default {
 			for (let i = 0; i <= store.grid.height; i++) {
 				const line = new Konva.Line({
 					points: [0, i * cellSize, width, i * cellSize],
-					stroke: '#34495e',
+					stroke: store.grid.gridColor,
 					strokeWidth: 1,
 					opacity: 0.5
 				})
@@ -516,6 +516,10 @@ export default {
 			drawTokens()
 			centerViewport()
 		}, { deep: true })
+
+		watch(() => store.grid.gridColor, () => {
+			drawGrid()
+		})
 
 		onMounted(() => {
 			initializeKonva()

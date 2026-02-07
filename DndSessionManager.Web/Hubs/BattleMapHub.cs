@@ -403,6 +403,33 @@ public class BattleMapHub : Hub
 		}
 	}
 
+	public async Task UpdateGridColor(string sessionId, string userId, string newColor)
+	{
+		if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+			!Guid.TryParse(userId, out var userGuid))
+			return;
+
+		var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
+		if (!_mapService.CanUserEditMap(isMaster))
+		{
+			await Clients.Caller.SendAsync("BattleMapError", "Only the DM can update grid color.");
+			return;
+		}
+
+		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		if (map == null)
+			return;
+
+		if (_mapService.UpdateGridColor(map.Id, newColor))
+		{
+			await Clients.Group($"battlemap_{sessionId}").SendAsync("GridColorUpdated", new
+			{
+				color = newColor,
+				version = map.Version
+			});
+		}
+	}
+
 	// === Persistence ===
 
 	public async Task SaveBattleMap(string sessionId, string userId)
