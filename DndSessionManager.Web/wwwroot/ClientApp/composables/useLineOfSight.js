@@ -1,4 +1,4 @@
-import ROT from 'rot-js'
+import * as ROT from 'rot-js'
 
 /**
  * Composable for Line-of-Sight calculations using ROT.js
