@@ -3,7 +3,8 @@
     "allow": [
       "Bash(move lobbyMasterNotesPanel.css markdownEditorPanel.css)",
       "Bash(npm install:*)",
-      "WebFetch(domain:unpkg.com)"
+      "WebFetch(domain:unpkg.com)",
+      "WebFetch(domain:konvajs.org)"
     ],
     "defaultMode": "bypassPermissions"
   },

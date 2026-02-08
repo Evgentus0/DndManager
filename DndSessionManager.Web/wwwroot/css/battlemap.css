@@ -1,0 +1,26 @@
+/* Battle Map Canvas - Mobile Touch Support */
+
+/* Disable browser touch behaviors */
+.battle-map-canvas {
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    height: 600px;
+}
+
+/* Tablet breakpoint */
+@media (max-width: 768px) {
+    .battle-map-canvas {
+        height: calc(100vh - 250px);
+        min-height: 400px;
+    }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 576px) {
+    .battle-map-canvas {
+        height: calc(100vh - 200px);
+        min-height: 350px;
+    }
+}

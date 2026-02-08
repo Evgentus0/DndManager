@@ -6,7 +6,7 @@ export default {
 	name: 'BattleMapCanvas',
 	template: `
 		<div>
-			<div ref="containerRef" class="battle-map-canvas" style="width: 100%; height: 600px; background: #1a1a1a; border-radius: 5px; overflow: hidden;"></div>
+			<div ref="containerRef" class="battle-map-canvas" style="width: 100%; background: #1a1a1a; border-radius: 5px; overflow: hidden;"></div>
 		</div>
 	`,
 	props: {
@@ -85,6 +85,7 @@ export default {
 
 			// Setup zoom and pan
 			setupZoomAndPan()
+			setupTouchGestures()
 
 			// Center viewport
 			centerViewport()
@@ -527,75 +528,233 @@ export default {
 			return { x: clampedX, y: clampedY }
 		}
 
-		function setupZoomAndPan() {
-			if (!stage) return
+	/**
+	 * Apply zoom to stage centered on pointer position
+	 * @param {number} newScale - Desired scale value
+	 * @param {{x: number, y: number}} pointerPosition - Point to center zoom on
+	 */
+	function applyZoom(newScale, pointerPosition) {
+		if (!stage) return
 
-			const scaleBy = 1.1
-			let isPanning = false
-			let lastPos = { x: 0, y: 0 }
+		const oldScale = stage.scaleX()
+		const clampedScale = Math.max(0.2, Math.min(3, newScale))
 
-			// Zoom with mouse wheel
-			stage.on('wheel', (e) => {
-				e.evt.preventDefault()
-				e.evt.stopPropagation()
-
-				const oldScale = stage.scaleX()
-				const pointer = stage.getPointerPosition()
-
-				const mousePointTo = {
-					x: (pointer.x - stage.x()) / oldScale,
-					y: (pointer.y - stage.y()) / oldScale
-				}
-
-				const direction = e.evt.deltaY > 0 ? -1 : 1
-				const newScale = direction > 0 ? oldScale * scaleBy : oldScale / scaleBy
-
-				// Limit zoom range
-				const clampedScale = Math.max(0.2, Math.min(3, newScale))
-
-				stage.scale({ x: clampedScale, y: clampedScale })
-
-				const newPos = {
-					x: pointer.x - mousePointTo.x * clampedScale,
-					y: pointer.y - mousePointTo.y * clampedScale
-				}
-
-				stage.position(newPos)
-			})
-
-			// Pan with Ctrl+Drag or middle mouse button
-			stage.on('mousedown', (e) => {
-				if (e.evt.ctrlKey || e.evt.button === 1) {
-					e.evt.preventDefault() // Prevent default auto-scroll
-					isPanning = true
-					lastPos = stage.getPointerPosition()
-					stage.container().style.cursor = 'grabbing'
-				}
-			})
-
-			stage.on('mousemove', () => {
-				if (!isPanning) return
-
-				const pos = stage.getPointerPosition()
-				const dx = pos.x - lastPos.x
-				const dy = pos.y - lastPos.y
-
-				stage.x(stage.x() + dx)
-				stage.y(stage.y() + dy)
-
-				lastPos = pos
-			})
-
-			stage.on('mouseup', () => {
-				isPanning = false
-				stage.container().style.cursor = 'default'
-			})
-
-			// Prevent context menu on right click
-			stage.on('contextmenu', (e) => {
-				e.evt.preventDefault()
-			})
+		const mousePointTo = {
+			x: (pointerPosition.x - stage.x()) / oldScale,
+			y: (pointerPosition.y - stage.y()) / oldScale
 		}
+
+		stage.scale({ x: clampedScale, y: clampedScale })
+
+		const newPos = {
+			x: pointerPosition.x - mousePointTo.x * clampedScale,
+			y: pointerPosition.y - mousePointTo.y * clampedScale
+		}
+
+		stage.position(newPos)
+		stage.batchDraw()
+	}
+
+	/**
+	 * Apply panning to stage
+	 * @param {number} dx - Delta x movement
+	 * @param {number} dy - Delta y movement
+	 */
+	function applyPan(dx, dy) {
+		if (!stage) return
+
+		stage.x(stage.x() + dx)
+		stage.y(stage.y() + dy)
+		stage.batchDraw()
+	}
+	function setupZoomAndPan() {
+		if (!stage) return
+
+		const scaleBy = 1.1
+		let isPanning = false
+		let lastPos = { x: 0, y: 0 }
+
+		// Zoom with mouse wheel
+		stage.on('wheel', (e) => {
+			e.evt.preventDefault()
+			e.evt.stopPropagation()
+
+			const oldScale = stage.scaleX()
+			const pointer = stage.getPointerPosition()
+			const direction = e.evt.deltaY > 0 ? -1 : 1
+			const newScale = direction > 0 ? oldScale * scaleBy : oldScale / scaleBy
+
+			applyZoom(newScale, pointer)
+		})
+
+		// Pan with Ctrl+Drag or middle mouse button
+		stage.on('mousedown', (e) => {
+			if (e.evt.ctrlKey || e.evt.button === 1) {
+				e.evt.preventDefault() // Prevent default auto-scroll
+				isPanning = true
+				lastPos = stage.getPointerPosition()
+				stage.container().style.cursor = 'grabbing'
+			}
+		})
+
+		stage.on('mousemove', () => {
+			if (!isPanning) return
+
+			const pos = stage.getPointerPosition()
+			const dx = pos.x - lastPos.x
+			const dy = pos.y - lastPos.y
+
+			applyPan(dx, dy)
+			lastPos = pos
+		})
+
+		stage.on('mouseup', () => {
+			isPanning = false
+			stage.container().style.cursor = 'default'
+		})
+
+		// Prevent context menu on right click
+		stage.on('contextmenu', (e) => {
+			e.evt.preventDefault()
+		})
+	}
+
+	function setupTouchGestures() {
+		if (!stage) return
+
+		// Helper functions for touch calculations
+		function getDistance(p1, p2) {
+			return Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2))
+		}
+
+		function getCenter(p1, p2) {
+			return {
+				x: (p1.x + p2.x) / 2,
+				y: (p1.y + p2.y) / 2
+			}
+		}
+
+		// Touch state variables
+		let lastCenter = null
+		let lastDist = 0
+		let dragStopped = false
+		let isTouchPanning = false
+		let lastTouchPos = null
+
+		// Touch move handler (handles both pinch-zoom and single-finger pan)
+		stage.on('touchmove', (e) => {
+			e.evt.preventDefault() // Prevent browser scrolling and zoom
+
+			const touches = e.evt.touches
+			const touch1 = touches[0]
+			const touch2 = touches[1]
+
+			// TWO-FINGER PINCH ZOOM
+			if (touch1 && touch2) {
+				// Stop any active panning
+				if (isTouchPanning) {
+					isTouchPanning = false
+					lastTouchPos = null
+				}
+
+				// Stop any token dragging
+				if (stage.isDragging()) {
+					dragStopped = true
+					stage.stopDrag()
+				}
+
+				const rect = stage.container().getBoundingClientRect()
+				const p1 = {
+					x: touch1.clientX - rect.left,
+					y: touch1.clientY - rect.top
+				}
+				const p2 = {
+					x: touch2.clientX - rect.left,
+					y: touch2.clientY - rect.top
+				}
+
+				// Initialize on first two-finger touch
+				if (!lastCenter) {
+					lastCenter = getCenter(p1, p2)
+					lastDist = getDistance(p1, p2)
+					return
+				}
+
+				const newCenter = getCenter(p1, p2)
+				const newDist = getDistance(p1, p2)
+
+				// Calculate new scale based on distance change
+				const oldScale = stage.scaleX()
+				const scaleChange = newDist / lastDist
+				const newScale = oldScale * scaleChange
+
+				// Apply zoom centered on pinch point
+				applyZoom(newScale, newCenter)
+
+				// Apply pan based on center movement
+				const dx = newCenter.x - lastCenter.x
+				const dy = newCenter.y - lastCenter.y
+				applyPan(dx, dy)
+
+				lastDist = newDist
+				lastCenter = newCenter
+			}
+			// SINGLE-FINGER PAN (only if not dragging a token)
+			else if (touch1 && !touch2 && !stage.isDragging()) {
+				const rect = stage.container().getBoundingClientRect()
+				const currentPos = {
+					x: touch1.clientX - rect.left,
+					y: touch1.clientY - rect.top
+				}
+
+				if (!isTouchPanning) {
+					// Check if touch started on a draggable token
+					const touchPos = stage.getPointerPosition()
+					const shape = stage.getIntersection(touchPos)
+
+					// If touching a draggable token, let Konva handle it
+					if (shape && shape.getParent()?.draggable()) {
+						return
+					}
+
+					// Otherwise, start panning
+					isTouchPanning = true
+					lastTouchPos = currentPos
+					stage.container().style.cursor = 'grabbing'
+					return
+				}
+
+				// Continue panning
+				if (lastTouchPos) {
+					const dx = currentPos.x - lastTouchPos.x
+					const dy = currentPos.y - lastTouchPos.y
+
+					applyPan(dx, dy)
+					lastTouchPos = currentPos
+				}
+			}
+		})
+
+		// Touch end handler (reset state)
+		stage.on('touchend', () => {
+			lastDist = 0
+			lastCenter = null
+			isTouchPanning = false
+			lastTouchPos = null
+			dragStopped = false
+			stage.container().style.cursor = 'default'
+		})
+
+		// Touch start handler (prepare for gestures)
+		stage.on('touchstart', (e) => {
+			// Reset state when new touch begins
+			if (e.evt.touches.length === 1) {
+				lastTouchPos = null
+				isTouchPanning = false
+			}
+		})
+	}
+
 
 		function centerViewport() {
 			if (!stage) return
