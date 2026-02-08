@@ -25,6 +25,7 @@ export default {
 		let backgroundLayer = null
 		let gridLayer = null
 		let tokensLayer = null
+		let wheelHandler = null
 
 		const tokenShapes = new Map() // tokenId -> Konva.Group
 
@@ -60,6 +61,12 @@ export default {
 			stage.add(backgroundLayer)
 			stage.add(gridLayer)
 			stage.add(tokensLayer)
+
+			// Prevent default wheel behavior on container
+			wheelHandler = (e) => {
+				e.preventDefault()
+			}
+			container.addEventListener('wheel', wheelHandler, { passive: false })
 
 			// Draw initial content
 			drawBackground()
@@ -550,6 +557,11 @@ export default {
 		})
 
 		onUnmounted(() => {
+			// Remove wheel event listener
+			if (containerRef.value && wheelHandler) {
+				containerRef.value.removeEventListener('wheel', wheelHandler)
+			}
+
 			if (stage) {
 				stage.destroy()
 			}
