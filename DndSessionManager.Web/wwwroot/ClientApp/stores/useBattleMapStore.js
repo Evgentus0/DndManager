@@ -55,6 +55,25 @@ export const useBattleMapStore = defineStore('battleMap', () => {
 		selectedTokenId.value ? tokens.value[selectedTokenId.value] : null
 	)
 
+	const tokensListByInitiative = computed(() => {
+		return Object.values(tokens.value).sort((a, b) => {
+			// Tokens with no initiative go to the bottom
+			if (a.initiative === null && b.initiative === null) {
+				return a.name.localeCompare(b.name)
+			}
+			if (a.initiative === null) return 1
+			if (b.initiative === null) return -1
+
+			// Sort by initiative descending (highest first)
+			if (b.initiative !== a.initiative) {
+				return b.initiative - a.initiative
+			}
+
+			// Tiebreaker: alphabetical by name
+			return a.name.localeCompare(b.name)
+		})
+	})
+
 	const canvasWidth = computed(() => grid.value.width * grid.value.cellSizePixels)
 	const canvasHeight = computed(() => grid.value.height * grid.value.cellSizePixels)
 
@@ -196,6 +215,44 @@ export const useBattleMapStore = defineStore('battleMap', () => {
 		version.value = newVersion;
 	}
 
+	function updateTokenInitiative(tokenId, initiative) {
+		if (tokens.value[tokenId]) {
+			tokens.value[tokenId].initiative = initiative
+			version.value++
+		}
+	}
+
+	function swapTokenInitiatives(tokenId1, tokenId2) {
+		if (tokens.value[tokenId1] && tokens.value[tokenId2]) {
+			const temp = tokens.value[tokenId1].initiative
+			tokens.value[tokenId1].initiative = tokens.value[tokenId2].initiative
+			tokens.value[tokenId2].initiative = temp
+			version.value++
+		}
+	}
+
+	function getTokenIndexInInitiativeOrder(tokenId) {
+		const list = tokensListByInitiative.value
+		return list.findIndex(t => t.id === tokenId)
+	}
+
+	function canMoveTokenUp(tokenId) {
+		const token = tokens.value[tokenId]
+		if (!token || token.initiative === null) return false
+
+		const index = getTokenIndexInInitiativeOrder(tokenId)
+		return index > 0 && tokensListByInitiative.value[index - 1].initiative !== null
+	}
+
+	function canMoveTokenDown(tokenId) {
+		const token = tokens.value[tokenId]
+		if (!token || token.initiative === null) return false
+
+		const list = tokensListByInitiative.value
+		const index = getTokenIndexInInitiativeOrder(tokenId)
+		return index < list.length - 1 && list[index + 1].initiative !== null
+	}
+
 	return {
 		// State
 		mapId,
@@ -212,6 +269,7 @@ export const useBattleMapStore = defineStore('battleMap', () => {
 
 		// Getters
 		tokensList,
+		tokensListByInitiative,
 		wallsList,
 		selectedToken,
 		canvasWidth,
@@ -235,6 +293,11 @@ export const useBattleMapStore = defineStore('battleMap', () => {
 		updateBackground,
 		updateGridSize,
 		updateGridColor,
-		updateGridWidth
+		updateGridWidth,
+		updateTokenInitiative,
+		swapTokenInitiatives,
+		getTokenIndexInInitiativeOrder,
+		canMoveTokenUp,
+		canMoveTokenDown
 	}
 })

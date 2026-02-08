@@ -155,7 +155,8 @@ public class BattleMapHub : Hub
 			IsDmOnly = tokenData.IsDmOnly,
 			OwnerId = string.IsNullOrEmpty(tokenData.OwnerId)
 				? null
-				: Guid.Parse(tokenData.OwnerId)
+				: Guid.Parse(tokenData.OwnerId),
+			Initiative = tokenData.Initiative
 		};
 
 		if (_mapService.AddToken(map.Id, token))
@@ -222,6 +223,72 @@ public class BattleMapHub : Hub
 			{
 				tokenId = tokenId,
 				token = MapTokenToDto(token),
+				version = map.Version
+			});
+		}
+	}
+
+	public async Task UpdateTokenInitiative(string sessionId, string userId, string tokenId, int? initiative)
+	{
+		if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+			!Guid.TryParse(userId, out var userGuid) ||
+			!Guid.TryParse(tokenId, out var tokenGuid))
+			return;
+
+		var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
+		if (!_mapService.CanUserEditMap(isMaster))
+		{
+			await Clients.Caller.SendAsync("BattleMapError", "Only the DM can update initiative.");
+			return;
+		}
+
+		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		if (map == null)
+			return;
+
+		if (_mapService.UpdateTokenInitiative(map.Id, tokenGuid, initiative))
+		{
+			await Clients.Group($"battlemap_{sessionId}").SendAsync("TokenInitiativeUpdated", new
+			{
+				tokenId = tokenId,
+				initiative = initiative,
+				version = map.Version
+			});
+		}
+	}
+
+	public async Task SwapTokenInitiatives(string sessionId, string userId, string tokenId1, string tokenId2)
+	{
+		if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+			!Guid.TryParse(userId, out var userGuid) ||
+			!Guid.TryParse(tokenId1, out var token1Guid) ||
+			!Guid.TryParse(tokenId2, out var token2Guid))
+			return;
+
+		var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
+		if (!_mapService.CanUserEditMap(isMaster))
+		{
+			await Clients.Caller.SendAsync("BattleMapError", "Only the DM can reorder initiative.");
+			return;
+		}
+
+		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		if (map == null)
+			return;
+
+		var token1 = map.Tokens.FirstOrDefault(t => t.Id == token1Guid);
+		var token2 = map.Tokens.FirstOrDefault(t => t.Id == token2Guid);
+		if (token1 == null || token2 == null)
+			return;
+
+		if (_mapService.SwapTokenInitiatives(map.Id, token1Guid, token2Guid))
+		{
+			await Clients.Group($"battlemap_{sessionId}").SendAsync("TokenInitiativesSwapped", new
+			{
+				tokenId1 = tokenId1,
+				tokenId2 = tokenId2,
+				initiative1 = token1.Initiative,
+				initiative2 = token2.Initiative,
 				version = map.Version
 			});
 		}
@@ -575,7 +642,8 @@ public class BattleMapHub : Hub
 		isVisible = t.IsVisible,
 		isDmOnly = t.IsDmOnly,
 		ownerId = t.OwnerId?.ToString(),
-		order = t.Order
+		order = t.Order,
+		initiative = t.Initiative
 	};
 
 	private object MapWallToDto(Wall w) => new
@@ -643,6 +711,7 @@ public class BattleTokenDto
 	public bool IsVisible { get; set; } = true;
 	public bool IsDmOnly { get; set; } = false;
 	public string? OwnerId { get; set; }
+	public int? Initiative { get; set; }
 }
 
 public class WallDto
@@ -678,4 +747,5 @@ public class BattleTokenUpdateDto
 	public int? Size { get; set; }
 	public bool? IsVisible { get; set; }
 	public bool? IsDmOnly { get; set; }
+	public int? Initiative { get; set; }
 }

@@ -109,6 +109,8 @@ public class BattleMapService
 			token.IsVisible = updates.IsVisible.Value;
 		if (updates.IsDmOnly.HasValue)
 			token.IsDmOnly = updates.IsDmOnly.Value;
+		if (updates.Initiative.HasValue)
+			token.Initiative = updates.Initiative.Value;
 
 		map.Version++;
 		map.UpdatedAt = DateTime.UtcNow;
@@ -127,6 +129,46 @@ public class BattleMapService
 			return false;
 
 		map.Tokens.Remove(token);
+		map.Version++;
+		map.UpdatedAt = DateTime.UtcNow;
+
+		_repository.SaveBattleMap(map);
+		return true;
+	}
+
+	public bool UpdateTokenInitiative(Guid mapId, Guid tokenId, int? initiative)
+	{
+		if (!_activeMaps.TryGetValue(mapId, out var map))
+			return false;
+
+		var token = map.Tokens.FirstOrDefault(t => t.Id == tokenId);
+		if (token == null)
+			return false;
+
+		token.Initiative = initiative;
+		map.Version++;
+		map.UpdatedAt = DateTime.UtcNow;
+
+		_repository.SaveBattleMap(map);
+		return true;
+	}
+
+	public bool SwapTokenInitiatives(Guid mapId, Guid tokenId1, Guid tokenId2)
+	{
+		if (!_activeMaps.TryGetValue(mapId, out var map))
+			return false;
+
+		var token1 = map.Tokens.FirstOrDefault(t => t.Id == tokenId1);
+		var token2 = map.Tokens.FirstOrDefault(t => t.Id == tokenId2);
+
+		if (token1 == null || token2 == null)
+			return false;
+
+		// Swap initiative values
+		var tempInitiative = token1.Initiative;
+		token1.Initiative = token2.Initiative;
+		token2.Initiative = tempInitiative;
+
 		map.Version++;
 		map.UpdatedAt = DateTime.UtcNow;
 

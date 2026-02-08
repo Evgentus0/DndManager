@@ -75,6 +75,7 @@ public class BattleToken
 	public Guid? OwnerId { get; set; } // User.Id, null = DM control only
 
 	public int Order { get; set; } = 0; // Z-index
+	public int? Initiative { get; set; } = null; // Initiative value for combat ordering
 }
 
 public class Wall

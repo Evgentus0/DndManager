@@ -406,6 +406,12 @@
       "gridWidth": "Grid stroke width"
     },
     "confirmRemoveBackground": "Remove battle map background image?",
+    "initiativeTracker": {
+      "title": "Initiative Tracker",
+      "hint": "Sorted by initiative",
+      "noInitiative": "—",
+      "position": "Pos"
+    },
     "tokenDialog": {
       "name": "Token Name",
       "image": "Token Image (optional)",
@@ -414,6 +420,8 @@
       "color": "Fallback Color",
       "colorHint": "Used when no image is provided",
       "size": "Size (grid cells)",
+      "initiative": "Initiative",
+      "initiativeHint": "Combat initiative value (leave empty for non-combat tokens)",
       "dmOnly": "Visible to DM only"
     },
     "addTokenDialog": {
