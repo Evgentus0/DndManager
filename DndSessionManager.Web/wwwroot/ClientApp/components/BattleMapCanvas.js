@@ -26,6 +26,7 @@ export default {
 		let gridLayer = null
 		let tokensLayer = null
 		let wheelHandler = null
+		let mousedownHandler = null
 
 		const tokenShapes = new Map() // tokenId -> Konva.Group
 
@@ -65,8 +66,17 @@ export default {
 			// Prevent default wheel behavior on container
 			wheelHandler = (e) => {
 				e.preventDefault()
+				e.stopPropagation()
 			}
 			container.addEventListener('wheel', wheelHandler, { passive: false })
+
+			// Prevent middle mouse button default behavior (auto-scroll)
+			mousedownHandler = (e) => {
+				if (e.button === 1) {
+					e.preventDefault()
+				}
+			}
+			container.addEventListener('mousedown', mousedownHandler)
 
 			// Draw initial content
 			drawBackground()
@@ -527,6 +537,7 @@ export default {
 			// Zoom with mouse wheel
 			stage.on('wheel', (e) => {
 				e.evt.preventDefault()
+				e.evt.stopPropagation()
 
 				const oldScale = stage.scaleX()
 				const pointer = stage.getPointerPosition()
@@ -555,6 +566,7 @@ export default {
 			// Pan with Ctrl+Drag or middle mouse button
 			stage.on('mousedown', (e) => {
 				if (e.evt.ctrlKey || e.evt.button === 1) {
+					e.evt.preventDefault() // Prevent default auto-scroll
 					isPanning = true
 					lastPos = stage.getPointerPosition()
 					stage.container().style.cursor = 'grabbing'
@@ -654,9 +666,12 @@ export default {
 		})
 
 		onUnmounted(() => {
-			// Remove wheel event listener
+			// Remove event listeners
 			if (containerRef.value && wheelHandler) {
 				containerRef.value.removeEventListener('wheel', wheelHandler)
+			}
+			if (containerRef.value && mousedownHandler) {
+				containerRef.value.removeEventListener('mousedown', mousedownHandler)
 			}
 
 			if (stage) {
