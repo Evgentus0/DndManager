@@ -94,15 +94,8 @@ public class BattleMapService
 		return true;
 	}
 
-	public bool UpdateToken(Guid mapId, Guid tokenId, BattleTokenUpdateDto updates)
+	public bool UpdateToken(BattleMap map, BattleToken token, BattleTokenUpdateDto updates)
 	{
-		if (!_activeMaps.TryGetValue(mapId, out var map))
-			return false;
-
-		var token = map.Tokens.FirstOrDefault(t => t.Id == tokenId);
-		if (token == null)
-			return false;
-
 		// Apply updates (only non-null values)
 		if (updates.Name != null)
 			token.Name = updates.Name;
@@ -360,6 +353,14 @@ public class BattleMapService
 	{
 		// Only DM can edit the map (walls, background, fog)
 		return isMaster;
+	}
+
+	public bool CanUserEditToken(BattleToken token, Guid userId, bool isMaster)
+	{
+		if (isMaster)
+			return true;
+
+		return token.OwnerId.HasValue && token.OwnerId.Value == userId;
 	}
 	#endregion
 }

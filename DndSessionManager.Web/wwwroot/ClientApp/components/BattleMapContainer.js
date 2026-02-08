@@ -72,7 +72,7 @@ export default {
 											:class="{'border-warning': store.selectedTokenId === token.id, 'border-secondary': store.selectedTokenId !== token.id}"
 											style="cursor: pointer;"
 											@click="store.setSelectedToken(token.id)"
-											@contextmenu.prevent="isMaster && showTokenDialog('edit', token)">
+											@contextmenu.prevent="showTokenEditDialogIfAllowed(token)">
 											<div class="card-body p-2">
 												<div class="d-flex align-items-center">
 													<div class="me-2"
@@ -256,6 +256,16 @@ export default {
 			} catch (err) {
 				console.error('SignalR connection error:', err)
 			}
+		}
+
+		function canEditToken(token) {
+			return props.isMaster || token.ownerId == props.userId;
+		}
+
+		function showTokenEditDialogIfAllowed(token) {
+			if (!canEditToken(token)) return;
+
+			showTokenDialog('edit', token);
 		}
 
 		function showTokenDialog(mode, token) {
@@ -534,6 +544,8 @@ export default {
 			handleRemoveBackground,
 			handleEditGridSize,
 			handleGridSizeChange,
+			canEditToken,
+			showTokenEditDialogIfAllowed,
 			showTokenDialog,
 			handleTokenImageSelect,
 			clearTokenImage,

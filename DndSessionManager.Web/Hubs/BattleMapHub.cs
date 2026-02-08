@@ -204,29 +204,26 @@ public class BattleMapHub : Hub
 			return;
 
 		var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
-		if (!_mapService.CanUserEditMap(isMaster))
-		{
-			await Clients.Caller.SendAsync("BattleMapError", "Only the DM can update tokens.");
-			return;
-		}
-
 		var map = _mapService.GetBattleMapBySession(sessionGuid);
 		if (map == null)
 			return;
-
-		if (_mapService.UpdateToken(map.Id, tokenGuid, updates))
+		var token = map.Tokens.FirstOrDefault(t => t.Id == tokenGuid);
+		if (token == null)
+			return;
+		if(!_mapService.CanUserEditToken(token, userGuid, isMaster))
 		{
-			// Get updated token to send to all clients
-			var token = map.Tokens.FirstOrDefault(t => t.Id == tokenGuid);
-			if (token != null)
+			await Clients.Caller.SendAsync("BattleMapError", "Changes not allowed.");
+			return;
+		}
+
+		if (_mapService.UpdateToken(map, token, updates))
+		{
+			await Clients.Group($"battlemap_{sessionId}").SendAsync("TokenUpdated", new
 			{
-				await Clients.Group($"battlemap_{sessionId}").SendAsync("TokenUpdated", new
-				{
-					tokenId = tokenId,
-					token = MapTokenToDto(token),
-					version = map.Version
-				});
-			}
+				tokenId = tokenId,
+				token = MapTokenToDto(token),
+				version = map.Version
+			});
 		}
 	}
 
