@@ -66,58 +66,62 @@ export default {
 								<small class="text-muted">{{ $t('battlemap.initiativeTracker.hint') }}</small>
 							</div>
 							<div class="card-body p-2">
-								<div class="list-group">
+								<div class="d-flex flex-wrap gap-2">
 									<div v-for="token in store.tokensListByInitiative" :key="token.id"
-										class="list-group-item d-flex align-items-center p-2"
-										:class="{'border-warning': store.selectedTokenId === token.id, 'bg-light': store.selectedTokenId !== token.id}"
-										style="cursor: pointer;"
+										class="card border p-2 d-flex flex-column"
+										:class="{'border-warning border-3': store.selectedTokenId === token.id, 'bg-light': store.selectedTokenId !== token.id}"
+										style="cursor: pointer; width: 180px;"
 										@click="store.setSelectedToken(token.id)"
 										@contextmenu.prevent="showTokenEditDialogIfAllowed(token)">
 
 										<!-- Initiative badge/input -->
-										<div class="me-2" style="width: 60px;">
+										<div class="mb-2 d-flex justify-content-center">
 											<input v-if="isMaster && token.initiative !== null"
 												type="number"
 												class="form-control form-control-sm text-center"
 												:value="token.initiative"
 												@click.stop
 												@input="handleInitiativeChange(token.id, $event)"
-												style="width: 60px;"
+												style="width: 50px;"
 												min="0"
 												max="99">
-											<span v-else-if="token.initiative !== null" class="badge bg-primary" style="font-size: 1rem; width: 60px;">
+											<span v-else-if="token.initiative !== null" class="badge bg-primary" style="font-size: 1rem; width: 50px;">
 												{{ token.initiative }}
 											</span>
-											<span v-else class="badge bg-secondary" style="font-size: 0.75rem; width: 60px;">
+											<span v-else class="badge bg-secondary" style="font-size: 0.75rem; width: 50px;">
 												{{ $t('battlemap.initiativeTracker.noInitiative') }}
 											</span>
 										</div>
 
-										<!-- Token color indicator -->
-										<div class="me-2"
-											:style="{width: '24px', height: '24px', borderRadius: '50%', backgroundColor: token.color, border: '2px solid #ecf0f1'}">
+										<!-- Token color indicator and name -->
+										<div class="d-flex align-items-center mb-2">
+											<div class="me-2"
+												:style="{width: '24px', height: '24px', borderRadius: '50%', backgroundColor: token.color, border: '2px solid #ecf0f1', flexShrink: 0}">
+											</div>
+											<div class="flex-grow-1 text-truncate">
+												<small class="text-dark" style="font-size: 0.85rem;"><strong>{{ token.name }}</strong></small>
+											</div>
 										</div>
 
-										<!-- Token info -->
-										<div class="flex-grow-1">
-											<small class="text-dark"><strong>{{ token.name }}</strong></small><br>
+										<!-- Token position -->
+										<div class="mb-2">
 											<small class="text-muted" style="font-size: 0.7rem;">{{ $t('battlemap.initiativeTracker.position') }}: {{ token.x }}, {{ token.y }}</small>
 										</div>
 
 										<!-- Up/Down buttons (DM only, only for tokens with initiative) -->
-										<div v-if="isMaster && token.initiative !== null" class="btn-group-vertical ms-2" role="group" style="width: 30px;">
+										<div v-if="isMaster && token.initiative !== null" class="btn-group" role="group">
 											<button type="button"
-												class="btn btn-sm btn-outline-secondary py-0 px-1"
+												class="btn btn-sm btn-outline-secondary py-0 px-2"
 												:disabled="!store.canMoveTokenUp(token.id)"
 												@click.stop="handleMoveTokenUp(token.id)"
-												style="font-size: 0.7rem; line-height: 1;">
+												style="font-size: 0.7rem;">
 												<i class="bi bi-chevron-up"></i>
 											</button>
 											<button type="button"
-												class="btn btn-sm btn-outline-secondary py-0 px-1"
+												class="btn btn-sm btn-outline-secondary py-0 px-2"
 												:disabled="!store.canMoveTokenDown(token.id)"
 												@click.stop="handleMoveTokenDown(token.id)"
-												style="font-size: 0.7rem; line-height: 1;">
+												style="font-size: 0.7rem;">
 												<i class="bi bi-chevron-down"></i>
 											</button>
 										</div>
