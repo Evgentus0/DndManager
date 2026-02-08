@@ -406,10 +406,29 @@
       "gridWidth": "Grid stroke width"
     },
     "confirmRemoveBackground": "Remove battle map background image?",
+    "tokenDialog": {
+      "name": "Token Name",
+      "image": "Token Image (optional)",
+      "imageHint": "PNG or JPG, max 5MB. Leave empty for colored circle.",
+      "preview": "Preview",
+      "color": "Fallback Color",
+      "colorHint": "Used when no image is provided",
+      "size": "Size (grid cells)",
+      "dmOnly": "Visible to DM only"
+    },
+    "addTokenDialog": {
+      "title": "Add Token"
+    },
+    "editTokenDialog": {
+      "title": "Edit Token"
+    },
     "errors": {
       "fileTooLarge": "Image file is too large (max 10MB)",
+      "tokenImageTooLarge": "Token image is too large (max 5MB)",
       "uploadFailed": "Failed to upload image",
-      "invalidFileType": "Only PNG and JPEG images are supported"
+      "invalidFileType": "Only PNG and JPEG images are supported",
+      "tokenNameRequired": "Token name is required",
+      "saveFailed": "Failed to save token"
     }
   },
   "common": {

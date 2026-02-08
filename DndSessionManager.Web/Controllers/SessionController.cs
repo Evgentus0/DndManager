@@ -593,4 +593,79 @@ public class SessionController : Controller
             return Json(new { success = false, error = "Remove failed" });
         }
     }
+
+	// POST: /session/UploadBattleMapTokenImage?sessionId={sessionId}&tokenId={tokenId}
+	[HttpPost]
+    public async Task<IActionResult> UploadBattleMapTokenImage([FromQuery] Guid sessionId, [FromQuery] string tokenId, [FromForm] IFormFile tokenImage)
+    {
+        // Validate user is DM
+        var userIdStr = HttpContext.GetUserIdBySession(sessionId.ToString());
+        if (string.IsNullOrEmpty(userIdStr) || !Guid.TryParse(userIdStr, out var userId))
+        {
+            return Json(new { success = false, error = "User not authenticated" });
+        }
+
+        var user = _userService.GetUser(sessionId, userId);
+        if (user == null || user.Role != UserRole.Master)
+        {
+            return Json(new { success = false, error = "Only the DM can upload token images" });
+        }
+
+        // Validate file
+        if (tokenImage == null || tokenImage.Length == 0)
+        {
+            return Json(new { success = false, error = "No file uploaded" });
+        }
+
+        // Validate file size (5MB max for tokens)
+        if (tokenImage.Length > 5 * 1024 * 1024)
+        {
+            return Json(new { success = false, error = "File too large (max 5MB)" });
+        }
+
+        // Validate file type
+        var allowedTypes = new[] { "image/png", "image/jpeg", "image/jpg" };
+        if (!allowedTypes.Contains(tokenImage.ContentType?.ToLower()))
+        {
+            return Json(new { success = false, error = "Only PNG and JPEG images are supported" });
+        }
+
+        try
+        {
+            // Create directory if it doesn't exist
+            var uploadDir = Path.Combine("wwwroot", "uploads", "battlemap-tokens", sessionId.ToString());
+            Directory.CreateDirectory(uploadDir);
+
+            // Generate filename based on tokenId
+            var extension = Path.GetExtension(tokenImage.FileName);
+            var filename = $"{tokenId}{extension}";
+            var filePath = Path.Combine(uploadDir, filename);
+
+            // Delete old token image if exists (any extension)
+            var possibleExtensions = new[] { ".png", ".jpg", ".jpeg" };
+            foreach (var ext in possibleExtensions)
+            {
+                var oldFilePath = Path.Combine(uploadDir, $"{tokenId}{ext}");
+                if (System.IO.File.Exists(oldFilePath) && oldFilePath != filePath)
+                {
+                    System.IO.File.Delete(oldFilePath);
+                }
+            }
+
+            // Save file
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await tokenImage.CopyToAsync(stream);
+            }
+
+            // Return URL path
+            var imageUrl = $"/uploads/battlemap-tokens/{sessionId}/{filename}";
+            return Json(new { success = true, imageUrl });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error uploading battle map token image");
+            return Json(new { success = false, error = "Upload failed" });
+        }
+    }
 }

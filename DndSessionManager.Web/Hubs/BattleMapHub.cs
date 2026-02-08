@@ -196,6 +196,40 @@ public class BattleMapHub : Hub
 		}
 	}
 
+	public async Task UpdateToken(string sessionId, string userId, string tokenId, BattleTokenUpdateDto updates)
+	{
+		if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+			!Guid.TryParse(userId, out var userGuid) ||
+			!Guid.TryParse(tokenId, out var tokenGuid))
+			return;
+
+		var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
+		if (!_mapService.CanUserEditMap(isMaster))
+		{
+			await Clients.Caller.SendAsync("BattleMapError", "Only the DM can update tokens.");
+			return;
+		}
+
+		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		if (map == null)
+			return;
+
+		if (_mapService.UpdateToken(map.Id, tokenGuid, updates))
+		{
+			// Get updated token to send to all clients
+			var token = map.Tokens.FirstOrDefault(t => t.Id == tokenGuid);
+			if (token != null)
+			{
+				await Clients.Group($"battlemap_{sessionId}").SendAsync("TokenUpdated", new
+				{
+					tokenId = tokenId,
+					token = MapTokenToDto(token),
+					version = map.Version
+				});
+			}
+		}
+	}
+
 	// === Wall Operations ===
 
 	public async Task AddWall(string sessionId, string userId, WallDto wallData)
@@ -637,4 +671,14 @@ public class BackgroundDto
 	public double Scale { get; set; } = 1.0;
 	public int OffsetX { get; set; } = 0;
 	public int OffsetY { get; set; } = 0;
+}
+
+public class BattleTokenUpdateDto
+{
+	public string? Name { get; set; }
+	public string? Color { get; set; }
+	public string? ImageUrl { get; set; }
+	public int? Size { get; set; }
+	public bool? IsVisible { get; set; }
+	public bool? IsDmOnly { get; set; }
 }

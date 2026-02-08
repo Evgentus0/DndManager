@@ -71,7 +71,8 @@ export default {
 											class="card card-sm"
 											:class="{'border-warning': store.selectedTokenId === token.id, 'border-secondary': store.selectedTokenId !== token.id}"
 											style="cursor: pointer;"
-											@click="store.setSelectedToken(token.id)">
+											@click="store.setSelectedToken(token.id)"
+											@contextmenu.prevent="isMaster && showTokenDialog('edit', token)">
 											<div class="card-body p-2">
 												<div class="d-flex align-items-center">
 													<div class="me-2"
@@ -102,6 +103,70 @@ export default {
 				:tokens="store.tokensList"
 				@save="handleGridSizeChange">
 			</battle-map-grid-settings>
+
+			<!-- Token Dialog Modal -->
+			<div v-if="tokenDialogVisible" class="modal fade show" style="display: block; background: rgba(0,0,0,0.5);" @click.self="tokenDialogVisible = false">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">
+								{{ tokenDialogMode === 'add' ? $t('battlemap.addTokenDialog.title') : $t('battlemap.editTokenDialog.title') }}
+							</h5>
+							<button type="button" class="btn-close" @click="tokenDialogVisible = false"></button>
+						</div>
+						<div class="modal-body">
+							<div class="mb-3">
+								<label class="form-label">{{ $t('battlemap.tokenDialog.name') }}</label>
+								<input type="text" class="form-control" v-model="tokenDialogData.name" />
+							</div>
+
+							<div class="mb-3">
+								<label class="form-label">{{ $t('battlemap.tokenDialog.image') }}</label>
+								<input type="file" class="form-control" accept="image/png,image/jpeg,image/jpg" @change="handleTokenImageSelect" />
+								<small class="form-text text-muted">{{ $t('battlemap.tokenDialog.imageHint') }}</small>
+							</div>
+
+							<!-- Image Preview -->
+							<div v-if="tokenDialogData.imagePreview" class="mb-3">
+								<label class="form-label">{{ $t('battlemap.tokenDialog.preview') }}</label>
+								<div class="position-relative d-inline-block">
+									<img :src="tokenDialogData.imagePreview" style="max-width: 150px; max-height: 150px; border-radius: 8px;" />
+									<button type="button" class="btn btn-sm btn-danger position-absolute top-0 end-0" @click="clearTokenImage">
+										<i class="bi bi-x"></i>
+									</button>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-6">
+									<label class="form-label">{{ $t('battlemap.tokenDialog.color') }}</label>
+									<input type="color" class="form-control form-control-color" v-model="tokenDialogData.color" />
+									<small class="form-text text-muted">{{ $t('battlemap.tokenDialog.colorHint') }}</small>
+								</div>
+								<div class="col-6">
+									<label class="form-label">{{ $t('battlemap.tokenDialog.size') }}</label>
+									<input type="number" class="form-control" v-model.number="tokenDialogData.size" min="1" max="5" />
+								</div>
+							</div>
+
+							<div class="form-check mt-3" v-if="isMaster">
+								<input class="form-check-input" type="checkbox" v-model="tokenDialogData.isDmOnly" id="tokenDmOnly" />
+								<label class="form-check-label" for="tokenDmOnly">
+									{{ $t('battlemap.tokenDialog.dmOnly') }}
+								</label>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" @click="tokenDialogVisible = false">
+								{{ $t('common.cancel') }}
+							</button>
+							<button type="button" class="btn btn-primary" @click="saveTokenDialog">
+								{{ $t('common.save') }}
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	`,
 	props: {
@@ -116,6 +181,20 @@ export default {
 		const connection = shallowRef(null)
 		const currentTool = ref('select')
 		const gridSettingsModal = ref(null)
+
+		// Token dialog state
+		const tokenDialogVisible = ref(false)
+		const tokenDialogMode = ref('add') // 'add' or 'edit'
+		const tokenDialogData = ref({
+			id: null,
+			name: '',
+			color: '#3498db',
+			size: 1,
+			imageFile: null,
+			imagePreview: null,
+			isVisible: true,
+			isDmOnly: false
+		})
 
 		async function initializeSignalR() {
 			connection.value = new signalR.HubConnectionBuilder()
@@ -137,6 +216,10 @@ export default {
 
 			connection.value.on('TokenRemoved', (data) => {
 				store.removeToken(data.tokenId)
+			})
+
+			connection.value.on('TokenUpdated', (data) => {
+				store.updateToken(data.tokenId, data.token)
 			})
 
 			connection.value.on('BackgroundUpdated', (data) => {
@@ -175,25 +258,137 @@ export default {
 			}
 		}
 
-		async function handleAddToken() {
-			const name = prompt(t('battlemap.promptTokenName'))
-			if (!name) return
+		function showTokenDialog(mode, token) {
+			tokenDialogMode.value = mode
+			if (mode === 'edit' && token) {
+				tokenDialogData.value = {
+					id: token.id,
+					name: token.name,
+					color: token.color,
+					size: token.size,
+					imageFile: null,
+					imagePreview: token.imageUrl,
+					isVisible: token.isVisible,
+					isDmOnly: token.isDmOnly
+				}
+			} else {
+				// Reset for add mode
+				tokenDialogData.value = {
+					id: null,
+					name: '',
+					color: '#3498db',
+					size: 1,
+					imageFile: null,
+					imagePreview: null,
+					isVisible: true,
+					isDmOnly: false
+				}
+			}
+			tokenDialogVisible.value = true
+		}
 
-			const tokenData = {
-				name: name,
-				x: 5,
-				y: 5,
-				size: 1,
-				color: '#3498db',
-				isVisible: true,
-				isDmOnly: false
+		function handleTokenImageSelect(event) {
+			const file = event.target.files[0]
+			if (!file) return
+
+			// Validate file size (5MB max)
+			if (file.size > 5 * 1024 * 1024) {
+				alert(t('battlemap.errors.tokenImageTooLarge'))
+				return
+			}
+
+			// Validate file type
+			if (!['image/png', 'image/jpeg', 'image/jpg'].includes(file.type)) {
+				alert(t('battlemap.errors.invalidFileType'))
+				return
+			}
+
+			tokenDialogData.value.imageFile = file
+
+			// Create preview
+			const reader = new FileReader()
+			reader.onload = (e) => {
+				tokenDialogData.value.imagePreview = e.target.result
+			}
+			reader.readAsDataURL(file)
+		}
+
+		function clearTokenImage() {
+			tokenDialogData.value.imageFile = null
+			tokenDialogData.value.imagePreview = null
+		}
+
+		async function saveTokenDialog() {
+			if (!tokenDialogData.value.name.trim()) {
+				alert(t('battlemap.errors.tokenNameRequired'))
+				return
 			}
 
 			try {
-				await connection.value.invoke('AddToken', props.sessionId, props.userId, tokenData)
+				let imageUrl = tokenDialogData.value.imagePreview
+
+				// Upload image if a new file was selected
+				if (tokenDialogData.value.imageFile) {
+					const tokenId = tokenDialogData.value.id || crypto.randomUUID()
+
+					const formData = new FormData()
+					formData.append('tokenImage', tokenDialogData.value.imageFile)
+
+					const response = await fetch(
+						`/session/UploadBattleMapTokenImage?sessionId=${props.sessionId}&tokenId=${tokenId}`,
+						{
+							method: 'POST',
+							body: formData
+						}
+					)
+
+					const result = await response.json()
+
+					if (!result.success) {
+						alert(result.error || t('battlemap.errors.uploadFailed'))
+						return
+					}
+
+					imageUrl = result.imageUrl
+				}
+
+				if (tokenDialogMode.value === 'add') {
+					// Add new token
+					const tokenData = {
+						name: tokenDialogData.value.name,
+						x: 5,
+						y: 5,
+						size: tokenDialogData.value.size,
+						color: tokenDialogData.value.color,
+						imageUrl: imageUrl,
+						isVisible: tokenDialogData.value.isVisible,
+						isDmOnly: tokenDialogData.value.isDmOnly
+					}
+
+					await connection.value.invoke('AddToken', props.sessionId, props.userId, tokenData)
+				} else {
+					// Update existing token
+					const updates = {
+						name: tokenDialogData.value.name,
+						color: tokenDialogData.value.color,
+						size: tokenDialogData.value.size,
+						imageUrl: imageUrl,
+						isVisible: tokenDialogData.value.isVisible,
+						isDmOnly: tokenDialogData.value.isDmOnly
+					}
+
+					await connection.value.invoke('UpdateToken', props.sessionId, props.userId, tokenDialogData.value.id, updates)
+				}
+
+				tokenDialogVisible.value = false
 			} catch (err) {
-				console.error('Error adding token:', err)
+				console.error('Error saving token:', err)
+				alert(t('battlemap.errors.saveFailed'))
 			}
+		}
+
+		async function handleAddToken() {
+			showTokenDialog('add', null)
 		}
 
 		async function handleRemoveToken() {
@@ -328,6 +523,9 @@ export default {
 			connection,
 			currentTool,
 			gridSettingsModal,
+			tokenDialogVisible,
+			tokenDialogMode,
+			tokenDialogData,
 			handleAddToken,
 			handleRemoveToken,
 			handleToolChanged,
@@ -335,7 +533,11 @@ export default {
 			handleUploadBackground,
 			handleRemoveBackground,
 			handleEditGridSize,
-			handleGridSizeChange
+			handleGridSizeChange,
+			showTokenDialog,
+			handleTokenImageSelect,
+			clearTokenImage,
+			saveTokenDialog
 		}
 	}
 }

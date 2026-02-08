@@ -1,6 +1,7 @@
 using System.Collections.Concurrent;
 using DndSessionManager.Web.Data;
 using DndSessionManager.Web.Models;
+using DndSessionManager.Web.Hubs;
 
 namespace DndSessionManager.Web.Services;
 
@@ -90,6 +91,36 @@ public class BattleMapService
 		map.UpdatedAt = DateTime.UtcNow;
 
 		// Don't save every move to DB (throttled updates from SignalR Hub)
+		return true;
+	}
+
+	public bool UpdateToken(Guid mapId, Guid tokenId, BattleTokenUpdateDto updates)
+	{
+		if (!_activeMaps.TryGetValue(mapId, out var map))
+			return false;
+
+		var token = map.Tokens.FirstOrDefault(t => t.Id == tokenId);
+		if (token == null)
+			return false;
+
+		// Apply updates (only non-null values)
+		if (updates.Name != null)
+			token.Name = updates.Name;
+		if (updates.Color != null)
+			token.Color = updates.Color;
+		if (updates.ImageUrl != null)
+			token.ImageUrl = updates.ImageUrl;
+		if (updates.Size.HasValue)
+			token.Size = updates.Size.Value;
+		if (updates.IsVisible.HasValue)
+			token.IsVisible = updates.IsVisible.Value;
+		if (updates.IsDmOnly.HasValue)
+			token.IsDmOnly = updates.IsDmOnly.Value;
+
+		map.Version++;
+		map.UpdatedAt = DateTime.UtcNow;
+
+		_repository.SaveBattleMap(map);
 		return true;
 	}
 

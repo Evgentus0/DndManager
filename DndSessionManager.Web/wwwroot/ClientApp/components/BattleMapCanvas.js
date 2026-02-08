@@ -201,45 +201,41 @@ export default {
 				draggable: canDragToken(token)
 			})
 
-			// Circle background
-			const circle = new Konva.Circle({
-				x: 0,
-				y: 0,
-				radius: radius,
-				fill: token.color,
-				stroke: '#ecf0f1',
-				strokeWidth: 3
-			})
+			// Check if token has an image
+			if (token.imageUrl) {
+				// Load image asynchronously
+				const imageObj = new Image()
 
-			// Нижний слой - только обводка
-			const textStroke = new Konva.Text({
-				x: -radius,
-				y: radius + 5,
-				width: radius * 2,
-				text: token.name,
-				fontSize: 14,
-				fontFamily: 'Arial',
-				fill: '#000000',
-				stroke: '#000000',
-				strokeWidth: 4,
-				align: 'center'
-			})
+				imageObj.onload = () => {
+					const diameter = radius * 2
 
-			// Верхний слой - только белый текст
-			const text = new Konva.Text({
-				x: -radius,
-				y: radius + 5,
-				width: radius * 2,
-				text: token.name,
-				fontSize: 14,
-				fontFamily: 'Arial',
-				fill: '#ffffff', 
-				align: 'center'
-			})
+					// Create Konva.Image with circular clipping
+					const imageNode = new Konva.Image({
+						image: imageObj,
+						x: -radius,
+						y: -radius,
+						width: diameter,
+						height: diameter,
+						cornerRadius: radius, // Makes it circular
+						stroke: '#ecf0f1',
+						strokeWidth: 3
+					})
 
-			group.add(circle)
-			group.add(textStroke)
-			group.add(text)
+					group.add(imageNode)
+					addTokenText(group, token, radius)
+					tokensLayer.batchDraw()
+				}
+
+				imageObj.onerror = () => {
+					// Fallback to colored circle on image load error
+					createFallbackCircle(group, token, radius)
+				}
+
+				imageObj.src = token.imageUrl
+			} else {
+				// No image - use standard colored circle
+				createFallbackCircle(group, token, radius)
+			}
 
 			// Setup drag events
 			if (canDragToken(token)) {
@@ -248,8 +244,16 @@ export default {
 				group.on('dragstart', () => {
 					originalPos = { x: token.x, y: token.y }
 					group.moveToTop()
-					circle.stroke('#3498db')
-					circle.strokeWidth(4)
+
+					// Highlight border on drag (works for both Circle and Image)
+					const mainShape = group.findOne((node) =>
+						node.getClassName() === 'Circle' || node.getClassName() === 'Image'
+					)
+					if (mainShape) {
+						mainShape.stroke('#3498db')
+						mainShape.strokeWidth(4)
+					}
+
 					tokensLayer.batchDraw()
 				})
 
@@ -268,8 +272,13 @@ export default {
 					const snappedPos = snapToGrid(group.x(), group.y())
 
 					// Reset stroke
-					circle.stroke('#ecf0f1')
-					circle.strokeWidth(3)
+					const mainShape = group.findOne((node) =>
+						node.getClassName() === 'Circle' || node.getClassName() === 'Image'
+					)
+					if (mainShape) {
+						mainShape.stroke('#ecf0f1')
+						mainShape.strokeWidth(3)
+					}
 
 					// Snap to grid
 					group.x(snappedPos.x * cellSize + cellSize / 2)
@@ -308,30 +317,116 @@ export default {
 			const cellSize = store.grid.cellSizePixels
 			const radius = (cellSize * token.size) / 2 - 5
 
+			// Check if image status changed (had image -> no image, or no image -> has image)
+			const existingImage = shape.findOne('Image')
+			const hasImageNow = !!token.imageUrl
+			const hadImageBefore = !!existingImage
+
+			// If image status changed, need to recreate the shape
+			if (hasImageNow !== hadImageBefore) {
+				shape.destroy()
+				tokenShapes.delete(token.id)
+				createTokenShape(token)
+				return
+			}
+
+			// Update position
 			shape.x(token.x * cellSize + cellSize / 2)
 			shape.y(token.y * cellSize + cellSize / 2)
 
+			// Update circle (if no image)
 			const circle = shape.findOne('Circle')
 			if (circle) {
 				circle.radius(radius)
 				circle.fill(token.color)
 			}
 
-			const text = shape.findOne('Text')
-			if (text) {
+			// Update image (if has image and URL changed)
+			if (existingImage && token.imageUrl) {
+				const diameter = radius * 2
+				existingImage.width(diameter)
+				existingImage.height(diameter)
+				existingImage.x(-radius)
+				existingImage.y(-radius)
+				existingImage.cornerRadius(radius)
+
+				// Reload image if URL changed
+				const currentSrc = existingImage.image()?.src
+				if (currentSrc !== token.imageUrl) {
+					const imageObj = new Image()
+					imageObj.onload = () => {
+						existingImage.image(imageObj)
+						tokensLayer.batchDraw()
+					}
+					imageObj.src = token.imageUrl
+				}
+			}
+
+			// Update text
+			const texts = shape.find('Text')
+			texts.forEach(text => {
 				text.text(token.name)
 				text.x(-radius)
 				text.width(radius * 2)
-			}
+			})
+
+			tokensLayer.batchDraw()
+		}
+
+		function createFallbackCircle(group, token, radius) {
+			const circle = new Konva.Circle({
+				x: 0,
+				y: 0,
+				radius: radius,
+				fill: token.color,
+				stroke: '#ecf0f1',
+				strokeWidth: 3
+			})
+			group.add(circle)
+			addTokenText(group, token, radius)
+			tokensLayer.batchDraw()
+		}
+
+		function addTokenText(group, token, radius) {
+			// Text stroke (black outline)
+			const textStroke = new Konva.Text({
+				x: -radius,
+				y: radius + 5,
+				width: radius * 2,
+				text: token.name,
+				fontSize: 14,
+				fontFamily: 'Arial',
+				fill: '#000000',
+				stroke: '#000000',
+				strokeWidth: 4,
+				align: 'center'
+			})
+
+			// White text on top
+			const text = new Konva.Text({
+				x: -radius,
+				y: radius + 5,
+				width: radius * 2,
+				text: token.name,
+				fontSize: 14,
+				fontFamily: 'Arial',
+				fill: '#ffffff',
+				align: 'center'
+			})
+
+			group.add(textStroke)
+			group.add(text)
 		}
 
 		function highlightSelectedToken() {
 			// Reset all tokens
 			for (const shape of tokenShapes.values()) {
-				const circle = shape.findOne('Circle')
-				if (circle) {
-					circle.stroke('#ecf0f1')
-					circle.strokeWidth(3)
+				const mainShape = shape.findOne((node) =>
+					node.getClassName() === 'Circle' || node.getClassName() === 'Image'
+				)
+				if (mainShape) {
+					mainShape.stroke('#ecf0f1')
+					mainShape.strokeWidth(3)
 				}
 			}
 
@@ -339,10 +434,12 @@ export default {
 			if (store.selectedTokenId) {
 				const shape = tokenShapes.get(store.selectedTokenId)
 				if (shape) {
-					const circle = shape.findOne('Circle')
-					if (circle) {
-						circle.stroke('#f39c12')
-						circle.strokeWidth(5)
+					const mainShape = shape.findOne((node) =>
+						node.getClassName() === 'Circle' || node.getClassName() === 'Image'
+					)
+					if (mainShape) {
+						mainShape.stroke('#f39c12')
+						mainShape.strokeWidth(5)
 					}
 				}
 			}
