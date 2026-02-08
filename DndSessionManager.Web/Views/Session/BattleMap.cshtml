@@ -1,0 +1,74 @@
+@{
+	ViewData["Title"] = "Battle Map";
+	var session = ViewBag.Session as DndSessionManager.Web.Models.Session;
+	var currentUser = ViewBag.CurrentUser as DndSessionManager.Web.Models.User;
+	var battleMap = ViewBag.BattleMap as DndSessionManager.Web.Models.BattleMap;
+	var isMaster = ViewBag.IsMaster;
+}
+
+@section Styles {
+	<style>
+		#battlemap-container {
+			min-height: calc(100vh - 120px);
+		}
+	</style>
+}
+
+<div id="battlemap-app" class="container-fluid">
+	<div class="row mb-3">
+		<div class="col">
+			<h3>{{ $t('battlemap.title') }}: {{ sessionName }}</h3>
+		</div>
+		<div class="col-auto">
+			<a class="btn btn-secondary" href="/session/lobby/@session?.Id">
+				<i class="bi bi-arrow-left"></i> {{ $t('battlemap.backToLobby') }}
+			</a>
+		</div>
+	</div>
+
+	<battle-map-container
+		:session-id="sessionId"
+		:user-id="userId"
+		:is-master="isMaster"
+		:initial-map="initialMap">
+	</battle-map-container>
+</div>
+
+@section Scripts {
+	<script type="module">
+		import { createApp } from 'vue'
+		import { createPinia } from 'pinia'
+		import { useI18n } from 'vue-i18n'
+		import { i18n } from '/ClientApp/i18n.js'
+		import BattleMapContainer from '/ClientApp/components/BattleMapContainer.js'
+
+		const pinia = createPinia()
+
+		const app = createApp({
+			components: {
+				BattleMapContainer
+			},
+			setup() {
+				const { t } = useI18n()
+
+				const sessionId = '@session?.Id'
+				const userId = '@currentUser?.Id'
+				const sessionName = '@Html.Raw(session?.Name)'
+				const isMaster = @Json.Serialize(isMaster)
+				const initialMap = @Html.Raw(Json.Serialize(battleMap))
+
+				return {
+					sessionId,
+					userId,
+					sessionName,
+					isMaster,
+					initialMap
+				}
+			}
+		})
+
+		app.use(pinia)
+		app.use(i18n)
+		app.mount('#battlemap-app')
+	</script>
+}

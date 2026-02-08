@@ -1,6 +1,6 @@
 @echo off
 REM Quick release script - calls publish.ps1 with ZIP creation
-SET VERSION=2.0.0
+SET VERSION=3.0.0
 
 echo Publishing DndSessionManager v%VERSION%...
 echo.

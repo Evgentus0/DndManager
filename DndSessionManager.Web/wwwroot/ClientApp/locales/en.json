@@ -341,7 +341,8 @@
       "masterLeave": "Master leave. Session finished."
     },
     "buttons": {
-      "leave": "Leave Session"
+      "leave": "Leave Session",
+      "battleMap": "Battle Map"
     }
   },
   "footer": {
@@ -373,5 +374,73 @@
     "error": "Failed to load data",
     "backToList": "Back to List",
     "level": "Level"
+  },
+  "battlemap": {
+    "title": "Battle Map",
+    "connecting": "Connecting to battle map...",
+    "backToLobby": "Back to Lobby",
+    "addToken": "Add Token",
+    "removeToken": "Remove Token",
+    "gridSize": "Grid Size",
+    "tokensCount": "Tokens",
+    "promptTokenName": "Enter token name:",
+    "confirmRemove": "Are you sure you want to remove this token?",
+    "tools": {
+      "select": "Select"
+    },
+    "actions": {
+      "addToken": "Add Token",
+      "removeToken": "Remove",
+      "save": "Save",
+      "uploadBackground": "Upload Background",
+      "removeBackground": "Remove Background",
+      "editGridSize": "Edit Grid Size"
+    },
+    "gridSettings": {
+      "title": "Grid Settings",
+      "width": "Grid Width (cells)",
+      "height": "Grid Height (cells)",
+      "color": "Grid Color",
+      "tokenWarning": "Warning: Some tokens are outside the new grid bounds and will be moved.",
+      "tokensMoved": "{count} token(s) were moved to fit the new grid size",
+      "gridWidth": "Grid stroke width"
+    },
+    "confirmRemoveBackground": "Remove battle map background image?",
+    "initiativeTracker": {
+      "title": "Initiative Tracker",
+      "hint": "Sorted by initiative",
+      "noInitiative": "—",
+      "position": "Pos"
+    },
+    "tokenDialog": {
+      "name": "Token Name",
+      "image": "Token Image (optional)",
+      "imageHint": "PNG or JPG, max 5MB. Leave empty for colored circle.",
+      "preview": "Preview",
+      "color": "Fallback Color",
+      "colorHint": "Used when no image is provided",
+      "size": "Size (grid cells)",
+      "initiative": "Initiative",
+      "initiativeHint": "Combat initiative value (leave empty for non-combat tokens)",
+      "dmOnly": "Visible to DM only"
+    },
+    "addTokenDialog": {
+      "title": "Add Token"
+    },
+    "editTokenDialog": {
+      "title": "Edit Token"
+    },
+    "errors": {
+      "fileTooLarge": "Image file is too large (max 10MB)",
+      "tokenImageTooLarge": "Token image is too large (max 5MB)",
+      "uploadFailed": "Failed to upload image",
+      "invalidFileType": "Only PNG and JPEG images are supported",
+      "tokenNameRequired": "Token name is required",
+      "saveFailed": "Failed to save token"
+    }
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel"
   }
 }

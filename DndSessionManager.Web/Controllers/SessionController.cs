@@ -11,13 +11,15 @@ public class SessionController : Controller
     private readonly SessionService _sessionService;
     private readonly UserService _userService;
     private readonly CharacterService _characterService;
+    private readonly BattleMapService _battleMapService;
     private readonly ILogger<SessionController> _logger;
 
-    public SessionController(SessionService sessionService, UserService userService, CharacterService characterService, ILogger<SessionController> logger)
+    public SessionController(SessionService sessionService, UserService userService, CharacterService characterService, BattleMapService battleMapService, ILogger<SessionController> logger)
     {
         _sessionService = sessionService;
         _userService = userService;
         _characterService = characterService;
+        _battleMapService = battleMapService;
         _logger = logger;
     }
 
@@ -433,5 +435,237 @@ public class SessionController : Controller
         _characterService.UpdateCharacter(character);
 
         return RedirectToAction("Lobby", new { id });
+    }
+
+    // GET: /session/{id}/battlemap
+    [HttpGet]
+    public IActionResult BattleMap(Guid id)
+    {
+        var session = _sessionService.GetSession(id);
+        if (session == null)
+        {
+            return NotFound("Session not found.");
+        }
+
+        var userIdStr = HttpContext.GetUserIdBySession(id.ToString());
+        if (string.IsNullOrEmpty(userIdStr) || !Guid.TryParse(userIdStr, out var userId))
+        {
+            return RedirectToAction("Join", new { id });
+        }
+
+        var user = _userService.GetUser(id, userId);
+        if (user == null)
+        {
+            return RedirectToAction("Join", new { id });
+        }
+
+        // Ensure battle map exists
+        var map = _battleMapService.GetBattleMapBySession(id);
+        if (map == null)
+        {
+            // Create default map
+            map = _battleMapService.CreateBattleMap(id);
+        }
+
+        ViewBag.Session = session;
+        ViewBag.CurrentUser = user;
+        ViewBag.IsMaster = user.Role == UserRole.Master;
+        ViewBag.BattleMap = map;
+
+        HttpContext.AddCurrentGameSession(session.Id.ToString(), session.Name);
+
+        return View();
+    }
+
+    // POST: /session/UploadBattleMapBackground/{id}
+    [HttpPost]
+    public async Task<IActionResult> UploadBattleMapBackground(Guid id, IFormFile backgroundImage)
+    {
+        // Validate user is DM
+        var userIdStr = HttpContext.GetUserIdBySession(id.ToString());
+        if (string.IsNullOrEmpty(userIdStr) || !Guid.TryParse(userIdStr, out var userId))
+        {
+            return Json(new { success = false, error = "User not authenticated" });
+        }
+
+        var user = _userService.GetUser(id, userId);
+        if (user == null || user.Role != UserRole.Master)
+        {
+            return Json(new { success = false, error = "Only the DM can upload background images" });
+        }
+
+        // Validate file
+        if (backgroundImage == null || backgroundImage.Length == 0)
+        {
+            return Json(new { success = false, error = "No file uploaded" });
+        }
+
+        // Validate file size (10MB max)
+        if (backgroundImage.Length > 20 * 1024 * 1024)
+        {
+            return Json(new { success = false, error = "File too large (max 10MB)" });
+        }
+
+        // Validate file type
+        var allowedTypes = new[] { "image/png", "image/jpeg", "image/jpg" };
+        if (!allowedTypes.Contains(backgroundImage.ContentType?.ToLower()))
+        {
+            return Json(new { success = false, error = "Only PNG and JPEG images are supported" });
+        }
+
+        try
+        {
+            // Create directory if it doesn't exist
+            var uploadDir = Path.Combine("wwwroot", "uploads", "battlemap-backgrounds", id.ToString());
+            Directory.CreateDirectory(uploadDir);
+
+            // Generate unique filename
+            var extension = Path.GetExtension(backgroundImage.FileName);
+            var filename = $"{Guid.NewGuid()}{extension}";
+            var filePath = Path.Combine(uploadDir, filename);
+
+            // Save file
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await backgroundImage.CopyToAsync(stream);
+            }
+
+            // Get map and delete old background if exists
+            var map = _battleMapService.GetBattleMapBySession(id);
+            if (map != null && !string.IsNullOrEmpty(map.Background.ImageUrl))
+            {
+                var oldFilePath = Path.Combine("wwwroot", map.Background.ImageUrl.TrimStart('/'));
+                if (System.IO.File.Exists(oldFilePath))
+                {
+                    System.IO.File.Delete(oldFilePath);
+                }
+            }
+
+            // Return URL path
+            var imageUrl = $"/uploads/battlemap-backgrounds/{id}/{filename}";
+            return Json(new { success = true, imageUrl });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error uploading battle map background");
+            return Json(new { success = false, error = "Upload failed" });
+        }
+    }
+
+    // POST: /session/RemoveBattleMapBackground/{id}
+    [HttpPost]
+    public IActionResult RemoveBattleMapBackground(Guid id)
+    {
+        // Validate user is DM
+        var userIdStr = HttpContext.GetUserIdBySession(id.ToString());
+        if (string.IsNullOrEmpty(userIdStr) || !Guid.TryParse(userIdStr, out var userId))
+        {
+            return Json(new { success = false, error = "User not authenticated" });
+        }
+
+        var user = _userService.GetUser(id, userId);
+        if (user == null || user.Role != UserRole.Master)
+        {
+            return Json(new { success = false, error = "Only the DM can remove background images" });
+        }
+
+        try
+        {
+            // Get map and delete background file if exists
+            var map = _battleMapService.GetBattleMapBySession(id);
+            if (map != null && !string.IsNullOrEmpty(map.Background.ImageUrl))
+            {
+                var filePath = Path.Combine("wwwroot", map.Background.ImageUrl.TrimStart('/'));
+                if (System.IO.File.Exists(filePath))
+                {
+                    System.IO.File.Delete(filePath);
+                }
+
+                // Update map to clear image URL
+                _battleMapService.RemoveBackgroundImage(map.Id);
+            }
+
+            return Json(new { success = true });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error removing battle map background");
+            return Json(new { success = false, error = "Remove failed" });
+        }
+    }
+
+	// POST: /session/UploadBattleMapTokenImage?sessionId={sessionId}&tokenId={tokenId}
+	[HttpPost]
+    public async Task<IActionResult> UploadBattleMapTokenImage([FromQuery] Guid sessionId, [FromQuery] string tokenId, [FromForm] IFormFile tokenImage)
+    {
+        // Validate user is DM
+        var userIdStr = HttpContext.GetUserIdBySession(sessionId.ToString());
+        if (string.IsNullOrEmpty(userIdStr) || !Guid.TryParse(userIdStr, out var userId))
+        {
+            return Json(new { success = false, error = "User not authenticated" });
+        }
+
+        var user = _userService.GetUser(sessionId, userId);
+        if (user == null || user.Role != UserRole.Master)
+        {
+            return Json(new { success = false, error = "Only the DM can upload token images" });
+        }
+
+        // Validate file
+        if (tokenImage == null || tokenImage.Length == 0)
+        {
+            return Json(new { success = false, error = "No file uploaded" });
+        }
+
+        // Validate file size (5MB max for tokens)
+        if (tokenImage.Length > 5 * 1024 * 1024)
+        {
+            return Json(new { success = false, error = "File too large (max 5MB)" });
+        }
+
+        // Validate file type
+        var allowedTypes = new[] { "image/png", "image/jpeg", "image/jpg" };
+        if (!allowedTypes.Contains(tokenImage.ContentType?.ToLower()))
+        {
+            return Json(new { success = false, error = "Only PNG and JPEG images are supported" });
+        }
+
+        try
+        {
+            // Create directory if it doesn't exist
+            var uploadDir = Path.Combine("wwwroot", "uploads", "battlemap-tokens", sessionId.ToString());
+            Directory.CreateDirectory(uploadDir);
+
+            // Generate filename based on tokenId
+            var extension = Path.GetExtension(tokenImage.FileName);
+            var filename = $"{tokenId}{extension}";
+            var filePath = Path.Combine(uploadDir, filename);
+
+            // Delete old token image if exists (any extension)
+            var possibleExtensions = new[] { ".png", ".jpg", ".jpeg" };
+            foreach (var ext in possibleExtensions)
+            {
+                var oldFilePath = Path.Combine(uploadDir, $"{tokenId}{ext}");
+                if (System.IO.File.Exists(oldFilePath) && oldFilePath != filePath)
+                {
+                    System.IO.File.Delete(oldFilePath);
+                }
+            }
+
+            // Save file
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await tokenImage.CopyToAsync(stream);
+            }
+
+            // Return URL path
+            var imageUrl = $"/uploads/battlemap-tokens/{sessionId}/{filename}";
+            return Json(new { success = true, imageUrl });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error uploading battle map token image");
+            return Json(new { success = false, error = "Upload failed" });
+        }
     }
 }
