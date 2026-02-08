@@ -133,7 +133,7 @@ export default {
 				const line = new Konva.Line({
 					points: [i * cellSize, 0, i * cellSize, height],
 					stroke: store.grid.gridColor,
-					strokeWidth: 1,
+					strokeWidth: store.grid.gridWidth,
 					opacity: 0.5
 				})
 				gridLayer.add(line)
@@ -144,7 +144,7 @@ export default {
 				const line = new Konva.Line({
 					points: [0, i * cellSize, width, i * cellSize],
 					stroke: store.grid.gridColor,
-					strokeWidth: 1,
+					strokeWidth: store.grid.gridWidth,
 					opacity: 0.5
 				})
 				gridLayer.add(line)
@@ -517,7 +517,7 @@ export default {
 			centerViewport()
 		}, { deep: true })
 
-		watch(() => store.grid.gridColor, () => {
+		watch(() => [store.grid.gridColor, store.grid.gridWidth], () => {
 			drawGrid()
 		})
 

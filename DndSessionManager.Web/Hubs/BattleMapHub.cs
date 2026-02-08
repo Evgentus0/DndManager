@@ -430,6 +430,39 @@ public class BattleMapHub : Hub
 		}
 	}
 
+	public async Task UpdateGridWidth(string sessionId, string userId, int newGridWidth)
+	{
+		if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+			!Guid.TryParse(userId, out var userGuid))
+			return;
+
+		var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
+		if (!_mapService.CanUserEditMap(isMaster))
+		{
+			await Clients.Caller.SendAsync("BattleMapError", "Only the DM can update grid color.");
+			return;
+		}
+
+		if (newGridWidth < 1 || newGridWidth > 10)
+		{
+			await Clients.Caller.SendAsync("BattleMapError", "Grid width must be between 1 and 10.");
+			return;
+		}
+
+		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		if (map == null)
+			return;
+
+		if (_mapService.UpdateGridWidth(map.Id, newGridWidth))
+		{
+			await Clients.Group($"battlemap_{sessionId}").SendAsync("GridWidthUpdated", new
+			{
+				gridWidth = newGridWidth,
+				version = map.Version
+			});
+		}
+	}
+
 	// === Persistence ===
 
 	public async Task SaveBattleMap(string sessionId, string userId)

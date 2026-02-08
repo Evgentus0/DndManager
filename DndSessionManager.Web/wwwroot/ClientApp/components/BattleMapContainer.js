@@ -98,6 +98,7 @@ export default {
 				:current-width="store.grid.width"
 				:current-height="store.grid.height"
 				:current-color="store.grid.gridColor"
+				:current-grid-width="store.grid.gridWidth"
 				:tokens="store.tokensList"
 				@save="handleGridSizeChange">
 			</battle-map-grid-settings>
@@ -139,11 +140,11 @@ export default {
 			})
 
 			connection.value.on('BackgroundUpdated', (data) => {
-				store.updateBackground(data.imageUrl, data.scale, data.offsetX, data.offsetY)
+				store.updateBackground(data.imageUrl, data.scale, data.offsetX, data.offsetY, data.version)
 			})
 
 			connection.value.on('GridSizeUpdated', (data) => {
-				store.updateGridSize(data.width, data.height)
+				store.updateGridSize(data.width, data.height, data.version)
 
 				if (data.movedTokens && data.movedTokens.length > 0) {
 					alert(t('battlemap.gridSettings.tokensMoved', { count: data.movedTokens.length }))
@@ -151,10 +152,14 @@ export default {
 			})
 
 			connection.value.on('GridColorUpdated', (data) => {
-			store.updateGridColor(data.color)
-		})
+				store.updateGridColor(data.color, data.version)
+			})
 
-		connection.value.on('BattleMapError', (message) => {
+			connection.value.on('GridWidthUpdated', (data) => {
+				store.updateGridWidth(data.gridWidth, data.version)
+			})
+
+			connection.value.on('BattleMapError', (message) => {
 				alert(message)
 			})
 
@@ -286,17 +291,21 @@ export default {
 			gridSettingsModal.value?.show()
 		}
 
-		async function handleGridSizeChange({ width, height, color }) {
+		async function handleGridSizeChange({ width, height, color, gridWidth }) {
 			try {
 				// Update dimensions if changed
-			if (width !== store.grid.width || height !== store.grid.height) {
-				await connection.value.invoke('UpdateGridSize', props.sessionId, props.userId, width, height)
-			}
+				if (width !== store.grid.width || height !== store.grid.height) {
+					await connection.value.invoke('UpdateGridSize', props.sessionId, props.userId, width, height)
+				}
 
-			// Update color if changed
-			if (color !== store.grid.gridColor) {
-				await connection.value.invoke('UpdateGridColor', props.sessionId, props.userId, color)
-			}
+				// Update color if changed
+				if (color !== store.grid.gridColor) {
+					await connection.value.invoke('UpdateGridColor', props.sessionId, props.userId, color)
+				}
+				if (gridWidth != store.grid.gridWidth) {
+					await connection.value.invoke('UpdateGridWidth', props.sessionId, props.userId, gridWidth)
+				}
+
 			} catch (err) {
 				console.error('Grid size update error:', err)
 			}

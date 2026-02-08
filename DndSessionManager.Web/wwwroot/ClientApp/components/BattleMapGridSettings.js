@@ -31,13 +31,22 @@ export default {
 								max="100">
 						</div>
 						<div class="mb-3">
-					<label class="form-label">{{ $t('battlemap.gridSettings.color') }}</label>
-					<input
-						type="color"
-						class="form-control form-control-color"
-						v-model="localColor"
-						style="width: 100%; height: 50px;">
-				</div>
+							<label class="form-label">{{ $t('battlemap.gridSettings.color') }}</label>
+							<input
+								type="color"
+								class="form-control form-control-color"
+								v-model="localColor"
+								style="width: 100%; height: 50px;">
+						</div>
+						<div class="mb-3">
+							<label class="form-label">{{ $t('battlemap.gridSettings.gridWidth') }}</label>
+							<input
+								type="number"
+								class="form-control"
+								v-model.number="localGridWidth"
+								min="1"
+								max="10">
+						</div>
 				<div class="alert alert-warning" v-if="willMoveTokens">
 							<i class="bi bi-exclamation-triangle"></i>
 							{{ $t('battlemap.gridSettings.tokenWarning') }}
@@ -59,6 +68,7 @@ export default {
 		currentWidth: { type: Number, required: true },
 		currentHeight: { type: Number, required: true },
 		currentColor: { type: String, required: true },
+		currentGridWidth: { type: Number, required: true },
 		tokens: { type: Array, default: () => [] }
 	},
 	emits: ['save'],
@@ -68,6 +78,7 @@ export default {
 		const localWidth = ref(props.currentWidth)
 		const localHeight = ref(props.currentHeight)
 		const localColor = ref(props.currentColor)
+		const localGridWidth = ref(props.currentGridWidth)
 		let modalInstance = null
 
 		const willMoveTokens = computed(() => {
@@ -80,6 +91,7 @@ export default {
 			localWidth.value = props.currentWidth
 			localHeight.value = props.currentHeight
 			localColor.value = props.currentColor
+			localGridWidth.value = props.currentGridWidth;
 			if (modalRef.value) {
 				modalInstance = new bootstrap.Modal(modalRef.value)
 				modalInstance.show()
@@ -96,7 +108,8 @@ export default {
 			emit('save', {
 				width: localWidth.value,
 				height: localHeight.value,
-				color: localColor.value
+				color: localColor.value,
+				gridWidth: localGridWidth.value
 			})
 			hide()
 		}
@@ -114,6 +127,7 @@ export default {
 			localWidth,
 			localHeight,
 			localColor,
+			localGridWidth,
 			willMoveTokens,
 			show,
 			hide,

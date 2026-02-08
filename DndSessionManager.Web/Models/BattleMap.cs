@@ -43,6 +43,7 @@ public class GridConfiguration
 	public int CellSizePixels { get; set; } = 50;
 	public bool ShowGrid { get; set; } = true;
 	public string GridColor { get; set; } = "#cccccc";
+	public int GridWidth { get; set; } = 1;
 }
 
 public class BattleToken

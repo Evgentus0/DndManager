@@ -402,7 +402,8 @@
       "height": "Grid Height (cells)",
       "color": "Grid Color",
       "tokenWarning": "Warning: Some tokens are outside the new grid bounds and will be moved.",
-      "tokensMoved": "{count} token(s) were moved to fit the new grid size"
+      "tokensMoved": "{count} token(s) were moved to fit the new grid size",
+      "gridWidth": "Grid stroke width"
     },
     "confirmRemoveBackground": "Remove battle map background image?",
     "errors": {

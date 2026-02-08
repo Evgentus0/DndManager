@@ -14,7 +14,7 @@ public class BattleMapService
 		_repository = repository;
 	}
 
-	// === CRUD Operations ===
+	#region === CRUD Operations ===
 
 	public BattleMap CreateBattleMap(Guid sessionId)
 	{
@@ -58,8 +58,9 @@ public class BattleMapService
 			_repository.SaveBattleMap(map);
 		}
 	}
+	#endregion
 
-	// === Token Operations ===
+	#region === Token Operations ===
 
 	public bool AddToken(Guid mapId, BattleToken token)
 	{
@@ -108,8 +109,9 @@ public class BattleMapService
 		_repository.SaveBattleMap(map);
 		return true;
 	}
+	#endregion
 
-	// === Wall Operations ===
+	#region === Wall Operations ===
 
 	public bool AddWall(Guid mapId, Wall wall)
 	{
@@ -140,8 +142,9 @@ public class BattleMapService
 		_repository.SaveBattleMap(map);
 		return true;
 	}
+	#endregion
 
-	// === Fog of War ===
+	#region === Fog of War ===
 
 	public bool RevealCells(Guid mapId, List<GridCell> cells)
 	{
@@ -195,8 +198,9 @@ public class BattleMapService
 	{
 		_repository.SaveBattleMap(map);
 	}
+	#endregion
 
-	// === Background Operations ===
+	#region === Background Operations ===
 
 	public bool UpdateBackgroundImage(Guid mapId, string? imageUrl, double scale = 1.0, int offsetX = 0, int offsetY = 0)
 	{
@@ -229,8 +233,9 @@ public class BattleMapService
 		_repository.SaveBattleMap(map);
 		return true;
 	}
+	#endregion
 
-	// === Grid Operations ===
+	#region === Grid Operations ===
 
 	public (bool Success, List<(Guid TokenId, int OldX, int OldY, int NewX, int NewY)> MovedTokens) UpdateGridDimensions(Guid mapId, int newWidth, int newHeight)
 	{
@@ -289,7 +294,26 @@ public class BattleMapService
 		return true;
 	}
 
-	// === Permission Checks ===
+	public bool UpdateGridWidth(Guid mapId, int newGridWidth)
+	{
+		if (!_activeMaps.TryGetValue(mapId, out var map))
+			return false;
+
+		if (newGridWidth < 1 || newGridWidth > 10)
+		{
+			return false;
+		}
+
+		map.Grid.GridWidth = newGridWidth;
+		map.Version++;
+		map.UpdatedAt = DateTime.UtcNow;
+
+		_repository.SaveBattleMap(map);
+		return true;
+	}
+	#endregion
+
+	#region === Permission Checks ===
 
 	public bool CanUserMoveToken(BattleToken token, Guid userId, bool isMaster)
 	{
@@ -306,4 +330,5 @@ public class BattleMapService
 		// Only DM can edit the map (walls, background, fog)
 		return isMaster;
 	}
+	#endregion
 }

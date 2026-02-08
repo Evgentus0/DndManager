@@ -14,7 +14,8 @@ export const useBattleMapStore = defineStore('battleMap', () => {
 		height: 20,
 		cellSizePixels: 50,
 		showGrid: true,
-		gridColor: '#cccccc'
+		gridColor: '#cccccc',
+		gridWidth: 1
 	})
 
 	// Tokens (normalized by ID)
@@ -169,25 +170,30 @@ export const useBattleMapStore = defineStore('battleMap', () => {
 		}
 	}
 
-	function updateBackground(imageUrl, scale = 1.0, offsetX = 0, offsetY = 0) {
+	function updateBackground(imageUrl, scale = 1.0, offsetX = 0, offsetY = 0, newVersion) {
 		background.value = {
 			imageUrl,
 			scale,
 			offsetX,
 			offsetY
 		}
-		version.value++
+		version.value = newVersion;
 	}
 
-	function updateGridSize(newWidth, newHeight) {
+	function updateGridSize(newWidth, newHeight, newVersion) {
 		grid.value.width = newWidth
 		grid.value.height = newHeight
-		version.value++
+		version.value = newVersion
 	}
 
-	function updateGridColor(newColor) {
+	function updateGridColor(newColor, newVersion) {
 		grid.value.gridColor = newColor
-		version.value++
+		version.value = newVersion
+	}
+
+	function updateGridWidth(newWidth, newVersion) {
+		grid.value.gridWidth = newWidth
+		version.value = newVersion;
 	}
 
 	return {
@@ -228,6 +234,7 @@ export const useBattleMapStore = defineStore('battleMap', () => {
 		gridToPixel,
 		updateBackground,
 		updateGridSize,
-		updateGridColor
+		updateGridColor,
+		updateGridWidth
 	}
 })
