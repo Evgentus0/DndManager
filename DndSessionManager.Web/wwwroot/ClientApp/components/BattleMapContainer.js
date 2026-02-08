@@ -78,7 +78,7 @@ export default {
 														:style="{width: '24px', height: '24px', borderRadius: '50%', backgroundColor: token.color, border: '2px solid #ecf0f1'}">
 													</div>
 													<div class="flex-grow-1">
-														<small class="text-white"><strong>{{ token.name }}</strong></small><br>
+														<small class="text-black"><strong>{{ token.name }}</strong></small><br>
 														<small class="text-muted" style="font-size: 0.7rem;">{{ token.x }}, {{ token.y }}</small>
 													</div>
 												</div>

@@ -9,15 +9,18 @@ public class BattleMapHub : Hub
 	private readonly BattleMapService _mapService;
 	private readonly UserService _userService;
 	private readonly SessionService _sessionService;
+	private readonly CharacterService _characterService;
 
 	public BattleMapHub(
 		BattleMapService mapService,
 		UserService userService,
-		SessionService sessionService)
+		SessionService sessionService,
+		CharacterService characterService)
 	{
 		_mapService = mapService;
 		_userService = userService;
 		_sessionService = sessionService;
+		_characterService = characterService;
 	}
 
 	// === Connection Management ===
@@ -53,6 +56,26 @@ public class BattleMapHub : Hub
 				map = filteredMap,
 				version = map.Version
 			});
+
+			// Auto-create player token if not master and no token exists yet
+			if (!isMaster)
+			{
+				var existingToken = map.Tokens.FirstOrDefault(t =>
+					t.OwnerId.HasValue && t.OwnerId.Value == userGuid);
+
+				if (existingToken == null)
+				{
+					var token = CreatePlayerToken(sessionGuid, userGuid);
+					if (_mapService.AddToken(map.Id, token))
+					{
+						await Clients.Group($"battlemap_{sessionId}").SendAsync("TokenAdded", new
+						{
+							token = MapTokenToDto(token),
+							version = map.Version
+						});
+					}
+				}
+			}
 		}
 	}
 
@@ -535,6 +558,44 @@ public class BattleMapHub : Hub
 		blocksLight = w.BlocksLight,
 		blocksMovement = w.BlocksMovement
 	};
+
+	private BattleToken CreatePlayerToken(Guid sessionId, Guid userId)
+	{
+		var user = _userService.GetUser(sessionId, userId);
+		string tokenName = user?.Username ?? "Player";
+		Guid? characterId = null;
+
+		if (user != null)
+		{
+			var character = _characterService.GetCharacterByOwner(sessionId, userId);
+			if (character != null)
+			{
+				tokenName = character.Name;
+				characterId = character.Id;
+			}
+		}
+
+		var colorIndex = Math.Abs(userId.GetHashCode()) % _playerColors.Length;
+
+		return new BattleToken
+		{
+			Name = tokenName,
+			OwnerId = userId,
+			CharacterId = characterId,
+			X = 1,
+			Y = 1,
+			Size = 1,
+			Color = _playerColors[colorIndex],
+			IsVisible = true,
+			IsDmOnly = false
+		};
+	}
+
+	private static readonly string[] _playerColors =
+	[
+		"#e74c3c", "#2ecc71", "#3498db", "#9b59b6",
+		"#f39c12", "#1abc9c", "#e67e22", "#34495e"
+	];
 }
 
 // DTOs

@@ -204,19 +204,34 @@ export default {
 				strokeWidth: 3
 			})
 
-			// Token name text
+			// Нижний слой - только обводка
+			const textStroke = new Konva.Text({
+				x: -radius,
+				y: radius + 5,
+				width: radius * 2,
+				text: token.name,
+				fontSize: 14,
+				fontFamily: 'Arial',
+				fill: '#000000',
+				stroke: '#000000',
+				strokeWidth: 4,
+				align: 'center'
+			})
+
+			// Верхний слой - только белый текст
 			const text = new Konva.Text({
 				x: -radius,
 				y: radius + 5,
 				width: radius * 2,
 				text: token.name,
-				fontSize: 12,
+				fontSize: 14,
 				fontFamily: 'Arial',
-				fill: '#ecf0f1',
+				fill: '#ffffff', 
 				align: 'center'
 			})
 
 			group.add(circle)
+			group.add(textStroke)
 			group.add(text)
 
 			// Setup drag events
