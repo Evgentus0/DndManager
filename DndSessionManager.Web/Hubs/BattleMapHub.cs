@@ -45,7 +45,7 @@ public class BattleMapHub : Hub
 		_mapService.LoadBattleMapIntoMemory(sessionGuid);
 
 		// Send initial state
-		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		var map = _mapService.GetActiveMap(sessionGuid);
 		if (map != null)
 		{
 			var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
@@ -93,7 +93,7 @@ public class BattleMapHub : Hub
 			!Guid.TryParse(tokenId, out var tokenGuid))
 			return;
 
-		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		var map = _mapService.GetActiveMap(sessionGuid);
 		if (map == null)
 			return;
 
@@ -135,7 +135,7 @@ public class BattleMapHub : Hub
 			return;
 		}
 
-		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		var map = _mapService.GetActiveMap(sessionGuid);
 		if (map == null)
 			return;
 
@@ -183,7 +183,7 @@ public class BattleMapHub : Hub
 			return;
 		}
 
-		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		var map = _mapService.GetActiveMap(sessionGuid);
 		if (map == null)
 			return;
 
@@ -205,7 +205,7 @@ public class BattleMapHub : Hub
 			return;
 
 		var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
-		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		var map = _mapService.GetActiveMap(sessionGuid);
 		if (map == null)
 			return;
 		var token = map.Tokens.FirstOrDefault(t => t.Id == tokenGuid);
@@ -242,7 +242,7 @@ public class BattleMapHub : Hub
 			return;
 		}
 
-		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		var map = _mapService.GetActiveMap(sessionGuid);
 		if (map == null)
 			return;
 
@@ -272,7 +272,7 @@ public class BattleMapHub : Hub
 			return;
 		}
 
-		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		var map = _mapService.GetActiveMap(sessionGuid);
 		if (map == null)
 			return;
 
@@ -309,7 +309,7 @@ public class BattleMapHub : Hub
 			return;
 		}
 
-		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		var map = _mapService.GetActiveMap(sessionGuid);
 		if (map == null)
 			return;
 
@@ -348,7 +348,7 @@ public class BattleMapHub : Hub
 			return;
 		}
 
-		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		var map = _mapService.GetActiveMap(sessionGuid);
 		if (map == null)
 			return;
 
@@ -377,7 +377,7 @@ public class BattleMapHub : Hub
 			return;
 		}
 
-		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		var map = _mapService.GetActiveMap(sessionGuid);
 		if (map == null)
 			return;
 
@@ -406,7 +406,7 @@ public class BattleMapHub : Hub
 			return;
 		}
 
-		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		var map = _mapService.GetActiveMap(sessionGuid);
 		if (map == null)
 			return;
 
@@ -437,7 +437,7 @@ public class BattleMapHub : Hub
 
 		if (_mapService.SetFogEnabled(sessionGuid, enabled))
 		{
-			var map = _mapService.GetBattleMapBySession(sessionGuid);
+			var map = _mapService.GetActiveMap(sessionGuid);
 			await Clients.Group($"battlemap_{sessionId}").SendAsync("FogEnabledChanged", new
 			{
 				enabled = enabled,
@@ -461,7 +461,7 @@ public class BattleMapHub : Hub
 			return;
 		}
 
-		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		var map = _mapService.GetActiveMap(sessionGuid);
 		if (map == null)
 			return;
 
@@ -493,7 +493,7 @@ public class BattleMapHub : Hub
 			return;
 		}
 
-		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		var map = _mapService.GetActiveMap(sessionGuid);
 		if (map == null)
 			return;
 
@@ -537,7 +537,7 @@ public class BattleMapHub : Hub
 			return;
 		}
 
-		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		var map = _mapService.GetActiveMap(sessionGuid);
 		if (map == null)
 			return;
 
@@ -570,7 +570,7 @@ public class BattleMapHub : Hub
 			return;
 		}
 
-		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		var map = _mapService.GetActiveMap(sessionGuid);
 		if (map == null)
 			return;
 
@@ -596,11 +596,145 @@ public class BattleMapHub : Hub
 		if (!isMaster)
 			return;
 
-		var map = _mapService.GetBattleMapBySession(sessionGuid);
+		var map = _mapService.GetActiveMap(sessionGuid);
 		if (map != null)
 		{
 			_mapService.SaveAndDeactivateBattleMap(map.Id);
 			await Clients.Caller.SendAsync("BattleMapSaved");
+		}
+	}
+
+	// === Map Management ===
+
+	public async Task GetAllMaps(string sessionId)
+	{
+		if (!Guid.TryParse(sessionId, out var sessionGuid))
+			return;
+
+		var maps = _mapService.GetBattleMaps(sessionGuid);
+		var mapDtos = maps.Select(m => new
+		{
+			id = m.Id.ToString(),
+			name = m.Name,
+			isActive = m.IsActive,
+			displayOrder = m.DisplayOrder,
+			tokenCount = m.Tokens.Count
+		});
+
+		await Clients.Caller.SendAsync("MapsList", mapDtos);
+	}
+
+	public async Task CreateMap(string sessionId, string userId, string mapName)
+	{
+		if (!Guid.TryParse(sessionId, out var sessionGuid) || !Guid.TryParse(userId, out var userGuid))
+			return;
+
+		var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
+		if (!_mapService.CanUserEditMap(isMaster))
+		{
+			await Clients.Caller.SendAsync("BattleMapError", "Only the DM can create maps.");
+			return;
+		}
+
+		var newMap = _mapService.CreateNewMap(sessionGuid, mapName, setAsActive: false);
+
+		await Clients.Group($"battlemap_{sessionId}").SendAsync("MapCreated", new
+		{
+			id = newMap.Id.ToString(),
+			name = newMap.Name,
+			isActive = newMap.IsActive,
+			displayOrder = newMap.DisplayOrder,
+			tokenCount = 0
+		});
+	}
+
+	public async Task RenameMap(string sessionId, string userId, string mapId, string newName)
+	{
+		if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+			!Guid.TryParse(userId, out var userGuid) ||
+			!Guid.TryParse(mapId, out var mapGuid))
+			return;
+
+		var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
+		if (!_mapService.CanUserEditMap(isMaster))
+		{
+			await Clients.Caller.SendAsync("BattleMapError", "Only the DM can rename maps.");
+			return;
+		}
+
+		if (_mapService.RenameMap(mapGuid, newName))
+		{
+			await Clients.Group($"battlemap_{sessionId}").SendAsync("MapRenamed", new
+			{
+				mapId = mapId,
+				newName = newName
+			});
+		}
+	}
+
+	public async Task DeleteMap(string sessionId, string userId, string mapId)
+	{
+		if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+			!Guid.TryParse(userId, out var userGuid) ||
+			!Guid.TryParse(mapId, out var mapGuid))
+			return;
+
+		var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
+		if (!_mapService.CanUserEditMap(isMaster))
+		{
+			await Clients.Caller.SendAsync("BattleMapError", "Only the DM can delete maps.");
+			return;
+		}
+
+		if (_mapService.DeleteMap(mapGuid))
+		{
+			await Clients.Group($"battlemap_{sessionId}").SendAsync("MapDeleted", new { mapId = mapId });
+		}
+		else
+		{
+			await Clients.Caller.SendAsync("BattleMapError", "Cannot delete the only map.");
+		}
+	}
+
+	public async Task SwitchMap(string sessionId, string userId, string newMapId)
+	{
+		if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+			!Guid.TryParse(userId, out var userGuid) ||
+			!Guid.TryParse(newMapId, out var newMapGuid))
+			return;
+
+		var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
+		if (!_mapService.CanUserEditMap(isMaster))
+		{
+			await Clients.Caller.SendAsync("BattleMapError", "Only the DM can switch maps.");
+			return;
+		}
+
+		var (success, migratedTokens) = _mapService.SwitchActiveMap(sessionGuid, newMapGuid);
+		if (!success)
+		{
+			await Clients.Caller.SendAsync("BattleMapError", "Failed to switch maps.");
+			return;
+		}
+
+		var newMap = _mapService.GetActiveMap(sessionGuid);
+		if (newMap != null)
+		{
+			await Clients.Group($"battlemap_{sessionId}").SendAsync("ActiveMapChanged", new
+			{
+				mapId = newMapId,
+				map = new // Simplified map state
+				{
+					id = newMap.Id.ToString(),
+					sessionId = newMap.SessionId.ToString(),
+					version = newMap.Version,
+					grid = newMap.Grid,
+					tokens = newMap.Tokens,
+					walls = newMap.Walls,
+					fogOfWar = newMap.FogOfWar,
+					background = newMap.Background
+				}
+			});
 		}
 	}
 

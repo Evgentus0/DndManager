@@ -4,13 +4,15 @@ import { useI18n } from 'vue-i18n'
 import BattleMapCanvas from './BattleMapCanvas.js'
 import BattleMapToolbar from './BattleMapToolbar.js'
 import BattleMapGridSettings from './BattleMapGridSettings.js'
+import MapSelector from './MapSelector.js'
 
 export default {
 	name: 'BattleMapContainer',
 	components: {
 		BattleMapCanvas,
 		BattleMapToolbar,
-		BattleMapGridSettings
+		BattleMapGridSettings,
+		MapSelector
 	},
 	template: `
 		<div class="battlemap-wrapper">
@@ -36,6 +38,13 @@ export default {
 					</div>
 				</div>
 				<div class="card-body p-3" style="background-color: #2c3e50;">
+					<map-selector
+						:is-master="isMaster"
+						:session-id="sessionId"
+						:user-id="userId"
+						:connection="connection">
+					</map-selector>
+
 					<battle-map-toolbar
 						:is-master="isMaster"
 						:can-remove="!!store.selectedToken"
@@ -301,6 +310,27 @@ export default {
 				alert(message)
 			})
 
+			// Map management events
+			connection.value.on('MapsList', (maps) => {
+				store.setAvailableMaps(maps)
+			})
+
+			connection.value.on('MapCreated', (map) => {
+				store.addAvailableMap(map)
+			})
+
+			connection.value.on('MapRenamed', ({ mapId, newName }) => {
+				store.updateMapName(mapId, newName)
+			})
+
+			connection.value.on('MapDeleted', ({ mapId }) => {
+				store.removeAvailableMap(mapId)
+			})
+
+			connection.value.on('ActiveMapChanged', ({ mapId, map }) => {
+				store.switchToMap(map)
+			})
+
 			connection.value.onreconnected(async () => {
 				await connection.value.invoke('JoinBattleMap', props.sessionId, props.userId)
 			})
@@ -308,6 +338,7 @@ export default {
 			try {
 				await connection.value.start()
 				await connection.value.invoke('JoinBattleMap', props.sessionId, props.userId)
+				await connection.value.invoke('GetAllMaps', props.sessionId)
 			} catch (err) {
 				console.error('SignalR connection error:', err)
 			}

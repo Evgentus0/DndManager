@@ -20,6 +20,22 @@ public class BattleMap
 	public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 	public DateTime? UpdatedAt { get; set; }
 
+	/// <summary>
+	/// User-friendly map name (e.g., "Tavern Entrance", "Dragon's Lair")
+	/// </summary>
+	public string Name { get; set; } = "Map 1";
+
+	/// <summary>
+	/// Whether this is the currently active map for the session
+	/// Only one map per session can be active at a time
+	/// </summary>
+	public bool IsActive { get; set; } = false;
+
+	/// <summary>
+	/// Display order in the map selector UI
+	/// </summary>
+	public int DisplayOrder { get; set; } = 0;
+
 	// Grid configuration
 	public GridConfiguration Grid { get; set; } = new();
 

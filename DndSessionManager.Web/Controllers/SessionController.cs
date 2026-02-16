@@ -459,18 +459,21 @@ public class SessionController : Controller
             return RedirectToAction("Join", new { id });
         }
 
-        // Ensure battle map exists
-        var map = _battleMapService.GetBattleMapBySession(id);
-        if (map == null)
+        // Get active map (or create if none exists)
+        var activeMap = _battleMapService.GetActiveMap(id);
+        if (activeMap == null)
         {
-            // Create default map
-            map = _battleMapService.CreateBattleMap(id);
+            activeMap = _battleMapService.CreateBattleMap(id);
         }
+
+        // Get all maps for the map selector
+        var allMaps = _battleMapService.GetBattleMaps(id);
 
         ViewBag.Session = session;
         ViewBag.CurrentUser = user;
         ViewBag.IsMaster = user.Role == UserRole.Master;
-        ViewBag.BattleMap = map;
+        ViewBag.BattleMap = activeMap;
+        ViewBag.AllMaps = allMaps;
 
         HttpContext.AddCurrentGameSession(session.Id.ToString(), session.Name);
 

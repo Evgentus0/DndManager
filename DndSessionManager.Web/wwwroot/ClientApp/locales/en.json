@@ -385,6 +385,11 @@
     "tokensCount": "Tokens",
     "promptTokenName": "Enter token name:",
     "confirmRemove": "Are you sure you want to remove this token?",
+    "currentMap": "Current Map",
+    "newMap": "New Map",
+    "createMap": "Create New Map",
+    "renameMap": "Rename Map",
+    "deleteMap": "Delete Map",
     "tools": {
       "select": "Select"
     },

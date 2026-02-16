@@ -388,6 +388,11 @@
     "tokensCount": "Токенов",
     "promptTokenName": "Введите имя токена:",
     "confirmRemove": "Вы уверены, что хотите удалить этот токен?",
+    "currentMap": "Текущая карта",
+    "newMap": "Новая карта",
+    "createMap": "Создать новую карту",
+    "renameMap": "Переименовать карту",
+    "deleteMap": "Удалить карту",
     "tools": {
       "select": "Выбор"
     },

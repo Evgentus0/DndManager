@@ -8,6 +8,10 @@ export const useBattleMapStore = defineStore('battleMap', () => {
 	const sessionId = ref(null)
 	const version = ref(0)
 
+	// Multi-map support
+	const availableMaps = ref([])
+	const activeMapId = ref(null)
+
 	// Grid
 	const grid = ref({
 		width: 30,
@@ -253,11 +257,44 @@ export const useBattleMapStore = defineStore('battleMap', () => {
 		return index < list.length - 1 && list[index + 1].initiative !== null
 	}
 
+	// === Map Management ===
+
+	function setAvailableMaps(maps) {
+		availableMaps.value = maps.sort((a, b) => a.displayOrder - b.displayOrder)
+	}
+
+	function addAvailableMap(map) {
+		availableMaps.value.push(map)
+		availableMaps.value.sort((a, b) => a.displayOrder - b.displayOrder)
+	}
+
+	function updateMapName(mapId, newName) {
+		const map = availableMaps.value.find(m => m.id === mapId)
+		if (map) map.name = newName
+	}
+
+	function removeAvailableMap(mapId) {
+		availableMaps.value = availableMaps.value.filter(m => m.id !== mapId)
+	}
+
+	function switchToMap(newMapData) {
+		// Clear current map state
+		tokens.value = {}
+		walls.value = {}
+		selectedTokenId.value = null
+
+		// Initialize with new map
+		initializeMap(newMapData)
+		activeMapId.value = newMapData.id
+	}
+
 	return {
 		// State
 		mapId,
 		sessionId,
 		version,
+		availableMaps,
+		activeMapId,
 		grid,
 		tokens,
 		walls,
@@ -298,6 +335,11 @@ export const useBattleMapStore = defineStore('battleMap', () => {
 		swapTokenInitiatives,
 		getTokenIndexInInitiativeOrder,
 		canMoveTokenUp,
-		canMoveTokenDown
+		canMoveTokenDown,
+		setAvailableMaps,
+		addAvailableMap,
+		updateMapName,
+		removeAvailableMap,
+		switchToMap
 	}
 })

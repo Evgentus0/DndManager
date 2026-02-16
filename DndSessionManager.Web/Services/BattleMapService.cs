@@ -19,16 +19,11 @@ public class BattleMapService
 
 	public BattleMap CreateBattleMap(Guid sessionId)
 	{
-		var map = new BattleMap
-		{
-			SessionId = sessionId,
-			Version = 0
-		};
+		var existing = GetActiveMap(sessionId);
+		if (existing != null)
+			return existing;
 
-		_activeMaps.TryAdd(map.Id, map);
-		_repository.SaveBattleMap(map);
-
-		return map;
+		return CreateNewMap(sessionId, "Map 1", setAsActive: true);
 	}
 
 	public BattleMap? GetBattleMap(Guid mapId)
@@ -59,6 +54,170 @@ public class BattleMapService
 			_repository.SaveBattleMap(map);
 		}
 	}
+
+	#region === Map Management ===
+
+	public List<BattleMap> GetBattleMaps(Guid sessionId)
+	{
+		var activeMaps = _activeMaps.Values
+			.Where(m => m.SessionId == sessionId)
+			.OrderBy(m => m.DisplayOrder)
+			.ToList();
+
+		if (activeMaps.Any())
+			return activeMaps;
+
+		return _repository.GetBattleMaps(sessionId).ToList();
+	}
+
+	public BattleMap? GetActiveMap(Guid sessionId)
+	{
+		return _activeMaps.Values.FirstOrDefault(m => m.SessionId == sessionId && m.IsActive)
+			?? _repository.GetActiveBattleMap(sessionId);
+	}
+
+	public BattleMap CreateNewMap(Guid sessionId, string name, bool setAsActive = false)
+	{
+		var existingMaps = GetBattleMaps(sessionId);
+		var maxOrder = existingMaps.Any() ? existingMaps.Max(m => m.DisplayOrder) : -1;
+
+		var map = new BattleMap
+		{
+			SessionId = sessionId,
+			Name = name,
+			IsActive = setAsActive,
+			DisplayOrder = maxOrder + 1
+		};
+
+		if (setAsActive)
+		{
+			_repository.SetActiveMap(sessionId, map.Id);
+		}
+
+		_activeMaps.TryAdd(map.Id, map);
+		_repository.SaveBattleMap(map);
+
+		return map;
+	}
+
+	public bool RenameMap(Guid mapId, string newName)
+	{
+		if (!_activeMaps.TryGetValue(mapId, out var map))
+			return false;
+
+		map.Name = newName;
+		map.UpdatedAt = DateTime.UtcNow;
+		map.Version++;
+
+		_repository.SaveBattleMap(map);
+		return true;
+	}
+
+	public bool DeleteMap(Guid mapId)
+	{
+		if (!_activeMaps.TryGetValue(mapId, out var map))
+			return false;
+
+		// Cannot delete if it's the only map
+		var sessionMaps = GetBattleMaps(map.SessionId);
+		if (sessionMaps.Count == 1)
+			return false;
+
+		// If deleting active map, activate another map first
+		if (map.IsActive)
+		{
+			var nextMap = sessionMaps.First(m => m.Id != mapId);
+			SwitchActiveMap(map.SessionId, nextMap.Id);
+		}
+
+		_activeMaps.TryRemove(mapId, out _);
+		_repository.DeleteBattleMap(mapId);
+		_repository.DeleteTokenPositionsForMap(mapId);
+
+		return true;
+	}
+
+	public (bool Success, List<BattleToken> MigratedTokens) SwitchActiveMap(Guid sessionId, Guid newMapId)
+	{
+		var oldActiveMap = GetActiveMap(sessionId);
+		var newActiveMap = _activeMaps.TryGetValue(newMapId, out var map) ? map : _repository.GetBattleMap(newMapId);
+
+		if (newActiveMap == null || newActiveMap.SessionId != sessionId)
+			return (false, new List<BattleToken>());
+
+		if (oldActiveMap?.Id == newMapId)
+			return (true, new List<BattleToken>()); // Already active
+
+		// Load new map into memory if needed
+		if (!_activeMaps.ContainsKey(newMapId))
+			_activeMaps.TryAdd(newMapId, newActiveMap);
+
+		var migratedTokens = new List<BattleToken>();
+
+		if (oldActiveMap != null)
+		{
+			// Step 1: Save positions of player tokens on old map
+			var playerTokens = oldActiveMap.Tokens.Where(t => t.OwnerId.HasValue).ToList();
+			foreach (var token in playerTokens)
+			{
+				_repository.SaveTokenPosition(new TokenPositionHistory
+				{
+					SessionId = sessionId,
+					UserId = token.OwnerId.Value,
+					MapId = oldActiveMap.Id,
+					X = token.X,
+					Y = token.Y
+				});
+			}
+
+			// Step 2: Remove player tokens from old map (creature tokens stay)
+			oldActiveMap.Tokens.RemoveAll(t => t.OwnerId.HasValue);
+			oldActiveMap.IsActive = false;
+			_repository.SaveBattleMap(oldActiveMap);
+
+			// Step 3: Migrate player tokens to new map
+			foreach (var oldToken in playerTokens)
+			{
+				var existingToken = newActiveMap.Tokens.FirstOrDefault(t =>
+					t.OwnerId.HasValue && t.OwnerId.Value == oldToken.OwnerId.Value);
+
+				if (existingToken == null)
+				{
+					// Restore previous position or use default (1, 1)
+					var savedPosition = _repository.GetTokenPositionForMap(sessionId, oldToken.OwnerId.Value, newMapId);
+
+					var newToken = new BattleToken
+					{
+						CharacterId = oldToken.CharacterId,
+						Name = oldToken.Name,
+						OwnerId = oldToken.OwnerId,
+						X = savedPosition?.X ?? 1,
+						Y = savedPosition?.Y ?? 1,
+						Size = oldToken.Size,
+						Color = oldToken.Color,
+						ImageUrl = oldToken.ImageUrl,
+						IsVisible = true,
+						IsDmOnly = false,
+						Initiative = null // Reset initiative on map switch
+					};
+
+					newActiveMap.Tokens.Add(newToken);
+					migratedTokens.Add(newToken);
+				}
+			}
+		}
+
+		// Step 4: Activate new map
+		newActiveMap.IsActive = true;
+		newActiveMap.UpdatedAt = DateTime.UtcNow;
+		newActiveMap.Version++;
+		_repository.SaveBattleMap(newActiveMap);
+		_repository.SetActiveMap(sessionId, newMapId);
+
+		return (true, migratedTokens);
+	}
+
+	#endregion
 	#endregion
 
 	#region === Token Operations ===

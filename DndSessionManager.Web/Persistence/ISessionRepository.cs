@@ -28,4 +28,14 @@ public interface ISessionRepository
 	BattleMap? GetBattleMapBySession(Guid sessionId);
 	void SaveBattleMap(BattleMap map);
 	void DeleteBattleMap(Guid mapId);
+
+	// Multi-map support
+	IEnumerable<BattleMap> GetBattleMaps(Guid sessionId);
+	BattleMap? GetActiveBattleMap(Guid sessionId);
+	void SetActiveMap(Guid sessionId, Guid newActiveMapId);
+
+	// Token position history
+	TokenPositionHistory? GetTokenPositionForMap(Guid sessionId, Guid userId, Guid mapId);
+	void SaveTokenPosition(TokenPositionHistory position);
+	void DeleteTokenPositionsForMap(Guid mapId);
 }
