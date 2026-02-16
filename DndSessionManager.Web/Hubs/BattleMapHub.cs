@@ -852,7 +852,6 @@ public class BattleMapHub : Hub
 			version = map.Version,
 			grid = map.Grid,
 			tokens = map.Tokens
-				.Where(t => isMaster || !t.IsDmOnly)
 				.Select(MapTokenToDto)
 				.ToList(),
 			walls = map.Walls.Select(MapWallToDto).ToList(),

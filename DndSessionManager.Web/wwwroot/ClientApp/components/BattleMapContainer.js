@@ -1,4 +1,4 @@
-import { ref, onMounted, onUnmounted, shallowRef } from 'vue'
+import { ref, onMounted, onUnmounted, shallowRef, computed } from 'vue'
 import { useBattleMapStore } from '../stores/useBattleMapStore.js'
 import { useI18n } from 'vue-i18n'
 import BattleMapCanvas from './BattleMapCanvas.js'
@@ -78,7 +78,7 @@ export default {
 							</div>
 							<div class="card-body p-2">
 								<div class="d-flex flex-wrap gap-2">
-									<div v-for="token in store.tokensListByInitiative" :key="token.id"
+									<div v-for="token in showedTokenList" :key="token.id"
 										class="card border p-2 d-flex flex-column"
 										:class="{'border-warning border-3': store.selectedTokenId === token.id, 'bg-light': store.selectedTokenId !== token.id}"
 										style="cursor: pointer; width: 180px;"
@@ -254,6 +254,8 @@ export default {
 			isVisible: true,
 			isDmOnly: false
 		})
+
+		const showedTokenList = computed(() => store.tokensListByInitiative.filter(x => props.isMaster || !x.isDmOnly));
 
 		async function initializeSignalR() {
 			connection.value = new signalR.HubConnectionBuilder()
@@ -688,7 +690,8 @@ export default {
 			saveTokenDialog,
 			handleInitiativeChange,
 			handleMoveTokenUp,
-			handleMoveTokenDown
+			handleMoveTokenDown,
+			showedTokenList
 		}
 	}
 }
