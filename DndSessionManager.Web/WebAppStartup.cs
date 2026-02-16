@@ -1,5 +1,5 @@
-﻿using DndSessionManager.Web.Data;
-using DndSessionManager.Web.Hubs;
+﻿using DndSessionManager.Web.Hubs;
+using DndSessionManager.Web.Persistence;
 using DndSessionManager.Web.Services;
 
 namespace DndSessionManager.Web;

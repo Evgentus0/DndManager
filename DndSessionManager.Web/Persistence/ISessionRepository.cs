@@ -1,6 +1,6 @@
 using DndSessionManager.Web.Models;
 
-namespace DndSessionManager.Web.Data;
+namespace DndSessionManager.Web.Persistence;
 
 public interface ISessionRepository
 {

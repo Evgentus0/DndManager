@@ -1,7 +1,7 @@
 using DndSessionManager.Web.Models;
 using LiteDB;
 
-namespace DndSessionManager.Web.Data;
+namespace DndSessionManager.Web.Persistence;
 
 public class LiteDbRepository : ISessionRepository, IDisposable
 {
