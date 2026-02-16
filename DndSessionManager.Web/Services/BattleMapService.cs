@@ -9,10 +9,12 @@ public class BattleMapService
 {
 	private static readonly ConcurrentDictionary<Guid, BattleMap> _activeMaps = new();
 	private readonly ISessionRepository _repository;
+	private readonly CharacterService _characterService;
 
-	public BattleMapService(ISessionRepository repository)
+	public BattleMapService(ISessionRepository repository, CharacterService characterService)
 	{
 		_repository = repository;
+		_characterService = characterService;
 	}
 
 	#region === CRUD Operations ===
@@ -156,14 +158,30 @@ public class BattleMapService
 
 		if (oldActiveMap != null)
 		{
-			// Step 1: Save positions of player tokens on old map
-			var playerTokens = oldActiveMap.Tokens.Where(t => t.OwnerId.HasValue).ToList();
+			// Step 1: Save full state of player tokens on old map
+			var playerTokens = oldActiveMap.Tokens.Where(t => t.CharacterId.HasValue).ToList();
 			foreach (var token in playerTokens)
 			{
+				// Save full token state to PersistedToken
+				var persistedToken = _repository.GetPersistedToken(sessionId, token.CharacterId.Value);
+				if (persistedToken != null)
+				{
+					persistedToken.X = token.X;
+					persistedToken.Y = token.Y;
+					persistedToken.MapId = oldActiveMap.Id;
+					persistedToken.Name = token.Name;
+					persistedToken.Size = token.Size;
+					persistedToken.Color = token.Color;
+					persistedToken.ImageUrl = token.ImageUrl;
+					persistedToken.IconName = token.IconName;
+					_repository.SavePersistedToken(persistedToken);
+				}
+
+				// Also save to TokenPositionHistory (for audit trail)
 				_repository.SaveTokenPosition(new TokenPositionHistory
 				{
 					SessionId = sessionId,
-					UserId = token.OwnerId.Value,
+					CharacterId = token.CharacterId,
 					MapId = oldActiveMap.Id,
 					X = token.X,
 					Y = token.Y
@@ -171,38 +189,45 @@ public class BattleMapService
 			}
 
 			// Step 2: Remove player tokens from old map (creature tokens stay)
-			oldActiveMap.Tokens.RemoveAll(t => t.OwnerId.HasValue);
+			oldActiveMap.Tokens.RemoveAll(t => t.CharacterId.HasValue);
 			oldActiveMap.IsActive = false;
 			_repository.SaveBattleMap(oldActiveMap);
 
 			// Step 3: Migrate player tokens to new map
-			foreach (var oldToken in playerTokens)
+			var characters = _characterService.GetSessionCharacters(sessionId);
+			foreach (var character in characters.Where(c => c.OwnerId.HasValue))
 			{
-				var existingToken = newActiveMap.Tokens.FirstOrDefault(t =>
-					t.OwnerId.HasValue && t.OwnerId.Value == oldToken.OwnerId.Value);
-
-				if (existingToken == null)
+				var persistedToken = _repository.GetPersistedToken(sessionId, character.Id);
+				if (persistedToken != null)
 				{
-					// Restore previous position or use default (1, 1)
-					var savedPosition = _repository.GetTokenPositionForMap(sessionId, oldToken.OwnerId.Value, newMapId);
+					// Check if token already exists on new map
+					var existingToken = newActiveMap.Tokens.FirstOrDefault(t => t.CharacterId == character.Id);
 
-					var newToken = new BattleToken
+					if (existingToken == null)
 					{
-						CharacterId = oldToken.CharacterId,
-						Name = oldToken.Name,
-						OwnerId = oldToken.OwnerId,
-						X = savedPosition?.X ?? 1,
-						Y = savedPosition?.Y ?? 1,
-						Size = oldToken.Size,
-						Color = oldToken.Color,
-						ImageUrl = oldToken.ImageUrl,
-						IsVisible = true,
-						IsDmOnly = false,
-						Initiative = null // Reset initiative on map switch
-					};
+						// Restore token from PersistedToken with saved position
+						var savedPosition = _repository.GetTokenPositionForMap(sessionId, newMapId, character.Id, null);
 
-					newActiveMap.Tokens.Add(newToken);
-					migratedTokens.Add(newToken);
+						var newToken = new BattleToken
+						{
+							Id = persistedToken.Id,  // Use same token ID
+							CharacterId = character.Id,
+							Name = persistedToken.Name,
+							X = savedPosition?.X ?? 1,
+							Y = savedPosition?.Y ?? 1,
+							Size = persistedToken.Size,
+							Color = persistedToken.Color,
+							ImageUrl = persistedToken.ImageUrl,
+							IconName = persistedToken.IconName,
+							IsVisible = true,
+							IsDmOnly = false,
+							OwnerId = null,
+							Initiative = null // Reset initiative on map switch
+						};
+
+						newActiveMap.Tokens.Add(newToken);
+						migratedTokens.Add(newToken);
+					}
 				}
 			}
 		}
@@ -333,6 +358,11 @@ public class BattleMapService
 
 		_repository.SaveBattleMap(map);
 		return true;
+	}
+
+	public void SaveTokenPosition(TokenPositionHistory position)
+	{
+		_repository.SaveTokenPosition(position);
 	}
 	#endregion
 
@@ -540,13 +570,20 @@ public class BattleMapService
 
 	#region === Permission Checks ===
 
-	public bool CanUserMoveToken(BattleToken token, Guid userId, bool isMaster)
+	public bool CanUserMoveToken(BattleToken token, Guid userId, Guid sessionId, bool isMaster)
 	{
 		// DM can move any token
 		if (isMaster)
 			return true;
 
-		// Player can only move their own token
+		// Check ownership via character
+		if (token.CharacterId.HasValue)
+		{
+			var character = _characterService.GetCharacter(token.CharacterId.Value);
+			return character?.OwnerId == userId;
+		}
+
+		// Backward compatibility: DM-created tokens with OwnerId (NPC tokens)
 		return token.OwnerId.HasValue && token.OwnerId.Value == userId;
 	}
 
@@ -556,11 +593,19 @@ public class BattleMapService
 		return isMaster;
 	}
 
-	public bool CanUserEditToken(BattleToken token, Guid userId, bool isMaster)
+	public bool CanUserEditToken(BattleToken token, Guid userId, Guid sessionId, bool isMaster)
 	{
 		if (isMaster)
 			return true;
 
+		// Check ownership via character
+		if (token.CharacterId.HasValue)
+		{
+			var character = _characterService.GetCharacter(token.CharacterId.Value);
+			return character?.OwnerId == userId;
+		}
+
+		// Backward compatibility: DM-created tokens with OwnerId (NPC tokens)
 		return token.OwnerId.HasValue && token.OwnerId.Value == userId;
 	}
 	#endregion

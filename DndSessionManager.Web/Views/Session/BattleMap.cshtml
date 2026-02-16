@@ -2,6 +2,7 @@
 	ViewData["Title"] = "Battle Map";
 	var session = ViewBag.Session as DndSessionManager.Web.Models.Session;
 	var currentUser = ViewBag.CurrentUser as DndSessionManager.Web.Models.User;
+	var currentCharacter = ViewBag.CurrentCharacter as DndSessionManager.Web.Models.Character;
 	var battleMap = ViewBag.BattleMap as DndSessionManager.Web.Models.BattleMap;
 	var isMaster = ViewBag.IsMaster;
 }
@@ -32,7 +33,8 @@
 		:session-id="sessionId"
 		:user-id="userId"
 		:is-master="isMaster"
-		:initial-map="initialMap">
+		:initial-map="initialMap"
+		:character-id="characterId">
 	</battle-map-container>
 </div>
 
@@ -58,13 +60,15 @@
 				const sessionName = '@Html.Raw(session?.Name)'
 				const isMaster = @Json.Serialize(isMaster)
 				const initialMap = @Html.Raw(Json.Serialize(battleMap))
+				const characterId = isMaster ? null : '@currentCharacter?.Id';
 
 				return {
 					sessionId,
 					userId,
 					sessionName,
 					isMaster,
-					initialMap
+					initialMap,
+					characterId
 				}
 			}
 		})

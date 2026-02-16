@@ -12,7 +12,8 @@ public class TokenPositionHistory
 	public Guid Id { get; set; } = Guid.NewGuid();
 
 	public Guid SessionId { get; set; }
-	public Guid UserId { get; set; }  // Matches BattleToken.OwnerId
+	public Guid? CharacterId { get; set; }  // NEW: Primary identifier (Character.Id)
+	public Guid? UserId { get; set; }       // DEPRECATED: For backward compatibility
 	public Guid MapId { get; set; }
 
 	public int X { get; set; }

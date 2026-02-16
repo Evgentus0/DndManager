@@ -14,7 +14,8 @@ export default {
 		userId: { type: String, required: true },
 		isMaster: { type: Boolean, required: true },
 		connection: { type: Object, required: false },
-		currentTool: { type: String, default: 'select' }
+		currentTool: { type: String, default: 'select' },
+		characterId: { type: String, required: false },
 	},
 	emits: ['token-moved'],
 	setup(props, { emit }) {
@@ -479,7 +480,8 @@ export default {
 			if (props.isMaster) return true
 
 			// Players can only drag their own tokens
-			return token.ownerId && token.ownerId === props.userId
+			return (token.characterId && token.characterId === props.characterId)
+				|| (token.ownerId && token.ownerId === props.userId)
 		}
 
 		async function sendTokenMove(tokenId, x, y) {

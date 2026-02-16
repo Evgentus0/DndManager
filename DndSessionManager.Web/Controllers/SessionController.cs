@@ -458,9 +458,10 @@ public class SessionController : Controller
         {
             return RedirectToAction("Join", new { id });
         }
+		var character = user.Role == UserRole.Master ? null : _characterService.GetCharacterByOwner(id, userId);
 
-        // Get active map (or create if none exists)
-        var activeMap = _battleMapService.GetActiveMap(id);
+		// Get active map (or create if none exists)
+		var activeMap = _battleMapService.GetActiveMap(id);
         if (activeMap == null)
         {
             activeMap = _battleMapService.CreateBattleMap(id);
@@ -474,8 +475,9 @@ public class SessionController : Controller
         ViewBag.IsMaster = user.Role == UserRole.Master;
         ViewBag.BattleMap = activeMap;
         ViewBag.AllMaps = allMaps;
+		ViewBag.CurrentCharacter = character;
 
-        HttpContext.AddCurrentGameSession(session.Id.ToString(), session.Name);
+		HttpContext.AddCurrentGameSession(session.Id.ToString(), session.Name);
 
         return View();
     }

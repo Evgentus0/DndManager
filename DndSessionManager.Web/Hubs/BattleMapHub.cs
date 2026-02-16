@@ -1,4 +1,5 @@
 using DndSessionManager.Web.Models;
+using DndSessionManager.Web.Persistence;
 using DndSessionManager.Web.Services;
 using Microsoft.AspNetCore.SignalR;
 
@@ -10,17 +11,20 @@ public class BattleMapHub : Hub
 	private readonly UserService _userService;
 	private readonly SessionService _sessionService;
 	private readonly CharacterService _characterService;
+	private readonly ISessionRepository _repository;
 
 	public BattleMapHub(
 		BattleMapService mapService,
 		UserService userService,
 		SessionService sessionService,
-		CharacterService characterService)
+		CharacterService characterService,
+		ISessionRepository repository)
 	{
 		_mapService = mapService;
 		_userService = userService;
 		_sessionService = sessionService;
 		_characterService = characterService;
+		_repository = repository;
 	}
 
 	// === Connection Management ===
@@ -57,22 +61,31 @@ public class BattleMapHub : Hub
 				version = map.Version
 			});
 
-			// Auto-create player token if not master and no token exists yet
+			// Auto-create/restore player token if not master
 			if (!isMaster)
 			{
-				var existingToken = map.Tokens.FirstOrDefault(t =>
-					t.OwnerId.HasValue && t.OwnerId.Value == userGuid);
-
-				if (existingToken == null)
+				var character = _characterService.GetCharacterByOwner(sessionGuid, userGuid);
+				if (character != null)
 				{
-					var token = CreatePlayerToken(sessionGuid, userGuid);
-					if (_mapService.AddToken(map.Id, token))
+					// Check if character's token already exists on map (prevent duplicates)
+					var existingToken = map.Tokens.FirstOrDefault(t => t.CharacterId == character.Id);
+
+					if (existingToken == null)
 					{
-						await Clients.Group($"battlemap_{sessionId}").SendAsync("TokenAdded", new
+						var token = CreateOrRestorePlayerToken(sessionGuid, userGuid, map.Id);
+						if (token != null && _mapService.AddToken(map.Id, token))
 						{
-							token = MapTokenToDto(token),
-							version = map.Version
-						});
+							await Clients.Group($"battlemap_{sessionId}").SendAsync("TokenAdded", new
+							{
+								token = MapTokenToDto(token),
+								version = map.Version
+							});
+						}
+					}
+					else
+					{
+						// Character already on map - could send a message or silently ignore
+						// For now, silently ignore (user might have multiple browser tabs open)
 					}
 				}
 			}
@@ -81,6 +94,81 @@ public class BattleMapHub : Hub
 
 	public async Task LeaveBattleMap(string sessionId, string userId)
 	{
+		if (!Guid.TryParse(sessionId, out var sessionGuid) ||
+			!Guid.TryParse(userId, out var userGuid))
+		{
+			await Groups.RemoveFromGroupAsync(Context.ConnectionId, $"battlemap_{sessionId}");
+			return;
+		}
+
+		var character = _characterService.GetCharacterByOwner(sessionGuid, userGuid);
+		if (character != null)
+		{
+			var map = _mapService.GetActiveMap(sessionGuid);
+			if (map != null)
+			{
+				// Find token by CharacterId
+				var playerToken = map.Tokens.FirstOrDefault(t => t.CharacterId == character.Id);
+
+				if (playerToken != null)
+				{
+					// Save FULL token state to PersistedToken
+					var persistedToken = _repository.GetPersistedToken(sessionGuid, character.Id);
+					if (persistedToken != null)
+					{
+						persistedToken.X = playerToken.X;
+						persistedToken.Y = playerToken.Y;
+						persistedToken.MapId = map.Id;
+						persistedToken.Name = playerToken.Name;
+						persistedToken.Color = playerToken.Color;
+						persistedToken.Size = playerToken.Size;
+						persistedToken.ImageUrl = playerToken.ImageUrl;
+						persistedToken.IconName = playerToken.IconName;
+					}
+					else
+					{
+						persistedToken = new PersistedToken
+						{
+							Id = playerToken.Id,
+							SessionId = sessionGuid,
+							CharacterId = character.Id,
+							MapId = map.Id,
+							Name = playerToken.Name,
+							X = playerToken.X,
+							Y = playerToken.Y,
+							Size = playerToken.Size,
+							Color = playerToken.Color,
+							ImageUrl = playerToken.ImageUrl,
+							IconName = playerToken.IconName
+						};
+					}
+					_repository.SavePersistedToken(persistedToken);
+
+					// Also save to TokenPositionHistory (for audit trail)
+					_mapService.SaveTokenPosition(new TokenPositionHistory
+					{
+						SessionId = sessionGuid,
+						CharacterId = character.Id,
+						UserId = userGuid, // for backward compatibility
+						MapId = map.Id,
+						X = playerToken.X,
+						Y = playerToken.Y
+					});
+
+					// Remove token from map
+					if (_mapService.RemoveToken(map.Id, playerToken.Id))
+					{
+						await Clients.Group($"battlemap_{sessionId}").SendAsync("TokenRemoved", new
+						{
+							tokenId = playerToken.Id.ToString(),
+							version = map.Version
+						});
+					}
+				}
+			}
+		}
+
+		// Unsubscribe from SignalR group
 		await Groups.RemoveFromGroupAsync(Context.ConnectionId, $"battlemap_{sessionId}");
 	}
 
@@ -102,7 +190,7 @@ public class BattleMapHub : Hub
 			return;
 
 		var isMaster = _userService.IsUserMaster(sessionGuid, userGuid);
-		if (!_mapService.CanUserMoveToken(token, userGuid, isMaster))
+		if (!_mapService.CanUserMoveToken(token, userGuid, sessionGuid, isMaster))
 		{
 			await Clients.Caller.SendAsync("BattleMapError", "You cannot move this token.");
 			return;
@@ -211,7 +299,7 @@ public class BattleMapHub : Hub
 		var token = map.Tokens.FirstOrDefault(t => t.Id == tokenGuid);
 		if (token == null)
 			return;
-		if(!_mapService.CanUserEditToken(token, userGuid, isMaster))
+		if(!_mapService.CanUserEditToken(token, userGuid, sessionGuid, isMaster))
 		{
 			await Clients.Caller.SendAsync("BattleMapError", "Changes not allowed.");
 			return;
@@ -219,6 +307,21 @@ public class BattleMapHub : Hub
 
 		if (_mapService.UpdateToken(map, token, updates))
 		{
+			// Save visual property changes to PersistedToken
+			if (token.CharacterId.HasValue)
+			{
+				var persistedToken = _repository.GetPersistedToken(sessionGuid, token.CharacterId.Value);
+				if (persistedToken != null)
+				{
+					persistedToken.Name = token.Name;
+					persistedToken.Color = token.Color;
+					persistedToken.Size = token.Size;
+					persistedToken.ImageUrl = token.ImageUrl;
+					persistedToken.IconName = token.IconName;
+					_repository.SavePersistedToken(persistedToken);
+				}
+			}
+
 			await Clients.Group($"battlemap_{sessionId}").SendAsync("TokenUpdated", new
 			{
 				tokenId = tokenId,
@@ -792,36 +895,71 @@ public class BattleMapHub : Hub
 		blocksMovement = w.BlocksMovement
 	};
 
-	private BattleToken CreatePlayerToken(Guid sessionId, Guid userId)
+	private BattleToken? CreateOrRestorePlayerToken(Guid sessionId, Guid userId, Guid mapId)
 	{
-		var user = _userService.GetUser(sessionId, userId);
-		string tokenName = user?.Username ?? "Player";
-		Guid? characterId = null;
+		// Step 1: Get user's character
+		var character = _characterService.GetCharacterByOwner(sessionId, userId);
+		if (character == null)
+			return null; // No character = no token
 
-		if (user != null)
+		// Step 2: Check for existing persisted token
+		var persistedToken = _repository.GetPersistedToken(sessionId, character.Id);
+
+		if (persistedToken != null)
 		{
-			var character = _characterService.GetCharacterByOwner(sessionId, userId);
-			if (character != null)
+			// RESTORE existing token
+			var savedPosition = _repository.GetTokenPositionForMap(sessionId, mapId, character.Id, null);
+
+			return new BattleToken
 			{
-				tokenName = character.Name;
-				characterId = character.Id;
-			}
+				Id = persistedToken.Id,  // SAME ID!
+				CharacterId = character.Id,
+				Name = persistedToken.Name,
+				X = savedPosition?.X ?? persistedToken.X,
+				Y = savedPosition?.Y ?? persistedToken.Y,
+				Size = persistedToken.Size,
+				Color = persistedToken.Color,
+				ImageUrl = persistedToken.ImageUrl,  // IMAGE PRESERVED!
+				IconName = persistedToken.IconName,
+				IsVisible = true,
+				IsDmOnly = false,
+				OwnerId = null
+			};
 		}
-
-		var colorIndex = Math.Abs(userId.GetHashCode()) % _playerColors.Length;
-
-		return new BattleToken
+		else
 		{
-			Name = tokenName,
-			OwnerId = userId,
-			CharacterId = characterId,
-			X = 1,
-			Y = 1,
-			Size = 1,
-			Color = _playerColors[colorIndex],
-			IsVisible = true,
-			IsDmOnly = false
-		};
+			// CREATE new token (first time)
+			var colorIndex = Math.Abs(character.Id.GetHashCode()) % _playerColors.Length;
+			var newToken = new BattleToken
+			{
+				CharacterId = character.Id,
+				Name = character.Name,
+				Color = _playerColors[colorIndex],
+				X = 1,
+				Y = 1,
+				Size = 1,
+				IsVisible = true,
+				IsDmOnly = false,
+				OwnerId = null
+			};
+
+			// Save to DB immediately
+			var newPersistedToken = new PersistedToken
+			{
+				Id = newToken.Id,
+				SessionId = sessionId,
+				CharacterId = character.Id,
+				MapId = mapId,
+				Name = newToken.Name,
+				Color = newToken.Color,
+				Size = newToken.Size,
+				X = newToken.X,
+				Y = newToken.Y
+			};
+			_repository.SavePersistedToken(newPersistedToken);
+
+			return newToken;
+		}
 	}
 
 	private static readonly string[] _playerColors =

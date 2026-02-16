@@ -61,6 +61,10 @@ public class CharacterService
             return false;
 
         _repository.DeleteCharacter(characterId);
+
+        // CASCADE DELETE: Remove persisted tokens for this character
+        _repository.DeletePersistedTokensByCharacter(characterId);
+
         return true;
     }
 

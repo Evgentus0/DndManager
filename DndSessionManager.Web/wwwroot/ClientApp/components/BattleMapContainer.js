@@ -65,6 +65,7 @@ export default {
 						:is-master="isMaster"
 						:connection="connection"
 						:current-tool="currentTool"
+						:character-id="characterId"
 						class="mt-3">
 					</battle-map-canvas>
 
@@ -229,7 +230,8 @@ export default {
 		sessionId: { type: String, required: true },
 		userId: { type: String, required: true },
 		isMaster: { type: Boolean, required: true },
-		initialMap: { type: Object, required: true }
+		initialMap: { type: Object, required: true },
+		characterId: { type: String, required: false },
 	},
 	setup(props) {
 		const { t } = useI18n()

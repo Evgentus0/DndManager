@@ -11,6 +11,7 @@ public class LiteDbRepository : ISessionRepository, IDisposable
 	private readonly ILiteCollection<Character> _characters;
 	private readonly ILiteCollection<BattleMap> _battleMaps;
 	private readonly ILiteCollection<TokenPositionHistory> _tokenPositions;
+	private readonly ILiteCollection<PersistedToken> _persistedTokens;
 
 	public LiteDbRepository(IWebHostEnvironment env)
 	{
@@ -30,6 +31,7 @@ public class LiteDbRepository : ISessionRepository, IDisposable
 		_characters = _database.GetCollection<Character>("characters");
 		_battleMaps = _database.GetCollection<BattleMap>("battle_maps");
 		_tokenPositions = _database.GetCollection<TokenPositionHistory>("token_positions");
+		_persistedTokens = _database.GetCollection<PersistedToken>("persisted_tokens");
 
 		// Create indexes
 		_sessions.EnsureIndex(x => x.State);
@@ -38,6 +40,9 @@ public class LiteDbRepository : ISessionRepository, IDisposable
 		_battleMaps.EnsureIndex(x => x.SessionId);
 		_tokenPositions.EnsureIndex(x => x.SessionId);
 		_tokenPositions.EnsureIndex(x => x.MapId);
+		_persistedTokens.EnsureIndex(x => x.SessionId);
+		_persistedTokens.EnsureIndex(x => x.CharacterId);
+		_persistedTokens.EnsureIndex("SessionIdCharacterId", "$.SessionId + '_' + $.CharacterId", true);
 	}
 
 	// Session operations
@@ -82,6 +87,9 @@ public class LiteDbRepository : ISessionRepository, IDisposable
 
 		// Delete associated token position history
 		_tokenPositions.DeleteMany(tp => tp.SessionId == sessionId);
+
+		// Delete associated persisted tokens
+		_persistedTokens.DeleteMany(pt => pt.SessionId == sessionId);
 	}
 
 	// Chat message operations
@@ -178,12 +186,30 @@ public class LiteDbRepository : ISessionRepository, IDisposable
 	}
 
 	// Token position history
-	public TokenPositionHistory? GetTokenPositionForMap(Guid sessionId, Guid userId, Guid mapId)
+	public TokenPositionHistory? GetTokenPositionForMap(Guid sessionId, Guid mapId, Guid? characterId, Guid? userId)
 	{
-		return _tokenPositions.FindOne(tp =>
-			tp.SessionId == sessionId &&
-			tp.UserId == userId &&
-			tp.MapId == mapId);
+		// Priority: CharacterId first
+		if (characterId.HasValue)
+		{
+			var byCharacter = _tokenPositions.FindOne(tp =>
+				tp.SessionId == sessionId &&
+				tp.MapId == mapId &&
+				tp.CharacterId == characterId.Value);
+
+			if (byCharacter != null)
+				return byCharacter;
+		}
+
+		// Fallback: UserId for backward compatibility
+		if (userId.HasValue)
+		{
+			return _tokenPositions.FindOne(tp =>
+				tp.SessionId == sessionId &&
+				tp.MapId == mapId &&
+				tp.UserId == userId.Value);
+		}
+
+		return null;
 	}
 
 	public void SaveTokenPosition(TokenPositionHistory position)
@@ -195,6 +221,33 @@ public class LiteDbRepository : ISessionRepository, IDisposable
 	public void DeleteTokenPositionsForMap(Guid mapId)
 	{
 		_tokenPositions.DeleteMany(tp => tp.MapId == mapId);
+	}
+
+	// Persisted token operations
+	public PersistedToken? GetPersistedToken(Guid sessionId, Guid characterId)
+	{
+		return _persistedTokens.FindOne(pt => pt.SessionId == sessionId && pt.CharacterId == characterId);
+	}
+
+	public IEnumerable<PersistedToken> GetSessionPersistedTokens(Guid sessionId)
+	{
+		return _persistedTokens.Find(pt => pt.SessionId == sessionId);
+	}
+
+	public void SavePersistedToken(PersistedToken token)
+	{
+		token.UpdatedAt = DateTime.UtcNow;
+		_persistedTokens.Upsert(token);
+	}
+
+	public void DeletePersistedToken(Guid tokenId)
+	{
+		_persistedTokens.Delete(tokenId);
+	}
+
+	public void DeletePersistedTokensByCharacter(Guid characterId)
+	{
+		_persistedTokens.DeleteMany(pt => pt.CharacterId == characterId);
 	}
 
 	public void Dispose()
