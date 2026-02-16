@@ -104,6 +104,7 @@ export const useBattleMapStore = defineStore('battleMap', () => {
 
 		fogOfWar.value = { ...initialData.fogOfWar }
 		background.value = { ...initialData.background }
+		activeMapId.value = initialData.id
 	}
 
 	function addToken(token) {
@@ -285,7 +286,6 @@ export const useBattleMapStore = defineStore('battleMap', () => {
 
 		// Initialize with new map
 		initializeMap(newMapData)
-		activeMapId.value = newMapData.id
 	}
 
 	return {
