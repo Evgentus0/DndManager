@@ -109,8 +109,13 @@ export default {
 											<div class="me-2"
 												:style="{width: '24px', height: '24px', borderRadius: '50%', backgroundColor: token.color, border: '2px solid #ecf0f1', flexShrink: 0}">
 											</div>
-											<div class="flex-grow-1 text-truncate">
+											<div class="flex-grow-1 d-flex align-items-center" style="min-width: 0;">
+												<div class="text-truncate flex-shrink-1" style="min-width: 0;">
 												<small class="text-dark" style="font-size: 0.85rem;"><strong>{{ token.name }}</strong></small>
+											</div>
+											<span v-if="isMaster && token.isDmOnly" class="badge bg-warning text-dark ms-1 flex-shrink-0" style="font-size: 0.6rem;" :title="$t('battlemap.initiativeTracker.dmOnlyHint')">
+												<i class="bi bi-eye-slash"></i> {{ $t('battlemap.initiativeTracker.dmOnly') }}
+											</span>
 											</div>
 										</div>
 

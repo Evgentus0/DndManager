@@ -415,7 +415,9 @@
       "title": "Initiative Tracker",
       "hint": "Sorted by initiative",
       "noInitiative": "—",
-      "position": "Pos"
+      "position": "Pos",
+      "dmOnly": "DM Only",
+      "dmOnlyHint": "This token is hidden from players"
     },
     "tokenDialog": {
       "name": "Token Name",
