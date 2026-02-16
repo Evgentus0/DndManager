@@ -39,6 +39,7 @@ export default {
 				</div>
 				<div class="card-body p-3" style="background-color: #2c3e50;">
 					<map-selector
+						v-if="isMaster"
 						:is-master="isMaster"
 						:session-id="sessionId"
 						:user-id="userId"
